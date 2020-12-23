@@ -1,0 +1,2000 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>jquery-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html" class="active"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: JQuery Backup
+tags:</p>
+<ul>
+<li>jquery
+date: 2014-03-12 13:04:16
+categories: frontend</li>
+</ul>
+<hr />
+<div align="center">
+JQuery NOte.
+ref: https://jquery.com/
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法</a></li>
+<li><a href="#dom%E5%AF%B9%E8%B1%A1jquery%E5%AF%B9%E8%B1%A1%E4%BA%92%E8%BD%AC">dom对象，jquery对象互转</a></li>
+<li><a href="#%E5%8A%A0%E8%BD%BD%E9%A1%BA%E5%BA%8Fwindowonload%E5%8C%BA%E5%88%AB">加载顺序,window.onload区别</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E5%99%A8">选择器</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8">基本选择器</a></li>
+<li><a href="#%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8">属性选择器</a></li>
+<li><a href="#%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8">伪类选择器</a></li>
+<li><a href="#%E5%80%9F%E5%8A%A9%E8%BF%87%E6%BB%A4%E5%87%BD%E6%95%B0%E9%80%89%E6%8B%A9%E5%85%83%E7%B4%A0">借助过滤函数选择元素</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B7%BB%E5%8A%A0css%E6%A0%B7%E5%BC%8F">添加css样式</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0css%E7%9A%84class%E7%B1%BB">添加css的class类</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0html%E6%88%96text">添加html或text</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E5%B1%9E%E6%80%A7">添加属性</a></li>
+<li><a href="#jq%E9%81%8D%E5%8E%86">jq遍历</a></li>
+<li><a href="#%E6%98%BE%E7%A4%BAor%E9%9A%90%E8%97%8F">显示or隐藏</a></li>
+<li><a href="#%E6%B7%A1%E5%85%A5%E6%B7%A1%E5%87%BA">淡入淡出</a></li>
+<li><a href="#%E6%BB%91%E5%8A%A8">滑动</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB">自定义动画</a></li>
+<li><a href="#%E6%94%BE%E5%A4%A7%E9%95%9C">放大镜</a></li>
+<li><a href="#%E5%AE%BD%E5%BA%A6-%E4%BD%8D%E7%BD%AE-%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8">宽度, 位置, 回到顶部</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A">事件绑定</a>
+<ul>
+<li><a href="#%E5%BD%93%E5%89%8D%E5%85%83%E7%B4%A0%E7%BB%91%E5%AE%9A">当前元素绑定</a></li>
+<li><a href="#%E7%BB%99%E5%AD%90%E5%85%83%E7%B4%A0%E7%BB%91%E5%AE%9A">给子元素绑定</a></li>
+</ul>
+</li>
+<li><a href="#document%E5%A2%9E%E6%B7%BB%E5%A4%84%E7%90%86">document增添处理</a></li>
+<li><a href="#%E7%BC%96%E5%86%99%E6%8F%92%E4%BB%B6">编写插件</a></li>
+<li><a href="#ajax">ajax</a>
+<ul>
+<li><a href="#xxxload">$(xxx).load()</a></li>
+<li><a href="#get">$.get()</a></li>
+<li><a href="#post">$.post()</a></li>
+<li><a href="#ajax">$.ajax()</a></li>
+<li><a href="#form%E8%A1%A8%E5%8D%95%E5%BA%8F%E5%88%97%E5%8C%96">form表单序列化</a></li>
+<li><a href="#ajax%E8%AF%B7%E6%B1%82%E6%9C%AC%E5%9C%B0json%E6%96%87%E4%BB%B6">ajax请求本地json文件</a></li>
+<li><a href="#demo">demo</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#基本语法" id="基本语法">基本语法</a></h1>
+<p>首先要引入JQ的依赖包 http://jquery.com/download/</p>
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+   //1 js获得方式
+   var username = document.getElementById(&quot;username&quot;);
+   alert(username.value);
+   //2 jQuery 获得方式
+   // 语法：$(&quot;选择器&quot;)   或   jQuery(&quot;选择器&quot;)
+   //  这里 $ 和 jQuery 等效
+   var username2 = $(&quot;#username&quot;);
+   alert(username2.val());
+   // * 建议：jQuery对象变量的命名使用$开头，username2 建议写作： $username
+&lt;/script&gt;
+
+</code></pre>
+<h1><a class="header" href="#dom对象jquery对象互转" id="dom对象jquery对象互转">dom对象，jquery对象互转</a></h1>
+<p>函数中的 this 都是 原生对象, 使用时都要转换一下, 比如:  $(this).val();</p>
+<pre><code class="language-html">&lt;script type=&quot;text/javascript&quot;&gt;
+   // &lt;script&gt;必须放在最后，加载顺序问题
+   //1 获得dom
+   var username = document.getElementById(&quot;username&quot;);
+   //#1 使用dom 属性value获得值
+   alert(username.value);
+   
+   //2 将dom 转换成  jQuery对象 --&gt; $(dom对象)
+   var $username = $(username);
+   //#2 使用jQuery val()方法获得内容
+   alert($username.val());
+   
+   //3 将jQuery 对象转换 dom对象
+   //	jQuery对象内容，使用一个数组，存放所有内容，如果只有一个，下标为0.
+   //#3.1 方式1 : 数组下标
+   var username31 = $username[0];
+   alert(username31.value);
+   //#3.2 方法2：jQuery 提供get(index)方法
+   var username32 = $username.get(0);
+   alert(username32.value);
+  
+   //属性使用方法或属性
+   alert($username.size());  //获得大小
+   alert($username.length);  //获得大小
+&lt;/script&gt;
+
+
+</code></pre>
+<h1><a class="header" href="#加载顺序windowonload区别" id="加载顺序windowonload区别">加载顺序,window.onload区别</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot; /&gt;
+		&lt;title&gt;&lt;/title&gt;
+		
+		&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+		&lt;script&gt;
+            // 和window.onload:区别 
+            // window.onlead -&gt; 页面所有资源加载完成后调用; 此外, onload 只会执行最后一个函数
+        	//ready -&gt; ：ready是在html,css加载之后，图片加载之前调用
+			$(function(){
+				console.log(document.body);
+			});
+			window.onload = function(){
+				console.log('页面onload完成')
+			};
+			
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;!--
+		1.jQuery
+		:是一个对原生JS的封装类库（处理好了所有兼容性问题）
+		
+		使用：本地路径
+			：百度或者谷歌的cdn
+		
+	--&gt;	
+	&lt;/body&gt;
+	&lt;!--&lt;script src=&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		//window.onload 
+		
+		jQuery(document).ready(function(){
+			alert(111);
+		});
+		jQuery(document).ready(function(){
+			alert(22222);
+		});
+		
+		// jQuery == $
+		$(document).ready(function(){
+			alert(3333);
+		});
+		
+		//简写:对以上形式简写
+		$(function(){
+			alert(4444);
+		});
+	&lt;/script&gt;--&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#选择器" id="选择器">选择器</a></h1>
+<h2><a class="header" href="#基本选择器" id="基本选择器">基本选择器</a></h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p id=&quot;p1&quot;&gt;我是第一个P1111&lt;/p&gt;
+		&lt;p id=&quot;p2&quot; class=&quot;classP2&quot;&gt;我是第二个pppp&lt;/p&gt;
+		&lt;div id=&quot;div1&quot;&gt;
+			&lt;p id=&quot;div1P0&quot;&gt;div1P0&lt;/p&gt;
+			&lt;p id=&quot;div1P1&quot;&gt;div1P1&lt;/p&gt;
+			&lt;p id=&quot;div1P2&quot;&gt;div1P2&lt;/p&gt;
+			&lt;p id=&quot;div1P3&quot;&gt;div1P3&lt;/p&gt;
+			&lt;p id=&quot;div1P4&quot;&gt;div1P4&lt;/p&gt;
+			&lt;div&gt;
+				&lt;p&gt;马上下课&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			/*
+			 选择器查找元素
+			 语法：$('选择器名')
+			 获取到元素：以jQuery数组形式保存，无论是id还是class
+			 
+			 
+			 * */
+			var p1 = $(&quot;#p1&quot;);
+			console.log(p1);//通过id获取，是以jq数组形式保存，不是原生p1对象
+			// 选择所有 p 元素
+			console.log($('p'));
+			
+			//class selector
+			console.log($(&quot;.classP2&quot;));
+			
+			//族群选择器 -- 同时选多个
+			console.log($(&quot;#p1,.classP2&quot;));
+
+			//选择所有
+			console.log($(&quot;*&quot;));
+			
+			/**
+			这两个对比:
+			*/
+			// 结果包含孙子元素, 选中有6个对象
+			console.log($(&quot;#div1 p&quot;));
+			// 只包含子代元素, 选中5个对象
+			console.log($(&quot;#div1&gt;p&quot;));
+			
+			// + :选中相邻的下一个兄弟元素
+			console.log($(&quot;#div1P1+p&quot;));
+			
+			//~:兄弟选择器:获取div1P1之后的所有兄弟p, 3个对象
+			console.log($(&quot;#div1P1~p&quot;));
+		});
+		
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h2><a class="header" href="#属性选择器" id="属性选择器">属性选择器</a></h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p name=&quot;shitou&quot;&gt;我是石头&lt;/p&gt;
+		&lt;div name=&quot;shitou&quot;&gt;我是div石头&lt;/div&gt;
+		&lt;p name=&quot;xiaopeng&quot;&gt;我是小鹏&lt;/p&gt;
+		&lt;p name=&quot;anjing&quot;&gt;我是安静&lt;/p&gt;
+		&lt;p name=&quot;anfen&quot; id=&quot;p4&quot;&gt;我是安分&lt;/p&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			/*
+			 属性选择器
+			 * */
+			//[属性名]：获取具备该属性的所有元素, 5个
+			console.log($(&quot;[name]&quot;));
+			// [属性名=属性值], 得到2个
+			console.log($(&quot;[name='shitou']&quot;));
+			// 遍历数组, 打印text, 2个
+			console.log($(&quot;[name='shitou']&quot;).text());//text()获取文本内容
+			// 只获取 p 元素的text, 1个
+			console.log($(&quot;p[name='shitou']&quot;).text());
+			// 如果获取不到，默认返回document对象
+			console.log($(&quot;p[name='shitou1']&quot;));
+			
+			// [name *= value]:模糊查询 只要属性值包含u都被获取, 1个
+			console.log($(&quot;p[name*='u']&quot;).text());
+			
+			//[name ^= value]:属性值以value开头, 2个
+			console.log($(&quot;p[name ^= 'an']&quot;).text());
+			
+			//[name $= value]：属性值以value结尾, 1个
+			console.log($(&quot;p[name $= 'tou']&quot;).text());
+			
+			//[name != value]:属性不等于value的所有元素, 3个
+			console.log($(&quot;p[name != 'shitou']&quot;).text());
+			
+			//[name=属性选择器][name=属性选择器]....., 1个
+			console.log($(&quot;p[name = 'anfen'][id='p4']&quot;).text());
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h2><a class="header" href="#伪类选择器" id="伪类选择器">伪类选择器</a></h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;伪类选择器&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id=&quot;div1&quot;&gt;
+			&lt;span&gt;学习&lt;/span&gt;
+			&lt;p id='p1'&gt;p1111111111&lt;/p&gt;
+			&lt;p id='p2'&gt;p2222222222&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div&gt;
+			&lt;span&gt;JQ学习2&lt;/span&gt;
+			&lt;p&gt;唯一p&lt;/p&gt;
+		&lt;/div&gt;
+		
+		&lt;div style=&quot;display: none;&quot;&gt;我是被隐藏的1&lt;/div&gt;
+		&lt;div style=&quot;display: none;&quot;&gt;我是被隐藏的2&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			//首先要满足&quot;第一个&quot;, div-div1下的 span, 且为第一个子元素
+			console.log($(&quot;#div1 span:first-child&quot;).text());// 这里满足, 1个
+			console.log($(&quot;#div1 p:first-child&quot;).text());// 不满足, 0个
+
+			//在同类型里面找, 同类型的第一个(选取每一坨里面的同类型的第一个)------常用
+			console.log($(&quot;#div1 span:first-of-type&quot;).text());// 1个
+			console.log($(&quot;#div1 p:first-of-type&quot;).text());// 1个
+			
+			// 首先满足&quot;最后一个&quot;, div1下的p, 且为最后一个子元素
+			console.log($(&quot;#div1 p:last-child&quot;).text());// 1个
+
+			// 同类型, 最后一个, 1个
+			console.log($(&quot;#div1 p:last-of-type&quot;).text());
+			
+			// 当前元素的第index个子元素(从1开始数), 且为p元素, 结果找到p1
+			console.log(&quot;当前元素的第index个子元素(从1开始数): &quot;+$(&quot;#div1 p:nth-child(2)&quot;).text());
+
+			// //同类型对比, 找到p2
+			console.log(&quot;同类型里面找: &quot;+$(&quot;#div1 p:nth-of-type(2)&quot;).text());
+			// //所有奇数
+			console.log(&quot;首先满足[所有奇数], 然后是p元素&quot;+$(&quot;#div1 p:nth-child(odd)&quot;).text());
+			// //所有偶数
+			console.log(&quot;所有偶数&quot;+$(&quot;#div1 p:nth-child(even)&quot;).text());
+			
+			console.log(&quot;选择所有&quot;+$(&quot;#div1 p:nth-child(n)&quot;).text());
+			console.log(&quot;同上&quot;+$(&quot;#div1 p&quot;).text());
+			
+			// //选择div 下p ： p满足是一个唯一的子元素
+			console.log(&quot;这里不满足&quot;+$(&quot;div p:only-child&quot;).text());
+			// //同类型对比
+			console.log(&quot;选择div下的p, p必须是唯一子元素: &quot;+$(&quot;div p:only-of-type&quot;).text());
+			
+			
+			console.log(&quot;--------JQ新增----&quot;);
+			// //JQ新增
+			// //同类型对比
+			console.log($(&quot;#div1 p:first&quot;).text());
+			console.log($(&quot;#div1 p:last&quot;).text());
+			
+			// //not(选择器):找div1下的p,排除掉id是#p1的p
+			console.log(&quot;找div1下的p,排除掉id是#p1的p: &quot;+$(&quot;#div1 p:not(#p1)&quot;).text());
+			
+			// //eq(等于) 下标从0开始 处理选择结果数组 找到数组第n个元素
+			console.log(&quot;下标从0开始 处理选择结果数组 找到数组第n个元素: &quot;+$(&quot;#div1 p:eq(0)&quot;).text());
+			
+			// //gt(大于) greater than 下标从0开始  找出大于给定下标的所有元素
+			console.log(&quot;找出大于给定下标的所有元素&quot;+$(&quot;#div1 p:gt(0)&quot;).text());
+			
+			// //lt(小于下标) less than 
+			console.log(&quot;小于: &quot;+$(&quot;#div1 p:lt(1)&quot;).text());
+			
+			// //root 获取一个数组, 有一个document元素
+			// get(0), 获取html原生对象
+			console.log($(':root').get(0));
+						
+			// //hidden:当前隐藏的所有div
+			console.log(&quot;当前隐藏的所有div&quot;+$(&quot;div:hidden&quot;).text());
+			// //hidden:当前可见的所有div
+			console.log(&quot;可见的all div: &quot;+$(&quot;div:visible&quot;).text());
+			
+			// //has(选择器) 选择div：div必须满足包含#p1选择器
+			// 会把span, p里卖年的text都打印
+			console.log(&quot;div必须满足包含#p1: &quot;+$(&quot;div:has(#p1)&quot;).text());
+			
+			// //parent 是父元素
+			// body里面的所有text都被打印
+			console.log(&quot;parent: &quot;+$(&quot;div:parent&quot;).text());
+			
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h2><a class="header" href="#借助过滤函数选择元素" id="借助过滤函数选择元素">借助过滤函数选择元素</a></h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;筛选&lt;/title&gt;
+		&lt;style&gt;
+			
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id=&quot;wrap&quot;&gt;
+			&lt;div id=&quot;one&quot;&gt;&lt;/div&gt;
+			&lt;div id=&quot;two&quot;&gt;
+				&lt;div id=&quot;cld1&quot;&gt;&lt;/div&gt;
+				&lt;div id=&quot;cld2&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div id=&quot;three&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			//parent():父元素
+			console.log($(&quot;#one&quot;).parent());
+			//parents():祖先元素
+			console.log($(&quot;#cld1&quot;).parents());
+			
+			//parents():指定祖先元素
+			console.log($(&quot;#cld1&quot;).parents(&quot;#wrap&quot;));
+			
+			//parentsUntil 指定到body元素之前结束，不包括body
+			console.log($(&quot;#cld1&quot;).parentsUntil(&quot;body&quot;));
+			
+			//children:第一代子元素
+			console.log($(&quot;#wrap&quot;).children());
+			
+			//后代
+			//找到所有后代
+			console.log($(&quot;#wrap&quot;).find(&quot;*&quot;));
+			
+			//找wrap下的cld1
+			console.log($(&quot;#wrap&quot;).find(&quot;#cld1&quot;));
+			
+			//兄弟
+			/*
+			 向前找兄弟：pre
+			 * */
+			console.log($(&quot;#three&quot;).prev());
+			console.log($(&quot;#three&quot;).prevAll());
+			
+			//找到所有前面兄弟的  #one
+			console.log($(&quot;#three&quot;).prevAll(&quot;#one&quot;));
+			console.log($(&quot;#three&quot;).prevUntil(&quot;#one&quot;));
+			
+			//next
+			console.log($(&quot;#one&quot;).next());
+			console.log($(&quot;#one&quot;).nextAll());
+			console.log($(&quot;#one&quot;).nextAll(&quot;#three&quot;));
+			console.log($(&quot;#one&quot;).nextUntil(&quot;#three&quot;));
+			
+			//
+			console.log($(&quot;#two&quot;).siblings());
+			console.log($(&quot;#two&quot;).siblings(&quot;#one&quot;));
+			
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+
+</code></pre>
+<h1><a class="header" href="#添加css样式" id="添加css样式">添加css样式</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style&gt;
+			#div1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id=&quot;div1&quot;&gt;hello world&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		/*
+		 css函数或者设置样式:获取到行间样式和style标签下设置的样式
+		 
+		 * */
+		var div1 = $(&quot;#div1&quot;);
+		$(function(){
+			console.log(div1.width(),typeof div1.width());// 100 &quot;number&quot;		
+			console.log(div1.height(),typeof div1.height());		
+			//字符串类型，有单位
+			console.log(div1.css(&quot;width&quot;),typeof div1.css(&quot;width&quot;));// 100px string
+			
+			console.log(div1.css('background'));// rgb(255, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box
+			
+			//设置
+			div1.css(&quot;color&quot;,&quot;white&quot;);
+			div1.css(&quot;font-size&quot;,&quot;30px&quot;);
+			
+			//一次性设置多个
+			div1.css({
+				width: 200,
+				height: '200px',
+				textAlign: 'center',
+				lineHeight: '200px',
+				border: &quot;2px solid silver&quot;,
+			});
+			
+			div1.css('height',function(index,value){
+				console.log(index,value);
+				//parseFloat():参数可以是number或者string类型，转化为number，只有数字
+				console.log(parseFloat(value));
+				console.log(parseInt(value));
+				return 300 + parseFloat(value);
+			});
+			
+			div1.css({
+				width:function(index,value){
+					console.log(index,parseFloat(value));
+					return 100 + parseFloat(value);
+				},
+			});
+			
+			$(document).click(function(){
+				div1.css({
+					width: &quot;+=100&quot;,
+				});
+			});
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#添加css的class类" id="添加css的class类">添加css的class类</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;添加属性&lt;/title&gt;
+		&lt;style&gt;
+			#p1{
+				width: 100px;
+				height: 100px;
+				/*background: red;*/
+			}
+			.one{
+				background: blue;
+			}
+			.two{
+				background: green;
+			}
+			.three{
+				background: darkcyan;
+			}
+			.newClass{
+				background: yellow;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p id=&quot;p1&quot;&gt;一个p标签&lt;/p&gt;
+		&lt;span&gt;111111111&lt;/span&gt;
+		&lt;span&gt;222222222&lt;/span&gt;
+		&lt;span&gt;333333333&lt;/span&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			//给一个元素添加类名
+			/*
+			 addClass(类名/函数) 返回值jQ对象
+			 
+			 * */
+			
+			var obj = $(&quot;#p1&quot;).addClass('one');
+			//可以一次添加多个class
+			obj.addClass(&quot;two three&quot;);
+			console.log(obj);
+			
+			
+			//使用函数作为参数添加类名，如果('#p1')选择出多个元素，那么遍历回调该函数，函数有两个参数
+			//参数1：获取到元素对应下标，从0开始
+			//参数2：以前设置的类名，
+			// return: 如果要设置新的类名，通过设置函数返回值
+			$('#p1').addClass(function(index,value){
+				console.log(index,value);//0 &quot;one two three&quot;
+				return 'newClass';
+			});
+			
+			
+			$(&quot;span&quot;).addClass(function(index,value){
+				console.log(index,value);
+				if(index == 1){
+					return &quot;one&quot;;
+				}else{
+					return &quot;two&quot;;
+				}
+			});
+			
+			//JQ可以把所有获取到的元素添加上类名
+			$('span').addClass('three');
+			//eq(index):获取到JQ数组对象下对应下标的元素（jq对象）, 从0开始
+			$(&quot;span&quot;).eq(1).addClass('newClass');
+
+			console.log($(&quot;span&quot;).get(1));// 获取的是原生对象元素
+			console.log($(&quot;span&quot;).eq(1));// 获取的是jq对象
+
+
+			$(&quot;span&quot;).get(1).addClass(&quot;xxxyyy&quot;);// 没有$()就是原生对象
+			$($(&quot;span&quot;).get(1)).addClass(&quot;xxxyyy&quot;);// 加上了
+			
+			//删除类名
+			//删除$(&quot;span&quot;)查询结果所有
+			//$(&quot;span&quot;).removeClass(&quot;three newClass one&quot;);
+			
+			//函数参数形式：如果想删除：return '类名'
+			$('span').removeClass(function(index,value){
+				console.log(index,value);
+				//return 'two three';
+				if(index == 0){
+					return &quot;three two&quot;;
+				}else if(index == 1){
+					return &quot;three newClass&quot;;
+				}else{
+					return &quot;three&quot;;
+				}
+			});
+			
+			//单独删除
+			$('span').eq(1).removeClass('newClass');
+			
+
+			// 切换(添加or删除)
+			//toggleClass(参数1，参数2)
+			//参数1：类名 , 如果只有这个参数, 那么就是切换
+			// 参数2：boolean：控制删除或者添加 true添加 false删除
+			//删除
+			$('#p1').toggleClass('one two three newClass',false);
+			//添加
+			$('#p1').toggleClass('one',true);
+			
+			//$('#p1').toggleClass('one');
+			//$('#p1').toggleClass('one');
+			
+			//toggleClass:只传参数1类名，如果元素有对应的类名，删除，如果没有添加
+			document.onclick = function(){
+				$('#p1').toggleClass('one');
+			};
+			
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#添加html或text" id="添加html或text">添加html或text</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p&gt;111&lt;/p&gt;
+		&lt;p&gt;222&lt;/p&gt;
+		&lt;p&gt;333&lt;/p&gt;
+		
+		&lt;input type=&quot;text&quot; /&gt;
+		&lt;input type=&quot;button&quot; name=&quot;btn&quot; value=&quot;点击&quot; id=&quot;btn&quot;/&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			//如果$('p').html()：默认返回jq数组第一个元素内容
+			var pHtml = $('p').html();
+			console.log(&quot;默认返回jq数组第一个元素内容&quot;+pHtml);
+			// 返回指定的一个
+			pHtml = $('p').eq(1).html();
+			console.log(pHtml);
+			
+			//获取：不需要参数，
+			// 如果加上参数：赋值
+			//默认赋值所有
+			$('p').html('哈哈');
+			// 给指定的元素赋值
+			$('p').eq(1).html('222');
+			
+			//结构标签赋值
+			$('p').eq(0).html(&quot;&lt;a href='###'&gt;链接&lt;/a&gt;&quot;);
+			pHtml = $('p').eq(0).html();
+			console.log(&quot;结构标签赋值: &quot;+pHtml);
+			
+			//通过函数参数
+			$('p').html(function(index,value){
+				console.log(index,value);
+				if(index == 0){
+					return value+'新内容'+index;
+				}
+				return value+'新内容';
+			});
+			
+			//text():innerText (纯文本)
+			console.log($('p').eq(0).text());
+			$('p').eq(1).text(&quot;&lt;a href='###'&gt;链接&lt;/a&gt;&quot;);
+			
+			//val
+			$('#btn').click(function(){
+				//alert(111);
+				//赋值
+				$(&quot;input:text&quot;).val('111111');
+				//函数赋值
+				$(&quot;input:text&quot;).val(function(index,value){
+					return value + '新值' + index;
+				});
+				console.log($('input:text').val());
+			});
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#添加属性" id="添加属性">添加属性</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;添加属性&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p id=&quot;p1&quot;&gt;ppppppppppppppp&lt;/p&gt;
+		&lt;p id=&quot;p2&quot;&gt;ppppppppppppppp&lt;/p&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		//attr():主要用来自定义属性
+		//attr(属性名，属性值/函数)
+		
+		$(function(){
+			//设置(默认全都被设置)
+			$('p').attr('name','shitou');
+			//添加多个属性，参数是对象类型
+			$('#p1').attr({
+				age:10,
+				//修改
+				name:'xiaoshitou',
+				gender:'boy',
+			});
+			//使用函数自定义属性
+			//attr(1,2)
+			//参数1：修改或者添加的属性，
+			// 参数2：函数对象，返回值是修改或者设置的值; value是old value
+			$('#p1').attr('age',function(index,value){
+				return +value+40;
+			});
+			//修改
+			$('#p1').attr('age','100');
+			//删除
+			$('#p1').removeAttr('age');
+			
+			//prop():用来处理元素本身自带属性----只有自带的属性才会被读到
+			// name不是自带的
+			var value = $(&quot;#p1&quot;).prop('name');
+			console.log(value);//undefined
+			// id是自带属性
+			var value2 = $(&quot;#p1&quot;).prop('id');
+			console.log(value2);//p1
+			
+			//属性设置
+			$('#p1').prop('classA','valueTest');
+			
+			//处理系统自带属性正常
+			$('#p1').prop('class','valueTest');
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#jq遍历" id="jq遍历">jq遍历</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot; /&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style&gt;
+			
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id=&quot;choose&quot;&gt;&lt;/div&gt;
+		&lt;button id=&quot;btn1&quot;&gt;全选&lt;/button&gt;
+		&lt;button id=&quot;btn2&quot;&gt;反选&lt;/button&gt;
+		&lt;ul id=&quot;ul1&quot;&gt;
+			&lt;li&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			//全选
+			$(&quot;#btn1&quot;).click(function(){
+				//所有checkbox选中
+				//console.log($(&quot;input:checkbox&quot;));
+				//不需要循环，默认全部选中
+				$(&quot;input:checkbox&quot;).prop(&quot;checked&quot;,true);
+			});
+			//反选
+			$(&quot;#btn2&quot;).click(function(){
+				
+				//each:遍历jq数组，参数是函数指针，回调时返回对应下标和对应元素对象（原生对象）
+				$(&quot;input:checkbox&quot;).each(function(index,ele){
+					//console.log(index,ele);
+					//console.log(ele.checked)
+					//ele.checked = !ele.checked;
+					
+					//this就是每次对应取到的input对象，jq内部给回调处理
+					//console.log(this);
+					//方法2：
+					//this.checked = !this.checked;
+					
+					//获取
+					var value = $(this).prop(&quot;checked&quot;);
+					//设置
+					$(this).prop(&quot;checked&quot;,!value);
+				});
+			});
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#显示or隐藏" id="显示or隐藏">显示or隐藏</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;显示隐藏&lt;/title&gt;
+		&lt;style&gt;
+			#div1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;button id=&quot;hidden&quot;&gt;隐藏&lt;/button&gt;
+		&lt;button id=&quot;show&quot;&gt;显示&lt;/button&gt;
+		&lt;button id=&quot;toggle&quot;&gt;显示或者隐藏&lt;/button&gt;
+		&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		//隐藏
+		
+		var div1 = $(&quot;#div1&quot;);
+		$(function(){
+			$(&quot;#hidden&quot;).click(function(){
+				/*
+		 hide(参数1，参数2，参数3)
+		 参数1：动画持续时间 时间1000ms, 单位毫秒 也可以'slow' 'normal' 'fast'
+		 参数2：动画效果 linear:匀速， 默认：swing:慢-&gt;快-&gt;慢  ，可以省略
+		 参数3：动画执行完成后的回调函数：动画完成后才回调
+		 * */
+				//div1.hide();//没有动画，没有参数
+
+				//修改宽高和透明度，为0时隐藏（display:none）
+				div1.hide(1000,'linear',function(){
+					console.log('隐藏动画完成');
+				});
+			});
+			$(&quot;#show&quot;).click(function(){
+				// 和hide类似
+				div1.show('slow',function(){
+					console.log(&quot;显示动画完成，可以做其他处理了&quot;);
+				});
+			});
+			// 切换
+			$(&quot;#toggle&quot;).click(function(){
+				div1.toggle('slow',function(){
+					console.log('显示或者隐藏，动画完成');
+					var ifHide = div1.css('display') == &quot;block&quot; ? false : true;
+					//ifHide ? 成立，执行：前，否则执行：后面
+					ifHide ? $(&quot;#toggle&quot;).text(&quot;显示&quot;) : $(&quot;#toggle&quot;).text(&quot;隐藏&quot;);
+				});
+			});
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#淡入淡出" id="淡入淡出">淡入淡出</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;显示隐藏&lt;/title&gt;
+		&lt;style&gt;
+			#div1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;button id=&quot;fadeIn&quot;&gt;淡入&lt;/button&gt;
+		&lt;button id=&quot;fadeOut&quot;&gt;淡出&lt;/button&gt;
+		&lt;button id=&quot;fadeToggle&quot;&gt;淡入或者淡出&lt;/button&gt;
+		&lt;button id=&quot;fadeTo&quot;&gt;淡入到指定程度&lt;/button&gt;
+		&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		
+		var div1 = $(&quot;#div1&quot;);
+		
+		//淡出
+		$(&quot;#fadeOut&quot;).click(function(){
+			//透明度opacity为零时隐藏
+			div1.fadeOut(1000,function(){
+				console.log(&quot;淡出隐藏完成&quot;);
+			});
+		});
+		
+		//淡入：显示
+		$(&quot;#fadeIn&quot;).click(function(){
+			div1.fadeIn(1000,function(){
+				console.log(&quot;淡入完成&quot;);
+			});
+		});
+		// 切换
+		$(&quot;#fadeToggle&quot;).click(function(){
+			div1.fadeToggle(1000,function(){
+				console.log(&quot;淡入或淡出完成&quot;);
+				var ifHide = div1.css('display') == &quot;block&quot; ? false : true;
+					//ifHide ? 成立，执行：前，否则执行：后面
+					ifHide ? $(&quot;#fadeToggle&quot;).text(&quot;淡入&quot;) : $(&quot;#fadeToggle&quot;).text(&quot;淡出&quot;);
+			});
+		});
+		
+		//fadeTo
+		/*
+		 参数2变化：指定透明度
+		 * */
+		$(&quot;#fadeTo&quot;).click(function(){
+			div1.fadeTo(&quot;slow&quot;,0.5,function(){
+				console.log(&quot;动画完成&quot;);
+			});
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#滑动" id="滑动">滑动</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;显示隐藏&lt;/title&gt;
+		&lt;style&gt;
+			#div1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;button id=&quot;slideUp&quot;&gt;上滑&lt;/button&gt;
+		&lt;button id=&quot;slideDown&quot;&gt;下滑&lt;/button&gt;
+		&lt;button id=&quot;slideToggle&quot;&gt;上滑或者下滑&lt;/button&gt;
+		&lt;button id=&quot;slideUpAndDown&quot;&gt;上滑下滑&lt;/button&gt;
+		&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		var div1 = $(&quot;#div1&quot;);
+		$(function(){
+			//高度减小，为0时隐藏
+			$(&quot;#slideUp&quot;).click(function(){
+				$(&quot;#div1&quot;).slideUp(3000,function(){
+					console.log(&quot;上滑完成&quot;);
+				});
+			});
+			$(&quot;#slideDown&quot;).click(function(){
+				$(&quot;#div1&quot;).slideDown(3000,function(){
+					console.log(&quot;下滑完成&quot;);	
+				});
+				
+			});
+			$(&quot;#slideToggle&quot;).click(function(){
+				$(&quot;#div1&quot;).stop().delay().slideToggle(1000,function(){
+					console.log(&quot;上滑或下滑完成&quot;);
+					var isHide = $(&quot;#div1&quot;).css(&quot;display&quot;) == &quot;block&quot; ? false : true;
+					isHide ? $(&quot;#slideToggle&quot;).text(&quot;下滑&quot;) : $(&quot;#slideToggle&quot;).text(&quot;上滑&quot;);
+				});
+			});
+			//slideUpAndDown:先上滑，完后下滑
+			$(&quot;#slideUpAndDown&quot;).click(function(){
+				//1：动画完成回调函数处理
+//				div1.slideUp(2000,function(){
+//					div1.slideDown(&quot;slow&quot;);
+//				});
+				//2：代码回继续往下执行，动画是异步操作，不会阻塞代码执行，但是未被执行的动画效果会被放到等待队列中，slideDown会被放在队列中，只有等上一个动画执行完成后，从队列去除第一个动画执行
+//				div1.slideUp(2000);
+//				div1.slideDown(2000);
+//				div1.fadeOut(2000);
+//				div1.fadeIn(2000);
+//				div1.slideUp(2000);
+//				div1.slideDown(2000);
+				
+				div1.slideUp(2000).slideDown(2000);
+			});
+		});
+		
+		
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#自定义动画" id="自定义动画">自定义动画</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;显示隐藏&lt;/title&gt;
+		&lt;style&gt;
+			#div1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				position: absolute;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;button id=&quot;custom1&quot;&gt;自定义动画1&lt;/button&gt;
+		&lt;button id=&quot;custom2&quot;&gt;自定义动画2&lt;/button&gt;
+		&lt;button id=&quot;custom3&quot;&gt;自定义动画3&lt;/button&gt;
+		&lt;button id=&quot;stop&quot;&gt;流程控制&lt;/button&gt;
+		&lt;div id=&quot;div1&quot;&gt;文字&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		var div1 = $(&quot;#div1&quot;);
+		/*
+		 animate(属性列表，时间，时长，变化曲线，回调函数)
+		 * */
+		$(function(){
+			$(&quot;#custom1&quot;).click(function(){
+				div1.animate({
+					width:300,
+					height:300,
+					//复合属性使用驼峰命名
+					fontSize: 100,
+					//背景渐变不支持
+					backgroundColor: &quot;blue&quot;,
+					left:100,
+					top:100,
+				},1000,function(){
+					console.log('动画完成');
+				});
+				
+			});
+			$(&quot;#custom2&quot;).click(function(){
+				//字符串或者数字，单位可以加可以省略
+				//+= 在之前基础上加
+				div1.animate({
+					//width:'+=300',
+					//height:'+=100',
+					left: '+=50',
+					top:'+=50',
+				},2000);
+			});
+			$(&quot;#custom3&quot;).click(function(){
+				div1.animate({width:300,},2000);
+				//div1.delay(2000,'fx');//等待2秒继续下一个队列动画
+				div1.animate({height:300},2000);
+				div1.animate({width:300},2000);
+				div1.animate({height:200},2000);
+			});
+			//停止动画
+			/*
+			 stop(参数1，参数2)
+			 ：两个参数是boolean值，默认都是false
+			 参数1：stopAll(默认false是只清除正在执行动画，马上开启队列中第一个等待对话，如果给true:会清除正在执行动画和队列中所有的动画)
+			 参数2：goEnd:默认false：直接停止动画，如果是true：停止动画，但是动画最终效果会显示
+			 * */
+			$(&quot;#stop&quot;).click(function(){
+				//div1.stop();
+				//div1.stop(true);
+				//div1.stop(false,true);
+				
+				//停止当前动画和队列中所有动画，并且显示当前动画的效果
+				//div1.stop(true,true);
+				
+				//延迟动画执行
+				//div1.delay(2000);
+				
+				//结束动画（立即停止当前对话，和队列中所有等待动画，并且：元素效果是动画结束后的最终效果）
+				div1.finish();
+			});
+		});
+		
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#放大镜" id="放大镜">放大镜</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style&gt;
+			.jzoom{
+				width: 320px;
+				height:372px;
+				border: 2px solid silver;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div class=&quot;jzoom&quot;&gt;
+  			&lt;img src=&quot;img/mm.jpg&quot;&gt;
+		&lt;/div&gt; 
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/jzoom.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/jzoom.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$('.jzoom').jzoom({
+			 width: 400,
+             height: 400,
+             position: &quot;right&quot;,
+             offsetX: 20,
+             offsetY: 0,
+             opacity: 0.6,
+             bgColor: &quot;#fff&quot;,
+             loading: &quot;Loading...&quot;
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#宽度-位置-回到顶部" id="宽度-位置-回到顶部">宽度, 位置, 回到顶部</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style&gt;
+			body{
+				height: 2000px;
+			}
+			#div1{
+				width: 100px;
+				height: 100px;
+				padding: 50px;
+				margin: 50px;
+				border: 10px solid silver;
+				background-color: red;
+				position: absolute;
+				left: 10px;
+				top: 10px;
+			}
+			#box{
+				width: 300px;
+				height: 300px;
+				background: silver;
+				position: relative;
+				left: 100px;
+				top: 400px;
+			}
+			#div2{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background: yellow;
+				border: 2px solid brown;
+				left: 50px;
+				top: 40px;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+		&lt;div id=&quot;box&quot;&gt;
+			&lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		var div1 = $(&quot;#div1&quot;);
+		var div2 = $(&quot;#div2&quot;);
+		$(function(){
+			console.log(div1.width());
+			console.log(div1.height());
+			//设置宽高
+			//div1.width(200);
+			//div1.height(200);
+			
+			//innerWidth:内容宽度+padding左右
+			//innerHeight:内容高度+padding上下
+			console.log(div1.innerWidth());
+			console.log(div1.innerHeight());
+			
+			
+			//outerHeght()内容高度+上下padding+上下边框 = offSetHeight
+			console.log(div1.outerWidth());
+			console.log(div1.outerHeight());
+			
+			//outerHeight:参数：布尔值：默认false,不会计算margin值，如果是true，会计算margin
+			console.log(div1.outerHeight(true));
+			
+			
+			//offset()：当前元素基于页面文档的位置
+			console.log(div1.offset());
+			console.log(div1.offset().left);
+			console.log(div1.offset().top);
+			
+			//只能接受number类型
+			div1.offset({
+				left: 100,
+				top: 100,
+			});
+			
+			//div1.css({});
+			
+			//position():当前元素基于最近定位父元素的距离
+			console.log(div2.position());
+			console.log(div2.position().left);
+			
+			
+			console.log(div2.offset());
+			
+			$(document).click(function(){
+				//可以获取
+				console.log($(&quot;body&quot;).scrollTop());
+				console.log($(&quot;body&quot;).scrollLeft());
+				//不可以获取
+				console.log($(&quot;html&quot;).scrollTop());
+				//可以获取
+				console.log($(window).scrollTop());
+				
+				//回到顶部
+				//$(window).scrollTop(0);
+				
+				$(&quot;body&quot;).animate({
+					scrollTop: 0,
+				},500);
+			});
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#事件绑定" id="事件绑定">事件绑定</a></h1>
+<h2><a class="header" href="#当前元素绑定" id="当前元素绑定">当前元素绑定</a></h2>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot; /&gt;
+	&lt;title&gt;Document&lt;/title&gt;
+	&lt;style&gt;
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		#div2{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			position: absolute;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+	&lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		//1.支持冒泡
+		var div1 =$(&quot;#div1&quot;);
+		var div2 =$(&quot;#div2&quot;);
+		
+		div1.click(clickFn);
+		function clickFn(event){
+			console.log(event);
+			console.log(event.clientX,event.clientY);
+			console.log(event.offsetX,event.offsetY);
+			console.log(event.pageX,event.pageY);
+		}
+		
+		//同类型函数不会被覆盖
+		div1.click(function(){
+			console.log(&quot;11111111&quot;);
+		});
+		
+		//参数1：事件类型 参数2：回调函数
+		div1.on('click',function(){
+			console.log('点击效果');
+		});
+		
+//		div1.on(&quot;mouseover mouseout&quot;,function(){
+//			console.log(&quot;移入或者移出&quot;);
+//			$(&quot;#div2&quot;).toggle(&quot;slow&quot;);
+//		});
+		
+		//hover(参数1，参数2)：参数1：鼠标移入调用 参数2：鼠标移出调用
+		div1.hover(function(){
+			$(&quot;#div2&quot;).hide('slow');
+		},function(){
+			$(&quot;#div2&quot;).show('slow');
+		});
+		
+		//off():参数1：要删除的事件 ，参数2：方法名（地址），可以省略，省略的话会删除所有点击
+		div1.off('click',clickFn);
+		//删除div1上所有点击事件
+		div1.off('click');
+		
+		
+		//绑定的函数只会执行一次
+		div1.one('click',function(){
+			alert(1111);
+		});
+		
+		
+		//mousedown
+		//mousemove
+		//mouseup
+		
+		div2.mousedown(function(ev){
+//			var offsetX = ev.offsetX;
+			var offsetX = ev.clientX - div2.offset().left;
+			var offsetY = ev.offsetY;
+			
+			//move
+			$(document).mousemove(function(ev){
+				var x = ev.clientX - offsetX;
+				var y = ev.clientY - offsetY;
+				//赋值
+//				div2.css({
+//					left:x,
+//					top:y
+//				});
+				
+				var domObj = div2.get(0);
+				domObj.style.left = x + &quot;px&quot;;
+				domObj.style.top = y + &quot;px&quot;;
+			});
+			//up
+			$(document).mouseup(function(){
+				$(document).off(&quot;mouseup mousemove&quot;);
+			});
+		});
+		
+		//键盘事件
+		$(document).keydown(function(ev){
+			//which == keyCode
+			console.log(ev.keyCode);
+			console.log(ev.which);
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
+<h2><a class="header" href="#给子元素绑定" id="给子元素绑定">给子元素绑定</a></h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;子元素绑定事件&lt;/title&gt;
+		&lt;style&gt;
+			#div1{
+				width: 200px;
+				height: 200px;
+				background:red;
+			}
+			#inner{
+				width:100px;
+				height: 100px;
+				background:yellow;
+			}
+			p{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id=&quot;div1&quot;&gt;
+			&lt;div id=&quot;inner&quot;&gt;&lt;/div&gt;
+			&lt;!--&lt;p&gt;&lt;/p&gt;--&gt;
+		&lt;/div&gt;
+		&lt;button id=&quot;btn&quot;&gt;点击&lt;/button&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			//参数2：必须是div1的子元素，相当于给div1下的#inner绑定事件
+			$(&quot;#div1&quot;).on(&quot;click&quot;,&quot;#inner&quot;,function(){
+				alert(11);
+			});
+			
+			
+			//给p绑定事件
+			$(&quot;#div1&quot;).on(&quot;click&quot;,&quot;p&quot;,function(){
+				alert(&quot;点击p事件&quot;);
+			});
+			
+			//创建p标签
+			$(&quot;button&quot;).click(function(){
+				$(&quot;&lt;p&gt;&lt;/p&gt;&quot;).appendTo($(&quot;#div1&quot;));
+			});
+			
+		});
+	&lt;/script&gt;
+	
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#document增添处理" id="document增添处理">document增添处理</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot; /&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style&gt;
+			#div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+		&lt;input type=&quot;button&quot; name=&quot;btn&quot; id=&quot;btn&quot; value=&quot;点击我&quot;/&gt;
+		&lt;input type=&quot;button&quot; name=&quot;btn&quot; id=&quot;clone&quot; value=&quot;点击克隆&quot;/&gt;
+		&lt;ul&gt;
+			&lt;li&gt;1111&lt;/li&gt;
+			&lt;li&gt;2222&lt;/li&gt;
+			&lt;li&gt;3333&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/body&gt;
+	
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$(function(){
+			var div1 = $(&quot;#div1&quot;);
+			//a.append(b):把b放入a的尾部
+			div1.append(&quot;&lt;p&gt;&lt;span&gt;11111&lt;/span&gt;&lt;/p&gt;&quot;);
+			// a.appendTo(b):把a添加到b的尾部
+			$(&quot;&lt;a href='#'&gt;link&lt;/a&gt;&quot;).appendTo(div1);
+			
+			//a.prepend(b):把b放到a前面
+			div1.prepend('&lt;b&gt;prepend&lt;/b&gt;');
+			
+			//a.prependTo(b):把a放到b前面
+			$(&quot;&lt;i&gt;prependTo&lt;/i&gt;&quot;).prependTo(div1);
+			
+			//a.after(b):把b放到a的下面
+			div1.after(&quot;&lt;a href='##' class='aaa'&gt;第二个来接&lt;/a&gt;&quot;)
+			
+			//a.insertAfter(b):把a放到b的后面
+			$(&quot;&lt;p&gt;insertAfter&lt;/p&gt;&quot;).insertAfter(div1);
+			
+			//a.before(b):把b放到前面
+			div1.before(&quot;&lt;a href='#' &gt;before&lt;/a&gt;&quot;);
+			
+			//a.insertBefore(b):把a放到b的前面
+			$(&quot;&lt;p&gt;insertBefore&lt;/p&gt;&quot;).insertBefore(div1);
+			
+			
+			//删除：remove()
+			//要删除对象调用remove方法，把对象对应删除
+			//$(&quot;a&quot;).remove();//删除所有a
+			$(&quot;a&quot;).eq(0).remove();//删除第一个a
+			//remove(添加选择器)
+			//找到所有a，删除类是.aaa的a
+			$('a').remove(&quot;.aaa&quot;);//删除class=&quot;aaa&quot;的a
+			
+			$(&quot;#btn&quot;).on(&quot;click&quot;,function(){
+				alert(1111);
+			});
+			
+			//detach():删除界面效果和remove()一样，也都会把对应删除对象返回，但是remove会把之前绑定的方法删除，detach保留方法
+			var btn = $(&quot;#btn&quot;).detach();
+			//var btn = $(&quot;#btn&quot;).remove();
+			console.log(btn);
+			
+			//再次添加
+			btn.appendTo($(&quot;body&quot;));
+			
+			//empty()：把所哟子元素和自身文本节点全部清空
+			//div1.empty();
+			
+			//包裹元素
+			//wrap:对应每一个li都对应包裹一个div
+			//$(&quot;li&quot;).wrap(&quot;&lt;div&gt;&lt;/div&gt;&quot;);
+			//wrapALl把所有li被div包裹
+			//$(&quot;li&quot;).wrapAll(&quot;&lt;div&gt;&lt;/div&gt;&quot;);
+			//wrapInner每个li的内容被对应div包裹
+			$(&quot;li&quot;).wrapInner(&quot;&lt;div&gt;&lt;/div&gt;&quot;);
+			
+			
+			//替换
+			$(&quot;a&quot;).replaceWith(&quot;&lt;span&gt;替换a&lt;/span&gt;&quot;);
+			//把所有p替换成span
+			$(&quot;&lt;span&gt;替换p&lt;/span&gt;&quot;).replaceAll(&quot;p&quot;);
+			
+			//克隆
+			//clone(true)深克隆 把方法也克隆
+			$(&quot;#clone&quot;).click(function(){
+				$(this).clone(true).insertAfter(this);
+			});
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#编写插件" id="编写插件">编写插件</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;UTF-8&quot;&gt;
+		&lt;title&gt;插件&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;ul&gt;
+			&lt;li&gt;1&lt;/li&gt;
+			&lt;li&gt;2&lt;/li&gt;
+			&lt;li&gt;3&lt;/li&gt;
+			&lt;li&gt;4&lt;/li&gt;
+			&lt;li&gt;5&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/body&gt;
+	&lt;script src=&quot;js/jquery-3.1.0.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		//改$ JQ对象拖拽添加
+		$.extend({
+			hello:function(){
+				console.log(&quot;你好&quot;);
+			},
+			eat:function(){
+				console.log(&quot;吃东西&quot;);
+			},
+			
+		});
+		
+		//给所有jq对象都添加了toAlert
+		$.fn.extend({
+			toRed:function(){
+				//this:调用对象
+				console.log(this);
+				this.css('background','red');
+			},
+			toColor:function(color){
+				color = color || '#ccc';
+				this.each(function(index,ele){
+					//this=ele=每次遍历出的对象
+					console.log(this,ele,index);
+					if(index % 2 != 0){
+						$(this).css(&quot;background&quot;,color);
+					}
+				});
+			},
+			dianji:function(fn){
+					//this:是调用者（li集合）
+				this.click(function(event){
+					//this:是每一个对应点击对象，是jq内部修改的指向
+					//alert(&quot;text内部方法&quot;);
+					//回调
+					//fn(event);
+					//call();参数1，要修改的this指向
+					//修改fn这个方法的this指向，call第一个参数是要修改的this指向，后面的参数和fn参数顺序个数一样
+					fn.call(this,event);
+				});
+				
+				
+			},
+		});
+	&lt;/script&gt;
+	&lt;script&gt;
+		$(document).click(function(){
+			//$(&quot;ul li&quot;).toColor('red');
+		});
+		$(&quot;ul li&quot;).dianji(function(ev){
+			//salert(&quot;点击我了&quot;);
+			//alert(this);
+			console.log(ev,this);
+		});
+	&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#ajax" id="ajax">ajax</a></h1>
+<ul>
+<li>
+<p>jQuery对 JS AJAX 进行封装，回顾js ajax引擎 （XMLHttpRequest）</p>
+</li>
+<li>
+<p>jQuery 提供三个层次 ajax处理api。</p>
+<ul>
+<li>
+<p>第一层：$.ajax  最底层ajax操作，可以完成非常强大的功能，但操作繁琐。【】</p>
+</li>
+<li>
+<p>第二层：load、$.get()、$.post  开发使用比较多的，对$.ajax 简化。【】</p>
+</li>
+<li>
+<p>第三层：$.getJSON  、$.getScript()  一般不用。</p>
+<ul>
+<li>
+<p>$.getJSON  获得json数据，可以用于js跨域操作。</p>
+</li>
+<li>
+<p>$.getScript()  动态加载js文件。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#xxxload" id="xxxload">$(xxx).load()</a></h2>
+<pre><code class="language-js">/*2.1 load方法 ，不是全局的，必须有jQuery对象
+     * load(url,[data],[callback]) 
+     *     参数1：请求路径
+     *     参数2：请求参数
+     *     参数3：回调函数
+     *      
+     *  1)load方法如果没有请求参数，底层使用get请求方式
+     *  2)load方法如果有请求参数，底层使用post请求方式
+     *  3)load方法获得数据即使是json，也是以字符串方法展现，需要手动转换json对象
+     */
+    $(this).load(url,params,function(data){
+            //手动转换
+            var jsonData = eval(&quot;(&quot;+data+&quot;)&quot;);
+            alert(jsonData.message);
+    });
+
+</code></pre>
+<h2><a class="header" href="#get" id="get">$.get()</a></h2>
+<pre><code class="language-js">/* 2.2 $.get()方法 ,只能发送get请求
+         * $.get(url,[data],[fn],[type]) 
+         *     参数1：请求路径
+         *     参数2：请求参数,如果是中文存放get请求的中文乱码问题。一般get方法不发送中文。
+         *      	servlet解决方法  new String(username.getByte(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;);
+         *     参数3：回调函数
+         *     参数4：处理回调函数的第一个参数，确定数据类型
+         *     		 例如：返回内容格式，xml, html, script, json, text, _default。
+         * $.get(....,&quot;json&quot;) 表示数据是json数据。如果servlet发送 application/json 不需要使用，如果发送 text/html就需要使用
+         */
+        $.get(url,params,function(data){
+                alert(data);
+        },&quot;json&quot;);
+
+</code></pre>
+<h2><a class="header" href="#post" id="post">$.post()</a></h2>
+<pre><code class="language-js">/* 2.3 $.post 只能发送post请求
+     * $.post(url,[data],[fn],[type]) 
+     *     参数与get雷同
+     */
+    $.post(url,params,function(data){
+            alert(data);
+    });
+
+</code></pre>
+<h2><a class="header" href="#ajax-1" id="ajax-1">$.ajax()</a></h2>
+<pre><code class="language-js">/* 2.4 $.ajax 底层ajax请求
+     * $.ajax(url,[settings]) 
+     * 一般使用格式：$.ajax(settings)
+     *         url ：请求路径
+     *         data ：请求参数
+     *         type ：请求方式，get、post。默认: GET
+     *         success ：成功后回调函数
+     *         error ：异常时回调函数
+     *         dataType ：务器返回的数据类型。例如：json、html、xml 等
+     *             &quot;xml&quot;: 返回 XML 文档，可用 jQuery 处理。
+     *             &quot;html&quot;: 返回纯文本 HTML 信息；包含的script标签会在插入dom时执行。
+     *             &quot;script&quot;: 返回纯文本 JavaScript 代码。不会自动缓存结果。除非设置了&quot;cache&quot;参数。'''注意：'''在远程请求时(不在同一个域下)，所有POST请求都将转为GET请求。(因为将使用DOM的script标签来加载)
+     *             &quot;json&quot;: 返回 JSON 数据 。
+     *             &quot;jsonp&quot;: JSONP 格式。使用 JSONP 形式调用函数时，如 &quot;myurl?callback=?&quot; jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。
+     *             &quot;text&quot;: 返回纯文本字符串
+     */
+    $.ajax({
+            &quot;url&quot;:url,
+            &quot;data&quot;:params,
+            &quot;type&quot;:&quot;post&quot;,
+            &quot;success&quot;:function(data){
+                    alert(data);
+            },
+            &quot;error&quot;:function(){
+                    alert(&quot;服务器异常&quot;);
+            },
+            &quot;dataType&quot;:&quot;json&quot;
+    });
+
+</code></pre>
+<h2><a class="header" href="#form表单序列化" id="form表单序列化">form表单序列化</a></h2>
+<p>serialize()  将表单中所有内容转成字符串 。格式：username=jack&amp;password=1234&amp;....
+serializeArray()  将表单中所有内容转成json格式</p>
+<h2><a class="header" href="#ajax请求本地json文件" id="ajax请求本地json文件">ajax请求本地json文件</a></h2>
+<p>https://blog.csdn.net/xuanpl/article/details/68928586</p>
+<h2><a class="header" href="#demo" id="demo">demo</a></h2>
+<pre><code class="language-html">&lt;!-- Html页面： --&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;../js/jquery-1.8.3.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        $(function(){
+            //点击事件
+            $(&quot;#buttonId&quot;).click(function(){
+            1.1 请求路径，这里写的是固定的地址，也可以写动态的：  ${pageContext.request.contextPath}
+                var url = &quot;/jquery_day02/GetDataServlet&quot;;
+            1.2 请求参数----必须是json格式
+                var params = {&quot;username&quot;:&quot;杰克&quot;,&quot;password&quot;:&quot;1234&quot;};
+                
+            2.1 load方法 ，不是全局的，必须有jQuery对象----- $(xxx).load()
+                 * load(url,[data],[callback]) 
+                 *  参数1：请求路径
+                 *  参数2：请求参数
+                 *  参数3：回调函数
+                 * 
+                * 注意：
+                 *  1)load方法如果没有请求参数，底层使用get请求方式
+                 *  2)load方法如果有请求参数，底层使用post请求方式
+                 *  3)load方法获得数据即使是json，也是以字符串方法展现，需要手动转换json对象
+             $(this).load(url,params,function(data){
+                 //手动转换
+                 var jsonData = eval(&quot;(&quot;+data+&quot;)&quot;);
+                 alert(jsonData.message);
+             });
+              
+                
+             2.2 $.get()方法  ,只能发送get请求
+                 * $.get(url,[data],[fn],[type]) 
+                 *  参数1：请求路径
+                 *  参数2：请求参数,如果参数含有中文，则存在get请求的中文乱码问题。一般get方法不发送中文。
+                 *      servlet处理乱码：  new String(username.getByte(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;);
+                 *  参数3：回调函数
+                 *  参数4：处理回调函数的第一个参数，--------确定数据类型
+                 *     例如：返回内容格式可以有：xml, html, script, json, text, _default。
+                 *        $.get(....,&quot;json&quot;) 表示接收的数据是json数据。如果servlet设置响应格式： application/json 则不需要使用，如果设置的是 text/html就需要使用
+                $.get(url,params,function(data){---这里servlet设置了响应格式：application/json，get（）无需参数type
+                    alert(data);
+                },&quot;json&quot;);
+                
+             2.3 $.post 只能发送post请求
+                 * $.post(url,[data],[fn],[type]) 
+                 *  参数与get雷同
+                $.post(url,params,function(data){
+                    alert(data);
+                });
+                 */
+                
+     2.4 $.ajax   底层ajax请求
+         * $.ajax(url,[settings]) 
+         * 一般使用格式：$.ajax(settings)
+         *      url ：请求路径
+         *      data ：请求参数
+         *      type ：请求方式，get、post。默认: GET
+         *      success ：成功后回调函数
+         *      error ：异常时回调函数
+         *      dataType ：务器返回的数据类型。例如：json、html、xml 等
+         *          &quot;xml&quot;: 返回 XML 文档，可用 jQuery 处理。
+         *          &quot;html&quot;: 返回纯文本 HTML 信息；包含的script标签会在插入dom时执行。
+         *          &quot;script&quot;: 返回纯文本 JavaScript 代码。不会自动缓存结果。除非设置了&quot;cache&quot;参数。'''注意：'''在远程请求时(不在同一个域下)，所有POST请求都将转为GET请求。(因为将使用DOM的script标签来加载)
+         *          &quot;json&quot;: 返回 JSON 数据 。
+         *          &quot;jsonp&quot;: JSONP 格式。使用 JSONP 形式调用函数时，如 &quot;myurl?callback=?&quot; jQuery 将自动替换 ? 为正确的函数名，以执行回调函数。
+         *          &quot;text&quot;: 返回纯文本字符串
+         
+                $.ajax({
+                    &quot;url&quot;:url,
+                    &quot;data&quot;:params,
+                    &quot;type&quot;:&quot;post&quot;,
+                    &quot;success&quot;:function(data){-----------------data是从action传过来的数据；
+                        alert(data);
+                    },
+                    &quot;error&quot;:function(){
+                        alert(&quot;服务器异常&quot;);
+                    },
+                    &quot;dataType&quot;:&quot;json&quot;
+                });
+            });
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input id=&quot;buttonId&quot; type=&quot;button&quot; value=&quot;发送ajax&quot; /&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="joke-collecting.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="js-tutorial.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="joke-collecting.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="js-tutorial.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

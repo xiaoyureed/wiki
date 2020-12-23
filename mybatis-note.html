@@ -1,0 +1,2166 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>mybatis-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html" class="active"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Mybatis Note
+tags:</p>
+<ul>
+<li>orm</li>
+<li>mybatis
+date: 2014-02-01 16:21:24
+categories: java web</li>
+</ul>
+<hr />
+<div align="center">
+mybatis就是一个封装了jdbc的持久层框架，同类是 hibernate，但是hibernate是一个标准的orm框架，而mybatis是一个不完全的orm框架， 需要手写sql;
+Mybatis让我们只关注sql本身，而不需要去关注创建连接、创建statement、关闭连接等操作; Mybatis会对输入参数、输出结果进行映射
+MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs映射成数据库中的记录
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#mybatis%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5%E7%90%86%E8%A7%A3">mybatis一些概念理解</a>
+<ul>
+<li><a href="#mybatis%E5%92%8Chibernate%E5%8C%BA%E5%88%AB-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">Mybatis和hibernate区别, 应用场景</a></li>
+<li><a href="#%E5%8E%9F%E7%94%9F%E7%9A%84jdbc">原生的jdbc</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8E%9F%E7%90%86-quickstart">原理-quickstart</a>
+<ul>
+<li><a href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6">核心组件</a></li>
+<li><a href="#quickstart">quickstart</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8mapper%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E5%BC%8F%E5%BC%80%E5%8F%91dao">使用mapper代理的方式开发dao</a></li>
+<li><a href="#mybatis%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">mybatis的配置文件</a>
+<ul>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%90%84%E9%83%A8%E5%88%86%E6%9C%89%E9%A1%BA%E5%BA%8F">配置文件的各部分有顺序</a></li>
+<li><a href="#properties">properties</a></li>
+<li><a href="#settings">settings</a></li>
+<li><a href="#typealiases">typeAliases</a></li>
+<li><a href="#typehandlers">typeHandlers</a>
+<ul>
+<li><a href="#jdbctype">JdbcType</a></li>
+<li><a href="#%E9%BB%98%E8%AE%A4%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86%E5%99%A8">默认类型处理器</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86%E5%99%A8">自定义类型处理器</a>
+<ul>
+<li><a href="#%E6%80%8E%E4%B9%88%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86%E5%99%A8">怎么开发自定义类型处理器</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E5%90%AF%E7%94%A8%E5%91%A2">怎么启用呢</a></li>
+</ul>
+</li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E6%A3%80%E7%B4%A2%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86%E5%99%A8">自动检索类型处理器</a></li>
+<li><a href="#%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86%E5%99%A8">泛型类型处理器</a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B">处理枚举类型</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E5%B7%A5%E5%8E%82objectfactory-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E7%9A%84%E5%AE%9E%E4%BE%8B%E5%8C%96">对象工厂（objectFactory）-自定义查询结果的实例化</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6plugins%E6%8B%A6%E6%88%AA%E5%99%A8">插件（plugins）拦截器</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83environments-%E6%95%B0%E6%8D%AE%E6%BA%90-%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86">配置环境（environments）-数据源-事务管理</a>
+<ul>
+<li><a href="#%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AEenvironment">怎么配置environment</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89mybatis%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86">自定义mybatis事务管理</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E6%BA%90-%E7%AC%AC%E4%B8%89%E6%96%B9%E6%95%B0%E6%8D%AE%E6%BA%90">自定义数据源-第三方数据源</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%94%AF%E6%8C%81databaseidprovider">对不同数据库的支持（databaseIdProvider）</a></li>
+<li><a href="#%E6%8C%87%E5%AE%9A%E6%98%A0%E5%B0%84%E5%99%A8mappers%E4%BD%8D%E7%BD%AE">指定映射器（mappers）位置</a></li>
+</ul>
+</li>
+<li><a href="#mapper%E6%98%A0%E5%B0%84%E9%85%8D%E7%BD%AExml%E6%96%87%E4%BB%B6">mapper映射配置xml文件</a>
+<ul>
+<li><a href="#mapperxml%E6%94%AF%E6%8C%81%E5%93%AA%E4%BA%9B%E5%85%83%E7%B4%A0">mapper.xml支持哪些元素</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2select%E5%85%83%E7%B4%A0">查询select元素</a></li>
+<li><a href="#insert-update-%E5%92%8C-delete">insert, update 和 delete</a></li>
+<li><a href="#sql%E5%85%83%E7%B4%A0-%E9%87%8D%E7%94%A8sql">sql元素-重用sql</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81sql">动态sql</a>
+<ul>
+<li><a href="#if">if</a></li>
+<li><a href="#choosewhenotherwise-%E5%A4%9A%E4%B8%AAwhen%E4%B8%AD%E6%8B%A9%E5%85%B6%E4%B8%80">choose,when,otherwise-多个when中择其一</a></li>
+<li><a href="#wheresettrim-%E9%99%A4%E5%8E%BBsql%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97">where,set,trim-除去sql中的关键字</a></li>
+<li><a href="#%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%AF%E6%8C%81">多数据库支持</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81-sql-%E4%B8%AD%E7%9A%84%E5%8F%AF%E6%8F%92%E6%8B%94%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E5%A6%82apache-velocity-">动态 SQL 中的可插拔脚本语言(如Apache Velocity )</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E6%95%B0parameters">参数（Parameters）</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%84%E7%94%A8%E6%B3%95">常规用法</a></li>
+<li><a href="#%E5%9C%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6%E9%87%8C%E8%AE%BE%E7%BD%AE%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%89%B9%E6%AE%8A%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%A4%84%E7%90%86%E5%99%A8%E7%B1%BB">在占位符里设置参数类型和特殊的类型处理器类</a></li>
+<li><a href="#%E4%B8%A4%E7%A7%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9B%BF%E6%8D%A2%E6%96%B9%E5%BC%8F-%E5%8C%BA%E5%88%AB">两种字符串替换方式-#$区别</a></li>
+</ul>
+</li>
+<li><a href="#result-map%E5%B1%9E%E6%80%A7%E5%AD%97%E6%AE%B5%E6%98%A0%E5%B0%84">Result Map,属性字段映射</a>
+<ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E7%BB%93%E6%9E%9C%E6%98%A0%E5%B0%84">简单结果映射</a></li>
+<li><a href="#resultmap%E9%AB%98%E7%BA%A7%E7%BB%93%E6%9E%9C%E6%98%A0%E5%B0%84">resultMap高级结果映射</a>
+<ul>
+<li><a href="#resultmap%E6%80%BB%E5%85%B1%E6%9C%89%E5%93%AA%E4%BA%9B%E5%85%83%E7%B4%A0">resultMap总共有哪些元素</a></li>
+<li><a href="#constructor%E6%A0%87%E7%AD%BE-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95">constructor标签, 构造方法</a></li>
+<li><a href="#association%E5%85%B3%E8%81%94">association关联</a>
+<ul>
+<li><a href="#%E5%85%B3%E8%81%94%E7%9A%84%E5%B5%8C%E5%A5%97%E6%9F%A5%E8%AF%A2">关联的嵌套查询</a></li>
+<li><a href="#%E5%85%B3%E8%81%94%E7%9A%84%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%9C">关联的嵌套结果</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9B%86%E5%90%88collection%E5%85%B3%E8%81%94">集合collection关联</a>
+<ul>
+<li><a href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%B5%8C%E5%A5%97%E6%9F%A5%E8%AF%A2">集合的嵌套查询</a></li>
+<li><a href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%B5%8C%E5%A5%97%E7%BB%93%E6%9E%9C">集合的嵌套结果</a></li>
+</ul>
+</li>
+<li><a href="#discriminator-%E9%89%B4%E5%88%AB%E5%99%A8">discriminator 鉴别器</a></li>
+</ul>
+</li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E6%98%A0%E5%B0%84">自动映射</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%BC%93%E5%AD%98">缓存</a>
+<ul>
+<li><a href="#%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98">一级缓存</a>
+<ul>
+<li><a href="#%E6%80%8E%E4%B9%88%E5%BC%80%E5%90%AF%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98">怎么开启一级缓存</a></li>
+<li><a href="#%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98%E5%88%86%E6%9E%90">一级缓存分析</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98">二级缓存</a>
+<ul>
+<li><a href="#%E6%80%8E%E4%B9%88%E5%BC%80%E5%90%AF%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98">怎么开启二级缓存</a></li>
+<li><a href="#%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98%E5%88%86%E6%9E%90">二级缓存分析</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%93%E5%AD%98">使用自定义缓存</a>
+<ul>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BC%93%E5%AD%98">自定义缓存</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BC%93%E5%AD%98-%E6%95%B4%E5%90%88ehcache">第三方缓存-整合ehcache</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">应用场景</a></li>
+<li><a href="#%E5%B1%80%E9%99%90%E6%80%A7">局限性</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD">延迟加载</a></li>
+<li><a href="#%E6%95%B4%E5%90%88%E5%88%B0spring">整合到spring</a></li>
+<li><a href="#%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B">逆向工程</a></li>
+<li><a href="#%E6%8B%BE%E9%81%97">拾遗</a>
+<ul>
+<li><a href="#%E5%92%8C%E5%8C%BA%E5%88%AB">#和$区别</a></li>
+<li><a href="#parametertype%E5%92%8Cresulttype">parameterType和resultType</a></li>
+<li><a href="#resultmap%E5%92%8Cresulttype">resultMap和resultType</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#mybatis一些概念理解" id="mybatis一些概念理解">mybatis一些概念理解</a></h1>
+<h2><a class="header" href="#mybatis和hibernate区别-应用场景" id="mybatis和hibernate区别-应用场景">Mybatis和hibernate区别, 应用场景</a></h2>
+<p>Mybatis：
+1、 通过直接编写SQL语句，可以直接对SQL进行性能的优化；
+2、 由于直接编写SQL语句，所以灵活多变，代码维护性更好。
+3、 不能支持数据库无关性，移植性不好。
+4、 需要编写结果映射。</p>
+<p>Hibernate：
+1、 标准的orm框架，不需要编写SQL。
+2、 具有良好的数据库无关性。
+3、 不能自主的去进行SQL性能优化。因为sql由框架生成</p>
+<h2><a class="header" href="#原生的jdbc" id="原生的jdbc">原生的jdbc</a></h2>
+<pre><code class="language-java">public static void main(String[] args) {
+	Connection connection = null;
+	PreparedStatement preparedStatement = null;
+	ResultSet resultSet = null;
+	
+	try {
+		//1、加载数据库驱动
+		Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+		//2、通过驱动管理类获取数据库链接
+		connection =  DriverManager.getConnection(&quot;jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8&quot;, &quot;root&quot;, &quot;root&quot;);
+		//3、定义sql语句 ?表示占位符
+		String sql = &quot;select * from user where username = ?&quot;;
+		//4、获取预处理statement
+		preparedStatement = connection.prepareStatement(sql);
+		//5、设置参数，第一个参数为sql语句中参数?的序号（从1开始），第二个参数为设置的参数值
+		preparedStatement.setString(1, &quot;王五&quot;);
+		//6、向数据库发出sql执行查询，查询出结果集
+		resultSet =  preparedStatement.executeQuery();
+		//7、遍历查询结果集
+		while(resultSet.next()){
+			System.out.println(resultSet.getString(&quot;id&quot;)+&quot;  &quot;+resultSet.getString(&quot;username&quot;));
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}finally{
+		//8、释放资源
+		if(resultSet!=null){
+			try {
+				resultSet.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if(preparedStatement!=null){
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if(connection!=null){
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+</code></pre>
+<p>问题分析:</p>
+<p>1、 创建连接时存在硬编码
+可通过【配置文件】解决</p>
+<p>2、 执行statement时存在硬编码
+可通过【配置文件】解决</p>
+<p>3、 频繁关闭数据库连接会影响数据库的性能
+可通过【数据库连接池】解决</p>
+<h1><a class="header" href="#原理-quickstart" id="原理-quickstart">原理-quickstart</a></h1>
+<h2><a class="header" href="#核心组件" id="核心组件">核心组件</a></h2>
+<ul>
+<li>
+<p>SqlSessionFactory</p>
+<ul>
+<li>
+<p>全局唯一， 和 app 共存亡</p>
+</li>
+<li>
+<p>SqlSessionFactory 本身是由 SqlSessionFactoryBuilder 创建的，它可以从 XML、注解或手动配置 Java 代码来创建 SqlSessionFactory</p>
+</li>
+</ul>
+</li>
+<li>
+<p>SqlSession </p>
+<ul>
+<li>
+<p>每次请求会新开一个线程，每个线程都应该有它自己的 SqlSession 实例。SqlSession 的实例不是线程安全的，因此是不能被共享的， 返回一个响应后， 就关闭 sqlsession; </p>
+</li>
+<li>
+<p>通过这个接口来执行命令，获取映射器和管理事务</p>
+</li>
+<li>
+<p>SqlSessions 是由 SqlSessionFactory 实例创建, 和spring整合时, SqlSessions 将被依赖注入框架所创建</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Mapper interface - 映射器接口的实例是从 SqlSession 中获得的</p>
+</li>
+</ul>
+<pre><code class="language-java">
+// SqlSessionFactoryBuilder api
+
+      // 从 xml 创建
+
+SqlSessionFactory build(InputStream inputStream)
+SqlSessionFactory build(InputStream inputStream, String environment)
+SqlSessionFactory build(InputStream inputStream, Properties properties)
+SqlSessionFactory build(InputStream inputStream, String env, Properties props)
+
+      // 纯 代码 创建
+SqlSessionFactory build(Configuration config)
+
+
+      // 示例
+DataSource dataSource = BaseDataTest.createBlogDataSource();
+TransactionFactory transactionFactory = new JdbcTransactionFactory();
+
+Environment environment = new Environment(&quot;development&quot;, transactionFactory, dataSource);
+
+Configuration configuration = new Configuration(environment);
+configuration.setLazyLoadingEnabled(true);
+configuration.setEnhancementEnabled(true);
+configuration.getTypeAliasRegistry().registerAlias(Blog.class);
+configuration.getTypeAliasRegistry().registerAlias(Post.class);
+configuration.getTypeAliasRegistry().registerAlias(Author.class);
+configuration.addMapper(BoundBlogMapper.class);
+configuration.addMapper(BoundAuthorMapper.class);
+
+SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+SqlSessionFactory factory = builder.build(configuration);
+
+////////////////////////////////////////////
+
+// SqlSessionFactory api
+
+SqlSession openSession() // 开启一个事务（也就是不自动提交）。
+SqlSession openSession(boolean autoCommit)
+SqlSession openSession(Connection connection)
+SqlSession openSession(TransactionIsolationLevel level)
+SqlSession openSession(ExecutorType execType,TransactionIsolationLevel level)
+SqlSession openSession(ExecutorType execType)
+SqlSession openSession(ExecutorType execType, boolean autoCommit)
+SqlSession openSession(ExecutorType execType, Connection connection)
+Configuration getConfiguration();
+
+void clearCache() // 清空本地缓存
+void close()//确保 SqlSession 被关闭
+
+/////////////////////////////////////////////////////
+
+// SqlSession api
+
+&lt;T&gt; T selectOne(String statement, Object parameter)//必须返回一个对象或 null 值
+&lt;E&gt; List&lt;E&gt; selectList(String statement, Object parameter) // 如果不知道返回对象的数量，请使用 selectList
+&lt;K,V&gt; Map&lt;K,V&gt; selectMap(String statement, Object parameter, String mapKey)//将返回的对象的其中一个属性作为 key 值，将对象作为 value 值
+int insert(String statement, Object parameter)
+int update(String statement, Object parameter)
+int delete(String statement, Object parameter)
+
+//限制返回行数的范围，或者提供自定义结果控制逻辑，这通常在数据集合庞大的情形下使用
+&lt;E&gt; List&lt;E&gt; selectList (String statement, Object parameter, RowBounds rowBounds)
+&lt;K,V&gt; Map&lt;K,V&gt; selectMap(String statement, Object parameter, String mapKey, RowBounds rowbounds)
+void select (String statement, Object parameter, ResultHandler&lt;T&gt; handler)
+void select (String statement, Object parameter, RowBounds rowBounds, ResultHandler&lt;T&gt; handler)
+
+</code></pre>
+<h2><a class="header" href="#quickstart" id="quickstart">quickstart</a></h2>
+<p>依赖: mybatis, mybatis-connector-java</p>
+<pre><code class="language-java">String resource = &quot;org/mybatis/example/mybatis-config.xml&quot;;
+InputStream inputStream = Resources.getResourceAsStream(resource);
+//或者可以这样, MyBatis 包含一个名叫 Resources 的工具类，它包含一些实用方法，可使从 classpath 或其他位置加载资源文件更加容易。
+InputStream is = Tests.class.getClassLoader().getResourceAsStream(resource);
+            // Thread.currentThread().getContextClassLoader().getResourceAsStream
+// SqlSessionFactory 一旦被创建就应该在应用的运行期间一直存在, SqlSessionFactory 的最佳作用域是应用作用域。有很多方法可以做到，最简单的就是使用单例模式或者静态单例模式。
+SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+// 每个线程都应该有它自己的 SqlSession 实例。SqlSession 的实例不是线程安全的，因此是不能被共享的，所以它的最佳的作用域是请求或方法作用域。
+SqlSession session = sqlSessionFactory.openSession([TransactionIsolationLevel.READ_COMMITTED]);// 可选指定事务的隔离级别
+
+// 通过xml定义的sql
+try {
+  Blog blog = (Blog) session.selectOne(&quot;org.mybatis.example.BlogMapper.selectBlog&quot;, 101);
+} finally {
+  session.close();// 重要, 每次返回一个响应, 都要关闭session
+}
+
+// 通过mapper接口定义, 注解
+try {
+  BlogMapper mapper = session.getMapper(BlogMapper.class);
+  Blog blog = mapper.selectBlog(101);
+} finally {
+  session.close();
+}
+</code></pre>
+<p>mybatis-config.xml:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+  PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+  &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+  &lt;environments default=&quot;development&quot;&gt;
+    &lt;environment id=&quot;development&quot;&gt;&lt;!-- environment 元素体中包含了事务管理和连接池的配置 --&gt;
+      &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+      &lt;dataSource type=&quot;POOLED&quot;&gt;
+        &lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&gt;
+        &lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&gt;
+        &lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&gt;
+      &lt;/dataSource&gt;
+    &lt;/environment&gt;
+  &lt;/environments&gt;
+  &lt;mappers&gt;&lt;!-- mappers 元素则是包含一组 mapper 映射器 --&gt;
+    &lt;mapper resource=&quot;org/mybatis/example/BlogMapper.xml&quot;/&gt;
+  &lt;/mappers&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>基于xml的sql(mapper文件):</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+  PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+  &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+  &lt;!-- 在命名空间“org.mybatis.example.BlogMapper”中定义了一个名为“selectBlog”的映射语句，这样它就允许你使用指定的完全限定名“org.mybatis.example.BlogMapper.selectBlog”来调用映射语句 --&gt;
+&lt;mapper namespace=&quot;org.mybatis.example.BlogMapper&quot;&gt;
+  &lt;select id=&quot;selectBlog&quot; resultType=&quot;Blog&quot;&gt;
+    select * from Blog where id = #{id}
+  &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+<p>基于注解定义sql:</p>
+<pre><code class="language-java">package org.mybatis.example;
+public interface BlogMapper {
+  @Select(&quot;SELECT * FROM blog WHERE id = #{id}&quot;)/* 如果太复杂, 可以写到sql配置文件中 */
+  Blog selectBlog(int id);
+}
+</code></pre>
+<h1><a class="header" href="#使用mapper代理的方式开发dao" id="使用mapper代理的方式开发dao">使用mapper代理的方式开发dao</a></h1>
+<p>如果使用原来的方法开发dao, 是先定义dao接口, 然后实现类: </p>
+<pre><code class="language-java">public class UserDaoImpl implements UserDao {
+ 
+	// SqlSessionFactory应该是单例存在，不应该在具体的实例中去创建，所以要外部依赖注入
+	private SqlSessionFactory sqlSessionFactory;
+ 
+	public UserDaoImpl(SqlSessionFactory sqlSessionFactory) {
+			this.sqlSessionFactory = sqlSessionFactory;
+	}
+ 
+	@Override
+	public User findUserById(int id) {
+			// 创建SqlSession
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+            // test.findUserById, 格式为 namespace.sqlId
+			User user = sqlSession.selectOne(&quot;test.findUserById&quot;, id);
+			// 关闭SqlSession
+			sqlSession.close();
+			return user;
+	}
+ 
+	@Override
+	public List&lt;User&gt; findUsersByName(String name) {
+			// 创建SqlSession
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			List&lt;User&gt; list = sqlSession.selectList(&quot;test.findUsersByName&quot;, name);
+			// 关闭SqlSession
+			sqlSession.close();
+			return list;
+	}
+ 
+}
+
+</code></pre>
+<p>这样存在大量模版编码, 新的方式: Mapper代理方式（mapper接口代替dao接口, mybatis自动生成接口的代理实现类）</p>
+<p>1、mapper接口的全限定名要和mapper映射文件的namespace值一致。
+2、mapper接口的方法名称要和mapper映射文件的statement的id一致。
+3、mapper接口的方法参数类型要和mapper映射文件的statement的parameterType值一致。
+4、mapper接口的方法返回值类型要和mapper映射文件的statement的resultType值一致。</p>
+<pre><code class="language-java">public interface UserMapper {
+
+	User findUserById(int id);
+	List&lt;User&gt; findUserByName(String username);
+	void insertUser(User user);
+	User findUserRmap(int id);
+	List&lt;User&gt; findUser(UserQueryVO vo);
+	List&lt;OrdersExt&gt; findUserAndOrder();
+	List&lt;OrdersExt&gt; findOrdersAndDetailRmap();
+}
+////////////////////////////////////////
+// 测试
+@Test
+	public void test4() {
+		UserMapper userMapper = session.getMapper(UserMapper.class);
+		List&lt;User&gt; userList = userMapper.findUserByName(&quot;小明&quot;);
+		System.out.println(userList);
+	}
+	
+	@Test
+	public void test5() {
+		UserMapper userMapper = session.getMapper(UserMapper.class);
+		User user = userMapper.findUserById(1);
+		System.out.println(user);
+	}
+
+
+</code></pre>
+<p>UserMapper.xml(默认, 不是固定的): </p>
+<pre><code class="language-xml">&lt;!-- 属性namespace：mapper接口的权限定名 --&gt;
+&lt;mapper namespace=&quot;cn.xy.mapper.UserMapper&quot;&gt;
+    &lt;select id=&quot;findUserById&quot; parameterType=&quot;int&quot; resultType=&quot;cn.xy.po.User&quot; &gt;
+        select * from user where id = #{id}
+    &lt;/select&gt;
+    &lt;select id=&quot;findUserByName&quot; parameterType=&quot;java.lang.String&quot; resultType=&quot;cn.xy.po.User&quot;&gt;
+        select * from user where username like '%${value}%'
+    &lt;/select&gt;
+    &lt;insert id=&quot;insertUser&quot; parameterType=&quot;cn.xy.po.User&quot;&gt;
+      &lt;selectKey keyProperty=&quot;id&quot; resultType=&quot;int&quot; order=&quot;AFTER&quot;&gt;select LAST_INSERT_ID()&lt;/selectKey&gt;
+        insert into user 
+        (username, sex, birthday, address)
+        values
+        (#{username}, #{sex}, #{birthday}, #{address})
+&lt;/insert&gt;
+&lt;/ mapper&gt;
+
+</code></pre>
+<h1><a class="header" href="#mybatis的配置文件" id="mybatis的配置文件">mybatis的配置文件</a></h1>
+<h2><a class="header" href="#配置文件的各部分有顺序" id="配置文件的各部分有顺序">配置文件的各部分有顺序</a></h2>
+<pre><code>properties 属性
+settings 设置
+typeAliases 类型别名
+typeHandlers 类型处理器
+objectFactory 对象工厂
+plugins 插件
+environments 环境
+    environment 环境变量
+        transactionManager 事务管理器
+        dataSource 数据源
+databaseIdProvider 数据库厂商标识
+mappers 映射器
+</code></pre>
+<h2><a class="header" href="#properties" id="properties">properties</a></h2>
+<p>有三个地方可以配置properties</p>
+<ol>
+<li>
+<p>首先读取在 properties 元素体中指定的属性；</p>
+</li>
+<li>
+<p>其次，读取从 properties 元素的类路径 resource 或 url 指定的属性，且会覆盖已经指定了的重复属性；</p>
+</li>
+<li>
+<p>最后，读取作为方法参数传递的属性，且会覆盖已经从 properties 元素体和 resource 或 url 属性中加载了的重复属性。</p>
+</li>
+</ol>
+<p>第一和第二个:</p>
+<pre><code class="language-xml">&lt;properties resource=&quot;org/mybatis/example/config.properties&quot;&gt;&lt;!-- 首先被读取 --&gt;
+  &lt;property name=&quot;username&quot; value=&quot;dev_user&quot;/&gt;&lt;!-- 次之被读取, 可以在这里设置覆盖值 --&gt;
+  &lt;property name=&quot;password&quot; value=&quot;F2Fa3!33TYyg&quot;/&gt;
+  &lt;property name=&quot;org.apache.ibatis.parsing.PropertyParser.enable-default-value&quot; value=&quot;true&quot;/&gt; &lt;!-- 开启占位符默认值 --&gt;
+&lt;/properties&gt;
+</code></pre>
+<p>然后其中的属性就可以在整个配置文件中被用来替换需要动态配置的属性值</p>
+<pre><code class="language-xml">&lt;dataSource type=&quot;POOLED&quot;&gt;
+    &lt;!-- driver 和 url 属性将会由 config.properties 文件中对应的值来替换 --&gt;
+  &lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&gt;
+  &lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&gt;
+  &lt;!--  username 和 password 将会由 properties 元素中设置的相应值来替换 --&gt;
+  &lt;property name=&quot;username&quot; value=&quot;${username:xiaoyu}&quot;/&gt;&lt;!-- 从MyBatis 3.4.2开始，你可以为占位符指定一个默认值 --&gt;
+  &lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&gt;
+&lt;/dataSource&gt;
+</code></pre>
+<p>(第三个)
+属性也可以通过 SqlSessionFactoryBuilder.build()方法传递:</p>
+<pre><code class="language-java">
+// 创建 properties, environment...
+
+SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, props);// 最后被读取, 以这里设置的properties为准
+// ... or ...
+SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, environment, props);
+</code></pre>
+<h2><a class="header" href="#settings" id="settings">settings</a></h2>
+<pre><code class="language-xml">&lt;settings&gt;
+    &lt;!-- 打印查询语句, 实际就是指定日志实现, 这里指定的是&quot;标准输出&quot;, 即日志打印到console --&gt;
+    &lt;setting name=&quot;logImpl&quot; value=&quot;STDOUT_LOGGING&quot; /&gt;
+
+  &lt;!-- def:true 开发可能需要关闭 --&gt;
+  &lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;
+  &lt;setting name=&quot;lazyLoadingEnabled&quot; value=&quot;true&quot;/&gt;
+  &lt;!-- 允许 JDBC 支持自动生成主键 def:false --&gt;
+  &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;false&quot;/&gt;
+  &lt;setting name=&quot;autoMappingBehavior&quot; value=&quot;PARTIAL&quot;/&gt;
+  &lt;setting name=&quot;autoMappingUnknownColumnBehavior&quot; value=&quot;WARNING&quot;/&gt;
+  &lt;setting name=&quot;defaultExecutorType&quot; value=&quot;SIMPLE&quot;/&gt;
+  &lt;setting name=&quot;defaultStatementTimeout&quot; value=&quot;25&quot;/&gt;
+  &lt;setting name=&quot;defaultFetchSize&quot; value=&quot;100&quot;/&gt;
+  &lt;setting name=&quot;safeRowBoundsEnabled&quot; value=&quot;false&quot;/&gt;
+  &lt;!-- 数据库字段名和java属性命名规范映射, 一般打开 def:false --&gt;
+  &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot;/&gt;
+  &lt;!-- 默认值为 SESSION，这种情况下会缓存一个会话中执行的所有查询。 若设置值为 STATEMENT，本地会话仅用在语句执行上，对相同 SqlSession 的不同调用将不会共享数据 def:session --&gt;
+  &lt;setting name=&quot;localCacheScope&quot; value=&quot;SESSION&quot;/&gt;
+  &lt;!-- 当没有为参数提供特定的 JDBC 类型时，为空值指定 JDBC 类型 --&gt;
+  &lt;setting name=&quot;jdbcTypeForNull&quot; value=&quot;OTHER&quot;/&gt;
+  &lt;!-- 指定触发 lazyload 的对象方法 def: equals,clone,hashCode,toString--&gt;
+  &lt;setting name=&quot;lazyLoadTriggerMethods&quot; value=&quot;equals,clone,hashCode,toString&quot;/&gt;
+  &lt;!-- 指定当结果集中值为 null 的时候是否调用映射对象的 setter（map 对象时为 put）方法, 可用来做null 值初始化，def:false --&gt;
+  &lt;setting name=&quot;callSettersOnNulls&quot; value=&quot;false&quot;/&gt;
+  &lt;!-- 当返回行的所有列都是空时，MyBatis默认返回null。 当开启这个设置时，MyBatis会返回一个空实例 def:false --&gt;
+  &lt;setting name=&quot;returnInstanceForEmptyRow&quot; value=&quot;false&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
+<p><img src="Snipaste_2018-05-19_15-57-42.png"><img src="Snipaste_2018-05-19_15-59-12.png"><img src="Snipaste_2018-05-19_15-59-44.png"></p>
+<h2><a class="header" href="#typealiases" id="typealiases">typeAliases</a></h2>
+<p>类型别名是为 Java 类型设置一个短的名字。它只和 XML 配置有关，存在的意义仅在于用来减少类完全限定名的冗余</p>
+<pre><code class="language-xml">&lt;typeAliases&gt;
+  &lt;typeAlias alias=&quot;Author&quot; type=&quot;domain.blog.Author&quot;/&gt;
+  &lt;typeAlias alias=&quot;Blog&quot; type=&quot;domain.blog.Blog&quot;/&gt;&lt;!-- Blog可以用在任何使用domain.blog.Blog的地方 --&gt;
+  &lt;typeAlias alias=&quot;Comment&quot; type=&quot;domain.blog.Comment&quot;/&gt;
+  &lt;typeAlias alias=&quot;Post&quot; type=&quot;domain.blog.Post&quot;/&gt;
+  &lt;typeAlias alias=&quot;Section&quot; type=&quot;domain.blog.Section&quot;/&gt;
+  &lt;typeAlias alias=&quot;Tag&quot; type=&quot;domain.blog.Tag&quot;/&gt;
+&lt;/typeAliases&gt;
+</code></pre>
+<p>也可以指定一个包名，MyBatis 会在包名下面搜索需要的 Java Bean</p>
+<pre><code class="language-xml">&lt;typeAliases&gt;
+  &lt;!-- 每一个在包 domain.blog 中的 Java Bean，在没有注解的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名。 
+        比如 domain.blog.Author 的别名为 author；若有注解，则别名为其注解值 --&gt;
+  &lt;package name=&quot;domain.blog&quot;/&gt;
+&lt;/typeAliases&gt;
+</code></pre>
+<p>使用注解指定别名:</p>
+<pre><code class="language-java">@Alias(&quot;author&quot;)
+public class Author {
+    ...
+}
+</code></pre>
+<p>常见的 Java 类型内建的相应的类型别名。它们都是大小写不敏感的</p>
+<p><img src="Snipaste_2018-05-19_16-09-21.png"><img src="Snipaste_2018-05-19_16-09-53.png"></p>
+<h2><a class="header" href="#typehandlers" id="typehandlers">typeHandlers</a></h2>
+<p>类型处理器将获取的值以合适的方式转换成 Java 类型</p>
+<h3><a class="header" href="#jdbctype" id="jdbctype">JdbcType</a></h3>
+<img src="Snipaste_2018-05-20_10-34-36.png">
+<h3><a class="header" href="#默认类型处理器" id="默认类型处理器">默认类型处理器</a></h3>
+<p>下面是一些默认的类型处理器</p>
+<p><img src="Snipaste_2018-05-19_16-12-41.png"><img src="Snipaste_2018-05-19_16-13-18.png"><img src="Snipaste_2018-05-19_16-13-55.png"></p>
+<h3><a class="header" href="#自定义类型处理器" id="自定义类型处理器">自定义类型处理器</a></h3>
+<h4><a class="header" href="#怎么开发自定义类型处理器" id="怎么开发自定义类型处理器">怎么开发自定义类型处理器</a></h4>
+<p>实现 org.apache.ibatis.type.TypeHandler 接口， 或继承一个很便利的类 <code>org.apache.ibatis.type.BaseTypeHandler</code>， 然后可以选择性地将它映射到一个 JDBC 类型</p>
+<pre><code class="language-java">// ExampleTypeHandler.java
+/**
+可以通过两种方式来指定被关联的 JDBC 类型：
+1. 在类型处理器的xml配置元素上增加一个 jdbcType 属性（比如：jdbcType=&quot;VARCHAR&quot;）；
+2. 在类型处理器的类上（TypeHandler class）增加一个 @MappedJdbcTypes 注解来指定与其关联的 JDBC 类型列表。 如果在 jdbcType 属性中也同时指定，则注解方式将被忽略。
+*/
+@MappedJdbcTypes(JdbcType.VARCHAR)
+//@MappedTypes(String.class)
+public class ExampleTypeHandler extends BaseTypeHandler&lt;String&gt; {
+
+  // 泛型: 通过类型处理器的泛型，MyBatis 可以得知该类型处理器处理的 Java 类型，不过这种行为可以通过两种方法改变
+  /**
+  1. 在类型处理器的配置元素（typeHandler element）上增加一个 javaType 属性（比如：javaType=&quot;String&quot;）；
+  2. 在类型处理器的类上（TypeHandler class）增加一个 @MappedTypes 注解来指定与其关联的 Java 类型列表。 如果在 javaType 属性中也同时指定，则注解方式将被忽略
+  */
+  
+  /**
+  // 重新定义要发往数据库的数据, 另外三个方法中将从数据库读出的数据类型进行转换
+  * 为db 中不能为 null 的字段设置值
+  */
+  @Override 
+  public void setNonNullParameter(PreparedStatement ps, int i, String parameter, JdbcType jdbcType) throws SQLException {
+
+    ps.setString(i, parameter);// 这里没有做任何处理, 就存入数据库了
+
+    // 比如要做一下处理: 将Date类型的时间转为varchar类型， 当然，是为 BaseTypeHandler&lt;Date&gt; 开发的
+    // preparedStatement.setString(i, String.valueOf(date.getTime()));
+  }
+
+  /**
+  * 编辑从 db 中查出的数据， 转为 Java 类型
+  */
+  @Override
+  public String getNullableResult(ResultSet rs, String columnName) throws SQLException {
+    return rs.getString(columnName);
+    // return new Date(resultSet.getLong(s));
+  }
+
+  @Override
+  public String getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
+    return rs.getString(columnIndex);
+    //  return new Date(resultSet.getLong(i));
+  }
+
+  @Override
+  public String getNullableResult(CallableStatement cs, int columnIndex) throws SQLException {
+    return cs.getString(columnIndex);
+    //  return callableStatement.getDate(i);
+  }
+}
+</code></pre>
+<h4><a class="header" href="#怎么启用呢" id="怎么启用呢">怎么启用呢</a></h4>
+<p>启用了我们自定义的这个TypeHandler之后，数据的读写都会被这个类所过滤 </p>
+<p>同时使用这个的类型处理器将会覆盖已经存在的处理 Java 的 String 类型属性和 VARCHAR 参数及结果的类型处理器</p>
+<p>注册这个typeHandler有2种方式</p>
+<p>第一种: (这种方式只能解决读取时的数据转换问题)</p>
+<pre><code class="language-xml">&lt;!-- mybatis-config.xml --&gt;
+&lt;typeHandlers&gt;
+  &lt;typeHandler handler=&quot;org.mybatis.example.ExampleTypeHandler&quot;/&gt;
+&lt;/typeHandlers&gt;
+&lt;!-- or --&gt;
+&lt;typeHandlers&gt;
+    &lt;package name=&quot;org.sang.db&quot;/&gt;&lt;!-- Handler所在的包， 这会自动检测包下所有的 type handlers --&gt;
+&lt;/typeHandlers&gt;
+</code></pre>
+<p>第二种: 在 insert 和 select 元素中分别配置, 对应读和写 - 这种控制粒度更细</p>
+<pre><code class="language-xml">&lt;resultMap id=&quot;userResultMap&quot; type=&quot;org.sang.bean.User&quot;&gt;
+    &lt;result typeHandler=&quot;org.sang.db.MyDateTypeHandler&quot; column=&quot;regTime&quot; javaType=&quot;java.util.Date&quot;
+            jdbcType=&quot;VARCHAR&quot;
+            property=&quot;regTime&quot;/&gt;
+&lt;/resultMap&gt;
+&lt;select id=&quot;getUser&quot; resultMap=&quot;userResultMap&quot;&gt;
+    select * from user4
+&lt;/select&gt;
+&lt;insert id=&quot;insertUser&quot; parameterType=&quot;org.sang.bean.User&quot;&gt;
+    INSERT INTO user4(username,password,regTime) VALUES (#{username},#{password},#{regTime,javaType=Date,jdbcType=VARCHAR,typeHandler=org.sang.db.MyDateTypeHandler})
+&lt;/insert&gt;
+</code></pre>
+<h3><a class="header" href="#自动检索类型处理器" id="自动检索类型处理器">自动检索类型处理器</a></h3>
+<pre><code class="language-xml">&lt;!-- mybatis-config.xml --&gt;
+&lt;typeHandlers&gt;
+    &lt;!-- 此时, 只能通过注解方式来指定 JDBC 的类型 --&gt;
+  &lt;package name=&quot;org.mybatis.example&quot;/&gt;
+&lt;/typeHandlers&gt;
+</code></pre>
+<h3><a class="header" href="#泛型类型处理器" id="泛型类型处理器">泛型类型处理器</a></h3>
+<p>创建一个能够处理多个类的泛型类型处理器, 像 EnumTypeHandler 和 EnumOrdinalTypeHandler 都是泛型类型处理器</p>
+<pre><code class="language-java">//GenericTypeHandler.java
+public class GenericTypeHandler&lt;E extends MyObject&gt; extends BaseTypeHandler&lt;E&gt; {
+
+  private Class&lt;E&gt; type;
+
+  public GenericTypeHandler(Class&lt;E&gt; type) {
+    if (type == null) throw new IllegalArgumentException(&quot;Type argument cannot be null&quot;);
+    this.type = type;
+  }
+
+//   ...
+
+</code></pre>
+<h3><a class="header" href="#处理枚举类型" id="处理枚举类型">处理枚举类型</a></h3>
+<p>若想映射枚举类型 Enum，则需要从 EnumTypeHandler 或者 EnumOrdinalTypeHandler 中选一个来使用。</p>
+<pre><code class="language-xml">&lt;!-- mybatis-config.xml --&gt;
+&lt;typeHandlers&gt;
+  &lt;typeHandler handler=&quot;org.apache.ibatis.type.EnumOrdinalTypeHandler&quot; javaType=&quot;java.math.RoundingMode&quot;/&gt;
+&lt;/typeHandlers&gt;
+</code></pre>
+<h2><a class="header" href="#对象工厂objectfactory-自定义查询结果的实例化" id="对象工厂objectfactory-自定义查询结果的实例化">对象工厂（objectFactory）-自定义查询结果的实例化</a></h2>
+<p>MyBatis 每次创建结果对象的新实例时，它都会使用一个对象工厂（ObjectFactory）实例来完成。</p>
+<p>默认的对象工厂需要做的仅仅是实例化目标类，要么通过默认构造方法，要么在参数映射存在的时候通过参数构造方法来实例化。 如果想覆盖对象工厂的默认行为，则可以通过创建自己的对象工厂来实现</p>
+<pre><code class="language-java">// ExampleObjectFactory.java
+public class ExampleObjectFactory extends DefaultObjectFactory {
+
+  /*
+  * 处理默认构造方法
+  */
+  public Object create(Class type) {
+    return super.create(type);
+  }
+
+  // 处理带参数的构造方法
+  //
+  public Object create(Class type, List&lt;Class&gt; constructorArgTypes, List&lt;Object&gt; constructorArgs) {
+    return super.create(type, constructorArgTypes, constructorArgs);
+  }
+
+  /*此方法可以被用来配置 当前这个ObjectFactory，
+  * 在初始化 ObjectFactory 实例后，xml配置中 objectFactory 元素体中定义的属性会被传递给 setProperties 方法。
+  * 方法参数值来自: 下面 xml 中的配置
+  */
+  public void setProperties(Properties properties) {
+    super.setProperties(properties);
+  }
+  public &lt;T&gt; boolean isCollection(Class&lt;T&gt; type) {
+    return Collection.class.isAssignableFrom(type);
+  }}
+</code></pre>
+<pre><code class="language-xml">&lt;!-- mybatis-config.xml --&gt;
+&lt;objectFactory type=&quot;org.mybatis.example.ExampleObjectFactory&quot;&gt;
+  &lt;property name=&quot;someProperty&quot; value=&quot;100&quot;/&gt;&lt;!-- 属性会被传递给 setProperties 方法 --&gt;
+&lt;/objectFactory&gt;
+</code></pre>
+<h2><a class="header" href="#插件plugins拦截器" id="插件plugins拦截器">插件（plugins）拦截器</a></h2>
+<p>Mybatis 为我们提供了一个 Interceptor 接口，通过实现该接口就可以定义我们自己的拦截器。</p>
+<blockquote>
+<p>除了用插件来修改 MyBatis 核心行为之外，还可以通过完全覆盖配置类来达到目的。只需继承后覆盖其中的每个方法，再把它传递到 SqlSessionFactoryBuilder.build(myConfig) 方法即可。</p>
+</blockquote>
+<ul>
+<li>Executor (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)</li>
+<li>ParameterHandler (getParameterObject, setParameters)</li>
+<li>ResultSetHandler (handleResultSets, handleOutputParameters)</li>
+<li>StatementHandler (prepare, parameterize, batch, update, query)</li>
+</ul>
+<pre><code class="language-java">/**
+  * 打印 SQL
+  *
+  * 注解 @Intercepts 用于表明当前的对象是一个 Interceptor
+  * 而 @Signature则表明要拦截的接口、方法以及对应的参数类型。
+  */
+@Intercepts({@Signature(
+        type = Executor.class,
+        method = &quot;update&quot;,
+        args = {MappedStatement.class, Object.class}
+), @Signature(type = Executor.class, method = &quot;query&quot;,
+        args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class})})
+private static class SqlInterceptor implements Interceptor {
+    @Override
+    public Object intercept(Invocation invocation) throws Throwable {
+        MappedStatement mappedStatement = (MappedStatement) invocation.getArgs()[0];
+        Object parameter = null;
+        if (invocation.getArgs().length &gt; 1) {
+            parameter = invocation.getArgs()[1];
+        }
+
+        BoundSql boundSql = mappedStatement.getBoundSql(parameter);
+        Configuration configuration = mappedStatement.getConfiguration();
+        Object returnVal = invocation.proceed();
+
+        //获取sql语句
+        String sql = getSql(configuration, boundSql);
+        log.info(&quot;Mybatis 拦截器获取SQL:{}&quot;,sql);
+        return returnVal;
+    }
+
+    /**
+      * 在 plugin 方法中我们可以决定是否要进行拦截, 如果拦截, 就返回封装后的对象
+      * 如果不拦截, 则返回原始对象
+      *
+      * Mybatis 中有一个叫做Plugin 的类，里面有一个静态方法
+      * wrap(Object target,Interceptor interceptor)，通过该方法可以决定要返回的对象是目标对象还是对应的代理。
+      */
+    @Override
+    public Object plugin(Object o) {
+        // 表示始终拦截
+        return Plugin.wrap(o, this);
+    }
+
+    /**
+      * 用于在 Mybatis 配置文件中指定一些属性的。
+      */
+    @Override
+    public void setProperties(Properties properties) {
+    }
+
+    /**
+      * 获取SQL
+      * @param configuration
+      * @param boundSql
+      * @return
+      */
+    private String getSql(Configuration configuration, BoundSql boundSql) {
+        Object parameterObject = boundSql.getParameterObject();
+        List&lt;ParameterMapping&gt; parameterMappings = boundSql.getParameterMappings();
+        String sql = boundSql.getSql().replaceAll(&quot;[\\s]+&quot;, &quot; &quot;);
+        if (parameterObject == null || parameterMappings.size() == 0) {
+            return sql;
+        }
+        TypeHandlerRegistry typeHandlerRegistry = configuration.getTypeHandlerRegistry();
+        if (typeHandlerRegistry.hasTypeHandler(parameterObject.getClass())) {
+            sql = sql.replaceFirst(&quot;\\?&quot;, getParameterValue(parameterObject));
+        } else {
+            MetaObject metaObject = configuration.newMetaObject(parameterObject);
+            for (ParameterMapping parameterMapping : parameterMappings) {
+                String propertyName = parameterMapping.getProperty();
+                if (metaObject.hasGetter(propertyName)) {
+                    Object obj = metaObject.getValue(propertyName);
+                    sql = sql.replaceFirst(&quot;\\?&quot;, getParameterValue(obj));
+                } else if (boundSql.hasAdditionalParameter(propertyName)) {
+                    Object obj = boundSql.getAdditionalParameter(propertyName);
+                    sql = sql.replaceFirst(&quot;\\?&quot;, getParameterValue(obj));
+                }
+            }
+        }
+        return sql;
+    }
+
+    private String getParameterValue(Object obj) {
+        String value = null;
+        if (obj instanceof String) {
+            value = &quot;'&quot; + obj.toString() + &quot;'&quot;;
+        } else if (obj instanceof Date) {
+            DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, Locale.CHINA);
+            value = &quot;'&quot; + formatter.format(obj) + &quot;'&quot;;
+        } else {
+            if (obj != null) {
+                value = obj.toString();
+            } else {
+                value = &quot;&quot;;
+            }
+        }
+        return value;
+    }
+}
+</code></pre>
+<p>然后添加 interceptor: </p>
+<pre><code class="language-java">@Bean
+    public SqlSessionFactoryBean sqlSessionFactoryBean(DataSource dataSource) throws IOException {
+        SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+        factoryBean.setDataSource(dataSource);
+        if (StringUtils.isInvalid(mapperLocation)) {
+            throw new RuntimeException(&quot;&gt;&gt;&gt; mapper directory is invalid -&gt; &quot; + mapperLocation);
+        }
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        factoryBean.setMapperLocations(resolver.getResources(mapperLocation));
+        factoryBean.setPlugins(new Interceptor[]{this.pageHelper(), sql()});
+        return factoryBean;
+    }
+</code></pre>
+<h2><a class="header" href="#配置环境environments-数据源-事务管理" id="配置环境environments-数据源-事务管理">配置环境（environments）-数据源-事务管理</a></h2>
+<h3><a class="header" href="#怎么配置environment" id="怎么配置environment">怎么配置environment</a></h3>
+<p>开发、测试和生产环境需要有不同的配置</p>
+<p>尽管可以配置多个环境，每个 SqlSessionFactory 实例只能选择其一</p>
+<p>果你想连接两个数据库，就需要创建两个 SqlSessionFactory 实例，每个数据库对应一个</p>
+<pre><code class="language-java">
+// environment不传则是默认 env， 可以在 xml 中配置 默认 env
+
+SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, environment);
+SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader, environment, properties);
+
+</code></pre>
+<pre><code class="language-xml">&lt;environments default=&quot;development&quot;&gt;&lt;!-- 默认的环境 ID --&gt;
+  &lt;!-- 这个 env 会被设为 默认 --&gt;
+  &lt;environment id=&quot;development&quot;&gt;
+
+  &lt;!-- 如果你正在使用 Spring + MyBatis，则没有必要配置事务管理器， 因为 Spring 模块会使用自带的管理器来覆盖前面的配置 --&gt;
+
+    &lt;!-- 这个配置就是直接使用了 JDBC 的提交和回滚设置
+    - type=”[JDBC|MANAGED]
+     --&gt;
+    &lt;transactionManager type=&quot;JDBC&quot;&gt;
+      &lt;property name=&quot;...&quot; value=&quot;...&quot;/&gt;
+    &lt;/transactionManager&gt;
+      &lt;!-- 或者 --&gt;
+      &lt;!-- 这个配置几乎没做什么。它从来不提交或回滚一个连接，而是让容器来管理事务的整个生命周期（比如 JEE 应用服务器的上下文）。 默认情况下它会关闭连接，然而一些容器并不希望这样，因此需要将 closeConnection 属性设置为 false 来阻止它默认的关闭行为 --&gt;
+    &lt;transactionManager type=&quot;MANAGED&quot;&gt;
+        &lt;property name=&quot;closeConnection&quot; value=&quot;false&quot;/&gt;
+    &lt;/transactionManager&gt;
+    
+    &lt;!-- 有三种内建的数据源类型（也就是 type=”[UNPOOLED|POOLED|JNDI]”） --&gt;
+    &lt;dataSource type=&quot;POOLED&quot;&gt;
+      &lt;property name=&quot;driver&quot; value=&quot;${driver}&quot;/&gt;
+      &lt;property name=&quot;url&quot; value=&quot;${url}&quot;/&gt;
+      &lt;property name=&quot;username&quot; value=&quot;${username}&quot;/&gt;
+      &lt;property name=&quot;password&quot; value=&quot;${password}&quot;/&gt;
+    &lt;/dataSource&gt;
+  &lt;/environment&gt;
+&lt;/environments&gt;
+</code></pre>
+<h3><a class="header" href="#自定义mybatis事务管理" id="自定义mybatis事务管理">自定义mybatis事务管理</a></h3>
+<p>前面这两种事务管理器类型不过是类型别名，可以使用 TransactionFactory 接口的实现类的完全限定名或类型别名代替它们</p>
+<pre><code class="language-java">public interface TransactionFactory {
+  /*
+  - xml中的配置会传入
+  */
+  void setProperties(Properties props);  
+  
+  Transaction newTransaction(Connection conn);
+  Transaction newTransaction(DataSource dataSource, TransactionIsolationLevel level, boolean autoCommit);  
+}
+</code></pre>
+<p>也需要创建一个 Transaction 接口的实现类</p>
+<pre><code class="language-java">public interface Transaction {
+  Connection getConnection() throws SQLException;
+  void commit() throws SQLException;
+  void rollback() throws SQLException;
+  void close() throws SQLException;
+  Integer getTimeout() throws SQLException;
+}
+</code></pre>
+<p>使用这两个接口，可以完全自定义 MyBatis 对事务的处理</p>
+<h3><a class="header" href="#自定义数据源-第三方数据源" id="自定义数据源-第三方数据源">自定义数据源-第三方数据源</a></h3>
+<p>可以通过实现接口 org.apache.ibatis.datasource.DataSourceFactory 来使用第三方数据源：
+也可以继承 org.apache.ibatis.datasource.unpooled.UnpooledDataSourceFactory</p>
+<pre><code class="language-java">public interface DataSourceFactory {
+  void setProperties(Properties props);
+  DataSource getDataSource();
+}
+
+///////////////////////////////////
+
+public class C3P0DataSourceFactory extends UnpooledDataSourceFactory {
+
+  public C3P0DataSourceFactory() {
+    this.dataSource = new ComboPooledDataSource();
+  }
+}
+
+</code></pre>
+<p>然后需要在 xml 中配置使其工作</p>
+<pre><code class="language-xml">&lt;dataSource type=&quot;org.myproject.C3P0DataSourceFactory&quot;&gt;
+  &lt;property name=&quot;driver&quot; value=&quot;org.postgresql.Driver&quot;/&gt;
+  &lt;property name=&quot;url&quot; value=&quot;jdbc:postgresql:mydb&quot;/&gt;
+  &lt;property name=&quot;username&quot; value=&quot;postgres&quot;/&gt;
+  &lt;property name=&quot;password&quot; value=&quot;root&quot;/&gt;
+&lt;/dataSource&gt;
+
+</code></pre>
+<h2><a class="header" href="#对不同数据库的支持databaseidprovider" id="对不同数据库的支持databaseidprovider">对不同数据库的支持（databaseIdProvider）</a></h2>
+<p>MyBatis 可以根据不同的数据库厂商执行不同的语句</p>
+<p>这一特性是通过映射语句中的 databaseId 属性， 如果在Mapper.xml中同时找到带有 databaseId 和不带 databaseId 的相同语句，优先使用带databaseId</p>
+<pre><code class="language-xml">
+&lt;!-- DB_VENDOR databaseIdProvider 也可以自定义成别的 Provider， 通过接口 DatabaseIdProvider ，然后配置 type=实现类 --&gt;
+
+&lt;databaseIdProvider type=&quot;DB_VENDOR&quot;&gt;
+  &lt;property name=&quot;SQL Server&quot; value=&quot;sqlserver&quot;/&gt;
+  &lt;property name=&quot;DB2&quot; value=&quot;db2&quot;/&gt;        
+  &lt;property name=&quot;Oracle&quot; value=&quot;oracle&quot; /&gt;
+&lt;/databaseIdProvider&gt;
+
+</code></pre>
+<h2><a class="header" href="#指定映射器mappers位置" id="指定映射器mappers位置">指定映射器（mappers）位置</a></h2>
+<p>四种方法配置mybatis到哪里去找mapper的xml文件</p>
+<pre><code class="language-xml">&lt;!-- classpath --&gt;
+&lt;mappers&gt;
+  &lt;mapper resource=&quot;org/mybatis/builder/AuthorMapper.xml&quot;/&gt;
+  &lt;mapper resource=&quot;org/mybatis/builder/BlogMapper.xml&quot;/&gt;
+  &lt;mapper resource=&quot;org/mybatis/builder/PostMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+&lt;!-- 资源定位符（URL） --&gt;
+&lt;mappers&gt;
+  &lt;mapper url=&quot;file:///var/mappers/AuthorMapper.xml&quot;/&gt;
+  &lt;mapper url=&quot;file:///var/mappers/BlogMapper.xml&quot;/&gt;
+  &lt;mapper url=&quot;file:///var/mappers/PostMapper.xml&quot;/&gt;
+&lt;/mappers&gt;
+&lt;!-- 使用映射器接口实现类的完全限定类名 --&gt;
+&lt;mappers&gt;
+  &lt;mapper class=&quot;org.mybatis.builder.AuthorMapper&quot;/&gt;
+  &lt;mapper class=&quot;org.mybatis.builder.BlogMapper&quot;/&gt;
+  &lt;mapper class=&quot;org.mybatis.builder.PostMapper&quot;/&gt;
+&lt;/mappers&gt;
+&lt;!-- 将包内的映射器接口实现全部注册为映射器 --&gt;
+&lt;mappers&gt;
+  &lt;package name=&quot;org.mybatis.builder&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre>
+<h1><a class="header" href="#mapper映射配置xml文件" id="mapper映射配置xml文件">mapper映射配置xml文件</a></h1>
+<h2><a class="header" href="#mapperxml支持哪些元素" id="mapperxml支持哪些元素">mapper.xml支持哪些元素</a></h2>
+<pre><code>SQL 映射文件有很少的几个顶级元素（按照它们应该被定义的顺序）：
+
+cache – 给定命名空间的缓存配置。
+cache-ref – 其他命名空间缓存配置的引用。
+resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来加载对象。
+parameterMap – 已废弃！老式风格的参数映射。内联参数是首选,这个元素可能在将来被移除，这里不会记录。
+sql – 可被其他语句引用的可重用语句块。
+insert – 映射插入语句
+update – 映射更新语句
+delete – 映射删除语句
+select – 映射查询语句
+
+</code></pre>
+<h2><a class="header" href="#查询select元素" id="查询select元素">查询select元素</a></h2>
+<pre><code class="language-xml">&lt;!-- 接受一个 int（或 Integer）类型的参数，并返回一个 HashMap 类型的对象，其中的键是列名，值便是结果行中的对应值 --&gt;
+&lt;select id=&quot;selectPerson&quot; parameterType=&quot;int&quot; resultType=&quot;hashmap&quot;&gt;
+  SELECT * FROM PERSON WHERE ID = #{id}&lt;!-- 这样的一个参数 #{id} &lt;=&gt; 在 SQL 中会由一个“?”来标识，并被传递到一个新的预处理语句中 --&gt;
+&lt;/select&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;select
+  id=&quot;selectPerson&quot;
+  parameterType=&quot;int&quot; // 可选的， 因为 MyBatis 可以通过 TypeHandler 推断出具体传入语句的参数
+  resultType=&quot;hashmap&quot;  // 注意如果是集合情形，那应该是集合可以包含的类型，而不能是集合本身
+  resultMap=&quot;personResultMap&quot; // 外部 resultMap 的命名引用
+  flushCache=&quot;false&quot;// 将其设置为 true，任何时候只要语句被调用，都会导致本地缓存和二级缓存都会被清空，默认值：false， 对于 更新操作 默认true
+  useCache=&quot;true&quot;// 将其设置为 true，将会导致本条语句的结果被二级缓存，默认值：对 select 元素为 true
+  timeout=&quot;10000&quot;// 这个设置是在抛出异常之前，驱动程序等待数据库返回请求结果的秒数。默认值为 unset（依赖驱动）
+  fetchSize=&quot;256&quot;// 这是尝试影响驱动程序每次批量返回的结果行数和这个设置值相等。默认值为 unset（依赖驱动）
+  statementType=&quot;PREPARED&quot;// STATEMENT，PREPARED 或 CALLABLE 的一个。这会让 MyBatis 分别使用 Statement，PreparedStatement 或 CallableStatement，默认值：PREPARED。
+  databaseId=&quot;&quot;
+  resultSetType=&quot;FORWARD_ONLY&quot;,&gt;// upset 驱动决定
+</code></pre>
+<h2><a class="header" href="#insert-update-和-delete" id="insert-update-和-delete">insert, update 和 delete</a></h2>
+<pre><code class="language-xml">&lt;!-- attention: 最后一个字段末尾没有 &quot;,&quot; --&gt;
+&lt;insert id=&quot;userF01&quot; parameterType=&quot;io.github.xiaoyureed.sql.dto.UserF01InM01&quot;&gt;
+        INSERT INTO user (
+          id,
+          name,
+          pwd
+        )
+        VALUES (
+          #{id},
+          #{name},
+          #{password}
+        )
+&lt;/insert&gt;
+
+&lt;insert
+  id=&quot;insertAuthor&quot;
+  parameterType=&quot;domain.blog.Author&quot;// 可选, 因为 MyBatis 可以通过 TypeHandler 推断出具体传入语句的参数，默认值为 unset。
+  flushCache=&quot;true&quot;// 将其设置为 true，任何时候只要语句被调用，都会导致本地缓存和二级缓存都会被清空，默认值：true（对应插入、更新和删除语句）
+  statementType=&quot;PREPARED&quot;
+  useGeneratedKeys=&quot;&quot;// （仅对 insert 和 update 有用）这会令 MyBatis 使用 JDBC 的 getGeneratedKeys 方法来取出由数据库内部生成的主键（比如：像 MySQL 和 SQL Server 这样的关系数据库管理系统的自动递增字段），默认值：false
+  keyProperty=&quot;&quot;// （仅对 insert 和 update 有用）指定属性，MyBatis 会自动填充数据到指定的属性上. 默认：unset。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表。
+  keyColumn=&quot;&quot;// （仅对 insert 和 update 有用）通过生成的键值设置表中的列名，这个设置仅在某些数据库（像 PostgreSQL）是必须的，当主键列不是表中的第一列的时候需要设置。如果希望得到多个生成的列，也可以是逗号分隔的属性名称列表
+  databaseId=&quot;&quot;
+  timeout=&quot;20&quot;&gt;
+
+&lt;update
+  id=&quot;updateAuthor&quot;
+  parameterType=&quot;domain.blog.Author&quot;
+  flushCache=&quot;true&quot;
+  statementType=&quot;PREPARED&quot;
+  timeout=&quot;20&quot;&gt;
+
+&lt;delete
+  id=&quot;deleteAuthor&quot;
+  parameterType=&quot;domain.blog.Author&quot;
+  flushCache=&quot;true&quot;
+  statementType=&quot;PREPARED&quot;
+  timeout=&quot;20&quot;&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 主键自动生成， 见下面的demo --&gt;
+&lt;selectKey
+  keyProperty=&quot;id&quot;// selectKey 语句结果应该被设置的目标属性
+  keyColumn=&quot;&quot;// 匹配属性的返回结果集中的列名称
+  resultType=&quot;int&quot;// 结果的类型, 可选
+  order=&quot;BEFORE&quot;// 这可以被设置为 BEFORE 或 AFTER。如果设置为 BEFORE，那么它会首先选择主键，设置 keyProperty 然后执行插入语句。如果设置为 AFTER，那么先执行插入语句，然后是 selectKey 元素
+  statementType=&quot;PREPARED&quot;&gt;
+</code></pre>
+<p>看看具体demo</p>
+<pre><code class="language-xml">&lt;insert id=&quot;insertAuthor&quot;&gt;
+  insert into Author (id,username,password,email,bio)
+  values (#{id},#{username},#{password},#{email},#{bio})
+&lt;/insert&gt;
+&lt;!-- 使用自动生成主键 --&gt;
+&lt;insert id=&quot;insertAuthor&quot; useGeneratedKeys=&quot;true&quot;
+    keyProperty=&quot;id&quot;&gt; // id ：java对象的属性 
+  insert into Author (username,password,email,bio)
+  values (#{username},#{password},#{email},#{bio})
+&lt;/insert&gt;
+&lt;!-- 如果你的数据库还支持多行插入, 你也可以传入一个Authors数组或集合， --&gt;
+&lt;insert id=&quot;insertAuthor&quot; useGeneratedKeys=&quot;true&quot;
+    keyProperty=&quot;id&quot;&gt;
+  insert into Author (username, password, email, bio) values
+  &lt;foreach item=&quot;item&quot; collection=&quot;list&quot; separator=&quot;,&quot;&gt;
+    (#{item.username}, #{item.password}, #{item.email}, #{item.bio})
+  &lt;/foreach&gt;
+&lt;/insert&gt;
+
+&lt;insert id=&quot;insertAuthor&quot;&gt;
+  &lt;!-- 另一种方式 自动 id ， 不推荐--&gt;
+  &lt;selectKey keyProperty=&quot;id&quot; resultType=&quot;int&quot; order=&quot;BEFORE&quot;&gt;
+    select CAST(RANDOM()*1000000 as INTEGER) a from SYSIBM.SYSDUMMY1
+  &lt;/selectKey&gt;
+  insert into Author
+    (id, username, password, email,bio, favourite_section)
+  values
+    (#{id}, #{username}, #{password}, #{email}, #{bio}, #{favouriteSection,jdbcType=VARCHAR})
+&lt;/insert&gt;
+
+&lt;update id=&quot;updateAuthor&quot;&gt;
+  update Author set
+    username = #{username},
+    password = #{password},
+    email = #{email},
+    bio = #{bio}
+  where id = #{id}
+&lt;/update&gt;
+
+&lt;delete id=&quot;deleteAuthor&quot;&gt;
+  delete from Author where id = #{id}
+&lt;/delete&gt;
+</code></pre>
+<h2><a class="header" href="#sql元素-重用sql" id="sql元素-重用sql">sql元素-重用sql</a></h2>
+<p>定义可重用的 SQL 代码段，可以包含在其他语句中</p>
+<pre><code class="language-xml">&lt;sql id=&quot;userColumns&quot;&gt; ${alias}.id,${alias}.username,${alias}.password &lt;/sql&gt;
+
+&lt;select id=&quot;selectUsers&quot; resultType=&quot;map&quot;&gt;
+  select
+    &lt;include refid=&quot;userColumns&quot;&gt;&lt;property name=&quot;alias&quot; value=&quot;t1&quot;/&gt;&lt;/include&gt; ,
+    &lt;include refid=&quot;userColumns&quot;&gt;&lt;property name=&quot;alias&quot; value=&quot;t2&quot;/&gt;&lt;/include&gt;
+  from some_table t1
+    cross join some_table t2
+&lt;/select&gt;
+
+&lt;!-- 属性值也可以被传入 include 元素的 refid 属性里 --&gt;
+&lt;include refid=&quot;${include_target}&quot;/&gt;
+
+&lt;sql id=&quot;sometable&quot;&gt;
+  ${prefix}Table
+&lt;/sql&gt;
+
+&lt;sql id=&quot;someinclude&quot;&gt;
+  from
+    &lt;include refid=&quot;${include_target}&quot;/&gt;
+&lt;/sql&gt;
+
+&lt;select id=&quot;select&quot; resultType=&quot;map&quot;&gt;
+  select
+    field1, field2, field3
+  &lt;include refid=&quot;someinclude&quot;&gt;
+    &lt;property name=&quot;prefix&quot; value=&quot;Some&quot;/&gt;
+    &lt;property name=&quot;include_target&quot; value=&quot;sometable&quot;/&gt;
+  &lt;/include&gt;
+&lt;/select&gt;
+</code></pre>
+<h2><a class="header" href="#动态sql" id="动态sql">动态sql</a></h2>
+<h3><a class="header" href="#if" id="if">if</a></h3>
+<pre><code class="language-xml">&lt;!-- if --&gt;
+&lt;select id=&quot;findActiveBlogLike&quot;
+     resultType=&quot;Blog&quot;&gt;
+  SELECT * FROM BLOG WHERE state = ‘ACTIVE’
+  &lt;if test=&quot;title != null&quot;&gt;
+    AND title like #{title}
+  &lt;/if&gt;
+  &lt;if test=&quot;author != null and author.name != null&quot;&gt;
+    AND author_name like #{author.name}
+  &lt;/if&gt;
+&lt;/select&gt;
+
+</code></pre>
+<h3><a class="header" href="#choosewhenotherwise-多个when中择其一" id="choosewhenotherwise-多个when中择其一">choose,when,otherwise-多个when中择其一</a></h3>
+<pre><code class="language-xml">
+&lt;!-- choose, when, otherwise 不想应用到所有的条件语句，而只想从中择其一项 --&gt;
+&lt;select id=&quot;findActiveBlogLike&quot;
+     resultType=&quot;Blog&quot;&gt;
+  SELECT * FROM BLOG WHERE state = ‘ACTIVE’
+  &lt;choose&gt;
+    &lt;when test=&quot;title != null&quot;&gt;
+      AND title like #{title}
+    &lt;/when&gt;
+    &lt;when test=&quot;author != null and author.name != null&quot;&gt;
+      AND author_name like #{author.name}
+    &lt;/when&gt;
+    &lt;otherwise&gt;
+      AND featured = 1
+    &lt;/otherwise&gt;
+  &lt;/choose&gt;
+&lt;/select&gt;
+
+</code></pre>
+<h3><a class="header" href="#wheresettrim-除去sql中的关键字" id="wheresettrim-除去sql中的关键字">where,set,trim-除去sql中的关键字</a></h3>
+<pre><code class="language-xml">
+&lt;!-- trim, where, set --&gt;
+
+&lt;select id=&quot;findActiveBlogLike&quot;
+     resultType=&quot;Blog&quot;&gt;
+  SELECT * FROM BLOG 
+  &lt;!-- where特别有用, 将 where关键字提取出来, sql 适用性更强 (避免最终sql是这样 &quot;SELECT * FROM BLOG WHERE&quot;) --&gt;
+  &lt;!-- where 元素只会在至少有一个子元素的条件返回 SQL 子句的情况下才去插入“WHERE”子句。而且，若语句的开头为“AND”或“OR”，where 元素也会将它们去除。 --&gt;
+  &lt;where&gt; 
+    &lt;if test=&quot;state != null&quot;&gt;
+         state = #{state}
+    &lt;/if&gt; 
+    &lt;if test=&quot;title != null&quot;&gt;
+        AND title like #{title}
+    &lt;/if&gt;
+    &lt;if test=&quot;author != null and author.name != null&quot;&gt;
+        AND author_name like #{author.name}
+    &lt;/if&gt;
+  &lt;/where&gt;
+&lt;/select&gt;
+&lt;!-- trim是更普适的元素, 这里的trim元素作用和where元素等价 --&gt;
+&lt;!-- 它的作用是移除所有指定在 prefixOverrides 属性中的内容，并且插入 prefix 属性中指定的内容。 --&gt;
+&lt;trim prefix=&quot;WHERE&quot; prefixOverrides=&quot;AND |OR &quot;&gt;
+  ... 
+&lt;/trim&gt;
+
+&lt;!-- 类似的用于动态更新语句的解决方案叫做 set。set 元素可以用于动态包含需要更新的列，而舍去其它的 --&gt;
+&lt;update id=&quot;updateAuthorIfNecessary&quot;&gt;
+  update Author
+&lt;!-- set 元素会动态前置 SET 关键字，同时也会删掉无关的逗号 --&gt;
+    &lt;set&gt;
+      &lt;if test=&quot;username != null&quot;&gt;username=#{username},&lt;/if&gt;
+      &lt;if test=&quot;password != null&quot;&gt;password=#{password},&lt;/if&gt;
+      &lt;if test=&quot;email != null&quot;&gt;email=#{email},&lt;/if&gt;
+      &lt;if test=&quot;bio != null&quot;&gt;bio=#{bio}&lt;/if&gt;
+    &lt;/set&gt;
+  where id=#{id}
+&lt;/update&gt;
+&lt;!-- set元素等价于 --&gt;
+&lt;trim prefix=&quot;SET&quot; suffixOverrides=&quot;,&quot;&gt;
+  ...
+&lt;/trim&gt;
+
+&lt;!-- foreach --&gt;
+&lt;select id=&quot;selectPostIn&quot; resultType=&quot;domain.blog.Post&quot;&gt;
+  SELECT *
+  FROM POST P
+  WHERE ID in
+  &lt;!-- index 是当前迭代的次数，item 的值是本次迭代获取的元素。当使用 Map 对象（或者 Map.Entry 对象的集合）时，index 是键，item 是值。 --&gt;
+  &lt;!-- collection=&quot;list&quot; 接受 Java 中传过来的可迭代值 --&gt;
+  &lt;foreach item=&quot;item&quot; index=&quot;index&quot; collection=&quot;list&quot;
+      open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;
+        #{item}
+  &lt;/foreach&gt;
+&lt;/select&gt;
+
+&lt;!-- bind 元素可以从 OGNL 表达式中创建一个变量并将其绑定到上下文。 --&gt;
+&lt;select id=&quot;selectBlogsLike&quot; resultType=&quot;Blog&quot;&gt;
+  &lt;bind name=&quot;pattern&quot; value=&quot;'%' + _parameter.getTitle() + '%'&quot; /&gt;
+  SELECT * FROM BLOG
+  WHERE title LIKE #{pattern}
+&lt;/select&gt;
+
+</code></pre>
+<h3><a class="header" href="#多数据库支持" id="多数据库支持">多数据库支持</a></h3>
+<pre><code class="language-xml">
+&lt;!-- 多数据库支持 --&gt;
+&lt;!-- 一个配置了“_databaseId”变量的 databaseIdProvider 可用于动态代码中，这样就可以根据不同的数据库厂商构建特定的语句 --&gt;
+&lt;insert id=&quot;insert&quot;&gt;
+  &lt;selectKey keyProperty=&quot;id&quot; resultType=&quot;int&quot; order=&quot;BEFORE&quot;&gt;
+    &lt;if test=&quot;_databaseId == 'oracle'&quot;&gt;
+      select seq_users.nextval from dual
+    &lt;/if&gt;
+    &lt;if test=&quot;_databaseId == 'db2'&quot;&gt;
+      select nextval for seq_users from sysibm.sysdummy1&quot;
+    &lt;/if&gt;
+  &lt;/selectKey&gt;
+  insert into users values (#{id}, #{name})
+&lt;/insert&gt;
+
+</code></pre>
+<h3><a class="header" href="#动态-sql-中的可插拔脚本语言如apache-velocity-" id="动态-sql-中的可插拔脚本语言如apache-velocity-">动态 SQL 中的可插拔脚本语言(如Apache Velocity )</a></h3>
+<p>可以通过实现以下接口来插入一种语言：</p>
+<pre><code class="language-java">public interface LanguageDriver {
+  ParameterHandler createParameterHandler(MappedStatement mappedStatement, Object parameterObject, BoundSql boundSql);
+  SqlSource createSqlSource(Configuration configuration, XNode script, Class&lt;?&gt; parameterType);
+  SqlSource createSqlSource(Configuration configuration, String script, Class&lt;?&gt; parameterType);
+}
+</code></pre>
+<p>一旦设定了自定义语言驱动，你就可以在 mybatis-config.xml 文件中将它设置为默认语言</p>
+<pre><code class="language-xml">&lt;typeAliases&gt;
+  &lt;typeAlias type=&quot;org.sample.MyLanguageDriver&quot; alias=&quot;myLanguage&quot;/&gt;
+&lt;/typeAliases&gt;
+&lt;settings&gt;
+  &lt;setting name=&quot;defaultScriptingLanguage&quot; value=&quot;myLanguage&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
+<p>针对特殊的语句指定特定语言，可以通过如下的 lang 属性来完成</p>
+<pre><code class="language-xml">&lt;select id=&quot;selectBlog&quot; lang=&quot;myLanguage&quot;&gt;
+  SELECT * FROM BLOG
+&lt;/select&gt;
+</code></pre>
+<p>或者基于注解配置脚本语言</p>
+<pre><code class="language-java">public interface Mapper {
+  @Lang(MyLanguageDriver.class)
+  @Select(&quot;SELECT * FROM BLOG&quot;)
+  List&lt;Blog&gt; selectBlog();
+}
+</code></pre>
+<h2><a class="header" href="#参数parameters" id="参数parameters">参数（Parameters）</a></h2>
+<h3><a class="header" href="#常规用法" id="常规用法">常规用法</a></h3>
+<pre><code class="language-xml">&lt;select id=&quot;selectUsers&quot; resultType=&quot;User&quot;&gt;
+  select id, username, password
+  from users
+  where id = #{id}
+&lt;/select&gt;
+
+&lt;!-- 如果传入一个复杂的对象，行为就会有一点不同了 --&gt;
+&lt;!-- User的 id、username 和 password 属性将会被查找，然后将它们的值传入预处理语句的参数中 --&gt;
+&lt;insert id=&quot;insertUser&quot; parameterType=&quot;User&quot;&gt;
+  insert into users (id, username, password)
+  values (#{id}, #{username}, #{password})
+&lt;/insert&gt;
+
+&lt;!-- 类似的， 传递HashMap&lt;String, Object&gt;综合查询用户信息 --&gt;
+&lt;select id=&quot;findUserByHashmap&quot; parameterType=&quot;hashmap&quot; resultType=&quot;user&quot;&gt;
+    select * from user where id=#{id} and username like '%${username}%'
+&lt;/select&gt;
+
+
+</code></pre>
+<h3><a class="header" href="#在占位符里设置参数类型和特殊的类型处理器类" id="在占位符里设置参数类型和特殊的类型处理器类">在占位符里设置参数类型和特殊的类型处理器类</a></h3>
+<p>在占位符里设置参数类型和特殊的类型处理器类</p>
+<pre><code class="language-xml">
+#{property,javaType=int,jdbcType=NUMERIC,typeHandler=MyTypeHandler}
+
+&lt;!-- 比如： --&gt;
+#{age,javaType=int,jdbcType=NUMERIC,typeHandler=MyTypeHandler}
+</code></pre>
+<p>对于数值类型，还有一个小数保留位数的设置，来确定小数点后保留的位数。</p>
+<pre><code class="language-xml">#{height,javaType=double,jdbcType=NUMERIC,numericScale=2}
+</code></pre>
+<h3><a class="header" href="#两种字符串替换方式-区别" id="两种字符串替换方式-区别">两种字符串替换方式-#$区别</a></h3>
+<p>默认情况下,使用 #{} 格式的语法会导致 MyBatis 创建 PreparedStatement 参数并安全地设置参数（就像使用 ? 一样）。这样做更安全，更迅速，通常也是首选做法。</p>
+<p>不过有时就是想直接在 SQL 语句中插入一个不转义的字符串 ${xxx}</p>
+<h2><a class="header" href="#result-map属性字段映射" id="result-map属性字段映射">Result Map,属性字段映射</a></h2>
+<p>延迟加载 - <a href="#%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD">cheeck here</a></p>
+<h3><a class="header" href="#简单结果映射" id="简单结果映射">简单结果映射</a></h3>
+<pre><code class="language-xml">&lt;!-- 简单的映射 --&gt;
+&lt;select id=&quot;selectUsers&quot; resultType=&quot;map&quot;&gt;&lt;!-- 简单地将所有的列名映射到 HashMap 的键上, 值映射到hashmap的值上 --&gt;
+  select id, username, hashedPassword
+  from some_table
+  where id = #{id}
+&lt;/select&gt;
+
+&lt;!-- 进一步进化, 定义一个pojo, 将数据映射到它里面 --&gt;
+&lt;!-- MyBatis 会在幕后自动创建一个 ResultMap，再基于属性名来映射列到 JavaBean 的属性上 --&gt;
+
+&lt;select id=&quot;selectUsers&quot; resultType=&quot;User&quot;&gt;&lt;!-- 这里可以使用类型别名进行简化 --&gt;
+  select
+    user_id             as &quot;id&quot;,
+    user_name           as &quot;userName&quot;,
+    hashed_password     as &quot;hashedPassword&quot;
+  from some_table
+  where id = #{id}
+&lt;/select&gt;
+
+&lt;!-- 等价配置 - 使用resultMap解决属性和字段不一致， 实际开发用上面简单的方式就可以了 --&gt;
+
+&lt;resultMap id=&quot;userResultMap&quot; type=&quot;User&quot;&gt;
+
+  &lt;!-- id 和 result 都将一个列的值映射到一个简单数据类型(字符串,整型,双精度浮点数,日期等)的属性或字段。对于反则数据类型：javaType， jdbcType，typeHandler 需要指定 --&gt;
+
+  &lt;id property=&quot;id&quot; column=&quot;user_id&quot; /&gt;
+  &lt;result property=&quot;username&quot; column=&quot;user_name&quot;/&gt;
+  &lt;result property=&quot;password&quot; column=&quot;hashed_password&quot;/&gt;
+
+&lt;/resultMap&gt;
+
+&lt;select id=&quot;selectUsers&quot; resultMap=&quot;userResultMap&quot;&gt;
+  select user_id, user_name, hashed_password
+  from some_table
+  where id = #{id}
+&lt;/select&gt;
+</code></pre>
+<h3><a class="header" href="#resultmap高级结果映射" id="resultmap高级结果映射">resultMap高级结果映射</a></h3>
+<h4><a class="header" href="#resultmap总共有哪些元素" id="resultmap总共有哪些元素">resultMap总共有哪些元素</a></h4>
+<pre><code class="language-xml">&lt;!-- 超复杂的 Result Map --&gt;
+&lt;resultMap id=&quot;detailedBlogResultMap&quot; type=&quot;Blog&quot;&gt;&lt;!-- autoMapping: 如果设置这个属性，MyBatis将会为这个ResultMap开启或者关闭自动映射。这个属性会覆盖全局的属性 autoMappingBehavior。默认值为：unset。 --&gt;
+
+  &lt;constructor&gt;&lt;!-- 用于在实例化类时，注入结果到构造方法中 --&gt;
+    &lt;idArg column=&quot;blog_id&quot; javaType=&quot;int&quot;/&gt;&lt;!-- 标记出作为 ID 的结果可以帮助提高整体性能 --&gt;
+    &lt;arg/&gt;&lt;!-- 将被注入到构造方法的一个普通结果 --&gt;
+  &lt;/constructor&gt;
+
+  &lt;id /&gt;
+  &lt;!-- 注入到字段或 JavaBean 属性的普通结果,  property支持复杂形式的属性导航如 address.street.number, 此外, 还支持 typeHandler --&gt;
+  &lt;result property=&quot;title&quot; column=&quot;blog_title&quot;/&gt;
+
+  &lt;!-- 一个复杂类型的关联 --&gt;
+  &lt;association property=&quot;author&quot; javaType=&quot;Author&quot;&gt;
+    &lt;id property=&quot;id&quot; column=&quot;author_id&quot;/&gt;
+    &lt;result property=&quot;username&quot; column=&quot;author_username&quot;/&gt;
+    &lt;result property=&quot;password&quot; column=&quot;author_password&quot;/&gt;
+    &lt;result property=&quot;email&quot; column=&quot;author_email&quot;/&gt;
+    &lt;result property=&quot;bio&quot; column=&quot;author_bio&quot;/&gt;
+    &lt;result property=&quot;favouriteSection&quot; column=&quot;author_favourite_section&quot;/&gt;
+  &lt;/association&gt;
+
+  &lt;!-- 一个复杂类型的集合 --&gt;
+  &lt;collection property=&quot;posts&quot; ofType=&quot;Post&quot;&gt;
+    &lt;id property=&quot;id&quot; column=&quot;post_id&quot;/&gt;
+    &lt;result property=&quot;subject&quot; column=&quot;post_subject&quot;/&gt;
+    &lt;association property=&quot;author&quot; javaType=&quot;Author&quot;/&gt;
+    &lt;collection property=&quot;comments&quot; ofType=&quot;Comment&quot;&gt;
+      &lt;id property=&quot;id&quot; column=&quot;comment_id&quot;/&gt;
+    &lt;/collection&gt;
+    &lt;collection property=&quot;tags&quot; ofType=&quot;Tag&quot; &gt;
+      &lt;id property=&quot;id&quot; column=&quot;tag_id&quot;/&gt;
+    &lt;/collection&gt;
+    &lt;discriminator javaType=&quot;int&quot; column=&quot;draft&quot;&gt;&lt;!-- discriminator: 使用结果值来决定使用哪个 resultMap --&gt;
+      &lt;case value=&quot;1&quot; resultType=&quot;DraftPost&quot;/&gt;
+    &lt;/discriminator&gt;
+  &lt;/collection&gt;
+  
+&lt;/resultMap&gt;
+</code></pre>
+<p>最好一步步地建立结果映射。单元测试可以在这个过程中起到很大帮助。如果你尝试一次创建一个像上面示例那样的巨大的结果映射， 那么很可能会出现错误而且很难去使用它来完成工作</p>
+<h4><a class="header" href="#constructor标签-构造方法" id="constructor标签-构造方法">constructor标签, 构造方法</a></h4>
+<pre><code class="language-xml">&lt;!-- MyBatis搜索一个声明了三个形参的的构造方法，以 java.lang.Integer, java.lang.String and int 的顺序排列。 --&gt;
+&lt;constructor&gt;
+   &lt;idArg column=&quot;id&quot; javaType=&quot;int&quot; name=&quot;id&quot; /&gt;&lt;!-- 如果类中存在名称和类型相同的属性，那么可以省略 javaType 。 --&gt;
+   &lt;arg column=&quot;age&quot; javaType=&quot;_int&quot; name=&quot;age&quot; /&gt;
+   &lt;arg column=&quot;username&quot; javaType=&quot;String&quot; name=&quot;username&quot; /&gt;
+&lt;/constructor&gt;
+</code></pre>
+<p>对应的构造方法:</p>
+<pre><code class="language-java">public class User {
+   //被注入到这个构造方法
+   // @Param 添加后可以不按照parameter顺序， 按照参数名称确定constructor
+   public User(@Param Integer id, @Param String username, @Param int age) {
+     //...
+  }
+//...
+}
+</code></pre>
+<h4><a class="header" href="#association关联" id="association关联">association关联</a></h4>
+<pre><code class="language-xml">&lt;!-- property支持映 射 到 一 些 复 杂 的 东 西 : “address.street.number --&gt;
+&lt;association property=&quot;author&quot; column=&quot;blog_author_id&quot; javaType=&quot;Author&quot;&gt;
+  &lt;id property=&quot;id&quot; column=&quot;author_id&quot;/&gt;
+  &lt;result property=&quot;username&quot; column=&quot;author_username&quot;/&gt;
+&lt;/association&gt;
+</code></pre>
+<h5><a class="header" href="#关联的嵌套查询" id="关联的嵌套查询">关联的嵌套查询</a></h5>
+<pre><code class="language-xml">&lt;!-- 博客的结果映射：描 述了“selectAuthor”语句应该被用来加载它的 author 属性 --&gt;
+&lt;resultMap id=&quot;blogResult&quot; type=&quot;Blog&quot;&gt;
+    &lt;!-- column也可以这样配置: column=&quot;{user_id=id, username=username}&quot; 这是针对符合主键的情况 --&gt;
+    &lt;!-- select 指定一个 select--&gt;
+    &lt;!-- fetchType 可选的。有效值为 lazy和eager。 如果使用了，它将取代全局配置参数lazyLoadingEnabled。 --&gt;
+
+  &lt;association property=&quot;author&quot; column=&quot;author_id&quot; javaType=&quot;Author&quot; select=&quot;selectAuthor&quot;/&gt;
+  
+&lt;/resultMap&gt;
+
+&lt;!-- 一个来加载博客, --&gt;
+&lt;select id=&quot;selectBlog&quot; resultMap=&quot;blogResult&quot;&gt;
+  SELECT * FROM BLOG WHERE ID = #{id}
+&lt;/select&gt;
+
+&lt;!-- 另外一个来加载作者 --&gt;
+&lt;select id=&quot;selectAuthor&quot; resultType=&quot;Author&quot;&gt;
+  SELECT * FROM AUTHOR WHERE ID = #{id}
+&lt;/select&gt;
+</code></pre>
+<p>但是对于大型数据集合和列表这种方式将不会表现很好, 会导致成百上千的 SQL 语句被执行 （即 <code>N+1 查询问题</code>：你执行了一个单独的 SQL 语句来获取结果列表(就是“+1”)，对返回的每条记录,你执行了一个查询语句来为每个加载细节(就是“N”)）, 那么引入了:</p>
+<p>关联的嵌套结果</p>
+<h5><a class="header" href="#关联的嵌套结果" id="关联的嵌套结果">关联的嵌套结果</a></h5>
+<pre><code class="language-xml">&lt;resultMap id=&quot;blogResult&quot; type=&quot;Blog&quot;&gt;
+  &lt;!-- id 必须指定， 提高mybatis性能 --&gt;
+  &lt;id property=&quot;id&quot; column=&quot;blog_id&quot; /&gt;
+  &lt;result property=&quot;title&quot; column=&quot;blog_title&quot;/&gt;
+  &lt;association property=&quot;author&quot; column=&quot;blog_author_id&quot; javaType=&quot;Author&quot; resultMap=&quot;authorResult&quot;/&gt;
+  &lt;!-- resultMap 重用 --&gt;
+  &lt;association property=&quot;coAuthor&quot;
+    resultMap=&quot;authorResult&quot;
+    columnPrefix=&quot;co_&quot; /&gt; &lt;!--效果等效于：select CA.id  as co_author_id 。。。 --&gt;
+&lt;/resultMap&gt;
+
+&lt;!-- 这里将这个author映射独立出来, 可以重用, 如果只是使用一次, 可以不独立出来, 见下面 --&gt;
+&lt;resultMap id=&quot;authorResult&quot; type=&quot;Author&quot;&gt;
+  &lt;id property=&quot;id&quot; column=&quot;author_id&quot;/&gt;
+  &lt;result property=&quot;username&quot; column=&quot;author_username&quot;/&gt;
+  &lt;result property=&quot;password&quot; column=&quot;author_password&quot;/&gt;
+  &lt;result property=&quot;email&quot; column=&quot;author_email&quot;/&gt;
+  &lt;result property=&quot;bio&quot; column=&quot;author_bio&quot;/&gt;
+&lt;/resultMap&gt;
+
+&lt;!-- //////////////////////////////////////////////////////////////// --&gt;
+&lt;!-- 不重用的写法 --&gt;
+&lt;resultMap id=&quot;blogResult&quot; type=&quot;Blog&quot;&gt;
+  &lt;id property=&quot;id&quot; column=&quot;blog_id&quot; /&gt;
+  &lt;result property=&quot;title&quot; column=&quot;blog_title&quot;/&gt;
+  &lt;association property=&quot;author&quot; javaType=&quot;Author&quot;&gt;
+    &lt;id property=&quot;id&quot; column=&quot;author_id&quot;/&gt;
+    &lt;result property=&quot;username&quot; column=&quot;author_username&quot;/&gt;
+    &lt;result property=&quot;password&quot; column=&quot;author_password&quot;/&gt;
+    &lt;result property=&quot;email&quot; column=&quot;author_email&quot;/&gt;
+    &lt;result property=&quot;bio&quot; column=&quot;author_bio&quot;/&gt;
+  &lt;/association&gt;
+&lt;/resultMap&gt;
+
+&lt;!-- //////////////////////////////////// --&gt;
+
+&lt;!-- select --&gt;
+&lt;select id=&quot;selectBlog&quot; resultMap=&quot;blogResult&quot;&gt;
+  select
+    B.id            as blog_id,
+    B.title         as blog_title,
+    B.author_id     as blog_author_id,
+    A.id            as author_id,
+    A.username      as author_username,
+    A.password      as author_password,
+    A.email         as author_email,
+    A.bio           as author_bio
+  from Blog B left outer join Author A on B.author_id = A.id
+  where B.id = #{id}
+&lt;/select&gt;
+</code></pre>
+<p>因为结果中的列名与resultMap中的列名不同, 怎么重用resultMap呢</p>
+<p>可以指定columnPrefix去重用映射co-author结果的resultMap</p>
+<pre><code class="language-xml">&lt;resultMap id=&quot;blogResult&quot; type=&quot;Blog&quot;&gt;
+  &lt;id property=&quot;id&quot; column=&quot;blog_id&quot; /&gt;
+  &lt;result property=&quot;title&quot; column=&quot;blog_title&quot;/&gt;
+  &lt;association property=&quot;author&quot;
+    resultMap=&quot;authorResult&quot; /&gt;
+  &lt;association property=&quot;coAuthor&quot;
+    resultMap=&quot;authorResult&quot;
+    columnPrefix=&quot;co_&quot; /&gt;
+&lt;/resultMap&gt;
+</code></pre>
+<h4><a class="header" href="#集合collection关联" id="集合collection关联">集合collection关联</a></h4>
+<p>相当于 1对n</p>
+<pre><code class="language-java">// Blog类
+private List&lt;Post&gt; posts;
+</code></pre>
+<pre><code class="language-xml">&lt;collection property=&quot;posts&quot; ofType=&quot;domain.blog.Post&quot;&gt;&lt;!-- ofType 标识集合的元素类型 --&gt;
+  &lt;id property=&quot;id&quot; column=&quot;post_id&quot;/&gt;
+  &lt;result property=&quot;subject&quot; column=&quot;post_subject&quot;/&gt;
+  &lt;result property=&quot;body&quot; column=&quot;post_body&quot;/&gt;
+&lt;/collection&gt;
+</code></pre>
+<h5><a class="header" href="#集合的嵌套查询" id="集合的嵌套查询">集合的嵌套查询</a></h5>
+<pre><code class="language-xml">&lt;resultMap id=&quot;blogResult&quot; type=&quot;Blog&quot;&gt;
+&lt;!-- javaType可以省略 --&gt;
+  &lt;collection property=&quot;posts&quot; javaType=&quot;ArrayList&quot; column=&quot;id&quot; ofType=&quot;Post&quot; select=&quot;selectPostsForBlog&quot;/&gt;
+&lt;/resultMap&gt;
+
+&lt;select id=&quot;selectBlog&quot; resultMap=&quot;blogResult&quot;&gt;
+  SELECT * FROM BLOG WHERE ID = #{id}
+&lt;/select&gt;
+
+&lt;select id=&quot;selectPostsForBlog&quot; resultType=&quot;Post&quot;&gt;
+  SELECT * FROM POST WHERE BLOG_ID = #{id}
+&lt;/select&gt;
+</code></pre>
+<h5><a class="header" href="#集合的嵌套结果" id="集合的嵌套结果">集合的嵌套结果</a></h5>
+<pre><code class="language-xml">&lt;resultMap id=&quot;blogResult&quot; type=&quot;Blog&quot;&gt;
+  &lt;id property=&quot;id&quot; column=&quot;blog_id&quot; /&gt;
+  &lt;result property=&quot;title&quot; column=&quot;blog_title&quot;/&gt;
+  &lt;collection property=&quot;posts&quot; ofType=&quot;Post&quot;&gt;
+    &lt;id property=&quot;id&quot; column=&quot;post_id&quot;/&gt;
+    &lt;result property=&quot;subject&quot; column=&quot;post_subject&quot;/&gt;
+    &lt;result property=&quot;body&quot; column=&quot;post_body&quot;/&gt;
+  &lt;/collection&gt;
+&lt;/resultMap&gt;
+&lt;!-- //////////////////////////////////////// --&gt;
+&lt;!-- 如果希望重用resultMap --&gt;
+&lt;resultMap id=&quot;blogResult&quot; type=&quot;Blog&quot;&gt;
+  &lt;id property=&quot;id&quot; column=&quot;blog_id&quot; /&gt;
+  &lt;result property=&quot;title&quot; column=&quot;blog_title&quot;/&gt;
+  &lt;collection property=&quot;posts&quot; ofType=&quot;Post&quot; resultMap=&quot;blogPostResult&quot; columnPrefix=&quot;post_&quot;/&gt;
+&lt;/resultMap&gt;
+
+&lt;resultMap id=&quot;blogPostResult&quot; type=&quot;Post&quot;&gt;
+  &lt;id property=&quot;id&quot; column=&quot;id&quot;/&gt;
+  &lt;result property=&quot;subject&quot; column=&quot;subject&quot;/&gt;
+  &lt;result property=&quot;body&quot; column=&quot;body&quot;/&gt;
+&lt;/resultMap&gt;
+
+&lt;!-- //////////////////////////////// --&gt;
+
+&lt;!-- select --&gt;
+&lt;select id=&quot;selectBlog&quot; resultMap=&quot;blogResult&quot;&gt;
+  select
+  B.id as blog_id,
+  B.title as blog_title,
+  B.author_id as blog_author_id,
+  P.id as post_id,
+  P.subject as post_subject,
+  P.body as post_body,
+  from Blog B
+  left outer join Post P on B.id = P.blog_id
+  where B.id = #{id}
+&lt;/select&gt;
+</code></pre>
+<h4><a class="header" href="#discriminator-鉴别器" id="discriminator-鉴别器">discriminator 鉴别器</a></h4>
+<p>像 Java 语言中的 switch 语句， 以demo说明</p>
+<p>有一个机动车父类，它有两个子类： Car 和 Bus</p>
+<p>ORM 映射有一个原则：对象模型细粒度，关系模型粗粒度。所以我们将所有的车都存储一张表里（t_vehicle），通过鉴别字段 vType 来区分车的类型（ &quot;c&quot; 代表 Car ， &quot;b&quot; 代表 Bus ）</p>
+<pre><code class="language-java">public class Vehicle {
+	//主键id
+	private String id;
+	//车的名字
+	private String name;
+	
+}
+
+public class Car extends Vehicle {
+	//车门的数量
+	private int carDoor;
+	//车的牌子
+	private String band;
+	
+}
+
+public class Bus extends Vehicle {
+	//公共汽车的容量
+	private int capacity;
+	
+}
+
+// mapper接口
+public interface VehicleMapper {
+	//根据id查询机动车
+	Vehicle getVechicleById(String id);
+	//根据名字查询小汽车
+	Car getCarByName(String name);
+}
+</code></pre>
+<p>映射配置</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;  
+&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; 
+&lt;mapper namespace=&quot;com.tgb.mybatis.data.VehicleMapper&quot;&gt;
+	&lt;select id=&quot;getVechicleById&quot; resultMap=&quot;vehicleMap&quot;&gt;
+		SELECT * FROM TB_VEHICLE WHERE VID = #{id}
+	&lt;/select&gt;
+	&lt;select id=&quot;getCarByName&quot; resultMap=&quot;vehicleMap&quot;&gt;
+		SELECT * FROM TB_VEHICLE WHERE VTYPE='c' AND VName = #{id}
+	&lt;/select&gt;
+   &lt;resultMap type=&quot;vehicle&quot; id=&quot;vehicleMap&quot;&gt;
+	   &lt;id property=&quot;id&quot; column=&quot;vId&quot;/&gt;
+	   &lt;result property=&quot;name&quot; column=&quot;vName&quot;/&gt;
+       &lt;!-- 根据鉴别字段的值自动映射成对应的子类 --&gt;
+	   &lt;discriminator javaType=&quot;string&quot; column=&quot;vType&quot;&gt;&lt;!-- vType是表的某个字段 --&gt;
+		   &lt;case value=&quot;c&quot; resultType=&quot;car&quot;&gt;
+			   &lt;result property=&quot;carDoor&quot; column=&quot;cardoor&quot;/&gt;
+			   &lt;result property=&quot;band&quot; column=&quot;band&quot;/&gt;
+		   &lt;/case&gt;
+		   &lt;case value=&quot;b&quot; resultType=&quot;bus&quot;&gt;
+			   &lt;result property=&quot;capacity&quot; column=&quot;capacity&quot;/&gt;
+		   &lt;/case&gt;
+	   &lt;/discriminator&gt;
+   &lt;/resultMap&gt;
+&lt;/mapper&gt;
+</code></pre>
+<h3><a class="header" href="#自动映射" id="自动映射">自动映射</a></h3>
+<pre><code class="language-xml">&lt;!--  id 和 userName列将被自动映射， hashed_password 列将根据配置映射 --&gt;
+&lt;select id=&quot;selectUsers&quot; resultMap=&quot;userResultMap&quot;&gt;
+  select
+    user_id             as &quot;id&quot;,
+    user_name           as &quot;userName&quot;,
+    hashed_password
+  from some_table
+  where id = #{id}
+&lt;/select&gt;
+
+&lt;!-- autoMapping=&quot;false&quot; 打开/关闭自动映射 --&gt;
+&lt;resultMap id=&quot;userResultMap&quot; type=&quot;User&quot; autoMapping=&quot;false&quot;&gt;
+  &lt;result property=&quot;password&quot; column=&quot;hashed_password&quot;/&gt;
+&lt;/resultMap&gt;
+
+</code></pre>
+<h1><a class="header" href="#缓存" id="缓存">缓存</a></h1>
+<p>references: http://www.mybatis.org/mybatis-3/zh/sqlmap-xml.html#cache， https://tech.meituan.com/mybatis_cache.html</p>
+<p>查询顺序: 二级缓存 ———&gt; 一级缓存——&gt; 数据库</p>
+<img src="Snipaste_2018-05-20_14-30-20.png" width="70%">
+<p>一级缓存指的是sqlsession级别。一级缓存内部含有一个数据模型（HashMap），map的key是通过sql语句、statement的id以及条件组成的。Value就是查询的结果集。</p>
+<p>二级缓存指的是mapper级别，即同一个namespace下的mapper文件(二级缓存是多个SqlSession共享的，其作用域是mapper的同一个namespace)，强调不同session之间缓存数据共享。二级缓存内部含有一个数据模型（HashMap），map的key是通过sql语句、statement的id以及条件组成的。Value就是查询的结果集。</p>
+<p>二级缓存中会有多个一级缓存，不同的一级缓存互相不影响。</p>
+<p>与Spring整合后，一级缓存会失效; 一级缓存默认是开启的, 二级缓存默认是关闭的</p>
+<h2><a class="header" href="#一级缓存" id="一级缓存">一级缓存</a></h2>
+<h3><a class="header" href="#怎么开启一级缓存" id="怎么开启一级缓存">怎么开启一级缓存</a></h3>
+<p>怎么开启一级缓存</p>
+<p>只需在MyBatis的配置文件中，添加如下语句</p>
+<pre><code class="language-xml">&lt;!-- 共有两个选项，SESSION或者STATEMENT，默认是SESSION级别，即在一个MyBatis会话中执行的所有语句，都会共享这一个缓存。一种是STATEMENT级别，可以理解为缓存只对当前执行的这一个Statement有效 --&gt;
+
+&lt;setting name=&quot;localCacheScope&quot; value=&quot;SESSION&quot;/&gt;
+
+</code></pre>
+<h3><a class="header" href="#一级缓存分析" id="一级缓存分析">一级缓存分析</a></h3>
+<p>又叫 local stage , 本地缓存会被增删改、提交事务、关闭事务以及关闭 session 所清空</p>
+<p>组件结构：</p>
+<p><img src="Snipaste_2018-11-03_11-43-36.png" alt="alt" /></p>
+<p>同一个 sqlSession 效果示意图：</p>
+<img src="Snipaste_2018-05-20_14-35-19.png" width="70%">
+<ul>
+<li>第一次真正查询了数据库，后续的查询使用了一级缓存</li>
+<li>通过同一个 sqlSession 修改操作后执行相同查询，直接查询了数据库，此时一级缓存失效</li>
+</ul>
+<p>开启两个 sqlSession 示意图：</p>
+<p><img src="Snipaste_2018-11-03_12-05-22.png" alt="alt" /></p>
+<ul>
+<li>查询和修改操作在不同的 sqlSession 会读取到脏数据。这证明 一级缓存只在数据库会话（sqlSession）内部共享</li>
+</ul>
+<p>总结：</p>
+<ol>
+<li>MyBatis一级缓存的生命周期和SqlSession一致。</li>
+<li>MyBatis一级缓存内部设计简单，只是一个没有容量限定的HashMap，在缓存的功能性上有所欠缺。</li>
+<li>MyBatis的一级缓存最大范围是SqlSession内部，有多个SqlSession或者分布式的环境下，数据库写操作会引起脏数据，建议设定缓存级别为<code>Statement</code>。</li>
+</ol>
+<h2><a class="header" href="#二级缓存" id="二级缓存">二级缓存</a></h2>
+<h3><a class="header" href="#怎么开启二级缓存" id="怎么开启二级缓存">怎么开启二级缓存</a></h3>
+<p>一级缓存默认开启， spring整合后一级失效， 生效的只有二级缓存</p>
+<p>要开启二级缓存,先开启总开关</p>
+<pre><code class="language-xml">&lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;
+</code></pre>
+<p>然后开启mapper级别的开关:</p>
+<pre><code class="language-xml">&lt;mapper&gt;
+    &lt;!-- 声明这个namespace使用二级缓存 --&gt;
+    &lt;cache/&gt;
+
+    &lt;!-- 如果需要自定义缓存配置 --&gt;
+    &lt;!-- 
+    缓存策略:
+        LRU – 最近最少使用的:移除最长时间不被使用的对象。(默认)
+        FIFO – 先进先出:按对象进入缓存的顺序来移除它们。
+        SOFT – 软引用:移除基于垃圾回收器状态和软引用规则的对象。
+        WEAK – 弱引用:更积极地移除基于垃圾收集器状态和弱引用规则的对象。
+    --&gt;
+    &lt;cache type=&quot;&quot;     // cache使用的类型，默认是PerpetualCache, 可自定义
+    eviction=&quot;FIFO&quot;    //回收的策略
+    flushInterval=&quot;60000&quot; // 配置一定时间自动刷新缓存，单位是毫秒; 默认情况是unset,也就是没有刷新间隔,缓存仅仅调用更新语句时刷新。
+    size=&quot;512&quot;        //最多缓存对象的个数。
+    readOnly=&quot;true&quot;/&gt; //是否只读，若配置可读写，则需要对应的实体类能够序列化; 默认false(可读写), 是一份拷贝 这会慢一些,但是安全 --&gt;
+
+    &lt;!-- cache-ref代表引用别的命名空间的Cache配置，两个命名空间的操作使用的是同一个Cache --&gt;
+    &lt;cache-ref namespace=&quot;mapper.StudentMapper&quot;/&gt;
+
+&lt;/mapper&gt;
+</code></pre>
+<p>最后, 二级缓存需要查询结果映射的pojo对象实现<code>java.io.Serializable</code>接口实现序列化和反序列化操作</p>
+<p>如果希望临时禁用二级缓存</p>
+<pre><code class="language-xml">&lt;select userCache=&quot;false&quot;&gt;&lt;/select&gt;&lt;!-- 默认是true --&gt;
+</code></pre>
+<h3><a class="header" href="#二级缓存分析" id="二级缓存分析">二级缓存分析</a></h3>
+<p>一级缓存中，其最大的共享范围就是一个SqlSession内部，如果多个SqlSession之间需要共享缓存，则需要使用到二级缓存</p>
+<p>组件示意图:</p>
+<p><img src="Snipaste_2018-11-03_12-27-08.png" alt="alt" /></p>
+<ul>
+<li>开启二级缓存后，会使用CachingExecutor装饰Executor</li>
+<li>进入一级缓存的查询流程前，先在CachingExecutor进行二级缓存的查询</li>
+<li>同一个namespace下的所有操作语句，都影响着同一个Cache，即二级缓存被多个SqlSession共享</li>
+<li>查询执行的流程就是 二级缓存 -&gt; 一级缓存 -&gt; 数据库</li>
+</ul>
+<p>二级缓存生效示意图: <a href="https://www.draw.io/?lightbox=1&amp;highlight=0000ff&amp;edit=_blank&amp;layers=1&amp;nav=1&amp;title=%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A1%A8%E5%8D%95.xml#R3VjbjuMoEP0apJmHadnG10fn0rv7MNJImdXOPBKbOKixyWLSSebrF2x8wSQz2Wx6W91RS40LqqBOUYcCAOfl8TeOdtvPLMcUeE5%2BBHABPM91Qk%2F%2BU5JTKwncsBUUnOR60CBYkR%2B409TSPclxbQwUjFFBdqYwY1WFM2HIEOfsYA7bMGrOukMFtgSrDFFb%2BhfJxbaVxl40yH%2FHpNh2M7th0vasUfZUcLav9HzAg5vm13aXqLOlHa23KGeHkQguAZxzxkTbKo9zTBW2HWyt3uOF3n7dHFfiGgUdp2dE99r1%2Bm%2B6wnVNWOWCZQRmc5BAsAxAugBJrBrxHMxS1Uge1V%2Frhjh10DXOY2XeBXB22BKBVzuUqd6D3CxSthUl1d16dswFPl70wO1xkfsNsxILfpJDtELY7ZlTFwv9fRgC53Zwb8dBg1qI9GYpetsDYLKhMTuPH%2FwJft6bxA%2FCa%2FHz7oBft94RgCXa7TBvsEtBGjWQxSCdKUmSgtgHS191SRyHMRbQrw2r75uwJlei2uv9J1TttLYAyVhJMu1vLTh76plOejXDVZ4qHpWfa8qyp69bUpkYbVglHlFJqHJw3hjznBWqavnv80oPWOn5hknmjDLerAA6zU%2F2ZHv%2B3IemXSjOLYKeIC9PBMQLLEY8ZgdjhHZwBuxOxjFFgjybM54LgJ7hCyNyLX2svSkFxZMY1mzPM6y1xmw8MeQ7E0PRxFDrsmVIhgqdRsN2akB9ecEwNOfxHOOUkI3W4rDZekyv239naFHgnQxvuiFV%2FmeN%2Bez0R%2F7B%2FWhtS5lxwtxoHNfkB1o3A9Ru0c7J0cEMBAspQXvB6raGUAqIkkJu1gXFG2VKpTGRR3uqxYKpbK9l8pOq%2BKo%2BFp%2F8%2ByR9n%2BVd%2FIIzWQ%2FPbMS7UKn%2F66SX5cZONTcUH3V%2Bj1M9o0ieXNkk0Qmlo6zV5YzSkwv8pgY9ODLgWvBdRenB9%2FxO8AVzIn3BXIcPH4n41gxywkh%2Ff2%2BtuIH%2Bnupczwltphm1jUETF%2BL3%2F%2FCEddS6N%2FJEOM3f8DqeuCWVwzO7KqSiTaFKtoumLdNbup2qEAwF5IM8ZEoiPnzsVORsY633lf2hE5hRCXw7%2B6OXyv7o7R75PZN8kqTgmkwSxsklJrmxUnhVCnAnJwS8tVQI4omh5IVKhUkd69%2B7VIjPlgqw5ZL3XS0E0Ayhf4YvXqxaSCzc87VdL1gsMYK6KybKY6FegR42lB2yLeLiIUcCrVGNL9y07oBdlEQGdrFdaEXQRs4qqG%2B689t31rdHtY5Js8GdSTZ5TZKN4C%2BuUdeSbOJNDF1ZZ%2F1bko0mZN5dIO9FstB%2BDyhPawlxfdVbinp48dVb1TIESfMaIyVpoyglsQ%2Fix%2BY9awZmy%2FdF0VFoxKW%2F2L5ARSc%2Fh2ffNsbD2zpc%2FgM%3D">check here</a></p>
+<p><img src="Snipaste_2018-11-03_12-46-56.png" alt="alt" /></p>
+<p>update操做会更新二级缓存 <a href="https://www.draw.io/?lightbox=1&amp;highlight=0000ff&amp;edit=_blank&amp;layers=1&amp;nav=1&amp;title=%E6%9C%AA%E5%91%BD%E5%90%8D%E8%A1%A8%E5%8D%95.xml#R5Vptb6M4EP41SN0PWwE2bx%2BTNL076VZaKXu6vY8OOAlXgrPgNMn%2B%2BhuDCWCTlqak3fSqSrUHv%2BBnZp4ZDzXQZL3%2FLSOb1RcW0cSwzWhvoDvDti3TteGPkBxKiWtZpWCZxZEcVAtm8U9azZTSbRzRvDWQM5bweNMWhixNachbMpJlbNcetmBJe9cNWVJNMAtJokv%2FjiO%2BKqW%2B7dXy32m8XFU7W25QPpmT8GGZsW0q9zNstCh%2BysdrUq0lD5qvSMR2DRGaGmiSMcbL1no%2FoYnAtoKtnHd%2F4unxvTOa8j4TpJ4eSbKVR89%2FJDOa5zFLLWPqGeOJESBj6hijOyPwRcOfGOORaAT34rc8Bj9U0BWHp2J5y0Dj3SrmdLYhoXi6A2MB2YqvE%2FlY7k4zTvcnT2AdcQF7o2xNeXaAIfvKtCSUh0oXsr%2BrFWdVcK%2BaSkNSSKSxLI9r14BBQ2LWjR82NQBoBKYkuyzjK7ZkKUmmtXRcQ2S24aD7mH9vtP8RQ249R3RTeLPvRd8MgkpQDgi8qv%2BVZjGcgWZy7X8p5wfpXmTLGYjqV%2FqTsU1LD%2BLNn9YCHJRts1COQtIzSbakcpQddCsrownh8WN7%2BdcAj54wXPsqDReZfQ3XHsBwq%2FdtALgmmw1YjsBuZIy8AjLfGI2FJBgZPjamWDwCHOsxGtDvDSvGbViDnqhibwhUdT7VAAnZOg7leXOesYdjiLELN45GIoBBd56w8OHbKk7bGC1Yyu%2FJOk7EASfFYrY5I2kOf77M5ICKgOpNJixhWfEGYGjiB56E2%2BzxqJr%2BHNBy%2BG5lNNB2OsCuZL1pQe7wlcXwLkdd2yr3%2B4oOS7aSs5phUFkIm8pCqjGUR9YWAlWRQ2PYRgzIT78wctv72GYrPEOjXLE2tiOm%2FeyvgxY53YB6R4s4jf7KaTY%2B%2FBHdWJ80swSP421Dy2ge%2FyTzYoCwFnk4GO2MDecOJCKk5GV0ERNIEi%2FBWO8SuhBLCTeOIacaSTEX4Wacg%2FPH6fJbEXs%2B42Gc%2Fujllf6cDq9HHYY4CJXi550e8ryNaC4Supf%2B3XT1MCEQuULF0eMkaXitzCMbqYB1a4LCW6kAtvGpXKBKLiCBcL1GggGrWI7sq3POywvsDpo4ob%2B34Qkt1Fpn8oSr%2Bq%2FbjyfOcWW3w6rchJculEJ7WbTBveHYI6GCOnO%2FhSCzjvnNp2oK7Nac9bG83zWdtlYcrHu%2Fdynv96435B%2BZ5DOQgtVmEtcPTjFJX1Z4L3e3Aqvt7upNr3daoOSSCKPLpAVYeWFn4LTA70wLUMkbHzszcE9Q%2F5tkBoGGezTXcwONERpQV4nDer8UpbbbRcJ24Ypk%2FDYinMxJTk%2FcqgbAzlfCpqvTqoc6kFOj61n3e%2F1%2Ben20arYp1XktofartbwNyXromStTX5INbGWhnjnVS0nW85V9%2FGFJFul3%2F%2FVhDhDnveomosiCRV1q6hpBUXkByaiYCBIfG%2F59UbsaG%2BPpx6Joz23p5XiJfYvsDT1VR0RXWUfEnqfjd7E6Iupx%2Bb1Gnj6Pkktz%2BlXKYY55bt6rlMNwcBlKVsthjj0wJTu6d0Pei8u8d7uBFIqKzPcGoIbFYHP3x1Z8egP6jOrOR0uJsf88YbiXItyussa18EXn5zn7ZXTR%2BoD2rnShZnDaF5C%2BdOEr12RbLcMPRBe%2BksGhoTO4HqWcSxVyTaWQ65lew%2BJM3eJeeZHQzfDXKti2K3pYpZ6%2BpukoEQa7Xi%2FTPMd6uoss%2BFiczWVW2SjOfqSw4ijfYDAO3jCs6JWW6wkrzSqsrVRhPX%2FYosG7Rhwr6CbwF7s1UiPBpb7XKpEND%2Fy9FutVLsEZ7v%2BhMFtNqVTYUV0cqjAL3fpf6ko11f%2B3iKb%2FAQ%3D%3D">check here</a></p>
+<p><img src="Snipaste_2018-11-03_13-02-02.png" alt="alt" /></p>
+<p>验证MyBatis的二级缓存不适应用于映射文件中存在多表查询的情况:</p>
+<pre><code class="language-java">@Test
+public void testCacheWithDiffererntNamespace() throws Exception {
+        SqlSession sqlSession1 = factory.openSession(true); 
+        SqlSession sqlSession2 = factory.openSession(true); 
+        SqlSession sqlSession3 = factory.openSession(true); 
+
+        StudentMapper studentMapper = sqlSession1.getMapper(StudentMapper.class);
+        StudentMapper studentMapper2 = sqlSession2.getMapper(StudentMapper.class);
+        ClassMapper classMapper = sqlSession3.getMapper(ClassMapper.class);
+
+        System.out.println(&quot;studentMapper读取数据: &quot; + studentMapper.getStudentByIdWithClassInfo(1));
+        // 带 class 信息的 User 被缓存
+        //
+        sqlSession1.close();
+
+        System.out.println(&quot;studentMapper2读取数据: &quot; + studentMapper2.getStudentByIdWithClassInfo(1));// 二级缓存命中
+
+        //修改 class 信息,
+        classMapper.updateClassName(&quot;特色一班&quot;,1);
+        // 不同的 mapper, namespace 也不同, 所以commit()后, StudentMapper 下的 cache感应不到 classMapper 下的变动, 没有更新缓存
+        //
+        sqlSession3.commit();
+
+        System.out.println(&quot;studentMapper2读取数据: &quot; + studentMapper2.getStudentByIdWithClassInfo(1));// 读取到的user 中的class 信息还是旧的, 造成脏读
+}
+
+</code></pre>
+<p>怎么解决多表查询中的脏读呢? - 可以使用Cache ref，让ClassMapper引用StudenMapper命名空间，这样两个映射文件对应的Sql操作都使用的是同一块缓存了</p>
+<p>不过这样做的后果是，缓存的粒度变粗了，多个Mapper namespace下的所有操作都会对缓存使用造成影响。</p>
+<p>总结:</p>
+<ol>
+<li>MyBatis的二级缓存相对于一级缓存来说，实现了SqlSession之间缓存数据的共享，同时粒度更加的细，能够到namespace级别，通过Cache接口实现类不同的组合，对Cache的可控性也更强。</li>
+<li>MyBatis在多表查询时，极大可能会出现脏数据，有设计上的缺陷，安全使用二级缓存的条件比较苛刻。</li>
+<li>在分布式环境下，由于默认的MyBatis Cache实现都是基于本地的，分布式环境下必然会出现读取到脏数据，需要使用集中式缓存将MyBatis的Cache接口实现，有一定的开发成本，直接使用Redis,Memcached等分布式缓存可能成本更低，安全性也更高。</li>
+</ol>
+<h2><a class="header" href="#使用自定义缓存" id="使用自定义缓存">使用自定义缓存</a></h2>
+<h3><a class="header" href="#自定义缓存" id="自定义缓存">自定义缓存</a></h3>
+<p>Mybatis的二级缓存，不支持分布式。Mybatis本身是持久层框架，它不擅长缓存</p>
+<p>Mybatis中有一个cache接口，实现二级缓存的话，需要实现该接口</p>
+<pre><code class="language-xml">&lt;cache type=&quot;com.domain.something.MyCustomCache&quot;/&gt;&lt;!-- 这个类必须实现org.mybatis.cache.Cache接口 --&gt;
+
+&lt;!-- 而且是通过 cache 元素来传递属性, 比如, 下面代码会在你的缓存实现中调用一个称为 “setCacheFile(String file)” 的方法 --&gt;
+&lt;!-- 支持钩子函数 MyCustomCache 实现 org.apache.ibatis.builder.InitializingObject 接口, 所有属性设置完毕以后可以调用接口内的初始化方法 --&gt;
+&lt;cache type=&quot;com.domain.something.MyCustomCache&quot;&gt;
+  &lt;property name=&quot;cacheFile&quot; value=&quot;/tmp/my-custom-cache.tmp&quot;/&gt;
+&lt;/cache&gt;
+</code></pre>
+<h3><a class="header" href="#第三方缓存-整合ehcache" id="第三方缓存-整合ehcache">第三方缓存-整合ehcache</a></h3>
+<p>添加依赖: ehcache-core, mybatis-ehcache</p>
+<p>配置mapper标签</p>
+<pre><code class="language-xml">&lt;cache type=&quot;org.mybatis.caches.ehcache.EhcacheCache&quot; flashInterval=&quot;120000&quot;/&gt;&lt;!-- 刷新间隔120s --&gt; 
+</code></pre>
+<p>在config包下，创建ehcache.xml文件</p>
+<h2><a class="header" href="#应用场景" id="应用场景">应用场景</a></h2>
+<p>对于访问响应速度要求高，但是实时性不高的查询，可以采用二级缓存技术。</p>
+<h2><a class="header" href="#局限性" id="局限性">局限性</a></h2>
+<p>Mybatis二级缓存对细粒度的数据级别的缓存实现不好。</p>
+<p>场景：对商品信息进行缓存，由于商品信息查询访问量巨大，但是要求用户每次查询都是最新的商品信息，此时如果使用二级缓存，就无法实现当一个商品发生变化只刷新该商品的缓存信息而不刷新其他商品缓存信息，因为二级缓存是mapper级别的，当一个商品的信息发送更新，所有的商品信息缓存数据都会清空。</p>
+<p>解决此类问题，需要在业务层根据需要对数据有针对性的缓存。比如可以<code>对经常变化的 数据操作单独放到另一个namespace的mapper中</code>。</p>
+<h1><a class="header" href="#延迟加载" id="延迟加载">延迟加载</a></h1>
+<p>在mybatis中通过resultMap中的association和collection标签，提供类延迟加载的功能</p>
+<p>延迟加载即是先加载主信息，需要的时候，再去加载从信息</p>
+<p>在mybatis中延迟加载默认是不启用的</p>
+<pre><code class="language-xml">&lt;settings&gt;
+	&lt;!-- 开启全局性设置懒加载 --&gt;
+	&lt;setting name=&quot;lazyLoadingEnabled&quot; value=&quot;true&quot;/&gt;
+	&lt;!-- 开启按需加载 --&gt;
+	&lt;setting name=&quot;aggressiveLazyLoading&quot; value=&quot;false&quot;/&gt;
+&lt;/settings&gt;
+</code></pre>
+<h1><a class="header" href="#整合到spring" id="整合到spring">整合到spring</a></h1>
+<p>引入 mybatis-spring</p>
+<p>1、	将数据源信息及事务交由spring进行管理
+2、	将SqlSessionFactory交由spring进行单例管理。
+3、	将原始dao的实现类交由spring管理
+4、	将mapper代理对象交由spring来代理生成。</p>
+<h1><a class="header" href="#逆向工程" id="逆向工程">逆向工程</a></h1>
+<p>https://github.com/mybatis/generator</p>
+<p>常见问题:
+Mapper.xml文件已经存在时，如果进行重新生成则mapper.xml文件时，内容不被覆盖而是进行内容追加，结果导致mybatis解析失败。
+解决方法：删除原来已经生成的mapper xml文件再进行生成。
+Mybatis自动生成的po及mapper.java文件不是内容而是直接覆盖没有此问题</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE generatorConfiguration
+  PUBLIC &quot;-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN&quot;
+  &quot;http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;
+&lt;generatorConfiguration&gt;
+	&lt;context id=&quot;testTables&quot; targetRuntime=&quot;MyBatis3&quot;&gt;
+		&lt;commentGenerator&gt;
+			&lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;
+			&lt;property name=&quot;suppressAllComments&quot; value=&quot;true&quot; /&gt;
+		&lt;/commentGenerator&gt;
+		&lt;!--数据库连接的信息：驱动类、连接地址、用户名、密码 --&gt;
+		&lt;jdbcConnection driverClass=&quot;com.mysql.jdbc.Driver&quot;
+			connectionURL=&quot;jdbc:mysql://localhost:3306/mybatis&quot; userId=&quot;root&quot;
+			password=&quot;root&quot;&gt;
+		&lt;/jdbcConnection&gt;
+
+		&lt;!-- &lt;jdbcConnection driverClass=&quot;oracle.jdbc.OracleDriver&quot; connectionURL=&quot;jdbc:oracle:thin:@127.0.0.1:1521:yycg&quot; 
+			userId=&quot;yycg&quot; password=&quot;yycg&quot;&gt; &lt;/jdbcConnection&gt; --&gt;
+
+		&lt;!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 
+			和 NUMERIC 类型解析为java.math.BigDecimal --&gt;
+		&lt;javaTypeResolver&gt;
+			&lt;property name=&quot;forceBigDecimals&quot; value=&quot;false&quot; /&gt;
+		&lt;/javaTypeResolver&gt;
+
+		&lt;!-- targetProject:生成PO类的位置 --&gt;
+		&lt;javaModelGenerator targetPackage=&quot;cn.itcast.ms.po&quot;
+			targetProject=&quot;.\src&quot;&gt;
+			&lt;!-- enableSubPackages:是否让schema作为包的后缀 --&gt;
+			&lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
+			&lt;!-- 从数据库返回的值被清理前后的空格 --&gt;
+			&lt;property name=&quot;trimStrings&quot; value=&quot;true&quot; /&gt;
+		&lt;/javaModelGenerator&gt;
+		&lt;!-- targetProject:mapper映射文件生成的位置 --&gt;
+		&lt;sqlMapGenerator targetPackage=&quot;cn.itcast.ms.mapper&quot;
+			targetProject=&quot;.\src&quot;&gt;
+			&lt;!-- enableSubPackages:是否让schema作为包的后缀 --&gt;
+			&lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
+		&lt;/sqlMapGenerator&gt;
+		&lt;!-- targetPackage：mapper接口生成的位置 --&gt;
+		&lt;javaClientGenerator type=&quot;XMLMAPPER&quot;
+			targetPackage=&quot;cn.itcast.ms.mapper&quot; targetProject=&quot;.\src&quot;&gt;
+			&lt;!-- enableSubPackages:是否让schema作为包的后缀 --&gt;
+			&lt;property name=&quot;enableSubPackages&quot; value=&quot;false&quot; /&gt;
+		&lt;/javaClientGenerator&gt;
+		&lt;!-- 指定数据库表 --&gt;
+		&lt;table tableName=&quot;user&quot;&gt;&lt;/table&gt;
+		&lt;table tableName=&quot;orders&quot;&gt;&lt;/table&gt;
+		&lt;table tableName=&quot;orderdetail&quot;&gt;&lt;/table&gt;
+		&lt;table tableName=&quot;items&quot;&gt;&lt;/table&gt;
+	&lt;/context&gt;
+&lt;/generatorConfiguration&gt;
+
+
+</code></pre>
+<h1><a class="header" href="#拾遗" id="拾遗">拾遗</a></h1>
+<h2><a class="header" href="#和区别" id="和区别">#和$区别</a></h2>
+<p><code>#{}</code>和<code>${}</code>区别</p>
+<ul>
+<li>
+<p><code>#{ }</code> 解析为一个 JDBC 预编译语句（prepared statement）的参数标记符 (一个 #{ } 被解析为一个参数占位符 ?)</p>
+</li>
+<li>
+<p><code>${ }</code> 仅仅为一个纯碎的 string 替换，在动态 SQL 解析阶段将会进行变量替换, 有注入风险</p>
+</li>
+<li>
+<p><code>${ }</code> 的变量的替换阶段是在动态 SQL 解析阶段，而 #{ }的变量的替换是在 DBMS 中</p>
+</li>
+<li>
+<p>tips</p>
+<ul>
+<li>
+<p>能使用 #{ } 的地方就用 #{ } (首先这是为了性能考虑的，相同的预编译 sql 可以重复利用, 其次，${ } 在预编译之前已经被变量替换了，这会存在 sql 注入问题)</p>
+</li>
+<li>
+<p>表名作为变量时, 或者字段名作为变量名时，必须使用 ${ }, (表名是字符串, 字段名是字符串，使用 sql 占位符替换字符串时会带上单引号 ''，这会导致 sql 语法错误)</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-xml">&lt;!-- 此时, 下面两者效果相同 --&gt;
+&lt;!-- 但是在在动态 SQL 解析阶段， #{ } 和 ${ } 会有不同的表现 --&gt;
+select * from user where name = #{name} 会被解析为 select * from user where name = ?
+select * from user where name = '${name}' 当我们传递的参数为 &quot;ruhua&quot; 时，sql 的解析为 select * from user where name = &quot;ruhua&quot;
+</code></pre>
+<h2><a class="header" href="#parametertype和resulttype" id="parametertype和resulttype">parameterType和resultType</a></h2>
+<ul>
+<li>parameterType是指定输入参数的java类型</li>
+<li>resultType是指定输出结果的java类型（单条结果）</li>
+</ul>
+<h2><a class="header" href="#resultmap和resulttype" id="resultmap和resulttype">resultMap和resultType</a></h2>
+<ul>
+<li>
+<p>使用resultType映射，数据库中sql查询出多少条，就会映射成多少个对象，而且数据库中查询出的字段多少个，对象中就要有多少个属性对应。(resultType映射是一种平铺式的映射)</p>
+</li>
+<li>
+<p>使用resultMap进行映射，它是可以对象嵌套对象这种方式进行映射</p>
+</li>
+<li>
+<p>resultMap的association和collection标签具有延迟加载的功能，而resultType不具有</p>
+</li>
+<li>
+<p>tips:</p>
+<ul>
+<li>
+<p>如果完成一对一映射，使用resultMap和resultType都 可以</p>
+</li>
+<li>
+<p>使用resultType映射相对来说更简单，一般如果是一对一映射，则推荐使用resultType进行映射</p>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="my-ioc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="mysql-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="my-ioc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="mysql-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

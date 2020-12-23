@@ -1,0 +1,784 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>cross gfw - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html" class="active"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: Cross The GFW
+date: 2017-12-30 22:30:52
+tags: [gfw]
+categories: tool</h2>
+<div align="center">
+<img src="Screenshot_1.png" width=30%/>
+记录 FQ 相关原理, 招数, 不断更新中...
+https://github.com/hoochanlon
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#gfw%E5%B0%81%E9%94%81%E6%89%8B%E6%AE%B5">GFW封锁手段</a>
+<ul>
+<li><a href="#dns%E7%9B%B8%E5%85%B3">DNS相关</a>
+<ul>
+<li><a href="#dns%E5%8A%AB%E6%8C%81">DNS劫持</a></li>
+<li><a href="#dns%E6%B1%A1%E6%9F%93dns%E6%AC%BA%E9%AA%97">DNS污染（DNS欺骗）</a></li>
+</ul>
+</li>
+<li><a href="#ip%E5%B0%81%E9%94%81ip%E9%BB%91%E5%90%8D%E5%8D%95">IP封锁（IP黑名单）</a></li>
+<li><a href="#%E6%95%8F%E6%84%9F%E5%AD%97%E8%BF%87%E6%BB%A4">敏感字过滤</a></li>
+<li><a href="#cnnic%E7%9A%84ca%E8%AF%81%E4%B9%A6%E9%80%A0%E6%88%90%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB">CNNIC的CA证书造成中间人攻击</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%94%E5%AF%B9%E6%89%8B%E6%AE%B5">应对手段</a>
+<ul>
+<li><a href="#%E4%BF%AE%E6%94%B9dns%E6%9C%8D%E5%8A%A1%E5%99%A8">修改DNS服务器</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E6%9C%AC%E6%9C%BAhosts%E6%96%87%E4%BB%B6">修改本机hosts文件</a></li>
+<li><a href="#https-%E7%9A%84%E5%8A%A0%E5%AF%86-web-%E4%BB%A3%E7%90%86">HTTPS 的加密 web 代理</a></li>
+<li><a href="#vpn-%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6">vpn 代理软件</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95">其他方法</a></li>
+<li><a href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF">移动端</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#gfw封锁手段" id="gfw封锁手段">GFW封锁手段</a></h1>
+<h2><a class="header" href="#dns相关" id="dns相关">DNS相关</a></h2>
+<h3><a class="header" href="#dns劫持" id="dns劫持">DNS劫持</a></h3>
+<p>DNS 服务器上的DNS缓存里的记录被人为修改成错误的，浏览器查询到IP自然就是错误的</p>
+<p>最有可能干这事的呢，就是国内的ISP</p>
+<h3><a class="header" href="#dns污染dns欺骗" id="dns污染dns欺骗">DNS污染（DNS欺骗）</a></h3>
+<p>又有如下叫法，都是一个意思：</p>
+<pre><code>DNS欺骗：DNS Spoofing  
+DNS污染：域名缓存投毒（DNS Cache Poisoning）  
+</code></pre>
+<p>如果你的DNS server使用的是国外的，如谷歌提供的“8.8.8.8”，“8.8.4.4”等，每次DNS查询你都会经过国际出口，这时GFW会通过DNS污染伪造DNS查询结果，造成网站无法访问</p>
+<p>“域名污染”的原理大概是这样：（直接污染）</p>
+<p>当你的电脑向域名服务器发送了“域名查询”的请求，然后域名服务器把回应发送给你的电脑，这之间是有一个时间差的。如果某个攻击者能够在域名服务器的“DNS应答”还没有到达你的电脑之前，先伪造一个错误的“DNS应答”发给你电脑。那么你的电脑收到的就是错误的信息，并得到一个错误的 IP地址。</p>
+<p>最有可能干这事的，就是GFW了（当然只要位于电脑和DNS server 间的所有攻击者都能DNS污染，比如ISP,骇客）</p>
+<p>以上是GFW实现DNS污染的两种方式之一，属于直接污染，还有一种间接污染的方法，下面说说。</p>
+<p>GFW的设备部署在每个国际出口，如果你用的DNS server 在国外， DNS请求和应答必定会经过国际出口，GFW在这个过程中做手脚，是为直接污染。</p>
+<p>如果你使用国内的DNS server，如：ISP提供的DNS server，那么恭喜你，除了会被“域名劫持”外，还会被“间接域名污染”， 整个过程是这样的：</p>
+<ol>
+<li>你访问某个网站 www.xxx.yyy.com</li>
+<li>浏览器向“ISP提供的DNS server”发出DNS 请求，“ISP提供的DNS server”缓存中没有记录，这台“ISP提供的DNS server”会去“www.xxx.yyy.com”这个网站的上一级域名（yyy.com,或者com）对应的“权威域名服务器”去进行“域名查询”，而这个“权威域名服务器”在国外，会经过国际出口，被GFW污染</li>
+<li>最后“ISP提供的DNS server”拿到的IP地址是已经被污染了的错误的响应，而且“ISP提供的DNS server”会将这个错误的记录保存在DNS缓存中（如果有其他的DNS请求，错误的记录将被返回，造成更大范围的DNS污染）</li>
+</ol>
+<h2><a class="header" href="#ip封锁ip黑名单" id="ip封锁ip黑名单">IP封锁（IP黑名单）</a></h2>
+<p>直接屏蔽掉某些IP地址，简单粗暴。</p>
+<h2><a class="header" href="#敏感字过滤" id="敏感字过滤">敏感字过滤</a></h2>
+<p>GFW会维护一个长长的敏感词列表，并且经常更新，如果网页中包含敏感词，会被屏蔽。</p>
+<h2><a class="header" href="#cnnic的ca证书造成中间人攻击" id="cnnic的ca证书造成中间人攻击">CNNIC的CA证书造成中间人攻击</a></h2>
+<p>CA 是“Certificate Authority”的缩写
+CA 证书，顾名思义，就是CA颁发的证书。
+作用：
+验证网站是否可信（针对HTTPS）
+验证某文件是否可信（是否被篡改）</p>
+<p>所以CA 证书对于 https 协议的重要性（可以防止攻击者伪造虚假网站）不言而喻；
+中间人攻击：各个公司的软件的根证书中包含了cnnic的ca证书后，配合GFW进行DNS域名污染</p>
+<h1><a class="header" href="#应对手段" id="应对手段">应对手段</a></h1>
+<h2><a class="header" href="#修改dns服务器" id="修改dns服务器">修改DNS服务器</a></h2>
+<p>应对【域名劫持】，但是对域名污染无效</p>
+<p>Google 不愧是牛X的公司，而且很人性化——它提供了如下两个很好记的 DNS 服务器。</p>
+<pre><code>8.8.8.8
+8.8.4.4
+</code></pre>
+<p>为了防止 ＧＦW 把 Google 的 DNS 服务器封杀掉，我们还得多再备份几个。下面这些 DNS 的 IP 可就没 Google 的 DNS 那么好记了。</p>
+<p>OpenDNS：</p>
+<pre><code>208.67.222.222
+208.67.220.220
+</code></pre>
+<p>台湾中华电讯的DNS：</p>
+<pre><code>168.95.192.1
+168.95.192.2
+</code></pre>
+<p>香港宽频的DNS：</p>
+<pre><code>203.80.96.9
+203.80.96.10
+</code></pre>
+<h2><a class="header" href="#修改本机hosts文件" id="修改本机hosts文件">修改本机hosts文件</a></h2>
+<p>应对域名污染----且只能用于影响力巨大的网站</p>
+<p>缺点：<br />
+(1) 如果你访问的是 HTTP 协议的网页，且内容包含敏感词，那么此招数照样没戏；
+(2) 如果 GFW 不光封域名，还封 IP，那么此招数也还是没戏；
+(3) 如果某个网站的 IP 已经变化了，那你就要与时俱进地修改你的 hosts 文件</p>
+<p>Windows 系统，可以使用如下命令打开 hosts 文件：</p>
+<pre><code>notepad %SystemRoot%\system32\drivers\etc\hosts
+</code></pre>
+<p>Linux 在这个文件里： /etc/hosts</p>
+<p>打开之后，把那些被封锁的网站的 IP 及域名加入 hosts 文件（每行一个）即可</p>
+<pre><code>74.125.227.198 drive.google.com
+</code></pre>
+<p>修改完成后, 保存, 输入命令“ipconfig /flushdns” 刷新DNS缓存</p>
+<h2><a class="header" href="#https-的加密-web-代理" id="https-的加密-web-代理">HTTPS 的加密 web 代理</a></h2>
+<p>对抗IP封锁</p>
+<p>基于 HTTPS 方式的加密 Web 代理，主要好处是：无需安装其它软件，光靠浏览器就可以搞定。</p>
+<p>但是有个明显的缺点，就是用的人一多就容易引起GFW注意，自然就挂掉了，所以需要自个找到好用的代理</p>
+<h2><a class="header" href="#vpn-代理软件" id="vpn-代理软件">vpn 代理软件</a></h2>
+<p>一类是有运营商提供服务端的代理, 如 (赛风，蓝灯... ) </p>
+<p>一类是可以自己搭建 server 的 代理: </p>
+<p>shadowsocks， windows客户端在<a href="https://github.com/shadowsocks/shadowsocks-windows/releases">这里</a>, 可以自己租用国外vps搭建server端， 也可以使用好心人分享的搭建好的帐号：<a href="https://free-ss.site/">1</a> (host添加 “104.18.18.18    free-ss.site” 访问), <a href="https://freessr.win/">2</a>, <a href="https://shadowsocks-share.herokuapp.com/">3</a>; macos 客户端: Shadowsocks-NG</p>
+<ul>
+<li>Shadowsocks-go: 二进制编译, 轻量, 快速</li>
+<li>Shadowsocks-python: 无功无过，也是最原始的版本，近年来更新速度略慢</li>
+<li>Shadowsocks-libev: 一直处于更新之中，最大的特点是支持obfs混淆</li>
+<li>ShadowsocksR: 从作者到产品都极负争议性, obfs混淆模式开创者, 但是前一段时间SSR服务器普遍遭到GFW的封杀.</li>
+</ul>
+<p>还有一个特别的, <a href="http://www.vpngate.net/cn/">vpn gate</a>, 下载即用, 本质还是走代理, 只不过没有一个中心化的 server 了，每个人都是一个 server, 我为人人, 人人为我. 不过现在好像被墙了，想要上网, 需要先下载, 想下载, 需要先上网 这变成了一个鸡生蛋，蛋生鸡的问题...Orz</p>
+<pre><code class="language-sh"># 分享 vps 搭建 shadowsocks-libev server 的脚本 (https://www.24kplus.com/linux/1371.html)
+# 另外可参考 https://www.flyzy2005.com/fan-qiang/shadowsocks/install-shadowsocks-in-one-command/ (ssr, 验证 bbr 是否开启成功)
+# 另外可参考 https://github.com/teddysun/shadowsocks_install/tree/master
+wget https://down.24kplus.com/linux/shadowsocks/centos-shadowsocks-libev.sh
+chmod +x centos-shadowsocks-libev.sh &amp;&amp; ./centos-shadowsocks-libev.sh
+
+</code></pre>
+<p>脚本内容:</p>
+<pre><code class="language-sh">#!/usr/bin/env bash
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH
+echo &quot;#&quot;
+echo &quot;# Auto install shadowsocks-libev server&quot;
+echo &quot;#&quot;
+echo &quot;# Copyright (C) 2019 24K PLUS&quot;
+echo &quot;#&quot;
+echo &quot;# System Required:  CentOS 7/8&quot;
+echo &quot;#&quot;
+echo &quot;# Welcome to https://www.24kplus.com&quot;
+echo &quot;#&quot;
+
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+plain='\033[0m'
+
+[[ $EUID -ne 0 ]] &amp;&amp; echo -e &quot;[${red}Error${plain}] This script must be run as root!&quot; &amp;&amp; exit 1
+
+cur_dir=$( pwd )
+
+libtool_file=&quot;libtool-2.4.6&quot;
+libtool_url=&quot;https://down.24kplus.com/linux/libtool-2.4.6.tar.gz&quot;
+
+shadowsocks_libev_config=&quot;/etc/shadowsocks-libev/config.json&quot;
+shadowsocks_libev_service=&quot;/etc/systemd/system/shadowsocks-libev.service&quot;
+
+libsodium_file=&quot;libsodium-1.0.18-stable&quot;
+libsodium_url=&quot;https://down.24kplus.com/linux/libsodium-1.0.18-stable.tar.gz&quot;
+
+mbedtls_file=&quot;mbedtls-2.16.3&quot;
+mbedtls_url=&quot;https://down.24kplus.com/linux/mbedtls/mbedtls-2.16.3-gpl.tgz&quot;
+
+localconf_file=&quot;local&quot;
+localconf_url=&quot;https://down.24kplus.com/linux/shadowsocks/local.conf&quot;
+
+common_ciphers=(
+xchacha20-ietf-poly1305
+chacha20-ietf-poly1305
+chacha20
+aes-256-gcm
+aes-256-cfb
+)
+
+install_main(){
+	check_sys
+    install_prepare
+    install_dependencies
+	install_libtool
+	install_mbedtls
+	install_libsodium
+	check_bbr_status
+	if [ $? -eq 0 ]; then
+		check_kernel_version
+		if [ $? -eq 1 ]; then
+			enable_bbr
+		fi
+	fi
+	optimization_sys_config
+    install_shadowsocks_libev
+	install_completed_libev
+    config_firewall
+    install_cleanup
+}
+
+getversion(){
+	grep -oE &quot;[0-9.]+&quot; /etc/redhat-release
+}
+
+check_sys(){
+	if [ -f /etc/redhat-release ]; then
+		echo &quot;&quot;
+	else 
+		echo &quot;Only supported CentOS 7/8.&quot;
+		exit 1
+	fi
+	local version=&quot;$(getversion)&quot;
+    sys_main_ver=${version%%.*}
+	if [ &quot;$sys_main_ver&quot; != '7' ] &amp;&amp; [ &quot;$sys_main_ver&quot; != '8' ]; then
+		echo &quot;Only supports CentOS 7/8.&quot;
+		exit 1
+	fi
+}
+
+check_kernel_version(){
+	kernel_version=$(uname -r | awk -F'.' '{print $1}')
+	kernel_main_version=$(uname -r | awk -F'.' '{print $2}')
+	if [ $kernel_version -eq 4 ] &amp;&amp; [ $kernel_main_version -lt 9 ]; then
+		echo &quot;Google BBR only supports kernel version 4.9 or higher&quot;
+		return 0
+	elif [ $kernel_version -lt 4 ]; then
+		echo &quot;Google BBR only supports kernel version 4.9 or higher&quot;
+		return 0
+	fi
+	return 1
+}
+
+get_libev_ver(){
+    libev_ver=$(wget --no-check-certificate -qO- https://api.github.com/repos/shadowsocks/shadowsocks-libev/releases/latest | grep 'tag_name' | cut -d\&quot; -f4)
+    [ -z ${libev_ver} ] &amp;&amp; echo -e &quot;[${red}Error${plain}] Get shadowsocks-libev latest version failed&quot; &amp;&amp; exit 1
+}
+
+download_shadowsocks_libev(){
+    cd ${cur_dir}
+
+    get_libev_ver
+    shadowsocks_libev_file=&quot;shadowsocks-libev-$(echo ${libev_ver} | sed -e 's/^[a-zA-Z]//g')&quot;
+    local shadowsocks_libev_url=&quot;https://github.com/shadowsocks/shadowsocks-libev/releases/download/${libev_ver}/${shadowsocks_libev_file}.tar.gz&quot;
+
+    download &quot;${shadowsocks_libev_file}.tar.gz&quot; &quot;${shadowsocks_libev_url}&quot;
+}
+
+download(){
+    local filename=$(basename $1)
+    if [ -f ${1} ]; then
+        echo &quot;${filename} [found]&quot;
+    else
+        echo &quot;${filename} not found, download now...&quot;
+        wget --no-check-certificate -c -t3 -T60 -O ${1} ${2}
+        if [ $? -ne 0 ]; then
+            echo -e &quot;[${red}Error${plain}] Download ${filename} failed.&quot;
+            exit 1
+        fi
+    fi
+}
+install_libtool(){
+    if [ ! -f /usr/bin/libtool ] &amp;&amp; [ ! -f /usr/local/bin/libtool ]; then
+        cd ${cur_dir}
+        download &quot;${libtool_file}.tar.gz&quot; &quot;${libtool_url}&quot;
+        tar -zxf ${libtool_file}.tar.gz
+        cd ${libtool_file}
+        ./configure --prefix=/usr &amp;&amp; make &amp;&amp; make install &amp;&amp; ldconfig
+        if [ $? -ne 0 ]; then
+            echo -e &quot;[${red}Error${plain}] ${libtool_file} install failed.&quot;
+            install_cleanup
+            exit 1
+        fi
+    else
+        echo -e &quot;[${green}Info${plain}] libtool already installed.&quot;
+    fi
+}
+install_libsodium(){
+    if [ ! -f /usr/lib/libsodium.a ]; then
+        cd ${cur_dir}
+        download &quot;${libsodium_file}.tar.gz&quot; &quot;${libsodium_url}&quot;
+        tar -zxf ${libsodium_file}.tar.gz
+        cd libsodium-stable
+        ./configure --prefix=/usr &amp;&amp; make &amp;&amp; make install &amp;&amp; ldconfig
+        if [ $? -ne 0 ]; then
+            echo -e &quot;[${red}Error${plain}] ${libsodium_file} install failed.&quot;
+            install_cleanup
+            exit 1
+        fi
+    else
+        echo -e &quot;[${green}Info${plain}] libsodium already installed.&quot;
+    fi
+}
+
+install_mbedtls(){
+    if [ ! -f /usr/lib/libmbedtls.a ] &amp;&amp; [ ! -f /usr/bin/mbedtls_hello ] &amp;&amp; [ ! -f /usr/local/bin/mbedtls_hello ]; then
+        cd ${cur_dir}
+        download &quot;${mbedtls_file}-gpl.tgz&quot; &quot;${mbedtls_url}&quot;
+        tar -xf ${mbedtls_file}-gpl.tgz
+        cd ${mbedtls_file}
+        make &amp;&amp; make DESTDIR=/usr install &amp;&amp; ldconfig
+        if [ $? -ne 0 ]; then
+            echo -e &quot;[${red}Error${plain}] ${mbedtls_file} install failed.&quot;
+            install_cleanup
+            exit 1
+        fi
+    else
+        echo -e &quot;[${green}Info${plain}] mbedtls already installed.&quot;
+    fi
+}
+
+install_shadowsocks_libev(){
+	download_shadowsocks_libev
+    cd ${cur_dir}
+    tar -zxf ${shadowsocks_libev_file}.tar.gz
+    cd ${shadowsocks_libev_file}
+    ./configure --disable-documentation &amp;&amp; make &amp;&amp; make install
+    if [ $? -eq 0 ]; then
+		config_shadowsocks_libev
+        systemctl start shadowsocks-libev
+		systemctl enable shadowsocks-libev
+    else
+        echo
+        echo -e &quot;[${red}Error${plain}] shadowsocks-libev install failed.&quot;
+        install_cleanup
+        exit 1
+    fi
+}
+
+install_completed_libev(){
+    clear
+    echo
+    echo -e &quot;Congratulations, shadowsocks-libev server install completed!&quot;
+    echo -e &quot;Your Server IP        : ${red} $(get_ip) ${plain}&quot;
+    echo -e &quot;Your Server Port      : ${red} ${shadowsocksport} ${plain}&quot;
+    echo -e &quot;Your Password         : ${red} ${shadowsockspwd} ${plain}&quot;
+    echo -e &quot;Your Encryption Method: ${red} ${shadowsockscipher} ${plain}&quot;
+}
+
+install_cleanup(){
+    cd ${cur_dir}
+    rm -rf libsodium-stable ${libsodium_file}.tar.gz
+    rm -rf ${mbedtls_file} ${mbedtls_file}-gpl.tgz
+    rm -rf ${libtool_file} ${libtool_file}.tar.gz
+    rm -rf ${shadowsocks_libev_file} ${shadowsocks_libev_file}.tar.gz
+}
+
+check_kernel_headers(){
+    if rpm -qa | grep -q headers-$(uname -r); then
+		return 0
+	else
+		return 1
+	fi
+}
+
+
+config_shadowsocks_libev(){	
+	if [ ! -d &quot;$(dirname ${shadowsocks_libev_config})&quot; ]; then
+		mkdir -p $(dirname ${shadowsocks_libev_config})
+	fi
+
+	cat &gt; ${shadowsocks_libev_config}&lt;&lt;-EOF
+	{
+		&quot;server&quot;:&quot;0.0.0.0&quot;,
+		&quot;server_port&quot;:${shadowsocksport},
+		&quot;password&quot;:&quot;${shadowsockspwd}&quot;,
+		&quot;timeout&quot;:600,
+		&quot;method&quot;:&quot;${shadowsockscipher}&quot;,
+		&quot;fast_open&quot;:true,
+		&quot;mode&quot;:&quot;tcp_only&quot;
+	}
+	EOF
+	
+	cat &gt; ${shadowsocks_libev_service}&lt;&lt;-EOF
+	[Unit]
+	Description=shadowsocks-libev server
+	After=network.target
+
+	[Service]
+	Type=simple
+	ExecStartPre=/bin/sh -c 'ulimit -n 51200'
+	ExecStart=/usr/local/bin/ss-server -c /etc/shadowsocks-libev/config.json
+	Restart=on-abort
+
+	[Install]
+	WantedBy=multi-user.target
+	EOF
+}
+
+
+error_detect_depends(){
+    local command=$1
+    local depend=`echo &quot;${command}&quot; | awk '{print $4}'`
+    echo -e &quot;[${green}Info${plain}] Starting to install package ${depend}&quot;
+    ${command} &gt; /dev/null 2&gt;&amp;1
+    if [ $? -ne 0 ]; then
+        echo -e &quot;[${red}Error${plain}] Failed to install ${red}${depend}${plain}&quot;
+        exit 1
+    fi
+}
+
+install_dependencies(){
+	local gcc_path=$(command -v gcc)
+    if [ &quot;${gcc_path}&quot; == &quot;&quot; ]; then
+		error_detect_depends &quot;yum -y install gcc&quot;
+	fi
+    yum_depends=(
+		gettext autoconf automake make pcre-devel asciidoc xmlto c-ares-devel libev-devel wget tar m4 perl
+	)
+	for depend in ${yum_depends[@]}; do
+		error_detect_depends &quot;yum -y install ${depend}&quot;
+	done
+	
+	if [ &quot;$sys_main_ver&quot; == '8' ]; then
+		install_python2
+	fi
+}
+
+install_python2(){
+	if [ ! -f /usr/lib64/libpython2.7.so.1.0 ]; then
+		error_detect_depends &quot;yum -y install python2&quot;
+	fi
+}
+
+config_firewall(){
+    systemctl status firewalld &gt; /dev/null 2&gt;&amp;1
+	if [ $? -eq 0 ]; then
+		default_zone=$(firewall-cmd --get-default-zone)
+		firewall-cmd --permanent --zone=${default_zone} --add-port=${shadowsocksport}/tcp
+		firewall-cmd --permanent --zone=${default_zone} --add-port=${shadowsocksport}/udp
+		firewall-cmd --reload
+	else
+		echo -e &quot;[${yellow}Warning${plain}] firewalld looks like not running or not installed, please enable port ${shadowsocksport} manually if necessary.&quot;
+	fi
+}
+
+install_prepare_port() {
+    while true
+    do
+    dport=$(shuf -i 9000-19999 -n 1)
+    echo -e &quot;Please enter a port for shadowsocks-libev [1-65535]&quot;
+    read -p &quot;(Default port: ${dport}):&quot; shadowsocksport
+    [ -z &quot;${shadowsocksport}&quot; ] &amp;&amp; shadowsocksport=${dport}
+    expr ${shadowsocksport} + 1 &amp;&gt;/dev/null
+    if [ $? -eq 0 ]; then
+        if [ ${shadowsocksport} -ge 1 ] &amp;&amp; [ ${shadowsocksport} -le 65535 ] &amp;&amp; [ ${shadowsocksport:0:1} != 0 ]; then
+            echo
+            echo &quot;port = ${shadowsocksport}&quot;
+            echo
+            break
+        fi
+    fi
+    echo -e &quot;[${red}Error${plain}] Please enter a correct number [1-65535]&quot;
+    done
+}
+
+install_prepare_password(){
+	local mkpasswd_path=$(command -v mkpasswd)
+    if [ &quot;${mkpasswd_path}&quot; == &quot;&quot; ]; then
+		error_detect_depends &quot;yum -y install expect&quot;
+	fi
+	radompassword=$(mkpasswd -l 18 -d 2 -s 4)
+
+    echo &quot;Please enter password for shadowsocks-libev&quot;
+    read -p &quot;(Default password: ${radompassword}):&quot; shadowsockspwd
+    [ -z &quot;${shadowsockspwd}&quot; ] &amp;&amp; shadowsockspwd=${radompassword}
+    echo
+    echo &quot;password = ${shadowsockspwd}&quot;
+    echo
+}
+
+install_prepare_cipher(){
+    while true
+    do
+    echo -e &quot;Please select stream cipher for shadowsocks-libev:&quot;
+
+	for ((i=1;i&lt;=${#common_ciphers[@]};i++ )); do
+		hint=&quot;${common_ciphers[$i-1]}&quot;
+		echo -e &quot;${green}${i}${plain}) ${hint}&quot;
+	done
+	read -p &quot;Which cipher you'd select(Default: ${common_ciphers[0]}):&quot; pick
+	[ -z &quot;$pick&quot; ] &amp;&amp; pick=1
+	expr ${pick} + 1 &amp;&gt;/dev/null
+	if [ $? -ne 0 ]; then
+		echo -e &quot;[${red}Error${plain}] Please enter a number&quot;
+		continue
+	fi
+	if [[ &quot;$pick&quot; -lt 1 || &quot;$pick&quot; -gt ${#common_ciphers[@]} ]]; then
+		echo -e &quot;[${red}Error${plain}] Please enter a number between 1 and ${#common_ciphers[@]}&quot;
+		continue
+	fi
+	shadowsockscipher=${common_ciphers[$pick-1]}
+    
+   
+
+    echo
+    echo &quot;cipher = ${shadowsockscipher}&quot;
+    echo
+    break
+    done
+}
+
+check_bbr_status() {
+    local param=$(lsmod | grep bbr | awk '{print $1}')
+    if [[ &quot;${param}&quot; == &quot;tcp_bbr&quot; ]]; then
+		echo &quot;[${green}Info${plain}] Your Google BBR enabled&quot;
+        return 1
+    else
+        return 0
+    fi
+}
+
+enable_bbr() {
+	modprobe tcp_bbr
+    echo &quot;tcp_bbr&quot; &gt;&gt; /etc/modules-load.d/modules.conf
+    echo &quot;net.core.default_qdisc = fq&quot; &gt;&gt; /etc/sysctl.conf
+    echo &quot;net.ipv4.tcp_congestion_control = bbr&quot; &gt;&gt; /etc/sysctl.conf
+    sysctl -p
+	echo &quot;[${green}Info${plain}] Google BBR enabled&quot;
+}
+
+optimization_sys_config(){
+	cd ${cur_dir}
+	if [ ! -f /etc/sysctl.d/local.conf ]; then
+		download &quot;${localconf_file}.conf&quot; &quot;${localconf_url}&quot;
+		mv ${localconf_file}.conf /etc/sysctl.d/local.conf
+		sysctl --system	
+	fi
+	if [ &quot;$(grep &quot;* soft nofile&quot; /etc/security/limits.conf)&quot; == &quot;&quot; ]; then
+		echo &quot;* soft nofile 51200&quot; &gt;&gt; /etc/security/limits.conf
+	fi
+	if [ &quot;$(grep &quot;* hard nofile&quot; /etc/security/limits.conf)&quot; == &quot;&quot; ]; then
+		echo &quot;* hard nofile 51200&quot; &gt;&gt; /etc/security/limits.conf
+	fi
+}
+
+get_ip(){
+    local IP=$( ip addr | egrep -o '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | egrep -v &quot;^192\.168|^172\.1[6-9]\.|^172\.2[0-9]\.|^172\.3[0-2]\.|^10\.|^127\.|^255\.|^0\.&quot; | head -n 1 )
+    [ -z ${IP} ] &amp;&amp; IP=$( wget -qO- -t1 -T2 api.24kplus.com/myip )
+    echo ${IP}
+}
+
+get_char(){
+    SAVEDSTTY=$(stty -g)
+    stty -echo
+    stty cbreak
+    dd if=/dev/tty bs=1 count=1 2&gt; /dev/null
+    stty -raw
+    stty echo
+    stty $SAVEDSTTY
+}
+
+install_prepare(){
+
+    install_prepare_password
+    install_prepare_port
+    install_prepare_cipher
+
+    echo
+    echo &quot;Press any key to start...or Press Ctrl+C to cancel&quot;
+    char=`get_char`
+
+}
+
+install_main
+</code></pre>
+<h2><a class="header" href="#其他方法" id="其他方法">其他方法</a></h2>
+<p>内网穿透：比较典型的是ZeroTier，</p>
+<p>V2Ray：V2Ray 是 Project V 下的一个工具。Project V 是一个包含一系列构建特定网络环境工具的项目，而 V2Ray 属于最核心的一个</p>
+<h2><a class="header" href="#移动端" id="移动端">移动端</a></h2>
+<p>ios: shadowrocket, Surge</p>
+<p>Android:  shadowsocks , Postern, </p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="linux-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="react-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="linux-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="react-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

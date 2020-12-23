@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>idea-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html" class="active"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: InteliJ idea tips
+tags:</p>
+<ul>
+<li>tool
+date: 2018-09-12 10:48:35
+categories: tool</li>
+</ul>
+<hr />
+<div align="center">
+https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/keymap-introduce.md
+<p>https://www.cnblogs.com/yuze2020/p/13194962.html 激活</p>
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a>
+<ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#mac">mac</a></li>
+</ul>
+</li>
+<li><a href="#snippets">snippets</a></li>
+<li><a href="#quickstart%E8%AE%BE%E7%BD%AE">quickstart设置</a></li>
+<li><a href="#tips">tips</a>
+<ul>
+<li><a href="#debug">debug</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4java%E7%BC%96%E8%AF%91%E7%89%88%E6%9C%AC">设置默认java编译版本</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#快捷键" id="快捷键">快捷键</a></h1>
+<h2><a class="header" href="#windows" id="windows">Windows</a></h2>
+<pre><code>ctrl alt s          全局设置
+ctrl alt shift s    项目设置
+
+CTRL + f4           关闭tab-----------------------------------------------ahk: CapsLock + W
+
+编码常用:
+
+f2                  定位到下一个错误
+Ctrl + F1           在光标所在的错误代码处显示错误信息
+Alt + Enter         根据位置不同 快速修复
+
+ctrl + w            递进式选择
+Ctrl + Y            删除光标所在行---------------------------------- ahk: CapsLock + D
+Ctrl + D            复制到新行
+shift + Enter       下方添加新行
+CTRL + alt +Enter   上方添加新行 ------------------------------------------- CTRL + Enter
+Ctrl+Shift+↑/↓      移动行 -------------------------- alt + ↑/↓ ---------- AHK shortcut: alt + i/k
+Alt+Shift+↑/↓
+
+CTRL + shift + v    从粘贴板选择复制
+
+Ctrl + Alt + v      补全变量名称(抽取变量),类eclipse中的 CTRL+2;l ----------------------alt + M
+CTRL + alt + M      抽取 方法
+CTRL + alt + F      抽取 域变量/field ----------------------------------- alt + shift + f
+CTRL + O            选择父类中需要 覆盖/override 的方法
+Ctrl + Space        基础代码补全------------------------------------------------ alt + /
+Ctrl + J            插入自定义动态代码模板 
+alt + insert        1. 在代码中: 自动生成 getter, setter, constructor...; 
+                    2. 在目录区: 创建 -----------------------------------------------  alt + N
+Ctrl + Alt + T      对选中的代码弹出环绕选项弹出层, (比如 try/catch, if/else ...)
+alt + 1...9         各个功能选项卡, 如:alt+1为 project选项卡
+shift + esc         退出功能选项卡直接定位到 editor
+alt + f1; 1         link到project目录 --------------------------------------- Alt + s 进入 Select in 菜单enter
+Ctrl + Shift + U    对选中的代码进行大 / 小写轮流转换 
+
+alt + 左/右         左右切换tab ----------------------------------------------ahk：CapsLock + O/P
+CTRL + alt + 左右   跳到上一个编辑处 ------------------------------------------ahk: Cpaslock + H/B
+
+CTRL + Z            撤销
+Ctrl + Shift + Z    取消撤销
+
+CTRL + /            行注释, 注释后光标另提一行
+Ctrl + Shift + /    代码块注释 
+
+shift + f6          rename ----------------------------AHK shortcut: CapsLock + R
+
+CTRL + Q            查看方法说明;
+                    double: 展开放大详细查看
+Ctrl + P            方法参数提示显示 (简单的提示, 详细的意义说明还是用 CTRL + Q)
+
+Ctrl + U            前往接口方法 [定义] (记忆: upper, 去往高层)
+CTRL + alt + B      前往接口方法 [实现] 而不是接口定义处 (等同 CTRL + alt + 左键)
+CTRL + B            1. 前往 方法/类/变量 使用处 (等同 CTRL + 左键)
+                    2. 有多处使用则 find usage 弹窗
+
+Ctrl + shift + f9   recompile current file ----------------------------- ahk: CapsLock + S
+ctrl + f9           recompile project ---------------------------------- ahk: CapsLock + a
+
+Ctrl + Alt + L      格式化代码，可以对当前文件和整个包目录使用
+Ctrl + Alt + O      优化导入的类，可以对当前文件和整个包目录使用 
+
+
+版本控制:
+
+
+alt + `             版本控制菜单
+
+
+查找:
+
+
+Ctrl + N            查找 类
+CTRL + shift + N    查找 所有类型 文件
+shift + shift       全局查找文件
+ctrl + f            查找(需要选择)
+CTRL + r            替换 or 查找
+Ctrl + Shift + F7   高亮显示光标所在文本(无需选择)，按Esc高亮消失 ----------------------------------- ahk: CapsLock + Q
+CTRL + L, Ctrl + shift + l       (在没有搜索框的情况下直接) 寻找下/上一个指定字符, 可以和 CTRL+shift+f7 或 CTRL+f 联用
+
+
+浏览整个项目结构:
+
+
+Ctrl + &quot;[&quot; 或者 &quot;]&quot;  
+                    移动光标到当前所在代码的花括号开始/结束位置
+Ctrl + 左键单击      1. 在打开的文件标题上，&quot;show in explorer&quot;选择菜单, 即打开文件位置; 
+                    2. 查看使用情况/ find usage ( &lt;==&gt; 右键 -&gt; find usage)
+alt + F7            find usage 查看 方法or类 使用情况 ;
+ctrl + h            调用层级 call hierarchy
+
+CTRL + f12          查看 方法outline -------- 添加新的shortcut: Ctrl + K
+
+CTRL + alt + U      查看 类图/ diagram (任何对象 类型 上均可使用)
+
+
+</code></pre>
+<h2><a class="header" href="#mac" id="mac">mac</a></h2>
+<pre><code>classical:
+
+alt + enter 自动修复/show context actions   -&gt; cmd + enter
+shift + f6 重命名 rename   -&gt; cmd + shift + r
+cmd + shift + up/down 上下移动行  -&gt; alt + up/down
+// opt + up 渐进选择 selection  -&gt; opt + cmd + i
+ctrl + j 查看方法说明   -&gt; shift + cmd + p
+cmd + p 参数说明
+cmd + n 生成
+opt + f1, 1   select in 视图, 匹配  -&gt; opt + q, 1
+opt + cmd + v 抽取变量/自动补全变量   cmd + m
+shift + cmd + f4 关闭 tab   -&gt; cmd + e  
+cmd + shift + e 重新打开reopen tab
+
+cmd + shift + f7 高亮显示光标所在文本
+cmd + ,   设置
+
+
+macOS:
+
+cmd + shift + u   转大写
+</code></pre>
+<h1><a class="header" href="#snippets" id="snippets">snippets</a></h1>
+<pre><code>xxx_var.sout 打印
+
+xxx_var.par 括号
+
+xxx_bool.if     if判断
+
+new String[] {&quot;ab&quot;}.length.for 循环, 结果如下:
+for (int i = 0; i &lt; new String[]{&quot;ab&quot;}.length; i++) {
+                    
+</code></pre>
+<h1><a class="header" href="#quickstart设置" id="quickstart设置">quickstart设置</a></h1>
+<ul>
+<li>
+<p>多台机器的配置同步 - https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/installation-directory-introduce.md</p>
+</li>
+<li>
+<p>智能提示 首字母区分大小写 - https://github.com/judasn/IntelliJ-IDEA-Tutorial/blob/master/settings-recommend-introduce.md</p>
+</li>
+<li>
+<p>设置代码检查等级 , 对于打开大文件尤其有用</p>
+</li>
+<li>
+<p>类层级太多, 生成的 diagram 无法显示全貌, 可以取消 diagram | Java class diagram 下的 fields, constructor, method</p>
+</li>
+</ul>
+<h1><a class="header" href="#tips" id="tips">tips</a></h1>
+<ul>
+<li>部署时war和war exploded区别 - https://blog.csdn.net/xlgen157387/article/details/56498938</li>
+<li>查看类的引用 - https://blog.csdn.net/wc250025/article/details/51352658</li>
+<li>查看方法调用链 - https://blog.csdn.net/yinbucheng/article/details/77466613</li>
+<li>Lombok插件无法使用 - https://blog.csdn.net/xzp_12345/article/details/80268834</li>
+<li>有其它类编译错误idea如何单独运行main方法 - https://jingyan.baidu.com/article/915fc414a557b351394b20cf.html</li>
+<li>警告,错误下划线呈现样式(比如改的显眼一点) - https://blog.csdn.net/xiaoye142034/article/details/80869372</li>
+<li>debug with idea - https://www.cnblogs.com/chiangchou/p/idea-debug.html#_label0</li>
+<li>idea 中的 .gitignore: https://stackoverflow.com/questions/11968531/what-to-gitignore-from-the-idea-folder</li>
+<li>设置 language level 总是又自动变回来 - https://blog.csdn.net/isea533/article/details/48575983  (maven 的 properties 不会继承, 所以对于 springboot 项目, 需要在每个项目指定 java.version) 对于 普通maven项目, 指定 maven-source-plugin 的 config 的 target , source 的版本即可</li>
+</ul>
+<h2><a class="header" href="#debug" id="debug">debug</a></h2>
+<p>执行 Drop Frame 即可返回上个错过的断点</p>
+<p>右击断点设置 Suspend 挂起条件为 Thread, 那么断点挂起时，可以切换线程进行调试, 可以实现多线程调试</p>
+<h2><a class="header" href="#设置默认java编译版本" id="设置默认java编译版本">设置默认java编译版本</a></h2>
+<pre><code class="language-xml">&lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+        &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;
+        &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+        &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+        &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;
+    &lt;/properties&gt;
+
+或者
+
+&lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.1&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;1.8&lt;/source&gt;
+                    &lt;target&gt;1.8&lt;/target&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="html-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="interview-system-design.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="html-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="interview-system-design.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

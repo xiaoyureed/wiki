@@ -1,0 +1,666 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>postgres-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html" class="active"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Postgres note
+tags:</p>
+<ul>
+<li>db</li>
+<li>postgres
+date: 2020-01-05 17:10:13
+categories: java web</li>
+</ul>
+<hr />
+<p>http://www.postgresqltutorial.com/# - postgresql tutorial</p>
+<p>https://medium.com/quick-code/top-tutorials-to-learn-postgresql-database-for-beginners-99ff0deb9f84</p>
+<p>http://www.ruanyifeng.com/blog/2013/12/getting_started_with_postgresql.html - 通俗的入门</p>
+<p>https://github.com/PostgREST/postgrest - postgresql to rest api</p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#what-is-postgres">what is postgres</a></li>
+<li><a href="#why-postgres">Why Postgres</a></li>
+<li><a href="#how-to-use">how to use</a>
+<ul>
+<li><a href="#sql-%E7%A4%BA%E4%BE%8B">sql 示例</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a>
+<ul>
+<li><a href="#%E6%97%B6%E9%97%B4">时间</a></li>
+<li><a href="#array%E7%B1%BB%E5%9E%8B">array类型</a></li>
+<li><a href="#hstore-%E9%94%AE%E5%80%BC%E5%AF%B9%E7%B1%BB%E5%9E%8B">hstore 键值对类型</a></li>
+<li><a href="#json%E7%B1%BB%E5%9E%8B">json类型</a></li>
+<li><a href="#%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B">数字类型</a></li>
+<li><a href="#%E5%BA%8F%E5%8F%B7%E7%B1%BB%E5%9E%8B">序号类型</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B">字符类型</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8D%E5%90%8C%E4%BA%8Emysql%E7%9A%84%E7%89%B9%E6%80%A7">不同于MySQL的特性</a>
+<ul>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E7%B3%BB%E7%BB%9F">账号系统</a></li>
+<li><a href="#schema">schema</a></li>
+<li><a href="#sql%E6%9F%A5%E8%AF%A2">sql查询</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BF%AE%E6%94%B9">数据修改</a></li>
+<li><a href="#%E8%A1%A8%E7%AE%A1%E7%90%86">表管理</a></li>
+<li><a href="#%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA">导入导出</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#crontab-%E5%AE%9A%E6%97%B6%E6%93%8D%E4%BD%9C-postgresql">crontab 定时操作 postgresql</a></li>
+<li><a href="#docker-%E4%B8%AD%E5%90%AF%E5%8A%A8-postgres">docker 中启动 postgres</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#what-is-postgres" id="what-is-postgres">what is postgres</a></h1>
+<p>关系型数据库, 开源, 同类是 MySQL</p>
+<p>Greenplum: 开源分布式数据库集群技术，基于PostgreSQL</p>
+<h1><a class="header" href="#why-postgres" id="why-postgres">Why Postgres</a></h1>
+<p>或者说, 比MySQL好在哪里 (https://www.zhihu.com/question/20010554/answer/62628256)</p>
+<ul>
+<li>MySQL 的各种 text 字段有不同的限制, 要手动区分 small text, middle text, large text... Pg 没有这个限制, text 能支持各种大小.</li>
+<li>pg 可以设置 transform_null_equals 把 = null 翻译成 is null (按照 SQL 标准, 做 null 判断不能用 = null, 只能用 is null, 这是因为 null永远不等于null) - http://www.postgresqltutorial.com/postgresql-is-null/</li>
+<li>MySQL 里需要 utf8mb4 才能显示 emoji 的坑, Pg 就没这个坑.</li>
+<li>MySQL 的事务隔离级别 repeatable read 并不能阻止常见的并发更新, 得加锁才可以, 但悲观锁会影响性能, 手动实现乐观锁又复杂. 而 Pg 的列里有<code>隐藏的乐观锁</code> version 字段, 默认的 repeatable read 级别就能保证并发更新的正确性, 并且又有乐观锁的性能</li>
+<li>MySQL 不支持多个表从同一个序列中取 id, 而 Pg 可以</li>
+<li>MySQL 不支持 OVER 子句, 而 Pg 支持. OVER 子句能简单的解决 &quot;每组取 top 5&quot; 的这类问题</li>
+<li>子查询 (subquery) 性能都比 MySQL 好.</li>
+<li>存储 array 和 json, 可以在 array 和 json 上建索引,  jsonb 的存储结构用来实现文档数据库存储, 不必引入mongodb了</li>
+<li>自带全文检索, 不必引入 elasticsearch</li>
+<li>MySQL 处理树状回复的设计会很复杂, 而且需要写很多代码, 而 Pg 可以高效处理树结构</li>
+<li>postgres 打通所有类型的数据源, 使用sql语法去查询控制，像使用本地表一样. 这就不必引入 ETL了 (postgresql有丰富的fdw拓展插件，能打通sql server, sybase, oracle ,mysql，甚至能打通nosql 如redis, mongodb，还能打通各种文件比如日志文件)</li>
+<li>Postgresql 的PL/Python过程语言允许函数用Python语言编写</li>
+</ul>
+<h1><a class="header" href="#how-to-use" id="how-to-use">how to use</a></h1>
+<h2><a class="header" href="#sql-示例" id="sql-示例">sql 示例</a></h2>
+<pre><code class="language-sql">create table product
+(
+	id serial not null
+		constraint product_pk
+			primary key,
+	name text default '' not null,
+	price decimal default 0 not null,
+	create_date timestamp default now() not null
+);
+
+comment on table product is 'product';
+
+comment on column product.name is 'product name';
+
+comment on column product.price is 'product price
+';
+
+comment on column product.create_date is 'create date';
+
+
+</code></pre>
+<h2><a class="header" href="#数据类型" id="数据类型">数据类型</a></h2>
+<p>http://www.postgres.cn/docs/11/datatype-numeric.html</p>
+<h3><a class="header" href="#时间" id="时间">时间</a></h3>
+<ul>
+<li>date 日期</li>
+<li>time [without time zone] 时间</li>
+<li>timestamp [without time zone], 日期时间, 无时区</li>
+<li>time/timestamp with time zone 有时区 or timestamptz</li>
+<li>interval 时间间隔</li>
+</ul>
+<p>time、timestamp和interval接受一个可选的精度值 p，这个精度值声明在秒域中小数点之后保留的位数。缺省情况下，在精度上没有明确的边界。p允许的范围是从 0 到 6</p>
+<p>时间输入输出最好遵循 ISO 8601, ISO 8601指定使用大写字母T来分隔日期和时间。PostgreSQL在输入上接受这种格式，但是在输出时它采用一个空格而不是T</p>
+<h3><a class="header" href="#array类型" id="array类型">array类型</a></h3>
+<pre><code class="language-sql">CREATE TABLE contacts (
+id serial PRIMARY KEY,
+name VARCHAR (100),
+phones TEXT []
+);
+
+INSERT INTO contacts (name, phones)
+VALUES
+(
+'John Doe',
+ARRAY [ '(408)-589-5846',
+'(408)-589-5555' ]
+);
+
+-- 一次插入两行
+INSERT INTO contacts (name, phones)
+VALUES
+(
+'Lily Bush',
+'{&quot;(408)-589-5841&quot;}' -- 单引号包裹中括号
+),
+(
+'William Gate',
+'{&quot;(408)-589-5842&quot;,&quot;(408)-589-58423&quot;}'
+);
+
+SELECT
+name,
+phones [ 1 ]
+FROM
+contacts;
+
+SELECT
+name,
+phones
+FROM
+contacts
+WHERE
+'(408)-589-5555' = ANY (phones);
+
+
+</code></pre>
+<h3><a class="header" href="#hstore-键值对类型" id="hstore-键值对类型">hstore 键值对类型</a></h3>
+<p>, ref http://www.postgresqltutorial.com/postgresql-hstore/</p>
+<h3><a class="header" href="#json类型" id="json类型">json类型</a></h3>
+<pre><code class="language-sql">CREATE TABLE orders (
+ID serial NOT NULL PRIMARY KEY,
+info json NOT NULL
+);
+
+INSERT INTO orders (info)
+VALUES
+(
+'{ &quot;customer&quot;: &quot;Lily Bush&quot;, &quot;items&quot;: {&quot;product&quot;: &quot;Diaper&quot;,&quot;qty&quot;: 24}}'
+),
+(
+'{ &quot;customer&quot;: &quot;Josh William&quot;, &quot;items&quot;: {&quot;product&quot;: &quot;Toy Car&quot;,&quot;qty&quot;: 1}}'
+),
+(
+'{ &quot;customer&quot;: &quot;Mary Clark&quot;, &quot;items&quot;: {&quot;product&quot;: &quot;Toy Train&quot;,&quot;qty&quot;: 2}}'
+);
+
+SELECT
+info
+FROM
+orders;
+
+SELECT
+info -&gt; 'customer' AS customer -- 获取json中某个key的值, 以json格式返回, 可以继续加箭头
+FROM
+orders;
+
+SELECT
+info -&gt;&gt; 'customer' AS customer -- 以字符串格式返回
+FROM
+orders;
+
+SELECT
+info -&gt; 'items' -&gt;&gt; 'product' as product
+FROM
+orders
+ORDER BY
+product;
+
+</code></pre>
+<h3><a class="header" href="#数字类型" id="数字类型">数字类型</a></h3>
+<ul>
+<li>
+<p>整型: 常用的类型是integer/int，因为它提供了在范围、存储空间和性能之间的最佳平衡。一般只有在磁盘空间紧张的时候才使用 smallint类型。而只有在integer的范围不够的时候才使用bigint</p>
+<p>int2、int4和int8 是 smallint, integer, bigint 简写</p>
+</li>
+<li>
+<p>小数: decimal和numeric是等效的, </p>
+<p>一个numeric的precision（精度）是整个数中有效位的总数, numeric的scale（刻度）是小数部分的数字位数, <code>NUMERIC(precision, scale)</code></p>
+</li>
+</ul>
+<h3><a class="header" href="#序号类型" id="序号类型">序号类型</a></h3>
+<p>smallserial、serial和bigserial类型不是真正的类型，它们只是为了创建唯一标识符列而存在的方便符号</p>
+<p>也有类似 int 的简写</p>
+<pre><code class="language-sql">CREATE TABLE tablename (
+    colname SERIAL
+);
+
+等价于
+CREATE SEQUENCE tablename_colname_seq;
+CREATE TABLE tablename (
+    colname integer NOT NULL DEFAULT nextval('tablename_colname_seq')
+);
+ALTER SEQUENCE tablename_colname_seq OWNED BY tablename.colname;
+
+</code></pre>
+<h3><a class="header" href="#字符类型" id="字符类型">字符类型</a></h3>
+<ul>
+<li>
+<p>character varying(n) 变长 ,有限制 最多存储 n 个字符</p>
+</li>
+<li>
+<p>character(n) 定长, 空格填充</p>
+<p>没有长度声明词的character等效于character(1)</p>
+</li>
+<li>
+<p>text 无限变长</p>
+</li>
+</ul>
+<h2><a class="header" href="#不同于mysql的特性" id="不同于mysql的特性">不同于MySQL的特性</a></h2>
+<h3><a class="header" href="#账号系统" id="账号系统">账号系统</a></h3>
+<pre><code class="language-bash"># 默认提供 db account: postgres/none, Linux account: postgres
+su postgres # 切换user
+psql # 登陆
+
+</code></pre>
+<pre><code class="language-sql">\password postgres; -- 为postgres设置一个密码
+create user dbuser with password 'dbuser'; -- 默认只有登陆权限
+create database demodb owner dbuser;
+grant all privileges on database demodb to dbuser; -- 赋予操作权限
+\q -- 退出psql
+
+</code></pre>
+<p>设置免密登陆</p>
+<pre><code class="language-bash"># 退出后再次登陆
+# psql [options] [dbname [username]]
+psql --host=localhost --port=5432 --dbname=demodb --username=tiger --password=tiger # 报错, 不允许指定密码, 需要手动输入
+# 怎么自动密码登陆呢? 定时任务可能会用到
+# 方法1: 在Linux中创建和db用户同名的账户, 在shell中, psql &lt;dbname&gt; 即可
+#           要导入数据: psql exampledb &lt; exampledb.sql
+# 方法2: 设置环境变量 export PGPASSWORD=&quot;password&quot;
+# 方法3: 在 home dir 中创建.pgpass文件, 写入 localhost:5432:mydbname:postgres:mypass, 文件权限为 600,
+#       然后在 shell中 psql ... -w 即可
+
+# 执行sql
+psql -f &lt;Sql_file&gt; ...
+psql -c &quot;sql query&quot; ...
+
+</code></pre>
+<p>准备数据</p>
+<pre><code class="language-bash"># 
+docker cp &lt;host_sql_location&gt; &lt;container&gt;:&lt;container_location&gt; # 复制到docker
+psql -c &quot;create database dvdrental owner postgres&quot;
+psql -c &quot;grant all privileges on database dvdrental to postgres&quot;
+pg_restore -U tiger -d demodb &lt;xxx.tar&gt;
+
+</code></pre>
+<h3><a class="header" href="#schema" id="schema">schema</a></h3>
+<pre><code class="language-sql">create schema public; -- schema 把一个数据库分为了多个区域, 各个区域中可以存在同名的表
+          -- schema public 是默认存在的, 创建表如果不指定 schema 则默认是 public
+          -- 一般开发时不会写死 schema, 即不会指定schema, 通过 search_path 设置
+drop schema public [cascade]; -- 删除空schema(前置删除)
+
+revoke create on &lt;schema_name&gt; from public; -- 为schema赋予create权限, public表示所有用户
+                -- 权限有多种: create(创建表)/usage(使用表)/...
+
+show search_path ; -- 查看模式的搜索路径
+-- 默认是这样的:
+ search_path
+--------------
+ $user,public
+ 
+-- 这表示, sql 中没有指定schema, 会这么确定schema: 首先查看是否有和当前用户同名的schema, 如果有则使用; 如果没有则使用默认的 public schema
+
+SET search_path TO myschema,public; -- 修改默认的 search_path
+
+</code></pre>
+<p>schema的最佳实践:</p>
+<ul>
+<li>仅仅使用 默认的public, 相当于不使用 schema 这个特性; 适用于 &quot;只有一个用户或者数据库里只有几个合作用户的情形&quot;</li>
+<li>为每个用户创建一个模式，名字和用户相同</li>
+</ul>
+<h3><a class="header" href="#sql查询" id="sql查询">sql查询</a></h3>
+<p>select distinct on (column1, ...) column1, column2 order by ...  按照 column1 分组, 返回每组的第一行, 需要和order by一起使用 </p>
+<pre><code class="language-sql">-- 理解 distinct on 需要从 distinct 看起
+-- 查询 某一字段唯一的行
+select distinct column1 from t1;
+-- 查询 两字段组合在一起唯一的行
+select distinct column1, column2 from  t1;
+-- 问题来了: 查询仅仅某一个字段唯一的行, 但是需要 select 多列
+-- 这时如果仅仅使用 distinct 就有歧义了, 需要使用 distinct on
+select distinct on (column1) column1, column2 from t1; -- 没有排序, 结果不定
+
+</code></pre>
+<p>limit null 等价于省略 limit</p>
+<p>limit n offset m 返回n行, 但是偏移m行后开始计算</p>
+<p>fetch 通过游标抓取结果, 效果类似limit, 因为limit并不是 sql 标准中的语法, 所以引入fetch</p>
+<p>ref: http://www.postgres.cn/docs/9.4/sql-fetch.html</p>
+<pre><code class="language-sql">-- 语法 FETCH { FIRST | NEXT } [ row_count ] { ROW | ROWS } ONLY
+select ... order by xxx FETCH FIRST ROW ONLY; -- 返回第一行
+                    -- 等同于 FETCH FIRST 1 ROW ONLY;
+FETCH FIRST 5 ROW ONLY; -- 返回前5行
+
+-- 和 offset 合用
+OFFSET 5 ROWS FETCH FIRST 5 ROW ONLY; -- 获取排序后的 6-10 行
+
+</code></pre>
+<p>like 模糊查询, 等价于 &quot;~~&quot; (% - 一个或多个字符; 下划线 - 一个字符)</p>
+<p>not like 等价于 &quot;!~~&quot;</p>
+<p>ilike 大小写不敏感 , 等价 &quot;~~*&quot;</p>
+<p>连接符 &quot;||&quot;</p>
+<pre><code class="language-sql">select first_name||' '|| last_name as full_name from customer order by full_name;
+</code></pre>
+<p>inner join</p>
+<p>自连接</p>
+<p>left join, right join</p>
+<p>full [outer] join - 返回A表中的行, 这些行在B表中没有关联的行 </p>
+<p>cross join</p>
+<p>natural [inner/left/right] join (默认 inner) 无需指定连接条件, 将表中具有相同名称的列自动进行匹配</p>
+<p>union 并集</p>
+<p>intersect 并集</p>
+<p>except 差集</p>
+<p>grouping sets() - group by 的子句, 效果相当于对多个 group by 结果进行 union all; 最后的结果集列数为多个group by 中的最大的列数, 合并时,列数不够的会用 null 补全;</p>
+<pre><code class="language-sql">-- 一个 grouping set 就是一个包含多个列的集合, 用这些列来进行group by
+-- In this syntax, you have four grouping sets (c1,c2), (c1), (c2), and ().
+SELECT
+    c1,
+    c2,
+    aggregate_function(c3)
+FROM
+    table_name
+GROUP BY
+    GROUPING SETS (
+        (c1, c2),
+        (c1),
+        (c2),
+        ()
+);
+</code></pre>
+<p>cube(c1, c2, c3) 用来简写 grouping sets(...), 为指定的列产生所有可能的grouping set组合</p>
+<pre><code class="language-sql">CUBE(c1,c2,c3)
+ -- 等价于
+GROUPING SETS (
+    (c1,c2,c3),
+    (c1,c2),
+    (c1,c3),
+    (c2,c3),
+    (c1),
+    (c2),
+    (c3),
+    ()
+)
+</code></pre>
+<p>rollup 是group by 的子句, 也是产生 grouping set, 只是不是产生全部的可能组合, 而是只产生少部分; 多个列间有层级关系; 常用来计算年月日</p>
+<pre><code class="language-sql">-- cube 和 rollup 区别:
+
+CUBE (c1,c2,c3)
+-- 等价于
+(c1, c2, c3)
+(c1, c2)
+(c2, c3)
+(c1,c3)
+(c1)
+(c2)
+(c3)
+()
+
+ROLLUP(c1,c2,c3)
+-- 等价于
+(c1, c2, c3)
+(c1, c2)
+(c1)
+()
+</code></pre>
+<h3><a class="header" href="#数据修改" id="数据修改">数据修改</a></h3>
+<p>update... from ... 根据其他表的条件进行更新</p>
+<pre><code class="language-sql">UPDATE A
+SET A.c1 = expresion
+FROM B
+WHERE A.c2 = B.c2;
+
+</code></pre>
+<p>insert into ... on conflict target action 插入or更新</p>
+<pre><code class="language-sql">-- target: 列名/约束名/where子句
+-- action: DO NOTHING  或者  DO UPDATE SET column_1 = value_1, .. WHERE condition
+
+</code></pre>
+<h3><a class="header" href="#表管理" id="表管理">表管理</a></h3>
+<p>字段类型</p>
+<p>http://www.postgresqltutorial.com/postgresql-data-types/</p>
+<p>create table</p>
+<pre><code class="language-sql">CREATE TABLE table_name (
+column_name TYPE column_constraint,
+table_constraint table_constraint
+) INHERITS existing_table_name; -- 继承所有字段
+
+
+CREATE TABLE new_table_name [(columns...)]
+AS some_query; -- 用查询到的数据填充新建的表
+
+CREATE TABLE IF NOT EXISTS new_table_name -- 不存在才创建
+AS query;
+
+CREATE TEMPORARY/TEMP TABLE temp_table -- 临时表, 在一次会话中有效
+
+</code></pre>
+<h3><a class="header" href="#导入导出" id="导入导出">导入导出</a></h3>
+<p>http://www.postgresqltutorial.com/#</p>
+<h1><a class="header" href="#crontab-定时操作-postgresql" id="crontab-定时操作-postgresql">crontab 定时操作 postgresql</a></h1>
+<pre><code class="language-sh"># crontab -e
+# * * * * * /root/xy/crontab.sh
+# service cron restart
+
+# psql &quot;host=192.168.0.123 port =5432 user = treece password =1123 dbname=amt&quot; -f ./deal_str.sql
+
+#!/bin/bash
+
+step = 20 # period seconds
+sql_location = '/root/xy/update.sql'
+host = '10.59.97.227'
+port = 5432
+db_name = 'sat'
+user_name = 'pimpopr'
+
+for((i = 0; i &lt; 60; i = (i + step)));do
+        #$(echo &quot;test-test&quot; &gt;&gt; /root/xy/test.txt)
+        psql &quot;host=${host} port=${port} dbname=${db_name} user=${user} password=&quot;
+        sleep ${step}
+done
+exit 0
+</code></pre>
+<h1><a class="header" href="#docker-中启动-postgres" id="docker-中启动-postgres">docker 中启动 postgres</a></h1>
+<pre><code class="language-sh">mkdir -p $HOME/docker/volumes/postgres
+
+docker run -d --rm --name postgresql -e POSTGRES_USER=dbuser -e POSTGRES_DB=testdb  -e POSTGRES_PASSWORD=password -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data  postgres
+
+
+</code></pre>
+<p>我是在 wsl2 中运行的 docker, 使用 navicat 可以正常使用 localhost 连接 .使用 inteliJ 系列, 需要 查出 wsl2 的 eth0 地址, 不能直接用 localhost 连接</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="php-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="python-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="php-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="python-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

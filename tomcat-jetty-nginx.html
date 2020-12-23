@@ -1,0 +1,929 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>tomcat-jetty-nginx - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html" class="active"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Tomcat Jetty Nginx
+tags:</p>
+<ul>
+<li>tomcat</li>
+<li>jetty</li>
+<li>nginx
+categories: java web
+date: 2016-04-28 15:31:40</li>
+</ul>
+<hr />
+<div align="center">
+比较Tomcat, jetty, Nginx; 笔记
+references: [1](https://www.zhihu.com/question/32212996), [2](https://blog.csdn.net/zhongyanpingzzz/article/details/50353111),
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E6%AF%94%E8%BE%83">比较</a>
+<ul>
+<li><a href="#tomcat%E5%92%8Cjetty">Tomcat和jetty</a></li>
+<li><a href="#apache-http-server%E5%92%8Cnginx">Apache http server和Nginx</a></li>
+</ul>
+</li>
+<li><a href="#nginx">nginx</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">使用场景</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令</a></li>
+<li><a href="#nginxconf-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">nginx.conf 配置文件</a>
+<ul>
+<li><a href="#%E6%9C%80%E7%AE%80%E9%85%8D%E7%BD%AE">最简配置</a></li>
+<li><a href="#%E7%BB%84%E6%88%90%E5%85%83%E7%B4%A0">组成元素</a></li>
+</ul>
+</li>
+<li><a href="#%E6%90%AD%E9%85%8D-docker-%E4%BD%BF%E7%94%A8">搭配 docker 使用</a></li>
+<li><a href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E9%85%8D%E7%BD%AEdemo">负载均衡配置demo</a></li>
+<li><a href="#nginx%E5%92%8Clua%E8%84%9A%E6%9C%AC">nginx和lua脚本</a></li>
+<li><a href="#tengine">tengine</a></li>
+<li><a href="#nginx-%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91">nginx 模块开发</a></li>
+<li><a href="#nginx%E9%9D%A2%E8%AF%95%E9%A2%98">nginx面试题</a>
+<ul>
+<li><a href="#nginx%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E9%AB%98%E5%B9%B6%E5%8F%91%E7%9A%84">nginx是如何实现高并发的</a></li>
+<li><a href="#nginx-%E5%92%8C-apache-%E5%8C%BA%E5%88%AB">nginx 和 apache 区别</a></li>
+<li><a href="#fastcgi-%E4%B8%8E-cgi-%E7%9A%84%E5%8C%BA%E5%88%AB">fastcgi 与 cgi 的区别</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#jetty">jetty</a>
+<ul>
+<li><a href="#%E9%83%A8%E7%BD%B2-app-%E5%88%B0-jetty-%E5%86%85%E9%83%A8">部署 app 到 jetty 内部</a></li>
+<li><a href="#jetty%E6%94%AF%E6%8C%81servlet30%E6%B3%A8%E8%A7%A3">jetty支持servlet3.0注解</a></li>
+<li><a href="#jetty%E7%9A%84%E6%95%B4%E4%B8%AA%E7%BB%93%E6%9E%84">jetty的整个结构</a></li>
+<li><a href="#jetty%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B">Jetty的工作过程</a>
+<ul>
+<li><a href="#%E5%90%AF%E5%8A%A8">启动</a></li>
+<li><a href="#%E6%8E%A5%E5%8F%97%E8%AF%B7%E6%B1%82">接受请求</a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E8%AF%B7%E6%B1%82">处理请求</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tomcat">Tomcat</a>
+<ul>
+<li><a href="#tomcat-%E6%80%BB%E4%BD%93%E7%BB%93%E6%9E%84">Tomcat 总体结构</a>
+<ul>
+<li><a href="#connector">Connector</a></li>
+<li><a href="#container">Container</a></li>
+</ul>
+</li>
+<li><a href="#%E7%94%A8%E5%88%B0%E4%BA%86%E5%93%AA%E4%BA%9B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">用到了哪些设计模式</a>
+<ul>
+<li><a href="#facade">Facade</a></li>
+<li><a href="#observer">Observer</a></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#chain-of-responsibility">Chain of responsibility</a></li>
+</ul>
+</li>
+<li><a href="#tomcat-%E4%BC%98%E5%8C%96">Tomcat 优化</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#比较" id="比较">比较</a></h1>
+<h2><a class="header" href="#tomcat和jetty" id="tomcat和jetty">Tomcat和jetty</a></h2>
+<ul>
+<li>
+<p>jetty和Tomcat类似, 均为servlet容器 - 他们都支持标准的servlet规范和JavaEE的规范</p>
+</li>
+<li>
+<p>jetty比Tomcat轻量级</p>
+</li>
+<li>
+<p>Jetty比tomcat更容易扩展</p>
+<ul>
+<li>
+<p>jetty的架构是基于Handler来实现的，主要的扩展功能都可以用Handler来实现，扩展简单. Tomcat的架构是基于容器设计的，进行扩展是需要了解Tomcat的整体设计结构，不易扩展。</p>
+</li>
+<li>
+<p>jetty是使用java编写的，他的api是一组以jar包的形式发布，开发人员可以将jetty容器实例化成一个对象，可以迅速为一些独立（stand-alone）的java应用提供网络和web链接</p>
+</li>
+</ul>
+</li>
+<li>
+<p>主攻方向不同:</p>
+<ul>
+<li>
+<p>jetty可以利用 Continuation 机制来处理大量的用户请求以及时间比较长的连接, 适合于web聊天应用等等,像淘宝的 web 旺旺就是用 Jetty 作为 Servlet 引擎; </p>
+</li>
+<li>
+<p>Tomcat适合处理少数非常繁忙的链接，也就是说链接生命周期短的话，Tomcat的总体性能更高</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Tomcat默认采用BIO处理I/O请求，在处理静态资源时，性能较差。Jetty默认采用NIO在处理I/O请求上更占优势，在处理静态资源时，性能较高</p>
+</li>
+<li>
+<p>Jetty更满足公有云的分布式环境的需求 ,比如 Google app engine ，而Tomcat更符合企业级环境</p>
+</li>
+</ul>
+<h2><a class="header" href="#apache-http-server和nginx" id="apache-http-server和nginx">Apache http server和Nginx</a></h2>
+<ul>
+<li>
+<p>Nginx类似于Apache http server, 不像Tomcat可以支持生成动态页面，但它们可以通过其他模块来支持（例如通过Shell、PHP、Python脚本程序来动态生成内容）</p>
+</li>
+<li>
+<p>Tomcat通常和Nginx配合使用</p>
+<ul>
+<li>
+<p>动静态资源分离——运用Nginx的反向代理功能分发请求：所有动态资源的请求交给Tomcat，而静态资源的请求（例如图片、视频、CSS、JavaScript文件等）则直接由Nginx返回到浏览器，这样能大大减轻Tomcat的压力。</p>
+</li>
+<li>
+<p>负载均衡，当业务压力增大时，可能一个Tomcat的实例不足以处理，那么这时可以启动多个Tomcat实例进行水平扩展，而Nginx的负载均衡功能可以把请求通过算法分发到各个不同的实例进行处理</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Nginx相对于Apache的优点: 轻量级; 抗并发(nginx 处理请求是异步非阻塞的，而apache 则是阻塞型的); 高度模块化的设计，编写模块相对简单; 提供负载均衡;</p>
+</li>
+<li>
+<p>Apache优点: apache的 rewrite 比nginx 的强大; 性能稳定，而nginx相对bug较多; Apache 对 PHP 支持比较简单，Nginx 需要配合其他后端用</p>
+<ul>
+<li>apache rewrite -&gt; http://httpd.apache.org/docs/current/rewrite/, 主要的功能就是实现URL的跳转</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#nginx" id="nginx">nginx</a></h1>
+<p>https://github.com/jaywcjlove/nginx-tutorial</p>
+<p>https://docshome.gitbook.io/nginx-docs/ 中文文档</p>
+<h2><a class="header" href="#使用场景" id="使用场景">使用场景</a></h2>
+<ul>
+<li>
+<p>静态web服务器, </p>
+</li>
+<li>
+<p>负载均衡, </p>
+</li>
+<li>
+<p>反向代理</p>
+<p>(以代理服务器来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。)图示:</p>
+</li>
+<li>
+<p>http 缓存</p>
+</li>
+</ul>
+<h2><a class="header" href="#常用命令" id="常用命令">常用命令</a></h2>
+<pre><code class="language-sh">
+# -s 即signal, 向 nginx 发送 start|reload|stop 命令的意思 
+
+nginx -s start;     # 启动
+# or
+./sbin/nginx
+
+nginx -s stop       # 快速关闭Nginx，可能不保存相关信息，并迅速终止web服务。
+
+nginx -s quit       # 平稳关闭Nginx，保存相关信息，有安排的结束web服务。
+
+nginx -s reload     # 因改变了Nginx相关配置，需要重新加载配置而重载。
+
+nginx -s reopen     # 重新打开日志文件。
+
+nginx -c filename   # 为 Nginx 指定一个配置文件，来代替缺省的。
+
+nginx -t            # 检查配置文件的语法的正确性。
+                    # 不运行，
+
+nginx -v            # 显示 nginx 的版本。
+
+</code></pre>
+<h2><a class="header" href="#nginxconf-配置文件" id="nginxconf-配置文件">nginx.conf 配置文件</a></h2>
+<h3><a class="header" href="#最简配置" id="最简配置">最简配置</a></h3>
+<pre><code class="language-conf">server {
+  listen       80;
+  server_name  localhost;
+
+  location / {
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+    try_files $uri /index.html;
+  }
+}
+
+</code></pre>
+<h3><a class="header" href="#组成元素" id="组成元素">组成元素</a></h3>
+<p>分号结尾</p>
+<p>分为几个部分:</p>
+<ul>
+<li>全局块: configuring cmds that affect the global, eg: user group, worker number, log file path, pid path...</li>
+<li>events: config the network connections, such as worker max connection num, even driven model...</li>
+<li>http module: 日志 , 代理 ,缓存...超时..., 
+<ul>
+<li>http global module, 如 upstream, 超时, error page</li>
+<li>server module 1 配置虚拟主机
+<ul>
+<li>location 1 配置 route</li>
+<li>location 2</li>
+</ul>
+</li>
+<li>server module 2;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-conf">
+# 定义Nginx运行的用户和用户组
+user www www;
+
+#工作进程个数 建议设置为等于CPU总核心数
+worker_processes  1;
+
+#全局错误日志定义类型，[ debug | info | notice | warn | error | crit ]
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  /usr/local/nginx/logs/error.log info;
+
+#进程pid文件
+#pid        logs/nginx.pid;
+
+
+# 若为空, 需要保留这一个段落
+events {
+    # 单个工作进程最大并发连接数, 默认 1024, 也不能设置太大，不能让你的CPU跑满100%
+    worker_connections  1024;
+
+    # 使用什么事件模型， use [ kqueue | rtsig | epoll | /dev/poll | select | poll ]
+    #epoll模型是Linux 2.6以上版本内核中的高性能网络I/O模型，如果跑在FreeBSD上面，就用kqueue模型。
+    #use epoll;
+
+    #连接超时时间。
+    #keepalive_timeout 60;
+
+    #
+    #client_header_buffer_size 4k;
+
+
+    # 事件驱动模型
+}
+
+
+http {
+    #文件扩展名与文件类型映射表 (支持的 mine 类型)
+    include       mime.types;
+    #默认文件类型
+    default_type  application/octet-stream;
+    #默认编码
+    #charset utf-8; 
+
+    # server_names_hash_bucket_size 128; #服务器名字的hash表大小
+    # client_header_buffer_size 32k; #上传文件大小限制
+
+    # 日志格式
+    #log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+    #                  '$status $body_bytes_sent &quot;$http_referer&quot; '
+    #                  '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+
+    #日志路径
+    #access_log  logs/access.log  main;
+
+    #开启高效文件传输模式，
+    #sendfile指令指定nginx是否调用sendfile函数来输出文件，对于普通应用设为 on，如果用来进行下载等 磁盘IO重负载应用，可设置为off，以平衡磁盘与网络I/O处理速度，降低系统的负载。
+    #注意：如果图片显示不正常把这个改成off
+    sendfile        on;
+
+    #autoindex on; #开启目录列表访问，合适下载服务器，默认关闭。
+
+    ##防止网络阻塞
+    #tcp_nopush     on;
+    tcp_nodelay on; #防止网络阻塞
+
+    keepalive_timeout 120; #长连接超时时间，单位是秒
+
+    #FastCGI相关参数是为了改善网站的性能：减少资源占用，提高访问速度。
+    fastcgi_connect_timeout 300;
+    fastcgi_send_timeout 300;
+    fastcgi_read_timeout 300;
+    fastcgi_buffer_size 64k;
+    fastcgi_buffers 4 64k;
+    fastcgi_busy_buffers_size 128k;
+    fastcgi_temp_file_write_size 128k;
+
+    #gzip模块设置
+    gzip on; #开启gzip压缩输出
+
+    # 不是必须
+    gzip_min_length 1k; #最小压缩文件大小
+    gzip_buffers 4 16k; #压缩缓冲区
+    gzip_http_version 1.0; #压缩版本（默认1.1，前端如果是squid2.5请使用1.0）
+    gzip_comp_level 2; #压缩等级
+    #压缩类型，默认就已经包含text/html，所以下面就不用再写了，写上去也不会有问题，但是会有一个warn。
+    gzip_types text/plain application/x-javascript text/css application/xml;
+    gzip_vary on;
+
+    #limit_zone crawler $binary_remote_addr 10m; #开启限制IP连接数的时候需要使用
+
+    # upstream的负载均衡配置
+    upstream blog.ha97.com {
+        #weight是权重，可以根据机器配置定义权重。weigth参数表示权值，权值越高被分配到的几率越大。
+        server 192.168.80.121:80 weight=3;
+        server 192.168.80.122:80 weight=2;
+        server 192.168.80.123:80 weight=3;
+
+    }
+
+    # 虚拟主机的配置
+    # 可以放到其他配置文件, 通过 include 引入, 如 (常用)
+    #include /etc/nginx/conf.d/*.conf , 每个 .conf 是一个 server
+    server {
+        # 监听端口
+        listen       8080;
+
+        # #域名, 当前 server 为这个域名服务
+        # nginx 比较 请求头里的 Host 请头, 和这里比较
+        #可以有多个，用空格隔开
+        server_name  localhost aa.cn;
+
+        # index index.html index.htm index.php;  # 设置访问主页
+
+     # 绑定目录为二级域名 bbb.aa.com  根目录 /bbb  文件夹
+        set $subdomain ''; # 定义变量
+        if ( $host ~* &quot;(?:(\w+\.){0,})(\b(?!www\b)\w+)\.\b(?!(com|org|gov|net|cn)\b)\w+\.[a-zA-Z]+&quot; ) { 
+            set $subdomain &quot;/$2&quot;; 
+        }
+        root /home/wwwroot/aa.cn/web$subdomain;# 访问域名跟目录  
+
+        include rewrite/dedecms.conf; #rewrite end   #载入其他配置文件
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+
+
+        location / { # 为 / 配置 路径映射
+            root   html; # 项目根目录为 html
+            index  index.html index.htm; # 欢迎页
+            proxy_pass http://baidu.com ;# 代理给百度
+            proxy_set_header Host $host; # nginx 转发给 gateway, 会丢失 Host , 这里给补上
+        }
+
+        # load balance config 负载均衡
+        upstream aaa {
+            serverxxx 192.168.1.101:88;
+        }
+        location / {
+            proxy_pass http://aaa;
+            proxy_set_header Host $host; # nginx 转发时会丢失 Host header, 这里加上
+        }
+
+        #图片缓存时间设置
+        location ~ .*.(gif|jpg|jpeg|png|bmp|swf)$ {
+        　　expires 10d;
+        }
+
+        #JS和CSS缓存时间设置
+        location ~ .*.(js|css)?$ {
+        　　expires 1h;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+
+    #对 &quot;/&quot; 启用反向代理
+    location / {
+        proxy_pass http://127.0.0.1:88;
+        proxy_redirect off;
+        proxy_set_header X-Real-IP $remote_addr;
+        #后端的Web服务器可以通过X-Forwarded-For获取用户真实IP
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        #以下是一些反向代理的配置，可选。
+        proxy_set_header Host $host;
+        client_max_body_size 10m; #允许客户端请求的最大单文件字节数
+        client_body_buffer_size 128k; #缓冲区代理缓冲用户端请求的最大字节数，
+        proxy_connect_timeout 90; #nginx跟后端服务器连接超时时间(代理连接超时)
+        proxy_send_timeout 90; #后端服务器数据回传时间(代理发送超时)
+        proxy_read_timeout 90; #连接成功后，后端服务器响应时间(代理接收超时)
+        proxy_buffer_size 4k; #设置代理服务器（nginx）保存用户头信息的缓冲区大小
+        proxy_buffers 4 32k; #proxy_buffers缓冲区，网页平均在32k以下的设置
+        proxy_busy_buffers_size 64k; #高负荷下缓冲大小（proxy_buffers*2）
+        proxy_temp_file_write_size 64k;
+        #设定缓存文件夹大小，大于这个值，将从upstream服务器传
+    }
+    
+    #设定查看Nginx状态的地址
+    location /NginxStatus {
+        stub_status on;
+        access_log on;
+        auth_basic &quot;NginxStatus&quot;;
+        auth_basic_user_file conf/htpasswd;
+        #htpasswd文件的内容可以用apache提供的htpasswd工具来产生。
+    }
+
+    #本地动静分离反向代理配置
+    #所有jsp的页面均交由tomcat或resin处理
+    location ~ .(jsp|jspx|do)?$ {
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8080;
+
+    }
+    #所有静态文件由nginx直接读取不经过tomcat或resin
+    location ~ .*.(htm|html|gif|jpg|jpeg|png|bmp|swf|ioc|rar|zip|txt|flv|mid|doc|ppt|pdf|xls|mp3|wma)$
+    {　　 expires 15d;　　 }
+    location ~ .*.(js|css)?$
+    { 　　expires 1h;　　 }
+
+
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443 ssl;
+    #    server_name  localhost;
+
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_cache    shared:SSL:1m;
+    #    ssl_session_timeout  5m;
+
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers  on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+}
+
+</code></pre>
+<h2><a class="header" href="#搭配-docker-使用" id="搭配-docker-使用">搭配 docker 使用</a></h2>
+<p>http://www.ruanyifeng.com/blog/2018/02/nginx-docker.html</p>
+<pre><code class="language-sh">$ docker container run \
+  -p 127.0.0.2:8080:80 \    # 容器的80端口映射到127.0.0.2:8080
+  --rm \                    # 容器停止运行后，自动删除容器文件(不是image), 如果是后台运行(-d), 则无效
+  --name mynginx \
+  nginx                     # 本地没有这个image, 会自动从远程 pull 最新版
+
+# $PWD表示当前目录, 接string需要&quot;&quot;, 
+$ docker container run \
+  -p 127.0.0.2:8080:80 \
+  --rm \
+  --name mynginx \
+  --volume $PWD/html:/usr/share/nginx/html \
+  nginx
+
+$ ducker run -p 8080:80 --rm --name mynginx --privileged=true -v &quot;$PWD/html&quot;:/usr/share/nginx/html -v &quot;$PWD/conf&quot;:/etc/nginx nginx
+</code></pre>
+<h2><a class="header" href="#负载均衡配置demo" id="负载均衡配置demo">负载均衡配置demo</a></h2>
+<pre><code class="language-sh">http {
+    #设定mime类型,类型由mime.type文件定义
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+    #设定日志格式
+    access_log    /var/log/nginx/access.log;
+
+    #设定负载均衡的服务器列表, 然后在location中对应。
+    upstream load_balance_server {
+        #weigth参数表示权值，权值越高被分配到的几率越大
+        server 127.0.0.1        weight=2;
+        server 127.0.0.1:8081   weight=1;
+    }
+
+   #HTTP服务器
+   server {
+        #监听80端口
+        listen       8090;
+        
+        #以什么IP进行访问
+        server_name  localhost;
+
+        #对所有请求进行负载均衡请求
+        location /blog {
+            #请求转向load_balance_server 定义的服务器列表
+            proxy_pass  http://load_balance_server ;
+        }
+    }
+}
+
+</code></pre>
+<p>即上面配置中的upstream可选的四种负载均衡算法(<a href="https://zhuanlan.zhihu.com/p/25102281">ref</a>))</p>
+<ul>
+<li>服务器轮询（默认方式）</li>
+<li>ip_hash</li>
+<li>fair</li>
+<li>url_hash</li>
+</ul>
+<h2><a class="header" href="#nginx和lua脚本" id="nginx和lua脚本">nginx和lua脚本</a></h2>
+<p>http://wiki.jikexueyuan.com/project/nginx-lua/introduction.html
+https://blog.csdn.net/cgj296645438/article/details/88560461 灰度发布
+https://www.cnblogs.com/wangxusummer/p/4309007.html ngx_lua 模块
+https://www.cnblogs.com/xd502djj/p/6097773.html, https://www.cnblogs.com/digdeep/p/4859575.html Openrestry入门</p>
+<h2><a class="header" href="#tengine" id="tengine">tengine</a></h2>
+<p>1、tengine是在nginx上面开发的，包含了nginx的性能。</p>
+<p>2、tengine更适合大访问量网站的需求，相比nginx更加的稳定，性能更加的强劲。</p>
+<h2><a class="header" href="#nginx-模块开发" id="nginx-模块开发">nginx 模块开发</a></h2>
+<p>http://blog.codinglabs.org/articles/intro-of-nginx-module-development.html</p>
+<h2><a class="header" href="#nginx面试题" id="nginx面试题">nginx面试题</a></h2>
+<p>https://www.cnblogs.com/mmdln/p/8952261.html
+https://blog.csdn.net/xal0610/article/details/79531692</p>
+<p>TODO</p>
+<h3><a class="header" href="#nginx是如何实现高并发的" id="nginx是如何实现高并发的">nginx是如何实现高并发的</a></h3>
+<p>一个主进程，多个工作进程，每个工作进程可以处理多个请求</p>
+<p>事件驱动：每进来一个request，会有一个worker进程去处理。但不是全程的处理，处理到可能发生阻塞的地方，比如向上游（后端）服务器转发request，并等待请求返回。那么，这个处理的worker继续处理其他请求，而一旦上游服务器返回了，就会触发这个事件，worker才会来接手，这个request才会接着往下走。</p>
+<p>由于web server的工作性质决定了每个request的大部份生命都是在网络传输中，实际上花费在server机器上的时间片不多。这是几个进程就解决高并发的秘密所在</p>
+<h3><a class="header" href="#nginx-和-apache-区别" id="nginx-和-apache-区别">nginx 和 apache 区别</a></h3>
+<p>nginx 比 apache 占用更少的资源</p>
+<p>nginx 处理请求是异步非阻塞的，一个进程可以同时处理多个连接；apache 是阻塞的， 一个进程只能同时处理一个连接</p>
+<h3><a class="header" href="#fastcgi-与-cgi-的区别" id="fastcgi-与-cgi-的区别">fastcgi 与 cgi 的区别</a></h3>
+<h1><a class="header" href="#jetty" id="jetty">jetty</a></h1>
+<p>references: <a href="https://www.cnblogs.com/windlaughing/archive/2013/06/07/3125358.html">embed jetty into your app</a>, <a href="https://my.oschina.net/tryUcatchUfinallyU?tab=newest&amp;catalogId=300813">source code reading</a>, <a href="https://www.eclipse.org/jetty/documentation/9.4.12.v20180830/">official specifications</a></p>
+<p>embed jetty into your app -&gt; https://github.com/xiaoyureed/samples/</p>
+<h2><a class="header" href="#部署-app-到-jetty-内部" id="部署-app-到-jetty-内部">部署 app 到 jetty 内部</a></h2>
+<p>开发好的应用程序打成 WAR 包放到 Jetty 的 Webapps 目录下面。然后用如下的命令来启动 Jetty 服务器：Java –jar start.jar， 在启动服务器后。我们就可以访问我们的应用程序了，Jetty 的默认端口是 8080，WAR 的名字也就是我们的应用程序的 Root Context。例如一个典型的 URL 就是：<code>http://127.0.0.1:8080/sample/index.html</code> 。</p>
+<h2><a class="header" href="#jetty支持servlet30注解" id="jetty支持servlet30注解">jetty支持servlet3.0注解</a></h2>
+<p>Jetty Distribution - 默认支持</p>
+<p>Jetty Maven Plugin - pre-enabled for the Maven plugin</p>
+<p>embedded jetty 需要手动设置:  include the <code>jetty-annotations</code> jar, include the <code>org.eclipse.jetty.annotations.AnnotationConfiguration</code></p>
+<h2><a class="header" href="#jetty的整个结构" id="jetty的整个结构">jetty的整个结构</a></h2>
+<p><img src="Snipaste_2018-10-30_13-04-46.png" alt="alt" /></p>
+<ul>
+<li>
+<p>整个 Jetty 的所有组件的生命周期管理是基于观察者模式设计</p>
+</li>
+<li>
+<p>整个 Jetty 的核心组件由 Server 和 Connector 两个组件构成</p>
+<ul>
+<li>
+<p>整个 Server 组件是基于 Handler 容器工作的，它类似与 Tomcat 的 Container 容器; server组件由<code>多个 server Handler</code> 组成</p>
+</li>
+<li>
+<p>Connector，它负责接受客户端的连接请求，并将请求分配给一个处理队列去执行</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Jetty 中还有一些非必须的组件，我们可以在它上做扩展。如 JMX，我们可以定义一些 Mbean 把它加到 Server 中，当 Server 启动的时候，这些 Bean 就会一起工作。</p>
+</li>
+<li>
+<p>Handler 的体系结构 - 提供了两种 Handler 类型</p>
+<ul>
+<li>
+<p>HandlerWrapper - 可以将一个 Handler 委托给另外一个类去执行</p>
+</li>
+<li>
+<p>HandlerCollection - 将多个 Handler 组装在一起，构成一个 Handler 链, ScopeHandler 可以帮助你控制这个链的访问顺序</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#jetty的工作过程" id="jetty的工作过程">Jetty的工作过程</a></h2>
+<h3><a class="header" href="#启动" id="启动">启动</a></h3>
+<p>Server 的 start 方法调用就会调用所有已经注册到 Server 的组件，Server 启动其它组件的顺序是：首先启动设置到 Server 的 Handler，通常这个 Handler 会有很多子 Handler，这些 Handler 将组成一个 Handler 链。Server 会依次启动这个链上的所有 Handler。接着会启动注册在 Server 上 JMX 的 Mbean，让 Mbean 也一起工作起来，最后会启动 Connector，打开端口，接受客户端请求</p>
+<h3><a class="header" href="#接受请求" id="接受请求">接受请求</a></h3>
+<ul>
+<li>
+<p>使用两种协议: 一个是 HTTP，一个是 AJP 协议</p>
+</li>
+<li>
+<p>如果前端没有其它 web 服务器，那么 Jetty 应该是基于 HTTP 协议工作。也就是当 Jetty 接收到一个请求时，必须要按照 HTTP 协议解析请求和封装返回的数据 - 设置 Jetty 的 Connector 实现类为 <code>org.eclipse.jetty.server.bi.SocketConnector </code>让 Jetty 以 BIO 的方式工作</p>
+</li>
+<li>
+<p>在应用服务器，如 Jboss 的前面在加一个 web 服务器，如 Apache 或者 nginx，这样做的目的是: 做日志分析、负载均衡、权限控制、防止恶意请求以及静态资源预加载等等。此时使用 ajp协议</p>
+<ul>
+<li>
+<p>这种架构下 servlet 引擎就不需要解析和封装返回的 HTTP 协议，因为 HTTP 协议的解析工作已经在 Apache 或 Nginx 服务器上完成了，Jboss 只要基于更加简单的 AJP 协议工作就行了，这样能加快请求的响应速度。</p>
+</li>
+<li>
+<p>让 Jetty 工作在 AJP 协议下，需要配置 connector 的实现类为 <code>Ajp13SocketConnector</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#处理请求" id="处理请求">处理请求</a></h3>
+<p>Jetty 要做的就是调用你注册的第一个 Handler 的 <code>handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) </code>方法</p>
+<pre><code class="language-java">Server server = new Server(8080); 
+ContextHandler context = new ContextHandler(); 
+context.setContextPath(&quot;/&quot;); 
+context.setResourceBase(&quot;.&quot;); 
+context.setClassLoader(Thread.currentThread().getContextClassLoader()); 
+server.setHandler(context); 
+context.setHandler(new HelloHandler()); 
+server.start(); 
+server.join();
+
+</code></pre>
+<h1><a class="header" href="#tomcat" id="tomcat">Tomcat</a></h1>
+<p>references: <a href="https://www.ibm.com/developerworks/cn/java/j-lo-tomcat1/">1</a>, <a href="https://www.ibm.com/developerworks/cn/java/j-lo-tomcat2/">2</a></p>
+<h2><a class="header" href="#tomcat-总体结构" id="tomcat-总体结构">Tomcat 总体结构</a></h2>
+<p><img src="Snipaste_2018-10-30_13-56-29.png" alt="alt" /></p>
+<ul>
+<li>
+<p>2个核心组件 - Connector 和 Container: </p>
+<ul>
+<li>
+<p>connector 接收浏览器的发过来的 tcp 连接请求: 创建 Request, response 对象, 传递给 container的线程</p>
+</li>
+<li>
+<p>container 主要处理 Connector 接受的请求: 产生一个线程来处理connector产生的 Request 和 Response 对象</p>
+</li>
+</ul>
+</li>
+<li>
+<p>多个 Connector 和一个 Container 就形成了一个 Service对外提供服务 (service 就是一个接口)</p>
+</li>
+<li>
+<p>server 可以包含多个 service</p>
+</li>
+</ul>
+<h3><a class="header" href="#connector" id="connector">Connector</a></h3>
+<p>主要任务是负责接收浏览器的发过来的 tcp 连接请求，创建一个 Request 和 Response 对象分别用于和请求端交换数据，然后会产生一个线程来处理这个请求并把产生的 Request 和 Response 对象传给处理这个请求的线程，处理这个请求的线程就是 Container 组件要做的事了</p>
+<h3><a class="header" href="#container" id="container">Container</a></h3>
+<p><img src="Snipaste_2018-10-30_14-19-38.png" alt="alt" /></p>
+<p>Container 是容器的父接口，所有子容器都必须实现这个接口，Container 容器的设计用的是典型的责任链的设计模式</p>
+<p>它有四个子容器组件构成, 有父子关系，分别是：Engine、Host、Context、Wrapper (遵从 &quot;parent -&gt; child&quot; 顺序:)</p>
+<p>一个 Servlet class 对应一个 Wrapper，如果有多个 Servlet 就可以定义多个 Wrapper</p>
+<p>真正管理 Servlet 的容器是 Context 容器，一个 Context 对应一个 Web 工程</p>
+<pre><code class="language-xml">&lt;Context
+    path=&quot;/library&quot;
+    docBase=&quot;D:\projects\library\deploy\target\library.war&quot;
+    reloadable=&quot;true&quot; 
+/&gt;
+&lt;!-- 
+- reloadable=&quot;true&quot; - war 被修改后 Tomcat 会自动的重新加载这个应用
+ --&gt;
+
+</code></pre>
+<p>Context 还可以定义在父容器 Host 中，Host 不是必须的，但是要运行 war 程序，就必须要 Host，因为 war 中必有 web.xml 文件，这个文件的解析就需要 Host 了，如果要有多个 Host 就要定义一个 top 容器 Engine 了。而 Engine 没有父容器了，一个 Engine 代表一个完整的 Servlet 引擎。</p>
+<p>四个组件都会有自己的一套 Valve 集合, 在 server.xml 文件中可以添加Valve; StandardEngineValve 和 StandardHostValve 是 Engine 和 Host 的默认的 Valve，它们是最后一个 Valve 负责将请求传给它们的子容器，以继续往下执行</p>
+<p>Wrapper 的实现类是 StandardWrapper，StandardWrapper 还实现了拥有一个 Servlet 初始化信息的 ServletConfig，由此看出 StandardWrapper 将直接和 Servlet 的各种信息打交道</p>
+<h2><a class="header" href="#用到了哪些设计模式" id="用到了哪些设计模式">用到了哪些设计模式</a></h2>
+<h3><a class="header" href="#facade" id="facade">Facade</a></h3>
+<p>门面模式</p>
+<p>HttpRequestFacade 类封装了 HttpRequest 接口能够提供数据，通过 HttpRequestFacade 访问到的数据都被代理到 HttpRequest 中</p>
+<h3><a class="header" href="#observer" id="observer">Observer</a></h3>
+<p>观察者模式</p>
+<p>控制组件生命周期的 Lifecycle 就是这种模式的体现</p>
+<h3><a class="header" href="#command" id="command">Command</a></h3>
+<p>命令模式</p>
+<p>Connector 也是通过命令模式调用 Container</p>
+<h3><a class="header" href="#chain-of-responsibility" id="chain-of-responsibility">Chain of responsibility</a></h3>
+<p>责任链模式</p>
+<p>Tomcat 中 Container , 整个容器的就是通过一个链连接在一起，这个链一直将请求正确的传递给最终处理请求的那个 Servlet</p>
+<h2><a class="header" href="#tomcat-优化" id="tomcat-优化">Tomcat 优化</a></h2>
+<p>https://mp.weixin.qq.com/s/3WQB3NGkPrSqmLaYIJ7koQ</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="tcp-ip-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="webpack-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="tcp-ip-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="webpack-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

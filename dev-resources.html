@@ -1,0 +1,555 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>dev resources - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html" class="active"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: Dev Resources
+date: 2018-09-10 20:38:10
+tags: [dev resources]
+categories: tool</h2>
+<p>开发相关 资源 &amp; 链接</p>
+<p>https://github.com/jhaddix/pentest-bookmarks 高质量书签集合
+TODO</p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E6%8A%80%E6%9C%AF%E7%AB%99%E7%82%B9">技术站点</a>
+<ul>
+<li><a href="#%E6%8A%80%E6%9C%AFblog">技术blog</a></li>
+<li><a href="#%E9%80%9F%E6%9F%A5%E8%A1%A8">速查表</a></li>
+<li><a href="#%E5%89%8D%E7%AB%AFdocs">前端docs</a></li>
+<li><a href="#%E5%90%8E%E7%AB%AFdocs">后端docs</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B1%BB%E5%BA%93">类库</a>
+<ul>
+<li><a href="#%E5%89%8D%E7%AB%AF%E7%B1%BB%E5%BA%93">前端类库</a></li>
+<li><a href="#%E5%90%8E%E7%AB%AF%E7%B1%BB%E5%BA%93">后端类库</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7">开发工具</a>
+<ul>
+<li><a href="#%E5%9C%A8%E7%BA%BF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">在线开发环境</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%89%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6">有用的插件</a>
+<ul>
+<li><a href="#vs-code">vs code</a></li>
+<li><a href="#idea">idea</a></li>
+<li><a href="#eclipse">eclipse</a></li>
+<li><a href="#chrome">chrome</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%88%E7%8E%87%E7%9B%B8%E5%85%B3%E7%9A%84%E8%BD%AF%E4%BB%B6">效率相关的软件</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E4%B8%B4%E6%97%B6%E5%85%B1%E4%BA%AB">文件临时共享</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5">文件同步</a></li>
+<li><a href="#%E6%9C%89%E7%94%A8%E7%9A%84%E6%90%9C%E7%B4%A2%E6%BA%90">有用的搜索源</a></li>
+<li><a href="#%E4%BA%A7%E5%93%81">产品</a></li>
+<li><a href="#books">books</a>
+<ul>
+<li><a href="#%E6%8A%80%E6%9C%AF">技术</a></li>
+<li><a href="#%E5%88%9B%E4%B8%9A">创业</a></li>
+<li><a href="#%E5%A4%84%E4%B8%96">处世</a></li>
+</ul>
+</li>
+<li><a href="#story">story</a></li>
+</ul>
+<!-- /TOC -->
+<hr />
+<h1><a class="header" href="#技术站点" id="技术站点">技术站点</a></h1>
+<h2><a class="header" href="#技术blog" id="技术blog">技术blog</a></h2>
+<p>https://coolshell.cn/ 酷壳
+http://www.ruanyifeng.com/blog/ 阮一峰</p>
+<h2><a class="header" href="#速查表" id="速查表">速查表</a></h2>
+<ul>
+<li>https://devhints.io/ - 速查表</li>
+</ul>
+<h2><a class="header" href="#前端docs" id="前端docs">前端docs</a></h2>
+<ul>
+<li><a href="https://www.awesomes.cn/">技术栈</a></li>
+<li><a href="http://www.bootcss.com/">Bootstrap</a></li>
+<li><a href="https://cssreference.io/">CSSreference</a></li>
+</ul>
+<h2><a class="header" href="#后端docs" id="后端docs">后端docs</a></h2>
+<ul>
+<li><a href="https://sdk.cn/">SDK.cn</a> - 技术栈</li>
+<li><a href="https://spring.io/">Spring全家桶</a> - <a href="http://start.spring.io">spring boot initializer</a></li>
+<li><a href="https://www.apache.org/index.html#projects-list">Apache.org</a></li>
+<li><a href="https://mvnrepository.com/">mvn repo</a> - 相关：https://repo.spring.io/webapp/#/home</li>
+<li><a href="https://visualgo.net">算法-数据结构-动画演示</a></li>
+<li><a href="https://developer.ibm.com/zh/">ibm developer</a></li>
+</ul>
+<h1><a class="header" href="#类库" id="类库">类库</a></h1>
+<h2><a class="header" href="#前端类库" id="前端类库">前端类库</a></h2>
+<p>js插件</p>
+<ul>
+<li>
+<p><a href="https://github.com/mattboldt/typed.js/">typed</a> - 打字效果</p>
+</li>
+<li>
+<p><a href="https://www.dropzonejs.com/">dropzone</a>  - 拖拽上传</p>
+</li>
+<li>
+<p><a href="https://clipboardjs.com/">clipboardjs</a> - 复制, 剪贴</p>
+</li>
+<li>
+<p><a href="https://github.com/react-component/slider">react-slides</a></p>
+</li>
+<li>
+<p><a href="https://github.com/hiroppy/fusuma">markdown-slides</a></p>
+</li>
+</ul>
+<h2><a class="header" href="#后端类库" id="后端类库">后端类库</a></h2>
+<ul>
+<li><a href="https://github.com/joel-costigliola/assertj-core">AssertJ</a> - fluently assert</li>
+<li><a href="https://projectlombok.org/">Lombok</a></li>
+</ul>
+<h1><a class="header" href="#开发工具" id="开发工具">开发工具</a></h1>
+<p>前端开发工具</p>
+<ul>
+<li><a href="http://jsbin.com">JSBin</a> , <a href="https://codepen.io/">Codepen</a> , <a href="http://jsfiddle.net/">jsfiddle</a> (无需登录) , <a href="https://pastebin.com/">pastebin</a> (粘贴分享代码, 无需注册), <a href="https://codesandbox.io/dashboard/recent">codesandbox</a></li>
+<li><a href="https://photomosh.com/">gif效果</a></li>
+<li><a href="http://bigjpg.com/">图片无损放大</a></li>
+<li>deploy your web app: <a href="https://surge.sh/">serge.sh</a>, <a href="https://www.netlify.com/">netlify</a></li>
+<li><a href="https://oktools.net/">oktools</a></li>
+<li><a href="https://github.com/GoogleChrome/lighthouse">性能分析</a></li>
+</ul>
+<p>后端开发工具</p>
+<ul>
+<li><a href="https://www.tutorialspoint.com/online_dev_tools.htm">工具合集(json, xml 编辑/格式化, ip lookup, port scan, base64编解码)</a></li>
+<li><a href="https://hutool.cn/">hutool util 工具包</a></li>
+<li><a href="https://www.dooccn.com/java/#contact">Java 临时在线测试(带提示)</a></li>
+<li><a href="http://www.hostbuf.com/c/131.html">finalshell</a></li>
+<li><a href="https://github.com/spring-projects/spring-loaded">spring-loaded</a> -  alternatives：Jrebel, Spring Boot Developer Tools</li>
+<li><a href="https://www.telerik.com/fiddler">fiddler</a></li>
+<li><a href="https://zhile.io/">idea</a>, <a href="https://www.jiweichengzhu.com/article/eb340e382d1d456c84a1d190db12755c">idea</a>, <a href="http://idea.medeming.com/">idea</a></li>
+</ul>
+<p>mac:</p>
+<ul>
+<li><a href="http://www.sequelpro.com/">sequel pro 数据库连接管理工具</a></li>
+</ul>
+<p>Markdown文档生成网站</p>
+<ul>
+<li>https://github.com/docsifyjs/docsify</li>
+<li>https://github.com/squidfunk/mkdocs-material</li>
+</ul>
+<h2><a class="header" href="#在线开发环境" id="在线开发环境">在线开发环境</a></h2>
+<p>https://repl.it/</p>
+<p>https://www.gitpod.io/</p>
+<p>codepen, codesandbox 只用于前端</p>
+<h1><a class="header" href="#有用的插件" id="有用的插件">有用的插件</a></h1>
+<h2><a class="header" href="#vs-code" id="vs-code">vs code</a></h2>
+<p><a href="https://marketplace.visualstudio.com/">官方 marketplace</a></p>
+<p>其他通用</p>
+<ul>
+<li>shan.code-settings-sync: 借助 GitHub 同步 vscode 插件. <a href="https://gist.github.com/xiaoyureed/b578b86d402cda9e2fc4db397a7ef1b0">我的插件备份</a></li>
+<li>streetsidesoftware.code-spell-checker: 拼写检查</li>
+<li>christian-kohler.path-intellisense: 文件路径提示</li>
+<li>humao.rest-client: 测试 rest api</li>
+<li>ms-vscode-remote.remote-ssh: 使用 ssh 远程打开文件</li>
+<li>alefragnani.bookmarks: 代码书签</li>
+<li>markdown all in one</li>
+<li>gruntfuggly.todo-tree: 添加 todo 树到面板, 显示 todo, (TODO 必须大写, 在行的开头才有效)</li>
+</ul>
+<p>前端通用</p>
+<ul>
+<li>prettier 格式化, 用来替代 beautify插件</li>
+<li>eslint 用于 es 代码或者 ts 代码的语法检查</li>
+<li>msjsdiag.debugger-for-chrome: debugger for chrome</li>
+<li>ms-vscode-remote.remote-wsl: 在 wsl 中打开文件夹</li>
+<li>cipchk.cssrem: css 长度单位转换, px -&gt; rem</li>
+<li>nucllear.vscode-extension-auto-import: es6, typescript 自动导包 (貌似不生效)</li>
+<li>wix.vscode-import-cost: 显示导包的大小</li>
+<li>live server 启动服务器浏览静态页面</li>
+<li>prettier</li>
+<li>eslint</li>
+<li>abusaidm.html-snippets html提示</li>
+<li>HTML CSS Support</li>
+</ul>
+<p>react</p>
+<ul>
+<li>dsznajder.es7-react-js-snippets: react 开发代码段</li>
+<li>clinyong.vscode-css-modules: css module 提示和 css 类跳转</li>
+<li>wallabyjs.quokka-vscode 实时变量显示</li>
+</ul>
+<p>后端通用</p>
+<p>java</p>
+<ul>
+<li>k--kato.intellij-idea-keybindings: idea shortcut 映射 idea 快捷键</li>
+<li>vscjava.vscode-java-pack: 
+<ul>
+<li>redhat java language support, </li>
+<li>debugger for java, </li>
+<li>java test runner, </li>
+<li>maven for java, </li>
+<li>java  dependencies viewer , </li>
+<li>visual studio intelliCode</li>
+</ul>
+</li>
+<li>gabrielbb.vscode-lombok: 简化 pojo</li>
+</ul>
+<p>python</p>
+<ul>
+<li>ms-python.python: python 开发插件</li>
+</ul>
+<p>golang</p>
+<ul>
+<li>ms-vscode.go: golang 开发插件</li>
+</ul>
+<p>另: <a href="https://javahello.github.io/2018/02/26/ubuntu/vscode-java-environment/">vscode java 环境</a></p>
+<p><a href="https://www.cnblogs.com/xbzhu/p/10823300.html">react 开发环境</a></p>
+<h2><a class="header" href="#idea" id="idea">idea</a></h2>
+<ul>
+<li>go language - golang support</li>
+</ul>
+<h2><a class="header" href="#eclipse" id="eclipse">eclipse</a></h2>
+<h2><a class="header" href="#chrome" id="chrome">chrome</a></h2>
+<p>开发</p>
+<ul>
+<li>Octotree - GitHub 目录</li>
+<li>Restlet Client - rest api test client. alternatives: Postman</li>
+<li>talent api tester - rest api 测试</li>
+<li>LiveReload - 页面开发实时更新</li>
+<li>Fatkun - 图片批量下载 - 图片下载助手 - 右键提取所有图片, 带分辨率, 类似的还有 ImageAssitant 图片嗅探</li>
+<li>iMacros - 网页自动化, 重放. https://imacros.net/browser/cr/welcome/?utm_source=browser&amp;utm_medium=product, https://chrome.google.com/webstore/detail/imacros-for-chrome/cplklnmnlbnpmjogncfgfijoopmnlemp/related //todo</li>
+<li>Proxy SwitchyOmega - 配合 goagent/XX-ne 科学上网, https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif</li>
+</ul>
+<p>效率</p>
+<ul>
+<li>Grammarly - grammar checking 英语语法检查</li>
+<li>AdBlock - 广告屏蔽, Adblock Plus 更强大</li>
+<li>ublock plus adblocker</li>
+<li>Tampermonkey - 油猴, firefox: GreaseMonkey - https://greasyfork.org/zh-CN
+<ul>
+<li>网页限制解除 - 破解粘贴限制, 类似的有 Enable Right Click and Copy 插件, Enable copy插件</li>
+<li>saveFrom.net helper - 下载视频, YouTube有效</li>
+<li>ac-baidu - 百度去广告, 去重定向</li>
+<li>百度网盘直接下载助手</li>
+<li>全网音乐一键免费下载</li>
+<li>豆瓣资源下载大师</li>
+<li>购物党比价工具</li>
+<li>右键新标签中打开图片时显示最优图像质量</li>
+</ul>
+</li>
+<li><a href="https://github.com/ovity/octotree">octotree</a> - make github easy to use - 为 GitHub 添加目录</li>
+<li>OneTab - 关闭标签, 并将 url 加入到单独的暂存页, 类似的还有 oneTab plus, Toby</li>
+<li>The Great Suspender - 超时冻结标签页</li>
+<li><a href="https://chrome.google.com/webstore/detail/baiduexporter/jgebcefbdjhkhapijgbhkidaegoocbjj">baiduexporter</a> - 到处百度云链接, export baiduyun download links to aria2/aria2-rpc - <a href="https://aria2.github.io/">aria2</a>, <a href="http://aria2c.com/">web控制台</a></li>
+<li>google translator -  谷歌翻译插件</li>
+<li><a href="https://chrome.google.com/webstore/detail/%E6%9C%89%E9%81%93%E8%AF%8D%E5%85%B8chrome%E5%88%92%E8%AF%8D%E6%8F%92%E4%BB%B6/eopjamdnofihpioajgfdikhhbobonhbb">有道词典 chrome 划词插件</a></li>
+<li>Momentum - Replace new tab page</li>
+<li>QuicKey – The quick tab switcher 标签切换, 搜索</li>
+<li>dark reader - 网页变暗 https://darkreader.org/, https://github.com/darkreader/darkreader</li>
+<li>project Naptha - 图片取词, https://projectnaptha.com/, https://chrome.google.com/webstore/detail/project-naptha/molncoemjfmpgdkbdlbjmhlcgniigdnf</li>
+<li>Awesome screenshot - 浏览器截图, 录屏; 类似的还有 FireShot (https://getfireshot.com/)</li>
+<li>书签侧边栏, 类似的有 Tidy Bookmarks Tree</li>
+<li>Nooboss - 管理插件的插件, 何时打开何时关闭插件, 类似的 Extensions Manager</li>
+<li>Raindrop.io - 书签全平台同步</li>
+<li>Markdown Here - 在基于浏览器的编辑器中使用 markdown</li>
+<li>AHA Music - 识别正在播放歌曲</li>
+<li>搜我听歌 - 类似 listen1</li>
+<li>Video Speed Controller - 视频加速, 仅仅支持 html5 播放器</li>
+<li>-Free Download Manager 每次下载能直接启动FDM来进行下载 , 如果你使用的是迅雷，我建议使用迅雷下载支持</li>
+</ul>
+<h1><a class="header" href="#效率相关的软件" id="效率相关的软件">效率相关的软件</a></h1>
+<p>Windows</p>
+<ul>
+<li>
+<p><a href="http://www.fadetop.com/">FadeTop</a></p>
+</li>
+<li>
+<p><a href="https://www.autohotkey.com/docs/AutoHotkey.htm">autohotkey</a> - keymap</p>
+</li>
+<li>
+<p>bandzip, 7-zip 压缩</p>
+</li>
+<li>
+<p><a href="https://txc.qq.com/">腾讯兔小巢 - 免费的用户反馈社区</a></p>
+</li>
+</ul>
+<p>web</p>
+<ul>
+<li><a href="https://www.draw.io/">作图(uml图, 时序图...)</a></li>
+<li><a href="https://dbdiagram.io/d">表关系图 数据库关系图</a></li>
+<li><a href="https://www.websequencediagrams.com/">web sequence diagrams 专门画时序图</a></li>
+<li><a href="http://asciiflow.com/">ascii 画流程图</a>, <a href="http://www.jave.de/">更精细画图 (非web)</a></li>
+<li><a href="http://patorjk.com/software/taag">生成文字字符画</a></li>
+<li><a href="https://www.ascii-art-generator.org/">根据图片生成字符画</a></li>
+</ul>
+<h1><a class="header" href="#文件临时共享" id="文件临时共享">文件临时共享</a></h1>
+<ul>
+<li>https://box.zjuqsc.com/ - 潮云优盘 100m</li>
+<li>https://tempfile.cloud/</li>
+<li>https://cowtransfer.com/ - 2g</li>
+<li>https://send.firefox.com/ - 1g</li>
+<li>https://bitsend.jp/?setLang=zh-tw - 2g 国内慢</li>
+<li>https://catbox.moe/ - 200m</li>
+<li>https://drop.me/ - 无限制，国内慢</li>
+<li>http://tmp.link/ - 5g 快</li>
+<li>https://coka.la/</li>
+<li>https://transfer.sh/ - 命令行， 慢</li>
+<li>https://wetransfer.com/</li>
+<li>https://send.firefox.com/ 大文件</li>
+</ul>
+<h1><a class="header" href="#文件同步" id="文件同步">文件同步</a></h1>
+<p>Syncthing</p>
+<p>Seafile</p>
+<p>Resilio Sync
+分享一个key - BCWHZRSLANR64CGPTXRE54ENNSIUE5SMO</p>
+<p>NextCloud</p>
+<h1><a class="header" href="#有用的搜索源" id="有用的搜索源">有用的搜索源</a></h1>
+<p><a href="https://google.com">Google</a>, <a href="https://github.com">GitHub</a>, <a href="https://www.githubs.cn/">GitHub中文</a>, <a href="https://stackoverflow.com">stackoverflow</a>, <a href="https://zhihu.com">知乎</a>, <a href="https://quora.com">quora</a>, <a href="https://mijisou.com/">秘迹it搜索</a>, <a href="https://magi.com">magi</a></p>
+<p><a href="https://slideshare.net">slideshare</a>, <a href="https://speakdeck.com">speakdeck</a>, <a href="https://youtube.com">YouTube</a>, <a href="https://bilibili.com">哔哩哔哩</a>, <a href="https://weread.qq.com/">微信读书</a>, <a href="https://weixin.sogou.com/">微信搜索</a>, <a href="https://www.douban.com/">豆瓣</a>, <a href="https://zh.wikipedia.org/zh-cn/">维基百科</a>, <a href="https://www.wikipedia.org/">Wikipedia</a>, </p>
+<h1><a class="header" href="#产品" id="产品">产品</a></h1>
+<p>https://matomo.org - 用户行为数据统计 (实时统计用户在你网站上的行为轨迹)</p>
+<p>https://web.dev - 谷歌出品 web站点性能优化</p>
+<p>https://www.17ce.com - 网站全国测速</p>
+<p>https://www.intercom.com/ 客户关系即时通信
+https://www.hotjar.com/
+https://crisp.chat/en/ 客服</p>
+<p>https://www.typeform.com/ 在线表格</p>
+<h1><a class="header" href="#books" id="books">books</a></h1>
+<h2><a class="header" href="#技术" id="技术">技术</a></h2>
+<p>《计算机网络自顶向下方法与Internet特色》
+《反应式设计模式》</p>
+<p>《Python 3反爬虫原理与绕过实战》作者：韦世东</p>
+<p>《自然语言处理入门》作者：何晗</p>
+<p>《虚拟机设计与实现：以JVM为例》作者：中 李晓峰 译者：单业 </p>
+<p>《黑客大揭秘：近源渗透测试》作者：王永涛，柴坤哲，杨芸菲，杨卿</p>
+<p>《Python深度学习》作者：François Chollet 译者：张亮（hysic）
+《深度学习入门》作者：斋藤康毅 译者：陆宇杰
+《深度学习的数学》作者：涌井良幸，涌井贞美 译者：杨瑞龙
+https://mp.weixin.qq.com/s/O-2L-i4SdaV0btvVnoK17A</p>
+<p>《松本行弘：编程语言的设计与实现》</p>
+<p>《数据密集型应用系统设计》</p>
+<h2><a class="header" href="#创业" id="创业">创业</a></h2>
+<p>《上瘾》“Indistractable: How to Control Your Attention and Choose Your Life” （《永不分心：如何控制你的注意力和人生》 ----- Nir Eyal</p>
+<p>德鲁克的《创新和企业家精神》创新机遇的7个来源</p>
+<p>《理解媒介》麦克卢汉</p>
+<p>戴维迈尔斯《社会心理学》</p>
+<p>《产品方法论》俞军</p>
+<p>易到的创始人周航的《重新理解创业》</p>
+<p>DuckDuckGo 的创始人写的《Traction》 市场</p>
+<p>https://kalasearch.cn/blog</p>
+<h2><a class="header" href="#处世" id="处世">处世</a></h2>
+<p>《煤老板自述三十年》
+《世间的盐》</p>
+<p>影响力 
+态度改变与社会影响</p>
+<p>《乡下人的悲歌》，这本书真实记录了近20年美国经济欣欣向荣的背景下底层老百姓令人绝望的生活状态。</p>
+<h1><a class="header" href="#story" id="story">story</a></h1>
+<p>https://us.v2ex.com/t/701124#reply101</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="design-pattern-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="eclipse.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="design-pattern-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="eclipse.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

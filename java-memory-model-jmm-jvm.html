@@ -1,0 +1,1558 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>java-memory-model-jmm-jvm - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html" class="active"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: JMM and GC
+tags:</p>
+<ul>
+<li>jvm</li>
+<li>gc
+date: 2015-03-07 11:02:43
+categories: java core</li>
+</ul>
+<hr />
+<div align="center">
+Java Memory Model.
+references: [1](https://zhuanlan.zhihu.com/p/34461147)
+Java 内存模型: https://zhuanlan.zhihu.com/p/42546444
+https://openjdk.java.net/projects/panama/ - 和cpp交互, native 方法
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89jmm">为什么要有jmm</a></li>
+<li><a href="#jvm%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F%E6%A8%A1%E5%9E%8B">jvm内存区域模型</a>
+<ul>
+<li><a href="#method-area">Method Area</a></li>
+<li><a href="#heap">Heap</a></li>
+<li><a href="#jvm-stack">JVM Stack</a></li>
+<li><a href="#native-method-stack">Native Method Stack</a></li>
+<li><a href="#pc-register%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8">PC Register(程序计数器)</a></li>
+</ul>
+</li>
+<li><a href="#gc-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6">gc 垃圾回收</a>
+<ul>
+<li><a href="#%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8">垃圾收集器</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E5%BA%94%E8%AF%A5%E5%9B%9E%E6%94%B6">如何判断对象是否应该回收</a>
+<ul>
+<li><a href="#%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E6%B3%95-reference-counting">引用计数法 reference counting</a></li>
+<li><a href="#%E5%8F%AF%E8%BE%BE%E6%80%A7%E5%88%86%E6%9E%90%E7%AE%97%E6%B3%95-reachability-analysis">可达性分析算法 reachability analysis</a></li>
+<li><a href="#reference-%E5%88%86%E7%B1%BB">reference 分类</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95">垃圾回收算法</a>
+<ul>
+<li><a href="#%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4-%E7%AE%97%E6%B3%95">标记-清除 算法</a></li>
+<li><a href="#%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95">复制算法</a></li>
+<li><a href="#%E6%A0%87%E8%AE%B0-%E6%95%B4%E7%90%86-%E7%AE%97%E6%B3%95">标记-整理 算法</a></li>
+<li><a href="#%E5%88%86%E4%BB%A3%E6%94%B6%E9%9B%86%E7%AE%97%E6%B3%95">分代收集算法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#java%E7%9A%84%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6">Java的代码执行机制</a>
+<ul>
+<li><a href="#%E7%B1%BB%E7%BC%96%E8%AF%91">类编译</a></li>
+<li><a href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD">类加载</a>
+<ul>
+<li><a href="#classloader%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8">classloader类加载器</a></li>
+<li><a href="#%E8%A3%85%E8%BD%BDload">装载(load)</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5link">链接(Link)</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96initialize">初始化(Initialize)</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B1%BB%E6%89%A7%E8%A1%8C">类执行</a>
+<ul>
+<li><a href="#%E5%AD%97%E8%8A%82%E7%A0%81%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8Cand%E7%BC%96%E8%AF%91%E6%89%A7%E8%A1%8C%E5%B9%B6%E5%AD%98%E5%A6%82%E4%BD%95%E5%88%86%E7%95%8C">字节码解释执行and编译执行并存如何分界</a></li>
+<li><a href="#%E5%AD%97%E8%8A%82%E7%A0%81%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C">字节码解释执行</a>
+<ul>
+<li><a href="#%E6%96%B9%E6%B3%95%E7%9B%B8%E5%85%B3%E7%9A%84jvm%E6%8C%87%E4%BB%A4">方法相关的jvm指令</a></li>
+<li><a href="#jvm%E6%8C%87%E4%BB%A4%E6%80%8E%E4%B9%88%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C">jvm指令怎么解释执行</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%97%E8%8A%82%E7%A0%81%E7%BC%96%E8%AF%91%E6%89%A7%E8%A1%8C">字节码编译执行</a>
+<ul>
+<li><a href="#client-compiler">client compiler</a></li>
+<li><a href="#server-compiler">server compiler</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%8D%E5%B0%84%E6%89%A7%E8%A1%8C">反射执行</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#java%E4%B8%AD%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E5%92%8C%E5%86%85%E5%AD%98%E7%9A%84%E5%85%B3%E7%B3%BB">java中的关键字和内存的关系</a>
+<ul>
+<li><a href="#final">final</a></li>
+<li><a href="#volatile">volatile</a></li>
+<li><a href="#synchronized">synchronized</a></li>
+<li><a href="#static">static</a></li>
+</ul>
+</li>
+<li><a href="#java%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2">java的内存泄露</a>
+<ul>
+<li><a href="#%E4%BC%9A%E9%80%A0%E6%88%90%E5%93%AA%E4%BA%9B%E6%BA%A2%E5%87%BA">会造成哪些溢出</a></li>
+<li><a href="#java%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E5%BC%95%E8%B5%B7%E5%8E%9F%E5%9B%A0">Java内存泄露引起原因</a></li>
+</ul>
+</li>
+<li><a href="#jvm-%E4%B8%AD%E7%9A%84-object">jvm 中的 object</a>
+<ul>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B%E5%86%85%E5%AD%98%E6%80%8E%E4%B9%88%E5%88%86%E9%85%8D">对象的创建过程(内存怎么分配)</a></li>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AE%BF%E9%97%AE">对象的访问</a>
+<ul>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E7%9A%842%E7%A7%8D%E8%AE%BF%E9%97%AE%E6%96%B9%E5%BC%8F">对象的2种访问方式</a></li>
+<li><a href="#thread%E5%85%B7%E4%BD%93%E6%80%8E%E4%B9%88%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E4%B8%AD%E7%9A%84%E5%80%BC%E5%91%A2%E4%BB%A5%E5%8F%8Avolatile%E5%85%B3%E9%94%AE%E5%AD%97">thread具体怎么访问对象中的值呢以及volatile关键字</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E5%9B%9E%E6%94%B6%E5%86%85%E5%AD%98%E6%80%8E%E4%B9%88%E9%87%8A%E6%94%BE">对象回收(内存怎么释放)</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E8%99%9A%E6%8B%9F%E6%9C%BA">有哪些虚拟机</a></li>
+<li><a href="#java%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E8%AF%8A%E6%96%AD%E6%8E%92%E6%9F%A5">java线上问题诊断排查</a>
+<ul>
+<li><a href="#%E6%97%A5%E5%BF%97%E6%A3%80%E7%B4%A2">日志检索</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5">查看数据库连接</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8Bcpu-%E8%B4%9F%E8%BD%BD">查看CPU 负载</a>
+<ul>
+<li><a href="#cpu-user%E9%AB%98-and--cpu-load-%E9%AB%98">CPU User高 and  CPU Load 高</a>
+<ul>
+<li><a href="#%E4%BB%A3%E7%A0%81%E4%B8%AD%E5%AD%98%E5%9C%A8%E9%9D%9E%E5%B8%B8%E6%B6%88%E8%80%97-cpu-%E7%9A%84%E6%93%8D%E4%BD%9C">代码中存在非常消耗 CPU 的操作</a></li>
+<li><a href="#%E9%A2%91%E7%B9%81gc">频繁gc</a></li>
+</ul>
+</li>
+<li><a href="#cpu-system-%E9%AB%98-and-cpu-load-%E9%AB%98">CPU System 高 and CPU Load 高</a></li>
+<li><a href="#cpu-wait%E9%AB%98-and-cpu-load%E9%AB%98-and-cpu%E5%88%A9%E7%94%A8%E7%8E%87%E4%BD%8E">CPU Wait高 and CPU Load高 and CPU利用率低</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9F%A5%E5%86%85%E5%AD%98">查内存</a></li>
+<li><a href="#%E6%8E%92%E6%9F%A5%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E9%97%AE%E9%A2%98">排查垃圾回收问题</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98">网络问题</a></li>
+</ul>
+</li>
+<li><a href="#jdk-%E8%87%AA%E5%B8%A6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7">jdk 自带命令行工具</a>
+<ul>
+<li><a href="#java-%E5%90%AF%E5%8A%A8-javac-%E7%BC%96%E8%AF%91-javap-%E5%8F%8D%E7%BC%96%E8%AF%91">java 启动 javac 编译 javap 反编译</a></li>
+<li><a href="#jstack">jstack</a></li>
+<li><a href="#jcmd">jcmd</a></li>
+<li><a href="#jps">jps</a></li>
+<li><a href="#jstat">jstat</a></li>
+<li><a href="#jvisualvm">jvisualvm</a></li>
+<li><a href="#jconsole">jconsole</a></li>
+<li><a href="#jhat">jhat</a></li>
+<li><a href="#jmap">jmap</a></li>
+<li><a href="#jrunscript">jrunscript</a></li>
+<li><a href="#jinfo">jinfo</a></li>
+<li><a href="#jprofile">jprofile</a></li>
+</ul>
+</li>
+<li><a href="#%E9%98%BF%E9%87%8C-arthas">阿里 arthas</a></li>
+<li><a href="#jvm-%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98-and-%E5%AE%9E%E7%94%A8%E5%8F%82%E6%95%B0">jvm 性能调优 and 实用参数</a>
+<ul>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%8F%82%E6%95%B0">有哪些参数</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F">配置方式</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#为什么要有jmm" id="为什么要有jmm">为什么要有jmm</a></h1>
+<p>JMM可以屏蔽掉各种硬件和操作系统的内存访问差异，以实现让java程序在各种平台下都能达到一致的内存访问效果。</p>
+<p>对于串行执行的程序, 天然就是正确的, 但是对于并行程序就需要 jmm 来保证多个 thread 协同工作</p>
+<h1><a class="header" href="#jvm内存区域模型" id="jvm内存区域模型">jvm内存区域模型</a></h1>
+<img src="Snipaste_2018-05-27_21-52-26.png" width="50%">
+<img src="Snipaste_2018-05-27_22-58-34.png" width="50%">
+<ul>
+<li>
+<p>线程共享内存区</p>
+<ul>
+<li>
+<p>method area (方法区)</p>
+<p>保存 类 信息 (如 class name, 方法定义, 字段信息)</p>
+<p>对于频繁创建类的系统 (如存在大量反射, 动态代理的系统), 方法区要设置大一点</p>
+</li>
+<li>
+<p>heap (堆)</p>
+<p>保存对象实例, 数组</p>
+<p>gc 主要是在这里</p>
+<p>空间不足会抛出 java.lang.OutOfMemoryError</p>
+<p>空间远大于 jvm stack</p>
+<p>常量池: </p>
+</li>
+</ul>
+</li>
+<li>
+<p>线程私有内存区</p>
+<ul>
+<li>register (程序计数器)</li>
+</ul>
+<pre><code>  用于在 thread 上下文切换时记录当前执行到字节码的哪一步 
+</code></pre>
+<ul>
+<li>
+<p>jvm stack (栈)</p>
+<p>保存方法调用栈, 对象引用, 局部变量</p>
+<p>空间不足会抛出 Stack Overflow</p>
+</li>
+<li>
+<p><del>native method stack</del> (sun jdk 实现中并入 jvm stack)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#method-area" id="method-area">Method Area</a></h2>
+<p>示意图:</p>
+<p><img src="Snipaste_2018-10-13_17-14-24.png" alt="alt" /></p>
+<p>这里 &quot;对象类型数据&quot; 即 类信息</p>
+<p><img src="Snipaste_2018-10-13_23-14-58.png" alt="alt" /></p>
+<p>虽然对象实例有多个, 但是方法定义只有一份, 存储于 method area</p>
+<p>用于存储已被虚拟机加载的<code>类信息</code>(类名, 类修饰符), <code>静态变量</code> (所以又叫 &quot;静态存储区&quot;), <code>final常量</code>, <code>方法定义</code>, <code>field</code> ; 当通过 class 对象的 getName, isInstaceOf 方法获取信息时, 数据来自此区域</p>
+<p>Sun jdk 中对应 <code>持久代 (Permanent Genaration)</code>, 默认最小值为16MB，最大值为64MB，可以通过-XX:PermSize 和 -XX:MaxPermSize 参数限制方法区的大小, 容量不够时抛出 OutOfMemory错误</p>
+<p>相对而言，垃圾收集行为在这个区域是比较少出现的, 但并非数据进入方法区后就“永久存在”了。</p>
+<p>运行时常量池 (runtime constant pool) - JDK1.7及之后版本的 JVM 已经将运行时常量池从方法区中移了出来，在 Java 堆（Heap）中开辟了一块区域存放运行时常量池。</p>
+<h2><a class="header" href="#heap" id="heap">Heap</a></h2>
+<p>唯一目的就是存放<code>对象实例</code>及<code>数组</code>; 也就是 通过 &quot;new&quot; 创建的对象</p>
+<p>是所有区域中最大的一块, 垃圾回收主要是回收这一块 (所以又叫 &quot;GC堆&quot;)</p>
+<p>为了便于垃圾回收，Java堆空间有更细致的划分: 见 gc 一节 (<code>进一步细分的目的: 加快内存回收分配的速度</code>)</p>
+<ul>
+<li>
+<p>New Generation (新生代) - 一般新建对象都存放在这里;</p>
+</li>
+<li>
+<p>Old Generation 或叫作 Tenured(年老) Generation， - 存放经过多个 GC 仍然存活的 对象 (如 缓存对象), 新建的对象也可能直接存在这里 (通过 -XX:PretenureSizeThreshold=1024, 单位字节, 默认0, 来设置当前对象超过多少size, 就直接分配到 old generation)</p>
+</li>
+</ul>
+<p>可以通过用JVM的命令行选项 -Xms, -Xmx, -Xmn来调整Java堆空间的大小。不要忘了在大小后面加上”M”或者”G”来表示单位。</p>
+<p><code>-Xmx256M</code> 最大堆内存 为 256M. 默认为物理内存的1/4但小于1G. 默认当空余堆内存小于40%时，JVM会增大Heap到-Xmx指定的大小，可通过 <code>-XX:MinHeapFreeRation=</code>来指定这个比列</p>
+<p><code>-Xms256M</code> 最小堆为 256M (为避免在运行时频繁调整Heap的大小，通常-Xms与-Xmx的值设成一样), 如果不设置, 默认为操作系统物理内存的1/64但小于1G. 当空余堆内存大于70%时，JVM会减小heap的大小到-Xms指定的大小，可通过<code>XX:MaxHeapFreeRation=</code>来指定这个比列</p>
+<p><code>-Xmn</code> 指定默认大小</p>
+<p>可以用JConsole或者 Runtime.maxMemory(), Runtime.totalMemory(), Runtime.freeMemory()来实时查看Java中堆内存的大小</p>
+<p>当遇到java.lang.outOfMemoryError时，有时候仅仅增加堆空间就可以了，但如果经常出现的话，就要看看Java程序中是不是存在内存泄露了;</p>
+<h2><a class="header" href="#jvm-stack" id="jvm-stack">JVM Stack</a></h2>
+<p>JVM stack 记录了线程的 &quot;<code>方法调用</code>&quot; and <code>局部变量</code>; </p>
+<p>java虚拟机栈是由一个个栈帧组成，而每个栈帧中都拥有：<code>局部变量表</code>、<code>操作数栈</code>、<code>动态链接</code>、<code>方法出口信息</code>。(每个方法被调用到执行完的过程，就对应着一个栈帧在jvm stack中从入栈到出栈的过程。) 局部变量表存放了编译器可知的各种基本数据类型(boolean、byte、char、short、int、float、long、double)、对象引用(引用指针，并非对象本身)</p>
+<p>Java 虚拟机栈会出现两种异常：StackOverFlowError 和 OutOfMemoryError。</p>
+<ul>
+<li>
+<p>StackOverFlowError： 若Java虚拟机栈的内存大小不允许动态扩展，那么当线程请求栈的深度超过当前Java虚拟机栈的最大深度的时候，就抛出StackOverFlowError异常 -------- &quot;栈溢出&quot;, 可通过 -Xss 修改大小 (例如 -Xss1K, 设置大小为 1K)</p>
+</li>
+<li>
+<p>OutOfMemoryError： 若 Java 虚拟机栈的内存大小允许动态扩展，且当线程请求栈时内存用完了，无法再动态扩展了，此时抛出OutOfMemoryError异常。-------- &quot;内存用光了&quot;</p>
+</li>
+</ul>
+<p><code>-Xss </code> 控制栈容量</p>
+<h2><a class="header" href="#native-method-stack" id="native-method-stack">Native Method Stack</a></h2>
+<p><code> 在 HotSpot 虚拟机(也就是 sun jdk实现)中和 Java 虚拟机栈合二为一</code>。性质类似</p>
+<p>用于支持 native 方法的执行, 存储每个 native 方法的调用状态;</p>
+<h2><a class="header" href="#pc-register程序计数器" id="pc-register程序计数器">PC Register(程序计数器)</a></h2>
+<p>是最小的一块内存区域，它的作用是当前线程所执行的字节码的行号指示器; </p>
+<p>字节码解释器工作时通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等功能都需要依赖这个计数器来完。</p>
+<p>每个 thread 都有一个独立的 &quot;pc-register&quot; ---------- 这样才能保证 线程切换后能找到正确的执行位置</p>
+<h1><a class="header" href="#gc-垃圾回收" id="gc-垃圾回收">gc 垃圾回收</a></h1>
+<p>gc 主要发生在堆内存。所以对内存又称为 gc 堆</p>
+<h2><a class="header" href="#垃圾收集器" id="垃圾收集器">垃圾收集器</a></h2>
+<ul>
+<li>
+<p>serial 收集器</p>
+<p>用于新生代, 单线程, 有 stop the world</p>
+<p>简单高效, 用于 client 模式下的 jvm  (也就是桌面应用, 停顿时间 100 ms内, 完全可以接受) 的新生代收集器</p>
+</li>
+<li>
+<p>ParNew 收集器</p>
+<p>新生代, 多线程 (就是 Serial 的多线程版本 ), 有 stop the world</p>
+<p>只有它能够配合老年代的 CMS (concurrent mark sweep)收集器</p>
+<p>用于 Server 模式运行的jvm的新生代收集器</p>
+</li>
+<li>
+<p>Parallel Scavenge 收集器</p>
+<p>新生代, 多线程</p>
+<p>吞吐量可控, 可以通过jvm参数设置 (吞吐量 = cpu运行代码的时间 / (cpu运行代码时间 + cpu 运行垃圾回收时间))</p>
+<p>自适应调节 , 即可以指定一个 jvm 参数, 由jvm自动设置 新生代大小, Eden和Survivor比例, 晋升老年代年龄阈值</p>
+</li>
+<li>
+<p>Serial Old 收集器</p>
+<p>单线程, 老年代 (Serial 收集器的老年代版本), 有stop the world</p>
+<p>用在 client 模式 下的 jvm</p>
+</li>
+<li>
+<p>Parallel Old 收集器</p>
+<p>老年代 (Parallel Scavenge 的老年代版本), 多线程</p>
+<p>吞吐量可控</p>
+<p>jvm 自适应调节</p>
+</li>
+<li>
+<p>CMS (concurrent mark sweep) 收集器</p>
+<p>多线程, 老年代 (标记-清除算法, 有内存碎片, 不利于大Object的内存分配)</p>
+<p>低停顿 (尽量缩短了 stop the world 停顿时间)</p>
+<p>更耗cpu资源 (因为并发收集嘛)</p>
+<p>无法处理浮动垃圾 (即并发清理阶段, 用户线程产生的垃圾, 只能下次 GC 清除)</p>
+<p>用于 网站, b/s 架构系统, 注重服务的响应速度</p>
+</li>
+<li>
+<p>G1 收集器</p>
+<p>多线程, 统领 新生代, 老年代 (通过 Region)</p>
+<p>标记-整理, and 复制</p>
+<p>可预测的停顿</p>
+<p>用于 server 模式的jvm</p>
+</li>
+</ul>
+<h2><a class="header" href="#如何判断对象是否应该回收" id="如何判断对象是否应该回收">如何判断对象是否应该回收</a></h2>
+<h3><a class="header" href="#引用计数法-reference-counting" id="引用计数法-reference-counting">引用计数法 reference counting</a></h3>
+<p>就是给 object 加上一个计数器, 记录 object 有多少个引用, 为 0 时证明没有引用, 可以回收</p>
+<p>无法解决对象间循环引用的问题</p>
+<h3><a class="header" href="#可达性分析算法-reachability-analysis" id="可达性分析算法-reachability-analysis">可达性分析算法 reachability analysis</a></h3>
+<p>就是看 gc roots 到 object 是否有 reference chain, 如果没有, 证明可以回收</p>
+<p>哪些对象可作为 GC roots Object?</p>
+<ul>
+<li>jvm stack 中的 对象引用</li>
+<li>method area 中类静态属性引用的Object 比如 类变量</li>
+<li>method area 中常量引用的Object</li>
+</ul>
+<p>不可达对象一定会被回收吗?</p>
+<ul>
+<li>
+<p>object 只有经历 <code>二次标记</code> 才会被回收</p>
+<ul>
+<li>
+<p>第一次标记  - 经过 reachability analysis 当前Object没有发现到 gc roots 的 reference chain, 不一定就被回收, 这时会第一次标记</p>
+</li>
+<li>
+<p>第二次标记 - 如果 当前 Object 覆盖了 finalize(), 将当前Object 和 reference chain 上任意Object建立连接(如 将this赋值给静态成员变量) 就可以逃避回收, 如果没有建立链接, 会被第二次标记, 真正回收</p>
+</li>
+</ul>
+</li>
+<li>
+<p>obj.finalize() 对象被回收前会执行这个方法</p>
+</li>
+</ul>
+<h3><a class="header" href="#reference-分类" id="reference-分类">reference 分类</a></h3>
+<ul>
+<li>strong reference</li>
+<li>soft reference</li>
+<li>weak reference</li>
+<li>phantom reference</li>
+</ul>
+<h2><a class="header" href="#垃圾回收算法" id="垃圾回收算法">垃圾回收算法</a></h2>
+<h3><a class="header" href="#标记-清除-算法" id="标记-清除-算法">标记-清除 算法</a></h3>
+<p>首先可达性分析, 两次标记过程后, 清除被标记的内存块</p>
+<p>会造成内存碎片 (因为回收的对象不是内存连续的), 给新Object分配内存时找不到足够的连续空间, 导致提前触发GC</p>
+<h3><a class="header" href="#复制算法" id="复制算法">复制算法</a></h3>
+<p>将堆空间一分为二, 内存分配只在某一块空间, 当空间不够时候, 将仍然会存活的对象复制到空闲的另一块空间, 然后清除满了的空间</p>
+<ul>
+<li>解决了内存碎片化的问题</li>
+<li>对于大对象, 复制是个耗时耗力的操作</li>
+<li>会浪费一半的空间</li>
+</ul>
+<h3><a class="header" href="#标记-整理-算法" id="标记-整理-算法">标记-整理 算法</a></h3>
+<p>标记待回收的对象, 将标记的Object向内存一端移动, 然后清理掉标记的Object所在的内存</p>
+<ul>
+<li>没有复制操作, 省时省力</li>
+<li>没有空间浪费</li>
+</ul>
+<h3><a class="header" href="#分代收集算法" id="分代收集算法">分代收集算法</a></h3>
+<p>为了提高回收效率, 根据Object存活周期不同, 存到不同的内存块, 这些内存块采用不同的收集算法:</p>
+<ul>
+<li>
+<p>new generation (新生代。) - 采用复制算法, 分为三块, eden: survivor1: survivor2 = 8:1:1, 始终保证有一个 survivor 空闲, 也就是说会浪费 10% 空间</p>
+<p>新创建的 object 放在 Eden, 空间不够发起 minor gc (大量对象分配在这里, 所以 minor gc 发生的很频繁, 但是很快)</p>
+<p>对象经历 15 次 minor gc 后, 会进入到 老年代, 这个阈值通过 <code>-XX:MaxTenuringThreshold</code> 设定</p>
+<p>大对象 (长字符串, 数组 这样的需要连续空间的对象) 直接分配进入老年代, 这个尺寸阈值 通过 <code>-XX:PretenureSizeThreshold</code> 设定. (为什么要设置这条策略? 一是避免提前触发 major gc, 明明Eden还有空间, 但是容不下这个 大对象了. 二是新生代 gc 采用复制算法, 而复制大对象是非常耗时的)</p>
+<p>内存分配担保机制: minor gc 时候, 若 survivor2 空间也不够, 则存活对象直接进入 old generation (如果 old generation 也满了, 则只能触发 full/major gc 了)</p>
+</li>
+<li>
+<p>old generation (老年代。) - 标记-整理 算法</p>
+<p>这里的对象生命周期长, 如果继续使用 复制算法, 需要大块的分配担保内存, 不划算</p>
+</li>
+<li>
+<p>永久代</p>
+</li>
+</ul>
+<p>minor gc : 新生代发起的 gc 叫做 minor gc.  eden 和 survivor1 中存活的对象被复制进入空闲的 survivor2，清空eden 和 survivor1. </p>
+<p>major gc: 发生在 老年代 的 gc . 非常慢</p>
+<p>为什么需要 survivor？加入 survivor，存活对象有了一个缓冲区域， 不会直接进入老年代，减少了 full gc</p>
+<p>为什么需要2块 survivor？类似 复制收集算法， 是为了利用复制操作, 避免内存碎片化的问题</p>
+<p>什么时候出发 minor gc: 当年轻代满时就会触发Minor GC，这里的年轻代满指的是Eden代满，Survivor满不会引发GC</p>
+<p>什么时候出发 full gc: </p>
+<ul>
+<li>堆内存的老年代满了</li>
+<li>方法区满了</li>
+</ul>
+<p>内存分配担保机制详细过程:</p>
+<ol>
+<li>
+<p>jvm 先检查 老年代空闲连续空间是否大于 新生代所有Object总大小, 若 TRUE, Minor GC 可以确保安全, 若 FALSE, 下一步</p>
+</li>
+<li>
+<p>jvm 查看是否配置了 <code>-XX:-HandlePromotionFailure</code> (一般会打开, 避免 Full GC 频繁), 若 FALSE, 不允许冒担保失败的风险, 老年代直接进行 Full GC, 若 TRUE, 那么允许冒担保失败的风险, 下一步</p>
+</li>
+<li>
+<p>继续检查老年代连续空闲空间是否大于 历史上晋升到老年代的Object的平均大小, 若TRUE, 尝试进行 Minor GC (冒着风险), 若 FALSE, 进行 Full GC</p>
+</li>
+</ol>
+<h1><a class="header" href="#java的代码执行机制" id="java的代码执行机制">Java的代码执行机制</a></h1>
+<h2><a class="header" href="#类编译" id="类编译">类编译</a></h2>
+<p>jvm 规定了 class 规范， 但是怎么从 java 文件到 class 文件并没有规定， 厂商有很多实现， javac， ecj （eclipse compiler for Java）， jikes</p>
+<p><code>javac -g Foo.java</code> 编译 （-g 生成 所有调试信息）， 然后 通过 <code>javap -c -s -l -verbose Foo</code> 查看 class 文件</p>
+<pre><code class="language-java">/**
+ * Foo
+ */
+public class Foo {
+
+    private static final int MAX_COUNT = 100;
+    private static int count = 0;
+
+    public int bar() throws Exception {
+        if (++count &gt;= MAX_COUNT) {
+            count = 0;
+            throw new Exception(&quot;count overflow.&quot;);
+        }
+        return count;
+    }
+}
+
+</code></pre>
+<pre><code>Classfile /C:/Users/xiaoyu/Desktop/Foo.class
+  Last modified 2018-12-28; size 607 bytes
+  MD5 checksum f76c99d05a7c762ddacdbd5c4c2d1650
+  Compiled from &quot;Foo.java&quot;
+public class Foo
+  minor version: 0
+  major version: 52 // -- jdk 版本号, 50 -&gt; jdk 6, 51 -&gt; jdk7, 52 -&gt; jdk8
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool: //-- 常量池, 存放 field name, method name, type name, 常量值
+   #1 = Methodref          #7.#27         // java/lang/Object.&quot;&lt;init&gt;&quot;:()V
+   #2 = Fieldref           #3.#28         // Foo.count:I
+   #3 = Class              #29            // Foo
+   #4 = Class              #30            // java/lang/Exception
+   #5 = String             #31            // count overflow.
+   #6 = Methodref          #4.#32         // java/lang/Exception.&quot;&lt;init&gt;&quot;:(Ljava/lang/String;)V
+   #7 = Class              #33            // java/lang/Object
+   #8 = Utf8               MAX_COUNT
+   #9 = Utf8               I
+  #10 = Utf8               ConstantValue
+  #11 = Integer            100
+  #12 = Utf8               count
+  #13 = Utf8               &lt;init&gt;
+  #14 = Utf8               ()V
+  #15 = Utf8               Code
+  #16 = Utf8               LineNumberTable
+  #17 = Utf8               LocalVariableTable
+  #18 = Utf8               this
+  #19 = Utf8               LFoo;
+  #20 = Utf8               bar
+  #21 = Utf8               ()I
+  #22 = Utf8               StackMapTable
+  #23 = Utf8               Exceptions
+  #24 = Utf8               &lt;clinit&gt;
+  #25 = Utf8               SourceFile
+  #26 = Utf8               Foo.java
+  #27 = NameAndType        #13:#14        // &quot;&lt;init&gt;&quot;:()V
+  #28 = NameAndType        #12:#9         // count:I
+  #29 = Utf8               Foo
+  #30 = Utf8               java/lang/Exception
+  #31 = Utf8               count overflow.
+  #32 = NameAndType        #13:#34        // &quot;&lt;init&gt;&quot;:(Ljava/lang/String;)V
+  #33 = Utf8               java/lang/Object
+  #34 = Utf8               (Ljava/lang/String;)V
+{
+  public Foo(); // -- 生成的默认构造器方法
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V //-- jvm提供的四个方法指令之一
+         4: return
+      LineNumberTable:
+        line 4: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LFoo;
+
+  public int bar() throws java.lang.Exception; //-- bar 方法的元数据信息
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: getstatic     #2                  // Field count:I
+         3: iconst_1
+         4: iadd
+         5: dup
+         6: putstatic     #2                  // Field count:I
+         9: bipush        100
+        11: if_icmplt     28
+        14: iconst_0
+        15: putstatic     #2                  // Field count:I
+        18: new           #4                  // class java/lang/Exception
+        21: dup
+        22: ldc           #5                  // String count overflow.
+        24: invokespecial #6                  // Method java/lang/Exception.&quot;&lt;init&gt;&quot;:(Ljava/lang/String;)V
+        27: athrow
+        28: getstatic     #2                  // Field count:I
+        31: ireturn
+      LineNumberTable: // -- 对应了源码的行号, 查找问题很方便
+        line 10: 0
+        line 11: 14
+        line 12: 18
+        line 14: 28
+      LocalVariableTable: // -- 局部变量信息, 如果没有这行信息, 我们无法知道局部变量名称
+        Start  Length  Slot  Name   Signature
+            0      32     0  this   LFoo;
+      StackMapTable: number_of_entries = 1 //--记录有分支的情况
+        frame_type = 28 /* same */
+    Exceptions: //-- 异常处理器表
+      throws java.lang.Exception
+
+  static {};
+    descriptor: ()V
+    flags: ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+        //-- 方法对应的字节码
+         0: iconst_0
+         1: putstatic     #2                  // Field count:I
+         4: return
+      LineNumberTable:
+        line 7: 0
+}
+SourceFile: &quot;Foo.java&quot;
+
+</code></pre>
+<h2><a class="header" href="#类加载" id="类加载">类加载</a></h2>
+<p>将 class 文件 加载到 jvm , 并形成 Class 对象 的过程;</p>
+<ul>
+<li>装载</li>
+<li>链接 (此时已经加载完毕, 形成 Class 对象)</li>
+<li>初始化 (使用对象前必须初始化, 为静态变量赋值)</li>
+</ul>
+<h3><a class="header" href="#classloader类加载器" id="classloader类加载器">classloader类加载器</a></h3>
+<p>check java-note#classloader类加载器</p>
+<h3><a class="header" href="#装载load" id="装载load">装载(load)</a></h3>
+<p>找到 class 文件 并加载到 jvm, jvm 通过  <code>ClassLoader 实例</code> 和 类的<code> full qualified name</code> 加载, 同样也通过这两个元素标识被加载了的 类</p>
+<pre><code class="language-java">@Test
+public void testClassLoad() {
+    // 对于 数组类型的类，类名 “[” + &quot;基本类型or L&quot; + 引用类型类名
+    byte[] bytes = new byte[1024];
+    Object[] objArr = new Object[10];
+    System.out.println(&quot;&gt;&gt;&gt; bytes name: &quot; + bytes.toString());
+    System.out.println(&quot;&gt;&gt;&gt; objArr name: &quot; + objArr.toString());
+    // result:
+    //&gt;&gt;&gt; bytes name: [B@11028347
+    //&gt;&gt;&gt; objArr name: [Ljava.lang.Object;@14899482
+}
+
+</code></pre>
+<h3><a class="header" href="#链接link" id="链接link">链接(Link)</a></h3>
+<p>也就是常见class对象；具体包括：</p>
+<ul>
+<li>
+<p>对class文件的格式校验, 如果class格式不符合, 抛出 error, 校验中如果碰到其他类, 也加载, 若加载失败, 抛出 NoClassdeffoundError</p>
+</li>
+<li>
+<p>校验完后, 初始化 静态变量</p>
+</li>
+<li>
+<p>最后校验 属性, 方法. 确保属性,方法存在. 可能抛出 NosuchmethodError, NosuchfieldError</p>
+</li>
+</ul>
+<h3><a class="header" href="#初始化initialize" id="初始化initialize">初始化(Initialize)</a></h3>
+<p>执行类中的 <code>静态初始化代码</code>, <code>构造器代码</code>, <code>静态属性初始化</code></p>
+<h2><a class="header" href="#类执行" id="类执行">类执行</a></h2>
+<h3><a class="header" href="#字节码解释执行and编译执行并存如何分界" id="字节码解释执行and编译执行并存如何分界">字节码解释执行and编译执行并存如何分界</a></h3>
+<p>根据方法上的2个计数器是否超过阈值决定是否由 解释执行升级为编译执行</p>
+<ul>
+<li>调用计数器 - 方法被调用的次数</li>
+<li>回边计数器 - 方法内部循环代码的循环次数</li>
+</ul>
+<h3><a class="header" href="#字节码解释执行" id="字节码解释执行">字节码解释执行</a></h3>
+<h4><a class="header" href="#方法相关的jvm指令" id="方法相关的jvm指令">方法相关的jvm指令</a></h4>
+<p>class 二进制文件中, jvm提供一套指令来执行不同的方法调用</p>
+<ul>
+<li>invokestatic - 调用 static 方法</li>
+<li>invokevirtual  - 调用对象实例的方法</li>
+<li>invokeinterface - 调用接口的方法</li>
+<li>invokespecial - 调用 private 的方法 和 调用 编译后生成的 <init> 方法 (即对象实例化时的初始化方法)</li>
+</ul>
+<p>通过 javap -c xxx 可以以文本形式查看 class二进制文件</p>
+<p>jvm 以 <code>基于 栈的结构</code> 来执行 字节码, 好处时体积小, 代码紧凑</p>
+<p>一个 thread 在创建后会产生 </p>
+<ul>
+<li><code>程序计数器</code> (pc register) - 存放下一条待执行的指令在方法内的偏移量</li>
+<li><code>栈</code> - 存放 &quot;栈帧&quot; (stack frame), 每个方法每次调用都会产生栈帧</li>
+</ul>
+<p>示意图:</p>
+<p><img src="Snipaste_2018-12-29_17-39-30.png" alt="alt" /></p>
+<p>局部变量区  : 存放局部变量和参数</p>
+<p>操作数栈: 存放方法执行过程中产生的中间结果</p>
+<h4><a class="header" href="#jvm指令怎么解释执行" id="jvm指令怎么解释执行">jvm指令怎么解释执行</a></h4>
+<p>冯-诺伊曼 体系 中的 fdx 循环, 思路如下:</p>
+<pre><code class="language-java">// 实现 fdx 循环有多种方式, switch-threading, token-threading, inline-threading...
+// switch-threading 实现循环
+while(true) {
+    // // 获取下一条指令, 分派, 执行
+    int code = fetchNextCode(); 
+    switch (code) {
+        case IADD:
+            // do int add
+        case ...:
+            // do sth
+    }
+}
+
+// token-threading 实现循环, sun jdk 默认采用这种循环方式
+// 较之 前一种方式, 冗余了 fetch 和 dispatch, 去除了 switch; 所以性能好些, 但是内存占用更多
+while(true) {
+    IADD: {
+        // do int add
+        fetchNextCode();
+        dispatch();
+    }
+    ICONST_0: {
+        push(0);
+        fetchNextCode();
+        dispatch();
+    }
+
+}
+</code></pre>
+<h3><a class="header" href="#字节码编译执行" id="字节码编译执行">字节码编译执行</a></h3>
+<p>字节码解释执行的效率不够好, 新的执行方式出现: 将 字节码 编译为 机器码, 在运行时进行 ------- <code>JIT编译器</code> (just-in-time compiler 即时编译器)</p>
+<p>sun jdk 对字节码中执行频率较高的部分代码编译为机器码, 频率不够高的部分二字节码仍旧解释执行 -------- 因此 sun jdk 又称为 Hotspot VM, 取 &quot;热点&quot;之意</p>
+<p>sun jdk 提供两种编译模式 : client compiler, server compiler</p>
+<p>sun jdk 根据 机器配置决定使用什么模式, 也可以强制指定以哪种模式启动jvm</p>
+<h4><a class="header" href="#client-compiler" id="client-compiler">client compiler</a></h4>
+<p>又名 <code>C1 编译</code>, 轻量级, 占用内存少, 适合桌面交互式应用</p>
+<p>主要优化手段:</p>
+<ul>
+<li>方法内联 - 当前方法内部调用另一个方法, JIT 编译后, 另外的方法代码直接被编入当前方法中</li>
+<li>去除虚拟化 - class字节码被 load 后, 会分析其类层次结构, 如果一个接口只有一个实现类, 而这个接口在某个地方被使用了, JIT 会在 调用处进行 <code>方法内联</code>优化</li>
+<li>冗余削除, 在编译时, 根据代码运行情况进行代码的削除, 如果某个条件分支的代码没有执行到, C1编译 会在编译后直接去掉这段不会被执行到的代码</li>
+</ul>
+<pre><code class="language-java">
+// 优化 - 方法内联
+
+public void bar() {
+    foo()
+}
+private void foo() {
+    // foo method
+    System.out.println(&quot;foo method&quot;);
+}
+
+// 优化后:
+public void bar() {
+    // foo method
+    System.out.println(&quot;foo method&quot;);
+}
+
+////////////////////////////////////////////
+
+// 优化 - 去除虚拟化
+
+public interface IFoo {
+    void bar();
+}
+public class Foo implements IFoo {// IFoo 只有这一个实现
+ public void bar() {
+     // bar method
+ }
+}
+
+public class Demo {
+    public void exec(IFoo foo) {
+        foo.bar();
+    }
+}
+
+// 优化后:
+// 当 jvm 发现 只有 Foo 实现了 IFoo, 会如下优化: 直接把 bar() 的实现代码移到 exec() 中去
+public void exec(IFoo foo) {
+    // bar method
+}
+
+////////////////////////////////////////////////////
+
+// 优化 - 冗余削除
+private static final Log log = ....
+private static final boolean isDebug = log.isDebugEnable();
+
+public void exec() {
+    if (isDebug) {
+        log.debug(&quot;...&quot;);
+    }
+
+    // do sth
+}
+
+// 优化后:
+// isDebug 为 false 才会优化
+public void exec() {
+    // do sth
+}
+
+// 这类优化也是为什么有的代码编写规范规定: 不要直接使用 log.debug(), 而要先判断 debug 是否开启; 
+// 这样可以提高代码性能
+
+
+</code></pre>
+<h4><a class="header" href="#server-compiler" id="server-compiler">server compiler</a></h4>
+<p>又称为 <code>C2编译</code>, 重量级, 内存占用较多, 适合服务器端应用</p>
+<p>和 c1编译 主要的不同在于: 寄存器分配策略and优化范围不同</p>
+<p><code>逃逸分析</code>是C2编译优化的基础, 基于 逃逸分析, 有这些优化手段: (逃逸分析: http://www.importnew.com/23150.html) ------ 逃逸分析的基本行为就是分析对象动态作用域：当一个对象在方法中被定义后，它可能被外部方法所引用，例如作为调用参数传递到其他地方中，称为方法逃逸</p>
+<ul>
+<li>标量替换 (聚合量替换为标量) - 将 <code>对象</code> 代码替换为 <code>属性</code> 代码的形式; 好处: 由于逃逸变量被其内部属性替换, 可节省内存; 而且代码执行时无需去找逃逸对象的引用, 会更快一点</li>
+<li>栈上分配 - 如果 变量 没有逃逸, C2 会直接在 栈上创建这个变量代表的对象 好处: 访问更加快速; 随着方法执行结束, 对象也自动销毁了, 减轻了垃圾回收的压力</li>
+<li>同步削除 (这里的 &quot;同步&quot; 是名词) - 如果发现同步的对象没有逃逸, 也就没有同步的必要了, C2编译时会直接去掉同步</li>
+</ul>
+<pre><code class="language-java">
+// 标量替换
+
+Point point = new Point(1, 2);
+Sysout.out.println(&quot;point的x坐标为: &quot; + point.x + &quot;, point 的y坐标为: &quot; + point.y);
+
+// 优化后: (point 在代码中没有被直接使用, 只是使用了内部的属性)
+int x = 1;
+int y = 2;
+Sysout.out.println(&quot;point的x坐标为: &quot; + x + &quot;, point 的y坐标为: &quot; + y);
+
+// 同步削除
+// 就是 去掉 代码同步 synchronized
+
+
+</code></pre>
+<h3><a class="header" href="#反射执行" id="反射执行">反射执行</a></h3>
+<p>典型如 mvc 框架</p>
+<p>反射代码中， <code>getMethod()</code> 比较消耗性能(背后需要进行方法权限校验, 所有方法的扫描, Method 对象的复制), 所以 得到的 Method 对象最好缓存</p>
+<h1><a class="header" href="#java中的关键字和内存的关系" id="java中的关键字和内存的关系">java中的关键字和内存的关系</a></h1>
+<h2><a class="header" href="#final" id="final">final</a></h2>
+<p>https://blog.csdn.net/Ditto_zhou/article/details/78738197</p>
+<p>final如果用来表示数据变量的话，通常是指该变量被赋值一次，就不能改变；如果这个final变量是复杂类型， 变量内部数据仍然可变</p>
+<p>写final变量时的重排序特性：如果一个类中定义了final变量， 那么针对这个变量的write操作<code>不会被重排序到构造函数之外</code> ------相反的, 普通变量可能被重排序到构造函数之外</p>
+<p>结论就是: 在一个对象的引用对一个线程可见前，能保证final变量被正确初始化，而普通域不具有这个特性，因为普通域的写入可能会重排序到构造函数外.也就是在多线程环境下，拿到一个对象的引用后，可能会出现它的普通属性的变量还没有被正确初始化的情况.</p>
+<p>读取final变量时的重排序: 读取一个包含final变量的对象的引用和随后读取这个final变量，不能重排序</p>
+<p>另外, 如果匿名内部类访问了外部数据:</p>
+<ul>
+<li>如果访问的是局部变量(方法内部的变量), 数据存在于线程栈上, 变量无法进行共享, 匿名内部类无法获得这个变量, 只能通过值传递(拷贝)的方式传递到匿名内部类中 ---- 匿名内部类和外部类中的数据无法自动同步；类似js中的闭包， 但是js中的闭包可以自动同步内外变量；</li>
+<li>如果这个外部数据是成员变量, 对应的在虚拟机里是在堆的位置, 变量可以共享, 因此在创建匿名内部类的对象时无需拷贝, 直接通过 this.xxx 即可获取；</li>
+</ul>
+<p>因此可以得出结论：匿名内部类来自外部闭包环境的自由变量必须是final的，除非自由变量来自类的成员变量。</p>
+<h2><a class="header" href="#volatile" id="volatile">volatile</a></h2>
+<p>一条thread每次对变量进行修改都会立即刷新到堆内存中被其他thread看到;</p>
+<h2><a class="header" href="#synchronized" id="synchronized">synchronized</a></h2>
+<p>一条thread进入synchronized代码块, 会获取目标对象的锁</p>
+<h2><a class="header" href="#static" id="static">static</a></h2>
+<h1><a class="header" href="#java的内存泄露" id="java的内存泄露">java的内存泄露</a></h1>
+<h2><a class="header" href="#会造成哪些溢出" id="会造成哪些溢出">会造成哪些溢出</a></h2>
+<p>内存泄露会造成 &quot;溢出&quot;, 堆溢出, 栈溢出, 方法区溢出</p>
+<p>堆溢出: 典型如不断往一个集合中添加对象, 直到堆溢出, 但是由于 GC,现在不成问题了</p>
+<p>方法区溢出: 运行时动态生成大量类 (反射, cglib), 方法区不够用了</p>
+<p>栈溢出: 方法递归调用,没有退出条件; or 内存对象明明已经不需要的时候，还仍然保留着这块内存和它的访问方式（引用）, 造成无法 GC, 比如弹栈时没有将栈中的元素赋值为null;</p>
+<pre><code class="language-java">public class Heap
+{
+    public static void main(String[] args)
+    {
+        ArrayList list=new ArrayList();
+        while(true)
+        {
+            list.add(new Heap());
+        }
+    }
+}
+
+////////////////////////
+
+public class Stack
+{
+    public static void main(String[] args)//java.lang.StackOverflowError
+    {
+        new Stack().test();
+    }
+    public void test()
+    {
+        test();
+    }
+}
+
+</code></pre>
+<h2><a class="header" href="#java内存泄露引起原因" id="java内存泄露引起原因">Java内存泄露引起原因</a></h2>
+<p>静态集合类引起内存泄露 (静态变量的生命周期和应用程序一致，他们所引用的所有的对象Object也不能被释放)</p>
+<pre><code class="language-java">Static Vector v = new Vector(10);
+for (int i = 1; i&lt;100; i++)
+{
+Object o = new Object();
+v.add(o);
+o = null;
+}
+
+</code></pre>
+<p>当集合里面的对象属性被修改后，再调用remove（）方法时不起作用</p>
+<pre><code class="language-java">public static void main(String[] args)
+{
+Set&lt;Person&gt; set = new HashSet&lt;Person&gt;();
+Person p1 = new Person(&quot;唐僧&quot;,&quot;pwd1&quot;,25);
+Person p2 = new Person(&quot;孙悟空&quot;,&quot;pwd2&quot;,26);
+Person p3 = new Person(&quot;猪八戒&quot;,&quot;pwd3&quot;,27);
+set.add(p1);
+set.add(p2);
+set.add(p3);
+System.out.println(&quot;总共有:&quot;+set.size()+&quot; 个元素!&quot;); //结果：总共有:3 个元素!
+p3.setAge(2); //修改p3的年龄,此时p3元素对应的hashcode值发生改变
+
+set.remove(p3); //此时remove不掉，造成内存泄漏
+
+set.add(p3); //重新添加，居然添加成功
+System.out.println(&quot;总共有:&quot;+set.size()+&quot; 个元素!&quot;); //结果：总共有:4 个元素!
+for (Person person : set)
+{
+System.out.println(person);
+}
+}
+
+</code></pre>
+<p>各种连接: 比如数据库连接（dataSourse.getConnection()），网络连接(socket)和io连接，除非其显式的调用了其close（）方法将其连接关闭，否则是不会自动被GC 回收的。对于Resultset 和Statement 对象可以不进行显式回收，但Connection 一定要显式回收，因为Connection 在任何时候都无法自动回收，而Connection一旦回收，Resultset 和Statement 对象就会立即为NULL。但是如果使用连接池，情况就不一样了，除了要显式地关闭连接，还必须显式地关闭Resultset Statement 对象</p>
+<p>单例模式: 果单例对象持有外部对象的引用，那么这个外部对象将不能被jvm正常回收，导致内存泄露</p>
+<h1><a class="header" href="#jvm-中的-object" id="jvm-中的-object">jvm 中的 object</a></h1>
+<p>HotSpot 虚拟机在 Java 堆中对象创建、布局和访问的全过程。reference: https://juejin.im/post/5b7d69e4e51d4538ca5730cb</p>
+<h2><a class="header" href="#对象的创建过程内存怎么分配" id="对象的创建过程内存怎么分配">对象的创建过程(内存怎么分配)</a></h2>
+<ul>
+<li>类加载检查 - 检查类是否已经加载过, 如果没有需要先加载类</li>
+<li>分配内存 - 为新建对象分配内存 (即将一块确定大小的内存块从 Heap 中划分出来, 对象耗费内存大小在类加载后可以得知); 分配方式: &quot;指针碰撞&quot;, &quot;空闲散列&quot; . 选择那种分配方式由<code> Java 堆是否规整</code>(是否有内存碎片)决定，而Java堆是否规整又由<code>所采用的垃圾收集器是否带有压缩整理功能</code>决定。</li>
+<li>初始化0值 - 给对象实例的属性赋零值</li>
+<li>设置对象头 - 虚拟机要对对象进行必要的设置, 保证对象和类能够联系起来，例如这个<code>对象是那个类的实例</code>、<code>如何才能找到类的元数据信息</code>、对象的哈希吗、对象的 GC 分代年龄等信息。 这些信息存放在对象头中。 另外，根据虚拟机当前运行状态的不同，如是否启用偏向锁等，对象头会有不同的设置方式。</li>
+<li>执行官init方法 - 把对象按照程序员的意愿进行初始化</li>
+</ul>
+<p>给新建对象分配内存的两种方式:</p>
+<ul>
+<li>指针碰撞 - 用过的内存和空白内存分开, 中间有分界指针, 分配时, 指针向空白内存方向移动&quot;新建对象&quot;大小的位置即可</li>
+<li>空闲列表 - 虚拟机维护一个列表, 记录哪些空白内存, 分配时, 从中找到一块合适的内存分给对象实例, 同时更新这个列表 </li>
+</ul>
+<p><img src="Snipaste_2019-01-02_21-05-54.png" alt="alt" /></p>
+<p><code>内存分配怎么防止并发问题</code>: TLAB (thread local allocation buffer) -&gt; 为每一个线程预先在new generation 区域的 Eden区分配的一块儿内存 (可通过 jvm 参数指定)，JVM在给线程中的对象分配内存时，首先在TLAB分配，当对象大于TLAB中的剩余内存或TLAB的内存已用尽时，再在堆上分配, 采用CAS进行内存分配 ( CAS+失败重试： CAS 是乐观锁的一种实现方式。所谓乐观锁就是，每次不加锁而是假设没有冲突而去完成某项操作，如果因为冲突失败就重试，直到成功为止。虚拟机采用 CAS 配上失败重试的方式保证更新操作的原子性。)</p>
+<h2><a class="header" href="#对象的访问" id="对象的访问">对象的访问</a></h2>
+<h3><a class="header" href="#对象的2种访问方式" id="对象的2种访问方式">对象的2种访问方式</a></h3>
+<p>目前主流的访问方式有①使用句柄和②直接指针两种：(Java程序通过栈上的 reference 数据来操作堆上的具体对象)</p>
+<ol>
+<li>
+<p>句柄： 如果使用句柄的话，那么<code>Java堆中将会划分出一块内存来作为句柄池</code>，reference 中存储的就是对象的句柄地址，而句柄中包含了<code>对象实例数据</code>(Heap)与<code>类型数据</code>(Method Area)各自的具体地址信息; 好处:  reference 中存储的是稳定的句柄地址，在对象被移动时只会改变句柄中的实例数据指针，而 reference 本身不需要修改</p>
+</li>
+<li>
+<p>直接指针： 如果使用直接指针访问，那么 Java 堆对像的布局中就必须考虑如何防止访问类型数据的相关信息，reference 中存储的直接就是对象的地址。好处: 速度快，它节省了一次指针定位的时间开销</p>
+</li>
+</ol>
+<p>《深入理解java虚拟机》中的示意图:</p>
+<p><img src="Snipaste_2018-10-13_17-13-07.png" alt="alt" /><img src="Snipaste_2018-10-13_17-14-24.png" alt="alt" /></p>
+<h3><a class="header" href="#thread具体怎么访问对象中的值呢以及volatile关键字" id="thread具体怎么访问对象中的值呢以及volatile关键字">thread具体怎么访问对象中的值呢以及volatile关键字</a></h3>
+<p>http://www.cnblogs.com/aigongsi/archive/2012/04/01/2429166.html</p>
+<p>jvm 有一个内存区域是jvm虚拟机栈， 包含一个个的 线程栈（thread stack），每个 thread stack 保存了保存了线程运行时候变量值信息</p>
+<p>当线程访问某一个对象时候值的时候，首先通过对象的引用找到对应在堆内存的变量的值，然后把堆内存变量的具体值load到线程本地内存中，建立一个变量副本，之后线程就不再和对象在堆内存变量值有任何关系，而是直接修改副本变量的值，在修改完之后的某一个时刻（线程退出之前），自动把线程变量副本的值回写到对象在堆中变量</p>
+<p><img src="Snipaste_2019-03-21_17-35-58.png" alt="alt" /></p>
+<ul>
+<li>
+<p>read and load 从主存复制变量到当前工作内存</p>
+</li>
+<li>
+<p>use and assign  执行代码，改变共享变量值 （可反复出现, <code>如果变量加上volatile， 每次线程更新变量后， 会立即将变动后的结果更新到堆内存中的对象中</code>）</p>
+</li>
+<li>
+<p>store and write 用工作内存数据刷新主存相关内容</p>
+</li>
+</ul>
+<p>这一系列操作并非原子性的， 如果一个thread1 读取某个变量后， cpu 被另一个 thread2抢占， 对该变量写入新的值， thread1由于已经加载该变量， 并不会重新加载， 读取了脏数据；</p>
+<p>对于volatile修饰的变量，jvm虚拟机只是保证从主内存加载到线程工作内存的值是最新的， 无法保证线程安全， 比如：</p>
+<p>例如假如线程1，线程2 在进行read,load 操作中，发现主内存中count的值都是5，那么都会加载这个<code>最新的值</code></p>
+<p>在线程1堆count进行修改之后，会write到主内存中，主内存中的count变量就会变为6</p>
+<p>线程2由于已经进行read,load操作，在进行运算之后，也会更新主内存count的变量值为6, 产生了线程安全问题；</p>
+<h2><a class="header" href="#对象回收内存怎么释放" id="对象回收内存怎么释放">对象回收(内存怎么释放)</a></h2>
+<p>GC 有2种实现方式:</p>
+<ul>
+<li>引用计数收集器 - 每次对象赋值时要进行 &quot;引用计数&quot;的增减, 有一定消耗,, 有时候一个对象被多个其他对象引用 Java中有大量这样的引用, 累计起来消耗不小, sun jdk 未采用这种方式</li>
+<li>跟踪收集器 - 可能会使得应用暂停, 有三种实现算法 ...</li>
+</ul>
+<h1><a class="header" href="#有哪些虚拟机" id="有哪些虚拟机">有哪些虚拟机</a></h1>
+<p>Hotspot - 目前使用最广泛的</p>
+<p>ZGC - 支持超大堆的同时保证STW很短</p>
+<p>Graal - 一个特制版的的JavaVM。用Java写的JavaVM。能让不同语言跑在同一个VM上，还能互通, 号称全栈vm, 微服务框架Quarkus 给予他</p>
+<h1><a class="header" href="#java线上问题诊断排查" id="java线上问题诊断排查">java线上问题诊断排查</a></h1>
+<p>https://blog.csdn.net/GitChat/article/details/79019454
+http://ifeve.com/find-bug-online/
+https://mp.weixin.qq.com/mp/profile_ext?action=home&amp;__biz=MzA4NTg4Njk0Mw==&amp;scene=161#wechat_redirect</p>
+<p>一般流程如下:</p>
+<h2><a class="header" href="#日志检索" id="日志检索">日志检索</a></h2>
+<pre><code class="language-sh">
+# 检索 exception 关键字或 error 关键字
+# -E 使用正则表达式, 这里可选
+# or 逻辑
+grep -E &quot;exception|error&quot; app.log
+# 等价
+egrep &quot;xx&quot; xxx.log
+# and 逻辑
+grep -E ‘pattern1.*pattern2’ filename
+grep -E ‘pattern1.*pattern2|pattern2.*pattern1’ filename
+# not 逻辑
+grep -v ‘pattern1’ filename
+
+
+# 显示关键字上下 10 行日志
+grep -C 10 exception app.log
+
+# 检索 2020-05-05 19:23~25  分钟段日志
+grep '2020-05-05 19:2[3-5]' app.log
+sed -n '/2020-05-05 19:23/,/2020-05-05 19:25/p' app.log
+# 检索 2020-05-05 19:23:10~15 秒段日志
+grep '2020-05-05 19:23:[10-15]' app.log
+sed -n '/2020-05-05 19:23:10/,/2020-05-05 19:23:15/p' app.log
+
+# 查询 /data 目录下大于 500m 的文件
+find /data -type f -size +500M
+</code></pre>
+<h2><a class="header" href="#查看数据库连接" id="查看数据库连接">查看数据库连接</a></h2>
+<p>show processlist, 查看当前数据库的连接情况。确实因为慢查询造成。须要手动kill</p>
+<h2><a class="header" href="#查看cpu-负载" id="查看cpu-负载">查看CPU 负载</a></h2>
+<h3><a class="header" href="#cpu-user高-and--cpu-load-高" id="cpu-user高-and--cpu-load-高">CPU User高 and  CPU Load 高</a></h3>
+<p>(User：CPU 在用户态空间（用户进程）的运行时间比例)</p>
+<h4><a class="header" href="#代码中存在非常消耗-cpu-的操作" id="代码中存在非常消耗-cpu-的操作">代码中存在非常消耗 CPU 的操作</a></h4>
+<pre><code class="language-sh">#找出对应的 Java 进程 pid
+
+ps -ef | grep java 
+
+#找出 Java 进程中最消耗 CPU 的线程
+
+top -H -p &lt;pid&gt;
+
+jstack 获取 Java 的线程堆栈
+
+jstack ...
+
+# 将找出的线程 id 转换为 16 进制
+# 根据 16 进制的 id 从线程堆栈中找到相关的堆栈信息
+
+printf &quot;%x\n&quot; pid
+
+</code></pre>
+<h4><a class="header" href="#频繁gc" id="频繁gc">频繁gc</a></h4>
+<pre><code class="language-sh">jstat -gcutil pid interval(ms)
+
+</code></pre>
+<h3><a class="header" href="#cpu-system-高-and-cpu-load-高" id="cpu-system-高-and-cpu-load-高">CPU System 高 and CPU Load 高</a></h3>
+<p>System：CPU 在内核态空间的运行时间比例。例如内存分配、IO 读写、线程创建和切换等</p>
+<p>常见原因：</p>
+<ul>
+<li>并发锁竞争严重</li>
+<li>线程频繁切换</li>
+</ul>
+<p>排查方法:</p>
+<ul>
+<li>
+<p>jstack 打印线程堆栈，整体统计线程状态，如 WAITING、TIMED_WAITING、BLOCKED</p>
+</li>
+<li>
+<p>pidstat -w 可以查看 CPU 上下文切换的状态。</p>
+<p>cswch/s 每秒自愿上下文切换次数：进程无法获取资源，如内存、IO 等；</p>
+<p>nvcswch/s 每秒非自愿上下文切换次数：时间片耗尽系统强制调度，如进程频繁争抢 CPU。</p>
+</li>
+</ul>
+<p>如何优化:</p>
+<ul>
+<li>减小锁粒度</li>
+<li>使用无锁数据结构</li>
+<li>检查死锁</li>
+</ul>
+<h3><a class="header" href="#cpu-wait高-and-cpu-load高-and-cpu利用率低" id="cpu-wait高-and-cpu-load高-and-cpu利用率低">CPU Wait高 and CPU Load高 and CPU利用率低</a></h3>
+<p>说明CPU 等待磁盘写入的时间长。当 CPU 发起 IO 读写操作后，需要等待磁盘数据加载至内存</p>
+<p>可能原因是:</p>
+<ul>
+<li>IO 操作频繁</li>
+<li>资源未及时释放造成泄漏</li>
+</ul>
+<p>排查方法:</p>
+<pre><code class="language-sh"># 查看设备的 IO 状态
+
+iostat -x 2
+
+参数含义：
+
+rrqm/s : 每秒合并读操作的次数
+wrqm/s: 每秒合并写操作的次数
+r/s ：每秒读操作的次数
+w/s : 每秒写操作的次数
+rKB/s :每秒读取字节数
+wKB/s: 每秒写入字节数
+avgrq-sz：平均每次 IO 的数据大小，以扇区（512字节）为单位
+avgqu-sz：平均 IO 请求队列长度
+await：平均每个IO所需要的时间，包括在队列等待的时间和请求处理的时间。
+r_wait：每个读操作平均所需要的时间，包括硬盘设备读操作的时间 + 内核队列中的时间。
+w_wait: 每个写操平均所需要的时间，包括硬盘设备写操作的时间 + 队列中等待的时间。
+%util: 每秒内用于 I/O 操作的时间占比
+
+# 查找引起 iowait 高的进程
+iotop
+
+iostat -m 1 10
+-m：某些使用block为单位的列强制使用MB为单位
+1 10：数据显示每隔1秒刷新一次。共显示10次
+
+# 查看引起 iowait 高的具体文件
+
+lsof -p &lt;pid&gt;
+</code></pre>
+<p>优化方法:</p>
+<ul>
+<li>有效控制资源数量，例如使用线程池等。</li>
+<li>了解磁盘特性是必要的，一般随机写转顺序写，同步写转异步写，IO 合并都可以得到较好的改善。</li>
+<li>压缩 &amp; Dirty Page 优化。Linux 操作系统中，当 Dirty Page 的大小达到总物理内存大小 10%，操作系统会进行刷盘但不阻塞系统调用的写线程，若达到物理内存大小的 20%，写线程会被阻塞。通过合适的压缩算法减少落盘数据的大小通常效果显著。</li>
+<li>预读取和读缓存。</li>
+<li>Zero Copy。</li>
+<li>MMap 内存映射。</li>
+</ul>
+<h2><a class="header" href="#查内存" id="查内存">查内存</a></h2>
+<p>内存占用高, 可能是内存泄漏</p>
+<p>通过 内存映像分析工具分析 dump 文件,  看看是 memory leak 还是 memory overflow</p>
+<ul>
+<li>
+<p>memory leak: 证明有无法回收的Object, 查看 leak Object 到 gc roots的引用链, 定位leak代码</p>
+</li>
+<li>
+<p>memory overflow: 查看 -Xms, -Xmx 是否可以增大, 代码上查看对象是否生命周期过长</p>
+</li>
+</ul>
+<pre><code class="language-sh"># 内存整体情况
+
+free -m 
+
+free -m -c10 -s1
+-m：以MB为单位显示。其它的有-k -g -b
+-s: 间隔多少秒持续观察内存使用状况
+-c:观察多少次
+
+vmstat 1 10
+1表示每隔1s输出一次,10 表示输出10次
+
+# JVM 堆内存占用排行
+
+jmap -histo &lt;pid&gt; | head -n 30
+
+# JVM 内存占用信息
+
+jstat -gccause &lt;pid&gt; 1000 1000
+jstat -gcutil &lt;pid&gt;
+
+# dump内存
+
+jmap -F -dump:live,file=/home/admin/heap.bin &lt;pid&gt;
+
+</code></pre>
+<h2><a class="header" href="#排查垃圾回收问题" id="排查垃圾回收问题">排查垃圾回收问题</a></h2>
+<h2><a class="header" href="#网络问题" id="网络问题">网络问题</a></h2>
+<pre><code>netstat -antp 
+
+-a (all)显示全部选项。默认不显示LISTEN相关
+-t (tcp)仅显示tcp相关选项
+-u (udp)仅显示udp相关选项
+-n 拒绝显示别名，能显示数字的所有转化成数字。
+-l 仅列出有在 Listen (监听) 的服服务状态
+
+-p 显示建立相关链接的程序名
+
+</code></pre>
+<h1><a class="header" href="#jdk-自带命令行工具" id="jdk-自带命令行工具">jdk 自带命令行工具</a></h1>
+<pre><code>jps [-l]
+- 列出jvm中的进程 (id, 主类)
+
+jstat
+- 监视jvm内存变化, gc情况
+
+jinfo
+- 查询jvm配置信息
+
+jmap
+- 生成Java heap 快照
+
+jhat
+- 分析 Java heap 快照
+- 可在生产机器上直接访问分析结果html
+
+jstack
+- 生成线程快照
+- 用于分析线程停顿, 如死锁
+
+可视化工具
+Jconsole
+- 内存, 线程监控
+VirtualVM
+- 监控, 性能分析
+- 基于插件
+</code></pre>
+<h2><a class="header" href="#java-启动-javac-编译-javap-反编译" id="java-启动-javac-编译-javap-反编译">java 启动 javac 编译 javap 反编译</a></h2>
+<p>1、不带任何可选参数(如果字节码文件就位于当前工作目录，可以不写类的包名)：</p>
+<p>实际上等同于 javap -package Person
+javap Person</p>
+<p>2、反汇编指定目录下的字节码文件：</p>
+<p>javap -classpath D:/java/lib cn.softown.Person</p>
+<p>3、反汇编字节码文件为 JVM 可以识别、执行的字节码命令：</p>
+<p>javap -c Person</p>
+<h2><a class="header" href="#jstack" id="jstack">jstack</a></h2>
+<p>打印线程快照， 用于分析线程停顿, 如死锁</p>
+<p>线程快照是当前 java 虚拟机内每一条线程正在执行的方法堆栈的集合，</p>
+<p>生成线程快照的主要目的是定位线程出现长时间停顿的原因, 一般打印三次 dump，看看没有响应的线程到底在后台做什么事情，如线程间死锁、死循环、请求外部资源导致的长时间等待等。</p>
+<pre><code class="language-sh"># 默认输出 控制台
+jstack 1102
+
+
+</code></pre>
+<p>dump 文件分析:</p>
+<pre><code># 有一些 jvm 的 daemon thread，如 gc，低内存检测， 不关注
+
+&quot;VM Thread&quot; os_prio=2 tid=0x0000000018167000 nid=0xfccc runnable
+&quot;GC task thread#0 (ParallelGC)&quot; os_prio=0 tid=0x000000000352a000 nid=0x121b4 runnable
+&quot;GC task thread#1 (ParallelGC)&quot; os_prio=0 tid=0x000000000352c000 nid=0x12168 runnable
+&quot;GC task thread#2 (ParallelGC)&quot; os_prio=0 tid=0x000000000352d800 nid=0x121d0 runnable
+&quot;GC task thread#3 (ParallelGC)&quot; os_prio=0 tid=0x0000000003530000 nid=0x115d4 runnable
+&quot;VM Periodic Task Thread&quot; os_prio=2 tid=0x0000000019621000 nid=0x137b0 waiting on condition
+
+
+# 关注u用户级别的 thread
+- Runnable
+
+    - Wait on condition  线程等待某个条件的发生
+
+        常见的情况是线程在等待网络的读写，比如当网络数据没有准备好读时，线程处于这种等待状态，如果发现有大量的线程都在处在 Wait on condition 可能是一个网络瓶颈的征兆。
+
+        - 一种情况是网络非常忙，几 乎消耗了所有的带宽，仍然有大量数据等待网络读 写
+
+        - 另一种情况也可能是网络空闲，但由于路由等问题，导致包无法正常的到达,
+
+        这时可以 netstat统计单位时间的发送包的数目, 可以观察 cpu的利用率，如果系统态的 CPU时间，相对于用户态的 CPU时间比例较高会是网络瓶颈
+
+        外一种出现 Wait on condition的常见情况是该线程在 sleep，等待 sleep的时间到了时候，将被唤醒
+
+    - Waiting for monitor entry 线程等待获取锁， 以便进入临界区， 一般是使用了 synchronizd
+
+        如果在多线程的程序中，大量使用 synchronized，或者不适当的使用了它，会造成大量线程在临界区的入口等待，造成系统的性能大幅下降。如果在线程 DUMP中发现了这个情况，应该审查源码，改进程序。
+
+    - in Object.wait() 线程释放锁， 等待再次获取锁
+
+        当线程获得了 Monitor，进入了临界区之后，如果发现线程继续运行的条件没有满足，它则调用对象（一般就是被 synchronized 的对象）的 wait() 方法，放弃了 Monitor，进入 “Wait Set”队列。只有当别的线程在该对象上调用了 notify() 或者 notifyAll() ， “ Wait Set”队列中线程才得到机会去竞争
+
+
+# 处理 http 的 thread， tomcat 开了一个 thread pool， 包括 http-nio-8090-exec-1，2，3.。。10
+# 可以看到 thread state 为 waiting，调用栈，当前锁住的资源 0x000000001d7ee000
+&quot;http-nio-8090-exec-1&quot; #23 daemon prio=5 os_prio=0 tid=0x000000001bc9d800 nid=0x13af4 waiting on condition [0x000000001d7ee000]
+   java.lang.Thread.State: WAITING (parking)
+        at sun.misc.Unsafe.park(Native Method)
+        - parking to wait for  &lt;0x00000000db266038&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+        at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+        at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+        at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:107)
+        at org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:33)
+        at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:745)
+
+
+# 这是一个进入 临界区， 又退出临界区的线程
+# 比如，在程序中，有多个服务线程，设计成从一个队列里面读取请求数据。这个队列就是 lock以及 waiting on的对象。当队列为空的时候，这些线程都会在这个队列上等待，直到队列有了数据，这些线程被 Notify，当然只有一个线程获得了 lock，继续执行
+&quot;Thread-1&quot; prio=10 tid=0x08223250 nid=0xa in Object.wait() [0xef47a000..0xef47aa38]
+        at java.lang.Object.wait(Native Method)
+        - waiting on &lt;0xef63beb8&gt; (a java.util.ArrayList) # 在 临界区调用 obj.wait()，等待在这个对象上， 释放锁
+        at java.lang.Object.wait(Object.java:474)
+        at testthread.MyWaitThread.run(MyWaitThread.java:40)
+        - locked &lt;0xef63beb8&gt; (a java.util.ArrayList) #  用 synchronized 获得了这个对象的 锁
+        at java.lang.Thread.run(Thread.java:595)
+
+
+# 死锁
+&quot;Thread-1&quot; prio=5 tid=0x00acc490 nid=0xe50 waiting for monitor entry [0x02d3f000 ..0x02d3fd68]
+    at deadlockthreads.TestThread.run(TestThread.java:31)
+    - waiting to lock &lt;0x22c19f18&gt; (a java.lang.Object)  # 等待获取 0x22c19f18 锁
+    - locked &lt;0x22c19f20&gt; (a java.lang.Object)  # 持有 0x22c19f20 锁
+&quot;Thread-0&quot; prio=5 tid=0x00accdb0 nid=0xdec waiting for monitor entry [0x02cff000 ..0x02cff9e8]
+    at deadlockthreads.TestThread.run(TestThread.java:31)
+    - waiting to lock &lt;0x22c19f20&gt; (a java.lang.Object)
+    - locked &lt;0x22c19f18&gt; (a java.lang.Object)
+
+
+# 热锁：由于多个线程对临界区，或者锁的竞争，可能出现 频繁的线程的上下文切换， 进而造成 大部分 CPU开销用在 “系统态 ”
+# 表现为 大多数的线程状态都是 Waiting for monitor entry或者 Wait on monitor
+我们曾经遇到过这样的例子，程序运行时，出现了以上指出的各种现象，通过观察操作系统的资源使用统计信息，以及线程 DUMP信息，确定了程序中热锁的存在，并发现大多数的线程状态都是 Waiting for monitor entry或者 Wait on monitor，且是阻塞在压缩和解压缩的方法上。后来采用第三方的压缩包 javalib替代 JDK自带的压缩包后，系统的性能提高了几倍。
+
+</code></pre>
+<h2><a class="header" href="#jcmd" id="jcmd">jcmd</a></h2>
+<p>用于向正在运行的 JVM 发送诊断命令请求。</p>
+<pre><code class="language-sh"># 单独不带参数使用
+# 返回 pid mainClass cli—args
+# 类似 jps
+jcmd [-l]
+
+# 向指定进程 发送 诊断命令
+jcmd 11022 name=\&quot;Value of name argument\&quot;
+# 向多个有相同 main class  的进程 发送命令
+jcmd com.xxx.AppClass name=\&quot;Value of name argument\&quot;
+# 打印性能参数
+jcmd 1102 PerfCounter.print
+# 从指定 file 读取命令
+jcmd 1102 -f xxx_file
+</code></pre>
+<h2><a class="header" href="#jps" id="jps">jps</a></h2>
+<p>本地当前用户所有运行的 java 进程/jvm 实例</p>
+<p>jps 命令有个地方很不好，似乎只能显示当前用户的 java 进程，要显示其他用户的还是只能用 unix/linux 的 ps 命令。</p>
+<pre><code class="language-sh"># pid, mainClass
+jps
+# pid
+jps -q
+# 传递给 main class 的参数
+jps -m
+# main class 完整 package path
+jps -l
+# 输出传递给JVM的参数
+jps -v
+
+# 列出远程服务器192.168.0.77机器所有的jvm实例，采用rmi协议，默认连接端口为1099（前提是远程服务器提供jstatd服务）
+jps 192.168.0.77
+</code></pre>
+<h2><a class="header" href="#jstat" id="jstat">jstat</a></h2>
+<p>虚拟机统计监控工具。可以用于服务性能优化。重要</p>
+<pre><code class="language-sh"># -class，监控什么数据， 这里是监控 class 加载情况
+    -class：统计class loader行为信息
+    -compile：统计编译行为信息
+    -gc：统计jdk gc时heap信息
+    -gccapacity：统计不同的generations（不知道怎么翻译好，包括新生区，老年区，permanent区）相应的heap容量情况
+    -gccause：统计gc的情况，（同-gcutil）和引起gc的事件
+    -gcnew：统计gc时，新生代的情况
+    -gcnewcapacity：统计gc时，新生代heap容量
+    -gcold：统计gc时，老年区的情况
+    -gcoldcapacity：统计gc时，老年区heap容量
+    -gcpermcapacity：统计gc时，permanent区heap容量
+    -gcutil：统计gc时，heap情况
+    -printcompilation：不知道干什么的，一直没用过。
+# -t，显示 timestamp 列
+# -h3，每n次打印一次 表格 title
+# 55912，进程id
+# 1000（ms），每1000ms监控打印一次
+# 100，共打印多少次（不写的话就是一直打印下去）
+jstat -class -t -h3 55912 1000 100
+
+# 结果列：
+# timestamp，-t的输出结果
+# loaded，已加载的类数量（真多。。很多都是动态代理的）
+# bytes，已加载的类总大小
+# unloaded，已卸载的类数量（多态代理的情况下，是可以卸载类的）
+# bytes，已卸载的类总大小
+# time，classLoader操作类的总耗时
+
+
+# jit 情况
+jstat -compiler -t -h3 55912 1000 100
+
+# 监控 gc 情况
+jstat -gc -t -h3 55912 1000 100
+# 结果列：
+# S01,S1C,S0U,S1U from，to的大小和已用量大小(KB)
+# EC,EU eden的大小和已用量
+# OC,OU 老边代的大小和已用量
+# MC,MU 永久区大小和已用量
+# CCSC,CCSU 压缩类空间大小和已用量
+# YGC,YGCT: 新生代GC次数和耗时
+# FGC,FGCT: Full GC次数和耗时
+# GCT GC总耗时
+
+
+# 查看gc原因以及各个分代的百分信息
+jstat -gccapacity -t -h3 55912 1000 100
+# 结果列
+# S0 ：年轻代中第一个survivor（幸存区）已使用的占当前容量百分比
+# S1 ：年轻代中第二个survivor（幸存区）已使用的占当前容量百分比
+# E ：年轻代中Eden（伊甸园）已使用的占当前容量百分比
+# O ：old代已使用的占当前容量百分比
+# M ：元空间已使用的占当前容量百分比
+# CCS： 压缩
+# YGC ：从应用程序启动到采样时年轻代中gc次数
+# YGCT ：从应用程序启动到采样时年轻代中gc所用时间(s)
+# FGC ：从应用程序启动到采样时old代(全gc)gc次数
+# FGCT ：从应用程序启动到采样时old代(全gc)gc所用时间(s)
+# GCT：从应用程序启动到采样时gc用的总时间(s)
+# LGCC：最后一次GC原因
+# GCC：当前GC原因（No GC 为当前没有执行GC）
+</code></pre>
+<h2><a class="header" href="#jvisualvm" id="jvisualvm">jvisualvm</a></h2>
+<p>检测 java 内存 的变化情况，下载内存快照, 可用于排查内存泄露, </p>
+<p>垃圾回收查看</p>
+<p>CPU 占用</p>
+<p>线程分析 : 绿色(运行, 正在运行的 thread), 紫色(休眠, 调用 sleep 的 thread), 黄色(等待, 调用 object.wait 的 thread), 驻留(线程池中的空闲线程), 监视(正在阻塞/等待锁的 thread)</p>
+<p>是 jconsole 升级版</p>
+<h2><a class="header" href="#jconsole" id="jconsole">jconsole</a></h2>
+<p>图形监控界面， 类似 jvisualvm</p>
+<p>不要 生产环境使用, 因为会对应用有性能影响</p>
+<h2><a class="header" href="#jhat" id="jhat">jhat</a></h2>
+<p>JDK 自带的 Java 堆内存分析工具。</p>
+<p>jhat 命令解析一个 java heap dump 文件并启动一个 web 服务器，http://localhost:7000/oqlhelp/。</p>
+<h2><a class="header" href="#jmap" id="jmap">jmap</a></h2>
+<p>打印指定 Java 进程堆内存细节 linux 下特有</p>
+<pre><code class="language-sh"># 选项获取一个运行时的heap dump
+jmap -dump 1102
+# 于64位的虚拟机上
+jmap -J-d64 -heap pid
+</code></pre>
+<h2><a class="header" href="#jrunscript" id="jrunscript">jrunscript</a></h2>
+<p>解释执行 javascript、groovy、ruby 等脚本语言</p>
+<pre><code class="language-sh"># 进入交互模式
+jrunscript
+# 执行字符串
+jrunscript -e &quot;print('hello world')&quot;
+# 指定语言， 指定文件
+jrunscript -l js -f test.js
+# test.js是一个脚本文件，arg1，arg2和arg3是传递给脚本的脚本参数。脚本可以使用&quot;arguments&quot;数组来访问这些参数
+jrunscript test.js arg1 arg2 arg3
+
+</code></pre>
+<h2><a class="header" href="#jinfo" id="jinfo">jinfo</a></h2>
+<h2><a class="header" href="#jprofile" id="jprofile">jprofile</a></h2>
+<p>可连接到 tomcat， 可监控线程， 分析服务器的资源消耗情况, 商业工具, 非开源</p>
+<h1><a class="header" href="#阿里-arthas" id="阿里-arthas">阿里 arthas</a></h1>
+<p>https://github.com/alibaba/arthas
+https://arthas.aliyun.com/doc/arthas-tutorials.html?language=en</p>
+<p>https://github.com/WangJi92/arthas-idea-plugin
+https://wangji.blog.csdn.net/article/details/106964278</p>
+<h1><a class="header" href="#jvm-性能调优-and-实用参数" id="jvm-性能调优-and-实用参数">jvm 性能调优 and 实用参数</a></h1>
+<p>http://ifeve.com/jvm-optimize/
+http://ifeve.com/useful-jvm-flags/</p>
+<h2><a class="header" href="#有哪些参数" id="有哪些参数">有哪些参数</a></h2>
+<pre><code>-XX:MetaspaceSize=128m （元空间默认大小）
+-XX:MaxMetaspaceSize=128m （元空间最大大小）
+-Xms1024m （堆默认大小）
+-Xmx1024m （堆最大大小）
+-Xmn256m （新生代大小） eden 区 大小(伊甸园区)
+-Xss256k （棧最大深度大小）
+-XX:SurvivorRatio=8 （新生代分区比例 8:2）
+-XX:+UseConcMarkSweepGC （指定使用的垃圾收集器，这里使用CMS收集器）
+-XX:+PrintGCDetails （打印详细的GC日志）
+
+
+JDK8之后把-XX:PermSize 和 -XX:MaxPermGen移除了，取而代之的是
+-XX:MetaspaceSize=128m （元空间默认大小）
+-XX:MaxMetaspaceSize=128m （元空间最大大小）
+JDK 8开始把类的元数据放到本地化的堆内存(native heap)中，这一块区域就叫Metaspace，中文名叫元空间。
+使用本地化的内存有什么好处呢？最直接的表现就是java.lang.OutOfMemoryError: PermGen 空间问题将不复存在，因为默认的类的元数据分配只受本地内存大小的限制，也就是说本地内存剩余多少，理论上Metaspace就可以有多大（貌似容量还与操作系统的虚拟内存有关？这里不太清楚），这解决了空间不足的问题。不过，让Metaspace变得无限大显然是不现实的，因此我们也要限制Metaspace的大小：使用-XX:MaxMetaspaceSize参数来指定Metaspace区域的大小。JVM默认在运行时根据需要动态地设置MaxMetaspaceSize的大小。
+</code></pre>
+<h2><a class="header" href="#配置方式" id="配置方式">配置方式</a></h2>
+<pre><code>-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m -Xmn256m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC
+
+1. idea VM options
+1. java -jar -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=128m -Xms1024m -Xmx1024m -Xmn256m -Xss256k -XX:SurvivorRatio=8 -XX:+UseConcMarkSweepGC newframe-1.0.0.jar
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="java-concurrent.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="java-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="java-concurrent.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="java-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

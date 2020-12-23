@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>webpack-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html" class="active"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Webpack
+tags:</p>
+<ul>
+<li>webpack
+date: 2018-06-28 20:26:45
+categories: frontend</li>
+</ul>
+<hr />
+<div align="center">
+[官方文档](https://webpack.js.org/concepts/)
+http://zhaoda.net/webpack-handbook/module-system.html
+{% post_link js-proj-history 📚 前端模块化 %}
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E4%BB%8B%E7%BB%8D">介绍</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-webpack">为什么需要 webpack</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#webpackconfigjs">webpack.config.js</a></li>
+<li><a href="#loader">Loader</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C">命令行</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6">插件</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#介绍" id="介绍">介绍</a></h1>
+<p>webpack: 模块分析打包工具（module bundler）, 它将一堆文件中的每个文件都作为一个模块(module)，找出他们的依赖关系，将它们打包为可部署的静态资源(bundle)</p>
+<p>主要作用:</p>
+<ul>
+<li>
+<p>将 CSS、图片与其他资源打包</p>
+</li>
+<li>
+<p>打包之前预处理（Less、CoffeeScript、JSX、ES6 等）</p>
+</li>
+<li>
+<p>依 entry 文件不同，把 .js 分拆为多个 .js </p>
+</li>
+<li>
+<p>整合丰富的 Loader 可以使用（Webpack 本身仅能处理 JavaScript ，其余如：CSS、Image 需要载入不同 Loader 进行处理）</p>
+<ul>
+<li>
+<p>Webpack 本身只能处理原生的 JavaScript 模块，但是 loader 转换器可以将各种类型的资源转换成 JavaScript 模块。这样，任何资源都可以成为 Webpack 可以处理的模块。</p>
+</li>
+<li>
+<p>由于loader的存在, 可同通过require方式加载各种打包成模块的资源:</p>
+<pre><code class="language-js">require(&quot;./style.css&quot;);
+require(&quot;./style.less&quot;);
+require(&quot;./template.jade&quot;);
+require(&quot;./image.png&quot;);
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#为什么需要-webpack" id="为什么需要-webpack">为什么需要 webpack</a></h1>
+<p>首先考虑一个问题：前端模块怎么加载呢(资源怎么从服务器传送到浏览器呢)</p>
+<p>什么是前端中的模块 ? 不仅包括js模块文件, 样式、图片、字体、HTML 模板等等众多的资源。这些资源还会以各种方言的形式存在，比如 coffeescript、 less、 sass、众多的模板库、多语言系统（i18n）等等都是模块， 那么如何加载这些模块?</p>
+<p>🐎一种是每个模块文件都单独请求，</p>
+<p>🐎另一种是把所有模块打包成一个文件然后只请求一次。显而易见，<code>每个模块都发起单独的请求造成了请求次数过多，导致应用启动速度慢；一次请求加载所有模块导致流量浪费、初始化过程慢。这两种方式都不是好的解决方案</code>，它们过于简单粗暴。</p>
+<p>实际的加载方式：<code>分块传输，按需进行懒加载</code>，在实际用到某些模块的时候再增量更新，才是较为合理的模块加载方案。要实现模块的按需加载，就需要一个对整个代码库中的模块进行静态分析、编译打包的过程。webpack由此引入.</p>
+<h1><a class="header" href="#安装" id="安装">安装</a></h1>
+<p>通常我们会将 Webpack 安装到项目的依赖中而不是全局安装，这样就可以使用项目本地版本的 Webpack。</p>
+<blockquote>
+<p>全局安装有一个版本管理问题， 如果我们的项目中，有的用webpack 1.0，有的用webpack2.0 ，而全局webpack 却只有一个命令，那就不好办了</p>
+</blockquote>
+<pre><code class="language-sh">npm init                    # 生成package.json
+npm install webpack webpack-cli -D      # 安装
+npm info webpack            # 查看安装情况
+# Webpack 开发工具: webpack-dev-server 可以启动开发用 server，方便我们测试
+npm install webpack-dev-server --save-dev
+</code></pre>
+<p>打开package.json 文件，找到scripts 字段: </p>
+<pre><code class="language-json">&quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;webpack-dev-server --mode development&quot;,
+    &quot;build&quot;: &quot;webpack --mode production&quot;// 输出压缩过的代码
+},
+// webapck4开始, 可以直接配置 &quot;build&quot;: &quot;webpack&quot;, 默认输入为 ./src/index.js 默认输出为./dist/main.js
+</code></pre>
+<p><code>npm run build</code>or <code>npm run dev</code> </p>
+<p>这时候没有 webpack.config.js(为空文件), <code>webpack</code>命令默认读取<code>src/index.js</code>生成 <code>dist/main.js</code></p>
+<h1><a class="header" href="#webpackconfigjs" id="webpackconfigjs">webpack.config.js</a></h1>
+<p>分环境配置: https://segmentfault.com/a/1190000019711348</p>
+<p>webpack也提供了另外一种方式来完成打包工作，就是使用webpack的配置文件 webpack.config.js</p>
+<p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行 (通过 --config 选项来指定配置文件, 默认为 <code>./webpack.config.js</code>)，这个文件是一个 node.js 模块，导出一个 json 格式的配置信息对象</p>
+<pre><code class="language-js">// 处理路径
+const path = require('path');
+// - 创建html入口文件，比如单页面可以生成一个html文件入口，配置N个html-webpack-plugin可以生成N个页面入口
+// - 为引入的静态资源添加 hash. 每次 compile 后, 为 html 页面引入的外部资源如script、link动态添加 hash，防止引用缓存的外部文件问题
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// 每次 buid 前先清除一下 dist 目录 , 防止 这个目录积累的编译文件过多
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+// 使用webpack 内建的插件
+// 如: 实现 HMR功能(hmr: 无刷新更新页面), 如果
+// 使用的是webpack-dev-middleware instead of webpack-dev-server, 
+// 则无法使用内建插件实现 hmr, 需要 webpack-hot-middleware插件
+const webpack = require('webpack');
+
+module.exports = {
+    // entry 入口文件：webpack 打包的时候的从哪个文件开始。 相当于webpack 命令中 src/index.js 
+    // 单页面
+    // entry: './src/index.js', // 等同于  main: './path/to/my/entry/file.js'
+
+    // 多页面
+    // entry: {
+    //     pageOne: './src/pageOne/index.js',
+    //     pageTwo: './src/pageTwo/index.js',
+    //     pageThree: './src/pageThree/index.js'
+    // },
+    entry: {
+        // app 在 output 中会被引用, 通过 `[name]`, 
+        app: './src/index.js'
+    },
+
+    output: {
+        // 不使用 entry 中的 key
+        // filename: 'main.js',
+
+        // [name]表示entry中的key, app.bundle.js
+        filename: '[name].bundle.js',
+        // 可省略, 默认输出到 'dist' 文件夹
+        path: path.resolve(__dirname, 'dist'), // 等价 `${__dirname}/dist`
+        publicPath: '/' // 表示 express将会启动在 http://localhost:3000, 在 server.js中指定
+    },
+
+    // 三个选项: none, development or production(default). 
+    // 或者在 npm scripts 中 'webpack --mode=production'
+    // mode: 'production', 
+
+    module: {
+        rules: [{
+            // 配置 css loader
+            // Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的
+            // 文件，就需要使用 loader 进行转换
+            // 更多 loader: https://webpack.js.org/guides/hot-module-replacement/#other-code-and-frameworks
+            test: /\.css$/,
+            use: [
+                // 一般来说需要引入css-loader和style-loader，其中css-loader用
+                // 于解析，而style-loader则将解析后的样式嵌入js代码。
+                // 顺序不可变: 从左到右 越来越具体
+                'style-loader', 'css-loader'
+            ]
+        }]
+    },
+
+    // 插件用于拓展 webpack 功能
+    // 是一个数组, 每个元素都是一个 插件对象
+    // 自定义参数通过插件的构造函数传入
+    plugins: [
+        // 默认 清除这个目录: output.path
+        new CleanWebpackPlugin(),
+
+        new HtmlWebpackPlugin({
+            title: 'Hello World app',// 指定index.html的title
+
+            // template: './src/index.html', // 指定一个index.html模板, 会原样复制到dist
+
+            // filename: 'index.html',
+
+            minify: { // 压缩HTML文件
+                removeComments: true, // 移除HTML中的注释
+                collapseWhitespace: true, // 删除空白符与换行符
+                minifyCSS: true// 压缩内联css
+              },
+        }),
+
+        // 方便的查看module的依赖关系, HMR用; 
+        // development 会将 process.env.NODE_ENV 的值设为 development 。启用 NamedChunksPlugin 和 NamedModulesPlugin。
+        new webpack.NamedModulesPlugin(),
+        // 开启hmr支持
+        new webpack.HotModuleReplacementPlugin() 
+    ],
+    // mode: &quot;development&quot;, // 设定为开发模式(代码不会压缩), 还有 production模式(压缩代码), 命令行指定: --mode xxx
+    devtool: 'inline-source-map',// 追溯错误源文件, 仅需要这一行配置
+    devServer: {
+        contentBase: './dist',// 命令行指定 --content-base dist
+        port: 18080, // 默认: localhost:8080
+        hot: true, // Enabling HMR, 对应的命令行参数 webpack-dev-server --hot
+        inline: true // 如果 hot(hmr)无效, 则inline(页面整个刷新)
+    }
+};
+
+
+</code></pre>
+<h1><a class="header" href="#loader" id="loader">Loader</a></h1>
+<p>Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换</p>
+<p>Loader 可以在 require() 引用模块的时候添加，也可以在 webpack 全局配置中进行绑定，还可以通过命令行的方式使用。</p>
+<pre><code class="language-js">// main.js, commonjs写法
+require(&quot;!style-loader!css-loader!./index.css&quot;);//也可以将 index.js 中的 require(&quot;!style!css!./style.css&quot;) 修改为 require(&quot;./style.css&quot;) ，然后执行：webpack entry.js bundle.js --module-bind &quot;css=style-loader!css-loader&quot;
+
+// 当然简化也可通过webpack.config.js配置
+
+</code></pre>
+<p>具体引入 less 的方法， 参见：http://www.css88.com/doc/webpack2/loaders/less-loader/</p>
+<h1><a class="header" href="#命令行" id="命令行">命令行</a></h1>
+<ul>
+<li>webpack：开发模式</li>
+<li>webpack -p：production 模式</li>
+<li>webpack --watch：会监听程式码的修改，当储存时有异动时会更新档案</li>
+<li>webpack -d：加入 source maps 档案</li>
+<li>webpack --progress --colors：加上处理进度与颜色</li>
+</ul>
+<p>简化: 使用 package.json 中的 scripts 设定, <code>npm run dev</code></p>
+<h1><a class="header" href="#插件" id="插件">插件</a></h1>
+<ul>
+<li>extract-text-webpack-plugin该插件的主要是为了抽离css样式,防止将样式打包在js中引起页面样式加载错乱的现象</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="tomcat-jetty-nginx.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="windows-sub-system-on-linux.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="tomcat-jetty-nginx.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="windows-sub-system-on-linux.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

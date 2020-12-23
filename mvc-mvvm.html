@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>mvc-mvvm - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html" class="active"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: MVC to MVVM
+tags:</p>
+<ul>
+<li>history</li>
+<li>mvc</li>
+<li>mvvm
+categories: frontend
+date: 2018-04-02 10:45:01</li>
+</ul>
+<hr />
+<div align="center">
+从前端技术演进的角度对mvc等架构模式进行梳理
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8F%98">前端架构演变</a></li>
+<li><a href="#mvc">mvc</a>
+<ul>
+<li><a href="#%E6%A6%82%E5%BF%B5">概念</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%89%8D%E7%AB%AFmvc-demo">一个简单的前端mvc demo</a></li>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%90%8E%E7%AB%AFmvc%E6%A1%86%E6%9E%B6">设计一个后端mvc框架</a></li>
+</ul>
+</li>
+<li><a href="#mvp">mvp</a></li>
+<li><a href="#mvvm">mvvm</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#前端架构演变" id="前端架构演变">前端架构演变</a></h1>
+<p>MVC（Model-View-Controller）
+MVP（Model-View-Presenter）
+MVVM（Model-View-ViewModel）</p>
+<p>从阶段分为这样三个阶段</p>
+<ul>
+<li>script, 例如命令行的一些命令</li>
+<li>页面代码和页面交互逻辑分离</li>
+<li>mvc, mvp, mvvm; 关注数据的更新界面的更新</li>
+</ul>
+<img src="bcc32c459e2f8526826f187b3197c1fb_r.jpg"/>
+<img src="83d0c7d0628894e78f8688b2e5ad9bb3_r.jpg"/>
+<h1><a class="header" href="#mvc" id="mvc">mvc</a></h1>
+<h2><a class="header" href="#概念" id="概念">概念</a></h2>
+<p>MVC模式的意思是，软件可以分成三个部分</p>
+<ul>
+<li>视图（View）：用户界面。</li>
+<li>控制器（Controller）：业务逻辑</li>
+<li>模型（Model）：数据保存</li>
+</ul>
+<p>各部分通信方式类似这样:</p>
+<img src="Screenshot_4.png"/>
+<p>所有的通信都是单向的;</p>
+<p>前后端中mvc使用的都很多, 但是有差别:(<a href="https://www.zhihu.com/question/20440717">reference</a>)</p>
+<p>服务端:
+客户端发送请求 -&gt; 服务器触发Controller -&gt; 服务器进行Model各种操作 -&gt; 服务器根据Model数据渲染View -&gt; 服务器回复请求，包含了整个View的html -&gt; 客户端重新渲染整个页面，所有的css都又计算了一遍，所有的js都重新执行了一遍，所有的资源都重新请求了一遍（虽然可能已经cache了）</p>
+<p>前端:
+客户端根据用户的行为修改客户端Model -&gt; 客户端更新和该Model相关的View -&gt; 客户端Model发送sync请求到服务器，只包含改变了哪些数据 -&gt; 服务器审核数据改动是否合法，只需回复是否修改成功 -&gt; 客户端收到成功，什么都不用做；不成功，则把刚才改的View改回来，然后通知用户。（当然，也可以在客户端的Model里面也加入审核机制，这样对不合法数据的反应更快，但还是得保留服务器端的审核）</p>
+<h2><a class="header" href="#一个简单的前端mvc-demo" id="一个简单的前端mvc-demo">一个简单的前端mvc demo</a></h2>
+<pre><code class="language-html"> &lt;!-- 未使用mvc模式的代码; 页面代码很大的时候，修改js代码还需要查找整个页面，导致整个页面非常混乱。 --&gt;
+&lt;HTML&gt;
+
+&lt;HEAD&gt;
+
+    &lt;TITLE&gt; example &lt;/TITLE&gt;
+
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+    &lt;input type=&quot;button&quot; value=&quot;baidu&quot; onclick=&quot;alert(this.value);&quot; /&gt;
+
+&lt;/BODY&gt;
+
+&lt;/HTML&gt;
+
+</code></pre>
+<pre><code class="language-html">&lt;!-- 将html, js脚本进行适当分离; 但是还是需要在html标签中写tipInfo(this)的js调用代码。即html和js仍然有混合 --&gt;
+&lt;HTML&gt;
+
+&lt;HEAD&gt;
+
+    &lt;TITLE&gt; example &lt;/TITLE&gt;
+
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+    &lt;input type=&quot;button&quot; value=&quot;baidu&quot; onclick=&quot;tipInfo(this);&quot; /&gt;
+
+    &lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+
+        function tipInfo(o) {
+
+            alert(o.value);
+
+        }
+
+    &lt;/SCRIPT&gt;
+
+&lt;/BODY&gt;
+
+&lt;/HTML&gt;
+</code></pre>
+<p>js和html彻底分离, 但是还没有使用mvc, model和controller混合在一起</p>
+<pre><code class="language-html">&lt;!-- //  --&gt;
+&lt;HTML&gt;
+
+&lt;HEAD&gt;
+
+    &lt;TITLE&gt; example &lt;/TITLE&gt;
+
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+    &lt;input type=&quot;button&quot; value=&quot;baidu&quot; id=&quot;baidu&quot; /&gt;
+
+&lt;/BODY&gt;
+
+&lt;script src=&quot;example.js&quot;&gt;&lt;/script&gt;
+
+&lt;/HTML&gt;
+
+</code></pre>
+<pre><code class="language-js">var o = document.getElementById(&quot;baidu&quot;);  
+  
+o.onclick = function(){  
+
+        alert(this.value);  
+
+}  
+</code></pre>
+<p>全面的mvc改造:</p>
+<pre><code class="language-html">&lt;!-- V层控制界面显示，将界面与数据连接 --&gt;
+&lt;HTML&gt;
+
+&lt;HEAD&gt;
+
+    &lt;TITLE&gt; example &lt;/TITLE&gt;
+
+&lt;/HEAD&gt;
+
+&lt;BODY&gt;
+
+    &lt;input type=&quot;button&quot; value=&quot;baidu&quot; id=&quot;baidu&quot; /&gt;
+
+&lt;/BODY&gt;
+
+&lt;script src=&quot;model.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;controller.js&quot;&gt;&lt;/script&gt;
+
+&lt;/HTML&gt;
+</code></pre>
+<pre><code class="language-js">// 实现html页面节点事件的注册。使得节点的各种事件知道会触发什么函数去执行, 以及页面加载性能的实现
+function G(id) {
+    return document.getElementById(id);
+}
+var UI = new Object();
+/**
+ * id 元素id
+ * even 触发事件名称
+ * fun 事件触发函数
+ * arr 传递的参数
+*/
+UI.register = function (id, even, fun, arr) {
+    if (G(id)) {
+        G(id)[&quot;on&quot; + even] = function () {
+            fun(arr);
+        };
+    }
+}
+
+UI.register(&quot;baidu&quot;, &quot;click&quot;, tipInfo, [1, 2]);
+</code></pre>
+<pre><code class="language-js">// 具体的函数操作(业务逻辑操作)
+function tipInfo(arr){  
+    alert(arr[1]);  
+    //实现其他组件功能，例如popup、form等。都属于model模型  
+} 
+</code></pre>
+<h2><a class="header" href="#设计一个后端mvc框架" id="设计一个后端mvc框架">设计一个后端mvc框架</a></h2>
+<p>设计一个后端mvc框架需要考虑哪些方面呢?</p>
+<img src="Screenshot_5.png"/>
+<p>借助servlet实现, 看代码:</p>
+<pre><code class="language-java">
+</code></pre>
+<h1><a class="header" href="#mvp" id="mvp">mvp</a></h1>
+<p>在MVC，当需求有变化的时候你需要同时维护三个对象和三个交互，这显然让事情复杂化了。mvp由此诞生; mvp切断了View和Model的联系，让View只和Presenter（原Controller）交互，减少在需求变化中需要维护的对象的数量</p>
+<p>MVP定义了Presenter和View之间的接口，让一些可以根据已有的接口协议去各自分别独立开发，以此去解决界面需求变化频繁的问题</p>
+<img src="Screenshot_2.png"/>
+<h1><a class="header" href="#mvvm" id="mvvm">mvvm</a></h1>
+<img src="Screenshot_3.png"/>
+<p>ViewModel大致上就是MVP的Presenter和MVC的Controller了，唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。Angular 和 Ember 都采用这种模式</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="mongodb-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="my-ioc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="mongodb-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="my-ioc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

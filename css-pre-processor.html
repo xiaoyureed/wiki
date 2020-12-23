@@ -1,0 +1,682 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>css pre processor - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html" class="active"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: 几种CSS预处理器比较选型
+tags:</p>
+<ul>
+<li>css</li>
+<li>processor
+date: 2018-05-02 10:54:38
+categories: frontend</li>
+</ul>
+<hr />
+<div align="center">
+css的预处理器主流的大概有: SASS, LESS, Stylus;
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E4%BB%8B%E7%BB%8D">css 预处理器介绍</a>
+<ul>
+<li><a href="#why-css-preprocessor">why css preprocessor</a></li>
+<li><a href="#%E4%BC%9A%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%96%B0%E9%97%AE%E9%A2%98">会带来的新问题</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%89%E5%9E%8B%E5%92%8C%E5%AF%B9%E6%AF%94">选型和对比</a></li>
+<li><a href="#postcss">PostCSS</a></li>
+<li><a href="#sass">SASS</a></li>
+<li><a href="#less">LESS</a>
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">环境配置</a></li>
+<li><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF%E7%94%A8%E6%B3%95">浏览器端用法</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a>
+<ul>
+<li><a href="#%E5%8F%98%E9%87%8F">变量</a></li>
+<li><a href="#%E6%B7%B7%E5%90%88">混合</a>
+<ul>
+<li><a href="#%E4%B8%8D%E5%B8%A6%E5%8F%82%E6%95%B0">不带参数</a></li>
+<li><a href="#%E5%B8%A6%E5%8F%82%E6%95%B0">带参数</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0%E6%9C%89%E9%BB%98%E8%AE%A4%E5%80%BC">参数有默认值</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9A%82%E6%97%B6%E9%9A%90%E8%97%8Fcss%E5%B1%9E%E6%80%A7">暂时隐藏css属性</a></li>
+<li><a href="#arguments%E5%8F%98%E9%87%8F">@arguments变量</a></li>
+<li><a href="#%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%B7%B7%E5%90%88%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E5%8C%B9%E9%85%8D">模式匹配(混合中的参数匹配)</a></li>
+<li><a href="#%E5%AF%BC%E5%BC%95%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%B1%BB%E4%BC%BCmedia-query">导引表达式(类似@media query)</a>
+<ul>
+<li><a href="#%E5%8D%95%E8%A1%A8%E8%BE%BE%E5%BC%8F">单表达式</a></li>
+<li><a href="#%E5%A4%9A%E8%A1%A8%E8%BE%BE%E5%BC%8F">多表达式</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%ADisxxx%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0">参数值类型判断(isXXX内置函数)</a></li>
+<li><a href="#%E5%B5%8C%E5%A5%97">嵌套</a></li>
+<li><a href="#%E8%BF%90%E7%AE%97">运算</a></li>
+<li><a href="#color%E5%87%BD%E6%95%B0">color函数</a></li>
+<li><a href="#math%E5%87%BD%E6%95%B0">Math函数</a></li>
+<li><a href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">命名空间</a></li>
+<li><a href="#%E4%BD%9C%E7%94%A8%E5%9F%9F">作用域</a></li>
+<li><a href="#importing%E5%BC%95%E5%85%A5">importing引入</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8F%92%E5%80%BC">字符串插值</a></li>
+<li><a href="#%E9%81%BF%E5%85%8D%E7%BC%96%E8%AF%91">避免编译</a></li>
+<li><a href="#javascript-%E8%A1%A8%E8%BE%BE%E5%BC%8F">JavaScript 表达式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#css-预处理器介绍" id="css-预处理器介绍">css 预处理器介绍</a></h1>
+<h2><a class="header" href="#why-css-preprocessor" id="why-css-preprocessor">why css preprocessor</a></h2>
+<p>CSS仅仅是一个标记语言，不是编程语言，因此不可以自定义变量，不可以引用</p>
+<h2><a class="header" href="#会带来的新问题" id="会带来的新问题">会带来的新问题</a></h2>
+<p>CSS的好处在于简便、随时随地被使用和调试。</p>
+<p>预编译CSS步骤的加入，让我们开发工作流中多了一个环节，调试也变得更麻烦了。</p>
+<p>更大的问题在于，预编译很容易造成后代选择器的滥用。</p>
+<h1><a class="header" href="#选型和对比" id="选型和对比">选型和对比</a></h1>
+<p>语法区别: https://zhuanlan.zhihu.com/p/38715068, https://efe.baidu.com/blog/revisiting-css-preprocessors/</p>
+<p>============ sass 优点</p>
+<p>sass 比 less 更像完整的编程语言, 有 变量 (全局, 局部区分), 函数, 作用域, 流程控制, 数据结构..., </p>
+<p>有成熟的框架, 如 Compass, Foundation</p>
+<p>社区热度比 less 更发达</p>
+<p>还有Scss对sass语法进行了改良, 完全兼容 css 语法 (和 less 打平了)</p>
+<p>bootstrap最新版就抛弃 less, 转向 sass了</p>
+<p>丰富的 ruby api 支持, 适合开发 css 框架</p>
+<p>=============== sass 缺点</p>
+<p>但是 sass 安装需要 ruby 环境支持, less 只需要 引入 'less.js' 即可</p>
+<p>开发工具也没有相应的sass编码提示</p>
+<p>=================Stylus</p>
+<p>来自node.js社区</p>
+<p>人气不及sass, less</p>
+<p>语法更简洁, 比如用缩进代替大括号</p>
+<h1><a class="header" href="#postcss" id="postcss">PostCSS</a></h1>
+<p>不是 css preprocessor, 是一个使用JS插件来转换样式的工具</p>
+<p>丰富的插件, 借助插件实现更强大的 css 预处理功能 (如, 只要某个 selector 有某个样式, 就自动添加另外的某个样式; 添加 css 前缀)</p>
+<p>TailwindCSS 框架</p>
+<h1><a class="header" href="#sass" id="sass">SASS</a></h1>
+<p>使用 dart-sass 替代 node-sass</p>
+<p>https://www.bilibili.com/video/BV1Wb411Y7Ms?p=1 开发简历页面</p>
+<h1><a class="header" href="#less" id="less">LESS</a></h1>
+<p>Less 是一门 CSS 预处理语言，它扩展了 CSS 语言，增加了变量、Mixin、函数等特性，使 CSS 更易维护和扩展。
+Less 可以运行在 Node 或浏览器端。
+LESS 做为 CSS 的一种形式的扩展，它并没有阉割 CSS 的功能，而是在现有的 CSS 语法上，添加了很多额外的功能</p>
+<h2><a class="header" href="#环境配置" id="环境配置">环境配置</a></h2>
+<pre><code class="language-sh">npm install -g less
+</code></pre>
+<p>命令行使用:</p>
+<ul>
+<li>
+<p>不压缩 <code>lessc myStyle.less myStyle.css</code></p>
+</li>
+<li>
+<p>压缩后输出 <code>lessc --clean-css styles.less styles.min.css</code></p>
+</li>
+</ul>
+<p>代码用法:</p>
+<pre><code class="language-js">var less = require('less');
+
+less.render('.class { width: (1 + 1) }', function (e, output) {// e: 异常, output: 输出
+    console.log(output.css);
+    // console.log(output.toCSS());
+});
+</code></pre>
+<p>输出</p>
+<pre><code class="language-css">.class {
+    width: 2;
+}
+</code></pre>
+<p>render方法有更多配置项:</p>
+<pre><code class="language-js">less.render('.class { width: (1 + 1) }',
+    {
+        paths: ['.', './lib'],  // // Specify search paths for @import directives
+        filename: 'style.less', // // Specify a filename, for better error messages
+        compress: true          // Minify CSS output
+    },
+    function (e, output) {
+        console.log(output.css);
+    });
+</code></pre>
+<h2><a class="header" href="#浏览器端用法" id="浏览器端用法">浏览器端用法</a></h2>
+<p>需要在server下打开, 直接打开无效</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;!-- do not change the order --&gt;
+    &lt;link rel=&quot;stylesheet/less&quot; type=&quot;text/css&quot; href=&quot;css/index.less&quot; /&gt;
+    &lt;!-- download less.js, and import --&gt;
+    &lt;script src=&quot;lib/less.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div id=&quot;header&quot;&gt;div-header&lt;/div&gt;
+    &lt;h2&gt;h2 h2 h2&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>编写index.less即可</p>
+<p>监视模式: 自动刷新</p>
+<p>监视模式是客户端的一个功能，这个功能允许你当你改变样式的时候，客户端将自动刷新。</p>
+<p>要使用它，只要在URL后面加上'<code>#!watch</code>'，然后刷新页面就可以了。另外，你也可以通过在终端运行<code>less.watch()</code>来启动监视模式。</p>
+<h2><a class="header" href="#语法" id="语法">语法</a></h2>
+<h3><a class="header" href="#变量" id="变量">变量</a></h3>
+<pre><code class="language-less">@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+#header { color: @light-blue; }
+</code></pre>
+<p>输出</p>
+<pre><code class="language-css">#header { color: #6c94be; }
+</code></pre>
+<h3><a class="header" href="#混合" id="混合">混合</a></h3>
+<h4><a class="header" href="#不带参数" id="不带参数">不带参数</a></h4>
+<pre><code class="language-less">.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+#menu a {
+  color: #111;
+  .bordered;
+}
+.post a {
+  color: red;
+  .bordered;
+}
+</code></pre>
+<p>输出</p>
+<pre><code class="language-css">.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+#menu a {
+  color: #111;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+.post a {
+  color: red;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+</code></pre>
+<h4><a class="header" href="#带参数" id="带参数">带参数</a></h4>
+<pre><code class="language-less">.border-radius (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+#header {
+  .border-radius(4px);
+}
+.button {
+  .border-radius(6px);  
+}
+</code></pre>
+<h4><a class="header" href="#参数有默认值" id="参数有默认值">参数有默认值</a></h4>
+<pre><code class="language-less">.border-radius (@radius: 5px) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+#header {
+  .border-radius;  // radius值为默认: 5px
+}
+</code></pre>
+<h3><a class="header" href="#暂时隐藏css属性" id="暂时隐藏css属性">暂时隐藏css属性</a></h3>
+<pre><code class="language-less">.wrap () { // 里面的属性不会暴露到css, 只能被内部调用
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  word-wrap: break-word;
+}
+
+pre { .wrap }
+</code></pre>
+<h3><a class="header" href="#arguments变量" id="arguments变量">@arguments变量</a></h3>
+<p>@arguments包含了所有传递进来的参数. 如果你不想单独处理每一个参数的话就可以像这样写</p>
+<pre><code class="language-less">.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+.box-shadow(2px, 5px);
+</code></pre>
+<p>输出</p>
+<pre><code class="language-css">.box-shadow {
+     box-shadow: 2px 5px 1px #000;
+  -moz-box-shadow: 2px 5px 1px #000;
+  -webkit-box-shadow: 2px 5px 1px #000;
+}
+</code></pre>
+<h3><a class="header" href="#模式匹配混合中的参数匹配" id="模式匹配混合中的参数匹配">模式匹配(混合中的参数匹配)</a></h3>
+<p>只有被匹配的混合才会被使用。变量可以匹配任意的传入值，而变量以外的固定值就仅仅匹配与其相等的传入值。</p>
+<pre><code class="language-less">.mixin (dark, @color) { // 第一个混合定义并未被匹配，因为它只接受dark做为首参
+  color: darken(@color, 10%);
+}
+.mixin (light, @color) { // 第二个混合定义被成功匹配，因为它只接受light
+  color: lighten(@color, 10%);
+}
+.mixin (@_, @color) {// 第三个混合定义被成功匹配，因为它接受任意值
+  display: block;
+}
+.mixin (@param) {...} // 不会匹配, 因为参数个数不对
+
+@switch: light;
+
+.class {
+  .mixin(@switch, #888);
+}
+</code></pre>
+<p>输出</p>
+<pre><code class="language-css">.class {
+  color: #a2a2a2;
+  display: block;
+}
+</code></pre>
+<h3><a class="header" href="#导引表达式类似media-query" id="导引表达式类似media-query">导引表达式(类似@media query)</a></h3>
+<h4><a class="header" href="#单表达式" id="单表达式">单表达式</a></h4>
+<p>当我们想根据表达式进行匹配，而非根据值和参数匹配时，导引就显得非常有用</p>
+<pre><code class="language-less">// 导引中表达式符号:  &gt;, &gt;=, =, =&lt;, &lt;, true; 
+// 除了true之外的的值都被视为假
+// 大于等于, 小于等于, 符号可以位置交换
+.mixin (@a) when (lightness(@a) &gt;= 50%) {// lightness是less内置函数
+  background-color: black;
+}
+.mixin (@a) when (lightness(@a) &lt; 50%) {
+  background-color: white;
+}
+.mixin (@a) {
+  color: @a;
+}
+
+.class1 { .mixin(#ddd) }
+.class2 { .mixin(#555) }
+</code></pre>
+<p>输出</p>
+<pre><code class="language-css">.class1 {
+  background-color: black;
+  color: #ddd;
+}
+.class2 {
+  background-color: white;
+  color: #555;
+}
+</code></pre>
+<h4><a class="header" href="#多表达式" id="多表达式">多表达式</a></h4>
+<p>[,] 表示 &quot;或&quot;
+[and] 表示&quot;与&quot;条件
+[not] 表示 &quot;非&quot;</p>
+<pre><code class="language-less">.mixin (@a) when (@a &gt; 10), (@a &lt; -10) { ... }
+
+.mixin (@a) when not (@a &lt; 50%) and not (@a &lt; 5px){
+    font-size: 20px;
+}
+</code></pre>
+<h3><a class="header" href="#参数值类型判断isxxx内置函数" id="参数值类型判断isxxx内置函数">参数值类型判断(isXXX内置函数)</a></h3>
+<p>常见的检测函数:</p>
+<p>iscolor：是否为颜色值。
+isnumber：是否为数值。
+isstring：是否为字符串。
+iskeyword：是否为关键字。
+isurl：是否为URL字符串。</p>
+<p>以下是常见的单位检查函数：</p>
+<p>ispixel：是否为像素单位。
+ispercentage：是否为百分比。
+isem：是否为em单位。
+isunit：是否为单位。</p>
+<pre><code class="language-less">.mixin (@a, @b: 0) when (isnumber(@b)) { ... }
+.mixin (@a, @b: black) when (iscolor(@b)) { ... }
+</code></pre>
+<h3><a class="header" href="#嵌套" id="嵌套">嵌套</a></h3>
+<pre><code class="language-less">#header {
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  p { font-size: 12px;
+    a { text-decoration: none;
+      &amp;:hover { border-width: 1px }// &amp; 表示串联, 即[a]和[:hover]间没有空格
+    }
+  }
+}
+</code></pre>
+<p>输出</p>
+<pre><code class="language-css">#header h1 {
+  font-size: 26px;
+  font-weight: bold;
+}
+#header p {
+  font-size: 12px;
+}
+#header p a {
+  text-decoration: none;
+}
+#header p a:hover {
+  border-width: 1px;
+}
+
+</code></pre>
+<h3><a class="header" href="#运算" id="运算">运算</a></h3>
+<p>任何数字、颜色或者变量都可以参与运算.</p>
+<pre><code class="language-less">@base: 5%;
+@filler: @base * 2;
+width: (@var + 5) * 2;
+@other: @base + @filler;
+@var: 1px + 5;// 输出6px
+
+color: #888 / 4;
+background-color: @base-color + #111;
+height: 100% / 2 + @filler;
+border: (@width * 2) solid black;
+</code></pre>
+<h3><a class="header" href="#color函数" id="color函数">color函数</a></h3>
+<pre><code class="language-less">lighten(@color, 10%);     // return a color which is 10% *lighter* than @color
+darken(@color, 10%);      // return a color which is 10% *darker* than @color
+
+saturate(@color, 10%);    // return a color 10% *more* saturated than @color
+desaturate(@color, 10%);  // return a color 10% *less* saturated than @color
+
+fadein(@color, 10%);      // return a color 10% *less* transparent than @color
+fadeout(@color, 10%);     // return a color 10% *more* transparent than @color
+fade(@color, 50%);        // return @color with 50% transparency
+
+spin(@color, 10);         // return a color with a 10 degree larger in hue than @color
+spin(@color, -10);        // return a color with a 10 degree smaller hue than @color
+
+mix(@color1, @color2);    // return a mix of @color1 and @color2
+
+hue(@color);        // returns the `hue` channel of @color
+saturation(@color); // returns the `saturation` channel of @color
+lightness(@color);  // returns the 'lightness' channel of @color
+
+@new: hsl(hue(@old), 45%, 90%);// @new 将会保持 @old的 色调, 但是具有不同的饱和度和亮度.
+
+</code></pre>
+<h3><a class="header" href="#math函数" id="math函数">Math函数</a></h3>
+<pre><code class="language-less">round(1.67); // returns `2`
+ceil(2.4);   // returns `3`
+floor(2.6);  // returns `2`
+percentage(0.5); // returns `50%`
+</code></pre>
+<h3><a class="header" href="#命名空间" id="命名空间">命名空间</a></h3>
+<pre><code class="language-less">// 先定义好
+#bundle {
+  .button () {
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+    &amp;:hover { background-color: white }
+  }
+  .tab { ... }
+  .citation { ... }
+}
+
+// 使用
+#header a {
+  color: orange;
+  #bundle &gt; .button;
+}
+</code></pre>
+<h3><a class="header" href="#作用域" id="作用域">作用域</a></h3>
+<pre><code class="language-less">@var: red;
+
+#page {
+  @var: white;
+  #header {
+    color: @var; // white
+  }
+}
+
+#footer {
+  color: @var; // red  
+}
+</code></pre>
+<h3><a class="header" href="#importing引入" id="importing引入">importing引入</a></h3>
+<pre><code class="language-less">// 你可以在main文件中通过下面的形势引入 .less 文件, .less 后缀可带可不带:
+@import &quot;lib.less&quot;;
+@import &quot;lib&quot;;
+// 如果你想导入一个CSS文件而且不想LESS对它进行处理，只需要使用.css后缀就可以:
+@import &quot;lib.css&quot;;
+</code></pre>
+<h3><a class="header" href="#字符串插值" id="字符串插值">字符串插值</a></h3>
+<pre><code class="language-less">// 变量可以用类似ruby和php的方式嵌入到字符串中，像@{name}这样的结构:
+@base-url: &quot;http://assets.fnord.com&quot;;
+background-image: url(&quot;@{base-url}/images/bg.png&quot;);
+</code></pre>
+<h3><a class="header" href="#避免编译" id="避免编译">避免编译</a></h3>
+<pre><code class="language-less">.class {
+  filter: ~&quot;ms:alwaysHasItsOwnSyntax.For.Stuff()&quot;;
+}
+
+// 输出
+.class {
+  filter: ms:alwaysHasItsOwnSyntax.For.Stuff();
+}
+</code></pre>
+<h3><a class="header" href="#javascript-表达式" id="javascript-表达式">JavaScript 表达式</a></h3>
+<pre><code class="language-less">// JavaScript 表达式也可以在.less 文件中使用. 可以通过反引号的方式使用
+@var: `&quot;hello&quot;.toUpperCase() + '!'`;
+@height: `document.body.clientHeight`;// 访问JavaScript环境
+
+// 输出
+@var: &quot;HELLO!&quot;;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="css-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="defect-about-java-programmer-from-programming-thinking.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="css-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="defect-about-java-programmer-from-programming-thinking.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

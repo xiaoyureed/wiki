@@ -1,0 +1,932 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>task-schedule-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html" class="active"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Task Schedule
+tags:</p>
+<ul>
+<li>schedule</li>
+<li>task
+date: 2016-05-01 22:38:07
+categories: java web</li>
+</ul>
+<hr />
+<div align="center">
+任务调度系统 总结
+https://www.ibm.com/developerworks/cn/java/j-lo-taskschedule/index.html
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%88%86%E7%B1%BB">分类</a></li>
+<li><a href="#cronexpression">cronExpression</a></li>
+<li><a href="#%E7%94%A8%E6%B3%95%E7%A4%BA%E4%BE%8B">用法示例</a>
+<ul>
+<li><a href="#javautiltimer">java.util.Timer</a></li>
+<li><a href="#quartz">Quartz</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#task%E7%BB%A7%E6%89%BF%E8%87%AA%E7%89%B9%E5%AE%9A%E5%9F%BA%E7%B1%BB">task继承自特定基类</a></li>
+<li><a href="#task%E6%97%A0%E9%9C%80%E7%BB%A7%E6%89%BF%E5%9F%BA%E7%B1%BB">task无需继承基类</a></li>
+</ul>
+</li>
+<li><a href="#spring-task">spring task</a></li>
+</ul>
+</li>
+<li><a href="#quartz-1">Quartz</a>
+<ul>
+<li><a href="#%E6%98%AF%E4%BB%80%E4%B9%88">是什么</a></li>
+<li><a href="#quick-start">quick start</a></li>
+<li><a href="#%E6%9C%89%E7%94%A8%E7%9A%84%E6%B3%A8%E8%A7%A3">有用的注解</a></li>
+<li><a href="#trigger">trigger</a>
+<ul>
+<li><a href="#quartz-calendars">quartz Calendars</a></li>
+<li><a href="#simpletrigger">SimpleTrigger</a></li>
+<li><a href="#crontrigger">CronTrigger</a></li>
+</ul>
+</li>
+<li><a href="#triggerlisteners-and-joblisteners">TriggerListeners and JobListeners</a></li>
+<li><a href="#schedulerlisteners">SchedulerListeners</a></li>
+<li><a href="#job-stores">Job Stores</a></li>
+</ul>
+</li>
+<li><a href="#springboot%E5%92%8Cquartz%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E9%85%8D%E7%BD%AE">springboot和quartz实现动态配置</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#分类" id="分类">分类</a></h1>
+<p>为了理解方便, 做一下分类, 根据实现技术分类:</p>
+<ol>
+<li>
+<p>Java自带的java.util.Timer类，这个类允许你调度一个java.util.TimerTask任务。不能指定时间，只能指定频率。</p>
+</li>
+<li>
+<p>使用Quartz，这是一个功能比较强大的的调度器，可以指定时间、频率。</p>
+</li>
+<li>
+<p>Spring3.0以后自带的task，可以将它看成一个轻量级的Quartz，而且使用简单。</p>
+</li>
+</ol>
+<p>根据任务类继承方式分类:</p>
+<ol>
+<li>任务类需要继承自特定的基类</li>
+</ol>
+<p>比如：
+Quartz中需要继承自<code>org.springframework.scheduling.quartz.QuartzJobBean</code>；java.util.Timer中需要继承自<code>java.util.TimerTask</code>。</p>
+<ol start="2">
+<li>不需要继承, 任务类就是普通类</li>
+</ol>
+<p>指定时间 or 指定频率 :</p>
+<ol>
+<li>
+<p>每隔指定时间则触发一次，在Quartz中对应的触发器为：<code>org.springframework.scheduling.quartz.SimpleTriggerBean</code></p>
+</li>
+<li>
+<p>每到指定时间则触发一次，在Quartz中对应的调度器为：<code>org.springframework.scheduling.quartz.CronTriggerBean</code></p>
+</li>
+</ol>
+<blockquote>
+<p>注：
+java.util.TimerTask任务就只能使用第一种触发条件。
+Quartz和spring task都可以支持这两种触发条件。</p>
+</blockquote>
+<h1><a class="header" href="#cronexpression" id="cronexpression">cronExpression</a></h1>
+<p>https://cron.qqe2.com/ 在线生成 cron</p>
+<p>cron 表达式</p>
+<p>格式: <code>{秒数} {分钟} {小时} {日期} {月份} {星期} {年份(可为空)}</code></p>
+<p>各个占位符解释:</p>
+<p><img src="1.png" alt="alt" /></p>
+<ul>
+<li>
+<p>&quot;<em>&quot; 用来指所有值, 比如: &quot;</em>&quot;在&quot;分钟&quot;的字段里表示&quot;没分钟&quot;</p>
+</li>
+<li>
+<p>&quot;-&quot; 指定一个范围, 如: &quot;10-12&quot;在&quot;小时&quot;字段表示&quot;10点, 11点, 12点&quot;</p>
+</li>
+<li>
+<p>&quot;,&quot; 分隔多个值, 如: &quot;MON,WED,FRI&quot; 在星期里表示&quot;周一,三,五&quot;</p>
+</li>
+<li>
+<p>&quot;?&quot; 只在 &quot;日期&quot;, &quot;星期&quot;字段使用, 指&quot;不明确的值&quot;</p>
+</li>
+<li>
+<p>&quot;L&quot; 指定在&quot;月&quot;or&quot;星期&quot;的最后一天(last缩写)</p>
+</li>
+<li>
+<p>&quot;W&quot; 离指定日期最近的星期日, 只能在&quot;月份&quot;中使用</p>
+</li>
+<li>
+<p>&quot;#&quot; 只是用在星期字段,</p>
+</li>
+<li>
+<p>&quot;/&quot; 如: 1/20: 从第一单位开始, 每隔20个单位, 就触发一次; 10-45/20 : 在第10到45单位内，每隔20单位触发一次，超过第45单位，则无效了</p>
+</li>
+</ul>
+<p>看看几个 cron 表达式 demo:</p>
+<pre><code>CRON表达式                  含义 
+&quot;0 0 12 * * ?&quot;          每天中午十二点触发 
+&quot;0 15 10 ? * *&quot;         每天早上10：15触发 
+&quot;0 15 10 * * ?&quot;         每天早上10：15触发 
+&quot;0 15 10 * * ? *&quot;       每天早上10：15触发 
+&quot;0 15 10 * * ? 2005&quot;    2005年的每天早上10：15触发 
+&quot;0 * 14 * * ?&quot;          每天从下午2点开始到2点59分每分钟一次触发
+&quot;0 0/5 * * * ?&quot;         每5min触发一次
+“10 0/5 * * * ?”        每5min一次触发, 在每分钟的第 10s 开始触发
+&quot;0 0/5 14 * * ?&quot;        每天从下午2点开始到2：55分结束每5分钟一次触发 
+&quot;0 0/5 14,18 * * ?&quot;     每天的下午2点至2：55和6点至6点55分两个时间段内每5分钟一次触发 
+&quot;0 0-5 14 * * ?&quot;        每天14:00至14:05每分钟一次触发 
+“0 30 10-13 ? * WED,FRI”    fires at 10:30, 11:30, 12:30, and 13:30, on every Wednesday and Friday.
+&quot;0 10,44 14 ? 3 WED&quot;    三月的每周三的14：10和14：44触发 
+&quot;0 15 10 ? * MON-FRI&quot;   每个周一、周二、周三、周四、周五的10：15触发
+“0 0/30 8-9 5,20 * ?”   每个月的 5号, 20号 的 8点-10点没30min触发一次
+
+</code></pre>
+<h1><a class="header" href="#用法示例" id="用法示例">用法示例</a></h1>
+<h2><a class="header" href="#javautiltimer" id="javautiltimer">java.util.Timer</a></h2>
+<p><code>java.util.Timer</code>
+<code>java.util.TimerTask</code></p>
+<ul>
+<li>
+<p>Timer是一个定时器类，通过该类可以为指定的定时任务进行配置。</p>
+</li>
+<li>
+<p>TimerTask类是一个定时任务类，该类实现了Runnable接口，而且是一个抽象类，如下所示：</p>
+<p>public abstract class TimerTask implements Runnable 
+可以通过继承该类，来实现自己的定时任务。</p>
+</li>
+</ul>
+<p>Timer定时器实例有多种构造方法：</p>
+<ul>
+<li>
+<p>Timer() 创建一个新计时器。</p>
+</li>
+<li>
+<p>Timer(boolean isDaemon) 创建一个新计时器，可以指定其相关的线程作为守护程序运行。</p>
+</li>
+<li>
+<p>Timer(String name) 创建一个新计时器，其相关的线程具有指定的名称。</p>
+</li>
+<li>
+<p>Timer(String name, boolean isDaemon) 创建一个新计时器，其相关的线程具有指定的名称，并且可以指定作为守护程序运行。</p>
+</li>
+</ul>
+<p>Timer 方法:</p>
+<ol>
+<li>在特定时间执行任务，只执行一次</li>
+</ol>
+<p>public void schedule(TimerTask task,Date time)</p>
+<ol>
+<li>在特定时间之后执行任务，只执行一次</li>
+</ol>
+<p>public void schedule(TimerTask task,long delay)</p>
+<ol>
+<li>指定第一次执行的时间，然后按照间隔时间，重复执行</li>
+</ol>
+<p>public void schedule(TimerTask task,Date firstTime,long period)</p>
+<ol>
+<li>在特定延迟之后第一次执行，然后按照间隔时间，重复执行</li>
+</ol>
+<p>public void schedule(TimerTask task,long delay,long period)</p>
+<ol>
+<li>第一次执行之后，特定频率执行，与3同</li>
+</ol>
+<p>public void scheduleAtFixedRate(TimerTask task,Date firstTime,long period)</p>
+<ol>
+<li>在delay毫秒之后第一次执行，后按照特定频率执行</li>
+</ol>
+<p>public void scheduleAtFixedRate(TimerTask task,long delay,long period)</p>
+<ol>
+<li>Timer注销：timer.cancle();</li>
+</ol>
+<blockquote>
+<p>注:
+schedule() &amp; scheduleAtFixedRate()两者的区别：
+&lt;1&gt;schedule()方法更注重保持间隔时间的稳定：保障每隔period时间可调用一次
+&lt;2&gt;scheduleAtFixedRate()方法更注重保持执行频率的稳定：保障多次调用的频率趋近于period时间
+如果任务执行时间大于period，会在任务执行之后马上执行下一次任务</p>
+</blockquote>
+<p>demo:</p>
+<pre><code class="language-java">/**
+ * task1
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年7月27日 下午4:33:36
+ */
+public class DemoTask extends TimerTask {
+    
+    @Override
+    public void run() {
+        SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+        System.out.println(&quot;任务 触发...mmmm, 时间：&quot; + df.format(System.currentTimeMillis()));
+    }
+
+}
+
+/**
+ * task2 检测是否到饭点了
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年7月27日 下午5:40:23
+ */
+public class DemoTask2 extends TimerTask{
+    
+    private static List&lt;Integer&gt; eatTimes;
+    /**
+     * 静态初始化
+     */
+    static {
+        initEatTimes();
+    }
+    
+    /**
+     * 初始化吃饭时间
+     */
+    private static void initEatTimes(){
+        eatTimes = new ArrayList&lt;Integer&gt;();
+        eatTimes.add(8);
+        eatTimes.add(12);
+        eatTimes.add(18);
+    }
+
+
+    @Override
+    public void run() {
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        if(eatTimes.contains(hour)) {
+            System.out.println(&quot;饿了，吃饭...&quot;);
+        }
+
+    }
+
+}
+
+
+/**
+ * scheduler
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年7月27日 下午4:37:15
+ */
+public class DemoScheduler {
+    
+    Timer timer = new Timer();
+    
+    /**
+     * 指定时间点执行
+     * @param task
+     * @param ms
+     */
+    public void schedule(TimerTask task, long ms) {
+        timer.schedule(task, ms);
+    }
+    
+    /**
+     * 间隔一段时间执行
+     * @param task
+     * @param firstTime
+     * @param period
+     */
+    public void schedule (TimerTask task, Date firstTime, long period) {
+        timer.schedule(task, firstTime, period);
+    }
+    
+    public static void main(String[] args) {
+        
+//        SimpleDateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+//        
+//        new DemoScheduler().schedule(new DemoTask(), 1000);
+//        System.out.println(&quot;main thread: schedule成功调用， time：&quot; + df.format(System.currentTimeMillis()));
+        
+        new DemoScheduler().schedule(new DemoTask2(), Calendar.getInstance().getTime(), 1000*60*60);
+    }
+}
+
+</code></pre>
+<h2><a class="header" href="#quartz" id="quartz">Quartz</a></h2>
+<p>具体参见：https://blog.csdn.net/defonds/article/details/49496895</p>
+<h3><a class="header" href="#准备工作" id="准备工作">准备工作</a></h3>
+<p>导入相应的spring的包(四个核心包，一个依赖包)与Quartz的包</p>
+<ul>
+<li>
+<p>导入Quartz的包</p>
+</li>
+<li>
+<p>导入Spring的</p>
+<p>Spring-context-support包----任务类基类
+Spring-web包--------spring web 开发（发现web.xml，Listener等）
+Spring-tx包</p>
+</li>
+</ul>
+<blockquote>
+<p>注：
+spring版本为3.2  quartz版本为2.2.1  也就是说如果使用了quartz2.2.1 则spring版本需3.1以上</p>
+</blockquote>
+<h3><a class="header" href="#task继承自特定基类" id="task继承自特定基类">task继承自特定基类</a></h3>
+<p>task基类: <code>org.springframework.scheduling.quartz.QuartzJobBean</code>-----来自 context-support 包</p>
+<h3><a class="header" href="#task无需继承基类" id="task无需继承基类">task无需继承基类</a></h3>
+<p>能够支持这一特性, 归功于 <code>org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean</code></p>
+<h2><a class="header" href="#spring-task" id="spring-task">spring task</a></h2>
+<p>Spring task ：轻量级的Quartz，而且使用起来很简单，除spring相关的包外不需要额外的包，而且支持注解和配置文件两种，任务类均为POJO</p>
+<h1><a class="header" href="#quartz-1" id="quartz-1">Quartz</a></h1>
+<h2><a class="header" href="#是什么" id="是什么">是什么</a></h2>
+<p>http://www.quartz-scheduler.org/</p>
+<p>基于java平台的任务调度库, 支持事务, 集群</p>
+<p>核心概念/接口就这几个:</p>
+<ul>
+<li>
+<p>Scheduler - 调度程序 (the main API for interacting with the scheduler.)</p>
+<ul>
+<li>
+<p>Scheduler’s life-cycle: 从创建开始, 到 shutdown() method 结束</p>
+</li>
+<li>
+<p>提供 add, remove, list Jobs and Triggers, pause trigger 等等</p>
+</li>
+<li>
+<p>scheduler 在使用 start() 启动前, 不会起作用</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Job - 任务类需要实现它</p>
+<ul>
+<li>
+<p>接口只一个方法 public void execute(JobExecutionContext context), 当 trigger 被触发, scheduler’s worker threads 会执行 execute 方法</p>
+</li>
+<li>
+<p>JobExecutionContext 可以获取 scheduler, trigger, JobDetail ...</p>
+</li>
+<li>
+<p>scheduler 每次调用 Job 的 execute(), 都会创建一个新的 Job 实例, 调用结束, 指向这个实例的 references 就被拿掉了, 对象随之被回收, 因此无法在 Job 中设置属性信息, 只有通过 JobDetail 设置 JobDataMap</p>
+</li>
+</ul>
+</li>
+<li>
+<p>JobDetail - 定义一个 Job 的属性, 比如 name, group...</p>
+<ul>
+<li>
+<p>任务类添加完一些属性后成为 JobDetail, 然后和 trigger 一起交给 scheduler</p>
+</li>
+<li>
+<p>JobDataMap - 可以在 JobDetail 中为 Job 设置一些 props 然后再在 execute() 中使用 (另外, 触发器还可以具有与之关联的JobDataMaps)</p>
+</li>
+</ul>
+<pre><code class="language-java">// define the job and tie it to our DumbJob class
+JobDetail job = newJob(DumbJob.class)
+    .withIdentity(&quot;myJob&quot;, &quot;group1&quot;) // name &quot;myJob&quot;, group &quot;group1&quot;
+    .usingJobData(&quot;jobSays&quot;, &quot;Hello World!&quot;)
+    .usingJobData(&quot;myFloatValue&quot;, 3.141f)
+    .build();
+
+// use JobDataMap inside task class
+public void execute(JobExecutionContext context)
+    throws JobExecutionException
+{
+    JobKey key = context.getJobDetail().getKey();
+
+    JobDataMap dataMap = context.getJobDetail().getJobDataMap();
+
+    String jobSays = dataMap.getString(&quot;jobSays&quot;);
+    float myFloatValue = dataMap.getFloat(&quot;myFloatValue&quot;);
+
+    System.err.println(&quot;Instance &quot; + key + &quot; of DumbJob says: &quot; + jobSays + &quot;, and val is: &quot; + myFloatValue);
+}
+</code></pre>
+<p>或者， 可以通过 setter() 实现 自动注入 (触发器触发时，将加载与其关联的JobDetail（实例定义），并通过Scheduler上配置的JobFactory实例化其引用的作业类。默认的JobFactory只是在作业类上调用newInstance（），然后尝试在类上调用与JobDataMap中的键名匹配的setter方法)</p>
+<pre><code class="language-java">public class DumbJob implements Job {
+
+    String jobSays;
+    float myFloatValue;
+    ArrayList state;
+
+    public DumbJob() {
+    }
+
+    public void execute(JobExecutionContext context)
+    throws JobExecutionException
+    {
+    JobKey key = context.getJobDetail().getKey();
+
+    JobDataMap dataMap = context.getMergedJobDataMap();  // Note the difference from the previous example
+
+    state.add(new Date());
+
+    System.err.println(&quot;Instance &quot; + key + &quot; of DumbJob says: &quot; + jobSays + &quot;, and val is: &quot; + myFloatValue);
+    }
+
+    public void setJobSays(String jobSays) {
+    this.jobSays = jobSays;
+    }
+
+    public void setMyFloatValue(float myFloatValue) {
+    myFloatValue = myFloatValue;
+    }
+
+    public void setState(ArrayList state) {
+    state = state;
+    }
+
+}
+
+</code></pre>
+</li>
+<li>
+<p>Trigger - 定义调度规则 ( a component that defines the schedule upon which a given Job will be executed)</p>
+<p>quartz 预先定义好了很多类型的 trigger, 常用的是 SimpleTrigger (特定时间执行一次 [然后重复 N 次, 每次间隔 T]) and CronTrigger (可以使用更灵活的 cron expression)</p>
+</li>
+<li>
+<p>可以使用 Domain Specific Language (or DSL, also sometimes referred to as a “fluent interface”), 见后面的代码(需要 static import)</p>
+<ul>
+<li>
+<p>JobBuilder - used to define/build JobDetail instances, which define instances of Jobs.</p>
+</li>
+<li>
+<p>TriggerBuilder - used to define/build Trigger instances.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#quick-start" id="quick-start">quick start</a></h2>
+<p>🔗: xx</p>
+<p>有必要提一下, fluent api 的使用需要首先 static import 一些包:</p>
+<pre><code class="language-java">import static org.quartz.JobBuilder.*;
+import static org.quartz.SimpleScheduleBuilder.*;
+import static org.quartz.CronScheduleBuilder.*;
+import static org.quartz.CalendarIntervalScheduleBuilder.*;
+import static org.quartz.TriggerBuilder.*;
+import static org.quartz.DateBuilder.*;
+</code></pre>
+<pre><code class="language-java">package com.xiaoyu.learn.etc.schedule.quartz.simple.demo;
+
+import org.quartz.JobDetail;
+import org.quartz.Scheduler;
+import org.quartz.Trigger;
+import org.quartz.impl.StdSchedulerFactory;
+import static org.quartz.JobBuilder.*;
+import static org.quartz.TriggerBuilder.*;
+import static org.quartz.SimpleScheduleBuilder.*;
+
+import com.xiaoyu.learn.etc.schedule.quartz.simple.demo.job.HelloJob;
+
+/**
+ * quartz simple demo
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年7月29日 下午10:08:08
+ */
+public class QuartzTest {
+
+    public static void main(String[] args) throws Exception {
+        // // Grab the Scheduler instance from the Factory
+        Scheduler defaultScheduler = StdSchedulerFactory.getDefaultScheduler();
+        
+        // setup quartz properties
+        String qzPropsPath = Thread.currentThread().getContextClassLoader()
+                .getResource(&quot;quartz.properties&quot;).getPath().toString();
+        System.setProperty(
+                &quot;org.quartz.properties&quot;, qzPropsPath);
+        System.out.println(&quot;&gt;&gt;&gt;&gt;&gt; quartz config file path: &quot; + qzPropsPath);
+        
+        // and start it off
+        defaultScheduler.start();
+        // -----------------------------do sth.------------------------------
+        // attention: static import needed
+     // define the job and tie it to our HelloJob class
+        JobDetail job = newJob(HelloJob.class)
+            .withIdentity(&quot;job1&quot;, &quot;group1&quot;)// setup jobName and jobGroup
+            .build();
+
+        // Trigger the job to run now, and then repeat every 2 seconds
+        Trigger trigger = newTrigger()
+            .withIdentity(&quot;trigger1&quot;, &quot;group1&quot;)
+            .startNow()
+                  .withSchedule(simpleSchedule()
+                    .withIntervalInSeconds(2)
+                    .repeatForever())            
+            .build();
+
+        // Tell quartz to schedule the job using our trigger
+        defaultScheduler.scheduleJob(job, trigger);
+        // ---------------------------------------------------------------
+        
+        Thread.sleep(60000);
+        
+        /**
+         * Once you obtain a scheduler using `StdSchedulerFactory.getDefaultScheduler()`,
+         * your application will not terminate until you call `scheduler.shutdown()`,
+         * because there will be active threads.
+         */
+        defaultScheduler.shutdown();
+    }
+}
+
+</code></pre>
+<h2><a class="header" href="#有用的注解" id="有用的注解">有用的注解</a></h2>
+<p>可以添加到 job class 上用于控制 state 和并发</p>
+<ul>
+<li>
+<p>@DisallowConcurrentExecution - 规定同一个时间段内, 只能有一个 job class在执行, 但是可以有多个 jobDetail 在执行;</p>
+<p>举个🌰:
+有个 job class 叫 &quot;SalesReportJob&quot;, 然后在此基础上定义两个 jobDetail &quot;SalesReportForJoe&quot; 和 &quot;SalesReportForMike&quot; (通过传递不同的jobDateMap). 如果 SalesReportJob 被标注, 则只能在给定时间执行“SalesReportForJoe”的一个实例，但它可以与“SalesReportForMike”实例同时执行</p>
+</li>
+<li>
+<p>@PersistJobDataAfterExecution - 它告诉Quartz在execute（）方法成功完成后（不抛出异常）更新JobDetail的JobDataMap的存储副本，以便下一次执行相同的工作（ JobDetail）接收更新的值而不是最初存储的值</p>
+<p>一般和 @DisallowConcurrentExecution 一起使用</p>
+</li>
+</ul>
+<h2><a class="header" href="#trigger" id="trigger">trigger</a></h2>
+<p>触发器公共的属性：</p>
+<ul>
+<li>
+<p>TriggerKey </p>
+</li>
+<li>
+<p>jobKey</p>
+</li>
+<li>
+<p>startTime -  java.util.Date, 指定 trigger’s schedule 何时首次生效</p>
+</li>
+<li>
+<p>endTime - trigger’s schedule 何时失效</p>
+</li>
+<li>
+<p>Priority - 为 trigger 设置优先级， 当 worker thread 不够用的时候生效</p>
+</li>
+</ul>
+<h3><a class="header" href="#quartz-calendars" id="quartz-calendars">quartz Calendars</a></h3>
+<p>在一份计划中， 排除某些日期</p>
+<pre><code class="language-java">HolidayCalendar cal = new HolidayCalendar();
+cal.addExcludedDate( someDate );
+cal.addExcludedDate( someOtherDate );
+
+sched.addCalendar(&quot;myHolidays&quot;, cal, false);
+
+
+Trigger t = newTrigger()
+    .withIdentity(&quot;myTrigger&quot;)
+    .forJob(&quot;myJob&quot;)
+    .withSchedule(dailyAtHourAndMinute(9, 30)) // execute job daily at 9:30
+    .modifiedByCalendar(&quot;myHolidays&quot;) // but not on holidays
+    .build();
+
+// .. schedule job with trigger
+
+Trigger t2 = newTrigger()
+    .withIdentity(&quot;myTrigger2&quot;)
+    .forJob(&quot;myJob2&quot;)
+    .withSchedule(dailyAtHourAndMinute(11, 30)) // execute job daily at 11:30
+    .modifiedByCalendar(&quot;myHolidays&quot;) // but not on holidays
+    .build();
+
+// .. schedule job with trigger2
+</code></pre>
+<h3><a class="header" href="#simpletrigger" id="simpletrigger">SimpleTrigger</a></h3>
+<ul>
+<li>
+<p>满足这样的需求: 在特定的时刻执行一次任务[间隔一定时间重复执行该任务]</p>
+</li>
+<li>
+<p>包含这些属性: a start-time, and end-time, a repeat count, and a repeat interval.</p>
+</li>
+<li>
+<p>使用需要 static import:</p>
+<pre><code class="language-java">import static org.quartz.TriggerBuilder.*;
+import static org.quartz.SimpleScheduleBuilder.*;
+import static org.quartz.DateBuilder.*:
+
+</code></pre>
+<ul>
+<li>
+<p>特定时刻触发, 不重复</p>
+<pre><code class="language-java">SimpleTrigger trigger = (SimpleTrigger) newTrigger()
+    .withIdentity(&quot;trigger1&quot;, &quot;group1&quot;)
+    .startAt(myStartTime) // some Date 或者 .startNow() 默认就是now
+    .forJob(&quot;job1&quot;, &quot;group1&quot;) // identify job with name, group strings
+    .build();
+</code></pre>
+</li>
+<li>
+<p>特定时刻触发, 间隔10s, 重复 10+1 次</p>
+<pre><code class="language-java">trigger = newTrigger()
+    .withIdentity(&quot;trigger3&quot;, &quot;group1&quot;)
+    .startAt(myTimeToStartFiring)  // if a start time is not given (if this line were omitted), &quot;now&quot; is implied
+    .withSchedule(simpleSchedule()
+        .withIntervalInSeconds(10)
+        .withRepeatCount(10)) // note that 10 repeats will give a total of 11 firings
+    .forJob(myJob) // identify job with handle to its JobDetail itself
+    .build();
+</code></pre>
+</li>
+<li>
+<p>5min 后触发, 不重复</p>
+<pre><code class="language-java"> trigger = (SimpleTrigger) newTrigger()
+    .withIdentity(&quot;trigger5&quot;, &quot;group1&quot;)
+    .startAt(futureDate(5, IntervalUnit.MINUTE)) // use DateBuilder to create a date in the future
+    .forJob(myJobKey) // identify job with its JobKey
+    .build();
+</code></pre>
+</li>
+<li>
+<p>立即触发, 每 5min 重复一次, 直到 22:00 点</p>
+<pre><code class="language-java">trigger = newTrigger()
+    .withIdentity(&quot;trigger7&quot;, &quot;group1&quot;)
+    .withSchedule(simpleSchedule()
+        .withIntervalInMinutes(5)
+        .repeatForever())
+    .endAt(dateOf(22, 0, 0))
+    .build();
+</code></pre>
+</li>
+<li>
+<p>在下一个整点触发, 然后间隔 2h, 永远重复</p>
+<pre><code class="language-java"> trigger = newTrigger()
+    .withIdentity(&quot;trigger8&quot;) // because group is not specified, &quot;trigger8&quot; will be in the default group
+    .startAt(evenHourDate(null)) // get the next even-hour (minutes and seconds zero (&quot;00:00&quot;))
+    .withSchedule(simpleSchedule()
+        .withIntervalInHours(2)
+        .repeatForever())
+    // note that in this example, 'forJob(..)' is not called
+    //  - which is valid if the trigger is passed to the scheduler along with the job  
+    .build();
+
+    scheduler.scheduleJob(trigger, job);
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>执行任务失败, 可以给 trigger 设定&quot;失败指令&quot; (<a href="http://www.quartz-scheduler.org/documentation/quartz-2.2.x/tutorials/tutorial-lesson-05.html">ref</a>)</p>
+</li>
+</ul>
+<h3><a class="header" href="#crontrigger" id="crontrigger">CronTrigger</a></h3>
+<ul>
+<li>
+<p>startTime , endTime</p>
+</li>
+<li>
+<p>cronExpression 👉 <a href="#cronExpression">#coron表达式</a></p>
+</li>
+<li>
+<p>需要静态引入</p>
+<pre><code class="language-java">import static org.quartz.TriggerBuilder.*;
+import static org.quartz.CronScheduleBuilder.*;
+import static org.quartz.DateBuilder.*:
+</code></pre>
+<ul>
+<li>
+<p>每分钟触发一次, 上午5点到下午8点, 每天</p>
+<pre><code class="language-java">trigger = newTrigger()
+    .withIdentity(&quot;trigger3&quot;, &quot;group1&quot;)
+    .withSchedule(cronSchedule(&quot;0 0/2 8-17 * * ?&quot;))
+    .forJob(&quot;myJob&quot;, &quot;group1&quot;)
+    .build();
+</code></pre>
+</li>
+<li>
+<p>设置时区</p>
+<pre><code class="language-java">trigger = newTrigger()
+    .withIdentity(&quot;trigger3&quot;, &quot;group1&quot;)
+    .withSchedule(cronSchedule(&quot;0 42 10 ? * WED&quot;))
+    .inTimeZone(TimeZone.getTimeZone(&quot;America/Los_Angeles&quot;))
+    .forJob(myJobKey)
+    .build();
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#triggerlisteners-and-joblisteners" id="triggerlisteners-and-joblisteners">TriggerListeners and JobListeners</a></h2>
+<p>http://www.quartz-scheduler.org/documentation/quartz-2.2.x/tutorials/tutorial-lesson-07.html</p>
+<h2><a class="header" href="#schedulerlisteners" id="schedulerlisteners">SchedulerListeners</a></h2>
+<p>http://www.quartz-scheduler.org/documentation/quartz-2.2.x/tutorials/tutorial-lesson-08.html</p>
+<h2><a class="header" href="#job-stores" id="job-stores">Job Stores</a></h2>
+<ul>
+<li>
+<p>RAMJobStore - 存储在内存中</p>
+<p>使用需要这样设置: <code>org.quartz.jobStore.class = org.quartz.simpl.RAMJobStore</code></p>
+</li>
+<li>
+<p>JDBCJobStore - 存储在数据库中</p>
+</li>
+</ul>
+<h1><a class="header" href="#springboot和quartz实现动态配置" id="springboot和quartz实现动态配置">springboot和quartz实现动态配置</a></h1>
+<p>ref: https://blog.csdn.net/liuchuanhong1/article/details/60873295</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="springmvc-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="tcp-ip-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="springmvc-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="tcp-ip-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

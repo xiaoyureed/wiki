@@ -1,0 +1,1403 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>effective java reading note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html" class="active"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Effective Java Reading Note
+tags:</p>
+<ul>
+<li>reading note
+date: 2018-07-01 21:47:18
+categories: java core</li>
+</ul>
+<hr />
+<div align="center">
+effective java reading note。
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E9%94%80%E6%AF%81">创建和销毁</a>
+<ul>
+<li><a href="#%E8%80%83%E8%99%91%E4%BD%BF%E7%94%A8static-factory-method%E4%BB%A3%E6%9B%BF%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">考虑使用static factory method代替构造函数</a>
+<ul>
+<li><a href="#%E4%BC%98%E7%82%B9">优点</a></li>
+<li><a href="#%E7%BC%BA%E7%82%B9">缺点</a></li>
+<li><a href="#%E5%9C%BA%E6%99%AF%E4%BD%95%E6%97%B6%E5%8F%AF%E4%BB%A5%E6%9B%BF%E6%8D%A2%E6%9E%84%E9%80%A0%E5%99%A8">场景(何时可以替换构造器)</a></li>
+</ul>
+</li>
+<li><a href="#%E9%81%87%E5%88%B0%E5%BE%88%E5%A4%9A%E5%8F%AF%E9%80%89%E6%9E%84%E9%80%A0%E5%99%A8%E5%8F%82%E6%95%B0%E6%97%B6%E7%94%A8%E6%9E%84%E5%BB%BA%E5%99%A8builder%E6%A8%A1%E5%BC%8F">遇到很多可选构造器参数时，用构建器(Builder模式)</a>
+<ul>
+<li><a href="#%E5%9C%BA%E6%99%AF%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8builder%E6%A8%A1%E5%BC%8F">场景(何时使用builder模式)</a></li>
+<li><a href="#builder%E6%A8%A1%E5%BC%8F">Builder模式</a></li>
+</ul>
+</li>
+<li><a href="#private%E6%9E%84%E9%80%A0%E5%99%A8%E6%88%96%E8%80%85%E4%BD%BF%E7%94%A8%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%E6%9D%A5%E5%BC%BA%E5%8C%96singleton">Private构造器或者使用枚举类型来强化singleton</a></li>
+<li><a href="#%E9%81%BF%E5%85%8D%E5%88%9B%E5%BB%BA%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E5%AF%B9%E8%B1%A1">避免创建不必要的对象</a>
+<ul>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">应用场景</a></li>
+<li><a href="#%E5%AF%B9%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2">对于字符串</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%9D%99%E6%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E9%87%8D%E7%94%A8%E5%AF%B9%E8%B1%A1">通过静态工厂方法重用对象</a></li>
+<li><a href="#%E9%87%8D%E7%94%A8%E5%B7%B2%E7%9F%A5%E4%B8%8D%E4%BC%9A%E8%A2%AB%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1">重用已知不会被修改的可变对象</a></li>
+<li><a href="#%E8%A7%86%E5%9B%BE%E9%80%82%E9%85%8D%E5%99%A8%E7%9A%84%E5%AE%9E%E4%BE%8B%E4%B8%8D%E9%9C%80%E8%A6%81%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E5%AD%98%E7%96%91">视图(适配器)的实例不需要创建多个(存疑)</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B6%88%E9%99%A4%E8%BF%87%E6%9C%9F%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8">消除过期的对象引用</a>
+<ul>
+<li><a href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%A0%88%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2">内存泄漏:栈的内存泄露</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%BC%93%E5%AD%98%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E8%BF%87%E6%9C%9F">内存泄漏:缓存判断是否过期</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%B3%A8%E5%86%8C%E5%9B%9E%E8%B0%83%E5%90%8E%E4%B8%8D%E8%A6%81%E5%BF%98%E8%AE%B0%E5%8F%96%E6%B6%88%E6%B3%A8%E5%86%8C">内存泄漏:注册回调后不要忘记取消注册</a></li>
+</ul>
+</li>
+<li><a href="#%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E7%BB%88%E7%BB%93%E6%96%B9%E6%B3%95">避免使用终结方法</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A6%86%E7%9B%96object%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95">覆盖object中的方法</a>
+<ul>
+<li><a href="#%E8%A6%86%E7%9B%96equals">覆盖equals()</a>
+<ul>
+<li><a href="#%E4%BD%95%E6%97%B6%E8%A6%86%E7%9B%96">何时覆盖</a></li>
+<li><a href="#%E8%A6%86%E7%9B%96%E6%97%B6%E9%9C%80%E8%A6%81%E9%81%B5%E5%AE%88%E7%9A%84%E7%BA%A6%E5%AE%9A">覆盖时需要遵守的约定</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E9%AB%98%E8%B4%A8%E9%87%8F%E7%9A%84equals%E6%96%B9%E6%B3%95">怎么实现高质量的equals方法</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A6%86%E7%9B%96hashcode">覆盖hashCode()</a>
+<ul>
+<li><a href="#%E4%B8%80%E7%A7%8D%E8%A6%86%E7%9B%96%E6%96%B9%E5%BC%8F">一种覆盖方式</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9C%E4%B8%80%E4%B8%AA%E7%B1%BB%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%9A%84%E4%B8%94%E8%AE%A1%E7%AE%97hashcode%E5%BC%80%E9%94%80%E6%AF%94%E8%BE%83%E5%A4%A7%E5%8F%AF%E4%BB%A5%E8%80%83%E8%99%91%E6%8A%8A%E6%95%A3%E5%88%97%E7%A0%81%E7%BC%93%E5%AD%98%E5%9C%A8%E5%AF%B9%E8%B1%A1%E5%86%85%E9%83%A8">如果一个类是不可变的，且计算hashcode开销比较大，可以考虑把散列码缓存在对象内部</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%80%E5%A5%BD%E5%A7%8B%E7%BB%88%E8%A6%86%E7%9B%96tostring">最好始终覆盖toString()</a></li>
+<li><a href="#%E8%B0%A8%E6%85%8E%E5%9C%B0%E8%A6%86%E7%9B%96clone">谨慎地覆盖clone()</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%84%E5%81%9A%E6%B3%95">常规做法</a></li>
+<li><a href="#%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%81%9A%E6%B3%95">更好的做法</a></li>
+</ul>
+</li>
+<li><a href="#%E8%80%83%E8%99%91%E5%AE%9E%E7%8E%B0comparable%E6%8E%A5%E5%8F%A3">考虑实现comparable接口</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B1%BBand%E6%8E%A5%E5%8F%A3">类and接口</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%B1%BB%E5%92%8C%E6%88%90%E5%91%98%E7%9A%84%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7%E6%9C%80%E5%B0%8F%E5%8C%96">使类和成员的可访问性最小化</a></li>
+<li><a href="#%E4%BD%BF%E5%8F%AF%E5%8F%98%E6%80%A7%E6%9C%80%E5%B0%8F%E5%8C%96%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB">使可变性最小化(不可变类)</a>
+<ul>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB">不可变类</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB%E4%BE%8B%E5%AD%90demo">一个不可变类例子demo</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB%E5%85%B6%E4%BB%96%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E7%A7%81%E6%9C%89%E5%8C%96%E6%9E%84%E9%80%A0%E5%99%A8%E6%8F%90%E4%BE%9Bstatic%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95">不可变类其他实现方式：私有化构造器，提供static工厂方法</a></li>
+<li><a href="#%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB%E4%BC%98%E7%BC%BA%E7%82%B9">不可变类优缺点</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%8D%E5%90%88%E7%BB%84%E5%90%88%E4%BC%98%E4%BA%8E%E7%BB%A7%E6%89%BF">复合(组合)优于继承</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%A4%8D%E5%90%88%E7%9A%84%E5%9C%BA%E6%99%AF">使用复合的场景</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E5%AE%9E%E4%BE%8B">一个具体实例</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A6%81%E4%B9%88%E4%B8%BA%E7%BB%A7%E6%89%BF%E8%80%8C%E8%AE%BE%E8%AE%A1%E5%B9%B6%E6%8F%90%E4%BE%9B%E6%96%87%E6%A1%A3%E8%A6%81%E4%B9%88%E7%A6%81%E6%AD%A2%E7%BB%A7%E6%89%BF">要么为继承而设计，并提供文档，要么禁止继承</a></li>
+<li><a href="#%E6%8E%A5%E5%8F%A3%E4%BC%98%E4%BA%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB">接口优于抽象类</a>
+<ul>
+<li><a href="#%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%BC%98%E7%BC%BA%E7%82%B9">接口和抽象类优缺点</a></li>
+<li><a href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E5%90%88%E4%BD%9C%E9%AA%A8%E6%9E%B6%E5%AE%9E%E7%8E%B0%E7%B1%BB">抽象类和接口合作：骨架实现类</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8E%A5%E5%8F%A3%E5%8F%AA%E7%94%A8%E4%BA%8E%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B">接口只用于定义类型</a></li>
+<li><a href="#%E7%B1%BB%E5%B1%82%E6%AC%A1%E4%BC%98%E4%BA%8E%E6%A0%87%E7%AD%BE%E7%B1%BB">类层次优于标签类</a></li>
+<li><a href="#%E7%94%A8%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3%E8%A1%A8%E7%A4%BA%E7%AD%96%E7%95%A5">用函数对象(函数接口)表示策略</a>
+<ul>
+<li><a href="#%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F">策略模式</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1">函数对象</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BC%98%E5%85%88%E8%80%83%E8%99%91%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E7%B1%BB">优先考虑静态成员类</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9E%8B%E8%80%8C%E4%B8%8D%E8%A6%81%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9F%E6%80%81%E7%B1%BB%E5%9E%8B">使用泛型而不要使用原生态类型</a></li>
+<li><a href="#%E5%88%97%E8%A1%A8%E4%BC%98%E4%BA%8E%E6%95%B0%E7%BB%84">列表优于数组</a></li>
+<li><a href="#%E4%BC%98%E5%85%88%E8%80%83%E8%99%91%E7%B1%BB%E5%9E%8B%E5%AE%89%E5%85%A8%E7%9A%84%E5%BC%82%E6%9E%84%E5%AE%B9%E5%99%A8">优先考虑类型安全的异构容器</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E5%92%8C%E6%B3%A8%E8%A7%A3">枚举和注解</a>
+<ul>
+<li><a href="#%E7%94%A8enum%E4%BB%A3%E6%9B%BFint%E5%B8%B8%E9%87%8F">用enum代替int常量</a></li>
+<li><a href="#%E5%9C%A8%E6%9E%9A%E4%B8%BEenum%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%9E%E4%BE%8B%E5%9F%9F">在枚举enum中使用实例域</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E6%8E%A5%E5%8F%A3%E4%BB%A5%E7%BC%96%E5%86%99%E5%8F%AF%E6%89%A9%E5%B1%95%E7%9A%84%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B">实现接口以编写可扩展的枚举类型</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3or%E6%8E%A5%E5%8F%A3%E5%81%9A%E6%A0%87%E8%AF%86">使用注解or接口做标识</a></li>
+<li><a href="#%E5%9D%9A%E6%8C%81%E4%BD%BF%E7%94%A8override%E6%B3%A8%E8%A7%A3">坚持使用@Override注解</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%B9%E6%B3%95">方法</a>
+<ul>
+<li><a href="#%E5%9C%A8%E6%96%B9%E6%B3%95%E5%BC%80%E5%A7%8B%E6%A3%80%E6%9F%A5%E5%8F%82%E6%95%B0%E7%9A%84%E6%9C%89%E6%95%88%E6%80%A7">在方法开始检查参数的有效性</a></li>
+<li><a href="#%E8%BF%9B%E8%A1%8C%E5%BF%85%E8%A6%81%E7%9A%84%E4%BF%9D%E6%8A%A4%E6%80%A7%E6%8B%B7%E8%B4%9D">进行必要的保护性拷贝</a></li>
+<li><a href="#%E6%85%8E%E7%94%A8%E9%87%8D%E8%BD%BD">慎用重载</a></li>
+<li><a href="#%E5%BA%94%E8%AF%A5%E8%BF%94%E5%9B%9E0%E9%95%BF%E5%BA%A6%E7%9A%84%E6%95%B0%E7%BB%84%E6%88%96%E9%9B%86%E5%90%88%E8%80%8C%E4%B8%8D%E6%98%AFnull">应该返回0长度的数组或集合，而不是null</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%9A%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1">通用程序设计</a>
+<ul>
+<li><a href="#%E4%BD%BF%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%9C%80%E5%B0%8F%E5%8C%96">使局部变量的作用域最小化</a></li>
+<li><a href="#foreach%E5%BE%AA%E7%8E%AF%E4%BC%98%E4%BA%8E%E4%BC%A0%E7%BB%9Ffor%E5%BE%AA%E7%8E%AF">Foreach循环优于传统for循环</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9C%E8%A6%81%E4%BD%BF%E7%94%A8%E7%B2%BE%E7%A1%AE%E7%9A%84%E7%AD%94%E6%A1%88%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8float-double">如果要使用精确的答案，避免使用float double</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%BC%98%E4%BA%8E%E8%A3%85%E7%AE%B1%E7%B1%BB%E5%9E%8B">基本类型优于装箱类型</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E6%8E%A5%E5%8F%A3%E5%BC%95%E7%94%A8%E5%AF%B9%E8%B1%A1">通过接口引用对象</a></li>
+<li><a href="#%E6%8E%A5%E5%8F%A3%E4%BC%98%E4%BA%8E%E5%8F%8D%E5%B0%84%E5%AD%98%E7%96%91">接口优于反射(存疑)</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%82%E5%B8%B8">异常</a>
+<ul>
+<li><a href="#%E5%AF%B9%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%9A%E7%A7%8D%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F">对异常的多种处理方式</a></li>
+<li><a href="#%E4%BD%BF%E5%A4%B1%E8%B4%A5%E4%BF%9D%E6%8C%81%E5%8E%9F%E5%AD%90%E6%80%A7">使失败保持原子性</a></li>
+</ul>
+</li>
+<li><a href="#jdk%E4%B8%AD%E7%9A%84%E5%8F%8D%E9%9D%A2%E6%A1%88%E4%BE%8B">jdk中的反面案例</a>
+<ul>
+<li><a href="#%E6%BB%A5%E7%94%A8%E7%BB%A7%E6%89%BFstack%E7%B1%BB">滥用继承:stack类</a></li>
+<li><a href="#%E5%80%BC%E5%AF%B9%E8%B1%A1%E5%BA%94%E8%AF%A5%E8%A2%AB%E8%AE%BE%E8%AE%A1%E4%B8%BA%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1date%E7%B1%BB">值对象应该被设计为不可变对象:Date类</a></li>
+<li><a href="#%E6%BB%A5%E7%94%A8%E5%B8%B8%E9%87%8F%E6%8E%A5%E5%8F%A3">滥用常量接口</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#创建和销毁" id="创建和销毁">创建和销毁</a></h1>
+<h2><a class="header" href="#考虑使用static-factory-method代替构造函数" id="考虑使用static-factory-method代替构造函数">考虑使用static factory method代替构造函数</a></h2>
+<h3><a class="header" href="#优点" id="优点">优点</a></h3>
+<ul>
+<li>
+<p>有名字</p>
+</li>
+<li>
+<p>不必每次调用都创建新对象，为重复的调用返回相同对象</p>
+<p>看 Boolean 的实现：</p>
+<pre><code class="language-java">public final class Boolean implements java.io.Serializable,
+        Comparable&lt;Boolean&gt; {
+
+    public static final Boolean TRUE = new Boolean(true);
+    public static final Boolean FALSE = new Boolean(false);
+        
+    public static Boolean valueOf(boolean b) {
+        return (b ? TRUE : FALSE);
+    }
+}
+
+
+</code></pre>
+</li>
+<li>
+<p>可以返回子对象，更灵活，适合面向接口编程</p>
+<pre><code class="language-java">class Father {  
+    private Father() {  
+    }  
+  
+    public static Father newInstance(String type) {  
+        if (type.equals(&quot;ChildA&quot;)) { // 根据类型判断返回那个子类对象  
+            return new ChildA();  
+        } else {  
+            return new ChildB();  
+        }  
+    }  
+  
+    public void getName() {   
+        System.out.println(&quot;My name is father&quot;);  
+    }  
+  
+    private static class ChildA extends Father {  
+        public void getName() {   
+            System.out.println(&quot;My name is child A&quot;);  
+        }  
+    }  
+  
+    private static class ChildB extends Father {  
+        public void getName() {  
+            System.out.println(&quot;My name is child B&quot;);  
+        }  
+    }  
+}  
+  
+public class Test {  
+    public static void main(String[] args) {  
+        Father c1 = Father.newInstance(&quot;ChildA&quot;);  
+        c1.getName();  
+        Father c2 = Father.newInstance(&quot;ChildB&quot;);  
+        c2.getName();  
+    }  
+}  
+
+</code></pre>
+<p>典型应用是：服务提供者框架，如jdbc实现；看下面的案例</p>
+<pre><code class="language-java">  /**
+* 服务接口，让提供者实现，
+* 相当于jdbc的connection接口
+* @author xiaoyu
+*
+*/
+public interface Service {
+  // 。。。
+}
+
+/**
+* Service provider interface，负责创建服务实现的实例
+* 是可选的，如果没有，service interface的实现就按照类名称注册，通过反射创建实例
+* 相当于jdbc的Driver接口
+* @author xiaoyu
+*
+*/
+public interface Provider {
+
+    Service newInstance();
+}
+/**
+* 管理器，负责服务注册和API访问
+* 核心是用一个map维护 name 和 provider 的一一对应
+* @author xiaoyu
+*
+*/
+public class ServiceManager {
+
+    /**
+    * 组织实例化
+    */
+    private ServiceManager() {};
+    
+    private static final HashMap&lt;String, Provider&gt; providers = new HashMap&lt;String, Provider&gt;();
+    private static final String DEFAULT_PROVIDER_NAME = &quot;def&quot;;//默认
+    
+    public static void registDefault(Provider p) {
+        providers.put(DEFAULT_PROVIDER_NAME, p);
+    }
+    
+    /**
+    * 服务注册API，相当于jdbc中DriverManager.registerDriver();
+    * @param name
+    * @param provider
+    */
+    public static void registProvider(String name, Provider provider) {
+        providers.put(name, provider);
+        
+    }
+    
+    /**
+    * jdbc中的Drivermanager.getConnection
+    * @return
+    * @throws Exception
+    */
+    public static Service newInstance() throws Exception {
+        return newInstance(DEFAULT_PROVIDER_NAME);
+    }
+    
+    public static Service newInstance(String name) throws Exception {
+        Provider provider = providers.get(name);
+        if (provider == null) {
+            throw new Exception(&quot;no provider regist  with name: &quot; + name);
+        }
+        return provider.newInstance();
+        
+    }
+    
+}
+</code></pre>
+</li>
+<li>
+<p>在创建参数化实例时，使代码变得简洁（语法糖）</p>
+<pre><code class="language-java">private Map&lt;String, List&lt;String&gt;&gt; map = new HashMap&lt;String, List&lt;String&gt;&gt;();  
+public static &lt;K, V&gt; HashMap&lt;K, V&gt; newInstance() {  
+    return new HashMap&lt;K, V&gt;();  
+}  
+
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#缺点" id="缺点">缺点</a></h3>
+<ul>
+<li>
+<p>与其他静态方法不易区分，因此经常采用习惯的命名：valueOf、getInstance、newInstance</p>
+</li>
+<li>
+<p>类如果不含 public 或者 protect 的构造器.就不能被子类化，无法产生子类，不能有继承关系</p>
+</li>
+</ul>
+<h3><a class="header" href="#场景何时可以替换构造器" id="场景何时可以替换构造器">场景(何时可以替换构造器)</a></h3>
+<ul>
+<li>静态工厂通常更加合适</li>
+<li>需要有继承时，必须要用构造器</li>
+</ul>
+<h2><a class="header" href="#遇到很多可选构造器参数时用构建器builder模式" id="遇到很多可选构造器参数时用构建器builder模式">遇到很多可选构造器参数时，用构建器(Builder模式)</a></h2>
+<p>有很多参数时，使用构造器不方便</p>
+<h3><a class="header" href="#场景何时使用builder模式" id="场景何时使用builder模式">场景(何时使用builder模式)</a></h3>
+<p>若类的构造器or静态工厂中有多个参数（4个or更多），适用，特别是有很多可选参数时</p>
+<h3><a class="header" href="#builder模式" id="builder模式">Builder模式</a></h3>
+<p>一种不合适的方法是: Javabean，通过setter设置参数，弊端：1.构造过程被分散到多个setter中，无法仅仅通过检验构造器参数的有效性来 保证一致性，不能保证线程安全；2.Javabean模式阻止了把类做成不可变类的可能</p>
+<p>更好的方式是 Builder</p>
+<pre><code class="language-java">/**
+ * 外部类构造器为private，内部类构造器为public，build()也是public的
+ * 内部类为static
+ * @author xiaoyu
+ *
+ */
+public class Apple {
+
+    private final String require1;
+    private final String require2;
+    
+    private final String optional1;
+    private final String optional2;
+    private final String optional3;
+    
+    private Apple(Builder b) {//这里相当于简化了参数，在这里进行参数检验
+        this.require1 = b.require1;
+        this.require2 = b.require2;
+        this.optional1 = b.optional1;
+        this.optional2 = b.optional2;
+        this.optional3 = b.optional3;
+    }
+    
+    //这个类可用interface+泛型进行抽象
+    public static class Builder {
+        private final String require1;
+        private final String require2;
+        
+        //可选参数初始化
+        private String optional1 = &quot;&quot;;
+        private String optional2 = &quot;&quot;;
+        private String optional3 = &quot;&quot;;
+        
+        public Builder(String require1, String require2) {
+            this.require1 = require1;
+            this.require2 = require2;
+        }
+        
+        public Builder optional1(String optional1) {
+            this.optional1 = optional1;
+            return this;
+        }
+        public Builder optional2(String optional2) {
+            this.optional2 = optional2;
+            return this;
+        }
+        public Builder optional3(String optional3) {
+            this.optional3 = optional3;
+            return this;
+        }
+        
+        public Apple build() {
+            return new Apple(this);
+        }
+    }
+}
+public class Test {
+
+    public static void main(String[] args) {
+        Apple apple = new Apple.Builder(&quot;r1&quot;, &quot;r2&quot;).optional1(&quot;o1&quot;).optional2(&quot;o2&quot;).optional3(&quot;o3&quot;).build();
+        System.out.println(apple);
+    }
+}
+
+</code></pre>
+<h2><a class="header" href="#private构造器或者使用枚举类型来强化singleton" id="private构造器或者使用枚举类型来强化singleton">Private构造器或者使用枚举类型来强化singleton</a></h2>
+<p>想要实现一个单例的类，可能会有如下的经历:</p>
+<ul>
+<li>私有化构造器 - 但是在反序列化时会产生新对象</li>
+<li>使用包含单个元素的Enum (单元素的Enum是实现singleton的最佳方式, 当然还有别的, 比如 使用静态内部类, 借助 jvm自身特性保证线程安全)</li>
+</ul>
+<p>类似的, 通过私有化构造器强化 &quot;不可实例化&quot;, 比如 工具类</p>
+<h2><a class="header" href="#避免创建不必要的对象" id="避免创建不必要的对象">避免创建不必要的对象</a></h2>
+<h3><a class="header" href="#应用场景" id="应用场景">应用场景</a></h3>
+<p>通过创建附加的小对象， 提升程序的清晰性、简洁性和功能性，这通常是件好事。</p>
+<p>反之，通过维护自己的对象池（object pool)来避免创達对象并不是一种好的做法，除非 池中的对象是非常重量级的；因为维护对象池会把代码弄乱，增加内存耗用</p>
+<h3><a class="header" href="#对于字符串" id="对于字符串">对于字符串</a></h3>
+<pre><code class="language-java">String s = &quot;stringette&quot;;//
+String s = new String(&quot;stringette&quot;);//don't do this
+
+</code></pre>
+<h3><a class="header" href="#通过静态工厂方法重用对象" id="通过静态工厂方法重用对象">通过静态工厂方法重用对象</a></h3>
+<p>例如静态工厂方法Boolean.valueOf(String)回返回一个固定的Boolean实例，而构造器Boolean(String)在每次被调用都会创建一个新的对象</p>
+<h3><a class="header" href="#重用已知不会被修改的可变对象" id="重用已知不会被修改的可变对象">重用已知不会被修改的可变对象</a></h3>
+<pre><code class="language-java">// 判断 婴儿潮
+public class Person {
+    private final Date birthDate;
+    public Person(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+    private static final Date BOOM_START;
+    private static final Date BOOM_END;
+
+  //这里的static块中的对象在每次Person创建时会被重用(只在 class 被 load 时候执行一次)
+    static{
+        Calendar gmtCal=Calendar.getInstance(TimeZone.getTimeZone(&quot;GMT&quot;));
+        gmtCal.set(1946,Calendar.JANUARY,1,0,0,0);
+        BOOM_START=gmtCal.getTime();
+        gmtCal.set(1965,Calendar.JANUARY,1,0,0,0);
+        BOOM_END=gmtCal.getTime();
+
+    }
+    public boolean isBabyBoomer(){
+      // 不推荐的做法: 将 BOOM_END BOOM_START 初始化放在这里来延迟初始化 (如果 isBabyBoomer() 从来不被调用, 这么做可以消除这些不必要的初始化工作，但是不建议这样做。这样做会使方法的实现更加复杂，而性能提升很小, 划不来.)
+        return birthDate.compareTo(BOOM_START)&gt;=0&amp;&amp;birthDate.compareTo(BOOM_END)&lt;0;
+    }
+}
+
+</code></pre>
+<h3><a class="header" href="#视图适配器的实例不需要创建多个存疑" id="视图适配器的实例不需要创建多个存疑">视图(适配器)的实例不需要创建多个(存疑)</a></h3>
+<p>针对给定对象的特定适配器，不需要创建多个适配器实例。虽然适配器适配的对象可能改变，但是所有返回对象在功能上是同等的。</p>
+<p>例如，Map接口的keySet方法返回该Map对象的Set视图，其中包含该Map中所有的键 (key)。粗看起来，好像毎次调用keyset都应该创建一个新的Set实例，但是，对干一个给定的 Map对象，实际上每次调用keySet都返回同样的Set实例。虽然被返回的Set实例一般是可改变 的，但是所有返回的对象在功能上是等同的：当其中一个返回对象发生变化的时候，所有其 他的返回对象也要发生变化，因为它们是由同一个Map实例支律的•虽然创建keySet视图对象 的多个实例并无害处，却也是没有必要的。</p>
+<h2><a class="header" href="#消除过期的对象引用" id="消除过期的对象引用">消除过期的对象引用</a></h2>
+<p>核心就是避免 内存泄露</p>
+<h3><a class="header" href="#内存泄漏栈的内存泄露" id="内存泄漏栈的内存泄露">内存泄漏:栈的内存泄露</a></h3>
+<p>应用实例:</p>
+<pre><code class="language-java">public class Stack {
+
+    private Object[] elements;
+    private int size = 0;
+    private static final int DEFAULT_INIT_CAPACITY = 16;
+   
+    public Stack() {
+        elements = new Object[DEFAULT_INIT_CAPACITY];
+    } 
+    
+    public void push(Object o) {
+        if (elements.length == size) {
+            elements = Arrays.copyOf(elements, 2*size + 1);
+        }
+        
+        elements[size++] = o;
+    }
+    
+    public Object pop() throws Exception {
+        if (size == 0) {
+            throw new Exception();
+        }
+        Object o = elements[--size];
+        elements[size] = null;//-----消除过期对象，防止内存泄露---------
+        return o;
+    }
+    
+}
+
+</code></pre>
+<h3><a class="header" href="#内存泄漏缓存判断是否过期" id="内存泄漏缓存判断是否过期">内存泄漏:缓存判断是否过期</a></h3>
+<ul>
+<li>
+<p>解决方案1：当缓存对象是否过期由外部是否有他的键的引用决定，可用WeakHashMap代表缓存</p>
+</li>
+<li>
+<p>解决方案2：对象是否过期不易确定，随时间推移，对象会变得越来越没价值</p>
+<ul>
+<li>
+<p>这时，缓存应该时不时地清除没用项，这个工作可由一个后台线程来完成</p>
+</li>
+<li>
+<p>或者可以在给缓存添加新项时顺便清理过期项，LinkedHashMap利用removeEldestEntry很好实现</p>
+</li>
+<li>
+<p>对于更复杂缓存体系，必须使用java.lang.ref</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#内存泄漏注册回调后不要忘记取消注册" id="内存泄漏注册回调后不要忘记取消注册">内存泄漏:注册回调后不要忘记取消注册</a></h3>
+<p>如果你实现了一个API,客户端在这个 API中注册回调，却没有显式地取消注册，那么除非你采取某些动作，否则它们就会积聚。确保 回调立即被当作垃圾回收的最佳方法是只保存它们的弱引用（weak reference),例如，只将它们 保存成WeakHashMap中的键。</p>
+<h2><a class="header" href="#避免使用终结方法" id="避免使用终结方法">避免使用终结方法</a></h2>
+<p>终结方法（finalizer）通常是不可预测的，
+通常使用try。。。finally+显式终结方法如：close()来终结资源</p>
+<h1><a class="header" href="#覆盖object中的方法" id="覆盖object中的方法">覆盖object中的方法</a></h1>
+<h2><a class="header" href="#覆盖equals" id="覆盖equals">覆盖equals()</a></h2>
+<h3><a class="header" href="#何时覆盖" id="何时覆盖">何时覆盖</a></h3>
+<p>如果类具有自己特有的“逻辑相等”概念（不 同于对象等同的概念），而且超类还没有榷盖equals以实现期望的行为，这时我们就需要覆盖 equals方法</p>
+<h3><a class="header" href="#覆盖时需要遵守的约定" id="覆盖时需要遵守的约定">覆盖时需要遵守的约定</a></h3>
+<ol>
+<li>自反性 x.equals(x) == true</li>
+<li>对称性 x.euqals(y) == y.equals(x)</li>
+<li>传递性 x.equals(y) , y.equlas(z) -&gt; x.equlas(z)</li>
+<li>一致性 多次x.euqlas(y)的结果必选是一致的</li>
+<li>非空性 x!=null&amp;&amp;x.equlas(null)==false ==true</li>
+</ol>
+<h3><a class="header" href="#怎么实现高质量的equals方法" id="怎么实现高质量的equals方法">怎么实现高质量的equals方法</a></h3>
+<ol>
+<li>使用 == 操作符检查“参数是否为这个对象的引用”</li>
+<li>使用instanceof操作符 检查“参数是否是正确的类型”</li>
+<li>把参数转换为正确的类型</li>
+<li>对于每一个关键域 逐个对比</li>
+<li>编写完成后 请检查和测试他们是否是传递的、对称的、一致的</li>
+<li>覆盖equals是总是要覆盖hashCode方法！</li>
+</ol>
+<h2><a class="header" href="#覆盖hashcode" id="覆盖hashcode">覆盖hashCode()</a></h2>
+<p>一般和 equals() 同时覆盖</p>
+<h3><a class="header" href="#一种覆盖方式" id="一种覆盖方式">一种覆盖方式</a></h3>
+<pre><code class="language-java">1. 把某个非零的常数值，比如说17，保存到一个名为result的int类型变量中。(int result = 17)
+
+2. 对于对象中每个关键域f (指equals方法中涉及的每个域)，完下面的步骤：
+
+    a. 为该域计算int类型的散列码 c:
+
+        i. 如果该域是boolean类型的，则计算(f ? 1 : 0)
+
+        ii. 如果该域是 byte、char、short、或者int类型的，则计算(int)f。
+
+        iii. 如果是 long 类型的，则计算 (int)(f^(f&gt;&gt;&gt;32))。
+
+        iv. 如果该域是 float 类型，则计算 FLoat.floatToIntBits(f)。
+
+        v. 如果该域是 double 类型，则计算 Double.doubleToLongBits(f)，然后按照步骤2.a.iii，为得到 long 类型值计算散列值。
+
+        vi. 如果该域是一个对象引用，并且该类的equals方法通过递归地调用equals的方式来比较这个域，则同样为这个域递归地调用hashCode。如果需要更复杂的比较，则为这个域计算一个范式(canonical representation)，然后针对这个范式调用hashCode。如果这个域为null,则返回0。
+
+        vii. 如果该域是一个数组，则要把每个元素当作单独的域来处理。
+
+    b. 按照下面的公式，将 2.a 计算得到的散列码 c 合并到 result 中：result = 31 * result + c;
+
+3. 返回result。
+
+4. 写完了之后，检查是否符合上述的三条规定。
+
+注：在计算过程中选择31的原因，是因为31有个很好的性能，现代的JVM可以自动的优化计算过程，将31 * i优化成为(i &lt;&lt; 5) - i。用位运算和减法替代了乘法
+
+
+@Override
+public int hashCode() {
+    int result = 17;
+    result = 31 * result + areaCode;
+    result = 31 * result + prefix;
+    result = 31 * result + lineNumber;
+    return result;
+}
+
+</code></pre>
+<h3><a class="header" href="#如果一个类是不可变的且计算hashcode开销比较大可以考虑把散列码缓存在对象内部" id="如果一个类是不可变的且计算hashcode开销比较大可以考虑把散列码缓存在对象内部">如果一个类是不可变的，且计算hashcode开销比较大，可以考虑把散列码缓存在对象内部</a></h3>
+<pre><code class="language-java">private volatile static int hashcode;
+@Override
+public int hashCode() {
+    int result = hashcode;
+    if (result == 0){
+        result = 31 * result + areaCode;
+        result = 31 * result + prefix;
+        result = 31 * result + lineNumber;
+        hashcode = result;
+    }
+    return result;
+}
+
+</code></pre>
+<h2><a class="header" href="#最好始终覆盖tostring" id="最好始终覆盖tostring">最好始终覆盖toString()</a></h2>
+<h2><a class="header" href="#谨慎地覆盖clone" id="谨慎地覆盖clone">谨慎地覆盖clone()</a></h2>
+<h3><a class="header" href="#常规做法" id="常规做法">常规做法</a></h3>
+<p>实现cloneable接口，覆盖clone()</p>
+<pre><code class="language-java">@Override 
+public PhoneNumber clone() { 
+     super.clone(); 
+}
+
+// 此公有方法首先调用super.clone(),然后修正任何需要修正的域(浅克隆、深度克隆)。
+
+</code></pre>
+<h3><a class="header" href="#更好的做法" id="更好的做法">更好的做法</a></h3>
+<p>提供一个拷贝构造器(copy constructor)或者拷贝工厂(copy factory) </p>
+<p>相比Cloneable/clone优点： </p>
+<p>不依赖于某一种很有风险的，语言之外的对象创建机制； 
+不要求遵守尚未制定好的文档规范； 
+不会与final域的正常使用发生冲突； 
+不会抛出不必要的受检查异常CloneNotSupportedException； 
+不需要强制进行类型转换；</p>
+<pre><code class="language-java">public class GoodClone {
+    private int type;
+    private final String special;
+
+    public GoodClone(int type, String spe) {
+        this.type = type;
+        this.special = spe;
+    }
+
+    /**
+     * 拷贝构造器
+     * 
+     * @param good
+     */
+    public GoodClone(GoodClone good) {
+        this.special = good.special;
+        this.type = good.type;
+    }
+
+    /** 
+     * 拷贝工厂 
+     * @param good 
+     * @return 
+     */  
+    public static GoodClone newInstance(GoodClone good) {  
+        return new GoodClone(good.type, good.special);  
+    }
+}
+
+</code></pre>
+<h2><a class="header" href="#考虑实现comparable接口" id="考虑实现comparable接口">考虑实现comparable接口</a></h2>
+<p>如果编写的 类有明显的排序关系, 实现 Compareble<T> 接口</p>
+<h1><a class="header" href="#类and接口" id="类and接口">类and接口</a></h1>
+<h2><a class="header" href="#使类和成员的可访问性最小化" id="使类和成员的可访问性最小化">使类和成员的可访问性最小化</a></h2>
+<p>访问修饰符</p>
+<pre><code>访问权限   类   包  子类  其他包
+
+public     ∨   ∨    ∨     ∨          （对任何人都是可用的）
+
+protect    ∨   ∨    ∨     ×　　　 （继承的类可以访问以及和private一样的权限）
+
+(default)  ∨   ∨    ×     ×　　　 （包访问权限，即在整个包内均可被访问）
+
+private    ∨   ×    ×     ×　　　 （除类型创建者和类型的内部方法之外的任何人都不能访问的元素）
+
+----------------------
+
+private     私有        只有在声明这个成员的类内部可以访问
+(default)   包级私有    同个 package 可访问, 子类不可访问
+protected   受保护的    同个 package 可访问, 子类可访问
+public      公有的       任何地方可以访问
+</code></pre>
+<p>private 和 default 成员不会影响API
+Protected 和public 会被导出到API
+实例域绝对不能是public (因为 包含public域的类都不是线程安全的)
+在public class中使用public的方法访问private的域</p>
+<h2><a class="header" href="#使可变性最小化不可变类" id="使可变性最小化不可变类">使可变性最小化(不可变类)</a></h2>
+<h3><a class="header" href="#不可变类" id="不可变类">不可变类</a></h3>
+<p>不可变对象本质上是线程安全的，它们不要求同步; 可以自由地被共享; 但是也有缺点: 对于每个不同的值(状态)都需要一个单独的对象实例来表示, 耗费内存</p>
+<p>定义: 实例不能被修改的类，如：String，Integer等基本类型的包装类</p>
+<p>使类不可变，有如下5条规范：</p>
+<ol>
+<li>不提供任何修改对象状态的方法（mutator）</li>
+<li>保证类不可扩展（如继承），一般使用final修饰类</li>
+<li>Final修饰所有域</li>
+<li>Private修饰所有域</li>
+<li>确保对任何可变元素的互斥访问: 🐍 客户端不能获得类的可变域所指向对象的引用; 🐍 不要用客户端提供的对象初始化类的可变域</li>
+</ol>
+<h3><a class="header" href="#一个不可变类例子demo" id="一个不可变类例子demo">一个不可变类例子demo</a></h3>
+<pre><code class="language-java">/**
+ * 实现一个标准的不可变类,复数，有实数和虚数
+ * @author xiaoyu
+ *
+ */
+public final class Complex {
+    private final double re;//实数
+    private final double im;//虚数
+    public Complex(double re, double im) {
+       this.re = re;
+       this.im = im;
+    }
+    
+    public double getRe() {
+        return re;
+    }
+    public double getIm() {
+        return im;
+    }
+    //加法
+    public Complex add(Complex c) {
+        
+        return new Complex(re+c.re, im+c.im);
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof Complex)) {
+            return false;
+        }
+        Complex temp = (Complex) obj;
+        return Double.compare(re, temp.re) == 0 &amp;&amp;
+                Double.compare(im, temp.im) == 0;
+    }
+    @Override
+    public int hashCode() {
+        // TODO Auto-generated method stub
+        return super.hashCode();
+    }
+
+}
+
+</code></pre>
+<h3><a class="header" href="#不可变类其他实现方式私有化构造器提供static工厂方法" id="不可变类其他实现方式私有化构造器提供static工厂方法">不可变类其他实现方式：私有化构造器，提供static工厂方法</a></h3>
+<pre><code class="language-java">//好处是更灵活，可以为静态工厂提供缓存，比如：对于hashcode计算复杂的类，缓存code值
+public class Complex {
+    private final double re;
+    private final double im;
+
+    private Complex(double re, double im) {
+      this.re = re;
+      this.im = im;
+    }
+
+    public static Complex valueOf(double re, double im) {
+      return new Complex(re, im);
+    }
+  }
+
+
+</code></pre>
+<h3><a class="header" href="#不可变类优缺点" id="不可变类优缺点">不可变类优缺点</a></h3>
+<p>线程安全的，它们不要求同步, 可以自由地被共享</p>
+<p>但是  对于每个不同的值都需要一个单独的对象</p>
+<p>缺点的解决办法:</p>
+<ul>
+<li>
+<p>对于频繁会用到值，在类内部提供public static final 的常量</p>
+</li>
+<li>
+<p>或者 对于不可变类，创建一个与之配套的“配套类”，是可变的，如：String和StringBuilder</p>
+</li>
+</ul>
+<h2><a class="header" href="#复合组合优于继承" id="复合组合优于继承">复合(组合)优于继承</a></h2>
+<h3><a class="header" href="#使用复合的场景" id="使用复合的场景">使用复合的场景</a></h3>
+<p>比较抽象的说法是，只有子类和父类确实存在&quot;is-a&quot;关系的时候使用继承，否则使用复合。
+或者比较实际点的说法是，如果TypeB只需要TypeA的部分行为，则考虑使用复合。</p>
+<h3><a class="header" href="#一个具体实例" id="一个具体实例">一个具体实例</a></h3>
+<pre><code class="language-java">public class InstrumentedHashSet&lt;E&gt; extends HashSet&lt;E&gt; {
+    // The number of attempted element insertions
+    private int addCount = 0;
+
+    public InstrumentedHashSet() {
+    }
+
+    public InstrumentedHashSet(int initCap, float loadFactor) {
+        super(initCap, loadFactor);
+    }
+
+    //覆盖hashset（父类）的两个方法，但是内部还是调用父类的对应方法
+    @Override
+    public boolean add(E e) {
+        addCount++;
+        return super.add(e);
+    }
+
+    //父类addAll内部是通过调用add方法实现，这里计数重复了
+    @Override
+    public boolean addAll(Collection&lt;? extends E&gt; c) {
+        addCount += c.size();
+        return super.addAll(c);
+    }
+
+    public int getAddCount() {
+        return addCount;
+    }
+}
+
+///////////////////////////////////////
+
+//解决办法是：
+// 即，在一个forwarding class中增加一个private field引用现有类的实例，forwarding class中的方法对应现有类的方法。【forwarding class】相当于是一个包装类
+
+
+public class ForwardingSet&lt;E&gt; implements Set&lt;E&gt; {
+    private final Set&lt;E&gt; s; // 组合, 而不是继承
+
+    public ForwardingSet(Set&lt;E&gt; s) {
+        this.s = s;
+    }
+
+   //省略一些接口 。。。。。
+
+    @Override
+    public boolean equals(Object o) {
+        return s.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return s.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return s.toString();
+    }
+}
+
+//使用时直接继承forwarding class：
+
+public class InstrumentedSet&lt;E&gt; extends ForwardingSet&lt;E&gt; {
+    private int addCount = 0;
+
+    public InstrumentedSet(Set&lt;E&gt; s) {
+        super(s);
+    }
+
+    @Override
+    public boolean add(E e) {
+        addCount++;
+        return super.add(e);
+    }
+
+    @Override
+    public boolean addAll(Collection&lt;? extends E&gt; c) {
+        addCount += c.size();
+        return super.addAll(c);
+    }
+
+    public int getAddCount() {
+        return addCount;
+    }
+}
+
+
+</code></pre>
+<h2><a class="header" href="#要么为继承而设计并提供文档要么禁止继承" id="要么为继承而设计并提供文档要么禁止继承">要么为继承而设计，并提供文档，要么禁止继承</a></h2>
+<p>一个类设计为可继承，要遵循：</p>
+<ol>
+<li>构造器不能调用可被覆盖的方法</li>
+<li>如果实现了cloneable、serielizable接口，则clone方法和readObject方法不能调用可被覆盖的方法</li>
+</ol>
+<h2><a class="header" href="#接口优于抽象类" id="接口优于抽象类">接口优于抽象类</a></h2>
+<h3><a class="header" href="#接口和抽象类优缺点" id="接口和抽象类优缺点">接口和抽象类优缺点</a></h3>
+<pre><code>对于 接口:
+
+- 现有的类可以很容易被更新，以实现新的接口。
+
+- 接口是定义mixin（混合类型）的理想选择。
+
+- 接口允许我们构造非层次结构的类型框架
+
+对于 抽象类:
+
+- 可以对于一些高层方法提供实现, 而把低层基本方法交给子类去实现(实际上高层方法就是调用的低层方法)
+</code></pre>
+<h3><a class="header" href="#抽象类和接口合作骨架实现类" id="抽象类和接口合作骨架实现类">抽象类和接口合作：骨架实现类</a></h3>
+<p>在选择抽象类和接口时，并不是二选一的答案，或干脆枪毙掉抽象类。其实，可以把接口和抽象类的优点结合起来，对于你希望导出（对外提供）的每一个重要接口都提供一个抽象类（骨架实现类）。接口的作用仍然是定义类型，骨架实现类负责实现无需子类关心的方法。</p>
+<p>按照惯例，骨架实现类的命名方法为： AbstractInterface，这里的Interface指的是接口的名字。JDK的的集合框架中，具有大量这样的骨架实现类：AbstractCollection，AbstractSet，AbstractList，AbstractMap</p>
+<pre><code class="language-java">//假设有一个接口，它可以实现一组对象的求和，代码如下：
+
+public interface Summation&lt;T&gt; {
+  //实现两个对象的相加
+  T twoEleAdd(T obj01, T obj02);
+
+  //实现List求和
+  T listEleSum(List&lt;T&gt; list);
+
+  //实现数组求和
+  T arrayEleSum(T[] array);
+}
+//根据观察，它的基本方法只有一个T twoEleAdd(T obj01, T obj02);,现在我们可以来实现他的“骨架”了：
+
+public abstract class AbstractSummation&lt;T&gt; implements Summation&lt;T&gt; {
+
+  @Override
+  public abstract T towEleAdd(T obj01, T obj02);
+
+  @Override
+  public T listEleSum(List&lt;T&gt; list) {
+    T firstEle = null;
+    for (T t : list) {
+
+      if (firstEle == null) {
+        firstEle = t;
+        continue;
+      }
+
+      firstEle = towEleAdd(firstEle, t);
+    }
+    return firstEle;
+  }
+
+  @Override
+  public T arrayEleSum(T[] array) {
+    T firstEle = null;
+    for (T t : array) {
+
+      if (firstEle == null) {
+        firstEle = t;
+        continue;
+      }
+
+      firstEle = towEleAdd(firstEle, t);
+    }
+    return firstEle;
+  }
+}
+//继承这个骨架类就只用实现towEleAdd方法，就可以完成一组对象的求和工作了。
+
+</code></pre>
+<h2><a class="header" href="#接口只用于定义类型" id="接口只用于定义类型">接口只用于定义类型</a></h2>
+<p>类实现接口时，接口就冲当该类实例的类型，为了其他目的（如：引入常量）而定义接口是不好的</p>
+<h2><a class="header" href="#类层次优于标签类" id="类层次优于标签类">类层次优于标签类</a></h2>
+<p>标签类: 一个类可以有多个风格的实例，如：类Figure（图形），可以有实例Circle（圆），Rectangle（方形），square（正方）; 这些标签类（tagged class）有着许多优点，但是破坏了可读性</p>
+<p>类层次: 继承, 实现</p>
+<h2><a class="header" href="#用函数对象函数接口表示策略" id="用函数对象函数接口表示策略">用函数对象(函数接口)表示策略</a></h2>
+<h3><a class="header" href="#策略模式" id="策略模式">策略模式</a></h3>
+<p>策略模式定义了一系列的算法，并将每一个算法封装起来，而且使它们还可以相互替换。策略模式让算法独立于使用它的客户端而独立变化</p>
+<h3><a class="header" href="#函数对象" id="函数对象">函数对象</a></h3>
+<p>定义这样一种对象，它的方法执行其他对象上的操作，如果一个类仅仅导出这样的一个方法，它的实例实际上就等同于一个指向该方法的指针。这样的实例被称为函数对象</p>
+<pre><code class="language-java">class StringLengthComparator {
+    public int compare(String s1, String s2) {
+        return s1.length() - s2.length();
+    }
+}
+
+////////////////////////////////////////////////////////////
+
+//这个类是无状态的，没有域，这类的所有实例是功能上等价的，所以可以作为单例存在
+
+class StringLengthComparator {
+    private StringLengthComparator() {}
+    public static final StringLengthComparator 
+        INSTANCE = new StringLengthComparator();
+    public int compare(String s1, String s2) {
+        return s1.length() - s2.length();
+    }
+}
+
+///////////////////////////////////////////////////
+
+// 但是，用这述这种方法有个问题，就是规定了参数的类型，这样就无法传递任何其他的比较策略。相反，对于这种情况，应该定义一个Comparator接口，并修改StringLengthComparator来实现这个接口。换句话说， 在设计具体的策略类时，还需要定义一个策略接口：
+
+// Strategy interface
+public interface Comparator&lt;T&gt; {
+    public int compare(T t1, T t2);
+}
+//当下，前面的具体策略类声名如下：
+class StringLengthComparator implements Comparator&lt;String&gt; {
+//    ... 
+}
+
+//这样，在传递具体策略类的对象的时候，只需要将参数类型定为接口类型(使用接口做类型定义)，现在可以传递其他的比较策略了。
+//        具体策略类往往使用匿名类声名，如下：
+
+Arrays.sort(stringArray, new Comparator&lt;String&gt;() { // 1.	当一个具体策略只被使用一次时，通常使用匿名类来声名和实例化这个具体策略。
+    public int compare(String s1, String s2) {
+        return s1.length() - s2.length();
+    }
+});
+
+////////////////////////////////////////
+
+// 2.	当一个具体策略是设计用来重复使用的时候，它的类通常就要被实现为私有的静态成员类，并通过公有的静态final域或静态工厂方法导出，其类型为策略接口。
+
+// Exporting a concrete strategy
+class Host {
+    private static class StrlenCmp implements Comparator&lt;String&gt;, Serializable {
+        public int compare(String s1, String s2) {
+            return s1.length() - s2.length();
+        }
+    }
+
+    // Returned comparator is serializable
+    public static final Comparator&lt;String&gt; STRING_LENGTH_COMPARATOR = new StrlenCmp();
+}
+</code></pre>
+<h2><a class="header" href="#优先考虑静态成员类" id="优先考虑静态成员类">优先考虑静态成员类</a></h2>
+<p>静态成员类 非静态成员类 区别:</p>
+<ol>
+<li>
+<p>非静态成员类 的 实例 与外围类的一个实例 关联 (在非静态成员类内部，可以调用外围的方法，其实例包含一个外围实例的引用)---------------所以会增加构造的时间开销; 所以当不访问外围类时，要声明成静态的static，如果不static，则每个实例将包含一个指向外围类实例的引用，要消耗时间空间，导致外围实例不被回收</p>
+</li>
+<li>
+<p>如果嵌套类实例 能在 外围类实例 之外独立存在，必须是静态成员类 --------------- 所以在没有外围类实例时，不能创建非静态成员类，非静态成员实例的必须要有一个外围实例</p>
+</li>
+</ol>
+<p>使用场景: 如果一个嵌套类需要在一个以上的地方使用，或者它太长了，不适合放在一个方法（注意：不是类）内部，那么应该使用成员类。如果成员类的每个实例都需要一个指向外围实例的应用（需要使用this），则该成员类做成非静态的；否则就应该做成静态的。</p>
+<h2><a class="header" href="#使用泛型而不要使用原生态类型" id="使用泛型而不要使用原生态类型">使用泛型而不要使用原生态类型</a></h2>
+<p>ref: https://www.jianshu.com/p/000070fc7267</p>
+<p>A:原生态类型如 List:不带任何类型参数的泛型名称
+B:参数化类型如List<String> ：表示元素类型为String的列表
+C:无限制的通配符类型如List&lt;?&gt;:表示元素为未知类型</p>
+<h2><a class="header" href="#列表优于数组" id="列表优于数组">列表优于数组</a></h2>
+<ul>
+<li>
+<p>数组是协变的(convariant)，如果 Sub 是 Super 的子类型，那么数组类型 Sub[] 就是 Super[] 的子类型。泛型是不可变的，List<Sub>不是List<Super>的子类型, 所以优先使用列表可以用到泛型</p>
+</li>
+<li>
+<p>数组是具体化的(reified)，因此数组在运行时才知道并检查它们的元素类型约束, 而泛型约束在编译期间就可以检查.</p>
+</li>
+</ul>
+<h2><a class="header" href="#优先考虑类型安全的异构容器" id="优先考虑类型安全的异构容器">优先考虑类型安全的异构容器</a></h2>
+<p>普通容器: 泛型中的 &quot;泛型参数&quot;将元素类型定死了, 如：Set<String>，只有一个类型参数，可以存“jjj”“xxxx”等；HashMap&lt;String, Object&gt;集合有两个类型参数，可以存 “小明”-new People(), “小红”-new People()</p>
+<p>异构容器: 一个容器里面它存放的类型参数数目是不固定的，那么它就是一个异构的容器; 如：Map&lt;Class<T>, T&gt;，可以存Student.class-new Student(), Car.class-new Car()</p>
+<p>一个使用场景: 使用一个容器来存放数据库中有任意列的一个行。因为一行，列的数目是不固定的，每个列的类型也是不确定的，那么就可以使用一个异构的容器来表示这个行</p>
+<pre><code class="language-java">//表示一行记录中的一列， T是类型，valClass是值
+public class Column&lt;T&gt; {
+ 
+  private final T valClass ;
+ 
+  @SuppressWarnings( &quot;unchecked&quot; )
+  public Column(Class&lt;T&gt; valClass) {
+    this. valClass = (T) valClass;
+  }
+ 
+  @SuppressWarnings( &quot;unchecked&quot; )
+  public T cast(Object obj) {
+    return obj == null ? null : ((Class&lt;T&gt;) valClass).cast(obj);
+  }
+}
+ //表示一行记录，包含多个column
+public class DatabaseRow {
+ 
+  private Map&lt;Column&lt;?&gt;, Object&gt; row = new HashMap&lt;&gt;();
+ 
+  public &lt;T&gt; void putColumn(Column&lt;T&gt; type, T instance) {
+    if (type == null )
+      throw new NullPointerException(&quot;Type is null&quot; );
+    row.put(type, instance);
+  }
+ 
+  public &lt;T&gt; T getColumn(Column&lt;T&gt; type) {
+    return type.cast( row.get(type));
+  }
+ 
+  public static void main(String[] args) {
+    DatabaseRow db = new DatabaseRow();
+ 
+    Column&lt;Integer&gt; colInt = new Column&lt;Integer&gt;(Integer. class);
+    Column&lt;Double&gt; colDouble = new Column&lt;Double&gt;(Double. class);
+    Column&lt;Float&gt; colFloat = new Column&lt;Float&gt;(Float. class);
+ 
+    db.putColumn(colInt, 1);
+    db.putColumn(colDouble, 10.0);
+    db.putColumn(colFloat, 12.3f);
+ 
+    System. out.println(colInt.getClass() + &quot; &quot; + colDouble.getClass());
+    System. out.println(db.getColumn(colInt) + &quot; &quot; + db.getColumn(colDouble));
+  }
+ 
+}
+
+</code></pre>
+<h1><a class="header" href="#枚举和注解" id="枚举和注解">枚举和注解</a></h1>
+<h2><a class="header" href="#用enum代替int常量" id="用enum代替int常量">用enum代替int常量</a></h2>
+<h2><a class="header" href="#在枚举enum中使用实例域" id="在枚举enum中使用实例域">在枚举enum中使用实例域</a></h2>
+<h2><a class="header" href="#实现接口以编写可扩展的枚举类型" id="实现接口以编写可扩展的枚举类型">实现接口以编写可扩展的枚举类型</a></h2>
+<h2><a class="header" href="#使用注解or接口做标识" id="使用注解or接口做标识">使用注解or接口做标识</a></h2>
+<p>Java1.5之后，使用注解如：@Test 标明有些元素需要通过xx工具或xx框架特殊处理</p>
+<p>空接口，如：cloneable，serielizable接口
+相对于标记注解的优点：</p>
+<ol>
+<li>使用接口，定义了类型，可以在	编译时发现（使用注解情况下）运行时才能显现的错</li>
+<li>可以被更加精确的锁定--------这个还不理解</li>
+</ol>
+<h2><a class="header" href="#坚持使用override注解" id="坚持使用override注解">坚持使用@Override注解</a></h2>
+<p>可以避免一大类非法错误
+如：覆盖equals，hashcode方法是出错</p>
+<h1><a class="header" href="#方法" id="方法">方法</a></h1>
+<h2><a class="header" href="#在方法开始检查参数的有效性" id="在方法开始检查参数的有效性">在方法开始检查参数的有效性</a></h2>
+<h2><a class="header" href="#进行必要的保护性拷贝" id="进行必要的保护性拷贝">进行必要的保护性拷贝</a></h2>
+<p>将传入参数拷贝一份之后再传入</p>
+<pre><code class="language-java">//在编写不可变类时，或者要让客户端的对象进入内部数据结构中时
+
+public final class Period {  
+    private final Date start;  //这里看似不可变，但是Date类是可变的
+    private final Date end;  
+    public Period(Date start,Date end) {  
+        if(start.compareTo(end) &gt; 0){  
+            throw new IllegalArgumentException(start + &quot; after &quot; + end);  
+        }  
+        this.start = start;  
+        this.end = end;  
+    }  
+      
+    public Date start(){  
+        return start;  
+    }  
+      
+    public Date end(){  
+        return end;  
+    }  
+    //remainder omitted  
+} 
+
+//由于date是可变的，如下操作即可改变date状态：
+Date start = new Date();  
+Date end = new Date();  
+Period period = new Period(start, end);  
+end.setYear(78);  // end 被改变了
+System.out.println(period.end());  
+
+////////////////////////////////
+
+// 对 构造函数 改进
+
+public Period(Date start,Date end) {  
+    this.start = new Date(start.getTime());  // 重新赋值一份, 切断 client 和 函数内部的联系
+    this.end = new Date(end.getTime());  
+    if(this.start.compareTo(this.end) &gt; 0){  
+        throw new IllegalArgumentException(this.start + &quot; after &quot; + this.end);  
+    }  
+} 
+
+</code></pre>
+<h2><a class="header" href="#慎用重载" id="慎用重载">慎用重载</a></h2>
+<p>重载是发生在编译时的，所以严格的说，它并不是多态, 要调用哪个重载方法是在编译时做出决定的</p>
+<p>对于重载方法的选择是静态（编译时的对象类型决定）的，对于覆盖的方法的选择则是动态（运行时的对象类型决定）的</p>
+<p>是否重载, 只和参数个数, 类型有关, 和返回值无关</p>
+<pre><code class="language-java">public class OverloadTest {
+    public static String mothod(Collection&lt;?&gt; col) {
+        return &quot;unknown collection&quot;;
+    }
+    public static String mothod(List&lt;?&gt; list) {
+        return &quot;list&quot;;
+    }
+    public static void main(String[] args) {
+        Collection&lt;?&gt;[] coll = {
+            new HashSet&lt;String&gt;(),
+            new ArrayList&lt;String&gt;()
+        };
+        for(Collection&lt;?&gt; c : coll) {
+            System.out.println(mothod(c));
+             //都调用mothod(Collection&lt;?&gt; col)方法，程序将打印两次unknown collection
+             // 因为程序调用哪个重载方法是在编译时确定的，在for循环中参数的编译时类型为Collection&lt;?&gt;，所以每次迭代都将调用mothod(Collection&lt;?&gt; col)方法
+        }
+    }
+} 
+
+
+</code></pre>
+<h2><a class="header" href="#应该返回0长度的数组或集合而不是null" id="应该返回0长度的数组或集合而不是null">应该返回0长度的数组或集合，而不是null</a></h2>
+<p>调用者不必做额外的特例处理，如对是null的情况做额外处理</p>
+<h1><a class="header" href="#通用程序设计" id="通用程序设计">通用程序设计</a></h1>
+<h2><a class="header" href="#使局部变量的作用域最小化" id="使局部变量的作用域最小化">使局部变量的作用域最小化</a></h2>
+<ol>
+<li>在第一次使用的时候声明变量</li>
+<li>局部变量都应该初始化，如果不能初始化，就应该推迟声明</li>
+</ol>
+<h2><a class="header" href="#foreach循环优于传统for循环" id="foreach循环优于传统for循环">Foreach循环优于传统for循环</a></h2>
+<p>因为隐藏了索引 i</p>
+<h2><a class="header" href="#如果要使用精确的答案避免使用float-double" id="如果要使用精确的答案避免使用float-double">如果要使用精确的答案，避免使用float double</a></h2>
+<h2><a class="header" href="#基本类型优于装箱类型" id="基本类型优于装箱类型">基本类型优于装箱类型</a></h2>
+<p>节省了内存</p>
+<h2><a class="header" href="#通过接口引用对象" id="通过接口引用对象">通过接口引用对象</a></h2>
+<h2><a class="header" href="#接口优于反射存疑" id="接口优于反射存疑">接口优于反射(存疑)</a></h2>
+<h1><a class="header" href="#异常" id="异常">异常</a></h1>
+<h2><a class="header" href="#对异常的多种处理方式" id="对异常的多种处理方式">对异常的多种处理方式</a></h2>
+<ul>
+<li>
+<p>异常转译（exception translation） - 如果方法B抛出了NoSuchElementException这个受检异常，然而在方法A中调用方法B时，根据方法A中的逻辑，当遇到NoSuchElementException异常时，抛出一个IndexsOutOfBoundsException异常更为合适。那么就不应该选择向上传播抛出NoSuchElementException，而是应该选择捕获NoSuchElementException，然后抛出IndexsOutOfBoundsException。</p>
+</li>
+<li>
+<p>转换为非受检异常</p>
+</li>
+</ul>
+<h2><a class="header" href="#使失败保持原子性" id="使失败保持原子性">使失败保持原子性</a></h2>
+<p>操作抛出异常，对象的状态不变，和异常之前的状态一致</p>
+<p>方法1：设计不可变对象
+方法2：在执行操作之前，检查参数有效性
+方法3：依靠回复代码
+方法4：在对象的一份临时拷贝中操作，之后用结果代替原来对象内容</p>
+<h1><a class="header" href="#jdk中的反面案例" id="jdk中的反面案例">jdk中的反面案例</a></h1>
+<h2><a class="header" href="#滥用继承stack类" id="滥用继承stack类">滥用继承:stack类</a></h2>
+<p>util包有一个工具类，明显是滥用继承的代表。没错，这个类就是鼎鼎大名的Stack类了。</p>
+<p>我们知道Statck数据结构本身的特点就是“后进先出”。那么它理想就应该只有两个方法来操纵数据，一个是push()方法，另一个是pop()方法。但是由于继承了Vector，Stack从父亲那里继承了诸如add(),remove(),set()等违反游戏规则的方法。</p>
+<h2><a class="header" href="#值对象应该被设计为不可变对象date类" id="值对象应该被设计为不可变对象date类">值对象应该被设计为不可变对象:Date类</a></h2>
+<p>不可变对象是指，实例属性经过初始化后在对象的整个生命周期内固定不变。例如jdk的String以及各种基本类型的包装类。</p>
+<p>不可变对象易于设计，并且在并发环境下更加安全，无需额外的同步机制。</p>
+<p>util包里的Date类属于值对象，类似于人民币一元，十元的概念，应该被设计为不可变对象。也就是说，不应该提供各种setter方法来修改对象的属性域。</p>
+<h2><a class="header" href="#滥用常量接口" id="滥用常量接口">滥用常量接口</a></h2>
+<p>在接口中定义常量，让使用的类实现该接口---------错误</p>
+<p>常量接口是指没有任何方法，只包含表态final域的接口对象，每一个域都导出一个。实现该接口的类即可获得接口的所有常量属性，看起来非常方便！
+然而，常量接口模式是对接口的不良使用。首先，常量的使用应属于内部实现细节，实现常量接口会把这样的细节暴露到导出的API中。其次，如果在后续升级中发现一个类不再需要以前的常量，这个类依然必须实现这个常量接口，以确保向下兼容性。</p>
+<p>jdk平台io包里的ObjectStreamConstants就属于常量接口，不值得效仿。</p>
+<p>那么，如果需要导出常量，最好的选择方案是jdk5引入的枚举类型(enum)。当然，如果某些常量跟某个类或接口联系非常紧密，也可以把这个常量绑定在该类，例如Integer.MAX__VALUE或Math.PI等。</p>
+<p>然而，某些开发人员还是喜欢选择常量接口，因为枚举略显繁琐，而类又必须写一串长长的&quot;public static final &quot;修饰。但是他们的使用还是有底线的，当需要某个常量的，代码只会用XXConstants.XX的模式，而不会直接让类实现这个接口。这种使用算是一种折中方案。采用哪种方法，还是看项目规范吧。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="data-structure-and-algorithm.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="docker-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="data-structure-and-algorithm.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="docker-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

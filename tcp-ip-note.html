@@ -1,0 +1,892 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>tcp-ip-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html" class="active"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: TCP IP
+date: 2017-06-21 11:15:06
+tags: [network]
+categories: computer science</h2>
+<p>http://c.biancheng.net/tcp_ip/
+https://coolshell.cn/articles/11564.html
+http://www.tcpipguide.com/
+https://www.lanqiao.cn/courses/98
+结合WireShark (https://www.wireshark.org/) 或者 tcpdump 边看边抓包. 推荐书目《WireShark 数据包分析实战》、《TCP/IP详解 卷一》
+谢希仁教授的《计算机网络》
+TODO</p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%85%A5%E9%97%A8">入门</a>
+<ul>
+<li><a href="#%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B">五层模型</a></li>
+<li><a href="#%E4%B8%80%E6%AC%A1%E8%AF%B7%E6%B1%82%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE">一次请求涉及到的网络协议</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%8C%85%E7%BB%93%E6%9E%84">数据包结构</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%B1%82application-layer">应用层(application-layer)</a></li>
+<li><a href="#%E4%BC%A0%E8%BE%93%E5%B1%82transport-layer">传输层(transport-layer)</a>
+<ul>
+<li><a href="#udp%E5%8D%8F%E8%AE%AE">udp协议</a></li>
+<li><a href="#tcp%E5%8D%8F%E8%AE%AE">tcp协议</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E7%82%B9">基本特点</a></li>
+<li><a href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B">三次握手</a></li>
+<li><a href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B">四次挥手</a></li>
+<li><a href="#tcp%E5%8C%85%E7%9A%84%E5%BA%8F%E5%8F%B7%E9%97%AE%E9%A2%98">TCP包的序号问题</a></li>
+</ul>
+</li>
+<li><a href="#tcp%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93">tcp如何保证可靠传输</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E5%B1%82network-layer-%E6%88%96%E8%80%85-ip-%E5%B1%82">网络层(network-layer 或者 ip 层)</a>
+<ul>
+<li><a href="#ip-%E5%9C%B0%E5%9D%80">ip 地址</a>
+<ul>
+<li><a href="#%E6%9F%A5%E8%AF%A2-ip%E5%9C%B0%E5%9D%80">查询 IP地址</a></li>
+<li><a href="#%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE-ip-%E5%9C%B0%E5%9D%80">手动配置 ip 地址</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%9C%B0%E5%9D%80-dhcp">动态分配地址 DHCP</a></li>
+</ul>
+</li>
+<li><a href="#ping-%E5%8E%9F%E7%90%86-icmp%E5%8D%8F%E8%AE%AE">ping 原理 ICMP协议</a></li>
+<li><a href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%9C%E4%B8%BA%E7%BD%91%E5%85%B3">路由器作为网关</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82data-link-layer-%E6%88%96%E8%80%85-mac-layer">数据链路层(data-link-layer 或者 mac layer)</a>
+<ul>
+<li><a href="#mac-%E5%92%8C-mac%E5%9C%B0%E5%9D%80">mac 和 mac地址</a></li>
+<li><a href="#mac-%E5%B1%82%E6%95%B0%E6%8D%AE%E5%8C%85%E6%A0%BC%E5%BC%8F">mac 层数据包格式</a></li>
+<li><a href="#arp-%E5%8D%8F%E8%AE%AE">ARP 协议</a>
+<ul>
+<li><a href="#%E8%A7%A3%E5%86%B3%E7%8E%AF%E8%B7%AF%E9%97%AE%E9%A2%98%E5%B9%BF%E6%92%AD%E9%A3%8E%E6%9A%B4-stp-%E5%8D%8F%E8%AE%AE">解决环路问题(广播风暴) stp 协议</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E9%9A%94%E7%A6%BB">网络隔离</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%A4%E5%8F%B0%E6%9C%BA%E5%99%A8%E4%B8%8D%E9%80%9A">两台机器不通</a></li>
+</ul>
+</li>
+<li><a href="#%E7%89%A9%E7%90%86%E5%B1%82physical-layer">物理层(physical-layer)</a></li>
+</ul>
+<!-- /TOC -->
+<h2><a class="header" href="#入门" id="入门">入门</a></h2>
+<h3><a class="header" href="#五层模型" id="五层模型">五层模型</a></h3>
+<ol>
+<li>应用层: (http) 业务数据封装</li>
+<li>传输层 (tcp) </li>
+<li>网络层(ip) 远程路由</li>
+<li>数据链路层(mac) 局域网定位</li>
+<li>物理层 (网线) 连接</li>
+</ol>
+<p>所谓的二层设备、三层设备，都是这些设备上跑的程序不同而已。一个HTTP协议的包经过一个二层设备，二层设备收进去的是整个网络包。这里面HTTP、TCP、 IP、 MAC都有。什么叫二层设备呀，就是只把MAC头摘下来，看看到底是丢弃、转发，还是自己留着。那什么叫三层设备呢？就是把MAC头摘下来之后，再把IP头摘下来，看看到底是丢弃、转发，还是自己留着</p>
+<h3><a class="header" href="#一次请求涉及到的网络协议" id="一次请求涉及到的网络协议">一次请求涉及到的网络协议</a></h3>
+<p>三要素: 语法, 语义, 顺序</p>
+<ol>
+<li>应用层: 输入 URL, 浏览器通过 DNS/httpdns 查找 到 ip 地址 (假设 本机 host 中没有任何配置), 根据 HTTP/HTTPS 协议, 浏览器打包请求, 交给传输层.</li>
+<li>传输层: tcp/udp 协议将浏览器监听端口, 目标服务器端口封装, 交给网络层</li>
+<li>网络层: ip 协议将将本机 ip 和目标 ip 封装. 交给mac 层(数据链路层)</li>
+<li>mac 层: os  通过 ARP 协议以及默认网关 ip 找到本地网关 mac 地址(一般在 os 启动时, os 根据 DHCP协议分配本机 ip 地址, 已经网关地址192.168.1.1). 将本机 mac 地址, 网关 mac 地址封装, 交给网卡, 发给本地网关</li>
+<li>网关/路由器在不同的局域网间, 通过路由协议，(常用的有OSPF和BGP)沟通</li>
+</ol>
+<h3><a class="header" href="#数据包结构" id="数据包结构">数据包结构</a></h3>
+<p>Mac头 Ip头 Tcp头 Http头 数据体</p>
+<ul>
+<li>以太网头部 (mac header)
+<ul>
+<li>target mac address 48bit</li>
+<li>source mac address 48bit</li>
+<li>协议类型 16bit : 用来说明里面是IP协议</li>
+</ul>
+</li>
+<li>ip header
+<ul>
+<li>版本 4bit: 目前主流的还是IPv4</li>
+<li>首部长度 4bit</li>
+<li>服务类型 TOS (type of service) 8bit:  代表了当前的包是高优先级的，还是低优先级的。</li>
+<li>总长度 16bit</li>
+<li>标识 16bit</li>
+<li>标志 3bit</li>
+<li>片偏移 13bit</li>
+<li>TTL 8bit</li>
+<li>协议 8bit: TCP还是UDP</li>
+<li>首部校验和 16bit</li>
+<li>源 ip address 32bit</li>
+<li>目的 ip address 32bit</li>
+<li>选项</li>
+</ul>
+</li>
+<li>tcp header
+<ul>
+<li>源 port number</li>
+<li>目的 port number</li>
+<li>tcp 校验和 (checkSum, 指传输位数的累加,当传输结束时,接收者可以根据这个数值判断是否接到了所有的数据。另外, 防篡改)</li>
+<li>序号 32bit, 解决乱序问题</li>
+<li>确认序号 32bit, 确认包收到, 解决丢包的问题</li>
+</ul>
+</li>
+<li>实际数据</li>
+</ul>
+<h2><a class="header" href="#应用层application-layer" id="应用层application-layer">应用层(application-layer)</a></h2>
+<p>application-layer 定义了app进程间的通信规则，专门完成进程间的数据交互, 不同应用有不同的应用层协议</p>
+<p>应用层协议包括：DHCP(分配 ip), DNS（域名查询）, HTTP/HTTPS（网页访问），SMTP邮件协议,  P2p, rpc；</p>
+<p>应用层交互的数据单元称为报文。</p>
+<h2><a class="header" href="#传输层transport-layer" id="传输层transport-layer">传输层(transport-layer)</a></h2>
+<p>transport-layer 定义了不同主机进程间的通信规则， 是通用的， 不同应用有不同的应用层协议，但是都是基于通用的transport-layer协议；</p>
+<p>如 tcp, udp, sctp协议</p>
+<ul>
+<li>
+<p>传输控制协议 TCP（Transmission Control Protocol）--提供面向连接的，可靠的数据传输服务。</p>
+<p>所谓面向连接, 就是通信双方可以维护一定状态</p>
+</li>
+<li>
+<p>用户数据协议 UDP（User Datagram Protocol）--提供无连接的，不可靠的数据传输服务</p>
+</li>
+</ul>
+<h3><a class="header" href="#udp协议" id="udp协议">udp协议</a></h3>
+<p>udp数据包内嵌在 ip数据包 的 &quot;data&quot;部分; 总长度最大 65535byte</p>
+<p>结构:</p>
+<ul>
+<li>
+<p>head - 包括: send port, receive port; 8byte</p>
+</li>
+<li>
+<p>data</p>
+</li>
+</ul>
+<p>特点:</p>
+<ul>
+<li>无连接， 不保证可靠性， 相应的也无需维护负责的连接状态</li>
+<li>没有拥堵控制 （因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如 直播，实时视频会议等））</li>
+<li>发送一个一个数据包来传输数据 (基于数据报的，一个一个地发，一个一个地收)</li>
+<li>支持一对一， 一对多， 多对一，多对多的通信</li>
+<li>UDP 的首部开销小，只有8个字节，比TCP的20个字节的首部要短</li>
+</ul>
+<p>使用场景:</p>
+<ul>
+<li>
+<p>需要资源少，在网络情况比较好的内网中使用, 如 DHCP就是基于UDP协议的</p>
+</li>
+<li>
+<p>不需要一对一沟通，而是可以广播的应用, 如 DHCP就是一种广播</p>
+</li>
+<li>
+<p>需要处理速度快，时延低，可以容忍少数丢包的场景, 如直播，实时视频会议</p>
+</li>
+</ul>
+<p>QUIC（全称Quick UDP Internet Connections，快速UDP互联网连接）是Google提出的一种基于UDP改进的通信协议</p>
+<p>物联网通信协议Thread，就是基于UDP协议的</p>
+<h3><a class="header" href="#tcp协议" id="tcp协议">tcp协议</a></h3>
+<p>顺序问题，丢包问题，连接维护，流量控制(对另一端)，拥塞控制(针对网络)</p>
+<h4><a class="header" href="#基本特点" id="基本特点">基本特点</a></h4>
+<p>https://hit-alibaba.github.io/interview/basic/network/TCP.html</p>
+<ul>
+<li>
+<p>面向连接, 可以维护通信双方的状态</p>
+</li>
+<li>
+<p>发送字节流传输数据, 发送的时候发的是一个流，没头没尾</p>
+</li>
+<li>
+<p>有拥塞控制 (意识到包丢弃了或者网络的环境不好了，就会根据情况调整自己的行为)</p>
+</li>
+<li>
+<p>有确认机制, 每次发送一个数据包, 都要收到确认才会认为发送成功(不成功就重发)</p>
+</li>
+</ul>
+<p>内嵌在ip数据包的 &quot;data部分&quot;</p>
+<p>没有长度限制, 但是为了性能, tcp 包长度不会超过ip数据包长度, 以确保单个tcp包不会被分割</p>
+<ul>
+<li>必须先建立连接， 可靠（数据不丢失，不重复，有序到达）</li>
+<li>只能一对一通信</li>
+<li>面向字节流（“面向字节流”的含义是：虽然应用程序和 TCP 的交互是一次一个数据块（大小不等），但 TCP 把应用程序传下来的数据仅仅看成是一连串的无结构的字节流。）</li>
+</ul>
+<h4><a class="header" href="#三次握手" id="三次握手">三次握手</a></h4>
+<p>建立 tcp 连接需要 &quot;三次握手&quot;</p>
+<p>图示: <a href="https://www.draw.io/?lightbox=1&amp;highlight=0000ff&amp;edit=_blank&amp;layers=1&amp;nav=1&amp;title=Untitled%20Diagram.xml#R7VhNc9MwEP01OXbGX%2Fk6NimFQ5lhKANHRrY3tqhsGVluEn49K1uyrcgwOaRQWnyJ9LRayfverhTPwm1xeCtIlb%2FnKbBZ4KWHWXgzCwI%2FChb4o5Bjh6x8rwMyQVNtNAD39Ado0Jg1NIXaMpScM0krG0x4WUIiLYwIwfe22Y4ze9WKZOAA9wlhLvqFpjLXqO95w8A7oFmul17N9UBMkodM8KbU682CcNc%2B3XBBjC9tX%2Bck5fsRFL6ZhVvBuexaxWELTMXWhK2bd%2FuL0X7fAkp5zoRlTGLiJ1GcBMtdFHtXQefhkbBGx6IG8QhCb1ceTYhw55VqNgW7oztgtMTepgJBC5BoH94wDX8YsM0%2BpxLuK5KoqXsUD2K5LBj2fGwin5LgFNH3GSNVTeN2VQ8RAUkjavoIH6HuZKNQ3ki10raXQ2uqaIBUu%2Boj7bV%2BC5roNiMxsE3P25YzrpYveftCtRT8AQyIdHrt048YeagldpSxkeVt%2Bygc3%2BqWFJSpbPgMIiUl0bCWvh%2Fo%2FtRChNGsRCxBTtsgZoKkFAZjvVWXey0HpE%2FCYQRpLbwFjryII5ro0eVS69Lkre7uR0lgciAf6X9uDIlOvKx3PYgPG1p%2FZ2px5WgxYeq9%2F2vx%2BWhRv3jkXUaAuNTfE6Bb%2B2bBgkkdDktyi%2B8NNwNXXQyu0cCPqsMwiK1M%2FdbH8mtMZctMsFV%2B4Dt2DsY77qtboDN35D2Ix7Ml%2Bg2kPGraSCO5Up%2BQOc94Sdgd51Uv3U5ijva6pSB1TsMTCl2%2BBDAiUfr20TsRfD31A6dtCDXPoWfz7K9P%2BKt5IxLQs8YH2Imj5dp2FEQnjiQRGUjHUauF%2Fn3OkkfkyIPRWkLp8IValzZRQhUIMlSOSm2n3eB8M5vfqMRC%2BnQu%2BaM8Y7BTrlQCUbyeXGtYKmo3NdYuWmafWp6vop5PJ93OYrTPwLXNTLR2UjCayMDgAgk4fxURXoVLO8KLPxfhhXu9my5OR1OcYmHqEh5LtqUCyqboStnGd2f8wUpWY57La3X1V6cTI3VNk085Lc3QLWVmLShTY6gPVkT0%2BLMqipF3qaJ4ejperii6d7TfyOTYyeT1HW%2FRae6ezeTKdjQ%2FlcTlmFxPloZ66r79T5ffwA%2Bnk2NUfhdPVH7N941RkAHLU%2FzCIhzYEZ77boTnTxVh%2FzVEeBUFdoTX7hXiySI88YkICwX%2BGQYsmOkLC%2FTCrr%2FhcukEen2ZQGN3%2BO7X1e%2Fh42r45ic%3D">online</a></p>
+<p><img src="Snipaste_2018-11-25_14-06-03.png" alt="alt" /></p>
+<ul>
+<li>
+<p>第一次握手(SYN=1, seq=x):</p>
+<p>客户端发送一个 TCP数据包, 包的 <code>SYN标志位</code> 为1, 指明客户端打算连接的服务器的端口，以及<code>初始序号</code> X,保存在包头的序列号(Sequence Number)字段里。</p>
+<p>发送完毕后，客户端进入 SYN_SEND 状态。</p>
+</li>
+<li>
+<p>第二次握手(SYN=1, ACK=1, seq=y, ACKnum=x+1):</p>
+<p>服务器发回确认包, 包含两部分, 一部分是确认client端的连接请求(ACK=1, ACKnum=x+1), 告诉client, server是运行着的, server 确实接受到了 client 的消息; 另一部分是 server 测试能否链接 client (SYN=1, seq=y), 需要等待 client 的响应来确认。即<code> SYN 标志位</code>和 <code>ACK 标志位</code>均为1。服务器端选择自己 ISN 序列号，放到 Seq 域里，同时将确认序号(Acknowledgement Number)设置为客户的 ISN 加1，即X+1。 </p>
+<p>发送完毕后，服务器端进入 SYN_RCVD 状态。</p>
+</li>
+<li>
+<p>第三次握手(ACK=1，ACKnum=y+1)</p>
+<p>客户端再次发送确认包(ACK)，SYN 标志位为0 (即不发送)，ACK 标志位为1，并且把确认序号设置位服务器发来 ACK 的序号字段+1，</p>
+<p>发送完毕后，客户端进入 ESTABLISHED 状态，当服务器端接收到这个包时，也进入 ESTABLISHED 状态，TCP 握手结束。</p>
+</li>
+</ul>
+<p>总结: 一开始，客户端和服务端都处于CLOSED状态。先是服务端主动监听某个端口，处于LISTEN状态。然后客户端主动发起连接SYN，之后处于SYN-SENT状态。服务端收到发起的连接，返回SYN，并且ACK客户端的SYN，之后处于SYN-RCVD状态。客户端收到服务端发送的SYN和ACK之后，发送ACK的ACK，之后处于ESTABLISHED状态，因为它一发一收成功了。服务端收到ACK的ACK之后，处于ESTABLISHED状态，因为它也一发一收了。</p>
+<p>为什么两次握手不行?</p>
+<p>如果只有两次握手, 可能出现这种错误: 超时的连接请求报文突然成功到达服务端, 服务端成功进入链接建立状态, 而此时客户端已经使用完关闭了, 那么服务端会永远无法关闭.</p>
+<p>为什么四次握手不行?</p>
+<p>是可以的, 但是耗费资源. 第三次握手后, 客户端会继续发送数据, server 端收到, 这完全可以代替第四次握手.</p>
+<h4><a class="header" href="#四次挥手" id="四次挥手">四次挥手</a></h4>
+<p>断开 tcp 连接需要 &quot;四次挥手&quot;</p>
+<p>图示: <a href="https://www.draw.io/?lightbox=1&amp;highlight=0000ff&amp;edit=_blank&amp;layers=1&amp;nav=1&amp;title=Untitled%20Diagram.xml#R7Vrfl6I2FP5rfJxzIIDAozrjdk5n2z3V032cEyFiupGwIY7av74JJECI0zpW7XYcXoSbmxu433d%2FEBx4k%2FXuE4PF6jNNERkAJ90NvPsBAK4PhuJHSva1JHKdWpAxnCqlVjDDfyIl1GobnKLSUOSUEo4LU5jQPEcJN2SQMbo11ZaUmKsWMEOWYJZAYku%2F4pSvlNR1nHbgJ4SzlVo6CtTAAibfMkY3uVpvALxlddTDa6htKf1yBVO67Yi8h4E3YZTy%2Bmy9myAifavdVs%2BbvjLa3DdDOT9mQriAC%2Bgm%2FiIB4dJfOHegtvACyUb5okTsBTF1u3yvXSTuvJCnmzV5wktEcC6uxgVieI240PfuiRJ%2FaWXj7QpzNCtgIqduBXmEbMXXRFy54lTgyaGYwpprQmBR4kW1qiMkDCUbVuIX9Bsqa9pIKd1wudKkoUOlKmFAqTLVeNqp7K5xos4JXCAybnCbUELl8jmtHqjkjH5DWijgdKqjGdH0kEssMSEdzWl1SLl4qilcYyKj4XfEUphDJVbUd4G6PrQQJDjLhSwRmFZOzBhMMWqV1a3a2Cs6CPg42nVEigufEBW4sL1QUaNhENZTVNx6Q8XTbScKdBCsOgEgQiNS4adCL2uMt%2FQTJ4qBR7IxstiYEPnkH2z8cdioHtx3zkNBoFPpf0NBO%2F8NwJBw5RCDdMPvG6oH7movjISC6xe7dlCcZfK33OfPC8wrbMBE2kHfxcVOWxf3VS9Qq1sEb%2BnjmCT9A3G%2BV8DBDaeSf4yvaEZzSJ4oLRry1iSz2FcvhVKrIvZAtBFjiEAuyG%2BW3wPOV1O%2FUFy5UCHtOWay8UPHNFHSDUuQmtUtYj1DYWwaCkDPEIcsQ9wyVHGheZ6j6OFb9CC45Ci38BJs5yZQTKYI2OaOQt5OdYPBeBDcy9AS8KlocjuRRtBSmpIhhEWLMlJiLqEdlyJ74TybVzjf%2BQ2eVsAdhaiOQX9oIgNiKwb9AyHY9%2FspARjchIcj3zc97F%2FPw0O7xTucnPY6OS2YzkuiMJmaUpBv1nUqG7v2jCtmslLEOR%2FJ9l%2FWJwLLEifzFc710BQTvRbKU62oSquQqPEfKikOo3MlxeHFkqLdpf0NTfY1TW6vvIXOqUhGPUN9SpwPyfhgaigPddz%2F6%2FTb5NF%2BcHTS7%2FBC6VfvcXScjER6WrwzD3umh8PY9nBwKQ%2B7t%2BDhCJgtRORd0cMHtolEohCvw0gkzPS9ORqYJVlvknQcHV%2FK0XaztsSvvUneQk01s0oUBKfWVNNQ7PUMna%2BmuqEF4T930R89879gheucvpPQo0VwsVbLtbtm%2FfKU4pf27akWicSWa9n08Zfnr6PH%2BbPb2TzqKnTEhqn3lJT7HVx84AU6ulRSttvkI6GbPP06e6jAu2Ho%2BnsfrgPszuVSBRXY3fcrBXV%2FCwU1jM2dvvYT51tTp%2Bf2LIG%2BpfPlTmA3%2BG%2FNneCGA7B5BW1A18XoCslTN9N2O3T3sVfUBk%2Ff1aduFrneBcPQOzUMn0az%2BfNo8vMNB2Hke70gjK8YhPZ3rCORmz9%2BvvkGpt97uiAG14PO%2FkD2lubz%2FoZxizxzI8f1fBu3S237Hvjs9oHbsZ%2Bjox5usXsp3MRl%2B%2B%2B7uia2f3H0Hv4C">online</a></p>
+<p><img src="Snipaste_2018-11-25_14-43-20.png" alt="alt" /></p>
+<ul>
+<li>
+<p>第一次挥手(FIN=1，seq=x)</p>
+<p>假设客户端想要关闭连接，客户端发送一个 FIN 标志位为1的包，表示自己已经没有数据可以发送了，但是仍然可以接受数据。</p>
+<p>发送完毕后，客户端进入 FIN_WAIT_1 状态。</p>
+</li>
+<li>
+<p>第二次挥手(ACK=1，ACKnum=x+1)</p>
+<p>服务器端确认客户端的 FIN 包，发送一个确认包，表明自己接受到了客户端关闭连接的请求，但还没有准备好关闭连接。</p>
+<p>发送完毕后，服务器端进入 CLOSE_WAIT 状态，客户端接收到这个确认包之后，进入 FIN_WAIT_2 状态，等待服务器端关闭连接。</p>
+</li>
+<li>
+<p>第三次挥手(FIN=1，seq=y)</p>
+<p>服务器端准备好关闭连接时，向客户端发送结束连接请求，FIN 置为1。</p>
+<p>发送完毕后，服务器端进入 LAST_ACK 状态，等待来自客户端的最后一个ACK。</p>
+</li>
+<li>
+<p>第四次挥手(ACK=1，ACKnum=y+1)</p>
+<p>客户端接收到来自服务器端的关闭请求，发送一个确认包，并进入 TIME_WAIT 状态，等待可能出现的要求重传的 ACK 包。</p>
+<p>服务器端接收到这个确认包之后，关闭连接，进入 CLOSED 状态。</p>
+<p>客户端等待了某个固定时间（两个最大段生命周期，2MSL，2 Maximum Segment Lifetime）之后，没有收到服务器端的 ACK ，认为服务器端已经正常关闭连接，于是自己也关闭连接，进入 CLOSED 状态。</p>
+</li>
+</ul>
+<p>为什么需要四次挥手?</p>
+<p>TCP连接是双向的，因此在四次挥手中，前两次挥手用于断开一个方向的连接，后两次挥手用于断开另一方向的连接</p>
+<h4><a class="header" href="#tcp包的序号问题" id="tcp包的序号问题">TCP包的序号问题</a></h4>
+<p>A要告诉B，我这面发起的包的序号起始是从哪个号开始的，B同样也要告诉A，B发起的包的序号起始是从哪个号开始的。</p>
+<blockquote>
+<p>为什么序号不能都从1开始呢？
+因为这样往往会出现冲突。例如，A连上B之后，发送了1、2、3三个包，但是发送3的时候，中间丢了，或者绕路了，于是重新发送，后来A掉线了，重新连上B后，序号又从1开始，然后发送2，但是压根没想发送3，但是上次绕路的那个3又回来了，发给了B，B自然认为，这就是下一个包，于是发生了错误。
+因而，每个连接都要有不同的序号。这个序号的起始序号是随着时间变化的，可以看成一个32位的计数器，每4ms加一，如果计算一下，如果到重复，需要4个多小时，那个绕路的包早就死翘翘了</p>
+</blockquote>
+<h3><a class="header" href="#tcp如何保证可靠传输" id="tcp如何保证可靠传输">tcp如何保证可靠传输</a></h3>
+<ul>
+<li>数据被分割成合适的数据块</li>
+<li>tcp会给每个数据报编号， 接收方接收到后排序；</li>
+<li>校验和 - tcp将维护首部和数据的校验和，目的是检测数据在传输过程中的任何变化。如果收到段的检验和有差错，TCP 将丢弃这个报文段</li>
+<li>TCP 的接收端会丢弃重复的数据。</li>
+<li>拥塞控制： 当网络拥塞时，减少数据的发送。</li>
+<li>停止等待协议 也是为了实现可靠传输的，它的基本原理就是每发完一个分组就停止发送，等待对方确认。在收到确认后再发下一个分组</li>
+<li>超时重传： 当 TCP 发出一个段后，它启动一个定时器，等待目的端确认收到这个报文段。如果不能及时收到一个确认，将重发这个报文段。</li>
+</ul>
+<p>TCP协议为了保证顺序性，每一个包都有一个ID。在建立连接的时候，会商定起始的ID是什么，然后按照ID一个个发送, 对于发送的包都要进行应答, 这个应答也不是一个一个来的, 而是会应答某个之前的ID，表示都收到了，这种模式称为累计确认或者累计应答（cumulative acknowledgment）。</p>
+<p>这就需要发接双方都要维护数据包的缓存, 发送端的缓存里是按照包的ID一个个排列，根据处理的情况分成四个部分:</p>
+<ol>
+<li>发送了并且已经确认的</li>
+<li>发送了并且尚未确认的</li>
+<li>没有发送，但是已经等待发送的</li>
+<li>没有发送，并且暂时还不会发送的</li>
+</ol>
+<p>这里面为什么要区分第三部分和第四部分呢？为了流量控制, 防止拥堵</p>
+<p>接收端会给发送端报一个窗口的大小，叫Advertised window。这个窗口的大小应该等于上面的第二部分加上第三部分，就是已经交代了没做完的加上马上要交代的。超过这个窗口的，接收端做不过来，就不能发送了</p>
+<p>涉及到三个值:</p>
+<ul>
+<li>
+<p>LastByteAcked：第一部分和第二部分的分界线</p>
+</li>
+<li>
+<p>LastByteSent：第二部分和第三部分的分界线</p>
+</li>
+<li>
+<p>LastByteAcked + len(AdvertisedWindow)：第三部分和第四部分的分界线</p>
+</li>
+</ul>
+<p>对于接收端来讲，它的缓存里记录的内容:</p>
+<ol>
+<li>接受并且确认过的</li>
+<li>还没接收，但是马上就能接收的 (能够接受的最大工作量)</li>
+<li>还没接收，也没法接收的</li>
+</ol>
+<p>涉及到三个值:</p>
+<ul>
+<li>
+<p>MaxRcvBuffer：最大缓存的量；</p>
+</li>
+<li>
+<p>LastByteRead之后是已经接收了，但是还没被应用层读取的；</p>
+</li>
+<li>
+<p>NextByteExpected是第一部分和第二部分的分界线</p>
+</li>
+</ul>
+<p>TODO</p>
+<h2><a class="header" href="#网络层network-layer-或者-ip-层" id="网络层network-layer-或者-ip-层">网络层(network-layer 或者 ip 层)</a></h2>
+<p>ICMP, ip, ospf, bgp, IPSec, GRE</p>
+<p>定义主机到主机的通信规范， 例如 ip协议， 将运输层产生的报文段or用户数据报封装成ip数据报</p>
+<p>引入新的地址: 网址（ip地址） ------------ 确定机器所在的子网 (mac地址确定这个子网中的具体哪一台机器)</p>
+<h3><a class="header" href="#ip-地址" id="ip-地址">ip 地址</a></h3>
+<ul>
+<li>
+<p>4 * 8 bit ; 习惯用 4段 十进制数字表示</p>
+</li>
+<li>
+<p>分为 &quot;网络段&quot; + &quot;主机段&quot;, 子网掩码来决定怎么分段, 同一子网的主机 网络段相同;</p>
+<ul>
+<li>
+<p>无类型域间选路（CIDR）: 表示法, 10.100.122.2/24，这个IP地址中有一个斜杠，斜杠后面有个数字24。这种地址表示形式，就是CIDR。后面24的意思是，32位中，前24位是网络号，后8位是主机号</p>
+</li>
+<li>
+<p>广播地址: 10.100.122.255。如果发送这个地址，所有10.100.122网络里面的机器都可以收到</p>
+</li>
+<li>
+<p>子网掩码: 写法类似ip地址, 32bit, 网络段&quot;全部是1&quot;, 主机段&quot;全部是0&quot;, 例如 255.255.255.0; 判断两个ip地址是否处于同一个子网 - 将2个ip分别和各自的子网掩码做&quot;and&quot;运算, 然后看看是否相等</p>
+</li>
+</ul>
+</li>
+<li>
+<p>ip地址分类: 分成了5类。C类太少，B类太多。C类254个，网络都不够；D类6万多，给企业都太多;</p>
+<p>如何弥补IP设计者犯的错误: CIDR 10.100.122.2/24</p>
+<p>D 类是组播地址。使用这一类地址，属于某个组的机器都能收到</p>
+</li>
+<li>
+<p>公有 ip, 私有 ip: A类、B类或者C类 ip 地址中, 都有私有 ip 地址段, 供局域网内部使用, 如 192.168.0.x, 家庭网设备不会超过256个，所以/24基本就够了</p>
+<p>而整个网络里面的第一个地址192.168.0.1，往往就是你这个私有网络的出口地址; Wi-Fi路由器的地址就是192.168.0.1，而192.168.0.255就是广播地址</p>
+</li>
+<li>
+<p>ipv6: 32位地址不够用。于是有了现在IPv6（128位）</p>
+</li>
+<li>
+<p>根据ip协议发送的数据 叫做 ip数据包 ------ 存储在 以太网数据包(frame)中的 &quot;data(数据)&quot; 部分; 最大容量 65535 byte</p>
+<ul>
+<li>
+<p>head - 版本号, 长度, ip地址; 20 ~ 60 byte</p>
+</li>
+<li>
+<p>data - ip数据包的具体内容; 最大容量: 65535-20 = 65515byte</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#查询-ip地址" id="查询-ip地址">查询 IP地址</a></h4>
+<p>ifconfig, ipconfig, ip addr</p>
+<ul>
+<li>
+<p>scope: 在IP地址的后面有个scope，对于eth0这张网卡来讲，是global，说明这张网卡是可以对外的，可以接收来自各个地方的包。对于lo来讲，lo全称是loopback，又称环回接口，往往会被分配到127.0.0.1这个地址。这个地址用于本机通信，经过内核处理后直接返回，不会在任何网络中出现</p>
+</li>
+<li>
+<p>网络设备的状态标识: <code>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;</code>; </p>
+<p>UP表示网卡处于启动的状态；</p>
+<p>BROADCAST表示这个网卡有广播地址，可以发送广播包；</p>
+<p>MULTICAST表示网卡可以发送多播包；</p>
+<p>LOWER_UP表示L1是启动的，也即网线插着呢, </p>
+<p>MTU1500 最大传输单元MTU为1500，这是以太网的默认值, MTU是二层MAC层的概念, 以太网规定连MAC头带正文合起来，不允许超过1500个字节。正文里面有IP的头、TCP的头、HTTP的头。如果放不下，就需要分片来传输; MTU 大小是不包含二层头部和尾部的，MTU 1500表示二层MAC帧大小不超过1518. MAC 头14 字节，尾4字节</p>
+</li>
+<li>
+<p>qdisc pfifo_fast : 排队规则。规定数据包如何进出的。有pfifo, pfifo_fast</p>
+</li>
+</ul>
+<blockquote>
+<p>ifconfig 属于 net-tools, ip addr 属于iproute2
+net-tools起源于BSD，自2001年起，Linux社区已经对其停止维护，而iproute2旨在取代net-tools，并提供了一些新功能。一些Linux发行版已经停止支持net-tools，只支持iproute2。
+net-tools通过procfs(/proc)和ioctl系统调用去访问和改变内核网络配置，而iproute2则通过netlink套接字接口与内核通讯。
+net-tools中工具的名字比较杂乱，而iproute2则相对整齐和直观，基本是ip命令加后面的子命令。
+虽然取代意图很明显，但是这么多年过去了，net-tool依然还在被广泛使用</p>
+</blockquote>
+<h4><a class="header" href="#手动配置-ip-地址" id="手动配置-ip-地址">手动配置 ip 地址</a></h4>
+<p>配置 ip 地址: <code>sudo ifconfig eth1 10.0.0.1/24 &amp;&amp; sudo ifconfig eth1 up</code> or <code>sudo ip addr add 10.0.0.1/24 dev eth1 &amp;&amp; sudo ip link set up eth1</code></p>
+<blockquote>
+<p>真正配置的时候，一定不是直接用命令配置的，而是放在一个配置文件里面。不同系统的配置文件格式不同，但是无非就是CIDR、子网掩码、广播地址和网关地址</p>
+</blockquote>
+<p>ip 地址不能随便配置, 否则包无法发送出去, 比如 随便配置为 16.158.23.6, 局域网另外机器为 192.168.1.6, 本机 <code>ping192.168.1.6</code>, 不通; 这是发生了什么?</p>
+<p>此时数据包 源IP地址16.158.23.6，也有目标IP地址192.168.1.6，但是包发不出去，这是因为MAC层还没填. 源 mac 地址自己知道, 目标 mac 地址却不是192.168.1.6这台机器的MAC地址, 是什么呢 -----Linux首先会判断，要去的这个地址和我是一个网段的吗, 只有是一个网段的，它才会发送ARP请求，获取目标MAC地址, 若不在同个子网, Linux 会通过 ARP 获取网关 mac, 将包发送给网关(若配置了网关), 再通过网关发给另外子网的网关</p>
+<blockquote>
+<p>如果将网关配置为192.168.1.6呢？不可能，Linux不会让你配置成功的，因为网关要和当前的网络至少一个网卡是同一个网段的，怎么可能16.158.23.6的网关是192.168.1.6呢</p>
+</blockquote>
+<h4><a class="header" href="#动态分配地址-dhcp" id="动态分配地址-dhcp">动态分配地址 DHCP</a></h4>
+<p>动态主机配置协议（Dynamic Host Configuration Protocol），简称DHCP。</p>
+<p>只需要配置一段共享的IP地址。每一台新接入的机器都通过DHCP协议，来这个共享的IP地址里申请，然后自动配置好就可以了。等人走了，或者用完了，还回去，这样其他的机器也能用</p>
+<p>工作过程: </p>
+<ol>
+<li>DHCP Discover: 新来的机器使用IP地址0.0.0.0发送了一个广播包，目的IP地址为255.255.255.255 (广播包封装了UDP，UDP封装了BOOTP协议)数据包结构:</li>
+</ol>
+<ul>
+<li>
+<p>mac header: 新人 mac (xxx), 广播 mac(ff:ff:ff:ff:ff:ff)</p>
+</li>
+<li>
+<p>ip header: 新人 ip (未知 0.0.0.0), 广播 ip(255.255.255.255)</p>
+</li>
+<li>
+<p>udp header: 源端口(68), 目标端口(67)</p>
+</li>
+<li>
+<p>bootP header: boot request</p>
+</li>
+<li>
+<p>实际数据:  我的 mac 是 xxx, 还没有 IP地址</p>
+</li>
+</ul>
+<ol>
+<li>DHCP Offer: 如果一个网络中配置了DHCP Server  , 这个 server 挑选一个闲置 ip, 也发送广播包: (如果有多个DHCP Server，这台新机器会收到多个IP地址)</li>
+</ol>
+<ul>
+<li>
+<p>mac header: DHCP server mac (xxx), 广播 mac(ff:ff:ff:ff:ff:ff)</p>
+</li>
+<li>
+<p>ip header: DHCP server ip (192.168.1.2), 广播 ip(255.255.255.255)</p>
+</li>
+<li>
+<p>udp header: 源端口(67), 目标端口(68)</p>
+</li>
+<li>
+<p>bootP header: boot reply</p>
+</li>
+<li>
+<p>实际数据: 我知道了你的 mac, 分配给你的 ip 是 xxx, 请答复</p>
+</li>
+</ul>
+<ol>
+<li>DHCP request: 新机器发送广播包答复准备使用哪个 ip</li>
+</ol>
+<ul>
+<li>
+<p>mac header: 新人 mac (xxx), 广播 mac(ff:ff:ff:ff:ff:ff)</p>
+</li>
+<li>
+<p>ip header: 新人 ip (未知 0.0.0.0), 广播 ip(255.255.255.255)</p>
+</li>
+<li>
+<p>udp header: 源端口(68), 目标端口(67)</p>
+</li>
+<li>
+<p>bootP header: boot request</p>
+</li>
+<li>
+<p>实际数据:  我的 mac 是 xxx, 我准备租用这个 server 给的 ip 了, ip 是 xxx, 其他 ip 都不要了</p>
+</li>
+</ul>
+<ol>
+<li>DHCP ACK: server 广播确认消息</li>
+</ol>
+<ul>
+<li>
+<p>mac header: DHCP server mac (xxx), 广播 mac(ff:ff:ff:ff:ff:ff)</p>
+</li>
+<li>
+<p>ip header: DHCP server ip (192.168.1.2), 广播 ip(255.255.255.255)</p>
+</li>
+<li>
+<p>udp header: 源端口(67), 目标端口(68)</p>
+</li>
+<li>
+<p>bootP header: boot reply</p>
+</li>
+<li>
+<p>实际数据: 这个新人的 ip 是我租给他的, 租约如下</p>
+</li>
+</ul>
+<p>ip 地址回收和续租: 客户机会在租期过去50%的时候，直接向为其提供IP地址的DHCP Server发送DHCP request消息包。客户机接收到该服务器回应的DHCP ACK消息包，会根据包中所提供的新的租期以及其他已经更新的TCP/IP参数，更新自己的配置</p>
+<p>预启动执行环境（PXE）:管理多个主机, 安装操作系统 (DHCP协议能给客户推荐“装修队”PXE，能够安装操作系统，这个在云计算领域大有用处)</p>
+<h3><a class="header" href="#ping-原理-icmp协议" id="ping-原理-icmp协议">ping 原理 ICMP协议</a></h3>
+<p>ping是基于ICMP协议工作的。ICMP全称Internet Control Message Protocol，就是互联网控制报文协议</p>
+<p>ICMP报文是封装在IP包里面的。因为传输指令的时候，肯定需要源地址和目标地址.</p>
+<p>分类如下:</p>
+<ul>
+<li>
+<p>查询报文: 主动发起的查询, 例如，常用的ping就是查询报文，是一种主动请求，并且获得主动应答的ICMP协议</p>
+</li>
+<li>
+<p>差错报文: 异常情况发起的，来报告发生了不好的事情, 如 Traceroute 就是使用的差错报文</p>
+</li>
+</ul>
+<p>数据结构是这样的:</p>
+<ul>
+<li>ICMP 报文内容 (如 类型, 序号)</li>
+<li>source ip, target ip</li>
+<li>source mac, target mac</li>
+</ul>
+<h3><a class="header" href="#路由器作为网关" id="路由器作为网关">路由器作为网关</a></h3>
+<p>路由器工作在这层, 所以是三层设备;</p>
+<p>网关往往是一个路由器，是一个三层转发的设备, 就是把MAC头和IP头都取下来，然后根据里面的内容，看看接下来把包往哪里转发的设备</p>
+<p>两台机器互联:</p>
+<ul>
+<li>
+<p>如果是同一个网段，例如，你访问你旁边的兄弟的电脑，那就没网关什么事情，直接将源地址和目标地址放入IP头中，然后通过ARP获得MAC地址，将源MAC和目的MAC放入MAC头中，发出去就可以了</p>
+</li>
+<li>
+<p>如果不是同一网段，分两种网关:</p>
+<ul>
+<li>
+<p>转发网关, 不改变数据包IP地址. 例如，你要访问你们校园网里面的BBS(192.168.4.0/24), 假设经历了路由器 A, B, 首先需要发往默认网关 A, 将源地址和目标IP地址放入IP头中，通过ARP获得网关的MAC地址，将源MAC和网关的MAC放入MAC头中，发送出去。网关A所在的端口，例如192.168.1.1/24 发现 mac 地址符合, 将网络包收进来，查看A配置的静态路由, 要想访问192.168.4.0/24，要从192.168.56.1这个口出去，下一跳为192.168.56.2(即 B 的入口), 路由器A发送ARP获取B 的MAC地址，然后发送包, 包到达B 的192.168.56.2这个网口，发现MAC一致，将包收进来</p>
+</li>
+<li>
+<p>NAT 网关 (Network Address Translation, 常见), 改变IP地址. 如 机器 x, y 都有局域网 ip 192.168.0.101/24, 两者通信, 需要网关在发出接受数据包时, 转换 ip 地址为公网 ip 地址. 否则就冲突了</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>人们把网关就叫作路由器。其实不完全准确，而另一种比喻更加恰当：路由器是一台设备，它有五个网口或者网卡，相当于有五只手，分别连着五个局域网。每只手的IP地址都和对应局域网的IP地址处在相同的网段，每只手都是它握住的那个局域网的网关; 
+想发往其他局域网的包，都会到达其中一只手，被拿进来，拿下MAC头和IP头，看看，根据自己的路由算法，选择另一只手，加上IP头和MAC头，然后扔出去。</p>
+</blockquote>
+<p>数据包跨过网关, mac 都会变, ip 地址则不一定变</p>
+<p>静态路由: 其实就是在路由器上，配置一条一条规则, 每一条规则至少包含这三项信息:</p>
+<ul>
+<li>
+<p>目的网络：这个包想去哪儿？</p>
+</li>
+<li>
+<p>出口设备：将包从哪个口扔出去？</p>
+</li>
+<li>
+<p>下一跳网关：下一个路由器的地址</p>
+</li>
+</ul>
+<p>通过route命令和ip route命令配置, 例如，我们设置ip route add 10.176.48.0/20 via 10.173.32.1 dev eth0，就说明要去10.176.48.0/20这个目标网络，要从eth0端口出去，经过10.173.32.1。还能配置复杂的策略路由, 实现控制转发策略.</p>
+<p>动态路由: 根据路由协议算法生成动态路由表. 动态路由主流算法有两种，距离矢量算法和链路状态算法。基于两种算法产生两种协议，BGP协议和OSPF协议</p>
+<h2><a class="header" href="#数据链路层data-link-layer-或者-mac-layer" id="数据链路层data-link-layer-或者-mac-layer">数据链路层(data-link-layer 或者 mac layer)</a></h2>
+<p>ARP, VLAN, STP 协议</p>
+<p>数据包的定义, 网卡mac地址, broadcasting ------- 现在可以在数据链路层输出数据了</p>
+<p>考虑三个问题:</p>
+<ul>
+<li>数据包的发送方, 接收方如何确定 --- mac地址</li>
+<li>包发送先后顺序, 如何防止堵车混乱 --- 信道划分协议, 轮流协议, 随机接入协议</li>
+<li>如何处理发送中的错误 - CRC 循环冗余检测</li>
+</ul>
+<h3><a class="header" href="#mac-和-mac地址" id="mac-和-mac地址">mac 和 mac地址</a></h3>
+<p>Medium Access Control，即媒体访问控制, 其实就是控制在往媒体上发数据的时候，谁先发、谁后发的问题。防止发生混乱, 这个规则叫做 <code>多路访问</code></p>
+<p>三种方式解决混乱问题:</p>
+<ul>
+<li>
+<p>方式一：分多个车道。每个车一个车道，你走你的，我走我的。这在计算机网络里叫作信道划分；</p>
+</li>
+<li>
+<p>方式二：今天单号出行，明天双号出行，轮着来。这在计算机网络里叫作轮流协议；</p>
+</li>
+<li>
+<p>方式三：不管三七二十一，有事儿先出门，发现特堵，就回去。错过高峰再出。我们叫作随机接入协议。著名的以太网，用的就是这个方式。</p>
+</li>
+</ul>
+<p>MAC地址: 每个物理设备(网卡)都有的唯一标识, 48二进制位, 通过12个十六进制数表示;只和厂商有关; 解决发给谁，谁接收的问题;</p>
+<p>MAC地址的通信范围比较小，局限在一个子网里面。例如，从192.168.0.2/24访问192.168.0.3/24是可以用MAC地址的。一旦跨子网，即从192.168.0.2/24到192.168.1.2/24，MAC地址就不行了，需要IP地址起作用了</p>
+<ul>
+<li>
+<p>为什么有了 mac 地址, 还会发明 ip 地址呢</p>
+<p>mac 地址本身无法在网络中定位: 因为MAC地址虽然唯一但是本身就是一串随机字符串, 不能表明用户在整个互联网中的位置，除非维护一个超级大MAC地址对应表，那寻址效率肯定爆炸; 而 IP地址是网络提供商给你的，所以你在哪个局域网整个网络都是知道的. </p>
+<p>mac 地址安全性问题: 获取MAC地址是通过ARP协议来完成的，如果只用MAC地址通信，那么广播风暴是个难题</p>
+</li>
+<li>
+<p>为什么有了 ip 地址还要 mac 地址?</p>
+<p>局域网中机器的 ip 都是变化的, 这时就需要mac地址来唯一对应一台机器</p>
+</li>
+</ul>
+<h3><a class="header" href="#mac-层数据包格式" id="mac-层数据包格式">mac 层数据包格式</a></h3>
+<p>对于以太网，第二层的最开始，就是目标的MAC地址和源的MAC地址: </p>
+<ol>
+<li>target mac address 6 byte</li>
+</ol>
+<p>有了这个目标MAC地址，数据包在链路上广播，MAC的网卡才能发现，这个包是给它的。MAC的网卡把包收进来，然后打开IP包，发现IP地址也是自己的，再打开TCP包，发现端口是自己，也就是80，而nginx就是监听80</p>
+<p>nginx返回一个网页。然后将网页需要发回请求的机器。然后层层封装，最后到MAC层。因为来的时候有源MAC地址，返回的时候，源MAC就变成了目标MAC，再返给请求的机器</p>
+<ol>
+<li>
+<p>source mac address 6byte</p>
+</li>
+<li>
+<p>类型 2byte </p>
+</li>
+</ol>
+<ul>
+<li>
+<p>类型 0800 : ip 数据报 (大部分的类型是IP数据包，然后IP里面包含TCP、UDP，以及HTTP等)</p>
+</li>
+<li>
+<p>类型 0806: ARP 请求, 应答</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>数据 46 ~ 1500 byte</p>
+</li>
+<li>
+<p>CRC 4 byte (循环冗余检测)</p>
+</li>
+</ol>
+<p>通过XOR异或的算法，来计算整个包是否在发送的过程中出现了错误，主要解决第三个问题。</p>
+<h3><a class="header" href="#arp-协议" id="arp-协议">ARP 协议</a></h3>
+<p>ARP协议，也就是已知IP地址，求MAC地址的协议, 通过广播的方式来寻找目标MAC地址，拿到后记住一段时间，这个叫作缓存；</p>
+<blockquote>
+<p>RARP协议，即已知MAC求IP的协议</p>
+</blockquote>
+<p>机器 a 访问机器 b 过程:</p>
+<ol>
+<li>
+<p>a 根据 b 的 ip 查看本地 ARP缓存表, 没找到 mac</p>
+</li>
+<li>
+<p>广播 ARP请求, &quot;谁是 192.168.0.2 ? 你的 mac 是多少&quot;</p>
+</li>
+<li>
+<p>b ARP 应答 &quot;我就是 192.168.0.2, 我的 mac 是 xxx&quot;</p>
+</li>
+<li>
+<p>a 缓存 ip-mac 映射表</p>
+</li>
+</ol>
+<p>两台机器互联可以使用 hub, 多台机器使用有学习功能的 switch</p>
+<h4><a class="header" href="#解决环路问题广播风暴-stp-协议" id="解决环路问题广播风暴-stp-协议">解决环路问题(广播风暴) stp 协议</a></h4>
+<p>随着网络中 switch 越来越多, 出现环路问题 and 广播风暴</p>
+<blockquote>
+<p>如果一个局域网里面有多个交换机, 或者 2 个局域网有多个 switch 连接，ARP广播的模式有广播风暴的问题
+比如数据包经过交换机A到达交换机B，交换机B又将包复制为多份广播出去, 如果整个局域网存在一个环路，使得数据包又重新回到了最开始的交换机A，这个包又会被A再次复制多份广播出去。如此循环，数据包会不停得转发，而且越来越多，最终占满带宽，或者使解析协议的硬件过载，形成广播风暴</p>
+</blockquote>
+<p>那么如何破除环路呢?  stp 协议: 数据结构中, 有环的我们常称为图。将图中的环破了，就生成了树。在计算机网络中，生成树的算法叫作STP，全称Spanning Tree Protocol。</p>
+<p>stp 缺点:</p>
+<ul>
+<li>STP 对于跨地域甚至跨国组织的网络支持，就很难做了，计算量摆着呢</li>
+<li>某个交换机状态发生变化的时候，整个树需要重新构建</li>
+<li>被破开的环的链路被浪费了</li>
+</ul>
+<p>所以现在很少用了</p>
+<h4><a class="header" href="#网络隔离" id="网络隔离">网络隔离</a></h4>
+<p>随着 switch 变多, 也需要进行网络隔离, 这是因为当一个局域网中有各种各样的数据包, 混合在一起, 无法保证安全性</p>
+<ul>
+<li>
+<p>物理隔离: 组件多个子网, 通过路由器连接</p>
+</li>
+<li>
+<p>虚拟隔离: VLAN，或者叫虚拟局域网</p>
+<p>一个交换机上会连属于多个虚拟局域网的机器</p>
+<p>那交换机怎么区分哪个机器属于哪个局域网呢？在原来的二层的头上加一个TAG，里面有一个VLAN ID，一共12位; 当这个交换机把二层的头取下来的时候，就能够识别这个VLAN ID。这样只有相同VLAN的包，才会互相转发，不同VLAN的包，是看不到的。这样广播问题和安全问题就都能够解决了</p>
+<p>交换机之间怎么连接呢？将两个交换机连接起来的口应该设置成什么VLAN呢？对于支持VLAN的交换机，有一种口叫作Trunk口。它可以转发属于任何VLAN的口。交换机之间可以通过这种口相互连接</p>
+</li>
+</ul>
+<h3><a class="header" href="#两台机器不通" id="两台机器不通">两台机器不通</a></h3>
+<p>ping + traceroute/wireshark</p>
+<h2><a class="header" href="#物理层physical-layer" id="物理层physical-layer">物理层(physical-layer)</a></h2>
+<p>网线, 电磁信号... 通过电信号传输 0 1</p>
+<p>早些年, 电脑连电脑啊，还是电脑连网口用的网线不同; </p>
+<blockquote>
+<p>电脑连电脑。这种方式就是一根网线，有两个头。一头插在一台电脑的网卡上，另一头插在另一台电脑的网卡上。但是在当时，普通的网线这样是通不了的，所以水晶头要做交叉线，用的就是所谓的1－3、2－6交叉接法: 水晶头的第1、2和第3、6脚，它们分别起着收、发信号的作用。将一端的1号和3号线、2号和6号线互换一下位置，就能够在物理层实现一端发送的信号，另一端能收到
+除了网线要交叉，还需要配置这两台电脑的IP地址、子网掩码和默认网关, 可以一个是192.168.0.1/24，另一个是192.168.0.2/24</p>
+</blockquote>
+<p>多台机器互联: </p>
+<ul>
+<li>
+<p>集线器(hub, 没有大脑，它完全在物理层工作。它会将自己收到的每一个字节，都复制到其他端口上去), </p>
+</li>
+<li>
+<p>交换机(Switch, 在 mac 层工作, 会记住每个口对应机器的 mac 地址, 转发包时, 能把MAC头拿下来，检查一下目标MAC地址, 如果目标MAC地址不是这台电脑的，这个口就不用转发了)</p>
+</li>
+</ul>
+<blockquote>
+<p>交换机怎么知道每个口的电脑的MAC地址呢？这需要交换机会学习
+一台MAC1电脑将一个包发送给另一台MAC2电脑，当这个包到达交换机的时候，一开始交换机也不知道MAC2的电脑在哪个口，所以没办法，它只能将包转发给除了来的那个口之外的其他所有的口。但是，这个时候，交换机会干一件非常聪明的事情，就是交换机会记住，MAC1是来自一个明确的口。以后有包的目的地址是MAC1的，直接发送到这个口就可以了
+过了一段时间之后，就有了整个网络的一个结构了，这个时候，基本上不用广播了，全部可以准确转发。当然，每个机器的IP地址会变，所在的口也会变，因而交换机上的学习的结果，我们称为转发表，是有一个过期时间的</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="task-schedule-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="tomcat-jetty-nginx.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="task-schedule-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="tomcat-jetty-nginx.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

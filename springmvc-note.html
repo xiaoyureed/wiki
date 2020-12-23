@@ -1,0 +1,1484 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>springmvc-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html" class="active"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Spring MVC
+tags:</p>
+<ul>
+<li>mvc
+date: 2014-01-16 17:42:41
+categories: java web</li>
+</ul>
+<hr />
+<div align="center">
+基于mvc模式的web框架, spring的一个模块，它与spring集成无需中间整合包。
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFmvc">什么是mvc</a></li>
+<li><a href="#springmvc%E5%92%8Cstruts2%E5%8C%BA%E5%88%AB">springmvc和struts2区别</a></li>
+<li><a href="#quickstart">quickstart</a></li>
+<li><a href="#springmvcxml%E9%85%8D%E7%BD%AE">springmvc.xml配置</a>
+<ul>
+<li><a href="#%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8">视图解析器</a></li>
+<li><a href="#%E6%98%A0%E5%B0%84%E5%99%A8-mapping">映射器 Mapping</a></li>
+<li><a href="#%E9%80%82%E9%85%8D%E5%99%A8-adapter">适配器 Adapter</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E5%99%A8-controller">控制器 Controller</a></li>
+<li><a href="#%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91">注解开发</a>
+<ul>
+<li><a href="#spring31%E5%89%8D%E5%90%8E%E5%8C%BA%E5%88%AB">Spring3.1前后区别</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#controller%E8%AF%A6%E8%A7%A3">Controller详解</a>
+<ul>
+<li><a href="#%E5%8D%95%E4%B8%AA-controller-%E4%B8%AD%E5%86%99%E5%A4%9A%E4%B8%AA%E4%B8%9A%E5%8A%A1%E6%96%B9%E6%B3%95">单个 controller 中写多个业务方法</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F">数据传递方式</a>
+<ul>
+<li><a href="#%E6%94%B6%E9%9B%86%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8F%82%E6%95%B0">收集页面的参数</a></li>
+<li><a href="#%E6%94%B6%E9%9B%86%E6%95%B0%E7%BB%84%E5%8F%82%E6%95%B0">收集数组参数</a></li>
+<li><a href="#%E6%89%8B%E6%9C%BAlist%E5%8F%82%E6%95%B0">手机List参数</a></li>
+<li><a href="#%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E7%BB%99%E9%A1%B5%E9%9D%A2">传递参数给页面</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%8B%A6%E6%88%AA%E5%99%A8interceptor">拦截器interceptor</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFinterceptor">什么是interceptor</a></li>
+<li><a href="#interceptor%E5%92%8Cfilter%E5%AF%B9%E6%AF%94">interceptor和filter对比</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8interceptor">怎么使用interceptor</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E8%87%AA%E5%AE%9A%E4%B9%89web%E9%85%8D%E7%BD%AE">通过自定义web配置</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E6%B3%A8%E8%A7%A3">通过注解</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E6%8B%A6%E6%88%AA%E5%99%A8">自定义注解拦截器</a></li>
+</ul>
+</li>
+<li><a href="#handlermethod%E5%92%8Cmethodhandle">HandlerMethod和MethodHandle</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87java%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E6%8B%A6%E6%88%AA%E5%99%A8%E5%8A%9F%E8%83%BD">通过Java动态代理实现拦截器功能</a></li>
+</ul>
+</li>
+<li><a href="#%E9%99%90%E5%AE%9A%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8Fgetpost">限定请求方式GET/POST</a></li>
+<li><a href="#%E6%97%A5%E6%9C%9F%E8%BD%AC%E6%8D%A2%E5%99%A8-%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2%E5%99%A8">日期转换器 编码转换器</a></li>
+<li><a href="#initbind%E8%A7%A3%E5%86%B3%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B">@InitBind解决字符串转日期类型</a></li>
+<li><a href="#%E7%BB%93%E6%9E%9C%E7%9A%84%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91">结果的转发和重定向</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9Ejson-responsebody">返回json, @ResponseBody</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%94%BE%E8%A1%8C">静态资源放行</a></li>
+<li><a href="#requestcontextholder%E8%8E%B7%E5%8F%96requestresponse">RequestContextHolder获取request,response</a></li>
+<li><a href="#%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7">统一异常捕获</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#什么是mvc" id="什么是mvc">什么是mvc</a></h1>
+<p><img src="1.png"><img src="3.png"><img src="2.png"></p>
+<h1><a class="header" href="#springmvc和struts2区别" id="springmvc和struts2区别">springmvc和struts2区别</a></h1>
+<ul>
+<li>
+<p>springmvc的入口是一个servlet，即前端控制器，例如：<em>.action; struts2入口是一个filter过虑器，即前端过滤器，例如：/</em></p>
+</li>
+<li>
+<p>springmvc是基于方法开发，传递参数是通过方法形参，可以设计为单例; struts2是基于类开发，传递参数是通过类的属性，只能设计为多例</p>
+</li>
+<li>
+<p>springmvc通过参数解析器是将request对象内容进行解析成方法形参，将响应数据和页面封装成ModelAndView对象，最后又将模型数据通过request对象传输到页面; struts采用值栈存储请求和响应的数据，通过OGNL存取数据</p>
+</li>
+</ul>
+<h1><a class="header" href="#quickstart" id="quickstart">quickstart</a></h1>
+<p>依赖: spring的基本jar外, 还需要spring-webmvc (<a href="https://stackoverflow.com/questions/13533700/maven-dependency-spring-web-vs-spring-webmvc">spring-web vs spring-webmvc</a>)</p>
+<p>配置前端控制器</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app &gt;
+  &lt;servlet&gt;
+  	&lt;servlet-name&gt;springmvc&lt;/servlet-name&gt;
+  	&lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+  	
+  	&lt;!-- 指定springmvc.xml配置文件的路径，若不指定，默认读取WEB-INF下的springmvc-servlet.xml;
+        这里文件名称的springmvc由&lt;servlet-name&gt;xxxxx&lt;/servlet-name&gt;指定 --&gt;
+  	&lt;init-param&gt;
+  		&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+  		&lt;param-value&gt;classpath:springmvc.xml&lt;/param-value&gt;
+  	&lt;/init-param&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+  	&lt;servlet-name&gt;springmvc&lt;/servlet-name&gt;
+  	&lt;url-pattern&gt;*.action&lt;/url-pattern&gt;
+    &lt;!-- 
+    url-patern配置:
+    第一种: *.action, 以[.action]结尾的访问由DispatcherServlet进行解析
+    第二种: /, 所有访问都通过DispatcherServlet解析, 对于静态资源需要配置不让DS解析, 使用这种配置可以实现RESTful风格的url
+    第三种: /*, 这样配置不对, 因为如果最终要转发到一个jsp, 仍然会由DS解析jsp地址, 不能根据jsp找到Handler, 会报错
+     --&gt;
+  &lt;/servlet-mapping&gt;
+ 
+&lt;/web-app&gt;
+
+</code></pre>
+<p>springmvc的配置文件</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+	xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+	xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+	xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+	xmlns:task=&quot;http://www.springframework.org/schema/task&quot;  
+	xsi:schemaLocation=&quot;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd&quot;&gt;
+
+&lt;!-- 第一个控制器；name值用于URL访问，URL：http://localhost:8080/项目名/queryItems1.do --&gt;
+	&lt;bean name=&quot;/queryItems1.do&quot; class=&quot;com.xy.controller.Controller1&quot;&gt;&lt;/bean&gt;
+		
+&lt;!-- 第二个控制器 --&gt;
+	&lt;bean name=&quot;/queryItems2.do&quot; class=&quot;com.xy.controller.Controller2&quot;&gt;&lt;/bean&gt;
+	
+&lt;!-- 第三个控制器，通过注解配置，这里使用组件扫描器加载控制器 --&gt;
+	&lt;context:component-scan base-package=&quot;com.xy.controller&quot;&gt;&lt;/context:component-scan&gt;
+	
+&lt;!-- 映射器(框架已经完成，没有特殊需求则可省略) --&gt;  
+&lt;bean class=&quot;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&quot;&gt;&lt;/bean&gt;  
+&lt;!-- 适配器(框架。。同上) --&gt;  
+&lt;bean class=&quot;org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter&quot;&gt;&lt;/bean&gt;  
+&lt;!-- 视图解析器(框架。。。同上) --&gt;  
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;&lt;/bean&gt;
+
+&lt;/beans&gt;
+
+</code></pre>
+<p>如果基于注解开发, 映射器, 适配器, 视图解析器可省略, 实际框架默认加上了:</p>
+<pre><code class="language-xml">&lt;!-- 基于注解的映射器(可选) --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping&quot;/&gt;
+
+&lt;!-- 基于注解的适配器(可选) --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;/&gt;
+
+&lt;!-- 视图解析器(可选) --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;/&gt;
+
+</code></pre>
+<p>开发处理器Controller</p>
+<pre><code class="language-java">/**
+Springmvc开发处理器方式有多种，主要三种：
+    实现HttpRequestHandler接口、
+    实现Controller接口、
+    使用注解开发
+
+*/
+//继承HttpRequestHandler
+public class Controller1 implements HttpRequestHandler {
+
+	@Override
+	public void handleRequest(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+
+		List&lt;Item&gt; itemList = new ArrayList&lt;Item&gt;();
+		
+		Item item1 = new Item();
+		Item item2 = new Item();
+		item1.setName(&quot;item1&quot;);
+		item1.setId(&quot;1&quot;);
+		item2.setName(&quot;item2&quot;);
+		item2.setId(&quot;2&quot;);
+		itemList.add(item2);
+		itemList.add(item1);
+		
+		request.setAttribute(&quot;items&quot;, itemList);
+		request.getRequestDispatcher(&quot;WEB-INF/jsp/test.jsp&quot;).forward(request, response);
+		
+	}
+
+}
+
+//继承Controller接口
+public class Controller2 implements Controller {
+
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+		
+		List&lt;Item&gt; itemList = new ArrayList&lt;Item&gt;();
+		
+		Item item1 = new Item();
+		Item item2 = new Item();
+		item1.setName(&quot;item1&quot;);
+		item1.setId(&quot;1&quot;);
+		item2.setName(&quot;item2&quot;);
+		item2.setId(&quot;2&quot;);
+		itemList.add(item2);
+		itemList.add(item1);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject(&quot;items&quot;, itemList); //相当于放入request域中
+		mv.setViewName(&quot;/WEB-INF/jsp/test2.jsp&quot;);
+		
+		return mv;
+	}
+
+}
+
+
+//使用注解
+@Controller
+public class Controller3 {
+
+	@RequestMapping(&quot;/queryItem3&quot;)//这里无论加不加.action，访问地址均为：http://127.0.0.1:8080/springmvc-test/queryItem3.action
+	public ModelAndView queryItem() {
+		List&lt;Item&gt; itemList = new ArrayList&lt;Item&gt;();
+		
+		Item item1 = new Item();
+		Item item2 = new Item();
+		item1.setName(&quot;item1&quot;);
+		item1.setId(&quot;1&quot;);
+		item2.setName(&quot;item2&quot;);
+		item2.setId(&quot;2&quot;);
+		itemList.add(item2);
+		itemList.add(item1);
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject(&quot;items&quot;, itemList); //相当于放入request域中
+		mv.setViewName(&quot;/WEB-INF/jsp/test2.jsp&quot;);
+		
+		return mv;
+	}
+}
+</code></pre>
+<p>jsp页面:</p>
+<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
+    pageEncoding=&quot;UTF-8&quot;%&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+	springmvc demo&lt;br/&gt;
+&lt;%--
+	&lt;%=request.getAttribute(&quot;items&quot;) %&gt;
+ --%&gt;
+ 
+ ${requestScope.items[0].name}
+ 
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1><a class="header" href="#springmvcxml配置" id="springmvcxml配置">springmvc.xml配置</a></h1>
+<h2><a class="header" href="#视图解析器" id="视图解析器">视图解析器</a></h2>
+<p>解析视图逻辑名对应的真实路径</p>
+<pre><code class="language-xml">
+&lt;!-- 如果需要html的视图解析器, 可以使用jsp的, 也可以使用Freemarker的视图解析器 --&gt;
+&lt;bean id=&quot;htmlviewResolver&quot;   
+    class=&quot;org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver&quot;&gt;   
+    &lt;property name=&quot;suffix&quot; value=&quot;.html&quot; /&gt;&lt;!-- html是没有prefix前缀属性的 --&gt;
+    &lt;!--order越小，优先级越高 --&gt;
+    &lt;property name=&quot;order&quot; value=&quot;0&quot;&gt;&lt;/property&gt;  
+    &lt;property name=&quot;contentType&quot; value=&quot;text/html;charset=UTF-8&quot;&gt;&lt;/property&gt;          
+&lt;/bean&gt;
+&lt;!-- 或者 --&gt;
+
+
+&lt;!-- 视图解析器(框架默认提供, 解析jsp) --&gt;  
+&lt;!-- 而id为viewResolver的viewResolver的优先级是最低的 --&gt;
+&lt;bean id=&quot;jspViewResolver&quot; class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+    &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt;
+    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
+
+    &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot;/&gt;
+    &lt;property name=&quot;contentType&quot; value=&quot;text/html;charset=UTF-8&quot;/&gt;&lt;!-- 网页mimetype  --&gt;
+    &lt;property name=&quot;order&quot; value=&quot;10&quot;/&gt;&lt;!-- 优先级,0为最高, 优先解析 --&gt;
+    &lt;!-- InternalResourceViewResolver的优先级必须设置为最低，也就是order要最大。不然它会阻碍其他视图解析器
+        因为, 这个解析器如果不能解析页面, 不会返回null, 解析不会继续进行, 解析链就断了
+     --&gt;
+&lt;/bean&gt;
+
+&lt;!-- 配置FreeMark视图 --&gt;  
+&lt;bean id=&quot;freeMarkerViewResolver&quot; class=&quot;org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver&quot;&gt;  
+    &lt;property name=&quot;contentType&quot; value=&quot;text/html;charset=UTF-8&quot;/&gt;        
+    &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.freemarker.FreeMarkerView&quot;/&gt;  
+    &lt;property name=&quot;suffix&quot; value=&quot;.ftl&quot;/&gt;  &lt;!-- 这里没有配置 prefix, 留在下面配置 --&gt;
+    &lt;property name=&quot;cache&quot; value=&quot;true&quot;/&gt;  
+    &lt;property name=&quot;exposeSessionAttributes&quot; value=&quot;true&quot;/&gt;  
+    &lt;property name=&quot;exposeRequestAttributes&quot; value=&quot;true&quot;/&gt;       
+    &lt;property name=&quot;exposeSpringMacroHelpers&quot; value=&quot;true&quot;/&gt;  
+    &lt;!-- 在页面中使用${rc.contextPath}就可获得contextPath --&gt;  
+    &lt;property name=&quot;requestContextAttribute&quot; value=&quot;rc&quot;/&gt;  
+    &lt;property name=&quot;order&quot; value=&quot;0&quot;/&gt;  
+&lt;/bean&gt;  
+
+&lt;bean id=&quot;FreeMarkerConfigurer&quot; class=&quot;org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer&quot;&gt;  
+    &lt;property name=&quot;templateLoaderPath&quot; value=&quot;/WEB-INF/ftl/&quot;/&gt;  &lt;!-- 这里相当于prefix --&gt;
+    &lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot;/&gt;  
+    &lt;property name=&quot;freemarkerSettings&quot; ref=&quot;freemarkConfig&quot;/&gt;  
+    &lt;property name=&quot;freemarkerVariables&quot;&gt;  
+        &lt;map&gt;  
+            &lt;entry key=&quot;xml_escape&quot; value-ref=&quot;fmXmlEscape&quot;/&gt;  
+        &lt;/map&gt;  
+    &lt;/property&gt;  
+&lt;/bean&gt;
+
+&lt;bean id=&quot;freemarkConfig&quot; class=&quot;org.springframework.beans.factory.config.PropertiesFactoryBean&quot;&gt;  
+        &lt;property name=&quot;location&quot; value=&quot;classpath:freemark.properties&quot;/&gt; &lt;!-- 见下面 --&gt; 
+&lt;/bean&gt;  
+
+&lt;bean id=&quot;fmXmlEscape&quot; class=&quot;freemarker.template.utility.XmlEscape&quot;/&gt; 
+&lt;!-- 配置FreeMark视图--结束 --&gt;
+
+&lt;!-- json视图 --&gt;
+&lt;bean id=&quot;mappingJacksonHttpMessageConverter&quot; class=&quot;org.springframework.http.converter.json.MappingJacksonHttpMessageConverter&quot;&gt;  
+    &lt;property name=&quot;supportedMediaTypes&quot;&gt;  
+        &lt;list&gt;  
+            &lt;value&gt;application/json;charset=UTF-8&lt;/value&gt;  
+        &lt;/list&gt;  
+    &lt;/property&gt;       
+    &lt;property name=&quot;objectMapper&quot;&gt;  
+        &lt;bean class=&quot;org.codehaus.jackson.map.ObjectMapper&quot;&gt;  
+            &lt;property name=&quot;dateFormat&quot;&gt;  
+                &lt;bean class=&quot;java.text.SimpleDateFormat&quot;&gt;  
+                    &lt;constructor-arg index=&quot;0&quot; type=&quot;java.lang.String&quot; value=&quot;yyyy-MM-dd HH:mm:ss&quot;/&gt;  
+                &lt;/bean&gt;  
+            &lt;/property&gt;  
+        &lt;/bean&gt;  
+    &lt;/property&gt;  
+&lt;/bean&gt;  
+&lt;bean id=&quot;stringHttpMessageConverter&quot; class=&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;/&gt;  
+&lt;bean id=&quot;requestMappingHandlerAdapter&quot; class=&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&quot;&gt;  
+&lt;property name=&quot;messageConverters&quot;&gt;  
+    &lt;list&gt;  
+        &lt;ref bean=&quot;mappingJacksonHttpMessageConverter&quot;/&gt;  
+        &lt;ref bean=&quot;stringHttpMessageConverter&quot;/&gt;  
+    &lt;/list&gt;  
+&lt;/property&gt;  
+&lt;/bean&gt; 
+&lt;!-- json视图配置--- end --&gt;
+
+&lt;!-- 文件上传配置注意:这里申明的id必须为multipartResolver --&gt;  
+&lt;bean id=&quot;multipartResolver&quot; class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;  
+    &lt;property name=&quot;maxUploadSize&quot; value=&quot;500000&quot;/&gt;  
+&lt;/bean&gt; 
+
+&lt;!-- 简单的异常处理 --&gt;  
+&lt;bean id=&quot;exceptionResolver&quot; class=&quot;org.springframework.web.servlet.handler.SimpleMappingExceptionResolver&quot;&gt;  
+    &lt;property name=&quot;exceptionMappings&quot;&gt;  
+        &lt;props&gt;  
+            &lt;!-- 映射目录为/WEB-INF/jsp/error/upload_error.jsp --&gt;  
+            &lt;prop key=&quot;org.springframework.web.multipart.MaxUploadSizeExceededException&quot;&gt;/error/upload_error&lt;/prop&gt;  
+        &lt;/props&gt;  
+    &lt;/property&gt;  
+&lt;/bean&gt;
+</code></pre>
+<p>文件中的freemarker.properties文件配置内容如下</p>
+<pre><code>#FreeMarker settings:  
+   
+#0 is for development only! Use higher value otherwise.  
+template_update_delay=0  
+locale=zh_CN  
+default_encoding=UTF-8  
+number_format=0.##########  
+date_format=yyyy-MM-dd 
+</code></pre>
+<p>如果不希望单独抽出freemarker.properties文件, 另一种配置Freemarker视图的方式:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;   
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;  
+    xmlns:p=&quot;http://www.springframework.org/schema/p&quot;   
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;  
+    xmlns:util=&quot;http://www.springframework.org/schema/util&quot;  
+    xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;  
+    xsi:schemaLocation=&quot;  
+        http://www.springframework.org/schema/util  
+        http://www.springframework.org/schema/util/spring-util-3.1.xsd  
+        http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd  
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd  
+        http://www.springframework.org/schema/mvc  
+       http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd&quot; &gt;  
+     &lt;!-- 开启注解 --&gt;  
+    &lt;mvc:annotation-driven /&gt;  
+    &lt;!-- 扫描包 --&gt;  
+    &lt;context:component-scan base-package=&quot;com.misl.*&quot; /&gt;  
+      
+    &lt;!-- FreeMarker settings --&gt;  
+    &lt;bean id=&quot;freeMarkerConfigurer&quot; class=&quot;org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer&quot;&gt;  
+        &lt;property name=&quot;templateLoaderPath&quot; value=&quot;&quot; /&gt;  
+        &lt;property name=&quot;freemarkerSettings&quot;&gt;  
+            &lt;props&gt;  
+                &lt;prop key=&quot;template_update_delay&quot;&gt;0&lt;/prop&gt;  
+                &lt;prop key=&quot;default_encoding&quot;&gt;UTF-8&lt;/prop&gt;  
+                &lt;prop key=&quot;locale&quot;&gt;zh_CN&lt;/prop&gt;  
+            &lt;/props&gt;  
+        &lt;/property&gt;  
+    &lt;/bean&gt;  
+    &lt;!-- FreeMarker view Reslover --&gt;  
+    &lt;bean id=&quot;freeMarkerViewResolver&quot; class=&quot;org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver&quot;&gt;  
+        &lt;property name=&quot;cache&quot; value=&quot;false&quot; /&gt;  
+        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot; /&gt;  
+        &lt;property name=&quot;suffix&quot; value=&quot;.ftl&quot; /&gt;  
+        &lt;property name=&quot;contentType&quot; value=&quot;text/html;charset=UTF-8&quot; /&gt;  
+    &lt;/bean&gt;  
+      
+&lt;/beans&gt; 
+</code></pre>
+<h2><a class="header" href="#映射器-mapping" id="映射器-mapping">映射器 Mapping</a></h2>
+<p>为发送的请求找到合适的Handler Adapter</p>
+<ul>
+<li>
+<p>org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping(默认)
+Action所对应的<code>&lt;bean&gt;</code>标签的name属性作为请求路径</p>
+<pre><code class="language-xml">    &lt;!-- 注册控制器(程序员) --&gt;
+    &lt;bean name=&quot;/add.action&quot; class=&quot;com.xiaoyu.springmvc.mapping.UserAction&quot;&gt;&lt;/bean&gt;
+
+    &lt;!-- 注册映射器(handler包)(框架默认提供了, 这里显式配置了默认的就失效了) --&gt;
+    &lt;bean class=&quot;org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping&quot;&gt;&lt;/bean&gt;
+</code></pre>
+</li>
+<li>
+<p>org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
+多个路径对应同一个Action</p>
+<pre><code class="language-xml">&lt;!-- 注册控制器(程序员) --&gt;
+&lt;bean id=&quot;userActionID&quot; class=&quot;com.xiaoyu.springmvc.mapping.UserAction&quot;&gt;&lt;/bean&gt;
+&lt;!-- 注册映射器(handler包)(框架) --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping&quot;&gt;
+        &lt;property name=&quot;mappings&quot;&gt;
+            &lt;props&gt;
+                &lt;prop key=&quot;/delete.action&quot;&gt;userActionID&lt;/prop&gt;
+                &lt;prop key=&quot;/update.action&quot;&gt;userActionID&lt;/prop&gt;
+                &lt;prop key=&quot;/find.action&quot;&gt;userActionID&lt;/prop&gt;
+            &lt;/props&gt;
+        &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+<p>or</p>
+<pre><code class="language-xml">&lt;beans ...&gt;
+
+&lt;bean class=&quot;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping&quot;&gt;
+   &lt;property name=&quot;mappings&quot;&gt;
+    &lt;value&gt;
+       /welcome.htm=welcomeController
+       /*/welcome.htm=welcomeController
+       /helloGuest.htm=helloGuestController
+    &lt;/value&gt;
+   &lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;bean id=&quot;welcomeController&quot; 
+    class=&quot;com.mkyong.common.controller.WelcomeController&quot; /&gt;
+    
+&lt;bean id=&quot;helloGuestController&quot; 
+    class=&quot;com.mkyong.common.controller.HelloGuestController&quot; /&gt;
+    
+&lt;/beans&gt;
+</code></pre>
+</li>
+</ul>
+<h2><a class="header" href="#适配器-adapter" id="适配器-adapter">适配器 Adapter</a></h2>
+<p>找到具体的action</p>
+<p>关注【Action实现什么接口】</p>
+<ul>
+<li>
+<p>Action实现Controller接口, org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter</p>
+<pre><code class="language-java">public class EmpAction implements Controller{
+    public ModelAndView handleRequest(HttpServletRequest request,HttpServletResponse response) throws Exception {
+        System.out.println(&quot;EmpAction::handleRequest&quot;);
+        request.setCharacterEncoding(&quot;UTF-8&quot;);
+        String username = request.getParameter(&quot;username&quot;);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject(&quot;message&quot;,username);
+        modelAndView.setViewName(&quot;/jsp/success.jsp&quot;);
+        return modelAndView;
+    }
+}
+
+</code></pre>
+</li>
+<li>
+<p>Action实现了HttpRequestHandler接口, HttpRequestHandlerAdapter</p>
+<pre><code class="language-xml">&lt;!-- 适配器(框架默认提供, 这里显式配置了, 默认的就失效了) --&gt;  
+&lt;bean class=&quot;org.springframework.web.servlet.mvc. HttpRequestHandlerAdapter&quot;&gt;&lt;/bean&gt;
+
+</code></pre>
+</li>
+</ul>
+<h2><a class="header" href="#控制器-controller" id="控制器-controller">控制器 Controller</a></h2>
+<p>【Action继承什么类】</p>
+<ul>
+<li>
+<p>org.springframework.web.servlet.mvc.ParameterizableViewController</p>
+<pre><code class="language-xml">&lt;!-- 如果请求是/index.action的请求路径，则直接跳转到/jsp/success.jsp页面，不经过程序员定义的控制器，无需写controller代码，即缺省控制器 --&gt;
+&lt;!-- /index.action请求，直接转发到/index.jsp页面 --&gt;
+&lt;bean name=&quot;/index.action&quot; class=&quot;org.springframework.web.servlet.mvc.ParameterizableViewController&quot;&gt;
+        &lt;property name=&quot;viewName&quot; value=&quot;/index.jsp&quot;/&gt;
+&lt;/bean&gt;
+
+</code></pre>
+<p>另外, 提供一个简单的操作:</p>
+<pre><code class="language-xml">&lt;!-- 如果当前路径是/ 则交给相应的视图解析器直接解析为视图 --&gt;
+&lt;mvc:view-controller path=&quot;/&quot; view-name=&quot;home&quot;/&gt;
+
+&lt;!-- 即如果当前路径是/ 则重定向到/admin/index --&gt;
+&lt;mvc:view-controller path=&quot;/&quot; view-name=&quot;redirect:/admin/index&quot;/&gt; 
+</code></pre>
+</li>
+<li>
+<p>org.springframework.web.servlet.mvc.AbstractCommandController</p>
+<pre><code class="language-java">// 能够以实体的形式，收集客户端参数
+public class AdminAction extends AbstractCommandController{
+    public AdminAction(){
+            this.setCommandClass(Admin.class);
+    }
+    @Override
+    protected ModelAndView handle(HttpServletRequest request,HttpServletResponse response, Object obj, BindException bindException)throws Exception {
+        System.out.println(&quot;AdminAction::handle&quot;);
+        ModelAndView modelAndView = new ModelAndView();
+        Admin admin = null;
+        if(obj instanceof Admin){
+                admin = (Admin) obj;
+        }
+        modelAndView.addObject(&quot;username&quot;,admin.getUsername());
+        modelAndView.addObject(&quot;gender&quot;,admin.getGender());
+        modelAndView.addObject(&quot;hiredate&quot;,admin.getHiredate());
+        modelAndView.setViewName(&quot;/jsp/success.jsp&quot;);
+        return modelAndView;
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 请求处理类 --&gt;
+&lt;bean name=&quot;/add.action&quot; class=&quot;com.xiaoyu.springmvc.controller.AdminAction&quot;&gt;
+&lt;/bean&gt;
+
+</code></pre>
+</li>
+</ul>
+<h2><a class="header" href="#注解开发" id="注解开发">注解开发</a></h2>
+<h3><a class="header" href="#spring31前后区别" id="spring31前后区别">Spring3.1前后区别</a></h3>
+<p>1、注解方式的映射器和适配器在3.1版本前后是不一样的
+2、注解方式的映射器和适配器必须配对使用，不能与非注解的映射器和适配器混用</p>
+<pre><code>spring3.1之前:
+org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping 是在spring3.1之前使用的注解映射器。
+org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter 是在spring3.1之前使用的注解适配器。
+spring3.1之后:
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping是在spring3.1之后使用的注解映射器。
+org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter是在spring3.1之后使用的注解适配器。
+
+</code></pre>
+<h3><a class="header" href="#配置" id="配置">配置</a></h3>
+<p>方法1: 通过bean标签配置</p>
+<pre><code class="language-xml">&lt;bean class=&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping&quot;&gt;&lt;/bean&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter&quot;&gt;&lt;/bean&gt;
+</code></pre>
+<p>方法2: 通过mvc标签配置</p>
+<pre><code class="language-xml">&lt;mvc:annotation-driven/&gt;
+</code></pre>
+<h1><a class="header" href="#controller详解" id="controller详解">Controller详解</a></h1>
+<h2><a class="header" href="#单个-controller-中写多个业务方法" id="单个-controller-中写多个业务方法">单个 controller 中写多个业务方法</a></h2>
+<pre><code class="language-java">// 模块根路径 + 功能子路径 = 访问模块下子功能的路径
+@Controller
+@RequestMapping(value=&quot;/user&quot;)
+public class UserAction{
+	@RequestMapping(value=&quot;/add&quot;)
+	public String add(Model model) throws Exception{
+			System.out.println(&quot;HelloAction::add()&quot;);
+			model.addAttribute(&quot;message&quot;,&quot;增加用户&quot;);
+			return &quot;/success.jsp&quot;;
+	}
+	@RequestMapping(value=&quot;/find&quot;)
+	public String find(Model model) throws Exception{
+			System.out.println(&quot;HelloAction::find()&quot;);
+			model.addAttribute(&quot;message&quot;,&quot;查询用户&quot;);
+			return &quot;/success.jsp&quot;;
+	}    
+}
+</code></pre>
+<p>@RequestMapping 用法:</p>
+<ul>
+<li>value/path 配置路径</li>
+<li>method    配置支持的 http method</li>
+<li>params  配置支持的请求参数和对应值 <code>params={&quot;username=kolbe&quot;,&quot;password=123456&quot;}</code></li>
+<li>headers  支持的 headers <code>headers=&quot;Host=localhost:8080&quot;</code></li>
+</ul>
+<p>注意: </p>
+<p>@RequestMapping(&quot;/login/&quot;) 和 @RequestMapping(&quot;/login&quot;) 路径末尾是否有斜杠 <code>是不同的路径</code></p>
+<h2><a class="header" href="#数据传递方式" id="数据传递方式">数据传递方式</a></h2>
+<p>总结: </p>
+<ul>
+<li>get 请求 使用 @requestParam 注解方法参数, 可省略, 可以有多个</li>
+<li>post 请求使用 @RequestBody 注解参数, 不可省略, 最多只能一个</li>
+</ul>
+<h3><a class="header" href="#收集页面的参数" id="收集页面的参数">收集页面的参数</a></h3>
+<p>第1种: 使用HttpServletRequest获取</p>
+<pre><code class="language-java">@RequestMapping(&quot;/login.do&quot;)  
+	public String login(HttpServletRequest request){  
+	    String name = request.getParameter(&quot;name&quot;)  ;
+	    String pass = request.getParameter(&quot;pass&quot;)  ;
+	}
+
+</code></pre>
+<p>第2种: 普通变量作为方法参数收集数据</p>
+<pre><code class="language-java">// Spring会自动将表单参数注入到方法参数，和表单标签的name属性保持一致。
+@Controller
+@RequestMapping(value=&quot;/user&quot;)
+public class UserAction{
+	@RequestMapping(value=&quot;/add&quot;)
+	public String add(Model model,int id,String name,Double sal) throws Exception{
+		System.out.println(&quot;HelloAction::add()&quot;);
+		System.out.println(id + &quot;:&quot; + name + &quot;:&quot; + sal);
+		model.addAttribute(&quot;message&quot;,&quot;增加用户&quot;);
+		return &quot;/success.jsp&quot;;
+	}    
+}
+    // http://127.0.0.1:8080/myspringmvc/user/add.action?id=1&amp;name=zhaojun&amp;sal=5000
+
+
+@RequestMapping(&quot;/login.do&quot;)  
+// 表单属性是pass,用变量password接收  ----------表单属性和形参参数名不同
+public String login(HttpServletRequest request, String name, @RequestParam(&quot;pass&quot;)String password) {
+    
+    syso(name);  
+    syso(password)  
+}  
+
+</code></pre>
+<p>第3种: 封装普通变量为一个Object来收集</p>
+<p>表单:</p>
+<pre><code class="language-html">&lt;form action=&quot;login.do&quot;&gt;  
+	用户名：&lt;input name=&quot;name&quot;/&gt;  
+	密码：&lt;input name=&quot;pass&quot;/&gt;  
+	&lt;input type=&quot;submit&quot; value=&quot;登陆&quot;&gt;  
+	&lt;/form&gt; 
+
+</code></pre>
+<p>将表单参数封装为一个对象User</p>
+<pre><code class="language-java">public class User{  
+	  private String name;  
+	   private String pass;  
+	 } 
+
+</code></pre>
+<p>Controller方法:</p>
+<pre><code class="language-java">@RequestMapping(&quot;/login.do&quot;)  
+	public String login(User user)  
+	{  
+	   syso(user.getName());  
+	   syso(user.getPass());  
+	}  
+
+</code></pre>
+<p>第4种: Object包Object(封装两次)来收集参数</p>
+<pre><code class="language-java">/**
+1） 如果多个模型中有相同的属性时，可以在jsp中用user.name或admin.name来收集客户端参数（作为标签name值）
+2） 用一个新的模型（Bean）将User和Admin再封装一次，JSP传过来的值会自动封装到Bean中
+*/
+// User.java
+public class User {
+        private Integer id;
+        private String name;
+        private Double sal;
+        private Date hiredate;
+        
+		// getter&amp;setter
+}
+
+// Admin.java
+
+// Bean.java
+public class Bean {
+        private User user;
+        private Admin admin;
+        // getter&amp;setter
+}
+
+// PersonAction.java
+@Controller
+@RequestMapping(value = &quot;/person&quot;)
+public class PersonAction {
+	@InitBinder
+	protected void initBinder(HttpServletRequest request,ServletRequestDataBinder binder) throws Exception {
+		binder.registerCustomEditor(
+			Date.class, 
+			new CustomDateEditor(new SimpleDateFormat(&quot;yyyy-MM-dd&quot;),true));
+	}
+	@RequestMapping(value = &quot;/add&quot;, method = RequestMethod.POST)
+	public String add(Bean bean,Model model) throws Exception {
+			System.out.println(bean.getUser());
+			System.out.println(bean.getAdmin());
+			System.out.println(&quot;PersonAction::add()::POST&quot;);
+			model.addAttribute(&quot;bean&quot;,bean);
+			return &quot;/register.jsp&quot;;
+	}
+}
+
+</code></pre>
+<pre><code class="language-html">    &lt;!-- 普通用户 --&gt;
+&lt;form action=&quot;${pageContext.request.contextPath}/person/add.action&quot; method=&quot;POST&quot;&gt;
+        &lt;!-- name元素的值不加bean, 会自动封装到Bean对象 --&gt;
+        编号：&lt;input type=&quot;text&quot; name=&quot;user.id&quot; value=&quot;${bean.user.id}&quot;/&gt;&lt;br/&gt;
+        姓名：&lt;input type=&quot;text&quot; name=&quot;user.name&quot; value=&quot;${bean.user.name}&quot;/&gt;&lt;br/&gt;
+        薪水：&lt;input type=&quot;text&quot; name=&quot;user.sal&quot; value=&quot;${bean.user.sal}&quot;/&gt;&lt;br/&gt;
+        入职时间：&lt;input type=&quot;text&quot; name=&quot;user.hiredate&quot; value='&lt;fmt:formatDate value=&quot;${bean.user.hiredate}&quot; type=&quot;both&quot; /&gt;'/&gt;&lt;br/&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;注册&quot;/&gt;
+&lt;/form&gt;
+</code></pre>
+<h3><a class="header" href="#收集数组参数" id="收集数组参数">收集数组参数</a></h3>
+<pre><code class="language-java">// 批量删除用户
+@Controller
+@RequestMapping(value=&quot;/user&quot;)
+public class UserAction {
+	@RequestMapping(value=&quot;/delete&quot;)
+	public String deleteMethod(int[] ids,Model model) throws Exception{
+			System.out.println(&quot;UserAction::deleteMethod()&quot;);
+            System.out.println(&quot;需要删除的id为：&quot;);
+			for(int id : ids){
+					System.out.print(id+&quot; &quot;);
+			}
+			model.addAttribute(&quot;message&quot;,&quot;批量删除成功&quot;);
+			return &quot;/success.jsp&quot;;
+	}
+}
+
+
+</code></pre>
+<h3><a class="header" href="#手机list参数" id="手机list参数">手机List参数</a></h3>
+<pre><code class="language-java">// 批量注册用户
+// UserAction.java
+@Controller
+@RequestMapping(value=&quot;/user&quot;)
+public class UserAction {
+	@RequestMapping(value=&quot;/addAll&quot;)
+	public String addAll(Bean bean,Model model) throws Exception{
+		for(User user : bean.getUserList()){
+			System.out.println(user.getName()+&quot;:&quot;+user.getGender());
+		}
+		model.addAttribute(&quot;message&quot;,&quot;批量增加用户成功&quot;);
+		return &quot;/success.jsp&quot;;
+	}
+}
+
+    // Bean.java
+public class Bean {
+	
+	private List&lt;User&gt; userList = new ArrayList&lt;User&gt;();
+	public Bean(){}
+	public List&lt;User&gt; getUserList() {
+			return userList;
+	}
+	public void setUserList(List&lt;User&gt; userList) {
+			this.userList = userList;
+	}
+}
+</code></pre>
+<p>jsp</p>
+<pre><code class="language-jsp">&lt;!-- registerAll.java --&gt;
+&lt;form action=&quot;${pageContext.request.contextPath}/user/addAll.action&quot; method=&quot;POST&quot;&gt; 
+            
+        姓名：&lt;input type=&quot;text&quot; name=&quot;userList[0].name&quot; value=&quot;hh&quot;/&gt;
+        性别：&lt;input type=&quot;text&quot; name=&quot;userList[0].gender&quot; value=&quot;男&quot;/&gt;
+        &lt;hr/&gt;
+        姓名：&lt;input type=&quot;text&quot; name=&quot;userList[1].name&quot; value=&quot;zz&quot;/&gt;
+        性别：&lt;input type=&quot;text&quot; name=&quot;userList[1].gender&quot; value=&quot;男&quot;/&gt;
+        &lt;hr/&gt;
+
+        姓名：&lt;input type=&quot;text&quot; name=&quot;userList[2].name&quot; value=&quot;yy&quot;/&gt;
+        性别：&lt;input type=&quot;text&quot; name=&quot;userList[2].gender&quot; value=&quot;女&quot;/&gt;
+        &lt;hr/&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;批量注册&quot;/&gt;
+&lt;/form&gt;
+ 
+</code></pre>
+<h3><a class="header" href="#传递参数给页面" id="传递参数给页面">传递参数给页面</a></h3>
+<p>经过Controller组件处理后，向jsp页面传值，有如下几种：
+1，使用HttpServletRequest 和 Session  然后setAttribute()，就和Servlet中一样
+2，使用ModelMap, Model, Map对象
+3，使用ModelAndView对象
+4，使用@ModelAttribute注解</p>
+<p>第1种: 使用HttpServletRequest 或 session</p>
+<pre><code class="language-java">@RequestMapping(&quot;/login.do&quot;)  
+public String login(String name,String pwd  
+                            ModelMap model,HttpServletRequest request){  
+        User user = serService.login(name,pwd);  
+        HttpSession session = request.getSession();  
+        session.setAttribute(&quot;user&quot;,user);  
+        model.addAttribute(&quot;user&quot;,user);  
+        return &quot;success&quot;;  
+} 
+
+</code></pre>
+<p>第2种: 使用ModelMap，Model，Map对象</p>
+<pre><code class="language-java">// 据会利用HttpServletRequest的Attribute传值到success.jsp中
+@RequestMapping(&quot;/test&quot;)
+public String test(Map&lt;String,Object&gt; map,Model model,ModelMap modelMap){
+
+    map.put(&quot;names&quot;, Arrays.asList(&quot;caoyc&quot;,&quot;zhh&quot;,&quot;cjx&quot;));
+	
+    model.addAttribute(&quot;time&quot;, new Date());
+	
+    modelMap.addAttribute(&quot;city&quot;, &quot;ChengDu&quot;);
+    modelMap.put(&quot;gender&quot;, &quot;male&quot;);
+
+    return &quot;hello&quot;;
+}
+
+</code></pre>
+<p>在jsp中如何获取?</p>
+<pre><code class="language-jsp">time:${requestScope.time}
+names:${requestScope.names }
+city:${requestScope.city }
+gender:${requestScope.gender }
+
+</code></pre>
+<p>第3种: 使用ModelAndView对象</p>
+<pre><code class="language-java">@RequestMapping(&quot;/login.do&quot;)  
+public ModelAndView  login(String name,String pass){  
+    User user = userService.login(name,pwd);  
+    Map&lt;String,Object&gt; data = new HashMap&lt;String,Object&gt;();  
+    data.put(&quot;user&quot;,user);  
+    return new ModelAndView(&quot;success&quot;,data);  
+} 
+
+</code></pre>
+<p>第4种: 使用@ModelAttribute注解</p>
+<pre><code class="language-java">// 在Controller方法的参数部分或Bean属性方法上使用
+// @ModelAttribute数据会利用HttpServletRequest的Attribute传值到success.jsp中
+@RequestMapping(&quot;/login.do&quot;)  
+public String login(@ModelAttribute(&quot;user&quot;) User user){  
+    //TODO  
+    return &quot;success&quot;;  
+}  
+    
+@ModelAttribute(&quot;name&quot;)  
+public String getName(){  
+    return name;  
+}  
+
+
+</code></pre>
+<h1><a class="header" href="#拦截器interceptor" id="拦截器interceptor">拦截器interceptor</a></h1>
+<h2><a class="header" href="#什么是interceptor" id="什么是interceptor">什么是interceptor</a></h2>
+<p>对请求进行拦截, 每个请求都需要的前置/后置处理</p>
+<p>spring mvc中的Interceptor拦截请求是通过HandlerInterceptor来实现的。所以HandlerInteceptor拦截器只有在Spring Web MVC环境下才能使用</p>
+<h2><a class="header" href="#interceptor和filter对比" id="interceptor和filter对比">interceptor和filter对比</a></h2>
+<p>references: https://www.jianshu.com/p/685c65ed6944, https://juejin.im/post/5b2ddbcef265da59a76c92a4#heading-6</p>
+<p>servlet filter和spring mvc Interceptor区别：</p>
+<ul>
+<li>
+<p>Filter 是基于 函数回调的，而 Interceptor 则是基于 Java 反射 和 动态代理。</p>
+</li>
+<li>
+<p>Filter 依赖于 Servlet 容器, 和servlet容器隔的近，而 Interceptor 依赖springmvc, 和应用隔的近, 在最里层。所以filter 先进入, 最后退出</p>
+</li>
+<li>
+<p>Filter 对几乎 所有的请求 起作用，而 Interceptor 只对 Controller 请求起作用。</p>
+</li>
+<li>
+<p>拦截器可以获取IOC容器中的各个bean，而过滤器就不行，这点很重要，在拦截器里注入一个service，可以调用业务逻辑。</p>
+</li>
+</ul>
+<p>servlet filter和spring mvc Interceptor执行顺序：</p>
+<p><img src="Snipaste_2018-11-01_16-57-14.png" alt="alt" /></p>
+<h2><a class="header" href="#怎么使用interceptor" id="怎么使用interceptor">怎么使用interceptor</a></h2>
+<h3><a class="header" href="#通过自定义web配置" id="通过自定义web配置">通过自定义web配置</a></h3>
+<ul>
+<li>
+<p>第一种方式是要实现Spring的<code>HandlerInterceptor</code>接口 or <code>HandlerInterceptorAdapter</code> (推荐) 适配器</p>
+<ul>
+<li>三个方法: </li>
+</ul>
+<pre><code>  preHandle(eg:登陆检查), 
+  
+  postHandle(eg:操纵modelAndView), 
+  
+  afterCompletion(eg:资源清理工作, 性能监控记录结束时间); 
+</code></pre>
+<ul>
+<li>顺序: preHandle -&gt; handle -&gt; postHandle -&gt; 视图渲染 -&gt; afterCompletion</li>
+</ul>
+</li>
+<li>
+<p>第二种方式是实现WebRequestInterceptor接口 or 对应的适配器</p>
+</li>
+</ul>
+<p>使用代码配置:</p>
+<pre><code class="language-java">@configuration
+class WebMvcConfig extends WebMvcConfigurerAdapter{
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        //创建自定义的拦截器
+        Interceptor interceptor = new Interceptor();
+        //添加拦截器
+        registry.addInterceptor(interceptor)
+        		//添加需要拦截的路径
+                .addPathPatterns(&quot;&quot;);
+    }
+}
+</code></pre>
+<p>也可以使用  xml 配置:</p>
+<pre><code class="language-xml">&lt;mvc:interceptors&gt;  
+    &lt;!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求--&gt;  
+    &lt;bean class=&quot;com.host.app.web.interceptor.HandlerInterceptorAll&quot;/&gt;
+
+    &lt;mvc:interceptor&gt;  
+        &lt;!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的， 支持通配符， 如 “/emp/*” --&gt;  
+        &lt;mvc:mapping path=&quot;/test/number.do&quot;/&gt; 
+        &lt;!-- 排除url --&gt;
+        &lt;mvc:exclude-mapping path=&quot;/test/goLogin.*&quot;/&gt;
+        &lt;bean class=&quot;com.host.app.web.interceptor.HandlerInterceptor1&quot;/&gt;  
+        &lt;!-- &lt;ref bean=&quot;handlerInterceptor1&quot;/&gt; --&gt;
+    &lt;/mvc:interceptor&gt;  
+
+    &lt;mvc:interceptor&gt;
+        &lt;mvc:mapping path=&quot;/**&quot;/&gt;
+        &lt;bean class=&quot;common.interceptor.LoginInterceptor&quot;&gt;
+        &lt;!-- 排除多个 url --&gt;
+            &lt;property name=&quot;exceptUrls&quot;&gt;
+                &lt;list&gt;
+                    &lt;value&gt;/user/login&lt;/value&gt;
+                    &lt;value&gt;/user/register&lt;/value&gt;
+                &lt;/list&gt;
+            &lt;/property&gt;
+        &lt;/bean&gt;
+    &lt;/mvc:interceptor&gt;
+
+    &lt;mvc:interceptor&gt;
+        &lt;!--这样配置，将拦截所有springmvc的url--&gt;
+        &lt;mvc:mapping path=&quot;/**&quot;/&gt;
+        &lt;bean class=&quot;interceptor.MyInterceptor1&quot;&gt;&lt;/bean&gt;
+    &lt;/mvc:interceptor&gt;
+&lt;/mvc:interceptors&gt;  
+
+</code></pre>
+<h3><a class="header" href="#通过注解" id="通过注解">通过注解</a></h3>
+<pre><code class="language-java">@Target({ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface LoginRequired {
+}
+
+
+public class AuthenticationInterceptor implements HandlerInterceptor {
+    @Autowired
+    private UserService userService;
+
+    public boolean preHandle(HttpServletRequest request,
+                             HttpServletResponse response, Object handler) throws Exception {
+        // 如果不是映射到方法直接通过
+        if (!(handler instanceof HandlerMethod)) {
+            return true;
+        }
+        HandlerMethod handlerMethod = (HandlerMethod) handler;
+        Method method = handlerMethod.getMethod();
+
+        // 判断接口是否需要登录
+        LoginRequired methodAnnotation = method.getAnnotation(LoginRequired.class);
+        // 有 @LoginRequired 注解，需要认证
+        if (methodAnnotation != null) {
+            // 执行认证
+            String token = request.getHeader(&quot;token&quot;);  // 从 http 请求头中取出 token
+            if (token == null) {
+                throw new RuntimeException(&quot;无token，请重新登录&quot;);
+            }
+            int userId;
+            try {
+                userId = Integer.parseInt(JWT.decode(token).getAudience().get(0));  // 获取 token 中的 user id
+            } catch (JWTDecodeException e) {
+                throw new RuntimeException(&quot;token无效，请重新登录&quot;);
+            }
+            User user = userService.findById(userId);
+            if (user == null) {
+                throw new RuntimeException(&quot;用户不存在，请重新登录&quot;);
+            }
+            // 验证 token
+            try {
+                JWTVerifier verifier =  JWT.require(Algorithm.HMAC256(user.getPassword())).build();
+                try {
+                    verifier.verify(token);
+                } catch (JWTVerificationException e) {
+                    throw new RuntimeException(&quot;token无效，请重新登录&quot;);
+                }
+            } catch (UnsupportedEncodingException ignore) {}
+            request.setAttribute(&quot;currentUser&quot;, user);
+            return true;
+        }
+        return true;
+    }
+
+
+@Configuration
+public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(authenticationInterceptor())
+                .addPathPatterns(&quot;/**&quot;);    // 拦截所有请求，通过判断是否有 @LoginRequired 注解 决定是否需要登录
+        super.addInterceptors(registry);
+    }
+
+    @Bean
+    public AuthenticationInterceptor authenticationInterceptor() {
+        return new AuthenticationInterceptor();
+    }
+}
+</code></pre>
+<h3><a class="header" href="#自定义注解拦截器" id="自定义注解拦截器">自定义注解拦截器</a></h3>
+<p>https://blog.csdn.net/xwq911/article/details/51384387</p>
+<h2><a class="header" href="#handlermethod和methodhandle" id="handlermethod和methodhandle">HandlerMethod和MethodHandle</a></h2>
+<p>HandlerMethod - springmvc 拦截器接口的 preHandle（。。。） 中的最后一个参数， 表示 springmvc 执行的方法
+MethodHandle - java7新特性之方法句柄； ref：https://blog.csdn.net/zmx729618/article/details/78968810</p>
+<h2><a class="header" href="#通过java动态代理实现拦截器功能" id="通过java动态代理实现拦截器功能">通过Java动态代理实现拦截器功能</a></h2>
+<p>https://blog.csdn.net/qq_35246620/article/details/68484407</p>
+<h1><a class="header" href="#限定请求方式getpost" id="限定请求方式getpost">限定请求方式GET/POST</a></h1>
+<pre><code class="language-java">// 可以在业务控制方法前，指明该业务控制方法只能接收GET或POST的请求
+// 如果不书写method=RequestMethod.POST的话，GET和POST请求都支持
+@Controller
+@RequestMapping(value=&quot;/user&quot;)
+public class UserAction{
+	@RequestMapping(value=&quot;/add&quot;,method=RequestMethod.POST)
+	public String add(Model model,int id,String name,double sal) throws Exception{
+			System.out.println(&quot;HelloAction::add()::POST&quot;);
+			System.out.println(id + &quot;:&quot; + name + &quot;:&quot; + sal);
+			model.addAttribute(&quot;message&quot;,&quot;增加用户&quot;);
+			return &quot;/success.jsp&quot;;
+	}    
+}
+</code></pre>
+<h1><a class="header" href="#日期转换器-编码转换器" id="日期转换器-编码转换器">日期转换器 编码转换器</a></h1>
+<p>在默认情况下，springmvc不能将String类型转成Date类型，必须自定义类型转换器: Controller中覆盖initBinder方法</p>
+<pre><code class="language-java">@Controller
+@RequestMapping(&quot;/xxx&quot;)
+public class AdminAction {
+	@Override
+	protected void initBinder(HttpServletRequest request,ServletRequestDataBinder binder) throws Exception {
+			binder.registerCustomEditor(Date.class,new CustomDateEditor(new SimpleDateFormat(&quot;yyyy-MM-dd&quot;),true));
+	} 
+	
+}
+
+</code></pre>
+<p>spring提供的，专用于解决POST提交中文乱码问题，需要在web.xml文件中配置</p>
+<pre><code class="language-xml">&lt;!-- 编码过滤器 --&gt;
+	&lt;filter&gt;
+			&lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
+			&lt;filter-class&gt;
+	org.springframework.web.filter.CharacterEncodingFilter
+			&lt;/filter-class&gt;
+			&lt;init-param&gt;
+					&lt;param-name&gt;encoding&lt;/param-name&gt;
+					&lt;param-value&gt;UTF-8&lt;/param-value&gt;
+			&lt;/init-param&gt;
+	&lt;/filter&gt;
+	&lt;filter-mapping&gt;
+			&lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
+			&lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+	&lt;/filter-mapping&gt;
+</code></pre>
+<h1><a class="header" href="#initbind解决字符串转日期类型" id="initbind解决字符串转日期类型">@InitBind解决字符串转日期类型</a></h1>
+<p><a href="https://stackoverflow.com/questions/5211323/what-is-the-purpose-of-init-binder-in-spring-mvc">@InitBind注解</a>: 参考这里https://stackoverflow.com/questions/5211323/what-is-the-purpose-of-init-binder-in-spring-mvc</p>
+<p>之前我们需要解析前台传来的日期String, </p>
+<pre><code class="language-java">public void webmethod(@RequestParam(&quot;date&quot;) String strDate) {
+    Date date = ... // manually parse the date
+ }
+</code></pre>
+<p>现在没必要了, spring会尝试检查前台传来的string凭借注册的editors能否转为object, 以便我们直接使用</p>
+<pre><code class="language-java">// 1）在默认情况下，springmvc不能将String类型转成java.util.Date类型，所有我们只能在Action中自定义类型转换器
+@Controller
+@RequestMapping(value = &quot;/user&quot;)
+public class UserAction {
+	@InitBinder
+	protected void initBinder(HttpServletRequest request,ServletRequestDataBinder binder) throws Exception {
+		binder.registerCustomEditor(
+					Date.class, 
+					new CustomDateEditor(new SimpleDateFormat(&quot;yyyy-MM-dd&quot;),true));
+	}
+	@RequestMapping(value = &quot;/add&quot;, method = RequestMethod.POST)
+	public String add(int id, String name, double sal, Date hiredate,
+					Model model) throws Exception {
+		System.out.println(&quot;HelloAction::add()::POST&quot;);
+		model.addAttribute(&quot;id&quot;, id);
+		model.addAttribute(&quot;name&quot;, name);
+		model.addAttribute(&quot;sal&quot;, sal);
+		model.addAttribute(&quot;hiredate&quot;, hiredate);
+		return &quot;/register.jsp&quot;;
+	}
+}
+</code></pre>
+<pre><code class="language-jsp">jsp：
+&lt;form action=&quot;${pageContext.request.contextPath}/user/add.action&quot; method=&quot;POST&quot;&gt;
+	ID&lt;input type=&quot;text&quot; name=&quot;id&quot; value=&quot;${id}&quot;/&gt;&lt;br/&gt;
+	name&lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;${name}&quot;/&gt;&lt;br/&gt;
+	sal&lt;input type=&quot;text&quot; name=&quot;sal&quot; value=&quot;${sal}&quot;/&gt;&lt;br/&gt;
+	hiredate &lt;input type=&quot;text&quot; name=&quot;hiredate&quot; value='&lt;fmt:formatDate value=&quot;${hiredate}&quot; type=&quot;date&quot;/&gt;'/&gt;&lt;br/&gt;
+	&lt;input type=&quot;submit&quot; value=&quot;×¢²á&quot;/&gt;
+&lt;/form&gt; 
+</code></pre>
+<h1><a class="header" href="#结果的转发和重定向" id="结果的转发和重定向">结果的转发和重定向</a></h1>
+<p>1） 在转发情况下，共享request域对象，会将参数从第一个业务控制方法传入第二个业务控制方法，重定向则不行 </p>
+<pre><code class="language-java">// 删除id=10 号的用户，再查询用户
+@Controller
+@RequestMapping(value=&quot;/user&quot;)
+public class UserAction {
+ 
+        @RequestMapping(value=&quot;/delete&quot;)
+        public String delete(int id) throws Exception{
+                System.out.println(&quot;删除用户-&gt;&quot; + id);
+                //转发到find()
+                return &quot;forward:/user/find.action&quot;;
+                //重定向到find()
+                //return &quot;redirect:/user/find.action&quot;;
+        }
+        @RequestMapping(value=&quot;/find&quot;)
+        public String find(int id) throws Exception{
+                System.out.println(&quot;查询用户-&gt;&quot; + id);
+                return &quot;/success.jsp&quot;;
+        }
+}
+</code></pre>
+<p>2）Spring MVC 默认采用的是转发来定位视图，如果要使用重定向，可以
+1，使用RedirectView
+2，使用redirect:前缀</p>
+<pre><code class="language-java">public ModelAndView login(){  
+    RedirectView view = new RedirectView(&quot;regist.do&quot;);  
+    return new ModelAndView(view);  
+}  
+</code></pre>
+<p>or (更常用)</p>
+<pre><code class="language-java">public String login(){  
+    //TODO  
+    return &quot;redirect:/regist&quot;;// 后面需要增加一个方法用于处理 /regist 访问  
+}
+
+</code></pre>
+<p>请求路径可以配置多个对应一个Controller方法</p>
+<pre><code class="language-java">@RequestMapping({ &quot;/&quot;, &quot;/index&quot; })  
+    public String index() throws Exception {  
+        return &quot;index&quot;;  
+    } 
+</code></pre>
+<h1><a class="header" href="#返回json-responsebody" id="返回json-responsebody">返回json, @ResponseBody</a></h1>
+<p>提交表单后，将JavaBean信息以JSON文本形式返回到浏览器</p>
+<pre><code class="language-java">       
+    // User.java
+public class User {
+        private Integer id;
+        private String name;
+        private Double sal;
+    //    setter&amp;getter
+}
+
+// UserAction.java
+@Controller
+@RequestMapping(value=&quot;/user&quot;)
+public class UserAction {
+ 
+	@RequestMapping(value=&quot;/add&quot;)
+	public @ResponseBody User add(User user) throws Exception{
+		System.out.println(user.getId()+&quot;:&quot;+user.getName()+&quot;:&quot;+user.getSal());
+		return user;//由于使用了ResponseBody注解，这里user会作为http正文放回
+	}
+}
+</code></pre>
+<p>springmvc.xml</p>
+<pre><code class="language-xml">&lt;!-- Action控制器 --&gt;
+&lt;context:component-scan base-package=&quot;com.xiaoyu.springmvc&quot;/&gt;      
+
+&lt;!-- 配适器 --&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;&gt;
+    &lt;property name=&quot;messageConverters&quot;&gt;  &lt;!--将JavaBean信息以JSON文本形式返回到浏览器--&gt;
+        &lt;list&gt;
+            &lt;bean class=&quot;org.springframework.http.converter.json.MappingJacksonHttpMessageConverter&quot;/&gt;
+        &lt;/list&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+<h1><a class="header" href="#静态资源放行" id="静态资源放行">静态资源放行</a></h1>
+<pre><code class="language-xml">&lt;mvc:resources mapping=&quot;/css/**&quot; location=&quot;/css/&quot;/&gt;  
+&lt;mvc:resources mapping=&quot;/js/**&quot; location=&quot;/js/&quot;/&gt;  
+&lt;mvc:resources mapping=&quot;/fonts/**&quot; location=&quot;/fonts/&quot;/&gt;  
+&lt;mvc:resources mapping=&quot;/style/**&quot; location=&quot;/style/&quot;/&gt; 
+&lt;!-- or 通过后缀确定资源 --&gt;
+&lt;mvc:resources location=&quot;/&quot; mapping=&quot;/**/*.html&quot;/&gt; 
+&lt;mvc:resources location=&quot;/&quot; mapping=&quot;/**/*.js&quot;/&gt; 
+&lt;mvc:resources location=&quot;/&quot; mapping=&quot;/**/*.css&quot;/&gt; 
+&lt;mvc:resources location=&quot;/&quot; mapping=&quot;/**/*.png&quot;/&gt; 
+&lt;mvc:resources location=&quot;/&quot; mapping=&quot;/**/*.gif&quot;/&gt;
+
+</code></pre>
+<p>或者直接所有静态资源直接全部放行:</p>
+<pre><code class="language-xml">&lt;mvc:default-servlet-handler /&gt;  
+</code></pre>
+<p>还可以通过在web.xml中配置servlet过滤静态资源</p>
+<pre><code class="language-xml">&lt;servlet-mapping&gt;
+	   &lt;servlet-name&gt;default&lt;/servlet-name&gt;
+	    &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;
+	&lt;/servlet-mapping&gt;
+	 
+	&lt;servlet-mapping&gt;
+	   &lt;servlet-name&gt;default&lt;/servlet-name&gt;
+	  &lt;url-pattern&gt;*.gif&lt;/url-pattern&gt;
+	 &lt;/servlet-mapping&gt;
+	  
+	 &lt;servlet-mapping&gt;
+	   &lt;servlet-name&gt;default&lt;/servlet-name&gt;
+	   &lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;
+	 &lt;/servlet-mapping&gt;
+	  
+	 &lt;servlet-mapping&gt;
+	   &lt;servlet-name&gt;default&lt;/servlet-name&gt;
+	   &lt;url-pattern&gt;*.js&lt;/url-pattern&gt;
+	 &lt;/servlet-mapping&gt;
+
+</code></pre>
+<h1><a class="header" href="#requestcontextholder获取requestresponse" id="requestcontextholder获取requestresponse">RequestContextHolder获取request,response</a></h1>
+<h1><a class="header" href="#统一异常捕获" id="统一异常捕获">统一异常捕获</a></h1>
+<pre><code class="language-java">// 首先自定义一个Controller的父类，需要捕获异常的Controller继承此类就可以了
+public class BaseController {  
+    
+    /** 
+    * 使用@ExceptionHandler注解，继承此类的Controller发生异常时会自动执行该方法 
+    * @param request 
+    * @param e 
+    * @return 
+    */  
+    @ExceptionHandler  
+    public String exception(HttpServletRequest request, Exception e) {  
+        //对异常进行判断做相应的处理  
+        if(e instanceof NullPointerException){  
+            return &quot;/error1.html&quot;;  
+        }else if(e instanceof IllegalArgumentException){  
+            return &quot;/error2.html&quot;;  
+        }else{  
+            return &quot;/error3.html&quot;;  
+        }  
+    }  
+}  
+
+// 使用
+@Controller  
+public class TestAction extends BaseController{  
+    
+    @RequestMapping(value = &quot;/manager/test1f.aspx&quot;, method = { RequestMethod.GET, RequestMethod.POST })  
+    public void test1f(HttpServletRequest request, HttpServletResponse response, ModelMap model) throws IOException {  
+        throw new NullPointerException();  
+    }  
+}  
+// 这样访问&quot;/manager/test1f.aspx&quot;时会抛出异常并被处理，跳转至/error1.html
+// 如果是处理不同情况下的异常，可以自定义多个父Controller，根据不同业务继承对应的Controller就可以了
+
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="springboot-doc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="task-schedule-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="springboot-doc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="task-schedule-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

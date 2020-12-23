@@ -1,0 +1,542 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>interview-system-design - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html" class="active"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: 经典的系统设计思路
+categories: distributed system
+date: 2020-08-31 22:23:47
+tags:</h2>
+<p>收集一些经典的系统设计思路</p>
+<p>https://blog.csdn.net/Brad_PiTt7/article/details/90717429
+TODO</p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95">第三方登录</a></li>
+<li><a href="#%E7%9B%B4%E6%92%AD%E5%BC%B9%E5%B9%95%E7%B3%BB%E7%BB%9F">直播弹幕系统</a></li>
+<li><a href="#%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F">秒杀系统</a>
+<ul>
+<li><a href="#%E7%A7%92%E6%9D%80%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">秒杀解决方案</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A7%AF%E5%88%86%E7%B3%BB%E7%BB%9F">积分系统</a></li>
+<li><a href="#%E8%AE%A2%E5%8D%95%E7%B3%BB%E7%BB%9F">订单系统</a>
+<ul>
+<li><a href="#%E8%AE%A2%E5%8D%95%E5%88%9B%E5%BB%BA">订单创建</a>
+<ul>
+<li><a href="#%E6%89%A3%E5%87%8F%E5%BA%93%E5%AD%98">扣减库存</a>
+<ul>
+<li><a href="#%E4%B8%8B%E5%8D%95%E5%87%8F%E5%BA%93%E5%AD%98">下单减库存</a></li>
+<li><a href="#%E4%BB%98%E6%AC%BE%E5%87%8F%E5%BA%93%E5%AD%98">付款减库存</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#feed-%E6%B5%81%E7%B3%BB%E7%BB%9F">feed 流系统</a></li>
+<li><a href="#%E7%82%B9%E8%B5%9E%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1">点赞模块设计</a>
+<ul>
+<li><a href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF">设计思路</a></li>
+<li><a href="#%E4%BC%98%E7%BC%BA%E7%82%B9">优缺点</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1">数据结构设计</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%AB%E7%A0%81%E7%99%BB%E5%BD%95">扫码登录</a>
+<ul>
+<li><a href="#%E6%89%AB%E7%A0%81%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF">扫码设计思路</a></li>
+</ul>
+</li>
+<li><a href="#excel-%E8%A1%A8%E5%AF%BC%E5%85%A5%E4%BC%98%E5%8C%96">Excel 表导入优化</a></li>
+<li><a href="#java-%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1">java 监控系统设计</a>
+<ul>
+<li><a href="#%E6%A3%80%E6%B5%8B%E5%93%AA%E4%BA%9B%E5%86%85%E5%AE%B9">检测哪些内容</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%9B%91%E6%8E%A7">如何监控</a>
+<ul>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E5%86%85%E7%BD%AE%E7%9B%91%E6%B5%8B">程序内置监测</a></li>
+<li><a href="#jdk-%E8%87%AA%E5%B8%A6%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7">jdk 自带可视化工具</a></li>
+<li><a href="#jdk-%E8%87%AA%E5%B8%A6%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7">jdk 自带命令行工具</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B7%A5%E5%85%B7">第三方工具</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B-%E7%94%9F%E9%B2%9C%E7%94%B5%E5%95%86%E7%9B%91%E6%8E%A7%E5%B9%B3%E5%8F%B0">案例 生鲜电商监控平台</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%E7%B3%BB%E7%BB%9F-im-%E7%B3%BB%E7%BB%9F">消息推送系统 IM 系统</a></li>
+<li><a href="#%E6%B5%81%E7%A8%8B%E5%BC%95%E6%93%8E%E7%B3%BB%E7%BB%9F">流程引擎系统</a></li>
+<li><a href="#%E6%9D%83%E9%99%90%E7%B3%BB%E7%BB%9F">权限系统</a></li>
+<li><a href="#%E6%97%A5%E5%BF%97%E9%87%87%E9%9B%86%E7%B3%BB%E7%BB%9F">日志采集系统</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#第三方登录" id="第三方登录">第三方登录</a></h1>
+<p>https://mp.weixin.qq.com/s/3wHFNFQPtj86AocLhUQahw</p>
+<h1><a class="header" href="#直播弹幕系统" id="直播弹幕系统">直播弹幕系统</a></h1>
+<p>https://mp.weixin.qq.com/s/QTslEl7FRupsckfeq7fSLg
+TODO</p>
+<h1><a class="header" href="#秒杀系统" id="秒杀系统">秒杀系统</a></h1>
+<h2><a class="header" href="#秒杀解决方案" id="秒杀解决方案">秒杀解决方案</a></h2>
+<ul>
+<li>
+<p>分布式 session , 为了抗并发, app 可能水平拓展, 各个 node 的 session 需要统一</p>
+<p>使用 Redis 存储 session</p>
+</li>
+<li>
+<p>加缓存缓解数据库读取压力</p>
+<p>“分层校验”, 过滤尽量多的请求, 这时不做一致性校验, 比如可以直接从缓存读, 直到写库，才对库存做一致性检查</p>
+<p>允许读场景下一定的脏数据，这样只会导致少量原本无库存的下单请求被误认为是有库存的，等到真正写数据时再保证最终一致性，由此做到高可用和一致性之间的平衡。</p>
+</li>
+<li>
+<p>页面静态化</p>
+</li>
+<li>
+<p>异步下单</p>
+<p>使用消息队列</p>
+</li>
+<li>
+<p>限流降级</p>
+</li>
+<li>
+<p>应用层优化</p>
+<ul>
+<li>
+<p>裁剪日志异常堆栈, 减少日志打印量</p>
+</li>
+<li>
+<p>去组件框架, 比如去掉传统的 MVC 框架，直接使用 Servlet 处理请求</p>
+</li>
+<li>
+<p>如何扣减库存</p>
+<ul>
+<li>
+<p>下单减库存</p>
+<p>用户体验好, 但是可能面临恶意下单, 造成最后货物剩余</p>
+</li>
+<li>
+<p>付款减库存</p>
+<p>会出现 用户付款却没货了. 出现超卖, 用户体验较差</p>
+</li>
+<li>
+<p>预扣库存 (买家下单后，库存为其保留一定的时间（如 15 分钟），超过这段时间，库存自动释放)</p>
+<p>提高了恶意下单的成本, 体验还可以</p>
+<p>一般采用这种</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#积分系统" id="积分系统">积分系统</a></h1>
+<p>https://mp.weixin.qq.com/s/S8-P8h3_mhFWiEscEOi4ug</p>
+<h1><a class="header" href="#订单系统" id="订单系统">订单系统</a></h1>
+<p>功能: 订单列表、订单详情、在线下单</p>
+<p>业务流程: 订单创建、订单支付、订单确认、订单完成、取消订单等订单流程</p>
+<h2><a class="header" href="#订单创建" id="订单创建">订单创建</a></h2>
+<p>先获取下单中涉及的商品信息，然后获取该商品所涉及到的优惠信息</p>
+<p>增减库存:</p>
+<h3><a class="header" href="#扣减库存" id="扣减库存">扣减库存</a></h3>
+<h4><a class="header" href="#下单减库存" id="下单减库存">下单减库存</a></h4>
+<p>——即用户下单成功时减少库存数量</p>
+<p>优势：用户体验友好，系统逻辑简洁；
+缺点：会导致恶意下单或下单后却不买，使得真正有需求的用户无法购买，影响真实销量</p>
+<p>解决办法：
+设置订单有效时间，若订单创建成功N分钟不付款，则订单取消，库存回滚；
+限购，用各种条件来限制买家的购买件数，比如一个账号、一个ip，只能买一件；
+风控，从技术角度进行判断，屏蔽恶意账号，禁止恶意账号购买</p>
+<h4><a class="header" href="#付款减库存" id="付款减库存">付款减库存</a></h4>
+<p>优势：减少无效订单带来的资源损耗；
+缺点：因第三方支付返回结果存在时差，同一时间多个用户同时付款成功，会导致下单数目超过库存，商家库存不足容易引发断货和投诉，成本增加</p>
+<p>解决办法：
+付款前再次校验库存，如确认订单要付款时再验证一次，并友好提示用户库存不足；
+增加提示信息：在商品详情页，订单步骤页面提示不及时付款，不能保证有库存等</p>
+<h1><a class="header" href="#feed-流系统" id="feed-流系统">feed 流系统</a></h1>
+<p>https://mp.weixin.qq.com/s/q4w6DdjznVZBXh28MzHdgA
+TODO</p>
+<h1><a class="header" href="#点赞模块设计" id="点赞模块设计">点赞模块设计</a></h1>
+<h2><a class="header" href="#设计思路" id="设计思路">设计思路</a></h2>
+<p>点赞、取消点赞是高频次的操作，若每次都读写数据库，大量的操作会影响数据库性能，所以需要做缓存。将点赞数据扔到 redis 中, 然后离线刷回 MySQL</p>
+<p>多久从 redis 中刷出一次数据到 MySQL 呢, 暂定为 2h</p>
+<p>文章热度计算:文章获得点赞数越高，文章的热度就越高，那么怎么判断呢？不就直接记录点赞数就行啦，但是对于最新的文章怎么办？例如有一篇文章一年前发布的，获得 50 个赞，有篇最新文章获得 49 个赞，但是按照上面所说的一年前的文章热度还比最新的高，这就不合理了. ------------- 解决办法: 为每个文章加入一个 时间戳字段</p>
+<h2><a class="header" href="#优缺点" id="优缺点">优缺点</a></h2>
+<ul>
+<li>
+<p>缓解了数据库写操作的压力</p>
+</li>
+<li>
+<p>没法保证数据安全性</p>
+<p>比如 redis 挂了会丢失数据</p>
+<p>比如 点赞数据刷回 MySQL 不及时, 可能 redis 会在执行内存淘汰策略时淘汰这些数据 (不过 点赞数据也不是什么关键数据, 丢失一点问题也不大)</p>
+</li>
+</ul>
+<h2><a class="header" href="#数据结构设计" id="数据结构设计">数据结构设计</a></h2>
+<p>MySQL:</p>
+<ul>
+<li>user (id, name)</li>
+<li>like_info (id, tweet_id, user, status)</li>
+<li>tweet(id, content, user, like_count, hate_count)</li>
+</ul>
+<p>redis:</p>
+<p>每有一条点赞数据, 就存一条数据 tweet_id::user_id status, 点赞 status = 1, 取消点赞 status = 0</p>
+<p>一个 hash(tweet_id, set(user_id, ...)) 结构存储某个人所有文章的点赞人情况, tweet_id:(user_id1, user_id2...)</p>
+<h1><a class="header" href="#扫码登录" id="扫码登录">扫码登录</a></h1>
+<h2><a class="header" href="#扫码设计思路" id="扫码设计思路">扫码设计思路</a></h2>
+<p>web 端 和 服务器的配合:</p>
+<ol>
+<li>user 访问登录页, server 随机生成 uuid, 作为键存入 redis, 值暂时为空, 同时设置过期时间, 根据 UUID + 验证字符串, 生成二维码 , 和 UUID 一起, 返回给 浏览器</li>
+<li>browser 拿到 UUID 和 二维码, 之后每隔一秒向服务器发送一个请求, 看是否已经登录成功, 请求携带 UUID</li>
+<li>server 根据 UUID 从 redis 获取 userID, 生成登录成功的 token, 浏览器登录成功</li>
+</ol>
+<p>手机端 和 服务器配合:</p>
+<ol>
+<li>手机扫描二维码, 得到 UUID, 向 手机端服务器发送请求, 携带 UUID + 验证字符串 + user token (穿 token 而不是 直接 userId 是为了安全, token 是经过加密的)</li>
+<li>手机端服务器收到请求, 首先对比参数中的验证信息，确定是否为用户登录请求接口, 如果是，返回一个确认信息给手机端。</li>
+<li>手机端收到返回后，将登录确认框显示给用户, 用户确认, 手机再次发送请求, 携带 UUID, token</li>
+<li>服务器拿到 uuId 和 token 解析的 userId 后，将用户的 userid 作为 value 值存入 redis 中以 uuid 作为 key 的键值对中。</li>
+</ol>
+<h1><a class="header" href="#excel-表导入优化" id="excel-表导入优化">Excel 表导入优化</a></h1>
+<p>缴费记录导入, 用户 将别的系统的数据填入我们系统中的 Excel 模板，应用将文件内容读取、校对、转换之后产生欠费数据、票据、票据详情并存储到数据库中; 校验包括:</p>
+<ul>
+<li>字段长度, 字段内容正则校验, 都在内存中没有外部数据交互, 性能影响小</li>
+<li>数据正确性, 重复性校验, 如票据号是否和系统已存在的票据号重复, 房屋是否存在</li>
+</ul>
+<p>在我接手之前数据量还不大, 接手后数据量增加到 10w 级别, 对应到数据库就是 30w 级别, 经过优化后可以在 100s 内完成 (测试服务器 4g 内存不仅放了数据库 MySQL5.7，还放了很多微服务应用。处理能力不太行)</p>
+<ol>
+<li>poi 读取 Excel 成 list</li>
+<li>遍历 list, 检验字段长度, 一些查询数据库的校验，比如校验当前行欠费对应的房屋是否在系统中存在, 写入当前行数据</li>
+<li>返回执行结果，如果出错 / 校验不合格。则返回提示信息并回滚数据 (涉及到三个表)</li>
+</ol>
+<p>优化:</p>
+<ul>
+<li>
+<p>缓存: 将参加校验的数据全部缓存到 HashMap 中。直接到 HashMap 去命中</p>
+<p>校验行中的房屋是否存在，原本是要用 区域 + 楼宇 + 单元 + 房号 去查询房屋表匹配房屋 ID，查到则校验通过，生成的欠单中存储房屋 ID.因此我采用一条 SQL，将该小区下所有的房屋以 区域/楼宇/单元/房号 作为 key，以 房屋 ID 作为 value，存储到 HashMap 中</p>
+</li>
+<li>
+<p>批量插入: MySQL insert 语句支持使用 values (),(),() 的方式一次插入多行数据，通过 mybatis foreach 结合 java 集合可以实现批量插入</p>
+</li>
+<li>
+<p>EasyExcel 代替 poi, 注解方式读写 Excel</p>
+</li>
+<li>
+<p>优化插入速度</p>
+<p>我使用了 values 批量插入代替逐行插入。每 30000 行拼接一个长 SQL、顺序插入。整个导入方法这块耗时最多。后来我将每次拼接的行数减少到 10000、5000、3000、1000、500 发现执行最快的是 1000</p>
+</li>
+<li>
+<p>日志, info 日志 对比不打日志, 不打印日志耗时仅仅是打印日志耗时的 1/10</p>
+</li>
+</ul>
+<ul>
+<li>并行流, 榨干数据库的 CPU，利用网络 IO 的等待时间</li>
+</ul>
+<pre><code class="language-java">public class InsertConsumer {
+    /**
+     * 每个长 SQL 插入的行数，可以根据数据库性能调整
+     */
+    private final static int SIZE = 1000;
+
+    /**
+     * 如果需要调整并发数目，修改下面方法的第二个参数即可
+     */
+    static {
+        System.setProperty(&quot;java.util.concurrent.ForkJoinPool.common.parallelism&quot;, &quot;4&quot;);
+    }
+
+    /**
+     * 插入方法
+     *
+     * @param list     插入数据集合
+     * @param consumer 消费型方法，直接使用 mapper::method 方法引用的方式
+     * @param &lt;T&gt;      插入的数据类型
+     */
+    public static &lt;T&gt; void insertData(List&lt;T&gt; list, Consumer&lt;List&lt;T&gt;&gt; consumer) {
+        if (list == null || list.size() &lt; 1) {
+            return;
+        }
+
+        List&lt;List&lt;T&gt;&gt; streamList = new ArrayList&lt;&gt;();
+
+        for (int i = 0; i &lt; list.size(); i += SIZE) {
+            int j = Math.min((i + SIZE), list.size());
+            List&lt;T&gt; subList = list.subList(i, j);
+            streamList.add(subList);
+        }
+        // 并行流使用的并发数是 CPU 核心数，不能局部更改。全局更改影响较大，斟酌
+        streamList.parallelStream().forEach(consumer);
+    }
+}
+
+</code></pre>
+<h1><a class="header" href="#java-监控系统设计" id="java-监控系统设计">java 监控系统设计</a></h1>
+<h2><a class="header" href="#检测哪些内容" id="检测哪些内容">检测哪些内容</a></h2>
+<ul>
+<li>当 java 运行一个应用，就会生成一个 JVM 的实例，而 java 应用则运行于此 JVM 实例中，当应用退出，JVM 实例也会关闭。启动多个 java 应用，也会启动多个 JVM 实例，它们不会相互影响</li>
+<li>虚拟机主要有三大模块，
+<ul>
+<li>一个类加载子系统（Class Loader Subsystem,负责加载类），</li>
+<li>一个执行引擎（Execution Engine,负责执行类的方法指令和垃圾回收），</li>
+<li>一个运行时数据区（Runtime Data Areas,负责存放程序运行时的数据）
+<ul>
+<li>方法区（存储如类信息，方法信息，引用，常量池等），</li>
+<li>堆（存储类实例对象和数组），</li>
+<li>java 栈（以栈方式存放以帧为单位保存线程的运行状态帧），</li>
+<li>程序计数器（每一个线程都有它自己的程序计数器，表示下一条将被执行指令的“地址”）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>java 应用启动流程就是通过类加载子系统加载相关的类，然后把相关数据如类信息，方法等存到方法区中，实例化相关的类存储在堆中，程序运行位置则是每个线程使用计数器来指定。方法区和堆是线程共享的，程序计数器及 Java 栈是线程私有的。</p>
+<p>运行时数据区是 java 应用运行时的监测区域，其中各个区域的内存情况，特别是堆的内存使用情况，是重点区域。堆还会分年轻代、年老代及 Metaspace，垃圾回收器会进行分代回收。通过它的回收情况监测，可以检测到是否存在内存泄漏，而 java 栈则与线程有关，线程的运行状态又与 CPU 相关，因此 java 栈的监测可以知道 CPU 占用过大的问题，同时方法区和 java 栈的占用内存大小也是一个监测的指标</p>
+<h2><a class="header" href="#如何监控" id="如何监控">如何监控</a></h2>
+<h3><a class="header" href="#程序内置监测" id="程序内置监测">程序内置监测</a></h3>
+<p>打印日志</p>
+<p>另一方面可以输出系统属性 System.getProperties()及 System.getProperty()</p>
+<p>对于 Spring Boot 应用，还可以使用 actuator 来监测程序运行情况</p>
+<h3><a class="header" href="#jdk-自带可视化工具" id="jdk-自带可视化工具">jdk 自带可视化工具</a></h3>
+<p>在 windows 平台下，jdk 还提供了可视化监测工具，以更直观，更方便的方式对 java 应用运行状况进行监测。这两款工具分别是 jconsole 和 jvisualvm，在 jdk 下的 bin 目录下可以找到。它们均可监测本地及远程的 java 应用，包括堆使用情况，线程使用，cpu 使用，类加载情况，gc 情况，jvisualvm 还可以生成相应的堆和线程快照，同时还可以使用相应的插件，以便于进一步分析。</p>
+<h3><a class="header" href="#jdk-自带命令行工具" id="jdk-自带命令行工具">jdk 自带命令行工具</a></h3>
+<ul>
+<li>jps 查看 java 进程 ID</li>
+<li>jinfo 查看及调整虚拟机参数</li>
+<li>jmap 查看堆(heap)使用情况及生成堆快照</li>
+<li>jstack 查看线程运行状态及生成线程快照</li>
+<li>jstat 显示进程中的类装载、内存、垃圾收集等运行数据。</li>
+</ul>
+<h3><a class="header" href="#第三方工具" id="第三方工具">第三方工具</a></h3>
+<ul>
+<li>MAT 是 eclipse 的内存分析插件，通过 MAT 可以对 dump 出来的堆快照进行分析，并且辅助分析内存泄露原因，快速的计算出在内存中对象的占用大小，垃圾收集器的回收工作情况，并可以通过报表直观的查看到可能造成这种结果的对象。</li>
+<li>BTrace 是是 sun 推出的一款 Java 动态、安全追踪（监控）工具，可以在不停机的情况下监控系统运行情况，并且做到最少的侵入，占用最少的系统资源。特别适用在生产环境下对 java 应用进行监测，问题排查。</li>
+<li>Arthas 是阿里开源的在线 Java 诊断工具，同样可以在不停机情况监控系统，包括内存情况，线程情况，GC 情况，运行时数据，也可以监测方法参数、返回值，异常返回等数据，堪称神器，在生产环境下使用非常方便。</li>
+</ul>
+<h2><a class="header" href="#案例-生鲜电商监控平台" id="案例-生鲜电商监控平台">案例 生鲜电商监控平台</a></h2>
+<p>https://mp.weixin.qq.com/s/9E6tdnPXHEtAeI2DO1KTdw</p>
+<h1><a class="header" href="#消息推送系统-im-系统" id="消息推送系统-im-系统">消息推送系统 IM 系统</a></h1>
+<p>im系统常用相关协议，如：xmpp，mqtt，pb等</p>
+<p>mosquito</p>
+<p>https://zhuanlan.zhihu.com/p/37993013
+TODO</p>
+<h1><a class="header" href="#流程引擎系统" id="流程引擎系统">流程引擎系统</a></h1>
+<p>https://blog.csdn.net/herriman/article/details/51815925
+https://blog.csdn.net/WSRspirit/article/details/81412344</p>
+<h1><a class="header" href="#权限系统" id="权限系统">权限系统</a></h1>
+<ul>
+<li>集中式认证服务, 认证中心提供一个认证凭据, 各个子系统可以通过这个凭据生成自己子系统的凭据</li>
+<li>基于角色的权限模型 RBAC(Role-Based Access Control), 角色是权限的集合, 权限是操作的集合</li>
+</ul>
+<h1><a class="header" href="#日志采集系统" id="日志采集系统">日志采集系统</a></h1>
+<p>https://mp.weixin.qq.com/s/n2LsrWWsP1ALeLtOYl68XQ
+TODO</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="idea-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="java-code-clean.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="idea-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="java-code-clean.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

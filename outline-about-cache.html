@@ -1,0 +1,671 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>outline-about-cache - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html" class="active"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: 缓存概述
+date: 2017-08-17 14:51:45
+tags: [cache, outline]
+categories: java web</h2>
+<div align="center">
+ehchach, memcache, redis...
+https://www.tianmaying.com/tutorial/spring-web-ehcache
+web缓存体系: http://clsn.io/clsn/lx1088.html
+https://sourcegraph.com/github.com/qiujiayu/AutoLoadCache 缓存框架
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98">为什么要使用缓存</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E7%9A%84%E7%89%B9%E5%BE%81">缓存的特征</a>
+<ul>
+<li><a href="#%E5%91%BD%E4%B8%AD%E7%8E%87">命中率</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0%E6%9C%80%E5%A4%A7%E7%A9%BA%E9%97%B4">最大元素（最大空间）</a></li>
+<li><a href="#%E6%B8%85%E7%A9%BA%E7%AD%96%E7%95%A5">清空策略</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E4%BB%8B%E8%B4%A8">缓存介质</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%86%E7%B1%BB-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">分类 应用场景</a>
+<ul>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E7%BC%93%E5%AD%98local-cache">本地缓存（local cache）</a>
+<ul>
+<li><a href="#%E7%BC%96%E7%A8%8B%E7%9B%B4%E6%8E%A5%E5%AE%9E%E7%8E%B0%E7%BC%93%E5%AD%98">编程直接实现缓存</a>
+<ul>
+<li><a href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8For%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%AE%9E%E7%8E%B0">成员变量or局部变量实现</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%AE%9E%E7%8E%B0">静态变量实现</a></li>
+</ul>
+</li>
+<li><a href="#ehcache">Ehcache</a></li>
+<li><a href="#guava-cache">Guava Cache</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%BC%93%E5%AD%98remote-cache">分布式缓存（remote cache）</a>
+<ul>
+<li><a href="#memcache%E7%BC%93%E5%AD%98">memcache缓存</a></li>
+<li><a href="#redis%E7%BC%93%E5%AD%98">Redis缓存</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BC%93%E5%AD%98%E6%96%B9%E6%A1%88%E9%80%89%E5%9E%8B">缓存方案选型</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0%E7%9A%84%E7%AD%96%E7%95%A5">缓存更新的策略</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98">缓存带来的问题</a>
+<ul>
+<li><a href="#%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7%E9%97%AE%E9%A2%98">缓存一致性问题</a>
+<ul>
+<li><a href="#%E6%8C%87%E5%AE%9A%E8%BF%87%E6%9C%9F%E6%97%B6%E9%97%B4">指定过期时间</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E7%BC%93%E5%AD%98">删除缓存</a></li>
+<li><a href="#%E4%B8%BB%E5%8A%A8%E6%9B%B4%E6%96%B0%E7%BC%93%E5%AD%98">主动更新缓存</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-canal-%E4%B8%AD%E9%97%B4%E4%BB%B6">使用 canal 中间件</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9B%AA%E5%B4%A9%E9%97%AE%E9%A2%98">雪崩问题</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F">缓存穿透</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E5%87%BB%E7%A9%BF%E9%97%AE%E9%A2%98">缓存击穿问题</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E5%B9%B6%E5%8F%91%E7%AB%9E%E4%BA%89%E9%97%AE%E9%A2%98">缓存并发竞争问题</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E7%BC%93%E5%AD%98-%E5%9B%BE%E7%89%87%E7%BC%93%E5%AD%98">静态资源缓存-图片缓存</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#为什么要使用缓存" id="为什么要使用缓存">为什么要使用缓存</a></h1>
+<p>高性能(请求执行耗时更短)</p>
+<p>高并发(1s内可以接收更多请求)</p>
+<h1><a class="header" href="#缓存的特征" id="缓存的特征">缓存的特征</a></h1>
+<h2><a class="header" href="#命中率" id="命中率">命中率</a></h2>
+<p>命中率=返回正确结果数/请求缓存次数，命中率越高，表明缓存的使用率越高。</p>
+<h2><a class="header" href="#最大元素最大空间" id="最大元素最大空间">最大元素（最大空间）</a></h2>
+<p>缓存中可以存放的最大元素的数量，一旦超过，那么将会触发缓存启动清空策略</p>
+<h2><a class="header" href="#清空策略" id="清空策略">清空策略</a></h2>
+<p>缓存的存储空间有限制，当缓存空间被用满时，如何保证在稳定服务的同时有效提升命中率？这就由缓存清空策略来处理</p>
+<ul>
+<li>
+<p>FIFO(first in first out)</p>
+<p>先进先出；满足数据实效性，优先保证最新数据可用</p>
+</li>
+<li>
+<p>LFU(less frequently used)</p>
+<p>最少使用；无论是否过期，清除使用次数较少的元素，缓存的元素有一个hit (命中次数)属性，hit 值最小的将会被清出缓存。，满足高频数据有效性</p>
+</li>
+<li>
+<p>LRU(least recently used)ehcache 默认值</p>
+<p>最近最少使用；无论是否过期，缓存的元素有一个时间戳，当缓存容量满了，而又需要腾出地方来缓存新的元素的时候，那么现有缓存元素中时间戳离当前时间最远的元素将被清出缓存，优先保证热点数据有效性</p>
+</li>
+</ul>
+<p>此外还有一些：<br />
+根据过期时间判断，清理过期时间最长的元素；<br />
+根据过期时间判断，清理最近要过期的元素；<br />
+随机清理；<br />
+根据关键字（或元素内容）长短清理等。</p>
+<h2><a class="header" href="#缓存介质" id="缓存介质">缓存介质</a></h2>
+<p>内存、硬盘(文件系统)、数据库（redis等nosql数据库）</p>
+<h1><a class="header" href="#分类-应用场景" id="分类-应用场景">分类 应用场景</a></h1>
+<p>根据缓存与应用的耦合度可分为local Cache、remote Cache</p>
+<ul>
+<li>local cache</li>
+</ul>
+<p>直接存在于应用中的缓存组件；<br />
+优点：直接与应用存在于同一个进程，请求缓存速度快，没有过多的网络开销<br />
+缺点：由于与应用耦合，多个程序无法共享缓存；每个程序需要维护自己的单独缓存，浪费内存<br />
+适用于： 单应用不需要集群，或集群下各节点不许互相通信</p>
+<ul>
+<li>remote cache</li>
+</ul>
+<p>与应用分离的缓存组件；
+优点：与程序解耦，多个程序可共享缓存<br />
+缺点： 网络开销</p>
+<p>根据缓存位置不同可以分为客户端缓存和服务器缓存</p>
+<ul>
+<li>客户端缓存（缓存在用户的客户端，例如浏览器中）</li>
+<li>服务器缓存（缓存在服务器中，可以缓存在内存中，也可以缓存在文件里，并且还可以进一步地区分为本地缓存和分布式缓存两种）</li>
+</ul>
+<h2><a class="header" href="#本地缓存local-cache" id="本地缓存local-cache">本地缓存（local cache）</a></h2>
+<h3><a class="header" href="#编程直接实现缓存" id="编程直接实现缓存">编程直接实现缓存</a></h3>
+<p>例如使用hashmap存储键值对.</p>
+<h4><a class="header" href="#成员变量or局部变量实现" id="成员变量or局部变量实现">成员变量or局部变量实现</a></h4>
+<pre><code class="language-java"> public void UseLocalCache(){
+     //一个本地的缓存变量,只作用域类内部，类间无法共享缓存
+     Map&lt;String, Object&gt; localCacheStoreMap = new HashMap&lt;String, Object&gt;();
+
+    List&lt;Object&gt; infosList = this.getInfoList();
+    for(Object item:infosList){
+        if(localCacheStoreMap.containsKey(item)){ //缓存命中 使用缓存数据
+            // todo
+        } else { // 缓存未命中  IO获取数据，结果存入缓存
+            Object valueObject = this.getInfoFromDB();
+            localCacheStoreMap.put(valueObject.toString(), valueObject);
+
+        }
+    }
+}
+//示例
+private List&lt;Object&gt; getInfoList(){
+    return new ArrayList&lt;Object&gt;();
+}
+//示例数据库IO获取
+private Object getInfoFromDB(){
+    return new Object();
+}
+</code></pre>
+<h4><a class="header" href="#静态变量实现" id="静态变量实现">静态变量实现</a></h4>
+<pre><code class="language-java">//O2O业务中常用的城市基础基本信息判断，通过静态变量一次获取缓存内存中，减少频繁的I/O读取，静态变量实现类间可共享，进程内可共享，缓存的实时性稍差
+public class CityUtils {
+      private static final HttpClient httpClient = ServerHolder.createClientWithPool(); 
+      private static Map&lt;Integer, String&gt; cityIdNameMap = new HashMap&lt;Integer, String&gt;();
+      private static Map&lt;Integer, String&gt; districtIdNameMap = new HashMap&lt;Integer, String&gt;();
+
+  static {
+    HttpGet get = new HttpGet(&quot;http://gis-in.sankuai.com/api/location/city/all&quot;);
+    BaseAuthorizationUtils.generateAuthAndDateHeader(get,
+            BaseAuthorizationUtils.CLIENT_TO_REQUEST_MDC,
+            BaseAuthorizationUtils.SECRET_TO_REQUEST_MDC);
+    try {
+        String resultStr = httpClient.execute(get, new BasicResponseHandler());
+        JSONObject resultJo = new JSONObject(resultStr);
+        JSONArray dataJa = resultJo.getJSONArray(&quot;data&quot;);
+        for (int i = 0; i &lt; dataJa.length(); i++) {
+            JSONObject itemJo = dataJa.getJSONObject(i);
+            cityIdNameMap.put(itemJo.getInt(&quot;id&quot;), itemJo.getString(&quot;name&quot;));
+        }
+    } catch (Exception e) {
+        throw new RuntimeException(&quot;Init City List Error!&quot;, e);
+    }
+}
+    static {
+    HttpGet get = new HttpGet(&quot;http://gis-in.sankuai.com/api/location/district/all&quot;);
+    BaseAuthorizationUtils.generateAuthAndDateHeader(get,
+            BaseAuthorizationUtils.CLIENT_TO_REQUEST_MDC,
+            BaseAuthorizationUtils.SECRET_TO_REQUEST_MDC);
+    try {
+        String resultStr = httpClient.execute(get, new BasicResponseHandler());
+        JSONObject resultJo = new JSONObject(resultStr);
+        JSONArray dataJa = resultJo.getJSONArray(&quot;data&quot;);
+        for (int i = 0; i &lt; dataJa.length(); i++) {
+            JSONObject itemJo = dataJa.getJSONObject(i);
+            districtIdNameMap.put(itemJo.getInt(&quot;id&quot;), itemJo.getString(&quot;name&quot;));
+        }
+    } catch (Exception e) {
+        throw new RuntimeException(&quot;Init District List Error!&quot;, e);
+    }
+}
+
+    public static String getCityName(int cityId) {
+      String name = cityIdNameMap.get(cityId);
+      if (name == null) {
+        name = &quot;未知&quot;;
+      }
+       return name;
+     }
+
+    public static String getDistrictName(int districtId) {
+      String name = districtIdNameMap.get(districtId);
+       if (name == null) {
+         name = &quot;未知&quot;;
+        }
+       return name;
+     }
+   }
+</code></pre>
+<p>静态变量实现类间可共享，进程内可共享，缓存的实时性稍差<br />
+为了解决本地缓存数据的实时性问题，目前大量使用的是结合ZooKeeper的自动发现机制，实时变更本地静态变量缓存</p>
+<blockquote>
+<p>这类缓存实现，优点是能直接在heap区内读写，最快也最方便；缺点同样是受heap区域影响，缓存的数据量非常有限，同时缓存时间受GC影响。主要满足单机场景下的小数据量缓存需求，同时对缓存数据的变更无需太敏感感知，如上一般配置管理、基础静态数据等场景。</p>
+</blockquote>
+<h3><a class="header" href="#ehcache" id="ehcache">Ehcache</a></h3>
+<p>具有如下特点：</p>
+<ul>
+<li>
+<p>纯Java开源缓存框架</p>
+</li>
+<li>
+<p>一个非常轻量级的缓存实现, 只依赖slf4j, Hibernate就使用了他</p>
+</li>
+<li>
+<p>两级缓存介质，cache.flush()才能确保数据不会丢失</p>
+</li>
+<li>
+<p>快速，针对大型高并发系统场景，Ehcache的多线程机制有相应的优化改善。</p>
+</li>
+<li>
+<p>具有缓存(CacheEvenListener)和缓存管理器(CacheManagerListener)的侦听接口，能更简单方便的进行缓存实例的监控管理(做一些统计或数据一致性广播挺好用的)</p>
+</li>
+<li>
+<p>支持多缓存管理器实例，以及一个实例的多个缓存区域。</p>
+</li>
+</ul>
+<p>核心定义：</p>
+<ul>
+<li>
+<p>cache manager：缓存管理器</p>
+</li>
+<li>
+<p>cache： 缓存管理器中可放置若干</p>
+</li>
+<li>
+<p>element： 单条缓存数据的组成单位</p>
+</li>
+<li>
+<p>system of record（SOR）：可以取到真实数据的组件，可以是真正的业务逻辑、外部接口调用、存放真实数据的数据库等，缓存就是从SOR中读取或者写入到SOR中去的。</p>
+</li>
+</ul>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ehcache&gt;
+    &lt;!-- 
+        磁盘存储:将缓存中暂时不使用的对象,转移到硬盘,类似于Windows系统的虚拟内存
+        path:指定在硬盘上存储对象的路径
+     --&gt;    
+    &lt;diskStore path=&quot;d:/ehcache/&quot;&gt;&lt;/diskStore&gt;
+    
+    &lt;!-- 默认缓存配置 --&gt;
+    &lt;!-- 
+    必须:
+        * defaultCache:默认的缓存配置信息,如果不加特殊说明,则所有对象按照此配置项处理
+        * maxElementsInMemory:设置了缓存的上限,最多存储多少个记录对象
+        * eternal:代表对象是否永不过期(如果为true，则缓存的数据始终有效，如果为false那么还要根据timeToIdleSeconds，timeToLiveSeconds判断。)
+        * overflowToDisk:如果内存中数据超过内存限制，是否要缓存到磁盘上
+    可选:
+        * maxElementsOnDisk：在磁盘上缓存的element的最大数目, 达到后old data会刷到磁盘，默认值为0，表示不限制
+        * timeToIdleSeconds:最大的发呆时间(多长时间没有被访问就会失效), 默认0, 永不失效
+        * timeToLiveSeconds:最大的存活时间, 默认0, 同上
+        * diskSpoolBufferSizeMB： DiskStore使用的磁盘大小，默认值30MB。每个cache使用各自的DiskStore
+        * memoryStoreEvictionPolicy： 如果内存中数据超过内存限制，向磁盘缓存时的策略。默认值LRU，可选FIFO、LFU
+     --&gt;
+    &lt;defaultCache
+        maxElementsInMemory=&quot;10000&quot;
+        eternal=&quot;false&quot;
+        timeToIdleSeconds=&quot;120&quot;
+        timeToLiveSeconds=&quot;120&quot;
+        overflowToDisk=&quot;true&quot;
+    /&gt;
+    
+    &lt;!-- User缓存配置 --&gt;
+    &lt;!-- 
+        cache:为指定名称的对象进行缓存的特殊配置
+        name:指定对象的完整名(如果有别名亦可    )
+     --&gt;
+    &lt;cache 
+        name=&quot;User&quot; 
+        maxElementsInMemory=&quot;10000&quot; 
+        eternal=&quot;false&quot;
+        timeToIdleSeconds=&quot;300&quot; 
+        timeToLiveSeconds=&quot;600&quot; 
+        overflowToDisk=&quot;true&quot; 
+    /&gt;
+
+&lt;/ehcache&gt;
+</code></pre>
+<h3><a class="header" href="#guava-cache" id="guava-cache">Guava Cache</a></h3>
+<pre><code class="language-sh"># waiting
+</code></pre>
+<h2><a class="header" href="#分布式缓存remote-cache" id="分布式缓存remote-cache">分布式缓存（remote cache）</a></h2>
+<h3><a class="header" href="#memcache缓存" id="memcache缓存">memcache缓存</a></h3>
+<p><a href="https://blog.csdn.net/jationxiaozi/article/details/8509732">ref</a></p>
+<h3><a class="header" href="#redis缓存" id="redis缓存">Redis缓存</a></h3>
+<p><a href="https://blog.csdn.net/jationxiaozi/article/details/8509732">ref</a></p>
+<h2><a class="header" href="#缓存方案选型" id="缓存方案选型">缓存方案选型</a></h2>
+<p><a href="https://www.zhihu.com/question/24504292/answer/86908460">ref</a>, <a href="https://www.zhihu.com/question/19645807/answer/12605611">ref</a>, <a href="https://www.zhihu.com/question/19829601">更多memcached和redis区别</a></p>
+<p><a href="https://www.imooc.com/article/23549">memcache 和 redis 区别</a></p>
+<ul>
+<li>
+<p>ehcache直接在jvm虚拟机中缓存，速度快, 但是缓存共享麻烦, 大型分布式系统不选用</p>
+</li>
+<li>
+<p>redis 数据类型多 (String list，set，zset(sort set)，hash), meme 仅仅支持 string/二进制</p>
+</li>
+<li>
+<p>redis 支持持久化 (rdb快照, aof日志), binlog, mem 不支持持久化</p>
+</li>
+<li>
+<p>redis 原生支持集群部署, mem 支持不好 (需要通过客户端来实现往集群中分片写入数据)</p>
+</li>
+<li>
+<p>Redis使用单线程的IO复用模型。Memcached是多线程, 可以高效利用多核，非阻塞IO复用的网络模型.</p>
+<p>redis是单线程模型, 只使用cpu单核, mem 可使用多核, 所以在缓存小数据的时候, redis更快(没有线程切换,资源竞争), 缓存100k以上的大数据时mem更快</p>
+</li>
+</ul>
+<h1><a class="header" href="#缓存更新的策略" id="缓存更新的策略">缓存更新的策略</a></h1>
+<p><a href="https://coolshell.cn/articles/17416.html">ref</a></p>
+<h1><a class="header" href="#缓存带来的问题" id="缓存带来的问题">缓存带来的问题</a></h1>
+<p>常用三连: 查数据库枷锁防止缓存击穿, 缓存空对象/布隆过滤器防止穿透, 过期时间加随机值/逻辑过期删除防止雪崩</p>
+<h2><a class="header" href="#缓存一致性问题" id="缓存一致性问题">缓存一致性问题</a></h2>
+<p>一致性问题: 写库操作后, 数据库和缓存数据不一致了</p>
+<p>有如下几种解决方案, 开发成本依次升高:</p>
+<h3><a class="header" href="#指定过期时间" id="指定过期时间">指定过期时间</a></h3>
+<p>缓存指定过期时间 , 容许某段时间的数据不一致</p>
+<h3><a class="header" href="#删除缓存" id="删除缓存">删除缓存</a></h3>
+<p>先写 db, 成功后, 再删除缓存/让缓存失效</p>
+<p>但是也有问题, 问题描述: 写库时, 先更新数据库, 再删除缓存, 如果删除缓存失败了, 那数据库和缓存数据就不一致了 </p>
+<ul>
+<li>
+<p>解决: 利用消息中间件对缓存删除进行失败重试</p>
+</li>
+<li>
+<p>解决: 改为先删除缓存然后更新数据库, 这样如果数据库更新失败, 数据库中是旧数据, 缓存中是空的, 数据不会不一致;</p>
+<p>但是在高并发下, 还是有可能问题: 先删除缓存, 正准备更新数据库, 这时又有一个查询请求进来了, 没有缓存, 查询数据库, 得到旧数据并写入缓存结束返回, 这时之前那个更新请求更新数据库完成, 缓存和数据库数据不一致了</p>
+<p>解决: 简单点的: &quot;延时重复删除&quot; - 在更新数据库前后各删除一次缓存, 第二次删除前等待一段时间(比如200ms); 第二次删除是为了删除写库前有读库操作造成缓存脏数据, 这段延时就是一个读库操作的耗时, 目的是为了让脏数据完全写入缓存, 以便我们刚好能够删除; (休眠和第二次删除可另起一个线程,这样可以提高qps)</p>
+</li>
+<li>
+<p>解决: 还可以 利用内存queue , 将读请求/写请求 串行化, 对同一个 id 的读写串行化, 写库完成前, 无法读库 (严格的一致性): 创建几个jvm内存queue, 比如20个， 每个queue对应一个worker线程; 所有请求均匀分发给各个 queue, 比如按照 id 取模, 然后让对应的线程处理</p>
+<p>这样的话, 更新数据时根据唯一标识(比如商品id),得到hashcode,然后对queue个数取模, 均匀的放入queue中; </p>
+<p>读取数据时，如果发现数据不再缓存中， 将进行【重新读取数据+添加缓存】的操作，根据唯一标识hash路由后加入同一个jvm内存队列；这样worker串行拿到对应操作，然后依次执行，这样的话，一个更新数据的操作，先删除缓存， 然后更新数据库， 还没有完成的话，后面的读请求会在queue中积压， 等待数据库更新操作完成；</p>
+<p>这里有个优化点：一个队列中，其实对同个id的多个更新缓存请求串在一起是没意义的，因此可以做过滤，如果发现队列中已经有一个更新缓存的请求了，那么就不用再放个更新请求操作进去了，直接等待前面的更新操作请求完成即可</p>
+<p>如果请求还在等待时间范围内，不断轮询发现可以取到值了，那么就直接返回；如果请求等待的时间超过一定时长，那么这一次直接从数据库中读取当前的旧值。</p>
+</li>
+<li>
+<p>还可以 : 利用MySQL的binlog异步更新数据到缓存; 推荐</p>
+</li>
+</ul>
+<p>还有一个出现几率很小的问题:</p>
+<blockquote>
+<p>比如，一个是读操作，但是没有命中缓存，然后就到数据库中取数据，此时来了一个写操作，写完数据库后，让缓存失效，然后，之前的那个读操作再把老的数据放进去，所以，会造成脏数据
+顺序是这样的: thread 1读库 (缓存没有) -&gt; thread2写库 -&gt; thread2让缓存失效 -&gt; thread1 设置缓存
+因为这种情况要求一个完整的写库操作在一个读库操作周期内完成, 这显然不大可能, 因为写库大概率慢于读库</p>
+</blockquote>
+<h3><a class="header" href="#主动更新缓存" id="主动更新缓存">主动更新缓存</a></h3>
+<p>数据库更新后, 缓存立即更新, 适用于对数据一致性要求高的场景, 但是开发成本最高, 需要我们自己完成缓存的更新</p>
+<p>一致性最好, 但是如果主动更新出现问题, 会出现不一致问题, 而且可能很久都不会再更新缓存, 所以<code>一般结合超时剔除</code> (最佳实践)</p>
+<p>可能的问题: 如果对缓存的操作是更新而不是删除, 那么高并发下, 两个并发的写库操作会导致不一致, 一个可能的请求执行顺序是: thread1更新缓存, thread2更新缓存, thread2更新db, thread1更新db. 此时 缓存和db数据不一致了</p>
+<p>这时因为 在高并发下, 更新db 和 更新缓存不是原子操作 (通过加锁可以避免)</p>
+<p>解决: 删除缓存, 而不是更新缓存 </p>
+<p>也有懒加载的思想; 还有这个原因: 缓存数据可能是通过负载计算后得出的, 更新缓存太复杂, 还是直接删除简单方便</p>
+<h3><a class="header" href="#使用-canal-中间件" id="使用-canal-中间件">使用 canal 中间件</a></h3>
+<p>阿里开源, 订阅 MySQL 的 binglog来更新缓存, 业务代码中就无需关注缓存一致性相关的问题了, 直接把canal 当成 MySQL 的从服务器, 查询即可</p>
+<p>此外 canal 还能解决数据异构问题 (使用 canal 订阅 多个数据源, 聚合数据, 进行分析处理)</p>
+<h2><a class="header" href="#雪崩问题" id="雪崩问题">雪崩问题</a></h2>
+<p>所有请求瞬间越过缓存直接奔向数据库, 导致数据库也挂, 可能原因:</p>
+<ul>
+<li>
+<p>缓存层挂了</p>
+<ul>
+<li>
+<p>缓存层高可用 - 多个缓存节点(redis 集群, 主从 + 哨兵)</p>
+</li>
+<li>
+<p>使用依赖隔离组件为后端限流如队列, 降级如 Hystrix</p>
+</li>
+<li>
+<p>redis持久化，快速恢复缓存数据</p>
+</li>
+</ul>
+</li>
+<li>
+<p>项目刚上线, redis 中没有任何数据, 瞬间大量请求过来, 造成雪崩</p>
+<ul>
+<li>缓存预热 - 上线前, 预先将热点数据放入redis</li>
+</ul>
+</li>
+<li>
+<p>缓存大量的 key 采用了相同的过期时间, 某一时刻集中失效</p>
+<ul>
+<li>
+<p>为每个key 的过期时间加上一个随机数字</p>
+</li>
+<li>
+<p>使用 &quot;逻辑过期&quot; 策略, 即设置key永不过期, 而将业务要求的过期时间存储到value (到期时间: now() + expire), 每次读取value, 都评估一下是否过期 (到期时间 == now() ?), 如果过期, 则手动删除key(这样, 永远不会查不到key)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#缓存穿透" id="缓存穿透">缓存穿透</a></h2>
+<p>查询一条不存在的空记录, 每次请求都会穿透缓存层到达数据库 (并且查不到数据,也没有写入缓存), 失去了 &quot;缓存保护后端数据库&quot; 的意义</p>
+<p>造成这个问题的原因:</p>
+<ul>
+<li>业务代码本身的问题</li>
+<li>恶意攻击, 爬虫... 造成的大量空命中</li>
+</ul>
+<p>怎么解决:</p>
+<ul>
+<li>
+<p>对于恶意请求, 预先过滤 , 如限制频率</p>
+</li>
+<li>
+<p>缓存空对象 - 当第一次穿透缓存到达数据库, 查询为空, 就将这个空对象缓存到 redis, 之后针对这条数据的访问就不会穿透缓存而是直接返回空对象</p>
+<p>这种方法占用更多的 redis 存储空间, 需要为 null 缓存对象设置较短的过期时间</p>
+<p>数据一致性问题, 可利用消息队列清除 null 对象</p>
+</li>
+<li>
+<p>布隆过滤器拦截 - 适用于 数据命中不高, 数据变化不大的场景 //todo</p>
+</li>
+</ul>
+<h2><a class="header" href="#缓存击穿问题" id="缓存击穿问题">缓存击穿问题</a></h2>
+<p>大量请求同时访问某个 key (高频热点 key), 而这个 key 正好到了失效时间, 请求 直接打到 db</p>
+<p>访问数据库时加锁, 大量请求只让一个去  db, 查到后存入缓存, 其他请求等待直到获取锁 先去 Redis 查, 到后直接返回, 伪代码:</p>
+<pre><code class="language-java">resp = queryRedis(key)
+if (resp == null) {
+    synchronized(this) {
+        resp = queryRedis(key)
+        if (resp == null) {
+            resp = queryDB(key)
+            setRedis(key)
+        }
+    }
+}
+return resp;
+</code></pre>
+<p>另一个思路是对即将过期的数据主动刷新，做法可以有很多，比如起一个线程轮询数据</p>
+<h2><a class="header" href="#缓存并发竞争问题" id="缓存并发竞争问题">缓存并发竞争问题</a></h2>
+<p>多个 client 对某个 key 操作, 如果:</p>
+<ul>
+<li>
+<p>对这个 key 的操作不要求顺序: 使用分布式锁, 抢到锁的client就进行操作</p>
+</li>
+<li>
+<p>对这个 key 的操作要求顺序: 在 set value 时, value 中包含一个时间戳(标识顺序), 每个client 在 set 时要保证自己的时间晚于该时间戳</p>
+</li>
+</ul>
+<h1><a class="header" href="#静态资源缓存-图片缓存" id="静态资源缓存-图片缓存">静态资源缓存-图片缓存</a></h1>
+<p>图片这些是静态资源吧，静态资源推荐的话是使用CDN缓存或者Nginx本地代理缓存和控制客户端浏览器的缓存时常以此来达到一个缓存的作用。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="nodejs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="outline-about-db-design-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="nodejs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="outline-about-db-design-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>my-ioc - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html" class="active"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: 造个小轮子 My IOC
+tags:</p>
+<ul>
+<li>ioc</li>
+<li>side project
+date: 2018-05-10 10:22:22
+categories: java web</li>
+</ul>
+<hr />
+<div align="center">
+动手实现一个ioc容器
+(https://github.com/xiaoyureed/toy-ioc)
+</div>
+<!--more-->
+<h1><a class="header" href="#代码" id="代码">代码</a></h1>
+<p>定义容器接口规范, 有注册, 获取等几个方法</p>
+<pre><code class="language-java">/**
+ * container 接口(添加/移除/获取)
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年6月5日 下午5:00:34
+ */
+public interface Container {
+
+    /**
+     * 初始化
+     * @param clazzSet 
+     */
+    void register(String packageName);
+    
+    /**
+     * 貌似暂时用不到
+     */
+//    void remove();
+    
+    /**
+     * 根据 class 获取 bean
+     * @param clazz
+     * @return
+     */
+    &lt;T&gt; T getByType(Class&lt;T&gt; clazz);
+    
+    /**
+     * 
+     * @param name
+     * @return
+     */
+    &lt;T&gt; T getByName(String name);
+}
+
+</code></pre>
+<p>提供一个默认实现</p>
+<pre><code class="language-java">/**
+ * default container
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年6月5日 下午11:20:02
+ */
+public class DefaultContainer implements Container {
+    
+    private static final Logger log = LoggerFactory.getLogger(DefaultContainer.class);
+    
+    /**
+     * store beans
+     * 
+     * key -- value
+     * beanSimpleName -- bean
+     */
+    Map&lt;String, Object&gt; beanMap = new ConcurrentHashMap&lt;String, Object&gt;();
+    
+    /**
+     * store dependencies, key: 注入关系, value: bean's name(beansMap的key)
+     * 
+     * key--value
+     * beanSimpleName.fieldName--beanSimpleName
+     */
+    Map&lt;String, String&gt; relationMap = new ConcurrentHashMap&lt;String, String&gt;();
+    
+    /////////////// 单例 start //////////////////////////
+        
+    private DefaultContainer() {
+    }
+    private static class DefaultContainerHolder {
+    private static final DefaultContainer instance = new DefaultContainer();
+    }
+    public static DefaultContainer me() {
+    return DefaultContainer.DefaultContainerHolder.instance;
+    }
+    //////////////////end//////////////////////
+    
+
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public &lt;T&gt; T getByType(Class&lt;T&gt; clazz) {
+        Bean beanAnno = clazz.getAnnotation(Bean.class);
+        if (beanAnno != null
+                &amp;&amp; StringUtil.isValid(beanAnno.value())) {// use specified beanName
+            String specifiedName = beanAnno.value();
+            log.debug(&quot;class [{}]指定了有效beanName[{}]&quot;, clazz.getName(), specifiedName);
+            return (T) this.beanMap.get(specifiedName);
+        }
+        else {// use beanSimpleName
+            String simpleName = clazz.getSimpleName();
+            log.debug(&quot;class [{}]没指定有效的beanName, 使用默认值(simple bean name)&quot;, clazz.getName());
+            return (T) this.beanMap.get(simpleName);
+        }
+    }
+    
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public &lt;T&gt; T getByName(String name) {
+        return (T) this.beanMap.get(name);
+    }
+
+    public void register(String packageName) {
+        
+        Set&lt;Class&lt;?&gt;&gt; clazzSet = scanPackage(packageName);  
+        
+        init(clazzSet);
+        
+        inject();
+    }
+
+    /**
+     * 注入
+     */
+    private void inject() {
+        Iterator&lt;Entry&lt;String, String&gt;&gt; ite = relationMap.entrySet().iterator();
+        while(ite.hasNext()) {
+            Entry&lt;String, String&gt; next = ite.next();
+            String value = next.getValue();
+            String key = next.getKey();
+            String[] split = key.split(&quot;\\.&quot;);
+            try {
+                PropertyUtils.setProperty(this.beanMap.get(split[0]), split[1], this.beanMap.get(value));
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    /**
+     * 创建bean实例, 创建注入关系
+     * (也就是填充两个map)
+     * @param clazzSet
+     */
+    private void init(Set&lt;Class&lt;?&gt;&gt; clazzSet) {
+        
+        Iterator&lt;Class&lt;?&gt;&gt; ite = clazzSet.iterator();
+        while(ite.hasNext()) {
+            Class&lt;?&gt; clazz = ite.next();
+            Object bean = null;
+            try {
+                bean = ReflectUtil.createInstance(clazz);
+            } catch (Exception e) {
+                log.error(&quot;创建bean[{}]出现问题&quot;, clazz.getName(), e);
+            }
+            
+            String specName = clazz.getAnnotation(Bean.class).value();
+            if (StringUtil.isValid(specName)) {
+                this.beanMap.put(specName, bean);
+            }
+            // 没有指定beanname, 使用bean 的 qualifiedName 注册
+            else {
+                this.beanMap.put(clazz.getName(), bean);
+            }
+            
+            // 初始化 relationMap
+            Field[] fields = clazz.getDeclaredFields();
+            for (Field f: fields) {
+                Inject injectAnno = f.getAnnotation(Inject.class);
+                if (injectAnno != null) {
+                    // 指定了注入的name
+                    if (StringUtil.isValid(injectAnno.value())) {
+//                        this.relationMap.put(clazz.getName().concat(&quot;.&quot;).concat(f.getName()), injectAnno.value());
+                        this.relationMap.put(specName.concat(&quot;.&quot;).concat(f.getName()), injectAnno.value());
+                    }
+                    // 没有指定injection name
+                    else {
+                        
+//                        this.relationMap.put(clazz.getName() + &quot;.&quot; + f.getName(), f.getName());
+                        this.relationMap.put(specName + &quot;.&quot; + f.getName(), f.getName());
+                    }
+                }
+            }
+            
+        }
+        
+        
+    }
+    /**
+     * 扫描所有class
+     * @param packageName
+     * @return
+     */
+    private Set&lt;Class&lt;?&gt;&gt; scanPackage(String packageName) {
+        Set&lt;Class&lt;?&gt;&gt; result = new LinkedHashSet&lt;Class&lt;?&gt;&gt;();
+        
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        // classpath 下所有的资源文件
+        Enumeration&lt;URL&gt; urls = null;
+        try {
+            urls = classLoader.getResources(packageName.replace(&quot;.&quot;, &quot;/&quot;));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        while (urls.hasMoreElements()) {
+            URL url = urls.nextElement();
+            String protocol = url.getProtocol();
+            
+            // 文本中的 class
+            if (&quot;file&quot;.equals(protocol)) {
+                try {
+                    File packageFile = new File(URLDecoder.decode(url.getFile(), &quot;UTF-8&quot;));
+                    
+                    if (!packageFile.exists()
+                            || !packageFile.isDirectory()) {
+                        log.error(&quot;package: [{}]无效&quot;, url.getFile());
+                    }
+                    
+                    File[] files = packageFile.listFiles();
+                    
+                    handleFiles(files, result, classLoader, packageName);
+                    
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+            }
+            // jar 中的 class
+            else if (&quot;jar&quot;.equals(protocol)) {
+                JarURLConnection jarConn;
+                try {
+                    jarConn = (JarURLConnection) url.openConnection();
+                    JarFile jarFile = jarConn.getJarFile();
+                    Enumeration&lt;JarEntry&gt; jarEntry = jarFile.entries();
+                    // TODO
+//                    handleJarFile();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                
+            }
+            else {
+                log.error(&quot;获取package下资源的protocal出错.&quot;);
+            }
+        }
+     
+        
+        return result;
+    }
+    
+    private void handleFiles(File[] files, Set&lt;Class&lt;?&gt;&gt; result, ClassLoader classLoader, String packageName) {
+        for (File f: files) {
+            // it's a folder, 递归
+            if (f.isDirectory()) {
+                handleFiles(f.listFiles(), result, classLoader, packageName);
+            }
+            // 是文件
+            else {
+                try {
+                    Class&lt;?&gt; clazz = classLoader.loadClass(packageName + &quot;.&quot; + f.getName().substring(0, f.getName().lastIndexOf(&quot;.&quot;)));
+                    // 被 @Bean 注解才扫描
+                    Bean beanAnno = clazz.getAnnotation(Bean.class);
+                    if (beanAnno != null) {
+                        /*// specified name
+                        if (StringUtil.isValid(beanAnno.value()) {
+                            
+                        }
+                        // 默认, 使用 bean 的 SimpleName 
+                        else {
+                            
+                        }*/
+                        result.add(clazz);
+                    }
+                } catch (ClassNotFoundException e) {
+                    log.error(&quot;扫描文件[{}]发生错误&quot;, f.getPath(), e);
+//                    e.printStackTrace();
+                }
+            }
+        }
+        
+    }
+    
+}
+</code></pre>
+<p>当然, 还需要最少两个注解. 首先是@bean, 标识纳入container</p>
+<pre><code class="language-java">/**
+ * put into the Ioc container
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年6月5日 下午7:48:17
+ */
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE})
+public @interface Bean {
+
+    String value() default &quot;&quot;;
+}
+</code></pre>
+<p>然后是@inject, 依赖注入时候用:</p>
+<pre><code class="language-java">
+/**
+ * inject resources into 
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年6月5日 下午7:53:21
+ */
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD})
+public @interface Inject {
+
+    String value();
+}
+
+</code></pre>
+<h1><a class="header" href="#测试" id="测试">测试</a></h1>
+<p>先定义bean</p>
+<pre><code class="language-java">@Bean(&quot;son&quot;)
+public class Son {
+
+}
+
+@Bean(&quot;mama&quot;)
+@Data// 需要引入lombok
+public class Mama {
+
+    @Inject(&quot;son&quot;)
+    private Son son;
+    
+    // lombok 提供 getter
+}
+</code></pre>
+<p>使用:</p>
+<pre><code class="language-java">public class DefaultContainerTest {
+
+    @Test
+    public void testDefaultContainer() {
+        DefaultContainer container = DefaultContainer.me();
+        container.register(&quot;com.xiaoyu.ioc.bean&quot;);
+        Object oMama = container.getByName(&quot;mama&quot;);
+        System.out.println(oMama);
+    }
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="mvc-mvvm.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="mybatis-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="mvc-mvvm.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="mybatis-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

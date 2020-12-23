@@ -1,0 +1,4596 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>react-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html" class="active"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: React
+tags:
+- react
+- module
+date: 2018-06-28 20:26:11
+categories: frontend</h2>
+<div align="center">
+https://reactjs.org/
+若以 MVC 框架来看，React 属于view
+<p>https://github.com/dypsilon/frontend-dev-bookmarks 前端集合</p>
+<p>https://www.zhihu.com/question/39943474/answer/156412178,</p>
+<p>https://www.zhihu.com/question/29848048/answer/45793588,</p>
+<p>https://github.com/petehunt/react-howto/blob/master/README-zh.md,</p>
+<p>https://github.com/bailicangdu/react-pxq</p>
+<p><a href="https://zhuanlan.zhihu.com/p/37148975">效率优化</a></p>
+<p><a href="https://reacttraining.com/">react tutorial</a></p>
+<p>https://www.zhihu.com/question/59073695/answer/1071631250 推荐的 react 库</p>
+<p>https://www.npmjs.com/
+https://ant.design/components/overview-cn/</p>
+<p>https://www.zhihu.com/question/336664883/answer/790855896 为什么要拆分包? ReactDom只做和浏览器或DOM相关的操作，例如ReactDOM.render()和ReactDOM.findDOMNode()。如果是服务器端渲染，可以ReactDOM.renderToString()</p>
+<p>http://huziketang.mangojuice.top/books/react/ 实战</p>
+<p>https://github.com/helloqingfeng/Awsome-Front-End-learning-resource 大前端
+https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions 面试题</p>
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E9%9D%A2%E8%AF%95%E9%A2%98">面试题</a></li>
+<li><a href="#why-react">why react</a></li>
+<li><a href="#jsx">jsx</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">基本语法</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-jsx-%E9%9C%80%E8%A6%81%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">使用 jsx 需要的环境配置</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA">开发环境搭建</a>
+<ul>
+<li><a href="#%E8%80%81%E9%A1%B9%E7%9B%AE%E6%8E%A5%E5%85%A5">老项目接入</a></li>
+<li><a href="#create-react-app-%E4%BD%BF%E7%94%A8">create-react-app 使用</a></li>
+<li><a href="#vscode-%E7%8E%AF%E5%A2%83">vscode 环境</a></li>
+<li><a href="#webpack-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA">webpack 环境搭建</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E5%8C%96">组件化</a>
+<ul>
+<li><a href="#%E7%A4%BE%E5%8C%BA%E5%BC%80%E6%BA%90%E7%BB%84%E4%BB%B6">社区开源组件</a></li>
+<li><a href="#web-components">Web Components</a></li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99">组件设计原则</a></li>
+<li><a href="#%E5%B8%A6%E7%8A%B6%E6%80%81%E7%BB%84%E4%BB%B6-%E7%BA%AF%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6">带状态组件 纯函数组件</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E7%BB%91%E5%AE%9A%E6%96%B9%E5%BC%8F">函数绑定方式</a></li>
+<li><a href="#hooks">hooks</a>
+<ul>
+<li><a href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5">最佳实践</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-hooks">为什么需要 hooks</a></li>
+<li><a href="#useref">useRef</a></li>
+<li><a href="#usememo-and-memo-and-usecallback">useMemo and memo and useCallback</a></li>
+<li><a href="#usestate">useState</a>
+<ul>
+<li><a href="#state-%E7%89%B9%E6%80%A7">state 特性</a></li>
+<li><a href="#%E4%BC%A0%E7%BB%9F%E5%86%99%E6%B3%95">传统写法</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-functional-%E7%BB%84%E4%BB%B6%E7%9A%84%E5%86%99%E6%B3%95">使用 functional 组件的写法</a></li>
+<li><a href="#%E5%BB%B6%E8%BF%9F%E5%88%9D%E5%A7%8B%E5%8C%96">延迟初始化</a></li>
+<li><a href="#%E6%96%B0%E6%97%A7-state-%E6%9C%89%E5%85%B3%E8%81%94">新旧 state 有关联</a></li>
+</ul>
+</li>
+<li><a href="#usecontext">useContext</a></li>
+<li><a href="#usereducer">useReducer</a></li>
+<li><a href="#useeffect">useEffect</a>
+<ul>
+<li><a href="#effect-%E7%90%86%E8%A7%A3">effect 理解</a></li>
+<li><a href="#effect-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">effect 基本使用</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E4%B8%8A%E6%AC%A1%E5%80%BC">缓存上次值</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E9%94%80%E6%AF%81%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0%E4%BE%8B%E5%AD%90">设置销毁回调函数例子</a></li>
+<li><a href="#%E5%8F%91%E9%80%81%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82">发送异步请求</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-fetch-api">使用 fetch api</a></li>
+</ul>
+</li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89-hook">自定义 hook</a>
+<ul>
+<li><a href="#%E5%B8%A6%E6%9C%89%E8%87%AA%E5%A2%9E%E6%95%88%E6%9E%9C%E7%9A%84-state-hook">带有自增效果的 state hook</a></li>
+<li><a href="#%E4%BB%8E-usehooks-%E6%94%B9%E9%80%A0-responsecomponent">从 usehooks 改造 responseComponent</a></li>
+<li><a href="#%E5%AE%9A%E6%97%B6%E5%99%A8-and-%E8%87%AA%E5%8A%A8%E9%94%80%E6%AF%81">定时器 and 自动销毁</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BB%BC%E5%90%88%E4%BE%8B%E5%AD%90">综合例子</a>
+<ul>
+<li><a href="#%E7%82%B9%E8%B5%9E%E6%8C%89%E9%92%AE">点赞按钮</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6-and-%E5%87%BD%E6%95%B0%E4%BD%9C%E4%B8%BA%E5%AD%90%E7%BB%84%E4%BB%B6">高阶组件 and 函数作为子组件</a></li>
+<li><a href="#fragment">Fragment</a></li>
+<li><a href="#strictmode">StrictMode</a></li>
+<li><a href="#%E7%A4%BA%E4%BE%8B">示例</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8-props">使用 props</a></li>
+<li><a href="#%E9%81%8D%E5%8E%86%E5%AD%90%E5%85%83%E7%B4%A0">遍历子元素</a></li>
+<li><a href="#%E6%89%BE%E5%88%B0%E7%9C%9F%E5%AE%9E%E7%9A%84-domthisrefxxx">找到真实的 dom(this.ref.xxx)</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-statethisstate">使用 state(this.state)</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E8%A1%A8%E5%8D%95%E7%A4%BA%E4%BE%8B">一个表单示例</a></li>
+<li><a href="#%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2">登录界面</a></li>
+<li><a href="#todo-list-app">todo list app</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">组件的生命周期</a>
+<ul>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%BB%8B%E7%BB%8D">生命周期介绍</a></li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E8%A2%AB%E6%8C%82%E8%BD%BD">组件被挂载</a></li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E8%A2%AB%E5%8D%B8%E8%BD%BD">组件被卸载</a></li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E8%A2%AB%E6%9B%B4%E6%96%B0">组件被更新</a></li>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0-demo">生命周期函数 demo</a></li>
+</ul>
+</li>
+<li><a href="#virtual-dom-%E5%92%8C-diff-%E7%AE%97%E6%B3%95">virtual dom 和 diff 算法</a>
+<ul>
+<li><a href="#virtual-dom">virtual dom</a></li>
+<li><a href="#key-%E5%B1%9E%E6%80%A7%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8">key 属性有什么作用</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E7%BB%84%E4%BB%B6%E6%97%B6%E6%80%8E%E4%B9%88%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD">设置组件时怎么提高性能</a></li>
+</ul>
+</li>
+<li><a href="#context-api-%E4%BD%BF%E7%94%A8">context-api 使用</a></li>
+<li><a href="#state-%E7%8A%B6%E6%80%81">state 状态</a>
+<ul>
+<li><a href="#state-%E4%BB%8B%E7%BB%8D">state 介绍</a></li>
+<li><a href="#state-%E5%92%8C%E7%BB%84%E4%BB%B6%E7%9A%84%E6%99%AE%E9%80%9A%E5%B1%9E%E6%80%A7%E5%8C%BA%E5%88%AB">state 和组件的普通属性区别</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0-state">如何更新 state</a></li>
+<li><a href="#setstate-%E6%98%AF%E4%B8%8D%E6%98%AF%E5%BC%82%E6%AD%A5%E7%9A%84">setState 是不是异步的</a></li>
+<li><a href="#setstate-%E6%9B%B4%E6%96%B0%E6%98%AF%E4%B8%80%E4%B8%AA%E5%90%88%E5%B9%B6%E8%BF%87%E7%A8%8B">setState 更新是一个合并过程</a></li>
+<li><a href="#replacestate-%E6%9B%B4%E6%96%B0%E6%98%AF%E4%B8%80%E4%B8%AA%E6%9B%BF%E6%8D%A2%E8%BF%87%E7%A8%8B">replaceState 更新是一个替换过程</a></li>
+</ul>
+</li>
+<li><a href="#props-%E5%B1%9E%E6%80%A7">props 属性</a>
+<ul>
+<li><a href="#%E5%9C%A8-jsx-%E4%B8%AD%E9%81%8D%E5%8E%86-props">在 jsx 中遍历 props</a></li>
+<li><a href="#proptypes-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5">PropTypes 类型检查</a></li>
+<li><a href="#%E5%BC%95%E5%85%A5%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%E7%9A%84%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95">引入类型检查的其他方法</a>
+<ul>
+<li><a href="#%E5%BC%95%E5%85%A5-typescript">引入 TypeScript</a></li>
+<li><a href="#flow-%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5">flow 类型检查</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BE%E5%AE%9A-props-%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC">设定 props 的默认值</a></li>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B1%9E%E6%80%A7">有哪些属性</a></li>
+</ul>
+</li>
+<li><a href="#refs">refs</a></li>
+<li><a href="#%E5%90%88%E6%88%90%E4%BA%8B%E4%BB%B6">合成事件</a></li>
+<li><a href="#%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86">状态管理</a>
+<ul>
+<li><a href="#flux-%E6%9E%B6%E6%9E%84%E7%9A%84%E6%80%9D%E6%83%B3">flux 架构的思想</a></li>
+<li><a href="#flux-%E5%AE%98%E6%96%B9%E5%AE%9E%E7%8E%B0">Flux 官方实现</a></li>
+<li><a href="#redux">Redux</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8-redux">为什么要使用 redux</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">基本概念</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC-api">基本 api</a>
+<ul>
+<li><a href="#store">store</a></li>
+<li><a href="#reducer">reducer</a></li>
+<li><a href="#applymiddleware">applyMiddleware</a></li>
+<li><a href="#bindactioncreators">bindActionCreators</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BA%AF-redux-%E7%9A%84-api-%E7%A4%BA%E4%BE%8B%E5%90%8C%E6%AD%A5%E7%89%88%E6%9C%AC%E7%9A%84-api">纯 redux 的 api 示例(同步版本的 api)</a></li>
+<li><a href="#react-redux">react-redux</a></li>
+<li><a href="#%E5%BC%82%E6%AD%A5-action">异步 Action</a></li>
+<li><a href="#thunk-saga">thunk, saga</a></li>
+<li><a href="#%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7">调试工具</a></li>
+<li><a href="#demo%E4%B8%80%E4%B8%AA-todo-app">demo(一个 todo-app)</a></li>
+</ul>
+</li>
+<li><a href="#redux-%E5%92%8C-flux-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%AE%E5%BC%82">Redux 和 Flux 的一些差异</a></li>
+<li><a href="#immutablejs">ImmutableJS</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B7%AF%E7%94%B1-react-router">路由 react-router</a>
+<ul>
+<li><a href="#%E8%B7%AF%E7%94%B1%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%BF%E7%94%A8">路由标签的使用</a>
+<ul>
+<li><a href="#router-%E8%B7%AF%E7%94%B1%E5%AE%B9%E5%99%A8">Router-路由容器</a></li>
+<li><a href="#route-%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6%E6%98%A0%E5%B0%84">Route-路由组件映射</a>
+<ul>
+<li><a href="#%E5%B1%9E%E6%80%A7">属性</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87-url-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E7%BB%99-route">通过 url 传递参数给 Route</a></li>
+<li><a href="#%E5%B5%8C%E5%A5%97%E8%B7%AF%E7%94%B1">嵌套路由</a></li>
+<li><a href="#route-%E4%B8%89%E7%A7%8D%E6%B8%B2%E6%9F%93%E6%96%B9%E5%BC%8F">Route 三种渲染方式</a></li>
+</ul>
+</li>
+<li><a href="#switch-%E8%A7%A3%E5%86%B3%E5%A4%9A%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98">Switch-解决多匹配问题</a></li>
+<li><a href="#redirect-%E9%87%8D%E5%AE%9A%E5%90%91%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2">Redirect-重定向当前页面</a></li>
+<li><a href="#link-%E8%B6%85%E9%93%BE%E6%8E%A5">Link-超链接</a></li>
+<li><a href="#navlink-%E5%B8%A6%E6%A0%B7%E5%BC%8F%E7%9A%84-link">NavLink: 带样式的 Link</a></li>
+<li><a href="#prompt-%E6%8F%90%E7%A4%BA">Prompt-提示</a></li>
+</ul>
+</li>
+<li><a href="#history">history</a></li>
+<li><a href="#location">location</a></li>
+<li><a href="#match">match</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B0%83%E8%AF%95%E5%92%8C%E6%B5%8B%E8%AF%95">调试和测试</a></li>
+<li><a href="#graphql-%E5%92%8C-relay">GraphQL 和 Relay</a></li>
+<li><a href="#css-module-%E6%A8%A1%E5%9D%97%E5%8C%96">CSS-Module 模块化</a></li>
+<li><a href="#css-in-js">css-in-js</a></li>
+<li><a href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5-best-practice">最佳实践 best practice</a></li>
+<li><a href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93">服务端渲染</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-ssr">什么是 ssr</a></li>
+<li><a href="#ssr-%E7%9A%84%E5%A5%BD%E5%A4%84">ssr 的好处</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a>
+<ul>
+<li><a href="#%E9%85%8D%E5%90%88-koa2-%E5%AE%9E%E7%8E%B0-ssr">配合 koa2 实现 ssr</a></li>
+<li><a href="#egg-%E5%AE%9E%E7%8E%B0-ssr">egg 实现 ssr</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">性能优化</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF">常见的性能问题场景</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%85%B7%E5%AE%9A%E4%BD%8D%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98">使用工具定位性能问题</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E8%87%AA%E5%8A%A8%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD">网络性能优化-自动按需加载</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-reselect-%E9%81%BF%E5%85%8D%E9%87%8D%E5%A4%8D%E8%AE%A1%E7%AE%97">使用 Reselect 避免重复计算</a></li>
+</ul>
+</li>
+<li><a href="#react-%E5%8A%A8%E7%94%BB">react 动画</a></li>
+<li><a href="#react-native">react native</a></li>
+<li><a href="#%E5%BC%80%E5%8F%91%E5%B0%8F%E7%A8%8B%E5%BA%8F">开发小程序</a></li>
+<li><a href="#%E5%B0%8F%E9%A1%B9%E7%9B%AE">小项目</a>
+<ul>
+<li><a href="#%E5%AE%9E%E7%8E%B0-route">实现 route</a></li>
+<li><a href="#%E8%A1%A8%E5%8D%95%E8%AE%BE%E8%AE%A1%E5%99%A8">表单设计器</a></li>
+<li><a href="#cms-%E7%B3%BB%E7%BB%9F">cms 系统</a></li>
+</ul>
+</li>
+<li><a href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-%E4%B8%8A">部署到 github 上</a></li>
+<li><a href="#%E5%92%8C-springboot-%E6%89%93%E5%8C%85%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8">和 springboot 打包单体应用</a></li>
+<li><a href="#%E5%92%8C-typescript-%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8">和 typescript 一起使用</a>
+<ul>
+<li><a href="#ts-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">ts 基本使用</a>
+<ul>
+<li><a href="#%E6%9E%9A%E4%B8%BE">枚举</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-interface-%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B">使用 interface 定义对象类型</a></li>
+<li><a href="#interface-%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B">interface 定义函数类型</a></li>
+<li><a href="#interface-%E5%AE%9A%E4%B9%89%E5%8F%AF%E7%B4%A2%E5%BC%95%E7%B1%BB%E5%9E%8B">interface 定义可索引类型</a></li>
+<li><a href="#interface-%E5%AE%9A%E4%B9%89-class-%E7%B1%BB">interface 定义 class 类</a></li>
+<li><a href="#interface-%E7%BB%A7%E6%89%BF">interface 继承</a></li>
+<li><a href="#class-%E4%BD%BF%E7%94%A8">class 使用</a></li>
+<li><a href="#%E6%B3%9B%E5%9E%8B%E4%BD%BF%E7%94%A8">泛型使用</a></li>
+<li><a href="#%E4%BA%A4%E5%8F%89%E7%B1%BB%E5%9E%8B">交叉类型</a></li>
+<li><a href="#%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B">联合类型</a></li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4">类型保护</a></li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D">类型别名</a></li>
+<li><a href="#%E7%A9%BA%E7%B1%BB%E5%9E%8B">空类型</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9B%86%E6%88%90-ts-%E7%8E%AF%E5%A2%83">集成 ts 环境</a></li>
+<li><a href="#%E4%B8%BA%E6%A0%B7%E5%BC%8F%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99-types">为样式文件编写 types</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE-css-%E8%B7%B3%E8%BD%AC">配置 css 跳转</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8-debugger-for--chrome">使用 debugger for  Chrome</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#面试题" id="面试题">面试题</a></h1>
+<pre><code>
+- React解决了什么问题 - 减少了页面渲染范围, 缓解浏览器绘制压力
+- 组件的Render函数在何时被调用？ -  state 发生改变的时候
+  - 调用时DOM就一定会被更新吗, -  不一定, 会对比更新后的 virtual dom 和 real dom , 找出需要更新的最小步骤，此时Real DOM才可能发生修改。
+- 组件的生命周期有哪些？
+
+    组件的初始化阶段的声明周期函数以及重点用法如下：
+
+    constructor(): 用于绑定事件以及初始化state（可以通过&quot;fork&quot;props的方式给state赋值）
+    componentWillMount(): 只会在服务端渲染时被调用，你可以在这里同步操作state
+    render(): 这个函数是用来渲染DOM没有错。但它只能用来渲染DOM，请保证它的纯粹性。如果有操作DOM或者和浏览器打交道的一系列操作，请在下一步骤componentDidMount中进行
+    componentDidMount(): 如果你有第三方操作DOM的类库需要初始化（类似于jQuery，Bootstrap的一些组件）操作DOM、或者请求异步数据，都应该放在这个步骤中做
+
+    组件更新阶段：
+
+    componentWillReceiveProps(nextProps): 在这里你可以拿到即将改变的状态，可以在这一步中通过setState方法设置state
+    shouldComponentUpdate(nextProps, nextState): 这一步骤非常重要，它的返回值决定了接下来的生命周期函数是否会被调用，默认返回true，即都会被调用；你也可以重写这个函数使它返回false。
+    componentWillUpdate(): 我也不知道这个声明周期函数的意义在哪里，在这个函数内你不能调用setState改变组件状态
+    render()
+    componentDidUpdate(): 和componentDidMount类似，在这里执行DOM操作以及发起网络请求
+    
+    组件析构阶段：
+
+    componentWillUnmount(): 主要用于执行一些清理工作，比如取消网络请求，清楚多余的DOM元素等
+
+
+
+  - 当某些第三方类库想对DOM初始化，或者进行远程数据加载时，应该在哪个周期中完成
+  - 在哪些声明周期中可以修改组件的state？
+- 不同父节点的组件需要对彼此的状态进行改变时应该实现？
+  - 如何设计出一个好的Flux架构
+  - 如何设计出一个好的React组件
+- 如何进行优化？
+  - 组件中的key属性有什么用？
+- Component 与 Element 与 Instance 的区别
+- Webpack如何打包输出多个文件？
+  - webpack打包时如何工作的？
+  - 如何解决循环引用的问题
+  - 在什么情况下需要打包输出多个文件？
+  - loader和plugin的差别
+  - 你觉得使用过什么高级技巧吗？
+- (开放问题）React的生态你使用过哪些类库
+
+</code></pre>
+<h1><a class="header" href="#why-react" id="why-react">why react</a></h1>
+<p>ReactJS: ui 展示框架, 只负责 view 渲染的部分, 包括 npm 库 <code>react</code>(核心), <code>react-dom</code>(专门处理 dom)</p>
+<p>reactjs 来自 facebook, 起初被创造是为了解决一个问题: 页面上的一个图标需要实时显示一个数字, 表示有多少消息未读, 但是始终做不到实时变化. 产生的原因是,</p>
+<ul>
+<li>
+<p>传统的 dom api 需要操作太多细节 (比如典型的 jQuery, api 巨多无比). react 实现了整体刷新, ui 渲染和数据绑定, ui 随数据实时变化</p>
+</li>
+<li>
+<p>还有一个原因, 传统的 app 的状态分散不同的地方</p>
+</li>
+</ul>
+<p>so why react?</p>
+<ul>
+<li>传统开发模式如 jQuery 直接操作 dom 树, 性能消耗大, react 使用 virtual dom 取而代之</li>
+<li>传统开发直接操纵 dom, 需要关注太多 api 细节 (看看 jQuery 有多少 api 就知道了), react 实现了 ui 渲染 和 数据绑定, 不用手动操作渲染</li>
+<li>传统开发 代码难以复用, react 提供组件化的开发方式</li>
+</ul>
+<p>前端工程 and 模块化 -&gt; js-proj-history.md</p>
+<h1><a class="header" href="#jsx" id="jsx">jsx</a></h1>
+<h2><a class="header" href="#基本语法" id="基本语法">基本语法</a></h2>
+<p>JSX: 语法糖, 类似 xml, 但是进行了拓展, 加入 js 语法, 将 HTML 直接嵌入了 JS 代码里面, 最终需要“编译”输出 JS 代码才能使用;</p>
+<p>使用 React 并非必须使用 JSX, JSX 只是一种直观的创建 React nodes 的方法，它是对 <code>React.createElement()</code>方法的封装</p>
+<p>通过 Babel，JSX 语句也可以直接在浏览器中运行</p>
+<p>看看 demo------- <a href="https://github.com/xiaoyureed/react-note/blob/master/demo/demo.js">🚪</a></p>
+<pre><code class="language-js">// 语义化且易懂的标签
+if(this.state.liked) {
+  return (&lt;BlueLike /&gt;);
+} else {
+  return (&lt;GrayLike /&gt;);
+}
+
+// jsx 如何转化为 js:
+React.createElement(
+  string/ReactClass, // 表示 HTML 元素或是 React Component
+  [object props], // 属性值 object
+  [children] // 接下来参数皆为元素子元素
+)
+
+
+// 使用标签的写法, 代码更加简洁
+&lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;Hello!&lt;/a&gt;/* 可以直接在jsx中使用 */
+// React.createElement(组件/HTML标签, 组件属性, 子元素)
+React.createElement('a', {href: 'https://facebook.github.io/react/'}, 'Hello!')
+
+
+
+// 结合js写法
+
+// 解析时候, &quot;{&quot; 开始, 进入js, &quot;&lt;&quot; 开始, 进入html
+var text = 'Hello React';
+// jsx 本身也是表达式
+const element = &lt;h1&gt;{text}&lt;/h1&gt;;
+// 会替换为:
+var text = 'Hello React';
+React.createElement(&quot;h1&quot;, null, text);
+
+// 在 html 标签属性 中使用 jsx
+&lt;h1 foo={1 + 2} /&gt;
+
+
+// 使用数组
+/* jsx中使用js, jsx中使用数组, &lt;!-- 最好有使用index, 不然会报警告, 实际上是因为有损性能 --&gt; */
+var names = ['aaa', 'bbb', 'ccc'];
+ReactDOM.render(
+    &lt;div&gt;
+        {
+            names.map(function (name, index) {
+                return &lt;div key={index}&gt;hello, {name}&lt;/div&gt;
+            })
+        }
+    &lt;/div&gt;
+    ,
+    document.getElementById(&quot;array&quot;)
+);
+
+// -------------------------------------------
+
+// /* 这里会将数组数据连起来, 这里没有index, 会警告, 不过不影响运行 */
+var namesHtml = [&lt;h1&gt;h1...&lt;/h1&gt;, &lt;h2&gt;h2...&lt;/h2&gt;];
+ReactDOM.render(
+    &lt;div&gt;
+        {namesHtml}
+    &lt;/div&gt;,
+    document.getElementById(&quot;htmlArray&quot;)
+);
+
+
+// ----------------------
+
+jsx 中的关键字变化
+
+class 和 for 由于为 JavaScript 保留关键字用法，因此在 JSX 中使用 className 和 htmlFor 替代
+
+Boolean 属性: 在 JSX 中预设只有属性名称但没有(无需)设值为 true
+
+// ---------------------
+
+自定义属性 data-xxx
+&lt;HelloMessage data-attr=&quot;xd&quot; /&gt;
+
+//--------------
+
+使用 &quot;...&quot;遍历 props 属性
+
+var props = {
+    style: &quot;width:20px&quot;,// 报错, 存疑; 可能style需要单独一个对象, 或者 &lt;HelloMessage style={{ color: '#FFFFFF', fontSize: '30px'}} /&gt;
+    className: &quot;main&quot;,
+    value: &quot;yo&quot;,  // 会被替换
+}
+
+&lt;HelloMessage  {...props} value=&quot;yo&quot; /&gt;
+
+// 等于以下
+React.createElement(&quot;h1&quot;, React._spread({}, props, {value: &quot;yo&quot;}), &quot;Hello React!&quot;);
+
+// ==========================
+
+
+直接显示原始 HTML
+&lt;div&gt;{{ _html: &quot;&lt;h1&gt;Hello World!!&lt;/h1&gt;&quot; }}&lt;/div&gt;
+
+
+//================
+
+Inline Style
+// 在 React Component 中 CSS 使用 Inline Style 写法，全都封装在 JavaScript 当中
+const divStyle = {
+    color: &quot;red&quot;,
+    backgroundImage: &quot;url(&quot; + imgUrl + &quot;)&quot;
+};
+
+ReactDOM.render(
+    &lt;div style={divStyle}&gt;Hello World!&lt;/div&gt;,
+    document.getElementById(&quot;app&quot;)
+);
+
+
+</code></pre>
+<h2><a class="header" href="#使用-jsx-需要的环境配置" id="使用-jsx-需要的环境配置">使用 jsx 需要的环境配置</a></h2>
+<p>jsx 被浏览器识别需要先编译, 这里有 2 个方法:</p>
+<p>一种是使用 browserify 或 webpack 等 CommonJS bundler 并整合 babel 预处理, 于浏览器端做解析, 相较于 server 端解析耗费时间, 但是适合整合老项目</p>
+<pre><code class="language-html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- babel.js与browser.js的关系: babel的浏览器版本为browser.js --&gt;
+</code></pre>
+<p>第二种是结合 webpack, babel 预先编译再部署, 使用 babel.js, <code>babel src --out-dir build</code></p>
+<p>==================== 使用第一种方法使用 jsx, 如何引入 jsx</p>
+<p>直接内嵌</p>
+<pre><code class="language-js">/* text/babel表示为jsx语法， 和js不兼容 */
+&lt;script type=&quot;text/babel&quot;&gt;
+    ReactDOM.render(
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;, document.getElementById('example') );
+&lt;/script&gt;
+</code></pre>
+<p>从外部引入</p>
+<pre><code class="language-js">&lt;script type=&quot;text/jsx&quot; src=&quot;main.jsx&quot; /&gt;
+</code></pre>
+<h1><a class="header" href="#开发环境搭建" id="开发环境搭建">开发环境搭建</a></h1>
+<h2><a class="header" href="#老项目接入" id="老项目接入">老项目接入</a></h2>
+<p>CDN-based(直接引入 script 的方式, 适合老项目, 见下节 demo)、 webpack(<a href="https://github.com/carlleton/reactjs101/blob/zh-CN/Ch02/webpack-dev-enviroment.md">ref</a>), TypeScript 的开发方式, browserify 搭配 Gulp 的方法(<a href="https://github.com/carlleton/reactjs101/blob/zh-CN/Ch02/browserify-gulp-dev-enviroment.md">ref</a>)</p>
+<h2><a class="header" href="#create-react-app-使用" id="create-react-app-使用">create-react-app 使用</a></h2>
+<p>也可以直接使用 create-react-app 官方脚手架</p>
+<pre><code class="language-sh"># 全局安装
+npm i -g create-react-app
+# 创建一个app
+create-react-app demo-app
+
+# 也可以一步到位
+npx create-react-app demo-app
+
+</code></pre>
+<p>可以配合 vscode 的 chrome debugger 插件:</p>
+<p>需要修改 url 为自己的，react 工程默认是http://localhost:3000</p>
+<p><img src="1.gif" alt="alt" /></p>
+<p>推荐先 <code>npm start</code> 启动 app, 然后 F5 启动调试服务器, 此时会新开一个 chrome, 访问配置的 url</p>
+<h2><a class="header" href="#vscode-环境" id="vscode-环境">vscode 环境</a></h2>
+<p>eslint, prettier 插件, 和对应的 module</p>
+<p>生成 .eslintrc.js 时候（eslint —init）的第一步选择，即&quot;How would you like to use ESlint&quot;，不要选择&quot;enforce code style&quot;，因为我们要交给 Prettier 去负责格式化代码，否则会有冲突</p>
+<p>但如果我们选择了&quot;enforce code style&quot;，那么会多出一步&quot;Which style guide do you want to follow? (Use arrow keys)&quot;让你选，此时可以选择三种代码风格：即 Airbnb、Standard、Google。</p>
+<p><a href="https://blog.csdn.net/lishuan182/article/details/89575678">vscode 关闭 eslint</a></p>
+<p><a href="https://segmentfault.com/a/1190000020379876">eslint + airbnb 规范</a></p>
+<p><a href="https://thomlom.dev/setup-eslint-prettier-react/">eslint + prettier 配合使用, 冲突解决, 使用 git hooks 在每次提交 commit 时 (pre-commit)格式化</a></p>
+<h2><a class="header" href="#webpack-环境搭建" id="webpack-环境搭建">webpack 环境搭建</a></h2>
+<pre><code class="language-sh">yarn add webpack webpack-cli webpack-dev-server
+touch webpack.config.js
+
+
+</code></pre>
+<pre><code class="language-json">&quot;scripts&quot;: {
+        &quot;dev&quot;: &quot;webpack-dev-server --mode development&quot;,
+        &quot;build&quot;: &quot;webpack --mode production&quot;,
+ },
+# yarn dev 去启动本地server
+# yarn build 去生成生产代码
+
+
+
+</code></pre>
+<p>https://juejin.im/post/5d7a7e7e518825345a05c518</p>
+<p>https://juejin.im/post/5cfb8c0051882541b24c3ed3 //todo</p>
+<h1><a class="header" href="#组件化" id="组件化">组件化</a></h1>
+<h2><a class="header" href="#社区开源组件" id="社区开源组件">社区开源组件</a></h2>
+<ul>
+<li>react-hook-form 表单 - https://github.com/react-hook-form/react-hook-form</li>
+<li>react-beautiful-dnd 拖拽</li>
+<li>https://github.com/vercel/swr 远程数据获取 remote data fetching</li>
+</ul>
+<h2><a class="header" href="#web-components" id="web-components">Web Components</a></h2>
+<p>http://www.ruanyifeng.com/blog/2019/08/web_components.html</p>
+<p>TODO</p>
+<h2><a class="header" href="#组件设计原则" id="组件设计原则">组件设计原则</a></h2>
+<p>props (外部传入) + state (内部维护) = View</p>
+<p>Ract 组件一般不提供方法, 不同的 props 和 state 会产生 不同的 view, 相当于一个 pure function.</p>
+<p>创一个组件考虑三点:</p>
+<ul>
+<li>静态 ui</li>
+<li>状态组成, 内部维护</li>
+<li>由哪些交互方式</li>
+</ul>
+<p>遵循的原则:</p>
+<ul>
+<li>
+<p>自定义组件名大写字母开头 (react 默认 大写为自定义, 小写为原生 dom 节点如 div), 另外 jsx 支持名称的属性语法, 如 <code>&lt;menu.Item /&gt;</code></p>
+</li>
+<li>
+<p>组件应该足够小, 只做一件事 (这是为了性能考虑, 拆分成小组件后, 各个组件都有自己的 state, 变化时只会自己刷新, 不会使得整个拼成的大组件刷新)</p>
+</li>
+<li>
+<p>state 能不要就不要, 能通过计算得到的状态就不要特地存储到 state, 尽量所有数据都通过 props 获取, 也就是 functional component 优于 state component (性能好, 易于重用)</p>
+</li>
+</ul>
+<h2><a class="header" href="#带状态组件-纯函数组件" id="带状态组件-纯函数组件">带状态组件 纯函数组件</a></h2>
+<p>两种写法 ✍:</p>
+<p>ES6 语法(可以进行比较复杂的操作和组件生命周期的控制，相对于 Functional components 耗费资源)</p>
+<pre><code class="language-js">//  注意组件开头第一个字母都要大写
+class MyComponent extends React.Component {
+
+    // ES6 Class 中 render() 是唯一必要的方法（但要注意的是请保持 render() 的纯粹，不要在里面进行 state 修改或是使用非同步方法和浏览器互动，若需非同步互动请于 componentDidMount() 操作）
+    render() {
+        return &lt;div&gt;Hello, World!&lt;/div&gt;;
+    }
+}
+
+// 将 &lt;MyComponent /&gt; 组件插入 id 为 app 的 DOM 元素中
+ReactDOM.render(&lt;MyComponent /&gt;, document.getElementById(&quot;app&quot;));
+</code></pre>
+<p>使用 Functional Component 写法（单纯地 render UI 的 stateless components，没有内部状态、没有 ref，没有生命周期函数。若非需要控制生命周期的话建议多使用 stateless components 获得比较好的性能）</p>
+<pre><code class="language-js">// 使用 arrow function 来设计 Functional Component 让 UI 设计更单纯（f(D) =&gt; UI），减少副作用（side effect）
+const MyComponent = props =&gt; &lt;div&gt;Hello, World!&lt;/div&gt;;
+
+// 将 &lt;MyComponent /&gt; 组件插入 id 为 app 的 DOM 元素中
+ReactDOM.render(&lt;MyComponent /&gt;, document.getElementById(&quot;app&quot;));
+</code></pre>
+<h2><a class="header" href="#函数绑定方式" id="函数绑定方式">函数绑定方式</a></h2>
+<p>react 中由于类的方法默认不会绑定this，因此在调用的时候如果忘记绑定，this的值将会是undefined</p>
+<pre><code class="language-jsx">// 纯函数组件
+
+const Edit = props =&gt; {
+    const onFinish = (values) =&gt; {
+        console.log('Received values of form: ', values);
+    };
+
+    return (
+        &lt;Form
+            onFinish={onFinish}
+        /&gt;
+    );
+}
+</code></pre>
+<pre><code class="language-jsx">// class 组件
+
+// 推荐
+import React, { Component } from 'react';
+class App extends Component {
+  handleSubmit (e, args) {
+    console.log(e, args)
+  }
+
+  render () {
+      // 或者在构造函数中 bind
+      // 如 this.handleClick = this.handleClick.bind(this);
+    return (
+      &lt;div onClick={this.handleSubmit.bind(this, 'test')}&gt;test&lt;/div&gt;
+    )
+  }
+}
+
+// or
+
+class App extends Component {
+  handleSubmit = (e) =&gt; {
+     console.log(e);
+  }
+
+  render () {
+    return (
+      &lt;div onClick={this.handleSubmit}&gt;test&lt;/div&gt;
+    )
+  }
+}
+
+//or
+
+class App extends Component {
+  handleSubmit (e) {
+     console.log(e);
+  }
+  render () {
+    return (
+      &lt;div onClick={ () =&gt; this.handleSubmit }&gt;test&lt;/div&gt;
+    )
+  }
+}
+</code></pre>
+<h2><a class="header" href="#hooks" id="hooks">hooks</a></h2>
+<p>https://reactjs.org/docs/hooks-reference.html</p>
+<h3><a class="header" href="#最佳实践" id="最佳实践">最佳实践</a></h3>
+<p>https://zhuanlan.zhihu.com/p/98554943
+https://www.zhihu.com/search?type=content&amp;q=react%20hooks%20%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5</p>
+<h3><a class="header" href="#为什么需要-hooks" id="为什么需要-hooks">为什么需要 hooks</a></h3>
+<p>https://www.javascriptc.com/2530.html</p>
+<p>纯函数，不能包含状态，也不支持生命周期方法，因此无法取代类的写法, React Hooks 的设计目的，就是加强版函数组件，完全不使用&quot;类&quot;，就能写出一个全功能的组件</p>
+<p>React Hooks 的意思是，组件尽量写成纯函数，外部功能和副作用放在钩子中。 React Hooks 就是那些钩子.需要什么功能，就使用什么钩子。React 默认提供了一些常用钩子. 钩子一律使用use前缀命名，便于识别</p>
+<p>hooks 解决了几个问题:</p>
+<ul>
+<li>容易对 state 操作逻辑进行复用</li>
+<li>以前分布在周期函数中的操作集中到了一个地方 (useEffect 中)</li>
+<li>屏蔽了 this</li>
+</ul>
+<pre><code class="language-js">四个最常用的狗子:
+
+useState()
+为函数组件引入状态（state）
+
+useContext() 在组件之间共享状态, 不必为了参数传递进行复杂嵌套, 减少组件层级
+
+useReducer() 为函数组件引入 action
+
+useEffect() 引入具有副作用的操作，最常见的就是向服务器请求数据
+
+useLayoutEffect() 同步执行副作用
+
+useCallback() 记忆函数
+useMemo() 记忆组件
+可以完全替代 useCallback 的功能 
+useCallback(fn, inputs) is equivalent to useMemo(() =&gt; fn, inputs).
+
+
+useImperativeHandle() 组件可以获得子组件的 input 的 DOM 节点
+
+</code></pre>
+<p>由于 Hooks 可以提供共享状态和 Reducer 函数，所以它在这些方面可以取代 Redux。但是，它没法提供中间件（middleware）和时间旅行（time travel），如果你需要这两个功能，还是要用 Redux</p>
+<h3><a class="header" href="#useref" id="useref">useRef</a></h3>
+<p>use to create a reference to refer to some object else;</p>
+<p>useRef 仅能用在 FunctionComponent，(显然的，因为 Hooks 不能用在 ClassComponent), somehow equal to “this”; 避免在 Render 函数中直接修改 Ref, 最好放在某个函数中修改</p>
+<p>createRef 仅能用在 ClassComponent。(cuz: createRef 并没有 Hooks 的效果，其值会随着 FunctionComponent 重复执行而不断被初始化：)  createRef 每次渲染都会返回一个新的引用，而 useRef 每次都会返回相同的引用</p>
+<pre><code class="language-js">//作为容器
+export default () =&gt; {
+  const refInput = useRef();
+  return (
+    &lt;div&gt;
+      &lt;input ref={refInput} /&gt;
+      &lt;button
+        onClick={() =&gt; {
+          refInput.current.focus();
+        }}
+      &gt;
+        focus
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+</code></pre>
+<p>cache prev value: (can be inproved by useEffect, see blow)</p>
+<pre><code class="language-js">export default () =&gt; {
+  const [count, setCount] = useState(0);
+  // 在两次不同的渲染间传递值
+  // 相当于 类属性变量
+  const prev = useRef(null);
+  return (
+    &lt;div&gt;
+      &lt;p&gt;current: {count}&lt;/p&gt;
+      &lt;p&gt;prev: {prev.current}&lt;/p&gt;
+      &lt;button
+        onClick={() =&gt; {
+          prev.current = count;
+          setCount(count + 1);
+        }}
+      &gt;
+        +
+      &lt;/button&gt;
+      &lt;button
+        onClick={() =&gt; {
+          prev.current = count;
+          setCount(count - 1);
+        }}
+      &gt;
+        -
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+</code></pre>
+<h3><a class="header" href="#usememo-and-memo-and-usecallback" id="usememo-and-memo-and-usecallback">useMemo and memo and useCallback</a></h3>
+<p>都是用来提升性能. 可以防止维护的对象重复创建</p>
+<ul>
+<li>
+<p>memo() 决定一个组件的渲染是否重复执行</p>
+<ul>
+<li>
+<p>常用来包装一个组件; euqals to 函数式组件中的  PureComponent</p>
+</li>
+<li>
+<p>PureComponent: 通过浅层比较 state, props, 决定是否重新渲染; 也就是说, 优化只对于 浅层属性变化有效; 也可以自定义 shouldComponentUpdate()</p>
+</li>
+</ul>
+</li>
+<li>
+<p>useMemo  一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，在后续 render 时，将依赖数组中的值取出来和上一次记录的值进行比较，如果不相等才会重新执行回调函数</p>
+<ul>
+<li>
+<p>useMemo 类似 useEffect, 区别是 effect 是 render 后执行， useMemo 是 render 前执行, 之后是否重复执行, 看依赖是否变化</p>
+</li>
+<li>
+<p>usememo 本身也有开销, 所以使用 useMemo 考虑: 传递给 useMemo 的函数开销大不大? 如果大才用, </p>
+</li>
+<li>
+<p>推荐使用 React.useMemo 而不是 React.memo，因为在组件通信时存在 React.useContext 的用法，这种用法会使所有用到的组件重渲染，只有 React.useMemo 能处理这种场景的按需渲染。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>useCallback 用来包装一个函数, 每次重渲染都新创建这个函数的实例</p>
+<ul>
+<li>
+<p>若 useMemo 内的函数返回一个函数， 那么可以使用 useCallback直接传入这个函数 即 useMemo(() =&gt; fn) 等价 useCallback(fn)</p>
+</li>
+<li>
+<p>所有 Function Component 内函数必须用 React.useCallback 包裹，以保证准确性与性能</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-js">const Demo = memo((props) =&gt; {
+  console.log(&quot;demo render&quot;);
+  return (
+    &lt;div&gt;
+      {props.name}, {props.person.age}
+    &lt;/div&gt;
+  );
+});
+
+export default () =&gt; {
+  const [count, setCount] = useState(0);
+  const [person, setPerson] = useState({
+    age: 11
+  });
+  return (
+    &lt;div&gt;
+      &lt;span
+        onClick={() =&gt; {
+          setCount(count + 1);// 如果仅仅是 count 改变, Demo 不会rerender
+          setPerson({// 如果person也改变, demo 会rerender
+            ...person,
+            age: person.age + 1
+          });
+        }}
+      &gt;
+        {count}
+      &lt;/span&gt;
+      &lt;Demo name=&quot;demo&quot; person={person} /&gt;
+    &lt;/div&gt;
+  );
+};
+
+</code></pre>
+<pre><code class="language-js">/**
+ * 
+ */
+export default () =&gt; {
+  const [count, setCount] = useState(0);
+  const memorizedText = useMemo(() =&gt; {
+    console.log(`run memo func`);
+    return `memo: ${Date.now()}`;
+  }, [Math.floor(count / 10)]); // 每点击 10 次变化一次
+
+  return (
+    &lt;div&gt;
+      {memorizedText}
+      &lt;p&gt;count: {count}&lt;/p&gt;
+      &lt;button
+        onClick={() =&gt; {
+          setCount(count + 1);
+        }}
+      &gt;
+        +
+      &lt;/button&gt;
+      &lt;button
+        onClick={() =&gt; {
+          setCount(count - 1);
+        }}
+      &gt;
+        -
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+</code></pre>
+<h3><a class="header" href="#usestate" id="usestate">useState</a></h3>
+<h4><a class="header" href="#state-特性" id="state-特性">state 特性</a></h4>
+<p>每一次渲染都有它自己的 Props 和 State
+每一次渲染都有它自己的事件处理函数
+当点击更新状态的时候，函数组件都会重新被调用，那么每次渲染都是独立的，取到的值不会受后面操作的影响</p>
+<p>Hook 内部使用 Object.is 来比较新旧 state 是否相等
+与 class 组件中的 setState 方法不同，如果你修改状态的时候，传的状态值没有变化，则不重新渲染;
+useState 不会自动合并更新对象, 二是替换</p>
+<h4><a class="header" href="#传统写法" id="传统写法">传统写法</a></h4>
+<p>(由于带有 状态, 所以必须使用 类 的写法)</p>
+<pre><code class="language-js">class Button extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      content: &quot;click me&quot;
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState({
+      content: &quot;hello btn ~~&quot;
+    });
+  }
+
+  render() {
+    return &lt;button onClick={this.handleClick}&gt;{this.state.content}&lt;/button&gt;;
+  }
+}
+</code></pre>
+<h4><a class="header" href="#使用-functional-组件的写法" id="使用-functional-组件的写法">使用 functional 组件的写法</a></h4>
+<pre><code class="language-js">import React, { useState } from &quot;react&quot;;
+
+const ButtonHooks = () =&gt; {
+  // 语法:
+  // 参数为 某个 state 属性初始值
+  // 返回值为数组, 
+  //[0] 为 属性变量, 
+  //[1] 为对应的 setter 方法, 约定是set前缀加上状态的变量名; 若 new state 和 old state有关联, 推荐 setXXX((old) =&gt; {return new})
+  // 每用一次 useState , 就可以为一个 state 属性 创建 getter, setter, 顺序很重要, 不可改变(即无法放在条件判断内)
+  const [content, setContent] = useState(&quot;click me&quot;);
+
+  const handleClick = () =&gt; {
+    return setContent(&quot;hello hah~~&quot;);
+  };
+  return &lt;button onClick={handleClick}&gt;{content}&lt;/button&gt;;
+};
+
+export default ButtonHooks;
+
+</code></pre>
+<h4><a class="header" href="#延迟初始化" id="延迟初始化">延迟初始化</a></h4>
+<p>initialState 参数只会在组件的初始化渲染中起作用，后续渲染时会被忽略, 传入有个函数, 只会在初始渲染时执行一次, 后续不再执行</p>
+<pre><code class="language-js">export default (props) =&gt; {
+  const [count, setCount] = useState(0);
+
+  const [age, setAge] = useState(() =&gt; {
+    console.log(&quot;延迟初始化, 初始化时, 即使用的时候才执行计算， 只会执行一次， 提高效率&quot;);
+    return props.defaultAge || 0;
+  });
+
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      count: {count}, age: {age}
+      &lt;button onClick={() =&gt; setCount((count) =&gt; count + 1)}&gt;Add&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+
+</code></pre>
+<h4><a class="header" href="#新旧-state-有关联" id="新旧-state-有关联">新旧 state 有关联</a></h4>
+<p>如果新的 state 需要通过使用先前的 state 计算得出，那么可以将回调函数当做参数传递给 setState。该回调函数将接收先前的 state，并返回一个更新后的值</p>
+<h3><a class="header" href="#usecontext" id="usecontext">useContext</a></h3>
+<p>类似 redux 作用, 但是 redux 更强大, </p>
+<p>useReducer和useContext的结合可以取代Redux么？</p>
+<ul>
+<li>useContext的问题是如果数据发生变化，整个子树都会重新渲染，性能可能会有问题</li>
+<li>使用useContext你只能在组件层写更改状态的逻辑，但是有的逻辑是全局的，应该写到一个单独的js文件而不是组件文件里，而要导出的话就必须自己封装，还不如用Redux</li>
+<li>Redux有thunk和saga之类的中间件支持async action，而useReducer没有，还得用其他库。</li>
+</ul>
+<pre><code class="language-js">import React, { useContext } from &quot;react&quot;;
+import ReactDOM from &quot;react-dom&quot;;
+import &quot;./styles.css&quot;;
+
+const AppContext = React.createContext({});
+
+// 语法:
+    // 参数为 react.context 变量
+    // 返回 context 中存储的内容, 有两个地方可以指定存储的内容
+    // - AppContext = React.createContext({}) // 初始化
+    // - &lt;AppContext.Provider value={{}} ... // 指定具体值
+function App() {
+  return (
+    //   AppContext.Provider提供了一个 Context 对象，这个对象可以被子组件共享
+    &lt;AppContext.Provider value={{
+      username: 'superawesome'
+    }}&gt;
+      &lt;div className=&quot;App&quot;&gt;
+        &lt;Navbar /&gt;
+        &lt;Messages /&gt;
+      &lt;/div&gt;
+    &lt;/AppContext.Provider&gt;
+  );
+}
+
+const Navbar = () =&gt; {
+  const { username } = useContext(AppContext)
+
+  return (
+    &lt;div className=&quot;navbar&quot;&gt;
+      &lt;p&gt;AwesomeSite&lt;/p&gt;
+      &lt;p&gt;{username}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+const Messages = () =&gt; {
+  const { username } = useContext(AppContext)
+
+  return (
+    &lt;div className=&quot;messages&quot;&gt;
+      &lt;h1&gt;Messages&lt;/h1&gt;
+      &lt;p&gt;1 message for {username}&lt;/p&gt;
+      &lt;p className=&quot;message&quot;&gt;useContext is awesome!&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+const rootElement = document.getElementById(&quot;root&quot;);
+ReactDOM.render(&lt;App /&gt;, rootElement);
+
+
+</code></pre>
+<p>改变颜色主题 demo:</p>
+<pre><code class="language-js">const themes = {
+  light: {
+    fore: &quot;#000000&quot;,
+    back: &quot;#eeeeee&quot;
+  },
+  dark: {
+    fore: &quot;#ffffff&quot;,
+    back: &quot;#222222&quot;
+  }
+};
+
+const ThemeContext = createContext({
+  theme: themes.light,
+  toggle: () =&gt; {}
+});
+
+export default () =&gt; {
+  const [theme, setTheme] = useState(themes.light);
+  return (
+    // 多个 context 嵌套即可， 顺序不重要
+    &lt;ThemeContext.Provider
+      value={{
+        theme,
+        toggle: () =&gt; {
+          setTheme((theme) =&gt; {
+            setTheme(theme === theme.light ? themes.dark : themes.light);
+          });
+        }
+      }}
+    &gt;
+      &lt;ToolBar /&gt;
+    &lt;/ThemeContext.Provider&gt;
+  );
+};
+
+const ToolBar = () =&gt; {
+  return &lt;ThemedButton /&gt;;
+};
+
+const ThemedButton = () =&gt; {
+  const context = useContext(ThemeContext);
+  return (
+    &lt;button
+      style={{
+        color: context.theme.fore,
+        backgroundColor: context.theme.back
+      }}
+      onClick={() =&gt; {
+        context.toggle();
+      }}
+    &gt;
+      click
+    &lt;/button&gt;
+  );
+};
+</code></pre>
+<h3><a class="header" href="#usereducer" id="usereducer">useReducer</a></h3>
+<p>用于管理复杂的 state 变化</p>
+<p>局部状态不推荐使用 useReducer ，会导致函数内部状态过于复杂，难以阅读。 useReducer 建议在多组件间通信时，结合 useContext 一起使用</p>
+<pre><code class="language-js">import React, { useReducer } from &quot;react&quot;;
+
+// reducer 负责根据 state 和 action 计算出新的 state
+const btnReducer = (state, action) =&gt; {
+  let result;
+
+  switch (action.type) {
+    case &quot;countUp&quot;:
+      result = {
+        ...state,
+        count: state.count + 1
+      };
+      break;
+
+    default:
+      // result = state;
+      // break;
+      throw new Error(&quot;xxx&quot;)
+  }
+  return result;
+};
+
+const ActionDemo = () =&gt; {
+    // 参数 1: reducer
+    // 参数 2: state 初始化
+    // 返回值: [当前状态, dispatch 函数]
+  const [state, dispatch] = useReducer(btnReducer, {
+    count: 0
+  });
+  return (
+    &lt;div&gt;
+      &lt;button
+        style={{
+          padding: &quot;5px 20px&quot;,
+          marginTop: &quot;10px&quot;,
+          marginBottom: &quot;10px&quot;,
+          color: &quot;#fff&quot;,
+          backgroundColor: &quot;#0066cc&quot;,
+          borderRadius: &quot;15px&quot;,
+          border: &quot;1px solid #fff&quot;
+        }}
+        // dispatcher 负责发出 action, 
+        onClick={() =&gt; dispatch({ type: &quot;countUp&quot; })}
+      &gt;
+        up
+      &lt;/button&gt;
+      &lt;p&gt;count: {state.count}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default ActionDemo;
+
+
+</code></pre>
+<h3><a class="header" href="#useeffect" id="useeffect">useEffect</a></h3>
+<h4><a class="header" href="#effect-理解" id="effect-理解">effect 理解</a></h4>
+<p>effect（副作用）：指那些没有发生在数据向视图转换过程中的逻辑，如 ajax 请求、访问原生dom 元素、本地持久化缓存、绑定/解绑事件、添加订阅、设置定时器、记录日志等。</p>
+<p>副作用操作可以分两类：需要清除的和不需要清除的</p>
+<p>useEffect 接收一个函数，该函数会在组件渲染到屏幕之后才执行，该函数有要求：要么返回一个能清除副作用的函数，要么就不返回任何内容; 它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途，只不过被合并成了一个 API</p>
+<p>与 componentDidMount 或 componentDidUpdate 不同，使用 useEffect 调度的 effect 不会阻塞浏览器更新屏幕，这让你的应用看起来响应更快。大多数情况下，effect 不需要同步地执行。在个别情况下（例如测量布局），有单独的 useLayoutEffect Hook 供你使用，其 API 与 useEffect 相同</p>
+<h4><a class="header" href="#effect-基本使用" id="effect-基本使用">effect 基本使用</a></h4>
+<pre><code class="language-js">export default function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() =&gt; {// 相当于 componentDidMount
+    console.log(`count: ${count}`);
+  }, [count]);// 依赖 count 是否变化, [] 则没有依赖, 只在 render 后执行一次; 不带这个参数, 则每次 render 后都执行
+
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      count: {count}
+      &lt;button onClick={() =&gt; setCount((count) =&gt; count + 1)}&gt;Add&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h4><a class="header" href="#缓存上次值" id="缓存上次值">缓存上次值</a></h4>
+<p>useEffect 在 Render 完毕后才执行</p>
+<pre><code class="language-js">// 封装了一个简单的 Hooks 拿到上一次的值
+function usePrevious(value) {
+  const ref = useRef();
+  useEffect(() =&gt; {
+    ref.current = value;//useEffect 在 Render 完毕后才执行, therefore ref 的值在当前 Render 中永远是上一次 Render 时候的
+  });
+  return ref.current;
+}
+
+
+</code></pre>
+<h4><a class="header" href="#设置销毁回调函数例子" id="设置销毁回调函数例子">设置销毁回调函数例子</a></h4>
+<p>只有一个参数的例子:</p>
+<pre><code class="language-js">import React, { useState, useEffect } from &quot;react&quot;;
+let timer = null;
+function App() {
+  const [count, setCount] = useState(0);
+  //一旦 count 值发生改变，则修改 documen.title 值
+  useEffect(() =&gt; {
+    document.title = &quot;componentDidMount&quot; + count;
+  },[count]);
+
+//数组没有传值，代表不监听任何参数变化，即只有在组件初始化或销毁的时候才会触发，用来代替 componentDidMount 和 componentWillUnmount
+  useEffect(() =&gt; {
+    timer = setInterval(() =&gt; {
+      setCount(prevCount =&gt; prevCount + 1);
+    }, 1000);
+    // 返回值(如果有)则在组件销毁或者调用函数前调用
+    return () =&gt; {
+      document.title = &quot;componentWillUnmount&quot;;
+      clearInterval(timer);
+    };
+  }, []);
+  
+  return (
+    &lt;div&gt;
+      Count: {count}
+      &lt;button onClick={() =&gt; clearInterval(timer)}&gt;clear&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+</code></pre>
+<h4><a class="header" href="#发送异步请求" id="发送异步请求">发送异步请求</a></h4>
+<pre><code class="language-js">export default () =&gt; {
+  const personList = usePerson();
+  if (personList === null) {
+    return &lt;div&gt;pending...&lt;/div&gt;;
+  }
+  return (
+    &lt;div&gt;
+      {personList.map((person) =&gt; (
+        &lt;li key={person}&gt;{person}&lt;/li&gt;
+      ))}
+    &lt;/div&gt;
+  );
+};
+
+async function getPersonList() {
+  await new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+      resolve();
+    }, 200);
+  });
+  return [&quot;aa&quot;, &quot;bb&quot;, &quot;cc&quot;];
+}
+
+const usePerson = () =&gt; {
+  const [personList, setPersonList] = useState(null);
+  
+  //useEffect 接收的函数，要么返回一个能清除副作用的函数，要么就不返回任何内容。而 async 返回的是 promise。
+  useEffect(() =&gt; {
+    async function req() {
+      const personList = await getPersonList();
+      setPersonList(personList);
+    }
+    req();
+  }, []);
+  return personList;
+};
+
+</code></pre>
+<h4><a class="header" href="#使用-fetch-api" id="使用-fetch-api">使用 fetch api</a></h4>
+<pre><code class="language-js">如何在 Hooks 中优雅的 Fetch Data
+function App() {
+  const [data, setData] = useState({ hits: [] });
+  useEffect(() =&gt; {
+    // 更优雅的方式
+    const fetchData = async () =&gt; {
+      const result = await axios(
+        'https://api.github.com/api/v3/search?query=redux',
+      );
+      setData(result.data);
+    };
+    fetchData();
+  }, []);
+  return (
+    &lt;ul&gt;
+      {data.hits.map(item =&gt; (
+        &lt;li key={item.id}&gt;
+          &lt;a href={item.url}&gt;{item.title}&lt;/a&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+
+</code></pre>
+<h3><a class="header" href="#自定义-hook" id="自定义-hook">自定义 hook</a></h3>
+<h4><a class="header" href="#带有自增效果的-state-hook" id="带有自增效果的-state-hook">带有自增效果的 state hook</a></h4>
+<pre><code class="language-js">export default () =&gt; {
+  const [count, addCount] = useCountAdd(0);
+
+  return (
+    &lt;div&gt;
+      count: {count}
+      &lt;button onClick={() =&gt; addCount()}&gt;Add&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+
+const useCountAdd = (init) =&gt; {
+  const [count, setCount] = useState(init);
+  return [
+    count,
+    () =&gt; {
+      setCount((count) =&gt; count + 1);
+    }
+  ];
+};
+</code></pre>
+<h4><a class="header" href="#从-usehooks-改造-responsecomponent" id="从-usehooks-改造-responsecomponent">从 usehooks 改造 responseComponent</a></h4>
+<p>实时更新的 response component:</p>
+<pre><code class="language-js">import React, { useState, useEffect } from &quot;react&quot;;
+
+const Response = ({param}) =&gt; {
+    // 标识请求是否完成
+  const [ok, setOk] = useState(false);
+  // http 的响应
+  const [response, setResponse] = useState({});
+
+  // 参数 1: 是一个函数，异步操作的代码放在里面
+  // 参数 2: 是一个数组，用于给出 Effect 的依赖项，只要这个数组发生变化，useEffect()就会执行。
+  //第二个参数可以省略，这时每次组件渲染时，就会执行useEffect()。
+  useEffect(() =&gt; {
+    fetch(`http://www.httpbin.org/anything/${param}`)
+      .then(resp =&gt; resp.json())
+      .then(data =&gt; {
+        setResponse(data);
+        setOk(true);
+      });
+  }, [param]);
+
+  if (!ok) {
+    return &lt;p&gt;Nothing...&lt;/p&gt;;
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;your IP: {response.origin}&lt;/p&gt;
+      &lt;p&gt;request url: {response.url}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+
+const EffectDemo = () =&gt; {
+  const [param, setParam] = useState(&quot;one&quot;);
+
+  return (
+    &lt;div&gt;
+      &lt;Response param={param} /&gt;
+      &lt;p&gt;
+        you can choose:
+        &lt;button onClick={() =&gt; setParam(&quot;one&quot;)}&gt;one&lt;/button&gt;
+        &lt;button onClick={() =&gt; setParam(&quot;two&quot;)}&gt;two&lt;/button&gt;
+        &lt;button onClick={() =&gt; setParam(&quot;three&quot;)}&gt;three&lt;/button&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default EffectDemo;
+
+
+</code></pre>
+<p>改造后:</p>
+<pre><code class="language-js">import React, {useState, useEffect } from &quot;react&quot;;
+
+const useResponse = param =&gt; {
+  const [ok, setOk] = useState(false);
+  const [response, setResponse] = useState({});
+
+  useEffect(() =&gt; {
+    setOk(false);
+    fetch(`http://www.httpbin.org/anything/${param}`)
+      .then(resp =&gt; resp.json())
+      .then(data =&gt; {
+        setResponse(data);
+        setOk(true);
+      });
+  }, [param]);
+  
+  return [ok, response];
+};
+
+const Response = ({param}) =&gt; {
+  const [ok, response] = useResponse(param);
+  if (!ok) {
+    return (
+      &lt;p&gt;Nothing...&lt;/p&gt;
+    );
+  }
+  return (
+    &lt;div&gt;
+      &lt;p&gt;your IP: {response.origin}&lt;/p&gt;
+      &lt;p&gt;request url: {response.url}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+
+
+</code></pre>
+<h4><a class="header" href="#定时器-and-自动销毁" id="定时器-and-自动销毁">定时器 and 自动销毁</a></h4>
+<p>定时器 (需要设置销毁函数)</p>
+<pre><code class="language-js">const useCountAdd = (init) =&gt; {
+  const [count, setCount] = useState(init);
+  return [
+    count,
+    () =&gt; {
+      setCount((count) =&gt; count + 1);
+    }
+  ];
+};
+
+const useInterval = (callback, interval) =&gt; {
+  useEffect(() =&gt; {
+    const I = setInterval(callback, interval);
+    return () =&gt; { // 相当于 componentWillunmount
+      clearInterval(I);
+    };
+  }, []);
+};
+
+export default () =&gt; {
+  const [count, addCount] = useCountAdd(0);
+
+  useInterval(() =&gt; {
+    addCount();
+  }, 1000);
+
+  return (
+    &lt;div&gt;
+      count: {count}
+      &lt;button onClick={addCount}&gt;add&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+</code></pre>
+<p>定时自动销毁</p>
+<pre><code class="language-js">const useTimerCount = (initCount) =&gt; {
+  const [count, setCount] = useState(initCount);
+
+  const ref = useRef();
+  useEffect(() =&gt; {
+    ref.current = setInterval(() =&gt; {
+      setCount((count) =&gt; count + 1);
+    }, 1000);
+  }, []);
+  useEffect(() =&gt; {
+    if (count &gt; 6) {
+      clearInterval(ref.current);
+    }
+  });
+
+  return [count, setCount];
+};
+
+const useCounter = (count) =&gt; {
+  return &lt;div&gt;timer count: {count}&lt;/div&gt;;
+};
+
+export default () =&gt; {
+  const [count, setCount] = useTimerCount(0);
+  return useCounter(count);
+};
+</code></pre>
+<h3><a class="header" href="#综合例子" id="综合例子">综合例子</a></h3>
+<h4><a class="header" href="#点赞按钮" id="点赞按钮">点赞按钮</a></h4>
+<pre><code class="language-js">import React, { useReducer, useState } from &quot;react&quot;;
+import &quot;./styles.css&quot;;
+
+const initState = {
+  likes: 100,
+  dislikes: 5
+};
+
+const appReducer = (state, action) =&gt; {
+  switch (action.type) {
+    case &quot;click_like&quot;:
+      return {
+        ...state,
+        likes: state.likes + action.payload
+      };
+    case &quot;click_dislike&quot;:
+      return {
+        ...state,
+        dislikes: state.dislikes + action.payload
+      };
+    default:
+      return state;
+  }
+};
+
+export default function App() {
+  const [state, dispatch] = useReducer(appReducer, initState);
+  const { likes, dislikes } = state;
+  const [status, setStatus] = useState(null);
+
+  const handleLike = () =&gt; {
+    if (status === &quot;like&quot;) {
+      setStatus(null);
+      dispatch({
+        type: &quot;click_like&quot;,
+        payload: -1
+      });
+    } else if (status === null) {
+      setStatus(&quot;like&quot;);
+      dispatch({
+        type: &quot;click_like&quot;,
+        payload: 1
+      });
+    } else {
+      setStatus(&quot;like&quot;);
+      dispatch({
+        type: &quot;click_dislike&quot;,
+        payload: -1
+      });
+      dispatch({
+        type: &quot;click_like&quot;,
+        payload: 1
+      });
+    }
+  };
+
+  const handleDisLike = () =&gt; {
+    if (status === &quot;dislike&quot;) {
+      setStatus(null);
+      dispatch({
+        type: &quot;click_dislike&quot;,
+        payload: -1
+      });
+    } else {
+      if (status === &quot;like&quot;) {
+        dispatch({
+          type: &quot;click_like&quot;,
+          payload: -1
+        });
+      }
+
+      setStatus(&quot;dislike&quot;);
+      dispatch({
+        type: &quot;click_dislike&quot;,
+        payload: 1
+      });
+    }
+  };
+
+  return (
+    &lt;div className=&quot;App&quot;&gt;
+      &lt;button
+        className={status === &quot;like&quot; ? &quot;btn active&quot; : &quot;btn&quot;}
+        onClick={handleLike}
+      &gt;
+        赞&lt;span&gt;{likes}&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button
+        className={status === &quot;dislike&quot; ? &quot;btn active&quot; : &quot;btn&quot;}
+        onClick={handleDisLike}
+      &gt;
+        踩&lt;span&gt;{dislikes}&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<pre><code class="language-css">.App {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  line-height: 30px;
+  background-color: transparent;
+  color: #747777;
+  outline: none;
+  padding: 0 20px;
+}
+
+.btn:first-of-type {
+  border-right: 2px solid #747777;
+}
+
+.btn:hover {
+  color: #282a2e;
+}
+
+.active,
+.active:hover {
+  color: #1b81f5;
+}
+
+span {
+  margin-left: 6px;
+}
+</code></pre>
+<h2><a class="header" href="#高阶组件-and-函数作为子组件" id="高阶组件-and-函数作为子组件">高阶组件 and 函数作为子组件</a></h2>
+<p>高阶组件 (HOC) 接受组件作为参数, 返回新的组件, 一般以函数的形式呈现</p>
+<pre><code class="language-jsx">export default function withTimer(WrappedComponent) {
+    return class extends React.Component {
+        state = { time: new Date() };
+        componentDidMount() {
+            this.timerID = setInterval(() =&gt; this.tick(), 1000);
+        }
+
+        componentWillUnmount() {
+            clearInterval(this.timerID);
+        }
+
+        tick() {
+            this.setState({
+                time: new Date()
+            });
+        }
+        render() {
+            // props 原封未动
+            // 增加了一个 time 属性
+            return &lt;WrappedComponent time={this.state.time} {...this.props} /&gt;;
+        }
+    };
+}
+
+// 使用的时候可以这样使用:
+export class TabSelectorSample extends PureComponent {
+    state = {
+        color: null
+    };
+    render() {
+        return (
+            &lt;div&gt;
+                Select color:{&quot; &quot;}
+                &lt;TabSelector
+                    options={options}
+                    value={this.state.color}
+                    onChange={c =&gt; this.setState({ color: c })}
+                /&gt;
+                {/* time 属性是通过包装添加进来的 */}
+                &lt;p&gt;{this.props.time.toLocaleTimeString()}&lt;/p&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+
+export default withTimer(TabSelectorSample);
+</code></pre>
+<p>函数作为子组件:</p>
+<pre><code class="language-jsx">const FunctionAsSonComponent = props =&gt; {
+    return (
+        &lt;MyComponent&gt;
+        {/* 传入一个函数 */}
+            {name =&gt; {
+                return &lt;div&gt;{name}&lt;/div&gt;;
+            }}
+        &lt;/MyComponent&gt;
+    );
+};
+
+// 使用: 
+
+const MyComponent = props =&gt; {
+    // 调用传入的函数, hello 就是函数的参数
+    return &lt;div&gt;{props.children(&quot;hello&quot;)}&lt;/div&gt;;
+};
+</code></pre>
+<h2><a class="header" href="#fragment" id="fragment">Fragment</a></h2>
+<p>Fragments 看起来像空的 JSX 标签, 可以将多个元素作为返回值</p>
+<pre><code class="language-js">class Table extends React.Component {
+  render() {
+    return (
+      &lt;table&gt;
+        &lt;tr&gt;
+          &lt;Columns /&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    );
+  }
+}
+
+class Columns extends React.Component {
+  render() {
+    return (
+        // 这里就是一个 Fragment, jsx 规定无法直接返回多个元素, 通过 Fragment 可规避这个限制
+        // 其实就是 &lt;React.Fragment/&gt; 的语法糖
+        // 但是 &lt;&gt;&lt;/&gt; 语法不能接受键值或属性, 只有  &lt;React.Fragment/&gt; 可接受
+      &lt;&gt;
+        &lt;td&gt;Hello&lt;/td&gt;
+        &lt;td&gt;World&lt;/td&gt;
+      &lt;/&gt;
+    );
+  }
+}
+
+</code></pre>
+<p>接受 key 属性的 demo:</p>
+<pre><code class="language-js">function Glossary(props) {
+  return (
+    &lt;dl&gt;
+      {props.items.map(item =&gt; (
+        // 没有`key`，将会触发一个key警告
+        // key 是唯一可以传递给 Fragment 的属性
+        &lt;React.Fragment key={item.id}&gt;
+          &lt;dt&gt;{item.term}&lt;/dt&gt;
+          &lt;dd&gt;{item.description}&lt;/dd&gt;
+        &lt;/React.Fragment&gt;
+      ))}
+    &lt;/dl&gt;
+  );
+}
+
+</code></pre>
+<h2><a class="header" href="#strictmode" id="strictmode">StrictMode</a></h2>
+<p>与 Fragment 类似，StrictMode 不呈现任何可见 UI。它为它的后代启动额外的检查和警告。(严格模式检查仅在开发模式下运行；它们不会影响生产构建。</p>
+<p>)</p>
+<pre><code class="language-js">import React from 'react';
+
+function ExampleApplication() {
+  return (
+    &lt;div&gt;
+      &lt;Header /&gt;
+      &lt;React.StrictMode&gt;
+        &lt;div&gt;
+          &lt;ComponentOne /&gt;
+          &lt;ComponentTwo /&gt;
+        &lt;/div&gt;
+      &lt;/React.StrictMode&gt;
+      &lt;Footer /&gt;
+    &lt;/div&gt;
+  );
+}
+
+</code></pre>
+<h2><a class="header" href="#示例" id="示例">示例</a></h2>
+<p>每个 demo 都提供 3 种写法, 供对比.</p>
+<h3><a class="header" href="#使用-props" id="使用-props">使用 props</a></h3>
+<pre><code class="language-js">// 组件类的第一个字母必须大写，否则会报错，比如HelloMessage不能写成helloMessage。另外，组件类只能包含一个顶层标签，否则也会报错。
+
+/*************************
+      demo1: 使用props
+***************************/
+
+// react api 写法
+
+var HelloMsg = React.createClass({
+    render: function() {
+        return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
+    }
+});
+
+// state component 写法
+
+class HelloMsg extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+    render() {
+        return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
+    }
+}
+
+// Functional component , 单纯的ui, 没有 state, 没有ref, 仅仅一个构造函数
+
+const HelloMsg = props =&gt; (
+    // 注意这边 props 是传入函式的参数，因此取用 props 不用加 this
+    &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;
+);
+
+ReactDOM.render(
+    &lt;HelloMsg name=&quot;xiaoyu&quot;&gt;&lt;/HelloMsg&gt;,
+    document.getElementById(&quot;component&quot;)
+);
+</code></pre>
+<h3><a class="header" href="#遍历子元素" id="遍历子元素">遍历子元素</a></h3>
+<pre><code class="language-js">// ------------------------------------------------------
+
+/******************************
+        demo2: 遍历子元素
+*******************************************/
+
+/* 遍历子元素, this.props.children获取到所有子元素, React.Children.map遍历 */
+
+/* this.props.children可能有3种可能值 undefined: 没有子node, object: 仅仅一个子node, array: 多个子node */
+
+var ChildNode = React.createClass({
+    render: function() {
+        return (
+            &lt;ol&gt;
+                {// React.Children 工具类, 还有很多工具方法, 参见文档
+                React.Children.map(this.props.children, function(child) {
+                    return &lt;li&gt;{child}&lt;/li&gt;;
+                })}
+            &lt;/ol&gt;
+        );
+    }
+});
+
+class ChildNode extends React.Component {
+    // 这里为了方便, 没有 constructor, 因为没有设置props
+
+    render() {
+        return (
+            &lt;ol&gt;
+                {// React.Children 工具类, 还有很多工具方法, 参见文档
+                React.Children.map(this.props.children, function(child) {
+                    return &lt;li&gt;{child}&lt;/li&gt;;
+                })}
+            &lt;/ol&gt;
+        );
+    }
+}
+
+const ChildNode = props =&gt; (
+    &lt;ol&gt;
+        {// React.Children 工具类, 还有很多工具方法, 参见文档
+        React.Children.map(props.children, function(child) {
+            return &lt;li&gt;{child}&lt;/li&gt;;
+        })}
+    &lt;/ol&gt;
+);
+ReactDOM.render(
+    &lt;ChildNode&gt;
+        &lt;div&gt;test childNode div1&lt;/div&gt;
+        &lt;div&gt;test childNode div2&lt;/div&gt;
+    &lt;/ChildNode&gt;,
+    document.getElementById(&quot;childNode&quot;)
+);
+
+// ---------------------------------------------------------
+</code></pre>
+<h3><a class="header" href="#找到真实的-domthisrefxxx" id="找到真实的-domthisrefxxx">找到真实的 dom(this.ref.xxx)</a></h3>
+<pre><code class="language-js">/**********************************
+        demo3: find a DOM node 找到真实的dom
+*************************************/
+
+/* find a DOM node 找到真实的dom */
+
+var TrueDom = React.createClass({
+    render: function() {
+        return (
+            &lt;div&gt;
+                &lt;input type=&quot;text&quot; ref=&quot;textInput&quot; /&gt;
+                &lt;input
+                    type=&quot;button&quot;
+                    value=&quot;click to focus&quot;
+                    onClick={this.handleClick}
+                /&gt;
+            &lt;/div&gt;
+        );
+    },
+    handleClick: function() {
+        // onclick 事件保证了只有虚拟dom插入document后才会使用this.refs属性, 就像放入到了 lifeCycle方法componentDidMount中一样
+        this.refs.textInput.focus();
+    }
+});
+
+class TrueDom extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+        // 与 ES5 React.createClass({}) 不同的是 component 内自定义的方法需要自行绑定到 this context, 如果去掉, 会找不到相应的refs
+        this.handleClick = this.handleClick.bind(this);
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;input type=&quot;text&quot; ref=&quot;textInput&quot; /&gt;
+                &lt;input
+                    type=&quot;button&quot;
+                    value=&quot;click to focus&quot;
+                    onClick={this.handleClick}
+                /&gt;
+            &lt;/div&gt;
+        );
+    }
+    handleClick() {
+        this.refs.textInput.focus();
+    }
+}
+ReactDOM.render(&lt;TrueDom&gt;&lt;/TrueDom&gt;, document.getElementById(&quot;trueDom&quot;));
+
+// -------------------------------------------------------------------
+</code></pre>
+<h3><a class="header" href="#使用-statethisstate" id="使用-statethisstate">使用 state(this.state)</a></h3>
+<pre><code class="language-js">/*************************************
+        demo4: 状态 this.state
+***************************************/
+
+/* 状态 this.state */
+
+var MyState = React.createClass({
+    getInitialState: function() {
+        // 定义初始状态的state, getInitialState 方法用于定义初始状态，也就是一个对象，这个对象可以通过 this.state 属性读取
+        return {
+            liked: false
+        };
+    },
+    render: function() {
+        var text = this.state.liked ? &quot;like&quot; : &quot;还没有开始喜欢&quot;;
+        // 样式: 第一重大括号表示这是 JavaScript 语法，第二重大括号表示样式对象
+        return (
+            &lt;p onClick={this.handleClick}&gt;
+                你&lt;span style={{ color: &quot;red&quot; }}&gt;{text}&lt;/span&gt;这里(点击切换)
+            &lt;/p&gt;
+        );
+    },
+    handleClick: function() {
+        // 改变state
+        this.setState({
+            liked: !this.state.liked
+        });
+    }
+});
+
+class MyState extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            liked: false
+        };
+    }
+    render() {
+        var text = this.state.liked ? &quot;like&quot; : &quot;还没有开始喜欢&quot;;
+        // 样式: 第一重大括号表示这是 JavaScript 语法，第二重大括号表示样式对象
+        return (
+            &lt;p onClick={this.handleClick}&gt;
+                你&lt;span style={{ color: &quot;red&quot; }}&gt;{text}&lt;/span&gt;这里(点击切换)
+            &lt;/p&gt;
+        );
+    }
+    handleClick() {
+        this.setState({
+            liked: !this.state.liked
+        });
+    }
+}
+ReactDOM.render(&lt;MyState&gt;&lt;/MyState&gt;, document.getElementById(&quot;myState&quot;));
+</code></pre>
+<h3><a class="header" href="#一个表单示例" id="一个表单示例">一个表单示例</a></h3>
+<pre><code class="language-js">/* 表单 */
+
+var Form = React.createClass({
+    getInitialState: function() {
+        return {
+            value: &quot;hello&quot;
+        };
+    },
+    handleChange: function(event) {
+        // 处理变化事件, 注意有方法参数: event, event.target.value 读取用户输入的值
+        this.setState({
+            value: event.target.value
+        });
+    },
+    render: function() {
+        // this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性。
+        var value = this.state.value;
+        return (
+            &lt;div&gt;
+                &lt;input type=&quot;text&quot; value={value} onChange={this.handleChange} /&gt;
+                &lt;p&gt;{value}&lt;/p&gt;
+            &lt;/div&gt;
+        );
+    }
+});
+
+class Form extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: &quot;hello&quot;
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(event) {
+        // 有event参数, 否则报错: ... is changing a controlled input of type text to be uncontrolled
+        this.setState({
+            value: event.target.value
+        });
+    }
+    render() {
+        // this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性。
+        var value = this.state.value;
+        return (
+            &lt;div&gt;
+                &lt;input type=&quot;text&quot; value={value} onChange={this.handleChange} /&gt;
+                &lt;p&gt;{value}&lt;/p&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+ReactDOM.render(&lt;Form&gt;&lt;/Form&gt;, document.getElementById(&quot;form&quot;));
+</code></pre>
+<h3><a class="header" href="#登录界面" id="登录界面">登录界面</a></h3>
+<p>https://www.jianshu.com/p/efc080e6ecd9 //todo</p>
+<h3><a class="header" href="#todo-list-app" id="todo-list-app">todo list app</a></h3>
+<p>https://www.jianshu.com/p/523eb1fc1504 //todo</p>
+<h1><a class="header" href="#组件的生命周期" id="组件的生命周期">组件的生命周期</a></h1>
+<h2><a class="header" href="#生命周期介绍" id="生命周期介绍">生命周期介绍</a></h2>
+<p>http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ ----- 交互式的演示</p>
+<p><img src="./Snipaste_2019-10-22_21-00-02.png" alt="" /></p>
+<p>Component 就像个状态机（State Machine），根据不同的 state（可通过<code>setState()</code> 修改）和 props（由父元素传入），Component 会出现对应的显示结果。</p>
+<p>就像是 设计模式中的模板方法模式, react 提供给我们一系列 模板方法, 这些模板方法中的内容 会在组件生命周期中的某个阶段被调用</p>
+<p>组件的生命周期大致可分为三个阶段:</p>
+<ul>
+<li>render 阶段: 纯净无副作用, 渲染的是 virtual dom</li>
+<li>pre-commit 阶段: 将 state 转换为 dom 操作, 这时还没有执行 dom 操作, 真实 dom 中的节点还是来自上一版 state/props </li>
+<li>commit 阶段: 执行 dom 操作, 将 virtual dom 真实反映到真实 dom 上 (这时 可以使用更新后的 dom 节点执行一些自定义操作)</li>
+</ul>
+<p>对于一个组件, 可能接收三种操作, 因此 api 也可以分为三类:</p>
+<ul>
+<li>被挂载</li>
+<li>被更新</li>
+<li>被卸载</li>
+</ul>
+<h2><a class="header" href="#组件被挂载" id="组件被挂载">组件被挂载</a></h2>
+<p>依次执行这些方法</p>
+<ol>
+<li>
+<p>constructor(props)  会在创建 组件时 (被挂载之前) 调用, 用于初始化 state, 还有组件方法的 binding</p>
+<ul>
+<li>
+<p>如果组件有父类, 首先需要 <code>super(props)</code></p>
+</li>
+<li>
+<p>如果 组件是 functional component, 则不需要 构造函数 (因为没有内状态)</p>
+</li>
+<li>
+<p>唯一可以直接修改 state 对象的地方 (通过 <code>this.state</code>), 其他地方想要修改 state 需要通过 <code>setState()</code>.</p>
+</li>
+<li>
+<p>要避免在构造函数中引入任何副作用(如 获取外部数据), <code>componentDidMount</code> 才是应该干这些事的地方</p>
+</li>
+<li>
+<p>避免将 props 的某个值复制给 state, 因为更新 props 的值并不会将这个值同步更行到 state 中. 可以直接使用 this.props.xxx</p>
+</li>
+</ul>
+</li>
+<li>
+<p>(不常用 )static getDerivedStateFromProps(props, state) 每次 render() 前都会触发 ; 返回一个对象来更新 state ,如果返回 null 则不更新任何内容 ; (<a href="https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops">ref</a>)//todo</p>
+<ul>
+<li>
+<p>如: state 需要从 props 计算得出时, 可以使用 ;</p>
+<p>比如: 表单控件获取默认初始值 (此时 state 中的表单项默认值是通过 props 传入的)</p>
+</li>
+<li>
+<p>不推荐使用 ( 因为 手动维护 state 和 props 的对应关系增加了复杂性 )</p>
+</li>
+</ul>
+</li>
+<li>
+<p>render() 渲染 ui, 唯一必须实现的方法; 每次 state 变化, 都会触发</p>
+<ul>
+<li>
+<p>返回值只有四种:</p>
+<p>react 元素. (原生还是通过 jsx 自定义均可)</p>
+<p>数组 or <a href="https://zh-hans.reactjs.org/docs/fragments.html">fragments</a> //todo</p>
+<p><a href="https://zh-hans.reactjs.org/docs/portals.html">Portals</a> //todo</p>
+<p>字符串 or 数字 (在真实 dom 中会被渲染成文本节点)</p>
+<p>boolean 类型 or null (用于支持返回 test &amp;&amp;  <code>&lt;Child /&gt;</code> 的模式)</p>
+</li>
+<li>
+<p>应该为 pure function, 保证渲染结果仅仅和 state 有关</p>
+</li>
+<li>
+<p>若 shouldComponentUpdate() 返回 false，则不会调用 render()</p>
+</li>
+</ul>
+</li>
+<li>
+<p>React 更新 真实 ­D­O­M 和 refs</p>
+</li>
+<li>
+<p>componentDidMount() 进行依赖于 dom 节点 的初始化操作; 会在组件挂载后 (被插入 dom 树中) 调用</p>
+<ul>
+<li>
+<p>如: 通过 ajax 获取数据; 添加订阅 (不要忘记在 componentWillUnmount() 里取消订阅)</p>
+</li>
+<li>
+<p>可以直接调用 setState() 触发渲染, 但此渲染会发生在浏览器更新屏幕之前 (因此用户不会感知到两次渲染)</p>
+</li>
+<li>
+<p>整个生命周期只执行一次</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-js">constructor(props) {
+    super(props);
+    // 不要在这里调用 this.setState()
+    this.state = { counter: 0 };
+    this.handleClick = this.handleClick.bind(this);
+}
+</code></pre>
+<h2><a class="header" href="#组件被卸载" id="组件被卸载">组件被卸载</a></h2>
+<ol>
+<li>
+<p>componentWillUnMount() 会在组件卸载之前调用; 可以 此方法中执行必要的清理操作, 用于资源释放</p>
+<ul>
+<li>
+<p>例如，清除 timer，取消网络请求或清除在 componentDidMount() 中创建的订阅</p>
+</li>
+<li>
+<p>不应调用 setState()，因为该组件即将被卸载, 将永远不会重新渲染</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2><a class="header" href="#组件被更新" id="组件被更新">组件被更新</a></h2>
+<ol>
+<li>
+<p>static getDerivedStateFromProps(props, state)</p>
+</li>
+<li>
+<p>(不常用) shouldComponentUpdate(nextProps, nextState) 在 state/props 发生变化后, render() 前触发; 用来自定义判断组件是否需要重新渲染</p>
+<ul>
+<li>
+<p>默认返回值为 true, 也就是 state 每次发生变化组件都会重新渲染, 大多数时候默认即可</p>
+</li>
+<li>
+<p>首次渲染或 or 用 forceUpdate() 时不会调用该方法, 表示一律渲染</p>
+</li>
+<li>
+<p><a href="https://zh-hans.reactjs.org/docs/react-component.html#shouldcomponentupdate">性能调优</a></p>
+<p>可以使用 Pure Component, 默认实现了这个方法, 只对 props/state 进行浅层比较, 适用于 props/state 数据结构简单的情况</p>
+<p>手动编写此函数: 比对前后的 state/props, 返回 false以告知 React 可以跳过更新, 返回 false 并不会阻止子组件在 state 更改时重新渲染。react 不推荐 进行深层比较,会损害性能。</p>
+<p>若采用 immutable 可以使用 nextProps === this.props 比对是否有变动：</p>
+</li>
+</ul>
+</li>
+<li>
+<p>render()</p>
+</li>
+<li>
+<p>(不常用) getSnapshotBeforeUpdate(prevProps, prevState) 在 render() 后, 在渲染输出到真实 dom 前触发; 用于在组件发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）</p>
+<ul>
+<li>
+<p>此时 state 已经更新了</p>
+</li>
+<li>
+<p>返回值将作为最后一个参数传递给 componentDidUpdate(prevProps, prevState, [snapshot])。应返回 snapshot 的值（或 null）</p>
+</li>
+<li>
+<p>一般出现在ui处理中</p>
+</li>
+</ul>
+</li>
+<li>
+<p>React 更新 真实 ­D­O­M 和 refs</p>
+</li>
+<li>
+<p>componentDidUpdate(prevProps, prevState, [snapshot]) 在渲染输出到真实dom后触发, 首次渲染不会执行此方法; 用来对更新后的 dom 进行操作</p>
+<ul>
+<li>
+<p>场景: 页面需要根据 props 变化来重新获取数据 (如当 props 未发生变化时，则不执行网络请求)</p>
+</li>
+<li>
+<p>地位类似 组件被挂载时的 componentDidMount()</p>
+</li>
+<li>
+<p>可以直接调用 setState()，但它必须被包裹在一个条件语句，否则会导致死循环</p>
+</li>
+<li>
+<p>第三个参数 是 getSnapshotBeforeUpdate() 的返回值, 可能为 undefined</p>
+</li>
+<li>
+<p>如果 shouldComponentUpdate() 返回值为 false，则不会调用 componentDidUpdate()</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-js">class ScrollingList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.listRef = React.createRef();
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    // 我们是否在 list 中添加新的 items ？
+    // 捕获滚动​​位置以便我们稍后调整滚动位置。
+    if (prevProps.list.length &lt; this.props.list.length) {
+      const list = this.listRef.current;
+      return list.scrollHeight - list.scrollTop;
+    }
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // 如果我们 snapshot 有值，说明我们刚刚添加了新的 items，
+    // 调整滚动位置使得这些新 items 不会将旧的 items 推出视图。
+    //（这里的 snapshot 是 getSnapshotBeforeUpdate 的返回值）
+    if (snapshot !== null) {
+      const list = this.listRef.current;
+      list.scrollTop = list.scrollHeight - snapshot;
+    }
+
+    // 典型用法（不要忘记比较 props）：
+    if (this.props.userID !== prevProps.userID) {
+        this.fetchData(this.props.userID);
+    }
+
+  }
+
+  render() {
+    return (
+      &lt;div ref={this.listRef}&gt;{/* ...contents... */}&lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h2><a class="header" href="#生命周期函数-demo" id="生命周期函数-demo">生命周期函数 demo</a></h2>
+<p>demo1: 一个定时浮现隐藏的图标</p>
+<pre><code class="language-js">var Hello = React.createClass({
+    getInitialState: function() {
+        return {
+            opacity: 1.0
+        };
+    },
+
+    componentDidMount: function() {
+        // 设定 定时器
+        this.timer = setInterval(
+            function() {
+                var opacity = this.state.opacity;
+                opacity -= 0.05;
+                if (opacity &lt; 0.1) {
+                    opacity = 1.0;
+                }
+                this.setState({
+                    opacity: opacity
+                });
+            }.bind(this),
+            100
+        ); // 每隔100ms, 就重新设置组件的透明度，从而引发重新渲染
+        // 回调函数一定要加.bind(this)方法，原因是：在setInterval()中定义的回调函数，是在同步代码执行完后，随着事件触发来异步执行的，
+        // 此时函数的上下文Context已经由定义该函数的Script文件变为全局变量，
+        // 如果不通过bind(this)来指定由组件实例作为上下文的话，回调函数中的this会指向全局变量中的Window变量，显然不对
+    },
+
+    render: function() {
+        // 样式: 写成 style=&quot;opacity:{this.state.opacity};&quot; 是错误的
+        return (
+            &lt;div&gt;
+                Hello {this.props.name}{&quot; &quot;}
+                &lt;span style={{ opacity: this.state.opacity }}&gt;👈&lt;/span&gt;
+            &lt;/div&gt;
+        );
+    }
+});
+class Hello extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            opacity: 1.0
+        };
+        this.intervalCallback = this.intervalCallback.bind(this); // 需要bind到当前组件(默认是绑定到全局window), 否则报错: Cannot read property 'opacity' of undefined
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                Hello {this.props.name}{&quot; &quot;}
+                &lt;span style={{ opacity: this.state.opacity }}&gt;👈&lt;/span&gt;
+            &lt;/div&gt;
+        );
+    }
+    componentDidMount() {
+        this.timer = setInterval(this.intervalCallback, 100);
+    }
+    intervalCallback() {
+        var opacity = this.state.opacity;
+        opacity -= 0.05;
+        if (opacity &lt; 0.1) {
+            opacity = 1.0;
+        }
+        this.setState({
+            opacity: opacity
+        });
+    }
+}
+
+ReactDOM.render(&lt;Hello name=&quot;world&quot; /&gt;, document.getElementById(&quot;lifeCycle&quot;));
+</code></pre>
+<h1><a class="header" href="#virtual-dom-和-diff-算法" id="virtual-dom-和-diff-算法">virtual dom 和 diff 算法</a></h1>
+<h2><a class="header" href="#virtual-dom" id="virtual-dom">virtual dom</a></h2>
+<p>如果有大面积的操作 DOM，性能会是一个很大的问题，所以 React 实现了一个<em>Virtual DOM</em>，充当浏览器真实 dom 和 react 之间的中间层</p>
+<p>这个 Virtual DOM 是一个纯粹的 JS 数据结构，在这个结构上, 实现了 diff 算法</p>
+<h2><a class="header" href="#react-的-diff-算法" id="react-的-diff-算法">react 的 diff 算法</a></h2>
+<p>复杂度 O(n)</p>
+<p>拿到前后两个状态的 virtual dom 树后, 会一层一层对每个节点进行比较; </p>
+<p>并且只会对比同一层的节点. 对于跨层级的差异, 会采用 新建 + 删除 操作, 不会遍历比较子节点</p>
+<ul>
+<li>
+<p>如果某一层, 对比前后状态发现, 只是节点顺序变化, 则操作真实 dom, 交换节点顺序,</p>
+</li>
+<li>
+<p>如果某一层, 前后状态 某节点消失不见 or 新增, 则在真实 dom 上, 直接删除/新增该节点及所有子节点. 这样减少了很多不必要的遍历.</p>
+</li>
+<li>
+<p>如果某一层, 发生节点跨层移动, 比如: 前后状态,发现 子节点 node1 移动到 兄弟节点 node2 下了, 那么 diff 算法会在 node2 下创建 node1 及其子结点, 创建成功后, 然后直接删除 node1 (新建 + 删除)</p>
+</li>
+</ul>
+<p>===================对于拥有不同 class 的2个组件</p>
+<p>react 根本不会走到 diff 比较 virtual dom 这一步:</p>
+<ul>
+<li>
+<p>拥有不同类的两个组件有特殊规则: 前后两个组件将会生成不同的 dom 树结构，当 react 判断组件为 dirty component，从而替换整个组件下所有子节点</p>
+<p>如: 在开发中我们需要将 A 组件换成 B 组件，A 与 B 不是同类组件时，react 会毫不犹豫的删除 A，新建 B 及其子节点。不管 A 与 B 是否有相同的结构</p>
+<p>带来的问题: 假如不同的类，但是结构相似的组件相互替换，将会大大影响 react 性能。</p>
+<p>如何解决这个问题呢, 通过 shouldComponentUpdate()来手动判断是否需要更新组件</p>
+</li>
+</ul>
+<h2><a class="header" href="#key-属性有什么作用" id="key-属性有什么作用">key 属性有什么作用</a></h2>
+<p>key属性 用来唯一标识一个组件, 若渲染前后组件具有相同的key 则 react认为是同一个组件</p>
+<ul>
+<li>
+<p>如果渲染前后某个元素具有相同key, 若元素属性有所变化，则React只更新该组件对应的属性, 不涉及组件的挂载卸载，这种情况下，性能开销会相对较小</p>
+</li>
+<li>
+<p>如果元素前后有不同的key, 那么在前后两次渲染中就会被认为是不同的元素，这时候旧的那个元素会被unmount，新的元素会被mount</p>
+</li>
+</ul>
+<p>所以为元素添加 key属性, 有助于提升性能; 且 key 需要满足 唯一, 稳定不变</p>
+<p>不推荐使用数组/集合的index来做key值, 因为数组在执行插入、排序等操作之后，index并不再对应到原先的值，那么这个key就失去了本身的意义</p>
+<p>不推荐使用 随机生成值 来做 key</p>
+<h2><a class="header" href="#设置组件时怎么提高性能" id="设置组件时怎么提高性能">设置组件时怎么提高性能</a></h2>
+<p>因此 diff 算法高效 有两个前提:</p>
+<ul>
+<li>
+<p>组件的 dom 结构相对稳定 (很少发生跨层移动, 增加/删除)</p>
+</li>
+<li>
+<p>同类型的兄弟节点可以被唯一标识 (通过 key 属性)</p>
+</li>
+</ul>
+<p>所以设计组件, 应该遵守这样的原则:</p>
+<ul>
+<li>
+<p>ui 中的元素尽量只发生移动, 属性变化, 少发生 增加, 删除, 少发生跨层移动</p>
+<p>比如, 对于增加/删除节点, 可以使用样式控制节点的 display 实现</p>
+</li>
+<li>
+<p>不同类的组件不要存在相似 DOM</p>
+<p>如: 对于两个组件具有相似的 dom 结构, 应该设计为同一个 组件类</p>
+</li>
+</ul>
+<h1><a class="header" href="#context-api-使用" id="context-api-使用">context-api 使用</a></h1>
+<h1><a class="header" href="#state-状态" id="state-状态">state 状态</a></h1>
+<h2><a class="header" href="#state-介绍" id="state-介绍">state 介绍</a></h2>
+<p>state 是组件内部维护的状态, props 是外部传入的属性; state 一般是真正的业务数据, props 一般是组件的配置, 从父组件传入, 定义后一般不变化</p>
+<p>当组件状态 state 有更改的时候(通过 <code>setState()</code>更改, 直接修改的话, 组件不会重绘)，React 会自动调用组件的 render 方法重新渲染 (重绘 redraw) 整个组件的 UI</p>
+<p>React Component 可以管理自己的内部 state, 在 constructor(props) 构造函数 中初始化 state, 并用 <code>this.state</code>来获取 state。通过 <code>setState(newState)</code> 方法更新 state, 更新后将重新调用 render() 方法，重新绘制 component 内容</p>
+<pre><code class="language-js">class Timer extends React.Component {
+    constructor(props) {
+        super(props);
+        // 与 ES5 React.createClass({}) 不同的是 component 内自定义的方法需要自行绑定 this context，或是使用 arrow function
+        this.tick = this.tick.bind(this);
+        // 初始 state，等于 ES5 中的 getInitialState
+        this.state = {
+            secondsElapsed: 0
+        };
+    }
+    // 累加器方法，每一秒被呼叫后就会使用 setState() 更新内部 state，让 Component 重新 render
+    tick() {
+        this.setState({ secondsElapsed: this.state.secondsElapsed + 1 });
+    }
+    // componentDidMount 为 component 生命周期中阶段 component 已插入节点的阶段，通常一些非同步操作都会放置在这个阶段。这便是每1秒钟会去呼叫 tick 方法
+    componentDidMount() {
+        this.interval = setInterval(this.tick, 1000);
+    }
+    // componentWillUnmount 为 component 生命周期中 component 即将移出插入的节点的阶段。这边移除了 setInterval 效力
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+    // render 为 class Component 中唯一需要定义的方法，其回传 component 欲显示的内容
+    render() {
+        return &lt;div&gt;Seconds Elapsed: {this.state.secondsElapsed}&lt;/div&gt;;
+    }
+}
+
+ReactDOM.render(&lt;Timer /&gt;, document.getElementById(&quot;app&quot;));
+</code></pre>
+<h2><a class="header" href="#state-和组件的普通属性区别" id="state-和组件的普通属性区别">state 和组件的普通属性区别</a></h2>
+<p>在 state 中的变量是和 ui 渲染相关的, 总是会在 render() 中使用到</p>
+<p>组件的普通属性和 state 一样会在组件内部用到, 但是不是在 render() 中使用, 和 ui 渲染无关. 如: 组件中用到的定时器</p>
+<pre><code class="language-js">// 初始化
+  constructor(props) {
+    super(props);
+    this.state = {}; // state 变量
+    this.timer = 0; // 普通属性
+  }
+</code></pre>
+<h2><a class="header" href="#如何更新-state" id="如何更新-state">如何更新 state</a></h2>
+<p>通过 setState 方法, 有两种使用方法</p>
+<ul>
+<li>
+<p>setState(newState)</p>
+</li>
+<li>
+<p>setState((preState, props) =&gt; newState)</p>
+</li>
+</ul>
+<p>当State中的某个状态发生变化，我们应该重新创建这个状态对象，而不是直接修改原来的状态. 为什么呢</p>
+<ul>
+<li>
+<p>有利于性能提升.</p>
+<p>如果 整个 state 是可变对象, 那么说不定在哪个地方就改变了 state, 造成组件不必要的 重绘</p>
+<p>当对象组件状态都是不可变对象时，我们在组件的shouldComponentUpdate方法中，仅需要比较状态的引用就可以判断状态是否真的改变，从而避免不必要的render调用。</p>
+<p>我们使用React 提供的PureComponent时，更是要保证组件状态是不可变对象，否则在组件的shouldComponentUpdate方法中，状态比较就可能出现错误，因为PureComponent执行的是浅比较（比较对象的引用）。</p>
+</li>
+<li>
+<p>不可变对象方便管理和调试</p>
+</li>
+</ul>
+<p>所以 state 应该是 Immutable 的, 目前是我们自己保证它是不可变的, 后面可以考虑使用 Immutable.js</p>
+<pre><code class="language-js">// 当状态发生变化时，如何创建新的状态呢？根据状态的类型，可以分成三种情况：
+
+// 1. 状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）
+
+// 最简单, 直接给要修改的状态赋一个新值即可
+this.setState({
+  count: 1,
+  title: 'Redux',
+  success: true
+})
+
+////////////////////////////////////////////////////////////
+
+// 2. 状态的类型是数组
+//注意不要使用push、pop、shift、unshift、splice等方法修改数组类型的状态，因为这些方法都是在原数组的基础上修改，而concat、slice、filter会返回一个新的数组。
+
+
+// 如有一个数组类型的状态books，当向books中增加一本书时，使用数组的concat方法或ES6的数组扩展语法（spread syntax）：
+
+// 方法一：将state先赋值给另外的变量，然后使用concat创建新数组
+var books = this.state.books; 
+this.setState({
+  books: books.concat(['React Guide']);
+})
+// 方法二：使用preState、concat创建新数组
+this.setState(preState =&gt; ({
+  books: preState.books.concat(['React Guide']);
+}))
+// 方法三：ES6 spread syntax
+this.setState(preState =&gt; ({
+  books: [...preState.books, 'React Guide'];
+}))
+
+
+// 当从books中截取部分元素作为新状态时，使用数组的slice方法：
+
+// 方法一：将state先赋值给另外的变量，然后使用slice创建新数组
+var books = this.state.books; 
+this.setState({
+  books: books.slice(1,3);
+})
+// 方法二：使用preState、slice创建新数组
+this.setState(preState =&gt; ({
+  books: preState.books.slice(1,3);
+}))
+
+
+//当从books中过滤部分元素后，作为新状态时，使用数组的filter方法：
+
+// 方法一：将state先赋值给另外的变量，然后使用filter创建新数组
+var books = this.state.books; 
+this.setState({
+  books: books.filter(item =&gt; {
+    return item != 'React'; 
+  });
+})
+// 方法二：使用preState、filter创建新数组
+this.setState(preState =&gt; ({
+  books: preState.books.filter(item =&gt; {
+    return item != 'React'; 
+  });
+}))
+
+////////////////////////////////////////////////////////////
+
+
+
+// 3. 状态的类型是普通对象（不包含字符串、数组）
+
+
+
+//使用ES6 的Object.assgin方法
+
+// 方法一：将state先赋值给另外的变量，然后使用Object.assign创建新对象
+var owner = this.state.owner;
+this.setState({
+  owner: Object.assign({}, owner, {name: 'Jason'});
+})
+// 方法二：使用preState、Object.assign创建新对象
+this.setState(preState =&gt; ({
+  owner: Object.assign({}, preState.owner, {name: 'Jason'});
+}))
+
+
+// 使用对象扩展语法（object spread properties）
+
+// 方法一：将state先赋值给另外的变量，然后使用对象扩展语法创建新对象
+var owner = this.state.owner;
+this.setState({
+  owner: {...owner, name: 'Jason'};
+})
+// 方法二：使用preState、对象扩展语法创建新对象
+this.setState(preState =&gt; ({
+  owner: {...preState.owner, name: 'Jason'};
+}))
+
+</code></pre>
+<h2><a class="header" href="#setstate-是不是异步的" id="setstate-是不是异步的">setState 是不是异步的</a></h2>
+<p>调用setState，组件的state并不会立即改变，setState只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且 React 会将多次setState的状态修改合并成一次状态修改. </p>
+<p>所以不要依赖当前的State，计算下个State; 前后两个 state 应该没有任何联系; 同样不能依赖当前的Props计算下个 state，因为Props一般也是从父组件的State中获取，依然无法确定获取的当前 props 就是最新的</p>
+<p>经典例子:</p>
+<pre><code class="language-js">// demo.js
+class Demo extends PureComponent {
+  state={
+    count: 0,
+  }
+  // 钩子函数
+  componentDidMount() {
+    console.log('pre state', this.state.count);
+    this.setState({
+      count: this.state.count + 1
+    });
+    console.log('next state', this.state.count);
+
+    //测试setTimeout
+    setTimeout(() =&gt; {
+      console.log('setTimeout pre state', this.state.count);
+      this.setState({
+        count: this.state.count + 1
+      });
+      console.log('setTimeout next state', this.state.count);
+    }, 0);
+  }
+
+  onClick = (event) =&gt; {
+    // 测试合成函数 (合成事件触发的函数) 中setState
+    console.log(`${event.type} pre state`, this.state.count);
+    this.setState({
+      count: this.state.count + 1
+    });
+    console.log(`${event.type} next state`, this.state.count);
+  }
+
+  render() {
+    return &lt;button onClick={this.onClick}&gt;count+1&lt;/button&gt;
+  }
+}
+</code></pre>
+<p>==================真的是异步的吗</p>
+<p>setState本身的执行过程是同步的</p>
+<p>但是在react的<code>合成函数 (合成事件触发的函数)</code>与<code>钩子函数 (生命周期函数)</code>中的 setState() 不会立马更新 state，所以不能立即拿到更新后的 state，形成了所谓的异步；</p>
+<p>==================为什么需要有异步呢 //todo</p>
+<ul>
+<li>
+<p>保持 和 props 的一致性</p>
+<p>就算让 state 同步更新，props 也不行，因为当父组件重渲染（re-render ）了你才知道 props。</p>
+</li>
+<li>
+<p>性能优化</p>
+<p>React 会给不同的 setState() 调用分配不同的优先级, 而不是立马更新 state, 防止并发的动作阻塞线程</p>
+</li>
+<li>
+<p>可以实现 更新 state, 在幕后渲染新的页面, 还保持旧的页面可以交互</p>
+</li>
+</ul>
+<p>=======================可以是同步的吗</p>
+<p>可以 </p>
+<ul>
+<li>
+<p>在原生事件触发的函数, setTimeout, async函数中是同步的</p>
+</li>
+<li>
+<p>生命周期函数和合成函数中都是异步更新</p>
+</li>
+</ul>
+<h2><a class="header" href="#setstate-更新是一个合并过程" id="setstate-更新是一个合并过程">setState 更新是一个合并过程</a></h2>
+<p>State 的更新是一个浅合并（Shallow Merge）的过程, 所以 当调用setState修改组件状态时，只需要传入发生改变的State，而不是组件完整的State</p>
+<pre><code class="language-js">// setState 等价于
+Object.assign(preState, newState)
+
+
+
+// 例如
+// 初始化 state
+this.state = {
+  title : 'React',
+  content : 'React is an wonderful JS library!'
+}
+// 更新 state
+this.setState({title: 'Reactjs'});
+// 最终合并后的 state 是这样的:
+{
+  title : 'Reactjs',
+  content : 'React is an wonderful JS library!'
+}
+
+
+</code></pre>
+<h2><a class="header" href="#replacestate-更新是一个替换过程" id="replacestate-更新是一个替换过程">replaceState 更新是一个替换过程</a></h2>
+<p>replaceState()方法与setState()类似，但是方法只会保留nextState中状态，原state不在nextState中的状态都会被删除</p>
+<pre><code class="language-js">//使用语法：
+replaceState(object nextState[, function callback])
+
+// nextState，将要设置的新状态，该状态会整个替换当前的state。
+// callback，可选参数，回调函数。该函数会在replaceState设置成功，且组件重新渲染后调用。
+</code></pre>
+<h1><a class="header" href="#props-属性" id="props-属性">props 属性</a></h1>
+<h2><a class="header" href="#在-jsx-中遍历-props" id="在-jsx-中遍历-props">在 jsx 中遍历 props</a></h2>
+<p>使用 &quot;...&quot; 遍历 props</p>
+<pre><code class="language-js">var props = {
+    style: &quot;width:20px&quot;,// 报错, 存疑; 可能style需要单独一个对象, 或者 &lt;HelloMessage style={{ color: '#FFFFFF', fontSize: '30px'}} /&gt;
+    className: &quot;main&quot;,
+    value: &quot;yo&quot;,  // 会被替换
+}
+
+&lt;HelloMessage  {...props} value=&quot;yo&quot; /&gt;
+
+// 等于以下
+React.createElement(&quot;h1&quot;, React._spread({}, props, {value: &quot;yo&quot;}), &quot;Hello React!&quot;);
+</code></pre>
+<h2><a class="header" href="#proptypes-类型检查" id="proptypes-类型检查">PropTypes 类型检查</a></h2>
+<pre><code class="language-js">import PropTypes from 'prop-types';
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;
+    );
+  }
+}
+
+Greeting.propTypes = {
+  name: PropTypes.string
+
+  // 限制某个props为js&quot;原生类型&quot;
+  optionalArray: PropTypes.array,
+  optionalBool: PropTypes.bool,
+  optionalFunc: PropTypes.func,
+  optionalNumber: PropTypes.number,
+  optionalObject: PropTypes.object,// 不推荐
+  optionalString: PropTypes.string,
+  optionalSymbol: PropTypes.symbol,// 类似于字符型的数据类型, 独一无二的值, 给object新增属性名称 let s = Symbol();let s1 = Symbol('s1');(ref:https://www.jianshu.com/p/174f88d189c6)
+
+  // 任何可被渲染的元素（包括数字、字符串、子元素或数组）。
+  optionalNode: PropTypes.node,//  numbers, strings, elements or an array
+
+  // 一个 React 元素
+  optionalElement: PropTypes.element,// A React element.
+
+  optionalMessage: PropTypes.instanceOf(Message),// 某个类的实例
+
+  optionalEnum: PropTypes.oneOf(['News', 'Photos']),// [某个系列]中的一个, 类似枚举类型
+  optionalUnion: PropTypes.oneOfType([// 几种类型中的一个
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.instanceOf(Message)
+  ]),
+
+  optionalArrayOf: PropTypes.arrayOf(PropTypes.number),// 某种类型的数组
+
+  // 一个指定类型的对象
+  optionalObjectOf: PropTypes.objectOf(PropTypes.number),// 对象, 所有属性都是某一特定类型
+  // 一个指定属性及其类型的对象
+  optionalObjectWithShape: PropTypes.shape({// 对象, 规定各个属性不同的类型
+    color: PropTypes.string,
+    fontSize: PropTypes.number
+  }),
+
+  // 必须， 这样如果这个属性父组件没有提供时，会打印警告信息
+  requiredFunc: PropTypes.func.isRequired,
+  requiredAny: PropTypes.any.isRequired,// any不推荐
+
+   // 你也可以指定一个自定义验证器。它应该在验证失败时返回
+  // 一个 Error 对象而不是 `console.warn` 或抛出异常。
+  // 不过在 `oneOfType` 中它不起作用。
+  customProp: function(props, propName, componentName) {// 自定义 validator
+    if (!/matchme/.test(props[propName])) {
+      return new Error(
+        'Invalid prop `' + propName + '` supplied to' +
+        ' `' + componentName + '`. Validation failed.'
+      );
+    }
+  },
+  // 自定义 validator to `arrayOf` and `objectOf`.
+  // The validator  will be called for each key in the array or object.
+  // The first two arguments of the validator are the array or object itself, and the current item's key.
+  customArrayProp: PropTypes.arrayOf(function(propValue, key, componentName, location, propFullName) {
+    if (!/matchme/.test(propValue[key])) {
+      return new Error(
+        'Invalid prop `' + propFullName + '` supplied to' +
+        ' `' + componentName + '`. Validation failed.'
+      );
+    }
+  })
+};
+</code></pre>
+<p>for example:</p>
+<pre><code class="language-js">//  注意组件开头第一个字母都要大写
+class MyComponent extends React.Component {
+    // render 是 Class based 组件唯一必须的方法（method）
+    render() {
+        return &lt;div&gt;Hello, World!&lt;/div&gt;;
+    }
+}
+
+// PropTypes 验证，若传入的 props type 不符合将会显示错误
+MyComponent.propTypes = {
+    todo: React.PropTypes.object,
+    name: React.PropTypes.string
+};
+
+// Prop 预设值，若对应 props 没传入值将会使用 default 值
+MyComponent.defaultProps = {
+    todo: {},
+    name: &quot;&quot;
+};
+</code></pre>
+<h2><a class="header" href="#引入类型检查的其他方法" id="引入类型检查的其他方法">引入类型检查的其他方法</a></h2>
+<h3><a class="header" href="#引入-typescript" id="引入-typescript">引入 TypeScript</a></h3>
+<p>JavaScript 的超集</p>
+<p>https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
+https://www.typescriptlang.org/docs/handbook/interfaces.html</p>
+<pre><code class="language-sh">npx create-react-app hook-ts-demo --template typescript
+
+</code></pre>
+<h3><a class="header" href="#flow-类型检查" id="flow-类型检查">flow 类型检查</a></h3>
+<p>Facebook 自己的工具</p>
+<h2><a class="header" href="#设定-props-的默认值" id="设定-props-的默认值">设定 props 的默认值</a></h2>
+<pre><code class="language-js">class Greeting extends React.Component {
+    render() {
+        return &lt;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
+    }
+}
+
+// Specifies the default values for props:
+Greeting.defaultProps = {
+    name: &quot;Stranger&quot;
+};
+</code></pre>
+<p>or</p>
+<pre><code class="language-js">class Greeting extends React.Component {
+    static defaultProps = {
+        name: &quot;stranger&quot;
+    };
+
+    render() {
+        return &lt;div&gt;Hello, {this.props.name}&lt;/div&gt;;
+    }
+}
+</code></pre>
+<h2><a class="header" href="#有哪些属性" id="有哪些属性">有哪些属性</a></h2>
+<p>和 react-router 合作时候, 将 react-router 的 history,location,match 三个对象绑定到 props, 打印 props :</p>
+<p><img src="Snipaste_2018-06-25_17-20-23.png" alt="alt" /></p>
+<h1><a class="header" href="#refs" id="refs">refs</a></h1>
+<p>表单处理与第三方 lib 集成</p>
+<p>ref 介绍参见文档: https://react-cn.github.io/react/docs/more-about-refs.html</p>
+<p>ref 在 redux 中使用: https://segmentfault.com/a/1190000015172005</p>
+<p>和第三方 js lib 集也会用到 Refs</p>
+<pre><code class="language-js">class MarkdownEditor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleChange = this.handleChange.bind(this);
+        this.rawMarkup = this.rawMarkup.bind(this);
+        this.state = {
+            value: &quot;Type some *markdown* here!&quot;
+        };
+    }
+    // 另一种处理方法是: 借助 onChange(event), 通过 event.target.value 拿到实的值d
+    handleChange() {
+        this.setState({ value: this.refs.textarea.value });
+    }
+    // 将使用者输入的 Markdown 语法 parse 成 HTML 放入 DOM 中，React 通常使用 virtual DOM 作为和 DOM 沟通的中介，不建议直接操作 DOM。故使用时的属性为 dangerouslySetInnerHTML
+    rawMarkup() {
+        const md = new Remarkable();
+        return { __html: md.render(this.state.value) };
+    }
+    render() {
+        return (
+            &lt;div className=&quot;MarkdownEditor&quot;&gt;
+                &lt;h3&gt;Input&lt;/h3&gt;
+                &lt;textarea
+                    onChange={this.handleChange}
+                    // ref 可以是一个id, 也可以是一个函数
+                    ref=&quot;textarea&quot;
+                    defaultValue={this.state.value}
+                /&gt;
+                &lt;h3&gt;Output&lt;/h3&gt;
+                &lt;div
+                    className=&quot;content&quot;
+                    dangerouslySetInnerHTML={this.rawMarkup()}
+                /&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+
+ReactDOM.render(&lt;MarkdownEditor /&gt;, document.getElementById(&quot;app&quot;));
+</code></pre>
+<h1><a class="header" href="#合成事件" id="合成事件">合成事件</a></h1>
+<p>react为了解决跨平台，兼容性问题，自己封装了一套事件机制，代理了原生的事件，像在jsx中常见的onClick、onChange这些都是合成事件</p>
+<p>demo: TodoList app</p>
+<pre><code class="language-js">// TodoApp 组件中包含了显示 Todo 的 TodoList 组件，Todo 的内容透过 props 传入 TodoList 中。由于 TodoList 仅单纯 Render UI 不涉及内部 state 操作是 stateless component，所以使用 Functional Component 写法。
+
+// 需要特别注意的是用 map function 来迭代 Todos，需要留意的是每个迭代的元素必须要有 unique key 不然会发生错误（可以用自定义 id，或是使用 map function 的第二个参数 index）
+
+const TodoList = props =&gt; (
+    &lt;ul&gt;
+        {props.items.map(item =&gt; (
+            &lt;li key={item.id}&gt;{item.text}&lt;/li&gt;
+        ))}
+    &lt;/ul&gt;
+);
+
+// 整个 App 的主要组件
+
+// 怎么获取input表单项的value, 有多种方法, 这是第一种: 借助 onchange事件和state
+
+class TodoApp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onChange = this.onChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            items: [],
+            text: &quot;&quot;
+        };
+    }
+    onChange(e) {
+        this.setState({ text: e.target.value });
+    }
+    handleSubmit(e) {
+        e.preventDefault();
+        const nextItems = this.state.items.concat([
+            { text: this.state.text, id: Date.now() }
+        ]);
+        const nextText = &quot;&quot;;
+        this.setState({ items: nextItems, text: nextText });
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h3&gt;TODO&lt;/h3&gt;
+                &lt;TodoList items={this.state.items} /&gt;
+                &lt;form onSubmit={this.handleSubmit}&gt;
+                    &lt;input onChange={this.onChange} value={this.state.text} /&gt;
+                    &lt;button&gt;{&quot;Add #&quot; + (this.state.items.length + 1)}&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+
+// 第二种获取input值的方法: 借助 submit事件
+
+class MyOwnListApp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            items: []
+        };
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h3&gt;MyOwnListApp&lt;/h3&gt;
+                &lt;MyOwnList items={this.state.items}&gt;&lt;/MyOwnList&gt;
+                &lt;form onSubmit={this.onSubmit}&gt;
+                    &lt;input type=&quot;text&quot; /&gt;
+                    &lt;button&gt;submit&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        );
+    }
+    onSubmit(event) {
+        event.preventDefault();
+        /* this.state.items.push([{// 这样子ui不会自动redraw
+            id: Date.now(),
+            value: event.target[0].value
+        }]); */
+        this.setState({
+            // 现在才会auto redraw
+            items: this.state.items.concat([
+                {
+                    id: Date.now(),
+                    value: event.target[0].value
+                }
+            ])
+        });
+        event.target[0].value = &quot;&quot;; // 清空
+    }
+}
+
+ReactDOM.render(&lt;TodoApp /&gt;, document.getElementById(&quot;app&quot;));
+</code></pre>
+<p>也可以自己绑定原生事件:</p>
+<pre><code class="language-js">//手动绑定mousedown事件
+    ReactDom.findDOMNode(this).addEventListener(
+      &quot;mousedown&quot;,
+      this.onClick.bind(this)
+    );
+</code></pre>
+<h1><a class="header" href="#状态管理" id="状态管理">状态管理</a></h1>
+<p>Data Flow 和 Flux/Redux</p>
+<p>Flux 架构: 一种方便应用状态管理的架构 -- “单向数据流”, 是 React 推崇的一种应用架构的方式, app 足够复杂才能体现方便 (React 本身只涉及 UI 层，如果搭建大型应用，app 的 state, 组件之间的通信 会变得无比复杂, 这时 Flux 架构就有了用武之地).</p>
+<p>核心思想: 当 view 上用户发生了操作, app 会通过 &quot;Action Creator&quot; 创建一个 &quot;Action&quot;, 通过 &quot;Dispatcher&quot; 分发出去, 由 &quot;Store&quot; 进行处理. &quot;Store&quot; 和 &quot;View&quot; 是绑定的,Store 产生变化,View 也会同步变化</p>
+<p>Redux: 是 flux 架构的一个具体实现， 将 Flux 架构 与函数式编程结合一起</p>
+<p>同类: mobx ,Reflux,Flummox。</p>
+<p>同时, 如果 app 比较简单, 是不需要的 redux 来管理 state 的, redux 只适用于&quot;多交互、多数据源&quot;的情况</p>
+<h2><a class="header" href="#flux-架构的思想" id="flux-架构的思想">flux 架构的思想</a></h2>
+<p>https://www.zhihu.com/question/33864532/answer/57667838</p>
+<pre><code>  ╔═════════╗       ╔════════╗       ╔═════════════════╗
+  ║ Actions ║──────&gt;║ Stores ║──────&gt;║ View Components ║
+  ╚═════════╝       ╚════════╝       ╚═════════════════╝
+       ^                                      │
+       └──────────────────────────────────────┘
+</code></pre>
+<p>将各个组件的 state 集中到 Store, 统一管理, 各个组件和 Store 交互, 简化组件之间的通信</p>
+<p>View 层不能直接对 state 进行操作，而需要依赖 Actions 派发指令来告知 Store 修改状态，Store 接收 Actions 指令后发生相应的改变，View 层同时跟着 Store 的变化而变化</p>
+<p>举个例子：A 组件要使 B 组件发生变化。首先，A 组件需要将这个意图封装为一个 action 执行，告知绑定 B 组件的 Store 发生变化，Store 接收到派发的指令后改变，那相应的 B 组件的视图也就发生了改变。假如 C，D，E，F 组件绑定了和 B 组件相同的 Store，那么 C，D，E，F 也会跟着变化。</p>
+<h2><a class="header" href="#flux-官方实现" id="flux-官方实现">Flux 官方实现</a></h2>
+<p>Advantages:</p>
+<ul>
+<li>
+<p>让开发者可以快速了解整个 App 中的行为(在 store 中看就行了)</p>
+</li>
+<li>
+<p>数据和业务逻辑统一存放好管理</p>
+</li>
+<li>
+<p>让 View 单纯化只负责 UI 的排版不需负责 state 管理</p>
+</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>代码忒复杂了, 写 ✍ 小应用不合算</li>
+</ul>
+<p>有哪些概念?</p>
+<ul>
+<li>
+<p>actions ：一些列动作(就是函数), 负责定义所有改变 state（状态）的行为，可以让开发者快速了解 App 的各种功能，若你想改变 state 你只能发 action。注意 action 可以是同步或是非同步</p>
+</li>
+<li>
+<p>Dispatcher : 是 Flux 架构的核心，每个 App 只有一个 Dispatcher，并负责向所有 store 发送 action 事件(store.dispatch())</p>
+</li>
+<li>
+<p>Store: 一个 App 通常会有多个 store 负责存放业务逻辑，根据不同业务会有不同 store; store 负责操作和储存数据(state);</p>
+<ul>
+<li>
+<p>值得注意的是 store 只提供 getter API 读取资料，若想改变 state 一律发送 action;</p>
+</li>
+<li>
+<p>提供 API 让 store 可以注册 callback function(就是注册 listener, 指定 state 改变的回调函数(一般是 setState()触发 redraw), EventEmitter.on(actionType, callbackFn))。</p>
+</li>
+<li>
+<p>需要在 store 里, 通过 AppDispatcher.register(fn) 注册处理 action 的函数(因为 store 模块这里才能直接访问 store 内部的 state), 处理完毕, 通过 EventEmitter.emit(actionType) 触发 listener</p>
+</li>
+</ul>
+</li>
+<li>
+<p>View: 这部份是 React 负责的范畴，负责提供监听事件的 callback function，当事件发生时重新取得数据并重绘 View</p>
+</li>
+</ul>
+<h2><a class="header" href="#redux" id="redux">Redux</a></h2>
+<h3><a class="header" href="#为什么要使用-redux" id="为什么要使用-redux">为什么要使用 redux</a></h3>
+<p>下图展示了使用 redux 和不使用 redux 时, state 和组件间的交互关系:</p>
+<p><img src="Snipaste_2018-06-27_12-45-41.png" alt="alt" /></p>
+<ul>
+<li>整合了 react-redux 后，我们的 React App 就可以解决传统跨 Component 之间传递 state 的问题和困难。只要通过 Provider 就可以让每个 React App 中的 Component 取用 store 中的 state，非常方便</li>
+<li>数据和业务逻辑放到了一个地方, 一目了然</li>
+</ul>
+<h3><a class="header" href="#基本概念" id="基本概念">基本概念</a></h3>
+<p>http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html</p>
+<ul>
+<li>
+<p>State: Store 对象可以包含多个 节点 。如果想得到某个时刻的数据，就要对 Store 生成快照。这种时间切片的数据集合，就叫做 State;</p>
+<ul>
+<li>
+<p>其本质就是一个 js 对象, <code>const state = store.getState();</code> 可以得到当前时刻的 state</p>
+<pre><code class="language-js">{
+  counter: 0,
+  todos: [] // 待办项
+}
+</code></pre>
+</li>
+<li>
+<p>一个 State 对应一个 View。只要 State 相同，View 就相同.</p>
+</li>
+<li>
+<p>若要改变 state，必须 dispatch 一个 action</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Action: 就是 View 发出的通知，表示 State 应该要发生变化了</p>
+<ul>
+<li>
+<p>本质就是一个 js 对象, 但是一定要包含&quot;type &quot;属性, 其他没有要求, 但是也有规范</p>
+<pre><code class="language-js">{
+  type: 'ADD_TODO',
+  payload: {
+    id: 1,
+    content: '待办事项1',
+    completed: false
+  }
+}
+</code></pre>
+<p>如果需要新增一个 todo 项，实际上就是将 payload 写入到 state.todos 数组中</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Action Creator: 定义一个函数来生成 Action</p>
+<ul>
+<li>
+<p>示例:</p>
+<pre><code class="language-js">var id = 1;
+function addTodo(content) {
+    return {
+        type: &quot;ADD_TODO&quot;,
+        payload: {
+            id: id++,
+            content: content, // 待办事项内容
+            completed: false // 是否完成的标识
+        }
+    };
+}
+</code></pre>
+</li>
+<li>
+<p>Action Creator 可以是同步的，也可以是异步的</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Reducer: Store 收到 Action 以后，必须给出一个新的 State，这样 View 才会发生变化。这种 State 的计算过程就叫做 Reducer。</p>
+<ul>
+<li>
+<p>Reducer 必须是同步的纯函数，它接受 Action 和当前 State 作为参数，返回一个新的 State(Reducer 函数里面不能改变 State，必须返回一个全新的对象)。</p>
+</li>
+<li>
+<p>store.dispatch(action)之后, 会触发 reducer 执行(创建 store 时候, 将 reducer 传入了)</p>
+</li>
+<li>
+<p>最好把 State 对象设成只读。你没法改变它，要得到新的 State，唯一办法就是生成一个新对象。这样的好处是，任何时候，与某个 View 对应的 State 总是一个不变的对象</p>
+<ul>
+<li>
+<p>(可以借助 ImutableJs 库)</p>
+</li>
+<li>
+<p>可以使用 lodash 的 cloneDeep</p>
+</li>
+<li>
+<p>也可以使用 Object.assign / map / filter/ ... 等返回副本的函数</p>
+</li>
+</ul>
+</li>
+<li>
+<p>示例:</p>
+<pre><code class="language-js">var initState = {
+    counter: 0,
+    todos: []
+};
+
+function reducer(state, action) {
+    // ※ 应用的初始状态是在第一次执行 reducer 时设置的 ※
+    if (!state) state = initState;
+
+    switch (action.type) {
+        case &quot;ADD_TODO&quot;:
+            var nextState = _.cloneDeep(state); // 用到了 lodash 的深克隆
+            nextState.todos.push(action.payload);
+            return nextState;
+
+        default:
+            // 由于 nextState 会把原 state 整个替换掉
+            // 若无修改，必须返回原 state（否则就是 undefined）
+            return state;
+    }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="Snipaste_2018-06-27_09-07-13.png" alt="alt" /></p>
+<blockquote>
+<p>Redux 数据流的模型大致上可以简化成：首先，用户和 view 交互发出 Action (包含 type, data 这两个基本属性): <code>store.dispatch(action);</code>然后，Store 自动调用 Reducer (即处理 action 的函数)，并且传入两个参数：当前 State 和收到的 Action。 Reducer 会返回新的 State : <code>let nextState = todoApp(previousState, action);</code> State 一旦有变化，Store 就会调用监听函数, 也就是 <code>store.subscribe(listener);</code> 中的 listener, listener 可以通过<code>store.getState()</code>得到当前状态然后 set 回去, 如果使用的是 React，这时可以触发重新渲染 View。</p>
+</blockquote>
+<ul>
+<li>Web 应用是一个状态机，视图与状态是一一对应的。</li>
+<li>所有的状态，保存在一个对象里面 (Store)。</li>
+<li>此外, redux 有 synchronous（同步）的情形，asynchronous（非同步）情形</li>
+</ul>
+<h3><a class="header" href="#基本-api" id="基本-api">基本 api</a></h3>
+<p>https://github.com/kenberkeley/redux-simple-tutorial/blob/master/redux-advanced-tutorial.md</p>
+<h4><a class="header" href="#store" id="store">store</a></h4>
+<p><code>const store = createStore(reducer)</code></p>
+<ul>
+<li>getState()</li>
+<li>dispatch(action)</li>
+<li>subscribe(listener)</li>
+</ul>
+<p>下面看看详细解释:</p>
+<p>Store: Redux 只有一个 Store 负责存放整个 App 的 State, 一个 Store 可以包含多个 state 节点, 一个 state 节点 对应一个 reducer; 唯一能改变 State 的方法只有通过 store 发送 action。</p>
+<p>怎么创建?</p>
+<p>createStore(reducer, [preloadedState], [enhancer]) 生成 store, 常用 <code>const store = createStore(reducer);</code> createStore 函数接受另一个函数作为参数，返回新生成的 Store 对象</p>
+<ul>
+<li>
+<p>第一个参数放入我们的 reducer 或是有多个 reducers combine（使用 combineReducers()）在一起的 rootReducers。</p>
+</li>
+<li>
+<p>第二个参数我们会放入希望预先载入的 state 例如：user session 等。(如果提供了这个参数，它会覆盖 Reducer 函数的默认初始值。) 主要用于前后端同构时的数据同步</p>
+</li>
+<li>
+<p>第三个参数通常会放入我们想要使用用来增强 Redux 功能的 middlewares，若有多个 middlewares 的话，通常会使用 applyMiddleware 来整合。</p>
+</li>
+</ul>
+<p>看看示例:</p>
+<pre><code class="language-js">import { createStore } from 'redux'
+...
+const store = createStore(reducer, initialState) // initialState 主要用于前后端同构的数据同步（详情请关注 React 服务端渲染）
+</code></pre>
+<p>属于 Store 的四个方法:</p>
+<ul>
+<li>
+<p>getState() 获取当前时刻的 state</p>
+</li>
+<li>
+<p>dispatch(action) View 发出 Action 的唯一方法</p>
+<ul>
+<li>内部会触发 Reducer 的执行, 为此, Store 需要知道 Reducer 函数, 做法就是在生成 Store 的时候, 将 Reducer 传入 createStore 方法.</li>
+</ul>
+</li>
+<li>
+<p>subscribe(listener) 设置监听函数，一旦 State 发生变化，就自动执行这个函数</p>
+<ul>
+<li>
+<p>只要把 View 的更新函数（对于 React 项目，就是组件的 render 方法或 setState 方法）放入 listen，就会实现 View 的自动渲染。</p>
+</li>
+<li>
+<p>store.subscribe 方法返回一个函数，调用这个函数就可以解除监听。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>replaceReducer(nextReducer) 一般在 Webpack Code-Splitting 按需加载的时候用</p>
+</li>
+</ul>
+<h4><a class="header" href="#reducer" id="reducer">reducer</a></h4>
+<p>reducer 就是一个函数, 接收 old state 和 action, 生成 new state;</p>
+<p>combineReducers：combineReducers(reducers) , combineReducers 可以将多个 reducers 进行整合并回传一个</p>
+<pre><code class="language-js">import { combineReducers } from 'redux';
+
+// 这种写法有一个前提，就是 State 的属性名必须与子 Reducer 同名
+const chatReducer = combineReducers({
+  chatLog,
+  statusMessage,
+  userName
+})
+
+// 如果不同名，就要采用下面的写法
+// 根据 State 的 key 去执行相应的子 Reducer，并将返回结果合并成一个大的 State 对象。
+const reducer = combineReducers({
+  a: doSomethingWithA,
+  b: processB,`
+  c: c
+})
+// 等同于
+function reducer(state = {}, action) {
+  return {
+    a: doSomethingWithA(state.a, action),
+    b: processB(state.b, action),
+    c: c(state.c, action)
+  }
+}
+
+export default todoApp;
+</code></pre>
+<h4><a class="header" href="#applymiddleware" id="applymiddleware">applyMiddleware</a></h4>
+<p>redux 提供的工具函数</p>
+<p>applyMiddleware(...middlewares) 让开发者可以在 req 和 res 之间进行一些操作。在 Redux 中 Middleware 则是扮演 action 到达 reducer 前的第三方扩充。而 applyMiddleware 可以将多个 middlewares 整合并回传一个 Function，便于使用。</p>
+<h4><a class="header" href="#bindactioncreators" id="bindactioncreators">bindActionCreators</a></h4>
+<p>工具函数</p>
+<p>bindActionCreators(actionCreators, dispatch) bindActionCreators 可以将 actionCreators 和 dispatch 绑定，并回传一个 Function 。但若是使用 react-redux 可以用 connect 让 dispatch 行为更容易管理</p>
+<ul>
+<li>
+<p>compose(...functions) 将 function 由右到左合并并回传一个 Function</p>
+<pre><code class="language-js">const store = createStore(
+    reducer,
+    compose(applyMiddleware(thunk), DevTools.instrument())
+);
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#纯-redux-的-api-示例同步版本的-api" id="纯-redux-的-api-示例同步版本的-api">纯 redux 的 api 示例(同步版本的 api)</a></h3>
+<pre><code class="language-js">import React from &quot;react&quot;;
+import { createStore, combineReducers, bindActionCreators } from &quot;redux&quot;;
+
+function run() {
+    // Store initial state
+    const initialState = { count: 0 };
+
+    // reducer
+    // 代表 state 的处理逻辑
+    const counter = (state = initialState, action) =&gt; {
+        switch (action.type) {
+            case &quot;PLUS_ONE&quot;:
+                return { count: state.count + 1 };
+            case &quot;MINUS_ONE&quot;:
+                return { count: state.count - 1 };
+            case &quot;CUSTOM_COUNT&quot;:
+                return {
+                    count: state.count + action.payload.count
+                };
+            default:
+                break;
+        }
+        return state;
+    };
+
+    const todos = (state = {}) =&gt; state; // 待添加到 Store 中的新节点
+
+    // Create store
+    const store = createStore(
+        // combineReducers 可以帮助维护多个 state 进 store 中
+        //这样 Store 中就有 两个节点了
+        combineReducers({
+            todos,
+            counter
+        })
+    );
+
+    // Action creator
+    function plusOne() {
+        // action
+        return { type: &quot;PLUS_ONE&quot; };
+    }
+
+    function minusOne() {
+        return { type: &quot;MINUS_ONE&quot; };
+    }
+
+    function customCount(count) {
+        return { type: &quot;CUSTOM_COUNT&quot;, payload: { count } };
+    }
+
+    // bindActionCreators 是 redux 提供的工具函数, 将 dispatcher 绑定到 action 内部
+    // 省掉了手动 dispatch 这直接调用action 即可
+    plusOne = bindActionCreators(plusOne, store.dispatch);
+
+    store.subscribe(() =&gt; console.log(store.getState()));
+    // store.dispatch(plusOne());
+    plusOne();
+    store.dispatch(minusOne());
+    store.dispatch(customCount(5));
+}
+export default () =&gt; (
+    &lt;div&gt;
+        &lt;button onClick={run}&gt;Run&lt;/button&gt;
+        &lt;p&gt;* 请打开控制台查看运行结果&lt;/p&gt;
+    &lt;/div&gt;
+);
+</code></pre>
+<h3><a class="header" href="#react-redux" id="react-redux">react-redux</a></h3>
+<p>react-redux 提供 一个函数 <code>connect</code>, 通过高阶组件的方式, 将 redux 中的 store 和 react 中的 component 链接起来</p>
+<pre><code class="language-jsx">import React from &quot;react&quot;;
+import { bindActionCreators, createStore } from &quot;redux&quot;;
+import { Provider, connect } from &quot;react-redux&quot;;
+
+// Store initial state
+const initialState = { count: 0 };
+
+// reducer
+const counter = (state = initialState, action) =&gt; {
+    switch (action.type) {
+        case &quot;PLUS_ONE&quot;:
+            return { count: state.count + 1 };
+        case &quot;MINUS_ONE&quot;:
+            return { count: state.count - 1 };
+        case &quot;CUSTOM_COUNT&quot;:
+            return { count: state.count + action.payload.count };
+        default:
+            break;
+    }
+    return state;
+};
+
+// Create store
+const store = createStore(counter);
+
+// Action creator
+function plusOne() {
+    // action
+    return { type: &quot;PLUS_ONE&quot; };
+}
+
+function minusOne() {
+    return { type: &quot;MINUS_ONE&quot; };
+}
+
+export class Counter extends React.Component {
+    render() {
+        // 在这里通过 props 可以拿到 state 中我们关心的数据 和 actions
+        const { count, plusOne, minusOne } = this.props;
+        return (
+            &lt;div className=&quot;counter&quot;&gt;
+                &lt;button onClick={minusOne}&gt;-&lt;/button&gt;
+                &lt;span style={{ display: &quot;inline-block&quot;, margin: &quot;0 10px&quot; }}&gt;
+                    {count}
+                &lt;/span&gt;
+                &lt;button onClick={plusOne}&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+
+/**
+ * bind state data of which wo take care to props
+ * 绑定state中我们关心的数据到 props (不能整个 store 绑定到 props, 因为 state 中和当前组件无关的数据更新无需出发组件重绘
+ * @param state store.getState()
+ */
+function mapStateToProps(state) {
+    return {
+        count: state.count
+    };
+}
+
+/**
+ * 绑定 action 到 props
+ * @param dispatch
+ */
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ plusOne, minusOne }, dispatch);
+}
+
+// 连接
+const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter);
+
+export default class CounterSample extends React.Component {
+    render() {
+        return (
+            // 根节点通过 Provider 提供 store, 子组件就可以随时访问 store 中的数据
+            &lt;Provider store={store}&gt;
+                &lt;ConnectedCounter /&gt;
+            &lt;/Provider&gt;
+        );
+    }
+}
+</code></pre>
+<h3><a class="header" href="#异步-action" id="异步-action">异步 Action</a></h3>
+<p>要使用 asynchronous（非同步）的行为的话需要使用其中一种 middleware： redux-thunk、redux-promise 或 redux-promise-middleware ，这样可以让你在 actions 中 dispatch Promises 而非 function。</p>
+<p><img src="./Snipaste_2019-10-26_21-38-03.png" alt="alt" /></p>
+<p>过程是这样的: 用户在 view 触发一个 action (就是普通 action 并没有所谓的 异步 action), 并没有被 dispatch 给 reducer, 而是被 Middlewares 拦截, 内部处理后, 生成新的标准的 action ,给 reducer;</p>
+<p>所谓的 异步 action, 并不是特殊的 action, 而是多个 action 的组合使用</p>
+<p>Middleware 在 dispatcher 中对 action 进行拦截进行特殊处理</p>
+<h3><a class="header" href="#thunk-saga" id="thunk-saga">thunk, saga</a></h3>
+<p>todo</p>
+<h3><a class="header" href="#调试工具" id="调试工具">调试工具</a></h3>
+<p>Redux 开发调试工具：redux-devtools
+React 应用无刷新保存工具：react-transform</p>
+<h3><a class="header" href="#demo一个-todo-app" id="demo一个-todo-app">demo(一个 todo-app)</a></h3>
+<p><img src="Snipaste_2018-06-27_11-57-23.png" alt="alt" /></p>
+<p>整个 React Redux App 的资料流程图（使用者与 View 互动 =&gt; dispatch 出 Action =&gt; Reducers 依据 action tyoe 分配到对应处理方式，回传新的 state =&gt; 透过 React Redux 传送给 React，React 重新绘制 View）：</p>
+<p>react-redux 整合 react 和 redux,</p>
+<p><img src="Snipaste_2018-06-27_12-43-37.png" alt="alt" /></p>
+<h2><a class="header" href="#redux-和-flux-的一些差异" id="redux-和-flux-的一些差异">Redux 和 Flux 的一些差异</a></h2>
+<p><img src="Snipaste_2018-06-27_00-31-39.png" alt="alt" /></p>
+<ul>
+<li>
+<p>只使用一个 store 将整个应用程式的状态 (state) 用物件树 (object tree) 的方式储存起来; 原生的 Flux 会有许多分散的 store 储存各个不同的状态</p>
+<pre><code class="language-js">//原生 Flux 的 store
+const userStore = {
+    name: &quot;&quot;
+};
+const todoStore = {
+    text: &quot;&quot;
+};
+
+// Redux 的单一 store
+const state = {
+    userState: {
+        name: &quot;&quot;
+    },
+    todoState: {
+        text: &quot;&quot;
+    }
+};
+</code></pre>
+</li>
+<li>
+<p>Redux 并没有像 Flux 设计有 Dispatcher(唯一可以改变 state 的方法就是发送 action，这部份和 Flux 类似, action 都是一个包含 type 和 payload 的对象); Redux 拥有 Flux 所没有的 Reducer。Reducer 根据 action 的 type 去执行对应的 state 做变化的函式叫做 Reducer。你可以使用 switch 或是使用函式 mapping 的方式去对应处理的方式</p>
+</li>
+<li>
+<p>Redux 拥有许多方便好用的辅助测试工具（例如：redux-devtools、react-transform-boilerplate），方便测试和使用 Hot Module Reload。</p>
+</li>
+</ul>
+<h2><a class="header" href="#immutablejs" id="immutablejs">ImmutableJS</a></h2>
+<p>https://www.youtube.com/watch?v=I7IdS-PbEgI
+http://react-immutable-proptypes/ (适用于 imutable 的 proptypes 验证)</p>
+<p>为什么需要 不可变数据?</p>
+<ul>
+<li>优化性能 (react 判断组件是否要刷新是根据 state 是否有变化来决定的, 采用不可变数据那么 state 一旦, react 可以比较 新旧 两个 state 是否是一个对象来决定是否刷新组件, 而不必进入 state 内部去比较属性是否有变化)</li>
+<li>容易调试跟踪 (随时可以看到 新旧 stat 的具体值, 可以方便的对比)</li>
+</ul>
+<p>redux 运行的基础需要保 state 是不可变数据</p>
+<p>es6 原生提供 api 不可变数据修改:</p>
+<pre><code class="language-js">const state = {
+    filter: &quot;completed&quot;,
+    todos: [&quot;a&quot;]
+};
+// 写法1:
+const newState = {
+    ...state,
+    todos: [...state.todos, &quot;b&quot;]
+};
+// 写法2
+const newState2 = Object.assign({}, state, { todos: [...state.todos, &quot;b&quot;] });
+</code></pre>
+<p>ImmutableJs 提供了修改工具类:</p>
+<pre><code class="language-js">import update from 'immutability-helper';
+
+...
+</code></pre>
+<p>immer 也有相关工具类:</p>
+<pre><code class="language-js">import produce from 'immer';
+
+...
+</code></pre>
+<p>ImmutableJS 封装了自己的数据结构: 7 种不可修改的类型：List、Map、Stack、OrderedMap、Set、OrderedSet、Record。</p>
+<pre><code class="language-js">import Immutable from &quot;immutable&quot;;
+
+var map1 = Immutable.Map({ a: 1, b: 3 });
+var map2 = map1.set(&quot;a&quot;, 2); // 返回一个新的map
+
+map1.get(&quot;a&quot;); // 1
+map2.get(&quot;a&quot;); // 2
+</code></pre>
+<pre><code class="language-js">const Map= Immutable.Map;
+
+// 1. Map 大小
+const map1 = Map({ a: 1 });
+map1.size
+// =&gt; 1
+
+// 2. 新增或取代 Map 元素
+// set(key: K, value: V)
+const map2 = map1.set('a', 7);
+// =&gt; Map { &quot;a&quot;: 7 }
+
+// 3. 删除元素
+// delete(key: K)
+const map3 = map1.delete('a');
+// =&gt; Map {}
+
+// 4. 清除 Map 内容
+const map4 = map1.clear();
+// =&gt; Map {}
+
+// 5. 更新 Map 元素
+// update(updater: (value: Map&lt;K, V&gt;) =&gt; Map&lt;K, V&gt;)
+// update(key: K, updater: (value: V) =&gt; V)
+// update(key: K, notSetValue: V, updater: (value: V) =&gt; V)
+const map5 = map1.update('a', () =&gt; (7))
+// =&gt; Map { &quot;a&quot;: 7 }
+
+// 6. 合并 Map
+const map6 = Map({ b: 3 });
+map1.merge(map6);
+// =&gt; Map { &quot;a&quot;: 1, &quot;b&quot;: 3 }
+--------------------------
+const List= Immutable.List;
+
+// 1. 取得 List 长度
+const arr1 = List([1, 2, 3]);
+arr1.size
+// =&gt; 3
+
+// 2. 新增或取代 List 元素内容
+// set(index: number, value: T)
+// 将 index 位置的元素替换
+const arr2 = arr1.set(-1, 7);
+// =&gt; [1, 2, 7]
+const arr3 = arr1.set(4, 0);
+// =&gt; [1, 2, 3, undefined, 0]
+
+// 3. 删除 List 元素
+// delete(index: number)
+// 删除 index 位置的元素
+const arr4 = arr1.delete(1);
+// =&gt; [1, 3]
+
+// 4. 插入元素到 List
+// insert(index: number, value: T)
+// 在 index 位置插入 value
+const arr5 = arr1.insert(1, 2);
+// =&gt; [1, 2, 2, 3]
+
+// 5. 清空 List
+// clear()
+const arr6 = arr1.clear();
+// =&gt; []
+------------------------
+const Set= Immutable.Set;
+
+// 1. 建立 Set
+const set1 = Set([1, 2, 3]);
+// =&gt; Set { 1, 2, 3 }
+
+// 2. 新增元素
+const set2 = set1.add(1).add(5);
+// =&gt; Set { 1, 2, 3, 5 }
+// 由于 Set 为不能重复集合，故 1 只能出现一次
+
+// 3. 删除元素
+const set3 = set1.delete(3);
+// =&gt; Set { 1, 2 }
+
+// 4. 取联集
+const set4 = Set([2, 3, 4, 5, 6]);
+set1.union(set4);
+// =&gt; Set { 1, 2, 3, 4, 5, 6 }
+
+// 5. 取交集
+set1.intersect(set4);
+// =&gt; Set { 2, 3 }
+
+// 6. 取差集
+set1.subtract(set4);
+// =&gt; Set { 1 }
+</code></pre>
+<h1><a class="header" href="#路由-react-router" id="路由-react-router">路由 react-router</a></h1>
+<p>路由(routing)库, 通过 URL 的变化来管理对应的状态和组件.</p>
+<p>传统的 Web 开发主要是由服务器管理 URL Routing 和渲染 HTML 页面，过往每次 URL 一换, 就需要重新 server 端重新载入页面。现在进化到由前端负责 URL 的 routing 管理. 在 React 开发世界中主流是使用 react-router</p>
+<p>最新版: React Router4(https://github.com/ReactTraining/react-router), 2.x 本版是 static route, 4.x 版本是 dynamic route</p>
+<p>React Router 被拆分成三个包：react-router(最小核心, 包含进后面两个了),react-router-dom(web)和 react-router-native(app)。react-router 提供核心的路由组件与函数。其余两个则提供运行环境（即浏览器与 react-native）所需的特定组件</p>
+<h2><a class="header" href="#路由标签的使用" id="路由标签的使用">路由标签的使用</a></h2>
+<h3><a class="header" href="#router-路由容器" id="router-路由容器">Router-路由容器</a></h3>
+<p>有几个实现:</p>
+<ul>
+<li>
+<p><BrowserRouter>：使用 HTML5 提供的 history API 来保持 UI 和 URL 的同步；需要 server 端的配合</p>
+</li>
+<li>
+<p><HashRouter>：使用 URL 的 hash, 带有 &quot;#&quot;的 url (例如：window.location.hash); 用于支持低版本的浏览器</p>
+</li>
+<li>
+<p><MemoryRouter>：能在内存保存你 “URL” 的历史纪录(并没有对地址栏读写)；页面变动不会反映到浏览器地址栏</p>
+</li>
+<li>
+<p><NativeRouter>：为使用 React Native 提供路由支持；</p>
+</li>
+<li>
+<p><StaticRouter>：从不会改变地址；</p>
+</li>
+</ul>
+<h3><a class="header" href="#route-路由组件映射" id="route-路由组件映射">Route-路由组件映射</a></h3>
+<p>负责 URL 和对应的组件映射，可以有多个 Route 规则也可以有嵌套（nested）Routing</p>
+<h4><a class="header" href="#属性" id="属性">属性</a></h4>
+<ul>
+<li>
+<p>path（string）: 路由匹配路径, 支持 regex(path=&quot;/order/:direction(asc|desc)&quot;)。</p>
+<ul>
+<li>
+<p>没有 path 属性的 Route 总是会 匹配(渲染)）；</p>
+</li>
+<li>
+<p>有多个 path 匹配当前 url, 则对应的多个 component 都会显示 (&quot;多匹配&quot;)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>component (表达式): 对应的组件</p>
+</li>
+<li>
+<p>render: 函数, 接受一个 props, 返回 component</p>
+</li>
+<li>
+<p>exact（bool）：出现时，则要求路径与 location.pathname 必须完全匹配, 对应组件才会显示</p>
+</li>
+<li>
+<p>strict（bool）：true 的时候，有结尾斜线的 path 路径只能匹配有斜线的 location.pathname；</p>
+</li>
+<li>
+<p>location: object <code>&lt;Route&gt;</code>元素尝试将其路径与当前 history location（通常是当前浏览器 URL）相匹配。但是，也可以人为指定特定的 location 进行匹配</p>
+<blockquote>
+<p>Switch 中的 location 会覆盖 Route 中的 location</p>
+</blockquote>
+</li>
+<li>
+<p>sensitive: bool 路径大小写敏感</p>
+</li>
+</ul>
+<h4><a class="header" href="#通过-url-传递参数给-route" id="通过-url-传递参数给-route">通过 url 传递参数给 Route</a></h4>
+<p>传递: <code>&lt;Route path=&quot;/topic/:id&quot;&gt;&lt;/Route&gt;</code></p>
+<p>获取: <code>this.props.match.params</code></p>
+<p>能够放入 url 参数中的 state 信息尽量放 url 参数中</p>
+<pre><code class="language-js">import React from &quot;react&quot;;
+import { BrowserRouter as Router, Route, Link } from &quot;react-router-dom&quot;;
+
+const Topic = ({ match }) =&gt; &lt;h1&gt;Topic {match.params.id}&lt;/h1&gt;;
+
+export default class RouterParams extends React.PureComponent {
+    render() {
+        return (
+            &lt;Router&gt;
+                &lt;div&gt;
+                    &lt;ul id=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;Link to=&quot;/topic/1&quot;&gt;Topic 1&lt;/Link&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;Link to=&quot;/topic/2&quot;&gt;Topic 2&lt;/Link&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;Link to=&quot;/topic/3&quot;&gt;Topic 3&lt;/Link&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+
+                    &lt;div id=&quot;page-container&quot;&gt;
+                        &lt;Route path=&quot;/topic/:id&quot; component={Topic} /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/Router&gt;
+        );
+    }
+}
+</code></pre>
+<h4><a class="header" href="#嵌套路由" id="嵌套路由">嵌套路由</a></h4>
+<pre><code class="language-js">import React from &quot;react&quot;;
+import { BrowserRouter as Router, Route, Link } from &quot;react-router-dom&quot;;
+
+const SonCategory = ({ match }) =&gt; &lt;h1&gt;Sub Category {match.params.subId}&lt;/h1&gt;;
+
+const SubCategory = ({ match }) =&gt; (
+    &lt;div&gt;
+        &lt;h1&gt;Category {match.params.id}&lt;/h1&gt;
+
+        &lt;ul id=&quot;menu&quot;&gt;
+            &lt;li&gt;
+                &lt;Link to={`/category/${match.params.id}/sub/1`}&gt;
+                    Sub Category 1
+                &lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;Link to={`/category/${match.params.id}/sub/2`}&gt;
+                    Sub Category 2
+                &lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;Link to={`/category/${match.params.id}/sub/3`}&gt;
+                    Sub Category 3
+                &lt;/Link&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div id=&quot;page-container-2&quot;&gt;
+            &lt;Route path=&quot;/category/:id/sub/:subId&quot; component={SonCategory} /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+);
+
+export default class NestedRoute extends React.PureComponent {
+    render() {
+        return (
+            &lt;Router&gt;
+                &lt;div&gt;
+                    &lt;ul id=&quot;menu&quot;&gt;
+                        &lt;li&gt;
+                            &lt;Link to=&quot;/category/1&quot;&gt;Category 1&lt;/Link&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;Link to=&quot;/category/2&quot;&gt;Category 2&lt;/Link&gt;
+                        &lt;/li&gt;
+                        &lt;li&gt;
+                            &lt;Link to=&quot;/category/3&quot;&gt;Category 3&lt;/Link&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+
+                    &lt;div id=&quot;page-container&quot;&gt;
+                        &lt;Route path=&quot;/category/:id&quot; component={SubCategory} /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/Router&gt;
+        );
+    }
+}
+</code></pre>
+<h4><a class="header" href="#route-三种渲染方式" id="route-三种渲染方式">Route 三种渲染方式</a></h4>
+<p>Route 三种渲染内容的方法, 不可同时使用, 均会设置 match, location, history 在 props 中</p>
+<ul>
+<li>
+<p><code>&lt;Route component=xxx类&gt;</code>：当 location 匹配到 path 时候, 会 render，route props 也会随着一起被渲染；</p>
+<blockquote>
+<p>不要提供 inline function, 因为如果这样, 每次 render, 都会创建一个新的 component(the router uses React.createElement to create a new React element from the given component. That means if you provide an inline function to the component prop, you would create a new component every render.)</p>
+</blockquote>
+</li>
+<li>
+<p><code>&lt;Route render=xxx函数&gt;</code>：这种方式对于内联渲染和包装 Route 却不引起意料之外的重新挂载特别方便；</p>
+<blockquote>
+<p>Route component 的优先级要比 Route render 高</p>
+</blockquote>
+</li>
+<li>
+<p><code>&lt;Route children=xxx函数&gt;</code>：与 render 属性的工作方式基本一样，除了 <code>它是不管地址匹配与否都会被调用</code>；</p>
+<p>当没有匹配上, match 为 null, 可以借助这一特性, 更具是否匹配上了设置动态的样式</p>
+</li>
+</ul>
+<h3><a class="header" href="#switch-解决多匹配问题" id="switch-解决多匹配问题">Switch-解决多匹配问题</a></h3>
+<p>内部包含的 Router/Redirect 匹配第一个就不再继续往下匹配了</p>
+<ul>
+<li>
+<p>location: object 可以认为的指定 location 来决定哪个 child 被 render, 一般不指定, 根据浏览器 location 决定是哪个 child 被 render</p>
+<blockquote>
+<p>这里的 location 会覆盖 Route 中的 location</p>
+</blockquote>
+</li>
+</ul>
+<h3><a class="header" href="#redirect-重定向当前页面" id="redirect-重定向当前页面">Redirect-重定向当前页面</a></h3>
+<p>典型场景: 登陆判断</p>
+<ul>
+<li>to 重定向路径</li>
+</ul>
+<h3><a class="header" href="#link-超链接" id="link-超链接">Link-超链接</a></h3>
+<p>不会触浏览器刷新</p>
+<ul>
+<li>
+<p>to（string/object）：要跳转的路径或地址；</p>
+</li>
+<li>
+<p>replace（bool）：为 true 时，点击链接后将使用新地址替换掉访问历史记录里面的原地址；为 false(默认) 时，点击链接后将在原有访问历史记录的基础上添加一个新的纪录</p>
+</li>
+</ul>
+<h3><a class="header" href="#navlink-带样式的-link" id="navlink-带样式的-link">NavLink: 带样式的 Link</a></h3>
+<p>会添加选中状态的样式</p>
+<ul>
+<li>
+<p>activeClassName: string 激活时候的 className, 默认值 active(外部引入 css 文件的时候貌似不好使, 存疑)</p>
+</li>
+<li>
+<p>activeStyle: object 通过 inline 方式引入样式</p>
+</li>
+<li>
+<p>exact: bool 精确匹配模式, strict: bool url 末尾需要&quot;/&quot;, 比如 to=&quot;/events/&quot;</p>
+</li>
+<li>
+<p>isActive: func(match, location) 自定义函数判断是否激活状态</p>
+</li>
+<li>
+<p>location: object 可以设定一个 location 对象</p>
+</li>
+</ul>
+<h3><a class="header" href="#prompt-提示" id="prompt-提示">Prompt-提示</a></h3>
+<p>满足条件时会提示用户是否离开当前页面</p>
+<ul>
+<li>when 条件逻辑</li>
+<li>message 提示信息</li>
+</ul>
+<h2><a class="header" href="#history" id="history">history</a></h2>
+<p>history is mutable， 因此推荐这样获取 location: this.props.location</p>
+<pre><code class="language-js">class Comp extends React.Component {
+    componentWillReceiveProps(nextProps) {
+        // will be true
+        const locationChanged = nextProps.location !== this.props.location;
+
+        // INCORRECT, will *always* be false because history is mutable.
+        const locationChanged =
+            nextProps.history.location !== this.props.history.location;
+    }
+}
+</code></pre>
+<h2><a class="header" href="#location" id="location">location</a></h2>
+<p>location 长这样</p>
+<pre><code class="language-js">{
+  key: 'ac3df4', // not with HashHistory!
+  pathname: '/somewhere'
+  search: '?some=search-string',
+  hash: '#howdy',
+  state: {
+    xxx: xxx
+  }
+}
+</code></pre>
+<p>router 将在这些地方提供 location 对象:</p>
+<ul>
+<li>
+<p><code>Route component</code> as <code>this.props.location</code></p>
+</li>
+<li>
+<p><code>Route render</code> as <code>({ location }) =&gt; ()</code></p>
+</li>
+<li>
+<p><code>Route children</code> as <code>({ location }) =&gt; ()</code></p>
+</li>
+<li>
+<p><code>withRouter</code> as <code>this.props.location</code></p>
+</li>
+</ul>
+<p>A location object is never mutated , 所以可以通过它在 lifecycle hooks 中来决定何时怎么导航(获取数据和动画过渡特别有用)</p>
+<pre><code class="language-js">componentWillReceiveProps(nextProps) {
+  if (nextProps.location !== this.props.location) {
+    // navigated!
+  }
+}
+</code></pre>
+<p>这些地方可以设置 location 对象来代替 string 形式的 url patern:</p>
+<ul>
+<li>Web <code>Link to</code></li>
+<li>Native Link to</li>
+<li><code>Redirect to</code></li>
+<li>history.push</li>
+<li>history.replace</li>
+</ul>
+<pre><code class="language-js">const location = {
+    pathname: &quot;/somewhere&quot;,
+    state: { fromDashboard: true }
+};
+</code></pre>
+<h2><a class="header" href="#match" id="match">match</a></h2>
+<h1><a class="header" href="#调试和测试" id="调试和测试">调试和测试</a></h1>
+<p>chrome 调试插件: React DevTool, Redux DevTool</p>
+<p>格式化: Prettier (可以自动修正)</p>
+<p>代码风格约束: ESLint</p>
+<p>测试: Jest, Enzyme</p>
+<p>mock 假数据, 模拟假的 api: json-server配合faker.js</p>
+<h1><a class="header" href="#graphql-和-relay" id="graphql-和-relay">GraphQL 和 Relay</a></h1>
+<p>GraphQL 是一种数据查询语言（Data Query Language）, 主要是想解决传统 RESTful API 所遇到的一些问题</p>
+<p>Relay 是搭配 GraphQL 用于 React 的一个宣告式数据框架，可以降低 Ajax 的请求数量</p>
+<h1><a class="header" href="#css-module-模块化" id="css-module-模块化">CSS-Module 模块化</a></h1>
+<p>解决了 css 类名的冲突问题, https://zhuanlan.zhihu.com/p/20495964</p>
+<p>业界另一种方案是 BEM 类命名方法 (<a href="https://www.ibm.com/developerworks/cn/web/1512_chengfu_bem/index.html">bem 命名</a>)</p>
+<p>如果使用 webpack, css-loader 需要如此配置: <code>'css-loader?modules&amp;localIdentName=[name]__[local]-[hash:base64:5]'</code></p>
+<p>可以和 <code>react-css-modules</code> 配合使用 (<a href="https://segmentfault.com/a/1190000004530909">ref</a>)</p>
+<p>https://github.com/camsong/blog/issues/5</p>
+<p>http://www.alloyteam.com/2017/03/getting-started-with-css-modules-and-react-in-practice/</p>
+<p>css 模块化进化：【搜索 “css modules styled-components 区别”】 <a href="https://www.zcfy.cc/article/css-evolution-from-css-sass-bem-css-modules-to-styled-components">1</a>，<a href="http://hkongm.github.io/2018/07/25/ReactStyleTypes/">2</a>，<a href="http://www.alloyteam.com/2017/05/guide-styled-components/">3</a></p>
+<p>在 create-react-app 中如何使用? -- css 文件命名为 <code>&lt;componentName&gt;.module.css</code> 即可使用 css modules 特性</p>
+<h1><a class="header" href="#css-in-js" id="css-in-js">css-in-js</a></h1>
+<p><a href="https://zhuanlan.zhihu.com/p/91498498">emotion 和 styled-components 两种解决方案</a></p>
+<p>好处是能通过 js 动态生成 css</p>
+<p>推荐 emotion, emotion 同时支持 css props 写法和 styled 写法, styled-components 只有 styled 写法</p>
+<p>总体不如 css-module, 因为 css 和 js 耦合, 将来如果迁移, 不方便</p>
+<p>另一种 css 解决方案: https://tailwindcss.com/</p>
+<p><a href="https://codedaily.io/tutorials/62/Create-a-Hoverable-Display-Card-with-React-and-Emotion">react + emotion 的 styled 写法</a></p>
+<h1><a class="header" href="#最佳实践-best-practice" id="最佳实践-best-practice">最佳实践 best practice</a></h1>
+<p>https://github.com/camsong/blog
+https://github.com/camsong/blog/issues/6</p>
+<p>技术环境：</p>
+<p>打包 es6 + Webpack + less
+使用了 HapiJs 作为模拟 server，前端开发和后端彻底分离，后期集成时，使用自己开发的代理服务器调用真正的 API
+运行库 React + Flux + React-router+ material-ui + ImmutableJS + 自己研发的控件
+单测环境 Karma+mocha+chai+Istanbul
+布局完全用 flex</p>
+<p>使用 Flex 布局会大大降低 CSS 的难度
+使用 Flux 可以很好的隔离业务（我们的业务逻辑都在 Store 里）,大大降低了单元测试的难度
+基于 React 的控件（这里说的是基本控件）是对 React 理解的一个体现
+尽量把 React 组件（Component）做到小，做到细，也就是尽量拆分 React 组件
+基于数据驱动的方式（Data-Driven）开发，理解到这一点就会发现 React 很神奇，可能这也是最不好理解的地方
+ImmutableJS 带来了大量的好处，所有组件都使用了 ShouldComponentUpdate 来优化
+实现了 I18N 的动态加载
+使用了 Url 来保存 Router 信息，没有使用 Hash，感觉很简洁</p>
+<h1><a class="header" href="#服务端渲染" id="服务端渲染">服务端渲染</a></h1>
+<p>最新的方案: https://github.com/rendora/rendora    (https://segmentfault.com/a/1190000017361781?utm_source=tag-newest)</p>
+<h2><a class="header" href="#什么是-ssr" id="什么是-ssr">什么是 ssr</a></h2>
+<p>以前的多页面站点是在服务端渲染的，输出到浏览器时已经有了完整的骨架（ html ），这样爬虫抓到时可以分析页面标题，内容等等，做 seo 容易，那时的技术栈是 jsp，php 等等。</p>
+<p>现在流行的前端框架在这方面是开了倒车，一个空的骨架，一个很大的 js，抓到浏览器以后才开始渲染完整的页面，爬虫就很为难了，因为它没法执行 js 啊，此外，白屏时间也是由于前端渲染带来的问题。于是又有了服务端渲染，让渲染这一步再回到服务端，在服务端模拟浏览器环境，给 react 和 vue 等框架一个可执行的上下文，就是为了提前得到完整的 html, 这就是 server side  render</p>
+<p>Isomorphic JavaScript : 指前后端（Client/Server）共用相同部分的 js 代码, 让 JavaScript 应用可以同时执行在浏览器端和 server 端，在 React 中可以使用 server 端渲染（server side rendering）静态 HTML 的方式达到 Isomorphic JavaScript 效果，让 SEO 和执行效率更加提升并让前后端共用代码</p>
+<h2><a class="header" href="#ssr-的好处" id="ssr-的好处">ssr 的好处</a></h2>
+<ul>
+<li>seo 友好</li>
+<li>同时有助于改善首屏加载体验</li>
+</ul>
+<h2><a class="header" href="#解决方案" id="解决方案">解决方案</a></h2>
+<p>https://www.zhihu.com/question/51949678 想要 seo 的页面要静态分开部署, 不要使用 react
+https://blog.coding.net/blog/React-Server-Side-Rendering-for-SPA-SEO,
+https://blog.bluedgeusa.com/how-to-build-an-seo-friendly-website-with-react-ef42bb52c563#.ge090p9pu //todo ,
+https://github.com/carlleton/reactjs101/blob/zh-CN/Ch10/react-redux-server-rendering-isomorphic-javascript.md
+https://www.jianshu.com/p/56ca46c90ee2 使用类库</p>
+<p>其实, 对于真正适合做成 SPA 的应用，SEO 反而通常不是问题。针对 marketing 的页面应该是静态分开部署的，app 本身则要登陆才能用，SEO 没有什么意义。对于少数同时需要 seo, 而且同时需要强交互性 spa 的场景, 有如下几种解决方案:</p>
+<ul>
+<li>
+<p>React 使用 Next.js 作服务器端渲染 https://nextjs.org/</p>
+</li>
+<li>
+<p>使用 Node.js 作为前后端的中间层进行中间层渲染 ，但可能对项目改动有点大 (http://www.alloyteam.com/2015/10/8783/), 参考 https://juejin.im/post/6844903693033144333</p>
+<p>React 提供了俩个神奇的方法，renderToString 和 renderToStaticMarkup:</p>
+<p>renderToString 方法，只应用在服务器端，把一个 React Component 渲染成 HTMl ,可以将它通过 response 发送到浏览器端，达到 SEO 的目的。</p>
+<p>renderToStaticMarkup 方法，和 renderToString 类似，但是它生成的 HTML Dom 不包含类似 data-react-id 这样的额外属性，可以用于生成简单的静态页面，节省大量字符串。</p>
+</li>
+<li>
+<p>https://github.com/rendora/rendora 使用 headless Chrome</p>
+</li>
+</ul>
+<h3><a class="header" href="#配合-koa2-实现-ssr" id="配合-koa2-实现-ssr">配合 koa2 实现 ssr</a></h3>
+<p>https://github.com/yangfan0095/react-koa2-ssr</p>
+<h3><a class="header" href="#egg-实现-ssr" id="egg-实现-ssr">egg 实现 ssr</a></h3>
+<p>https://github.com/ykfe/egg-react-ssr 热度更高</p>
+<h1><a class="header" href="#性能优化" id="性能优化">性能优化</a></h1>
+<p>https://zhuanlan.zhihu.com/p/37148975</p>
+<h2><a class="header" href="#常见的性能问题场景" id="常见的性能问题场景">常见的性能问题场景</a></h2>
+<p>键盘输入卡顿</p>
+<p>鼠标移动/滚动卡顿 (调整尺寸 resize)</p>
+<p>组件拆分的要足够小, 减少 virtual dom 的 diff 操作负担</p>
+<h2><a class="header" href="#使用工具定位性能问题" id="使用工具定位性能问题">使用工具定位性能问题</a></h2>
+<p>react devtools (highlight update 功能)
+chrome devtools</p>
+<h2><a class="header" href="#网络性能优化-自动按需加载" id="网络性能优化-自动按需加载">网络性能优化-自动按需加载</a></h2>
+<p>可以通过 react-loadable 组件 + webpack import api 来实现 react 异步加载</p>
+<pre><code class="language-js">import loadable from &quot;react-loadable&quot;;
+
+const TargetComponent = loadable({
+    loader: () =&gt; import(&quot;./TargetComponent&quot;),
+    // 等待页面
+    loading: () =&gt; &lt;div&gt;Loading....&lt;/div&gt;
+});
+</code></pre>
+<h2><a class="header" href="#使用-reselect-避免重复计算" id="使用-reselect-避免重复计算">使用 Reselect 避免重复计算</a></h2>
+<p>reselect 库用来创建自动缓存的数据的处理函数</p>
+<h1><a class="header" href="#react-动画" id="react-动画">react 动画</a></h1>
+<p>https://mp.weixin.qq.com/s/Ey24FrWN2SiLK2LAmPv7hA</p>
+<p>TODO</p>
+<h1><a class="header" href="#react-native" id="react-native">react native</a></h1>
+<p>https://reactnative.dev/docs/getting-started 官网
+https://github.com/reactnativecn/react-native-guide 中文资源</p>
+<p>美团外卖的实践: https://tech.meituan.com/2019/12/19/meituan-mrn-practice.html</p>
+<p>更推荐 flutter</p>
+<p>https://guoshuyu.cn/home/wx/
+http://laomengit.com/guide/introduction/cross-platform.html</p>
+<p>https://xiaozhuanlan.com/topic/8924513706 跨平台开发原理
+https://exp.newsmth.net/topic/article/51b2b5d2371fc166e46ef0ff881b8506 flutter 对比
+https://zhuanlan.zhihu.com/p/43957699</p>
+<h1><a class="header" href="#开发小程序" id="开发小程序">开发小程序</a></h1>
+<p>remax, taro, anujs, 推荐 Taro + typescript</p>
+<p>https://zhuanlan.zhihu.com/p/24946190 申请步骤</p>
+<p>https://github.com/didi/chameleon</p>
+<h1><a class="header" href="#小项目" id="小项目">小项目</a></h1>
+<h2><a class="header" href="#实现-route" id="实现-route">实现 route</a></h2>
+<p>https://www.cnblogs.com/huyue/p/9463328.html
+https://www.jianshu.com/p/014fd226352b</p>
+<h2><a class="header" href="#表单设计器" id="表单设计器">表单设计器</a></h2>
+<p>https://github.com/alibaba/form-render
+https://github.com/rjsf-team/react-jsonschema-form json 渲染表单</p>
+<h2><a class="header" href="#cms-系统" id="cms-系统">cms 系统</a></h2>
+<p>(配合 antd)</p>
+<pre><code class="language-sh">npx create-react-app cms-article
+
+# 样式 主题 支持 less 
+# 自定义配置
+npm i -S antd craco-less @craco/craco
+
+# 路由
+npm i -S react-router-dom
+
+# ajax
+npm i -S axios
+
+# redux
+npm i -S redux react-redux
+</code></pre>
+<h1><a class="header" href="#部署到-github-上" id="部署到-github-上">部署到 github 上</a></h1>
+<pre><code class="language-sh"># 在package.json配置文件中加一句, 处理跨域问题
+#“homepage”: “https://fyxwanan.github.io/test” 
+
+# or
+
+# &quot;proxy&quot;: {
+#     &quot;/api&quot;: {
+#       &quot;target&quot;: &quot;http://localhost:8080&quot;,
+#       &quot;ws&quot;: true
+#     }
+#   }
+
+# 生成一个build文件夹
+npm run build
+
+# 提交 master 代码
+git push origin master
+
+# build文件夹上传到另一个分支
+git subtree push --prefix=build origin gh-pages
+
+# 最后到 github 配置 github pages
+
+</code></pre>
+<h1><a class="header" href="#和-springboot-打包单体应用" id="和-springboot-打包单体应用">和 springboot 打包单体应用</a></h1>
+<p>https://cloud.tencent.com/developer/news/603125</p>
+<p>https://medium.com/@itzgeoff/including-react-in-your-spring-boot-maven-build-ae3b8f8826e
+frontend-maven-plugin</p>
+<p>https://blog.csdn.net/andy_zhang2007/article/details/89393005 和 webjars</p>
+<h1><a class="header" href="#和-typescript-一起使用" id="和-typescript-一起使用">和 typescript 一起使用</a></h1>
+<h2><a class="header" href="#ts-基本使用" id="ts-基本使用">ts 基本使用</a></h2>
+<p>https://github.com/xcatliu/typescript-tutorial</p>
+<p><code>npm install -g typescript</code> , https://www.typescriptlang.org/play/</p>
+<h3><a class="header" href="#枚举" id="枚举">枚举</a></h3>
+<pre><code class="language-ts">const enum Color {Red = 1, Green, Blue}
+let colorName: string = Color[2];
+console.log(colorName);  // 显示'Green'因为上面代码里它的值是2
+
+// 枚举相当于一个对象
+// obj: { X: number }
+
+// 枚举作为类型:
+enum ShapeKind {
+    Circle,
+    Square,
+}
+interface Circle {
+    kind: ShapeKind.Circle;
+    radius: number;
+}
+interface Square {
+    kind: ShapeKind.Square;
+    sideLength: number;
+}
+let c: Circle = {
+    kind: ShapeKind.Square,
+    //    ~~~~~~~~~~~~~~~~ Error!
+    radius: 100,
+}
+
+</code></pre>
+<h3><a class="header" href="#使用-interface-定义对象类型" id="使用-interface-定义对象类型">使用 interface 定义对象类型</a></h3>
+<pre><code class="language-js">
+// similar to bean in java
+interface SquareConfig {
+  // optional properties, 
+  color?: string;
+  width?: number;
+  readonly xxx: number;// readonly property, 
+  //最简单判断该用readonly还是const的方法是看要把它做为变量使用还是做为一个属性。 做为变量使用的话用 const，若做为属性则使用readonly
+}
+
+//ReadonlyArray&lt;T&gt;类型，它与Array&lt;T&gt;相似，只是把所有可变方法去掉了，因此可以确保数组创建后再也不能被修改：
+let ro: ReadonlyArray&lt;number&gt; = a;
+const a = [];
+a = ro; // error!
+a = ro as number[];//ok
+
+
+
+// 额外的属性检查
+interface SquareConfig {
+    color?: string;
+    width?: number;
+}
+function createSquare(config: SquareConfig) {
+}
+let mySquare = createSquare({ colour: &quot;red&quot;, width: 100 });//error, 参数 interface 中没有 colour, 即使 color 是 可选参数也不行
+let mySquare = createSquare({  width: 100 });// ok
+let mySquare1 = createSquare({ width: 100, opacity: 0.5 } );//error
+let mySquare = createSquare({ width: 100, opacity: 0.5 } as SquareConfig);//ok 
+// 若希望参数中带有其他属性, 最好的解决方式:
+interface SquareConfig {
+    color?: string;
+    width?: number;
+    [propName: string]: any;//可以有任意数量的属性，并且只要它们不是color和width，那么就无所谓它们的类型是什么
+}
+
+//还有一种方法: 将可能有错的参数对象赋值给一个另一个变量, 然后传入方法中
+let squareOptions = { colour: &quot;red&quot;, width: 100 };
+let mySquare = createSquare(squareOptions);
+
+</code></pre>
+<h3><a class="header" href="#interface-定义函数类型" id="interface-定义函数类型">interface 定义函数类型</a></h3>
+<pre><code class="language-js">interface SearchFunc {
+  (source: string, subString?: string): boolean;// 可选参数必须在最后
+  // 可以不止有一个函数签名
+  
+}
+let mySearch: SearchFunc;
+mySearch = function(src, sub) {// 返回值类型, 参数类型可省略
+    let result = src.search(sub);
+    return result &gt; -1;
+}
+
+
+// 混合类型
+//一个对象可以同时做为函数和对象使用，并带有额外的属性
+interface Counter {
+    (start: number): string;
+    interval: number;
+    reset(): void;
+}
+function getCounter(): Counter {
+    let counter = &lt;Counter&gt;function (start: number) { };
+    counter.interval = 123;
+    counter.reset = function () { };
+    return counter;
+}
+let c = getCounter();
+c(10);
+c.reset();
+c.interval = 5.0;
+</code></pre>
+<h3><a class="header" href="#interface-定义可索引类型" id="interface-定义可索引类型">interface 定义可索引类型</a></h3>
+<p>类似数组, map...</p>
+<pre><code class="language-js">interface StringArray {
+  [index: number]: string;// 索引支持字符串和数字。可以同时使用, 但是数字索引的返回必须是字符串索引的返回值的子类型
+}
+
+
+  // 底层实际只支持 字符串作为索引, 若是数字作为索引, 实际还是先转为字符串, 然后去查找, 所以为了能够查到, number 对应的返回类型必须和 string 对应的返回值类型相同 or 为子类型
+//
+class Animal {
+    name: string;
+}
+class Dog extends Animal {
+    breed: string;
+}
+// 错误：使用数值型的字符串索引，有时会得到完全不同的Animal!
+interface NotOkay {
+    [x: number]: Animal;
+    [x: string]: Dog;
+}
+
+
+// 一旦指定了索引类型, 当前对象的其他索性返回类型必须符合这个索引类型
+interface NumberDictionary {
+  [index: string]: number;
+  length: number;    // 可以，length是number类型
+  name: string       // 错误，`name`的类型与索引类型返回值的类型不匹配
+}
+
+//可以将索引签名设置为只读，这样就防止了给索引赋值, 也就阻止了数组扩展
+interface ReadonlyStringArray {
+    readonly [index: number]: string;
+}
+let myArray: ReadonlyStringArray = [&quot;Alice&quot;, &quot;Bob&quot;];
+myArray[2] = &quot;Mallory&quot;; // error! 不能设置myArray[2]，因为索引签名是只读的
+</code></pre>
+<h3><a class="header" href="#interface-定义-class-类" id="interface-定义-class-类">interface 定义 class 类</a></h3>
+<pre><code class="language-js">interface ClockInterface {
+    currentTime: Date;// 将作为子类成员变量, 子类必须有
+    setTime(d: Date);
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+    constructor(h: number, m: number) { }
+}
+</code></pre>
+<h3><a class="header" href="#interface-继承" id="interface-继承">interface 继承</a></h3>
+<p>interface 可以继承 多个其他 interface, 逗号分离</p>
+<p>亦可继承其他 class: (interface 自动拥有 class 的属性, 即使是 private)</p>
+<pre><code class="language-js">class Control {
+    private state: any;
+}
+
+interface SelectableControl extends Control {// 拥有了 state 
+    select(): void;
+}
+
+// 可以实现 interface, 因为 button 拥有 state 
+class Button extends Control implements SelectableControl {
+    select() { }
+}
+// ok
+class TextBox extends Control {
+    select() { }
+}
+
+// 错误：“Image”类型缺少“state”属性。
+class Image implements SelectableControl {
+    select() { }
+}
+
+
+</code></pre>
+<h3><a class="header" href="#class-使用" id="class-使用">class 使用</a></h3>
+<pre><code class="language-js">class Greeter {
+  // 比较两个 object 是否相等, 
+  //只有实例的成员会被比较。 静态成员和构造函数不在比较的范围内。
+  // 如果属性不带修饰符, 只需要各个属性类型都兼容相等, 则 object 相等
+  // 若属性带有修饰符(private或 protected), 则两个 object 中的 field 必须都有相同的修饰符, 且两个 field 声明自同一个地方(比如通过继承得到的 field)
+
+  public name: string;
+         greeting: string;  //// 默认 public
+  protected name: string;//protected成员在派生类中仍然可以访问; 构造函数也可以被标记成 protected。 这意味着这个类不能在包含它的类外被实例化，但是能被继承, 可以在子类中调用 super()
+  private name: string; //无法在类外部访问
+  readonly xiaoyu: string = '';// 只读属性必须在声明时或构造函数里被初始化
+      
+  static origin = {x: 0, y: 0};// 静态属性, 通过类名访问 
+
+
+  // 参数属性: 通过给构造函数参数前面添加一个访问限定符来声明。 使用 private限定一个参数属性会声明并初始化一个私有成员；对于 public和 protected来说也是一样
+  constructor(message: string, readonly xiaoyu: string = 'XIAOYU') {// 这里是为同名参数 xiaoyu 初始化, 可以省掉一些代码 
+    // 若有继承, 在构造函数里访问 this的属性之前，我们 一定要调用 super()
+      this.greeting = message;
+  }
+
+  // getter, setter
+  private _fullName: string;
+
+  get fullName(): string {
+      return this._fullName;
+  }
+
+  set fullName(newName: string) {
+      if (passcode &amp;&amp; passcode == &quot;secret passcode&quot;) {  
+          this._fullName = newName;
+      }
+      else {
+          console.log(&quot;Error: Unauthorized update of employee!&quot;);
+      }
+  }
+}
+
+// 使用 getter, setter
+let employee = new Employee();
+employee.fullName = &quot;Bob Smith&quot;;//setter
+if (employee.fullName) {//getter
+    alert(employee.fullName);
+}
+</code></pre>
+<h3><a class="header" href="#泛型使用" id="泛型使用">泛型使用</a></h3>
+<pre><code class="language-js">function identity&lt;T&gt;(arg: T): T {
+    return arg;
+}
+let myIdentity: &lt;U&gt;(arg: U) =&gt; U = identity;
+let myIdentity: {&lt;T&gt;(arg: T): T} = identity;// 相当于定义了一个匿名 interface/object 来定义函数类型
+
+
+let output = identity&lt;string&gt;(&quot;myString&quot;);
+let output = identity(&quot;myString&quot;);// 简写
+
+
+//泛型约束
+function create&lt;T&gt;(c: {new(): T; }): T {
+    return new c();
+}
+function createInstance&lt;A extends Animal&gt;(c: new () =&gt; A): A {
+    return new c();
+}
+</code></pre>
+<h3><a class="header" href="#交叉类型" id="交叉类型">交叉类型</a></h3>
+<pre><code class="language-js">// 通过泛型定义混合额类型
+function extend&lt;T, U&gt;(first: T, second: U): T &amp; U {
+    let result = &lt;T &amp; U&gt;{};
+    for (let id in first) {
+        (&lt;any&gt;result)[id] = (&lt;any&gt;first)[id];
+    }
+    for (let id in second) {
+        if (!result.hasOwnProperty(id)) {
+            (&lt;any&gt;result)[id] = (&lt;any&gt;second)[id];
+        }
+    }
+    return result;
+}
+
+class Person {
+    constructor(public name: string) { }
+}
+interface Loggable {
+    log(): void;
+}
+class ConsoleLogger implements Loggable {
+    log() {
+        // ...
+    }
+}
+var jim = extend(new Person(&quot;Jim&quot;), new ConsoleLogger());
+var n = jim.name;
+jim.log();
+</code></pre>
+<h3><a class="header" href="#联合类型" id="联合类型">联合类型</a></h3>
+<pre><code class="language-ts">function padLeft(value: string, padding: string | number) {// padding can be string | number type
+    // ...
+}
+let indentedString = padLeft(&quot;Hello world&quot;, true); // errors during compilation
+
+
+//如果一个值是联合类型，只能访问联合类型里的公共部分
+interface Bird {
+    fly();
+    layEggs();
+}
+interface Fish {
+    swim();
+    layEggs();
+}
+function getSmallPet(): Fish | Bird {
+    // ...
+}
+let pet = getSmallPet();
+pet.layEggs(); // okay
+pet.swim();    // errors
+
+////////////////////////////////////////
+// 类型断言
+let pet = getSmallPet();
+if ((&lt;Fish&gt;pet).swim) { // 显式指定一个类型
+    (&lt;Fish&gt;pet).swim();
+} else {
+    (&lt;Bird&gt;pet).fly();
+}
+
+// 简化:
+// 将断言抽出来成为函数
+function isFish(pet: Fish | Bird): pet is Fish {// 返回值为类型谓词, 语法为 param is Type
+    return (&lt;Fish&gt;pet).swim !== undefined;
+}
+if (isFish(pet)) {
+    pet.swim();
+}
+else {
+    pet.fly();
+}
+
+
+// 感叹号 (!): 手动去除null或 undefined的联合类型
+function fixed(name: string | null): string {
+  function postfix(epithet: string) {
+    return name!.charAt(0) + '.  the ' + epithet; // ok, 通过 ! 去掉了 null 类型
+  }
+  name = name || &quot;Bob&quot;;
+  return postfix(&quot;great&quot;);
+}
+
+
+// 可辨识联合
+interface Square {
+    kind: &quot;square&quot;;
+    size: number;
+}
+interface Rectangle {
+    kind: &quot;rectangle&quot;;
+    width: number;
+    height: number;
+}
+interface Circle {
+    kind: &quot;circle&quot;;
+    radius: number;
+}
+type Shape = Square | Rectangle | Circle;
+function area(s: Shape) {
+    switch (s.kind) {
+        case &quot;square&quot;: return s.size * s.size;
+        case &quot;rectangle&quot;: return s.height * s.width;
+        case &quot;circle&quot;: return Math.PI * s.radius ** 2;
+    }
+}
+</code></pre>
+<h3><a class="header" href="#类型保护" id="类型保护">类型保护</a></h3>
+<pre><code class="language-js">// 对于类型
+function padLeft(value: string, padding: string | number) {
+    if (typeof padding === &quot;number&quot;) {//必须是 &quot;number&quot;， &quot;string&quot;， &quot;boolean&quot;或 &quot;symbol&quot;
+        return Array(padding + 1).join(&quot; &quot;) + value;
+    }
+    if (typeof padding === &quot;string&quot;) {
+        return padding + value;
+    }
+    throw new Error(`Expected string or number, got '${padding}'.`);
+}
+
+// 对于实例
+// 类型为SpaceRepeatingPadder | StringPadder
+let padder: Padder = getRandomPadder();
+if (padder instanceof SpaceRepeatingPadder) { // 右侧必须为构造函数
+    padder; // 类型细化为'SpaceRepeatingPadder'
+}
+if (padder instanceof StringPadder) {
+    padder; // 类型细化为'StringPadder'
+}
+</code></pre>
+<h3><a class="header" href="#类型别名" id="类型别名">类型别名</a></h3>
+<pre><code class="language-ts">type Name = string;
+type NameResolver = () =&gt; string;
+type NameOrResolver = Name | NameResolver;
+type Tree&lt;T&gt; = {
+    value: T;
+    left: Tree&lt;T&gt;;
+    right: Tree&lt;T&gt;;
+}
+
+type LinkedList&lt;T&gt; = T &amp; { next: LinkedList&lt;T&gt; };
+interface Person {
+    name: string;
+}
+var people: LinkedList&lt;Person&gt;;
+var s = people.name;
+var s = people.next.name;
+var s = people.next.next.name;
+var s = people.next.next.next.name;
+
+
+// 和接口的区别
+type Alias = { num: number }//类型别名并不创建新名字
+interface Interface {
+    num: number;
+}
+declare function aliased(arg: Alias): Alias;//将鼠标悬停在 interfaced上，显示它返回的是 Interface，但悬停在 aliased上时，显示的却是对象字面量类型
+declare function interfaced(arg: Interface): Interface;
+
+//类型别名不能被 extends和 implements
+</code></pre>
+<h3><a class="header" href="#空类型" id="空类型">空类型</a></h3>
+<p>--strictNullChecks标记 效果:</p>
+<pre><code class="language-ts">let s = &quot;foo&quot;;
+s = null; // 错误, 'null'不能赋值给'string', 若果是 js 规则/ts 不加 strict 标记, 则可以
+
+// TypeScript会把 null和 undefined区别对待。 string | null， string | undefined和 string | undefined | null是不同的类型
+let sn: string | null = &quot;bar&quot;;
+sn = null; // 可以
+
+sn = undefined; // error, 'undefined'不能赋值给'string | null'
+
+
+
+//可选参数会被自动地加上 | undefined
+function f(x: number, y?: number) {
+    return x + (y || 0);
+}
+f(1, 2);
+f(1);
+f(1, undefined);
+f(1, null); // error, 'null' is not assignable to 'number | undefined'
+</code></pre>
+<h2><a class="header" href="#集成-ts-环境" id="集成-ts-环境">集成 ts 环境</a></h2>
+<p>https://create-react-app.dev/docs/adding-typescript/</p>
+<pre><code class="language-sh">npx create-react-app my-app --template typescript
+
+
+
+</code></pre>
+<p>全局声明文件  <code>react-app-env.d.ts</code>, ts 配置 <code>tsconfig.js</code> 见 https://blog.csdn.net/qq_41831345/article/details/106843875</p>
+<h2><a class="header" href="#为样式文件编写-types" id="为样式文件编写-types">为样式文件编写 types</a></h2>
+<p>https://blog.csdn.net/Dilomen/article/details/100837293
+https://segmentfault.com/q/1010000017979602/a-1020000017980147</p>
+<h2><a class="header" href="#配置-css-跳转" id="配置-css-跳转">配置 css 跳转</a></h2>
+<p>https://www.jianshu.com/p/641bcac7754b</p>
+<h1><a class="header" href="#使用-debugger-for--chrome" id="使用-debugger-for--chrome">使用 debugger for  Chrome</a></h1>
+<p>.vscode 配置文件中的专有变量:</p>
+<pre><code>${workspaceFolder} :表示当前workspace文件夹路径，就是根目录, .vscode 所在目录
+
+${workspaceRootFolderName}:表示workspace的文件夹名，也即Test
+
+${file}:文件自身的绝对路径，也即/home/Coding/Test/.vscode/tasks.json
+
+${relativeFile}:文件在workspace中的路径，也即.vscode/tasks.json
+
+${fileBasenameNoExtension}:当前文件的文件名，不带后缀，也即tasks
+
+${fileBasename}:当前文件的文件名，tasks.json
+
+${fileDirname}:文件所在的文件夹路径，也即/home/Coding/Test/.vscode
+
+${fileExtname}:当前文件的后缀，也即.json
+
+${lineNumber}:当前文件光标所在的行号
+
+${env:PATH}:系统中的环境变量
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="cross-gfw.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="cs-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="cross-gfw.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="cs-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

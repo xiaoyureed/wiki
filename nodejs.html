@@ -1,0 +1,862 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>nodejs - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html" class="active"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Nodejs
+tags:</p>
+<ul>
+<li>node</li>
+<li>javascript
+date: 2019-07-25 19:55:53
+categories: frontend</li>
+</ul>
+<hr />
+<div align="center">
+https://github.com/ruanyf/jstraining/blob/master/docs/node.md
+http://i5ting.github.io/nodejs-fullstack/
+https://i5ting.github.io/How-to-learn-node-correctly/ 入门教程
+<p>https://github.com/nswbmw/node-in-debugging
+https://github.com/wangfupeng1988/js-async-tutorial
+https://github.com/nswbmw/N-blog
+https://github.com/lowerfish/js-stack-from-scratch
+https://github.com/wangdoc/javascript-tutorial/tree/master/docs</p>
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4">常用的命令</a></li>
+<li><a href="#what-is-nodejs">what is nodejs</a></li>
+<li><a href="#why-we-need-nodejs">why we need nodejs</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#how-to-use">how to use</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90">代码生成</a></li>
+<li><a href="#deno">deno</a></li>
+<li><a href="#npm">npm</a>
+<ul>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">使用场景</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85">使用第三方包</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%88%AB%E4%BA%BA%E7%9A%84%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%A8%8B%E5%BA%8F">使用别人的命令行程序</a></li>
+<li><a href="#%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8C%85or%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%A8%8B%E5%BA%8F">发布自己的包or命令行程序</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85or%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85">全局安装or本地安装</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F">设置淘宝镜像</a>
+<ul>
+<li><a href="#%E4%B8%B4%E6%97%B6%E4%BD%BF%E7%94%A8">临时使用</a></li>
+<li><a href="#%E6%8C%81%E4%B9%85%E4%BD%BF%E7%94%A8">持久使用</a></li>
+</ul>
+</li>
+<li><a href="#packagejson">package.json</a></li>
+<li><a href="#npm-scripts">npm-scripts</a></li>
+<li><a href="#npx-%E5%91%BD%E4%BB%A4">npx 命令</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%BA%93">常用库</a>
+<ul>
+<li><a href="#react-%E7%9B%B8%E5%85%B3">react 相关</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#yarn">yarn</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">基本使用</a></li>
+<li><a href="#yarn%E6%AF%94npm%E5%A5%BD%E5%9C%A8%E5%93%AA%E9%87%8C">yarn比npm好在哪里</a></li>
+</ul>
+</li>
+<li><a href="#web-%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%A0%88">web 后台技术栈</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#常用的命令" id="常用的命令">常用的命令</a></h1>
+<pre><code class="language-shell"># 升级 (https://blog.csdn.net/hl449006540/article/details/79698905)
+# 先清除 npm cache 
+npm cache clean -f
+npm install -g n
+n stable
+
+</code></pre>
+<h1><a class="header" href="#what-is-nodejs" id="what-is-nodejs">what is nodejs</a></h1>
+<ul>
+<li>
+<p>Node.js 是 JavaScript 运行时环境, 基于 chrome v8, 因此接受请求时是单线程, 没有切换上下文的成本, 但是执行具体任务时是多线程的, 也就是异步执行, 保证响应速度</p>
+</li>
+<li>
+<p>事件驱动（event-driven），非阻塞 I/O 模型（non-blocking I/O model）, 非常适合高并场景</p>
+<p>简单点讲就是每个函数都是异步的，最后由 Libuv 这个 C/C++ 编写的事件循环处理库来处理这些 I/O 操作，隐藏了非阻塞 I/O 的具体细节，简化并发编程模型，让你可以轻松的编写高性能的Web应用</p>
+<p>单线程就意味着，所有任务需要排队, CPU 很闲, i/o很忙, 那么cpu完全可以不管 I/O 设备，挂起处于等待中的任务，先运行排在后面的任务, 将将等待中的 I/O 任务放到 Event Loop 里, 由 Event Loop 将 I/O 任务放到线程池里</p>
+</li>
+<li>
+<p>使用 npm 作为包管理器</p>
+</li>
+</ul>
+<h1><a class="header" href="#why-we-need-nodejs" id="why-we-need-nodejs">why we need nodejs</a></h1>
+<p>高并发, 比如作为微服务的gateway, 比如在后台api和前端之间搭建中间层</p>
+<p>事件驱动的异步编程, 适合用于频繁 i/o 操作的应用</p>
+<h1><a class="header" href="#安装" id="安装">安装</a></h1>
+<p>https://www.cnblogs.com/jcwalker/p/10871493.html 二进制文件安装</p>
+<h1><a class="header" href="#how-to-use" id="how-to-use">how to use</a></h1>
+<pre><code class="language-sh">npm init -y # init with default
+
+# node 支持 es6
+npm install --save-dev babel-cli
+npm install --save-dev babel-preset-es2015
+# 编辑 .babelrc
+# {
+#   &quot;presets&quot;: [
+#     &quot;es2015&quot;
+#   ],
+#   &quot;plugins&quot;: []
+# }
+
+</code></pre>
+<p>app.js</p>
+<pre><code class="language-js">import fs from 'fs';
+
+// 相对路径, 相对于命令行所在的路径
+// npm scripts 中的路径是相对于 package.json 来说的
+fs.readFile('./src/app.js', (err, data) =&gt; {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(data.toString());
+  }
+});
+</code></pre>
+<p>package.json</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;nodejs-tutorial&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;dev&quot;: &quot;babel-node src/app.js&quot;
+  },
+  &quot;author&quot;: &quot;xiaoyu&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;babel-cli&quot;: &quot;^6.26.0&quot;,
+    &quot;babel-preset-es2015&quot;: &quot;^6.24.1&quot;
+  }
+}
+
+</code></pre>
+<h1><a class="header" href="#代码生成" id="代码生成">代码生成</a></h1>
+<pre><code class="language-js">import fs from 'fs';
+import { Pool } from 'pg';
+import ejs from &quot;ejs&quot;;
+
+// fs.readFile('./src/app.js', function (err, data) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data.toString());
+//   }
+// });
+
+const pool = new Pool({
+  host: '10.59.97.10',
+  port: '5432',
+  database: 'sat_sme',
+  user: 'sat_data',
+  password: 'paic1234',
+
+});
+
+// const sql = 'select * from sme_application_file limit 0';
+const sql = `SELECT col_description(a.attrelid, a.attnum) as comment,
+format_type(a.atttypid, a.atttypmod)  as type,
+a.attname                             as name,
+a.attnotnull                          as notnull
+FROM pg_class as c,
+pg_attribute as a
+where c.relname = 'sme_application_file'
+and a.attrelid = c.oid
+and a.attnum &gt; 0`;
+
+pool.query(sql, (err, res) =&gt; {
+  if (err) {
+    console.log(err);
+  } else {
+    // hanle(res);
+    ejsDemo();
+  }
+});
+
+function hanle(res) {
+  var result = res.rows;
+  console.log(result);
+}
+
+function ejsDemo() {
+  fs.readFile('./resources/tpl/demo.ejs', (err, data) =&gt; {
+    if (err) {
+      console.error(err);
+    } else {
+      var result = ejs.render(data.toString(), { hah: ['a', 'b', 'c'] });
+      console.log(result);
+    }
+  });
+}
+</code></pre>
+<h1><a class="header" href="#deno" id="deno">deno</a></h1>
+<p>作为 nodejs 的替代品, https://deno.land/</p>
+<p><a href="https://zhuanlan.zhihu.com/p/139386360">一片吐槽 deno 的文章</a></p>
+<p>可以直接运行 JavaScript、TypeScript 和 WebAssembly 程序。</p>
+<blockquote>
+<p>它内置了 V8 引擎，用来解释 JavaScript。同时，也内置了 tsc 引擎，解释 TypeScript。它使用 Rust 语言开发，由于 Rust 原生支持 WebAssembly，所以它也能直接运行 WebAssembly。它的异步操作不使用 libuv 这个库，而是使用 Rust 语言的 Tokio 库，来实现事件循环（event loop）</p>
+</blockquote>
+<p>node 问题:</p>
+<ul>
+<li>
+<p>nodejs 的异步写法有两种, Promise, 回调函数, 正常来说, 回调函数 的写法应该被淘汰的</p>
+<p>为了兼容历史类库, 不得不维持这种 callback 写法</p>
+</li>
+<li>
+<p>nodejs 自己的模块格式 CommonJS 与 ES 模块不兼容</p>
+</li>
+<li>
+<p>Node.js 的模块管理工具 npm，逻辑越来越复杂；模块安装目录 npm_modules 极其庞杂，难以管理</p>
+</li>
+<li>
+<p>Node.js 也几乎没有安全措施，用户只要下载了外部模块，就只好听任别人的代码在本地运行，进行各种读写操作。</p>
+</li>
+</ul>
+<pre><code class="language-sh"># 查看
+brew info deno
+# 安装
+brew install deno
+
+deno --version
+
+#### quickstart
+
+deno run --allow-net \
+https://deno.land/std/examples/curl.ts \
+https://example.com
+
+</code></pre>
+<p>和浏览器 api 兼容 (它提供 window 这个全局对象，同时支持 fetch、webCrypto、worker 等 Web 标准，也支持 onload、onunload、addEventListener 等事件操作函数), 所有的异步操作，一律返回 Promise。</p>
+<p>更现代的模块管理 (Deno 只支持 ES 模块，跟浏览器的模块加载规则一致。没有 npm，没有 npm_modules 目录，没有require()命令（即不支持 CommonJS 模块），也不需要package.json文件。支持 <code>import { bar } from &quot;https://foo.com/bar.ts&quot;</code>, or <code>import { bar } from './foo/bar.ts'</code>, 不需要一个中心化的模块储存系统，可以从任何地方加载模块。)</p>
+<p>Deno 的所有模块都要通过入口脚本加载，不能通过模块名加载，所以必须带有脚本后缀名。</p>
+<p>原生支持 ts, (它的内部会根据文件后缀名判断，如果是.ts后缀名，就先调用 TS 编译器，将其编译成 JavaScript；如果是.js后缀名，就直接传入 V8 引擎运行。)</p>
+<p>完整的工具链</p>
+<pre><code class="language-sh"># deno -h或deno help 查看
+
+deno bundle：将脚本和依赖打包
+deno eval：执行代码
+deno fetch：将依赖抓取到本地
+deno fmt：代码的格式美化
+deno help：等同于-h参数
+deno info：显示本地的依赖缓存
+deno install：将脚本安装为可执行文件
+deno repl：进入 REPL 环境
+deno run：运行脚本
+deno test：运行测试
+
+</code></pre>
+<p>更加安全</p>
+<pre><code>--allow-read：打开读权限，可以指定可读的目录，比如--allow-read=/temp。
+--allow-write：打开写权限。
+--allow-net=google.com：允许网络通信，可以指定可请求的域，比如--allow-net=google.com。
+--allow-env：允许读取环境变量。
+</code></pre>
+<h1><a class="header" href="#npm" id="npm">npm</a></h1>
+<h2><a class="header" href="#常用命令" id="常用命令">常用命令</a></h2>
+<pre><code class="language-shell">npm bin                     # 返回当前项目模块路径, 使用: `npm bin`/eslint --init
+
+npm -v                      # node版本
+
+
+npm search express          # 搜索
+
+
+# &quot;install&quot; can be replaced with &quot;i&quot;
+npm install npm -g                              # 升级 npm
+
+npm install &lt;Module Name&gt;                       # 安装模块 ,包就放在了工程目录下的 node_modules 目录中
+npm install -S &lt;module name&gt;                    # -S表示--save, 安装同时, 写入package.json中的&quot;dependencies&quot; 中
+npm install -D &lt;module name&gt;                    # -D: --save-dev, 会存在package.json的devDependencies这个里面
+
+npm install gulp --save-exact                   # 精确安装(指定)版本, package.json中版本号前没有 &quot;^&quot; 了
+# or
+npm install gulp -E
+
+npm i -g webpack webpack-dev-server             # i 表示install, -g 全局
+npm install                                     # 根据package.json安装
+
+
+npm uninstall express       # 卸载
+npm uninstall webpack -g    # 全局卸载
+npm un xxx # 等价
+
+
+npm update express          # 升级模块
+npm update &lt;package&gt;        # 升级包下所有
+pm update &lt;package&gt; -g      # 把全局安装的对应命令行程序更新至最新版
+
+
+npm list -g                 # 查看所有全局安装的模块(查看安装信息)
+npm list &lt;module name&gt;      # 查看某个模块的版本号
+
+
+npm init                    # 创建模块(创建package.json)
+
+
+npm adduser                 # 注册用户
+
+
+npm publish                 # 发布模块
+npm install . -g            # 先在本地安装当前命令行程序，可用于发布前的本地测试
+npm unpublish &lt;package&gt;@&lt;version&gt;   # 可以撤销发布自己发布过的某个版本代码
+
+npm prune                   # 移除清理未使用的模块
+
+npm list -g --depth=0       # 查看全局安装的包
+npm uninstall -g vue-cli    # 卸载全局
+
+
+</code></pre>
+<h2><a class="header" href="#使用场景" id="使用场景">使用场景</a></h2>
+<h3><a class="header" href="#使用第三方包" id="使用第三方包">使用第三方包</a></h3>
+<pre><code class="language-sh">$ npm install argv # 下载最新版
+$ npm install argv@0.0.1 # 下载指定版本
+</code></pre>
+<p>下载好之后，argv包就放在了工程目录下的node_modules目录中，因此在代码中只需要通过require('argv')的方式就好，无需指定三方包路径</p>
+<p>如果需要下载大量包, 可使用package.json</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;node-echo&quot;,
+    &quot;main&quot;: &quot;./lib/echo.js&quot;, // 入口文件
+    &quot;dependencies&quot;: {
+        &quot;argv&quot;: &quot;0.0.2&quot; // 依赖包
+    }
+}
+</code></pre>
+<p>这样处理后，在工程目录下就可以使用npm install命令批量安装三方包了, 且无需解决包的嵌套依赖关系</p>
+<h3><a class="header" href="#使用别人的命令行程序" id="使用别人的命令行程序">使用别人的命令行程序</a></h3>
+<pre><code class="language-sh">npm install node-echo -g
+</code></pre>
+<p>参数中的-g表示全局安装，因此node-echo会默认安装到以下位置，并且NPM会自动创建好Linux系统下需要的软链文件或Windows系统下需要的.cmd文件</p>
+<pre><code>- /usr/local/               # Linux系统下
+    - lib/node_modules/
+        + node-echo/
+        ...
+    - bin/
+        node-echo
+        ...
+    ...
+
+- %APPDATA%\npm\            # Windows系统下
+    - node_modules\
+        + node-echo\
+        ...
+    node-echo.cmd
+    ..
+
+</code></pre>
+<h3><a class="header" href="#发布自己的包or命令行程序" id="发布自己的包or命令行程序">发布自己的包or命令行程序</a></h3>
+<p>第一次使用NPM发布代码前需要注册一个账号。终端下运行<code>npm adduser</code>，之后按照提示做即可。账号搞定后，接着我们需要编辑package.json文件，加入NPM必需的字段。接着上边node-echo的例子，package.json里必要的字段如下。</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;node-echo&quot;,                      # 包名，在NPM服务器上须要保持唯一
+    &quot;version&quot;: &quot;1.0.0&quot;,                       # 当前版本号
+    &quot;dependencies&quot;: {                         # 三方包依赖，需要指定包名和版本号
+        &quot;argv&quot;: &quot;0.0.2&quot;
+      },
+    &quot;main&quot;: &quot;./lib/echo.js&quot;,                  # 入口模块位置
+    &quot;bin&quot; : {
+        &quot;node-echo&quot;: &quot;./bin/node-echo&quot;        # 命令行程序名和主模块位置
+    }
+}
+</code></pre>
+<p>之后，我们就可以在package.json所在目录下运行<code>npm publish</code>发布代码了</p>
+<h2><a class="header" href="#全局安装or本地安装" id="全局安装or本地安装">全局安装or本地安装</a></h2>
+<pre><code class="language-sh">npm install express           # 本地安装
+npm install express -g        # 全局安装
+</code></pre>
+<ul>
+<li>
+<p>本地安装</p>
+<ol>
+<li>
+<p>将安装包放在 ./node_modules 下（运行 npm 命令时所在的目录），如果没有 node_modules 目录，会在当前执行 npm 命令的目录下生成 node_modules 目录。</p>
+</li>
+<li>
+<p>可以通过 require() 来引入本地安装的包。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>全局安装</p>
+<ol>
+<li>
+<p>将安装包放在 /usr/local 下或者你 node 的安装目录。</p>
+</li>
+<li>
+<p>可以直接在命令行里使用。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>如果你希望具备两者功能，则需要在两个地方安装它或使用 <code>npm link</code></p>
+</li>
+</ul>
+<h2><a class="header" href="#设置淘宝镜像" id="设置淘宝镜像">设置淘宝镜像</a></h2>
+<p>https://blog.csdn.net/quuqu/article/details/64121812</p>
+<h3><a class="header" href="#临时使用" id="临时使用">临时使用</a></h3>
+<p>安装想要的包时候, 命令行临时指定</p>
+<pre><code class="language-sh">npm install koa --registry=http://r.cnpmjs.org
+</code></pre>
+<h3><a class="header" href="#持久使用" id="持久使用">持久使用</a></h3>
+<p>通过 config 配置, 更换为淘宝镜像</p>
+<pre><code class="language-sh">npm config set registry=&quot;https://registry.npm.taobao.org&quot;
+# or
+npm config set registry=&quot;http://r.cnpmjs.org&quot;
+
+# 看看是否配置成功
+npm config get registry
+
+# 回复原样
+npm config set registry https://registry.npmjs.org
+</code></pre>
+<p>持久使用也可以这样
+编辑 ~/.npmrc</p>
+<pre><code>registry = http://r.cnpmjs.org
+</code></pre>
+<p>or 使用cnpm</p>
+<pre><code class="language-sh"># 安装
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm install -g cnpm --registry=http://r.cnpmjs.org
+
+$ cnpm install [name] # 安装
+$ cnpm sync connect # 同步
+$ open http://cnpmjs.org/sync/connect # 通过web浏览器查看
+
+$ cnpm publish [name]
+$ cnpm unpublish [name]
+
+$ cnpm info cnpm
+</code></pre>
+<pre><code class="language-sh">cnpm install [name]
+
+cnpm sync connect # 同步模块, 独有
+</code></pre>
+<h2><a class="header" href="#packagejson" id="packagejson">package.json</a></h2>
+<p>相当于Maven的pom.xml</p>
+<p>https://javascript.ruanyifeng.com/nodejs/packagejson.html#toc5</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;express&quot;,                                                              // 包名 📌
+  &quot;version&quot;: &quot;4.13.3&quot;,                                                            // 版本号 📌
+  &quot;description&quot;: &quot;Fast, unopinionated, minimalist web framework&quot;,                 // 包的描述
+  &quot;author&quot;: {
+    &quot;name&quot;: &quot;TJ Holowaychuk&quot;,
+    &quot;email&quot;: &quot;tj@vision-media.ca&quot;
+  },
+  &quot;contributors&quot;: [
+    {
+      &quot;name&quot;: &quot;Aaron Heckmann&quot;,
+      &quot;email&quot;: &quot;aaron.heckmann+github@gmail.com&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Ciaran Jessup&quot;,
+      &quot;email&quot;: &quot;ciaranj@gmail.com&quot;
+    }
+  ],
+  &quot;license&quot;: &quot;MIT&quot;,
+  
+  &quot;repository&quot;: {                                     // 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上
+    &quot;type&quot;: &quot;git&quot;,
+    &quot;url&quot;: &quot;git+https://github.com/strongloop/express.git&quot;
+  },
+  &quot;homepage&quot;: &quot;http://expressjs.com/&quot;,
+  &quot;main&quot;: &quot;index.js&quot;, // 指定了加载的入口文件，require('moduleName')就会加载这个文件。这个字段的默认值是模块根目录下面的index.js
+  
+  &quot;keywords&quot;: [                                         // 方便别人搜索到本模块
+    &quot;express&quot;,
+    &quot;framework&quot;,
+    &quot;sinatra&quot;
+  ],
+  
+  // 上线时候依赖的包 npm install --save 会将包写到这里
+  // dependencies属性是一个对象，配置模块依赖的模块列表，key是模块名称，value是版本范围，版本范围是一个字符，可以被一个或多个空格分割。
+  // dependencies也可以被指定为一个git地址或者一个压缩包地址
+  // ^ ~ * 区别: https://blog.csdn.net/u014291497/article/details/70148468
+  //    ~会匹配最新的小版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但是不包括1.3.0(推荐)
+  //    ^会匹配最新的大版本依赖包，比如^1.2.3会匹配所有1.x.x的包，包括1.3.0，但是不包括2.0.0
+  //    *，这意味着安装最新版本的依赖包
+  &quot;dependencies&quot;: {
+    &quot;accepts&quot;: &quot;~1.2.12&quot;,
+    &quot;array-flatten&quot;: &quot;1.1.1&quot;,
+    &quot;vary&quot;: &quot;~1.0.1&quot;
+  },
+  // 开发时候依赖的包 npm install --save-dev会将包写到这里
+  // 存放测试代码依赖的包或构建工具的包
+  &quot;devDependencies&quot;: {
+    &quot;after&quot;: &quot;0.8.1&quot;,
+    &quot;ejs&quot;: &quot;2.3.3&quot;,
+    &quot;vhost&quot;: &quot;~3.0.1&quot;
+  },
+  // node的参考版本, 除非你设置了engine-strict属性，engines属性是仅供参考的
+  &quot;engines&quot;: {
+    &quot;node&quot;: &quot;&gt;= 0.10.0&quot;
+  },
+  // 你也可以在模块根目录下创建一个&quot;.npmignore&quot;文件，写在这个文件里边的文件即便被写在files属性里边也会被排除在外，这个文件的写法&quot;.gitignore&quot;类似。
+  &quot;files&quot;: [
+    &quot;LICENSE&quot;,
+    &quot;History.md&quot;,
+    &quot;Readme.md&quot;,
+    &quot;index.js&quot;,
+    &quot;lib/&quot;
+  ],
+  // scripts属性是一个对象，里边指定了项目的生命周期个各个环节需要执行的命令。key是生命周期中的事件，value是要执行的命令
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;mocha --require test/support/env --reporter spec --bail --check-leaks test/ test/acceptance/&quot;,
+    &quot;test-ci&quot;: &quot;istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/ test/acceptance/&quot;,
+    &quot;test-cov&quot;: &quot;istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/ test/acceptance/&quot;,
+    &quot;test-tap&quot;: &quot;mocha --require test/support/env --reporter tap --check-leaks test/ test/acceptance/&quot;
+  },
+  &quot;gitHead&quot;: &quot;ef7ad681b245fba023843ce94f6bcb8e275bbb8e&quot;,
+  &quot;bugs&quot;: {
+    &quot;url&quot;: &quot;https://github.com/strongloop/express/issues&quot;
+  },
+  &quot;_id&quot;: &quot;express@4.13.3&quot;,
+  &quot;_shasum&quot;: &quot;ddb2f1fb4502bf33598d2b032b037960ca6c80a3&quot;,
+  &quot;_from&quot;: &quot;express@*&quot;,
+  &quot;_npmVersion&quot;: &quot;1.4.28&quot;,
+  &quot;_npmUser&quot;: {
+    &quot;name&quot;: &quot;dougwilson&quot;,
+    &quot;email&quot;: &quot;doug@somethingdoug.com&quot;
+  },
+  &quot;maintainers&quot;: [
+    {
+      &quot;name&quot;: &quot;tjholowaychuk&quot;,
+      &quot;email&quot;: &quot;tj@vision-media.ca&quot;
+    },
+    {
+      &quot;name&quot;: &quot;defunctzombie&quot;,
+      &quot;email&quot;: &quot;shtylman@gmail.com&quot;
+    }
+  ],
+  &quot;dist&quot;: {
+    &quot;shasum&quot;: &quot;ddb2f1fb4502bf33598d2b032b037960ca6c80a3&quot;,
+    &quot;tarball&quot;: &quot;http://registry.npmjs.org/express/-/express-4.13.3.tgz&quot;
+  },
+  &quot;directories&quot;: {},
+  &quot;_resolved&quot;: &quot;https://registry.npmjs.org/express/-/express-4.13.3.tgz&quot;,
+  &quot;readme&quot;: &quot;ERROR: No README data found!&quot;
+}
+</code></pre>
+<h2><a class="header" href="#npm-scripts" id="npm-scripts">npm-scripts</a></h2>
+<p>http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html</p>
+<pre><code class="language-sh">npm run xxx
+#// 等价
+npm xxx
+
+</code></pre>
+<p>npm scripts 可以淘汰掉 grunt 和 gulp (gulp 比 grunt更简单)</p>
+<h2><a class="header" href="#npx-命令" id="npx-命令">npx 命令</a></h2>
+<p>https://www.jianshu.com/p/cee806439865</p>
+<p>改善第三方包内的命令的使用体验, 如果有些包我们只会使用一次，或者只想尝试以下，不想安装到全局，也不想作为当前项目的依赖
+可以使用 npx 的方式来执行</p>
+<p>1、临时安装可执行依赖包，不用全局安装，不用担心长期的污染。
+2、可以执行依赖包中的命令，安装完成自动运行。
+3、自动加载node_modules中依赖包，不用指定$PATH。
+4、可以指定node版本、命令的版本，解决了不同项目使用不同版本的命令的问题</p>
+<pre><code class="language-sh"># old way
+npm install -g create-react-app
+create-react-app my-app
+
+# new way
+npx create-react-app my-app # 命令完成后create-react-app 会删掉
+
+###################
+
+# old
+npm i -D webpack
+./node_modules/.bin/webpack -v
+# or
+`npm bin`/webpack -v
+
+# new
+npm i -D webpack
+npx webpack -v
+
+
+</code></pre>
+<h2><a class="header" href="#常用库" id="常用库">常用库</a></h2>
+<h3><a class="header" href="#react-相关" id="react-相关">react 相关</a></h3>
+<ul>
+<li>
+<p><code>npm i -D babel-loader @babel/core @babel/preset-env @babel/preset-react @babel/plugin-transform-runtime</code> 用于转译 es6 代码</p>
+<ul>
+<li>
+<p><code>babel-loader</code> 是一个 npm 包，它使得 webpack 可以通过 babel 转译 JavaScript 代码</p>
+</li>
+<li>
+<p><code>@babel/core</code> 用于 解析源代码</p>
+</li>
+<li>
+<p><code>@babel/preset-*</code> 实际上就是各种插件的打包组合，也就是说各种转译规则的统一设定，用于生成目标代码</p>
+</li>
+<li>
+<p>@babel/plugin-transform-runtime </p>
+</li>
+</ul>
+<p>在 babel 7 中 <code>babel-core</code> 和 <code>babel-preset</code> 被建议使用 <code>@babel</code> 开头声明作用域，因此应该分别下载 <code>@babel/core</code> 和· <code>@babel/presets</code>. '@xxx' 的语法 类似 maven 中 group id.</p>
+<p>babel-loader与babel-core的版本对应关系 (版本冲突解决) - https://www.cnblogs.com/gavinpan/p/11437773.html</p>
+</li>
+<li>
+<p><code>npm install --save-dev babel-polyfill</code> Babel 只转换语法(如箭头函数)， 你可以使用 babel-polyfill 支持新的全局变量，例如 Promise 、新的原生方法如 String.padStart (left-pad) 等。</p>
+<p>在 入口文件引入即可 <code>import 'babel-polyfill'</code></p>
+</li>
+</ul>
+<h1><a class="header" href="#yarn" id="yarn">yarn</a></h1>
+<h2><a class="header" href="#基本使用" id="基本使用">基本使用</a></h2>
+<pre><code class="language-sh">npm install -g yarn
+
+升级: `curl -o- -L https://yarnpkg.com/install.sh | bash`
+
+
+
+
+npm install === yarn 
+npm install taco --save === yarn add taco
+npm uninstall taco --save === yarn remove taco
+npm install taco --save-dev === yarn add taco --dev
+npm update --save === yarn upgrade
+
+npm run &lt;xxx&gt; === yarn &lt;xxx&gt;
+
+# 缓存清理
+npm cache clean --force === yarn cache clean
+# 查看全局安装的模块
+npm list -g --depth=0 === yarn global list --depth=0
+# 卸载全局安装的模块
+npm uninstall -g vue-cli === yarn global remove vue-cli
+
+
+</code></pre>
+<h2><a class="header" href="#yarn比npm好在哪里" id="yarn比npm好在哪里">yarn比npm好在哪里</a></h2>
+<p>更新: npm5已经追上来了</p>
+<p>https://zhuanlan.zhihu.com/p/27449990</p>
+<h1><a class="header" href="#web-后台技术栈" id="web-后台技术栈">web 后台技术栈</a></h1>
+<ul>
+<li>后台应用: node + MongoDB,mongoose + multer 文件上传 + blueimp-md5 </li>
+<li>axios + jsonp + Promise/async/await 前后台交互</li>
+<li>commonjs(后台模块化, 前台模块化用 es6) </li>
+<li>draftjs(富文本编辑器) +echarts图表</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="mysql-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="outline-about-cache.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="mysql-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="outline-about-cache.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

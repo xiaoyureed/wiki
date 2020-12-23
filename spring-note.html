@@ -1,0 +1,4119 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>spring-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html" class="active"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: Spring
+date: 2014-01-16 17:11:56
+tags: [spring]
+categories: java web</h2>
+<p>references： <a href="https://docs.spring.io/spring/docs/5.1.2.RELEASE/spring-framework-reference/web.html#filters">1</a>, <a href="https://lfvepclr.gitbooks.io/spring-framework-5-doc-cn/content/32/32-1.html">2</a>, <a href="https://waylau.gitbooks.io/spring-framework-4-reference/">3</a></p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E6%8B%BE%E9%81%97">拾遗</a>
+<ul>
+<li><a href="#classpath%5C%E5%8C%BA%E5%88%AB">classpath*区别</a></li>
+<li><a href="#%E5%90%84%E7%A7%8D%E6%B3%A8%E8%A7%A3%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3">各种注解怎么理解</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%A4%E8%AF%86">认识</a>
+<ul>
+<li><a href="#core-%E9%83%A8%E5%88%86">core 部分</a></li>
+<li><a href="#aop-%E9%83%A8%E5%88%86">aop 部分</a></li>
+<li><a href="#data-access-%E9%83%A8%E5%88%86">data access 部分</a></li>
+<li><a href="#web-%E9%83%A8%E5%88%86">web 部分</a></li>
+<li><a href="#test-%E9%83%A8%E5%88%86context-support">test 部分&amp;context-support</a></li>
+<li><a href="#spring4-%E6%96%B0%E5%A2%9E">spring4 新增</a></li>
+<li><a href="#%E7%BB%84%E4%BB%B6%E7%BB%93%E6%9E%84">组件结构</a>
+<ul>
+<li><a href="#ioc-container">ioc-container</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#api-%E4%BD%BF%E7%94%A8">api 使用</a></li>
+<li><a href="#quickstart">quickstart</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E7%9A%84%E6%96%B9%E5%BC%8F">配置的方式</a>
+<ul>
+<li><a href="#%E5%9F%BA%E4%BA%8E-xml">基于 xml</a>
+<ul>
+<li><a href="#xml-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE%E9%A1%B9">xml 中的配置项</a></li>
+<li><a href="#%E5%87%A0%E7%A7%8D%E6%B3%A8%E5%85%A5-%E5%AE%9E%E4%BE%8B%E5%8C%96%E6%96%B9%E5%BC%8F">几种注入-实例化方式</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0">通过构造函数</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%9D%99%E6%80%81%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95">通过静态工厂方法</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E5%AE%9E%E4%BE%8B%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95">通过实例工厂方法</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%9A%E8%BF%87-setter-%E6%B3%A8%E5%85%A5">通过 setter 注入</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87-methodinvokingfactorybean-%E6%B3%A8%E5%85%A5%E6%96%B9%E6%B3%95%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC">通过 MethodInvokingFactoryBean 注入方法的返回值</a></li>
+<li><a href="#autowired-%E6%B3%A8%E5%85%A5">@Autowired 注入</a></li>
+</ul>
+</li>
+<li><a href="#springel-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B3%A8%E5%85%A5%E8%A1%A8%E8%BE%BE%E5%BC%8F">springEL 表达式,注入表达式</a></li>
+<li><a href="#%E9%9B%86%E5%90%88%E7%9A%84%E6%B3%A8%E5%85%A5">集合的注入</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3">基于注解</a></li>
+<li><a href="#xml-%E5%92%8C%E6%B3%A8%E8%A7%A3%E6%B7%B7%E7%94%A8">xml 和注解混用</a></li>
+</ul>
+</li>
+<li><a href="#junit-%E6%95%B4%E5%90%88">JUnit 整合</a></li>
+<li><a href="#ioc">IoC</a></li>
+<li><a href="#aop">AOP</a>
+<ul>
+<li><a href="#aop-%E6%A6%82%E5%BF%B5">aop 概念</a></li>
+<li><a href="#aop-%E8%81%94%E7%9B%9F%E8%A7%84%E8%8C%83">aop 联盟规范</a>
+<ul>
+<li><a href="#%E9%80%9A%E7%9F%A5%E7%B1%BB%E5%9E%8B">通知类型</a></li>
+<li><a href="#joinpoint-%E8%BF%9E%E6%8E%A5%E7%82%B9">Joinpoint 连接点</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8D%E5%92%8C-spring-%E9%9B%86%E6%88%90%E5%8D%95%E7%8B%AC%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86">不和 spring 集成(单独使用动态代理)</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87-jdk-%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E4%BB%A3%E7%90%86">通过 jdk 动态生成代理</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87-cglib-%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90%E4%BB%A3%E7%90%86">通过 cglib 动态生成代理</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%9A%E8%BF%87-proxyfactorybean-%E7%94%9F%E6%88%90%E4%BB%A3%E7%90%86%E5%8D%8A%E8%87%AA%E5%8A%A8">通过 ProxyFactoryBean 生成代理(半自动)</a></li>
+<li><a href="#%E5%85%A8%E8%87%AA%E5%8A%A8%E5%AE%9E%E7%8E%B0">全自动实现</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-aspectj-%E6%A1%86%E6%9E%B6%E7%94%9F%E6%88%90%E4%BB%A3%E7%90%86%E5%92%8C-spring-%E9%9B%86%E6%88%90">使用 AspectJ 框架生成代理(和 spring 集成)</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C">准备工作</a></li>
+<li><a href="#aspectj-%E9%80%9A%E7%9F%A5%E7%B1%BB%E5%9E%8B">AspectJ 通知类型</a></li>
+<li><a href="#aspectj-%E7%BC%96%E7%A8%8B%E5%9F%BA%E4%BA%8E-xml">AspectJ 编程,基于 xml</a></li>
+<li><a href="#aspectj-%E7%BC%96%E7%A8%8B%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3">AspectJ 编程,基于注解</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#jdbc">JDBC</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0">数据库连接池</a>
+<ul>
+<li><a href="#c3p0">C3P0</a></li>
+<li><a href="#dbcp">DBCP</a></li>
+<li><a href="#druid">Druid</a></li>
+<li><a href="#bonecp">BoneCP</a></li>
+<li><a href="#hikaricp">HikariCP</a></li>
+</ul>
+</li>
+<li><a href="#jdbctemplate">JdbcTemplate</a>
+<ul>
+<li><a href="#quickstart-1">quickstart</a></li>
+<li><a href="#dao-%E5%AE%9E%E7%8E%B0%E7%B1%BB%E7%BB%A7%E6%89%BF-jdbcdaosupport-%E6%94%AF%E6%8C%81%E7%B1%BB">Dao 实现类继承 JdbcDaoSupport 支持类</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE%E6%94%BE%E5%85%A5-properties-%E6%96%87%E4%BB%B6">数据库连接配置放入 Properties 文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86">事务管理</a>
+<ul>
+<li><a href="#%E4%BA%8B%E5%8A%A1%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">事务实现原理</a></li>
+<li><a href="#transactiondefinition-%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD">TransactionDefinition 事务传播</a></li>
+<li><a href="#%E4%BA%8B%E5%8A%A1%E7%9B%B8%E5%85%B3-api">事务相关 api</a>
+<ul>
+<li><a href="#platformtransactionmanager">PlatformTransactionManager</a></li>
+<li><a href="#transactionstatus">TransactionStatus</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-jdbc-%E6%93%8D%E4%BD%9C%E4%BA%8B%E5%8A%A1">使用 jdbc 操作事务</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8B%E5%8A%A1%E7%9B%B8%E5%85%B3%E6%A1%88%E4%BE%8B-%E8%BD%AC%E8%B4%A6">事务相关案例-转账</a>
+<ul>
+<li><a href="#%E5%87%86%E5%A4%87">准备</a></li>
+<li><a href="#%E6%89%8B%E5%8A%A8%E5%BC%80%E5%8F%91%E4%BA%8B%E5%8A%A1">手动开发事务</a></li>
+<li><a href="#%E5%8D%8A%E8%87%AA%E5%8A%A8%E4%BA%8B%E5%8A%A1%E7%94%9F%E6%88%90%E4%BB%A3%E7%90%86">半自动事务(生成代理)</a></li>
+<li><a href="#%E5%85%A8%E8%87%AA%E5%8A%A8%E4%BA%8B%E5%8A%A1%E5%9F%BA%E4%BA%8E-xml">全自动事务基于 xml</a></li>
+<li><a href="#%E5%85%A8%E8%87%AA%E5%8A%A8%E4%BA%8B%E5%8A%A1%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3">全自动事务基于注解</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#spring-web-%E5%BC%80%E5%8F%91">spring web 开发</a></li>
+<li><a href="#%E5%87%A0%E7%A7%8D%E5%8A%A0%E8%BD%BD-xml-%E6%96%B9%E5%BC%8F">几种加载 xml 方式</a></li>
+<li><a href="#spring-%E4%B8%AD%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">spring 中的设计模式</a></li>
+<li><a href="#spring-bean-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">spring bean 生命周期</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%9A%84-spring-bean-%E6%8B%93%E5%B1%95%E6%8E%A5%E5%8F%A3">常用的 spring bean 拓展接口</a>
+<ul>
+<li><a href="#beannameawareapplicationcontextaware-%E5%92%8C-beanfactoryaware">BeanNameAware、ApplicationContextAware 和 BeanFactoryAware</a></li>
+<li><a href="#beanpostprocessor-%E6%8E%A5%E5%8F%A3">BeanPostProcessor 接口</a></li>
+<li><a href="#initialingbean-%E5%92%8C-disposablebean">InitialingBean 和 DisposableBean</a></li>
+<li><a href="#factorybean-%E6%8E%A5%E5%8F%A3">FactoryBean 接口</a>
+<ul>
+<li><a href="#factorybean-%E8%A7%A3%E9%87%8A">FactoryBean 解释</a></li>
+<li><a href="#factorybean-%E6%8E%A5%E5%8F%A3%E7%9A%84-api">FactoryBean 接口的 api</a></li>
+<li><a href="#factorybean-%E7%AE%80%E5%8D%95%E7%9A%84%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B">FactoryBean 简单的使用示例</a></li>
+<li><a href="#factorybean-%E5%9C%A8-mabatis-spring-%E9%9B%86%E6%88%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8">factoryBean 在 mabatis-spring 集成中的应用</a></li>
+<li><a href="#factorybean-%E6%A1%88%E4%BE%8B-dao-%E5%88%87%E6%8D%A2">factoryBean 案例-dao 切换</a></li>
+</ul>
+</li>
+<li><a href="#beanfactory-%E6%8E%A5%E5%8F%A3">BeanFactory 接口</a>
+<ul>
+<li><a href="#beanfactory-%E8%A7%A3%E9%87%8A">BeanFactory 解释</a></li>
+<li><a href="#api-%E6%9C%89%E5%93%AA%E4%BA%9B">api 有哪些</a></li>
+</ul>
+</li>
+<li><a href="#beanfactorypostprocessor">BeanFactoryPostProcessor</a></li>
+<li><a href="#instantiationawarebeanpostprocessor">InstantiationAwareBeanPostProcessor</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C-bean">动态注册 bean</a>
+<ul>
+<li><a href="#%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C%E5%9C%BA%E6%99%AF">动态注册场景</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C-api">动态注册 api</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C">怎么使用动态注册</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87-beanfactorypostprocessor-%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C">通过 BeanFactoryPostProcessor 实现动态注册</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87-beandefinitionregistry-%E5%9C%A8%E6%99%AE%E9%80%9A-bean-%E4%B8%AD%E6%B3%A8%E5%86%8C">通过 BeanDefinitionRegistry 在普通 bean 中注册</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87-importbeandefinitionregistrar">通过 ImportBeanDefinitionRegistrar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%9B%BD%E9%99%85%E5%8C%96-and-%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C">国际化 and 参数校验</a></li>
+<li><a href="#spring5-%E6%96%B0%E7%89%B9%E6%80%A7">spring5 新特性</a></li>
+<li><a href="#guice">Guice</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#拾遗" id="拾遗">拾遗</a></h1>
+<h2><a class="header" href="#classpath区别" id="classpath区别">classpath*区别</a></h2>
+<p>classpath 是指 WEB-INF 文件夹下的 classes 目录</p>
+<p>编译后, src 下的代码&amp;配置文件 都会被复制到 <code>/WEB-INF/classes</code> 文件夹下, 部署到服务器后真正使用的配置文件是 <code>WEB-INF/web.xml</code></p>
+<p><code>classpath</code> ：只会到你的 class 路径中查找找文件; <code>classpath*</code>：不仅包含 class 路径，还包括 jar 文件中（class 路径）进行查找。</p>
+<pre><code class="language-xml">如果applicationContext.xml配置文件存放在src目录下，就好比上面的代码结构中的存放位置，那么在web.xml中的配置就如下所示：
+
+    &lt;context-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt; &lt;!--classpath前缀表示 &quot;/WEB-INF/classes&quot;--&gt;
+    &lt;/context-param&gt;
+
+如果applicationContext.xml配置文件存放在WEB-INF下面，那么在web.xml中的配置就如下所示：
+
+    &lt;context-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;WEB-INF/applicationContext*.xml&lt;/param-value&gt;
+    &lt;/context-param&gt;
+
+</code></pre>
+<h2><a class="header" href="#各种注解怎么理解" id="各种注解怎么理解">各种注解怎么理解</a></h2>
+<p>references: <a href="http://blog.leanote.com/post/sheng91666@163.com/spring%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E6%B1%87%E6%80%BB">常用注解分类汇总</a></p>
+<p><code>&lt;context:component-scan base-package=&quot;cn.test&quot;/&gt;</code> 开启注解扫描</p>
+<p>要让 JSR-250 的注释生效，除了在 Bean 类中标注这些注释外，还需要在 Spring 容器中注册一个负责处理这些注释的 <code>org.springframework.context.annotation.CommonAnnotationBeanPostProcessor</code> bean, 无需 bean id</p>
+<pre><code class="language-java">
+-&gt; Bean 声明
+
+Component
+Controller
+Service
+Repository
+
+-&gt; Bean的初始化和销毁
+
+@Bean           注解在方法上,声明当前方法的返回值为一个bean; eg: @Bean(initMethod=&quot;init&quot;,destroyMethod=&quot;destory&quot;) 注册前执行init方法, 销毁前执行destroy方法。
+
+    JSR-250规范
+
+@PostConstruct  注解在方法上, 在构造函数执行后执行
+@PreDestroy     注解在方法上, 在Bean销毁之前执行
+@DependsOn      注解在方法上, 定义Bean初始化及销毁时的顺序
+
+-&gt; bean注入
+
+    spring原生提供
+
+@Autowired   按照类型装配, 按名称装配，可以结合@Qualifier 注解一起使用
+
+    JSR250提供的注解
+
+@Resource    默认按名称装配，当找不到与名称匹配的bean才会按类型装配
+
+    JSR330
+
+@Inject  根基类型装配
+
+
+
+-&gt; Java配置
+
+@EnableAutoConfiguration  根据添加的jar依赖猜测你想如何配置Spring，如果发现应用了你不想要的特定自动配
+                        置类，可以使用 @EnableAutoConfiguration 注解的exclude属性来禁用它们
+                        eg：@EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
+                        @SpringBootApplication 包含它
+@Configuration   声明当前类是一个配置类，相当于一个Spring配置的xml文件。 和@Bean 搭配使用
+                理解: 本质上还是 @Component; 通常选定一个主config类, 通过 import属性导入其他配置类 (甚至
+                可以是xml配置类, 通过@ImportResource 注解加载XML配置文件)
+                @SpringBootApplication 包含它
+@Bean            声明当前方法的返回值为一个Bean, 用@Bean标注方法等价于XML中配置bean
+@ComponentScan   自动扫描包名下所有使用@Service、@Compent、@Repository、@Controller 的类（主@configuration 类
+                需要在root目录下），并注册为Bean, 一般在主@configuration 类上使用
+                    通过@autowired 自动注入； @springbootapplication包含它
+@Lazy(true)      表示延迟初始化
+@Primary         自动装配时当出现多个Bean候选者时，被注解为@Primary的Bean将作为首选者，否则将抛出异常
+
+@Scope           描述的是Spring容器如何新建Bean的实例的。实例：Scope(&quot;Prototype&quot;)
+@Order           调整配置类加载顺序。
+
+@Import          引入另外的@configuration类,  @Import @ImportResource都需要配合@Configuration使用
+@ImportResource  用来引入外置的配置文件,
+                eg: @ImportResource({&quot;classpath:datasource.xml&quot;})
+@PropertySource  springboot默认只会加载application.properties中的属性, @PropertySource用于加载另外的属性配置文件
+                eg: @PropertySource(value = {&quot;classpath:person.properties&quot;}),
+                一般和@ConfigurationProperties(prefix = &quot;person&quot;)一起用
+@Value           注解在变量上, 调用资源（普通文件，网址，配置文件，系统环境变量等）,和 @component 合用
+                eg： @Value(&quot;${com.neo.title}&quot;)
+
+-&gt; aop
+
+@Aspect         注解在类上, 声明是一个切面。
+@After          注解在方法上, 声明建言
+@Before         注解在方法上, 声明建言
+@Around         注解在方法上, 声明建言
+@PointCut       注解在方法上, 定义拦截规则，声明切点。
+
+@EnableAspectJAutoProxy      作用在配置类上, 开启对AspectJ自动代理的支持。
+
+-&gt; Spring EL 和 资源调用
+
+@PropertySource  见↑
+
+@EnbaleConfigurationProperties   开启对@ConfigurationProperties 注解配置Bean的支持
+                                eg: @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
+@ConfigurationProperties         注解在类上, 映射配置文件（支持 yml）到JavaBean eg：@ConfigurationProperties(prefix=&quot;myProps&quot;)
+                        还可以在@Bean方法上使用， 作用类似注解在类上
+                                另外， 当一个 @ConfigurationProperties bean 像如上这样注册，这个bean就有了一个名字，规
+                                范是这样：`&lt;prefix&gt;-&lt;fqn&gt;`, 即：前缀-全限定名，如 : myProps-com.xy.PropertiesBean
+
+-&gt; 事务,缓存
+
+@EnableTransactionManagement                    开启注解式事务的支持, 可能需要 proxyTargetClass = true, 表示创建基于子类的代理
+@Transactional(transactionManager=&quot;xxx&quot; ...)     方法or类上, 使用事务管理 ;@TransactionConfiguration 过时了, 被 @Transactional 代替
+
+@EnableCaching                                  开启注解式的缓存支持
+
+-&gt; 异步,多线程
+
+@EnableAsync    注解在配置类上, 开启对异步任务的支持
+@Async          在实际执行的Bean的方法上, 声明这是一个异步任务
+
+-&gt; 定时任务
+
+EnableScheduling    注解在配置类上, 开启对计划任务（定时任务）的支持
+Scheduled           实际执行的方法上, 包含：cron 、fixDelay、fixRate等类型
+                    eg: @Scheduled （cron=&quot;0 25 11 ？ * *&quot;）
+                    @Scheduled （fixedDelay=5000）延迟5秒执行
+                    @Scheduled （fixedRate=5000）每隔5秒执行一次
+
+-&gt; 条件注解
+
+Conditional         用在配置类中, 根据满足某一个特定条件创建一个特定的Bean。（Spring4提供）
+
+-&gt; WebMVC
+
+EnableWebMvc        开启web mvc的配置支持
+Controller          声明一个类为 mvc 里的 controller, Dispatcher Servlet会自动扫描注解了此注解的类，并将Web请求映射到@RequestMappin的方法上
+RestController      组合注解 =@Controller+@ResponseBody, 用来创建REST类型的控制器
+RequestMapping      类or方法上
+ResponseBody        类or方法or方法返回值上; 将返回类型直接输入到HTTP response body中。json格式
+RequestBody         参数上; 设置参数在请求体内
+@RequestParam       参数上;将请求的参数绑定到方法中的参数上
+PathVariable        参数上, 支持使用正则表达式,能在路径模板中使用占位符; 接受路径参数
+InitBinder          用来设置WebDataBinder，WebDataBinder用来自动绑定前台请求参数到Model中。
+ModelAttribute      方法or方法参数;
+HttpEntity
+
+ControllerAdvice    类上; 将对于控制器的全局代码放在同一个位置
+ExceptionHandler    方法上; 全局处理控制器里的异常
+
+-&gt; test 测试相关
+
+@RunWith(SpringJUnit4ClassRunner.class)  启动 Spring 对测试类的支持
+@ContextConfiguration                    注释标签来指定 Spring 配置文件或者配置类的位置
+@Rollback(value=false)                  事务回滚
+
+</code></pre>
+<h1><a class="header" href="#认识" id="认识">认识</a></h1>
+<p>spring 的体系结构</p>
+<p>先看看 spring3 的:</p>
+<img src="p1.png">
+<p>spring4: (去掉了 spring3 的 struts，添加了 messaging 和 websocket，其他模块保持不变)</p>
+<p><img src="Snipaste_2018-07-27_18-48-06.png" alt="alt" /></p>
+<p>至于 spring5 的新特性, 参见: https://www.ibm.com/developerworks/cn/java/j-whats-new-in-spring-framework-5-theedom/index.html</p>
+<h2><a class="header" href="#core-部分" id="core-部分">core 部分</a></h2>
+<img src="20161227105801579.png">
+<ul>
+<li>
+<p>四个核心 jar</p>
+<ul>
+<li>
+<p>Spring core</p>
+<p>这个 jar 文件包含 Spring 框架基本的核心工具类。Spring 其它组件要都要使用到这个包里的类，是其它组件的基本核心</p>
+<blockquote>
+<p>Spring core 的运行依赖 Commons Logging 包</p>
+</blockquote>
+</li>
+<li>
+<p>Spring Beans</p>
+<p>这个 jar 文件是所有应用都要用到的，它包含访问配置文件、创建和管理 bean 以及进行 IOC/DI (控制反转/依赖注入)操作相关的所有类</p>
+<blockquote>
+<p>如果只需基本的 IOC/DI 支持，引入 spring-core.jar 及 spring-beans.jar 文件就可以了。
+如果是 maven 工程, 仅仅需要 Spring Context 即可</p>
+</blockquote>
+</li>
+<li>
+<p>Spring AOP</p>
+<p>这个 jar 文件包含在应用中使用 Spring 的 AOP 特性时所需的类和源码级元数据支持。使用基于 AOP 的 Spring 特性，如声明型事务管理（Declarative Transaction Management），也要在应用里包含这个 jar 包</p>
+</li>
+<li>
+<p>Spring Context</p>
+<p>这个 jar 文件为 Spring 核心提供了大量扩展。可以找到使用 Spring ApplicationContext 特性时所需的全部类，JDNI 所需的全部类，instrumentation 组件以及校验 Validation 方面的相关类。</p>
+<blockquote>
+<p>注:
+spring-context-support: context 拓展包, 包含支持 mvc 相关, 缓存 Cache（ehcache）、JCA、JMX、 邮件服务（Java Mail、COS Mail）、任务计划 Scheduling（Timer、Quartz）方面的类</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#aop-部分" id="aop-部分">aop 部分</a></h2>
+<img src="Snipaste_2018-07-27_18-37-42.png" />
+<ul>
+<li>
+<p>spring-aop：面向切面编程</p>
+</li>
+<li>
+<p>spring-aspects：集成 AspectJ</p>
+</li>
+</ul>
+<h2><a class="header" href="#data-access-部分" id="data-access-部分">data access 部分</a></h2>
+<p><img src="20161227105923275.png" alt="alt" /></p>
+<ul>
+<li>
+<p>spring-jdbc：jdbc 的支持</p>
+</li>
+<li>
+<p>spring-tx：事务控制</p>
+</li>
+<li>
+<p>spring-orm：对象关系映射，集成 orm 框架</p>
+</li>
+<li>
+<p>spring-oxm：对象 xml 映射</p>
+</li>
+<li>
+<p>spring-jms：java 消息服务</p>
+</li>
+</ul>
+<h2><a class="header" href="#web-部分" id="web-部分">web 部分</a></h2>
+<p><img src="Snipaste_2018-07-27_18-41-55.png" alt="alt" /></p>
+<ul>
+<li>
+<p>spring-web：基础 web 功能，如文件上传</p>
+</li>
+<li>
+<p>spring-webmvc：mvc 实现</p>
+</li>
+</ul>
+<h2><a class="header" href="#test-部分context-support" id="test-部分context-support">test 部分&amp;context-support</a></h2>
+<p><img src="20161227110008855.png" alt="alt" /></p>
+<ul>
+<li>
+<p>spring-test：spring 测试，提供 junit 与 mock 测试功能</p>
+</li>
+<li>
+<p>spring-context-support：spring 额外支持包，比如邮件服务、视图解析等</p>
+</li>
+</ul>
+<h2><a class="header" href="#spring4-新增" id="spring4-新增">spring4 新增</a></h2>
+<p><img src="20161227110103559.png" alt="alt" /></p>
+<ul>
+<li>
+<p>spring-websocket：为 web 应用提供的高效通信工具</p>
+</li>
+<li>
+<p>spring-messaging：用于构建基于消息的应用程序</p>
+</li>
+</ul>
+<h2><a class="header" href="#组件结构" id="组件结构">组件结构</a></h2>
+<h3><a class="header" href="#ioc-container" id="ioc-container">ioc-container</a></h3>
+<pre><code class="language-java">BeanFactory - 顶级接口
+    ApplicationContext - 代表了  Spring IoC 容器
+        ClassPathXmlApplicationContext -
+        FileSystemXmlApplicationContext
+
+FactoryBean - 实现这个接口的bean 时特殊的 &quot;工厂bean&quot;, getObject() 用来返回生产的对象
+
+</code></pre>
+<h1><a class="header" href="#api-使用" id="api-使用">api 使用</a></h1>
+<img src="p2.png">
+<pre><code class="language-java">public class TestDI {
+    @Test
+    public void demo01(){
+        //依赖注入
+        String xmlPath = &quot;config/beans.xml&quot;;
+        //加载完配置文件就构造了BookService对象
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        BookService bookService = applicationContext.getBean(&quot;bookServiceId&quot;,BookService.class);
+        bookService.addBook();
+    }
+    @Test
+    public void demo02(){
+        //beanFactory
+        String xmlPath = &quot;config/beans.xml&quot;;
+        //Resource 在 beanFactory中用于描述文件位置
+        // * ClassPathResource 描述类路径
+        // * FileSystemResource 描述指定盘符
+        BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource(xmlPath));
+        //调用getBean()时，才构造BookService对象
+        BookService bookService = beanFactory.getBean(&quot;bookServiceId&quot;,BookService.class);
+        bookService.addBook();
+    }
+
+}
+
+</code></pre>
+<h1><a class="header" href="#quickstart" id="quickstart">quickstart</a></h1>
+<p>引入依赖</p>
+<pre><code class="language-xml">&lt;!-- **************spring start******************************* --&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-core --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+          &lt;version&gt;${springframework.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-beans --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+          &lt;version&gt;${springframework.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+          &lt;version&gt;${springframework.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;
+          &lt;version&gt;${springframework.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-web --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+            &lt;version&gt;${springframework.version}&lt;/version&gt;
+        &lt;/dependency&gt;
+
+      &lt;!-- ****************spring end******************** --&gt;
+</code></pre>
+<p>创建 applicationContext.xml (默认名称)</p>
+<p>从 Spring 文档 copy 配置文件的约束</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+&lt;/beans&gt;
+
+</code></pre>
+<p>配置文件内容</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+    &lt;!--
+    * id属性可以自动提示(一般使用id属性), name属性则没有
+    * id只能有一个值, name可以有多个(逗号分隔)
+    * 标识bean的作用域  &lt;bean id=&quot;&quot; class=&quot;&quot;, scope=&quot;&quot;&gt;&lt;/bean&gt;
+     --&gt;
+    &lt;bean id=&quot;userServiceId&quot; class=&quot;com.xiaoyu.spring.learn.UserService&quot;&gt;&lt;/bean&gt;
+
+&lt;/beans&gt;
+
+</code></pre>
+<p>代码</p>
+<pre><code class="language-java">public class UserService {
+    public void addUser(){
+        System.out.println(&quot;a_hello addUser&quot;);
+    }
+}
+public class TestHello {
+    @Test
+    public void demo01(){     //这是原来的写法
+        UserService userService = new UserService();
+        userService.addUser();
+    }
+    @Test
+    public void demo02(){
+        //1 加载配置文件
+        String xmlPath = &quot;config/applicationContext.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        //2 从容器获得对象
+        UserService userService = (UserService) applicationContext.getBean(&quot;userServiceId&quot;);
+    //或者这样写
+     UserService userService = applicationContext.getBean(&quot;userServiceId&quot;, UserService.class);
+        userService.addUser();
+    }
+
+}
+
+</code></pre>
+<p>看一个 DI 的例子</p>
+<pre><code class="language-xml">&lt;!--beans.xml :--&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+    &lt;!--
+        依赖注入：spring提供 &lt;property&gt; 用于配置setter方法进行操作
+            格式：&lt;property name=&quot;&quot; ref=&quot;&quot;&gt;
+                name 当前操作对象属性名（即通过setter方法获得）
+                ref 需要设置对象的bean 名称引用（即&lt;bean&gt;标签的id值）。
+    --&gt;
+    &lt;!-- spring 创建dao --&gt;
+    &lt;bean id=&quot;bookDaoId&quot; class=&quot;com.xiaoyu.spring.learn.BookDaoImpl&quot;&gt;&lt;/bean&gt;
+
+    &lt;!-- spring 创建service ,
+        * 单实例可以通过lazy-init=”true”，在getBean时进行实例化
+        * 对于prototype，则是在getBean的时候被实例化的。
+        * 在beans里面default-lazy-init=”true”对所有bean进行延迟处理
+        * init-method　在bean被实例化之后执行资源操作等方法
+        * destroy-method 在bean销毁之前执行的方法(什么时候被销毁？随着spring容器被关闭时被销毁。调用spring容器的close方法来正常关闭。以前是随着应用程序执行完而关闭。)
+        * InitializingBean接口、Disposable接口底层使用类型强转.方法名()进行直接方法调用，init-method、destory-method底层使用反射，前者和Spring耦合程度更高但效率高，后者解除了和Spring之间的耦合但是效率低
+    --&gt;
+    &lt;bean id=&quot;bookServiceId&quot; class=&quot;com.xiaoyu.spring.learn.BookServiceImpl&quot; lazy-init=&quot;true&quot; init-method=&quot;init&quot; destroy-method=&quot;destory&quot;&gt;
+        &lt;!-- 注入属性值, 必须要有setter --&gt;
+        &lt;!-- &lt;property&gt; 注入（设置）数据
+            * name 使用属性名
+            * value 设置普通数据
+            * ref 引用类型（另一个bean id值）
+    --&gt;
+        &lt;property name=&quot;bookDao&quot; ref=&quot;bookDaoId&quot;&gt;&lt;/property&gt;  &lt;!-- 表示BookService里面的bookDao属性 --&gt;
+        &lt;property name=&quot;name&quot; value=&quot;123&quot;/&gt;
+        &lt;!-- 下面是另一种方式注入 --&gt;
+         &lt;!--
+        &lt;constructor-arg&gt; 配置构造方法的一个参数
+            * name :参数的名称 ，一般不使用
+                &lt;constructor-arg name=&quot;username&quot; value=&quot;jack&quot;&gt;&lt;/constructor-arg&gt;
+                &lt;constructor-arg name=&quot;age&quot; value=&quot;18&quot;&gt;&lt;/constructor-arg&gt;
+            * index : 参数的索引，从0开始
+            * type : 参数类型
+            ## 开发中一般index和type结合使用
+            * value 普通数据
+            * ref 引用数据（另一个bean id值）
+        --&gt;
+        &lt;!-- 对应构造方法
+        public PersonServiceBean(String name, IDaoBean personDao) {
+            this.name = name;
+            this.personDao = personDao;
+        } --&gt;
+        &lt;constructor-arg index=&quot;0&quot; value=&quot;构造注入的name&quot; /&gt;
+        &lt;constructor-arg index=&quot;1&quot; type=&quot;com.persia.IDaoBean&quot; ref=&quot;personDao&quot;/&gt;
+
+
+        &lt;!-- 集合的注入 --&gt;
+        &lt;!-- Set的注入 --&gt;
+        &lt;property name=&quot;sets&quot;&gt;
+        &lt;set&gt;
+            &lt;value&gt;sets：第一个值&lt;/value&gt;
+            &lt;value&gt;sets：第二个值&lt;/value&gt;
+            &lt;value&gt;sets：第三个值&lt;/value&gt;
+        &lt;/set&gt;
+        &lt;/property&gt;
+
+        &lt;!-- List的注入 --&gt;
+
+        &lt;property name=&quot;lists&quot;&gt;
+        &lt;list&gt;
+            &lt;value&gt;lists：第一个值&lt;/value&gt;
+            &lt;value&gt;lists：第二个值&lt;/value&gt;
+            &lt;value&gt;lists：第三个值&lt;/value&gt;
+        &lt;/list&gt;
+        &lt;/property&gt;
+
+        &lt;!-- Properties的注入 --&gt;
+
+        &lt;property name=&quot;properties&quot;&gt;
+        &lt;props&gt;
+            &lt;prop key=&quot;props-key1&quot;&gt;：第一个值&lt;/prop&gt;
+            &lt;prop key=&quot;props-key2&quot;&gt;：第二个值&lt;/prop&gt;
+            &lt;prop key=&quot;props-key3&quot;&gt;：第三个值&lt;/prop&gt;
+        &lt;/props&gt;
+        &lt;/property&gt;
+
+        &lt;!-- Map的注入 --&gt;
+
+        &lt;property name=&quot;maps&quot;&gt;
+        &lt;map&gt;
+            &lt;entry key=&quot;maps-key1&quot; value=&quot;：第一个值&quot; /&gt;
+            &lt;entry key=&quot;maps-key2&quot; value=&quot;：第二个值&quot; /&gt;
+            &lt;entry key=&quot;maps-key3&quot; value=&quot;：第三个值&quot; /&gt;
+        &lt;/map&gt;
+        &lt;/property&gt;
+
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<pre><code class="language-java">// BookDaoImpl &amp; BookDao
+public interface BookDao {
+        public void save();
+}
+public class BookDaoImpl implements BookDao {
+        @Override
+        public void save() {
+                System.out.println(&quot;b_di  book save&quot;);
+        }
+}
+
+
+// BookService &amp; BookServiceImpl
+public interface BookService {
+        public void addBook();
+}
+public class BookServiceImpl implements BookService {
+    public BookServiceImpl() {
+        System.out.println(&quot;你生了&quot;);
+    }
+
+    //之后编程
+    private BookDao bookDao;
+    public void setBookDao(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
+    @Override
+    public void addBook() {
+        bookDao.save();
+    }
+}
+
+
+// 测试：
+@Test
+public void demo01(){
+    //依赖注入
+    String xmlPath = &quot;config/applicationContext.xml&quot;;
+    //加载完配置文件就构造了BookService对象
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+    BookService bookService = applicationContext.getBean(&quot;bookServiceId&quot;,BookService.class);
+    bookService.addBook();
+}
+
+</code></pre>
+<h1><a class="header" href="#配置的方式" id="配置的方式">配置的方式</a></h1>
+<h2><a class="header" href="#基于-xml" id="基于-xml">基于 xml</a></h2>
+<h3><a class="header" href="#xml-中的配置项" id="xml-中的配置项">xml 中的配置项</a></h3>
+<ul>
+<li>
+<p>id 属性可以自动提示(一般使用 id 属性), name 属性则没有</p>
+</li>
+<li>
+<p>id 只能有一个值, name 可以有多个(逗号分隔)</p>
+</li>
+<li>
+<p>标识 bean 的作用域 <code>&lt;bean scope=&quot;&quot;&gt;&lt;/bean&gt;</code></p>
+<ul>
+<li>
+<p>singleton - 整个容器中，将只有一个实例， 对于那些无会话状态的 Bean（如辅助工具类、DAO 组件、业务逻辑组件等）是最理想的选择。</p>
+</li>
+<li>
+<p>prototype - 每次通过容器的 getBean 方法获取定义的 Bean 时，都将产生一个新的 Bean 实例， 适用于那些需要保持会话状态的 Bean 实例</p>
+</li>
+<li>
+<p>request - 对于每次 HTTP request，定义的 Bean 都将产生一个新实例； 只在 web app 中有效</p>
+</li>
+<li>
+<p>session - 对于每次 HTTP Session，定义的 Bean 都将产生一个新实例。同样只只在 web app 中有效</p>
+</li>
+<li>
+<p>globalsession：存疑 //todo</p>
+</li>
+</ul>
+</li>
+</ul>
+<img src="p3.png">
+<h3><a class="header" href="#几种注入-实例化方式" id="几种注入-实例化方式">几种注入-实例化方式</a></h3>
+<p>https://blog.csdn.net/a909301740/article/details/78379720</p>
+<h4><a class="header" href="#通过构造函数" id="通过构造函数">通过构造函数</a></h4>
+<pre><code class="language-java">public class UserService implements IUserService {
+
+    private IUserDao userDao;
+
+    public UserService(IUserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public void loginUser() {
+        userDao.loginUser();
+    }
+
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 注册userService
+    多个 field 注入 通过 name 属性指定
+--&gt;
+&lt;bean id=&quot;userService&quot; class=&quot;com.lyu.spring.service.impl.UserService&quot;&gt;
+    &lt;constructor-arg ref=&quot;userDaoJdbc&quot;&gt;&lt;/constructor-arg&gt;
+&lt;/bean&gt;
+&lt;!-- 注册jdbc实现的dao --&gt;
+&lt;bean id=&quot;userDaoJdbc&quot; class=&quot;com.lyu.spring.dao.impl.UserDaoJdbc&quot;&gt;&lt;/bean&gt;
+
+</code></pre>
+<h5><a class="header" href="#通过静态工厂方法" id="通过静态工厂方法">通过静态工厂方法</a></h5>
+<p>属于构造函数注入</p>
+<p>使用场景: 与其他框架整合时用</p>
+<p>类似参考 <a href="#%E7%89%B9%E6%AE%8A%E7%9A%84bean-FactoryBean">特殊的 bean-FactoryBean</a></p>
+<pre><code class="language-java">// PersonService：
+public class PersonService {
+    public void addPerson(){
+        System.out.println(&quot;Personservice  addPerson&quot;);
+    }
+
+}
+
+// 静态工厂：配置到 bean#class
+public class MyBeanFactory {
+    // 所有方法都是静态方法: 方法名配置到 bean#factory-method
+    public static PersonService createPerson(){
+        return new PersonService();
+    }
+}
+
+// 测试：
+public class TestStatic {
+    @Test
+    public void demo01(){
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        PersonService personService = (PersonService) applicationContext.getBean(&quot;personServiceId&quot;);
+        personService.addPerson();
+    }
+}
+
+</code></pre>
+<p>xml 配置</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+&lt;!--  id表示静态工厂要生产的bean --&gt;
+&lt;!--  class表示静态工厂类 --&gt;
+&lt;!-- factory-method 表示静态工厂生产本bean的静态方法 --&gt;
+
+    &lt;bean id=&quot;personServiceId&quot;
+        class=&quot;com.xiaoyu.spring.learn.MyBeanFactory&quot;
+        factory-method=&quot;createPerson&quot;&gt;
+    &lt;/bean&gt;
+
+    &lt;!--test: static factory construct 工厂方法带有参数--&gt;
+    &lt;bean id=&quot;bean3&quot; class=&quot;spring.BeanFactory&quot; factory-method=&quot;createBean3&quot;&gt;
+        &lt;!--factory method args， bean可以通过 ref 注入到方法参数中--&gt;
+        &lt;constructor-arg name=&quot;bean4&quot; ref=&quot;bean4&quot;&gt;&lt;/constructor-arg&gt;
+        &lt;constructor-arg name=&quot;str&quot; value=&quot;haha&quot; /&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+
+</code></pre>
+<h5><a class="header" href="#通过实例工厂方法" id="通过实例工厂方法">通过实例工厂方法</a></h5>
+<p>属于构造函数注入</p>
+<pre><code class="language-java">// studentService：
+public class StudentService {
+    public void addStudent(){
+        System.out.println(&quot;StudentService  addStudent&quot;);
+    }
+}
+// 实例工厂：
+public class MyBeanFactory2 {
+    /**
+     * 非静态方法
+     * @return
+     */
+    public StudentService createStudent(){
+        return new StudentService();
+    }
+}
+
+// 测试：
+public class TestFactory {
+    @Test
+    public void demo01(){
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+//直接获得studentService实例，实例工厂的实例对象spring自动创建
+        StudentService studentService = (StudentService) applicationContext.getBean(&quot;studentServiceId&quot;);
+        studentService.addStudent();
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+    &lt;!-- 配置工厂实例 --&gt;
+    &lt;bean id=&quot;myFactoryId&quot; class=&quot;com.xiaoyu.spring.learn.MyBeanFactory2&quot;&gt;&lt;/bean&gt;
+
+    &lt;!-- 配置 studentService实例 --&gt;
+    &lt;bean id=&quot;studentServiceId&quot; factory-bean=&quot;myFactoryId&quot;  factory-method=&quot;createStudent&quot; &gt;&lt;/bean&gt;
+
+    &lt;bean id=&quot;instanceFac&quot; class=&quot;spring.InstanceFactory&quot; /&gt;
+    &lt;bean id=&quot;bean3&quot; factory-bean=&quot;instanceFac&quot; factory-method=&quot;createBean3&quot; &gt;
+        &lt;constructor-arg name=&quot;bean4&quot; ref=&quot;bean4&quot; /&gt;
+        &lt;constructor-arg name=&quot;str&quot; value=&quot;hoho&quot; /&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h4><a class="header" href="#通过-setter-注入" id="通过-setter-注入">通过 setter 注入</a></h4>
+<p>(setter injection)</p>
+<pre><code class="language-xml">&lt;!-- 注册userService --&gt;
+&lt;bean id=&quot;userService&quot; class=&quot;com.lyu.spring.service.impl.UserService&quot;&gt;
+ &lt;!-- 写法一 --&gt;
+ &lt;!-- &lt;property name=&quot;UserDao&quot; ref=&quot;userDaoMyBatis&quot;&gt;&lt;/property&gt; --&gt;
+ &lt;!-- 写法二 --&gt;
+ &lt;property name=&quot;userDao&quot; ref=&quot;userDaoMyBatis&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;!-- 注册mybatis实现的dao --&gt;
+&lt;bean id=&quot;userDaoMyBatis&quot; class=&quot;com.lyu.spring.dao.impl.UserDaoMyBatis&quot;&gt;&lt;/bean&gt;
+
+</code></pre>
+<p>上面这两种写法都可以,spring 会将 name 值的每个单词首字母转换成大写，然后再在前面拼接上&quot;set&quot;构成一个方法名,然后去对应的类中查找该方法,<code>通过反射调用</code>,实现注入</p>
+<p>如果通过 set 方法注入属性，那么 spring 会通过默认的空参构造方法来实例化对象，所以如果在类中写了一个带有参数的构造方法，<code>一定要把空参数的构造方法写上</code>，否则 spring 没有办法实例化对象，导致报错</p>
+<p>xml 配置方式之外, 还提供注解的方式, 也是需要 setter 方法;</p>
+<h4><a class="header" href="#通过-methodinvokingfactorybean-注入方法的返回值" id="通过-methodinvokingfactorybean-注入方法的返回值">通过 MethodInvokingFactoryBean 注入方法的返回值</a></h4>
+<p>MethodInvokingFactoryBean 可以注册某个方法的返回值到 spring 中, 这个方法可以是实例方法, 也可以是静态方法;</p>
+<p>当然也可以就使用普通的静态工厂注入 or 实例工厂注入， 但是不够灵活</p>
+<pre><code class="language-java">import org.springframework.context.MessageSource;
+
+import plm.common.exceptions.CheckException;
+
+// 类无需标注为 component
+public class CheckUtil {
+
+  private static MessageSource resources;
+
+    // 注入到这个方法的参数中了
+    // 没有使用返回值
+  public static void setResources(MessageSource resources) {
+    CheckUtil.resources = resources;
+  }
+
+  public static void check(boolean condition, String msgKey, Object... args) {
+    if (!condition) {
+      fail(msgKey, args);
+    }
+  }
+
+  public static void notEmpty(String str, String msgKey, Object... args) {
+    if (str == null || str.isEmpty()) {
+      fail(msgKey, args);
+    }
+  }
+
+  public static void notNull(Object obj, String msgKey, Object... args) {
+    if (obj == null) {
+      fail(msgKey, args);
+    }
+  }
+
+  private static void fail(String msgKey, Object... args) {
+    throw new CheckException(resources.getMessage(msgKey, args, UserUtil.getLocale()));
+  }
+}
+
+</code></pre>
+<p>xml 配置</p>
+<pre><code class="language-xml">&lt;bean
+  class=&quot;org.springframework.beans.factory.config.MethodInvokingFactoryBean&quot;&gt;
+  &lt;property name=&quot;staticMethod&quot; value=&quot;plm.common.utils.CheckUtil.setResources&quot; /&gt;
+  &lt;!-- 这里配置方法参数 --&gt;
+  &lt;property name=&quot;arguments&quot; ref=&quot;messageSource&quot;&gt;
+  &lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;!-- 国际化 --&gt;
+&lt;bean id=&quot;messageSource&quot;
+  class=&quot;org.springframework.context.support.ResourceBundleMessageSource&quot;&gt;
+  &lt;property name=&quot;basenames&quot;&gt;
+    &lt;list&gt;
+      &lt;value&gt;format&lt;/value&gt;
+      &lt;value&gt;exceptions&lt;/value&gt;
+      &lt;value&gt;windows&lt;/value&gt;
+    &lt;/list&gt;
+  &lt;/property&gt;
+&lt;/bean&gt;
+
+</code></pre>
+<p>或者不通过 xml 配置， 使用代码配置：</p>
+<p>在 Configuration class 中</p>
+<pre><code class="language-java">/**
+    * inject messageSource into I18nUtils
+    */
+@Bean
+public MethodInvokingFactoryBean methodInvokingFactoryBean() {
+    MethodInvokingFactoryBean methodInvokingFactoryBean = new MethodInvokingFactoryBean();
+    methodInvokingFactoryBean.setStaticMethod(&quot;io.github.xiaoyureed.core.util.I18nUtils.setMessageSource&quot;);
+                                // 这里设置使用哪个方法注入
+    methodInvokingFactoryBean.setArguments(this.messageSource());// 在这里设置注入的参数
+    return methodInvokingFactoryBean;
+}
+
+</code></pre>
+<h4><a class="header" href="#autowired-注入" id="autowired-注入">@Autowired 注入</a></h4>
+<p>底层是使用了反射, 不依赖构造函数, 不依赖 setter</p>
+<p>@Autowired 有个属性为 required，可以配置为 false (默认 true)，如果配置为 false 之后，当没有找到相应 bean 的时候，系统不会抛错</p>
+<pre><code>@Resource默认是按照名称来装配注入的，只有当找不到与名称匹配的bean才会按照类型来装配注入；
+
+@Autowired默认是按照类型装配注入的, 若同类型bean有多个则按照名称注入，如果想直接按照名称来转配注入，则需要结合@Qualifier一起使用；
+
+@Resource注解是又J2EE提供，而@Autowired是由Spring提供，故减少系统对spring的依赖建议使用@Resource的方式；
+
+@Resource和@Autowired都可以书写标注在字段或者该字段的setter方法之上。
+
+@Inject是JSR330规范实现的, 根据类型进行自动装配的，如果需要按名称进行装配，则需要配合@Named
+</code></pre>
+<h3><a class="header" href="#springel-表达式注入表达式" id="springel-表达式注入表达式">springEL 表达式,注入表达式</a></h3>
+<pre><code class="language-java">// 实体类Person：
+public class Person {
+    private String name = &quot;jack&quot;;
+    private Double pi; //java.lang.Math类中的静态常量
+    private Address homeAddress;
+
+//    setters&amp;getters..
+
+    @Override
+    public String toString() {
+        return &quot;Person [name=&quot; + name + &quot;, pi=&quot; + pi + &quot;, homeAddress=&quot;
+                + homeAddress + &quot;]&quot;;
+    }
+
+}
+// Person中的Address类：
+public class Address {
+    private String addr;
+    private String tel;
+
+//    getters&amp;setters
+
+    @Override
+    public String toString() {
+        return &quot;Address [addr=&quot; + addr + &quot;, tel=&quot; + tel + &quot;]&quot;;
+    }
+}
+
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+    &lt;!-- 表达式
+        * #{数字} 、#{'字符串'} : 常量
+        * #{bean的id值} : 获得引用
+        * #{对象.属性}  ：获得属性值
+        * #{对象.方法()}  ： 执行方法
+        * #{对象.方法()?.方法()} : 执行方法, 避免null异常
+        * #{T{类}.方法() | 属性} ：静态资源
+    --&gt;
+    &lt;bean id=&quot;personId&quot; class=&quot;com.xiaoyu.spring.learn.Person&quot;&gt;
+        &lt;property name=&quot;name&quot; value=&quot;#{personId.name.toUpperCase()}&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;pi&quot; value=&quot;#{T(java.lang.Math).PI}&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;homeAddress&quot; value=&quot;#{addressId}&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;addressId&quot; class=&quot;com.xiaoyu.spring.learn.Address&quot;&gt;&lt;/bean&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h3><a class="header" href="#集合的注入" id="集合的注入">集合的注入</a></h3>
+<pre><code class="language-java">// 实体类：
+public class CollBean {
+    private List&lt;String&gt; dataList;
+    private String[] dataArray;
+    private Set&lt;String&gt; dataSet;
+    private Map&lt;String, String&gt; dataMap;
+    private Properties dataProps;
+
+   getters&amp;setters
+
+    @Override
+    public String toString() {
+        return &quot;CollBean [\ndataList=&quot; + dataList + &quot;, \ndataArray=&quot;
+                + Arrays.toString(dataArray) + &quot;, \ndataSet=&quot; + dataSet
+                + &quot;, \ndataMap=&quot; + dataMap + &quot;, \ndataProps=&quot; + dataProps + &quot;\n]&quot;;
+    }
+}
+// 测试：
+public class TestColl {
+    @Test
+    public void demo01() throws Exception{
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        CollBean collBean = (CollBean) applicationContext.getBean(&quot;collBeanId&quot;);
+        System.out.println(collBean);
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+    &lt;!--
+&lt;property name=&quot;&quot;&gt;
+* 如果要注入数据进集合，且该集合只有一个值时，可以直接使用&lt;property value=&quot;&quot;&gt;标签的value属性赋值
+* &lt;property&gt; 提供子标签
+    &lt;value&gt; 子标签 等效 value属性 &lt;property value=&quot;&quot;&gt;
+    &lt;ref&gt; 子标签 等效ref属性
+    &lt;list&gt;子标签 list集合
+    &lt;array&gt;
+    &lt;set&gt;
+    &lt;map&gt; map集合
+        方式1：
+        &lt;entry key=&quot;ds&quot; value=&quot;屌丝&quot;&gt;&lt;/entry&gt;
+        方式2：
+        &lt;entry&gt;
+            &lt;key&gt;&lt;value&gt;dzd&lt;/value&gt;&lt;/key&gt;
+            &lt;value&gt;屌中屌&lt;/value&gt;
+        &lt;/entry&gt;
+    &lt;props&gt; Properties对象
+        &lt;prop key=&quot;键&quot;&gt;值&lt;/prop&gt;
+    --&gt;
+    &lt;bean id=&quot;collBeanId&quot; class=&quot;com.xiaoyu.spring.learn.CollBean&quot;&gt;
+        &lt;property name=&quot;dataList&quot;&gt;
+            &lt;list&gt;
+                &lt;value&gt;a&lt;/value&gt;
+                &lt;value&gt;b&lt;/value&gt;
+                &lt;value&gt;c&lt;/value&gt;
+            &lt;/list&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;dataArray&quot;&gt;
+            &lt;array&gt;
+                &lt;value&gt;a&lt;/value&gt;
+                &lt;value&gt;b&lt;/value&gt;
+                &lt;value&gt;c&lt;/value&gt;
+            &lt;/array&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;dataSet&quot;&gt;
+            &lt;set&gt;
+                &lt;value&gt;嬲&lt;/value&gt;
+                &lt;value&gt;嫐&lt;/value&gt;
+                &lt;value&gt;挊&lt;/value&gt;
+                &lt;value&gt;龘&lt;/value&gt;
+            &lt;/set&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;dataMap&quot;&gt;
+            &lt;map&gt;
+                &lt;entry key=&quot;ds&quot; value=&quot;efe&quot;&gt;&lt;/entry&gt;
+                &lt;entry&gt;
+                    &lt;key&gt;&lt;value&gt;dzd&lt;/value&gt;&lt;/key&gt;
+                    &lt;value&gt;dfd&lt;/value&gt;
+                &lt;/entry&gt;
+            &lt;/map&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;dataProps&quot;&gt;
+            &lt;props&gt;
+                &lt;prop key=&quot;DG1&quot;&gt;dg&lt;/prop&gt;
+                &lt;prop key=&quot;DG2&quot;&gt;dg&lt;/prop&gt;
+                &lt;prop key=&quot;DG3&quot;&gt;dg&lt;/prop&gt;
+            &lt;/props&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+
+</code></pre>
+<h2><a class="header" href="#基于注解" id="基于注解">基于注解</a></h2>
+<ul>
+<li>
+<p>添加约束: 即 context schema,在 xsd-config.xml 中找</p>
+</li>
+<li>
+<p>开启注解类扫描<code>&lt;context:component-scan base-package=&quot;xxxxpackage&quot;&gt;&lt;/context:component-scan&gt;</code></p>
+<ul>
+<li>
+<p>功能是将@component 之类的注解标注的 bean 注册到 spring 中</p>
+</li>
+<li>
+<p>annotation-config 处理@autowired 之类的注解（共有四类） 前提是注解作用的类已经被注册到 spring 容器里（bean id=“” class=“”） ;component-scan 除了包含 annotation-config 的作用外，还能自动扫描和注册 base-package 下有@component 之类注解的类，将其作为 bean 注册到 spring 容器里; 所以配置文件如果有 component-scan 就不需要 annotation-config 了。</p>
+</li>
+<li>
+<p>也可以 scan 排除:</p>
+<pre><code class="language-xml">&lt;context:component-scan base-package=&quot;com.baobaotao&quot;&gt;
+    &lt;context:include-filter type=&quot;regex&quot;
+        expression=&quot;com\.baobaotao\.service\..*&quot;/&gt;
+    &lt;context:exclude-filter type=&quot;aspectj&quot;
+        expression=&quot;com.baobaotao.util..*&quot;/&gt;
+&lt;/context:component-scan&gt;
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>分层 web 开发中的注解: @Controller--web 层, @Service--service 层, @Repository--dao 层, @component--笼统的</p>
+</li>
+<li>
+<p>依赖注入相关注解:</p>
+<ul>
+<li>
+<p>按照类型注入: @Autowire, 使用在成员属性 or setter 方法上</p>
+</li>
+<li>
+<p>按照名称注入 : @Qualified 和@Autowired 结合使用, @Qualified(&quot;userDaoId&quot;) 【前提是 UserDao 配置了@Repository(&quot;userDaoId&quot;) 】</p>
+</li>
+<li>
+<p>按照名称注入（简化）：@Resource（name=“名称”）</p>
+</li>
+<li>
+<p>普通成员属性注入：@Value（“值”） 直接给成员属性注入普通值</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>初始化，销毁，作用域注解</p>
+<ul>
+<li>
+<p>初始化和销毁: @PostConstruct, @PreDestroy</p>
+</li>
+<li>
+<p>作用域: @Scope(&quot;singleton&quot;), @Scope(&quot;prototype&quot;)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>分层开发:</p>
+<pre><code class="language-java">// UserDao：
+@Repository(&quot;userDaoId&quot;)
+public class UserDao {
+
+    @Value(&quot;jack&quot;)  //直接设置值
+    private String username ;
+    public void save() {
+        System.out.println(&quot;web dao user --&gt;&quot; + username);
+    }
+
+}
+// UserService：
+@Service
+public class UserService {
+    //也可以在这里配置【成员属性上配置@Autowired】
+    private UserDao userDao;
+    //方式1
+    @Autowired//---【根据类型匹配，可单独使用】：如果是配置@Autowired【后面不用跟值】，则UserDao类只需要配置@Repository【不用跟值】
+    @Qualifier(&quot;userDaoId&quot;)//---【根据名字匹配，必须和@Autowired一起使用】：UserDao类配置了@Repository(&quot;userDaoId&quot;)，则要使用这种方式
+    //方式2：
+    @Resource(name=&quot;userDaoId&quot;)            //--一个顶俩【一个@Resource(name=&quot;userDaoId&quot;)可顶@Autowired&amp;&amp;@Qualifier(&quot;userDaoId&quot;)】
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
+    public void saveUser() {
+        System.out.println(&quot;web user service&quot;);
+        userDao.save();
+    }
+
+}
+// UserAction：
+@Controller(&quot;userActionId&quot;)
+public class UserAction {
+    @Autowired  //相当于 &lt;property  name=&quot;&quot; ref=&quot;xxx&quot;&gt;
+    private UserService userService;
+    //也可以在这里配置@Autowired ，和在成员属性上配置效果一样
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    public void addUser() {
+        System.out.println(&quot;action add user&quot;);
+        userService.saveUser();
+    }
+
+}
+// 测试：
+public class TestAnnoWeb {
+    @Test
+    public void demo01() throws Exception{
+        String xmlPath = &quot;com/itheima/h_annotation/b_web/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        UserAction userAction = (UserAction) applicationContext.getBean(&quot;userActionId&quot;);
+        userAction.addUser();
+    }
+}
+
+</code></pre>
+<p>配置</p>
+<pre><code class="language-xml">配置：
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+
+    &lt;!-- 注解类扫描：通知spring，哪些类添加注解,属于控制反转 --&gt;
+    &lt;context:component-scan base-package=&quot;com.itheima.h_annotation.b_web&quot;&gt;&lt;/context:component-scan&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<p>初始化, 销毁, 作用域:</p>
+<pre><code class="language-java">// CategoryService：
+@Component(&quot;categoryServiceId&quot;)
+@Scope(&quot;prototype&quot;)                  //-------------作用域注解
+public class CategoryService {
+
+    public void addCategory(){
+        System.out.println(&quot;c_other addCategory&quot;);
+    }
+    @PostConstruct //--------初始化注解
+    public void myInit(){
+        System.out.println(&quot;anno 初始化&quot;);
+    }
+    @PreDestroy //------------销毁注解
+    public void myDestroy(){
+        System.out.println(&quot;anno 销毁&quot;);
+    }
+}
+// 测试：
+public class TestAnnoHello {
+    @Test
+    public void demo01() throws Exception{
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        CategoryService categoryService1 = (CategoryService) applicationContext.getBean(&quot;categoryServiceId&quot;);
+        categoryService1.addCategory();
+        CategoryService categoryService2 = (CategoryService) applicationContext.getBean(&quot;categoryServiceId&quot;);
+        categoryService2.addCategory();
+        System.out.println(categoryService1);
+        System.out.println(categoryService2);//给CategoryService类加了注解@Scope(&quot;prototype&quot;)；变成了多例；打印结果是两者地址不同
+        applicationContext.close();  //需要手动关闭applicationContext，销毁注解才会生效
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置 --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+    &lt;!-- 注解类扫描：通知spring，哪些类添加注解 --&gt;
+    &lt;context:component-scan base-package=&quot;com.xiaoyu.spring.learn&quot;&gt;&lt;/context:component-scan&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h2><a class="header" href="#xml-和注解混用" id="xml-和注解混用">xml 和注解混用</a></h2>
+<ul>
+<li>xml 负责配置 bean(所以可以去掉<code>context:component-scan</code>配置), 注解负责配置注入(所以开启<code>&lt;context:annotation-config/&gt;</code>)</li>
+</ul>
+<p>见 <a href="#%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3">基于注解</a></p>
+<pre><code class="language-java">// UserDao:
+public class UserDao {
+    @Value(&quot;jack&quot;)
+    private String username ;
+    public void save() {
+        System.out.println(&quot;web dao user --&gt;&quot; + username);
+    }
+}
+// UserService:
+public class UserService {
+    private UserDao userDao;
+    //方式1：（掌握）值为bean id值
+    @Autowired
+    @Qualifier(&quot;userDaoId&quot;)
+    //方式2：
+//  @Resource(name=&quot;userDaoId&quot;)
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+    public void saveUser() {
+        System.out.println(&quot;web user service&quot;);
+        userDao.save();
+    }
+}
+// UserAction:
+public class UserAction {
+    @Autowired  //取代 &lt;property  name=&quot;&quot; ref=&quot;按照类型配置&quot;&gt;
+    private UserService userService;
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+    public void addUser() {
+        System.out.println(&quot;action add user&quot;);
+        userService.saveUser();
+    }
+}
+// 测试：
+public class TestAnnoWeb {
+    @Test
+    public void demo01() throws Exception{
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        UserAction userAction = (UserAction) applicationContext.getBean(&quot;userActionId&quot;);
+        userAction.addUser();
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+    &lt;!--
+        已经配置bean，不需要扫描package了，
+    &lt;context:component-scan base-package=&quot;com.itheima.h_annotation.b_web&quot;&gt;&lt;/context:component-scan&gt;
+    --&gt;
+    &lt;!-- 【xml&amp;注解混用时要特别配置】：配置使得注解式注入可以使用 --&gt;
+    &lt;context:annotation-config&gt;&lt;/context:annotation-config&gt;
+    &lt;!-- dao --&gt;
+    &lt;bean id=&quot;userDaoId&quot; class=&quot;com.xiaoyu.spring.learn.UserDao&quot;&gt;&lt;/bean&gt;
+    &lt;!-- service --&gt;
+    &lt;bean id=&quot;userServiceId&quot; class=&quot;com.xiaoyu.spring.learn.UserService&quot;&gt;&lt;/bean&gt;
+    &lt;!-- action --&gt;
+    &lt;bean id=&quot;userActionId&quot; class=&quot;com.xiaoyu.spring.learn.UserAction&quot; scope=&quot;prototype&quot;&gt;&lt;/bean&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h1><a class="header" href="#junit-整合" id="junit-整合">JUnit 整合</a></h1>
+<p>https://www.ibm.com/developerworks/cn/java/j-lo-springunitest/index.html</p>
+<p>引入依赖: http://mvnrepository.com/artifact/org.springframework/spring-test</p>
+<pre><code class="language-java">// UserService：
+public class UserService {
+    public void addUser(){
+        System.out.println(&quot;a_hello addUser&quot;);
+    }
+}
+// 测试：
+@RunWith(SpringJUnit4ClassRunner.class)  //junit spring 整合
+@ContextConfiguration(locations=&quot;classpath:config/beans.xml&quot;)  //加载配置文件 “classpath:”表示在/src目录下（也就是在WEB-INF/classes下）
+@Transactional//insert 之后不必清理数据库, 会自动 rollback
+public class TestJunit {
+    @Autowired  //整合junit 自动注入(以类型方式注入)，“注入”不需要再在xml配置【】
+    private UserService userService;
+    @Test
+    public void demo02(){
+        //1 加载配置文件
+//      String xmlPath = &quot;com/itheima/i_test/beans.xml&quot;;
+//      ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+//
+//      //2 从容器获得对象
+//      UserService userService = (UserService) applicationContext.getBean(&quot;userServiceId&quot;);
+
+        userService.addUser();//现在简单一步搞定
+    }
+}
+
+</code></pre>
+<p>配置</p>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+&lt;!--
+    这里是配置的UserService这个bean，不是配置的属性注入
+--&gt;
+    &lt;bean id=&quot;userServiceId&quot; class=&quot;com.xiaoyu.spring.learn.UserService&quot;&gt;&lt;/bean&gt;
+
+&lt;/beans&gt;
+
+</code></pre>
+<h1><a class="header" href="#ioc" id="ioc">IoC</a></h1>
+<p>Spring 中的 IoC 的实现原理就是工厂模式加反射机制。</p>
+<p><a href="https://www.zhihu.com/question/23277575/answer/169698662">ioc 有什么好处</a></p>
+<h1><a class="header" href="#aop" id="aop">AOP</a></h1>
+<h2><a class="header" href="#aop-概念" id="aop-概念">aop 概念</a></h2>
+<p>在不修改源代码的情况下, 增强某个方法, 比如在这个方法逻辑执行之前, 之后, 前后, 返回值返回之后, 抛出异常之后</p>
+<p>目前主流有两种方法</p>
+<ul>
+<li>
+<p>Spring AOP:使用纯 Java 实现，<code>不需要专门的编译器</code>，在<code>运行期</code>通过动态生成代理类, 如果类实现了接口, 使用 jdk 自带的动态代理, 如果类没有实现任何接口, 使用 cglib 生成动态代理;Spring AOP 虽然使用了 AspectJ 的 Annotation, 但是两者是不同的</p>
+</li>
+<li>
+<p>AspectJ: 是一个基于 Java 语言的 AOP 框架,可以单独使用，Spring 2.0 开始，Spring 引入对 AspectJ 的支持，AspectJ 扩展了 Java 语言，提供了一个<code>专门的编译器</code>(相当于 javac 的增强版本)，在<code>编译时织入</code>, 而不是运行是动态生成;</p>
+</li>
+</ul>
+<p>经典应用</p>
+<p>权限管理, 错误处理, 懒加载, 性能监视、事务管理、安全检查、缓存 、日志</p>
+<p>名词概念</p>
+<pre><code>1.target 目标类 ，被增强类。
+
+2.JoinPoint 连接点，目标类上那些有可能被增强的方法。（一般指所有方法）
+
+3.PointCut 切入点，目标类被增强的方法，被增强的连接点。
+
+4.Advice 增强/通知，增强的那些内容
+
+5.weaving 织入，将通知（增强）应用到连接点上，生成代理的过程。
+
+6.proxy 代理
+
+7.aspect 切面，切入点 和 通知 结合
+
+</code></pre>
+<h2><a class="header" href="#aop-联盟规范" id="aop-联盟规范">aop 联盟规范</a></h2>
+<h3><a class="header" href="#通知类型" id="通知类型">通知类型</a></h3>
+<pre><code>1） aop联盟 定义 aop通知类型，spring 对 aop联盟规范支持。
+
+2） aop联盟定义5种通知
+
+    前置通知 org.springframework.aop.MethodBeforeAdvice
+        在目标方法执行前实施增强
+
+    后置通知 org.springframework.aop.AfterReturningAdvice
+        在目标方法执行后实施增强
+
+    环绕通知 org.aopalliance.intercept.MethodInterceptor 【注意：这个接口是aop联盟的】
+        在目标方法执行前后实施增强
+
+    异常抛出通知 org.springframework.aop.ThrowsAdvice
+        在方法抛出异常后实施增强
+
+    引介通知 org.springframework.aop.IntroductionInterceptor对一个类进行增强（添加方法或属性等）
+        在目标类中添加一些新的方法和属性
+            try{
+               前置
+               环绕
+               后置
+            } catch{
+               异常抛出
+            }
+
+3） 如果使用aop联盟规范进行aop开发，所有的通知必须实现接口。（底层为了确定通知方法名称）
+
+</code></pre>
+<h3><a class="header" href="#joinpoint-连接点" id="joinpoint-连接点">Joinpoint 连接点</a></h3>
+<pre><code>1） JoinPoint连接点的信息
+2） 接口：org.aspectj.lang.JoinPoint
+    • 获得目标对象(被代理对象)：getTarget()
+    • 获得被增强方法签名：getSignature()
+    • 获得被增强方法名称：getSignature().getName()
+    * 获取被增强方法对象本身: getSignature().getMethod()
+    • 获得实际参数：getArgs()
+    • 获得当前指定方法的类型：getKind()
+        method-execution 方法执行、
+        constructor-execution构造方法执行
+        field-get get方法
+    * proceed() 执行原始方法
+</code></pre>
+<h2><a class="header" href="#不和-spring-集成单独使用动态代理" id="不和-spring-集成单独使用动态代理">不和 spring 集成(单独使用动态代理)</a></h2>
+<h3><a class="header" href="#通过-jdk-动态生成代理" id="通过-jdk-动态生成代理">通过 jdk 动态生成代理</a></h3>
+<p>spring 对于实现了接口的类, 会使用这种方式生成代理</p>
+<pre><code class="language-java">/**
+步骤：
+1. 接口 + 实现类
+2. 编写切面类 MyAspect ，并提供通知
+3. 编写工厂，生成代理
+4. 测试
+
+*/
+// 接口：
+public interface UserService {
+    public void addUser();
+    public void updateUser();
+
+}
+// 实现类：
+public class UserServiceImpl implements UserService {
+
+    @Override
+    public void addUser() {
+        System.out.println(&quot;a_jdk addUser()&quot;);
+    }
+
+    @Override
+    public void updateUser() {
+        System.out.println(&quot;a_jdk updateUser()&quot;);
+    }
+
+}
+// 切面类：
+/**
+ * 切面类，存放所有的通知（增强）
+ */
+public class MyAspect {
+    public void myBefore(){
+        System.out.println(&quot; a_proxy.a_jdk  前&quot;);
+    }
+    public void myAfter(){
+        System.out.println(&quot; a_proxy.a_jdk  后&quot;);
+    }
+
+}
+// 工厂类：
+public class MyFactory {
+    /**
+     *  JDK 动态代理  Object obj = Proxy.newProxyInstance(....)；
+     *  1.参数1：ClassLoader loader ,确定类加载器。程序运行时动态创建类，需要类加载加载到内存。类加载器作用：class文件 --&gt; Class对象
+     *      * 一般情况使用都是当前类的类加载器
+     *      * 类加载器获得方式：MyFactory.class.getClassLoader();
+     *  2.参数2：Class[] interfaces  代理需要实现的接口们（可能有多个）
+     *      * 方式1：userService.getClass().getInterfaces()【此方式只能在代理对象和接口是父子关系时使用】
+     *      * 方式2：new Class[]{UserService.class}【当被代理对象和其实现接口之间是隔代关系时（即祖孙关系）必须使用方式2获取接口们】
+     *  3.参数3：InvocationHandler h 请求处理类，代理类方法执行时，需要请求处理类来处理。
+     *      * 一般采用匿名内部类：new InvocationHandler(){}
+     *      * 实现方法 invoke ，代理类每一个方法执行一次，将调用一次invoke
+     *          参数1.1：Object proxy ,代理成功对象（即 proxyService，不是“代理之前对象”），一般没用。
+     *          参数2.2：Method method ，当前执行的方法
+     *              * 当前调用方法名：method.getName();
+     *              * 执行目标类方法：Object obj = method.invoke(代理之前对象 , args)
+     *          参数3.3：Object[] args
+     *              * 当前方法实际参数
+     */
+    public static UserService createService(){
+        //1 创建目标
+        final UserService userService = new UserServiceImpl();
+        //2 切面类（通知）
+        final MyAspect myAspect = new MyAspect();
+        //3 编写代理，将通知 应用 到目标类方法上
+        UserService proxyService = (UserService)Proxy.newProxyInstance(
+                MyFactory.class.getClassLoader(),
+                userService.getClass().getInterfaces(),
+                new InvocationHandler(){
+                    @Override
+                    public Object invoke(Object proxy, Method method,
+                            Object[] args) throws Throwable {
+                        //前通知
+                        myAspect.myBefore();
+                        //执行目标类的方法, 注意用的不是 proxy对象而是原始对象
+                        Object obj = method.invoke(userService, args);
+                        //后通知
+                        myAspect.myAfter();
+                        return obj;
+                    }
+                });
+        return proxyService;
+    }
+
+}
+
+</code></pre>
+<h3><a class="header" href="#通过-cglib-动态生成代理" id="通过-cglib-动态生成代理">通过 cglib 动态生成代理</a></h3>
+<p>spring 对于没有实现接口的类, 会使用这种方式生成代理</p>
+<ul>
+<li>
+<p>cglib：字节码增强框架（spring 字节码增强框架，默认使用 cglib），运行时采用动态生成子类方式，子类就是代理类</p>
+</li>
+<li>
+<p>spring 将 asm 和 cglib 内置到 spring-core...jar【spring 中使用时导入这个 jar 包】</p>
+</li>
+</ul>
+<pre><code class="language-java">// UserService：
+public class UserService {
+    public void addUser() {
+        System.out.println(&quot;b_cglib addUser()&quot;);
+    }
+
+    public void updateUser() {
+        System.out.println(&quot;b_cglib updateUser()&quot;);
+    }
+}
+// 切面类：
+/**
+ * 切面类，存放所有的通知（增强）
+ */
+public class MyAspect {
+    public void myBefore(){
+        System.out.println(&quot; b_cglib  前&quot;);
+    }
+    public void myAfter(){
+        System.out.println(&quot; b_cglib  后&quot;);
+    }
+}
+// 工厂类：
+public class MyFactory {
+
+    public static UserService createService() {
+        //1 目标类  类 = new 类
+        final UserService userService = new UserService();
+        //2 切面类
+        final MyAspect myAspect = new MyAspect();
+        //3 代理类 --cglib (代理类【子】 和 目标类【父】 父子关系)
+        // 3.1 创建核心类（Enhancer 增强）
+        Enhancer enhancer = new Enhancer();
+        // 3.2 确定即目标类
+        enhancer.setSuperclass(userService.getClass());// 因为代理类就是target class 的 sub class
+        // 3.3 设置回调，类似JDK代理中InvocationHandler
+        // ** CallBack 接口处理所有内容，这里使用它的子接口
+        // ** 子接口 MethodInterceptor 用于处理方法
+        enhancer.setCallback(new MethodInterceptor() {
+            /**
+             * intercept() 等效 jdk invoke()方法
+             *  * 参数1、参数2、参数3：与invoke一样的
+             *  * 参数4：methodProxy---表示属于代理对象的方法
+             */
+            @Override
+            public Object intercept(Object proxy, Method method, Object[] args,
+                    MethodProxy methodProxy) throws Throwable {
+                //前
+                myAspect.myBefore();
+                //执行目标类的当前方法
+                Object obj = method.invoke(userService, args);
+                // ******** 通过代理类执行“代理类的父类”【即目标类】的当前方法，和上句等效
+                // methodProxy.invokeSuper(proxy, args);
+                //后
+                myAspect.myAfter();
+                return obj;
+            }
+        });
+        // 3.4 创建代理
+        UserService proxyService = (UserService)enhancer.create();
+        return proxyService;
+    }
+
+}
+// 测试：
+public class TestCglib {
+    @Test
+    public void demo01(){
+        UserService userService = new UserService();
+        userService.addUser();
+        userService.updateUser();
+    }
+    @Test
+    public void demo02(){
+        UserService userService = MyFactory.createService();
+        userService.addUser();
+        userService.updateUser();
+    }
+}
+
+</code></pre>
+<h2><a class="header" href="#通过-proxyfactorybean-生成代理半自动" id="通过-proxyfactorybean-生成代理半自动">通过 ProxyFactoryBean 生成代理(半自动)</a></h2>
+<p>添加 aop 开发包: http://mvnrepository.com/artifact/org.aopalliance/com.springsource.org.aopalliance/1.0.0, 还有实现类 spring-aop</p>
+<pre><code class="language-java">// 接口：
+public interface UserService {
+    public void addUser();
+    public void updateUser();
+
+}
+// 实现类：
+public class UserServiceImpl implements UserService {
+
+    @Override
+    public void addUser() {
+        System.out.println(&quot;b_factory_bean addUser()&quot;);
+    }
+
+    @Override
+    public void updateUser() {
+        System.out.println(&quot;b_factory_bean updateUser()&quot;);
+    }
+
+}
+// 切面类：
+/**
+ * 切面类，存放所有的通知，使用spring 联盟提供规范，必须实现相应接口，这里实现的是环绕通知的接口
+ * * 环绕通知必须手动执行目标方法
+ */
+public class MyAspect implements MethodInterceptor {
+
+    @Override
+    public Object invoke(MethodInvocation mi) throws Throwable {
+        System.out.println(&quot;前&quot;);
+        //必须手动的执行目标方法
+        Object obj = mi.proceed();
+        System.out.println(&quot;后&quot;);
+        return obj;
+    }
+}
+// 测试：
+public class TestFactoryBean {
+    @Test
+    public void demo01(){
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        //从spring获得普通bean数据
+        UserService userService = (UserService) applicationContext.getBean(&quot;userServiceId&quot;);
+        userService.addUser();
+        userService.updateUser();
+    }
+    @Test
+    public void demo02(){
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        //从spring 手动 获得代理bean，称为半自动就是因为这里，一旦删去代理对象的相关配置就报错
+        UserService userService = (UserService) applicationContext.getBean(&quot;proxyServiceId&quot;);
+        userService.addUser();
+        userService.updateUser();
+    }
+
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;!-- 1 目标类 --&gt;
+    &lt;bean id=&quot;userServiceId&quot; class=&quot;com.xiaoyu.spring.learn.UserServiceImpl&quot;&gt;&lt;/bean&gt;
+    &lt;!-- 2 切面类 --&gt;
+    &lt;bean id=&quot;myAspectId&quot; class=&quot;com.xiaoyu.spring.learn.MyAspect&quot;&gt;&lt;/bean&gt;
+    &lt;!-- 3 生成代理对象：通知（增强） 和目标类 结合
+    * ProxyFactoryBean（代理工厂bean） 用于生成一个专门生产代理bean的工厂bean。
+        target 确定目标类
+        interceptorNames 确定所有切面类，类型String[],需要切面类的bean id值，这里只有一个值，可直接用&lt;property&gt;的value属性赋值
+        proxyInterfaces 确定代理类需要实现接口
+        optimize 强制是否使用cglib【配置为true则配置的接口属性（proxyInterfaces）可以省略】
+    --&gt;
+    &lt;bean id=&quot;proxyServiceId&quot; class=&quot;org.springframework.aop.framework.ProxyFactoryBean&quot;&gt;
+        &lt;property name=&quot;target&quot; ref=&quot;userServiceId&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;interceptorNames&quot; value=&quot;myAspectId&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;proxyInterfaces&quot; value=&quot;com.xiaoyu.spring.learn.UserService&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;optimize&quot; value=&quot;true&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h2><a class="header" href="#全自动实现" id="全自动实现">全自动实现</a></h2>
+<ul>
+<li>
+<p>配置文件中加入约束(使用 aop 编程，必须使用 aop schema（引用 aop 命名空间），在 index-config.html 中找)</p>
+</li>
+<li>
+<p>在半自动的 pom 基础上添加: http://www.mvnrepository.com/artifact/org.aspectj/com.springsource.org.aspectj.weaver</p>
+</li>
+</ul>
+<pre><code class="language-java">// 接口：
+public interface UserService {
+    public void addUser();
+    public void updateUser();
+}
+// 实现类：
+public class UserServiceImpl implements UserService {
+
+    @Override
+    public void addUser() {
+        System.out.println(&quot;c_aop addUser()&quot;);
+    }
+
+    @Override
+    public void updateUser() {
+        System.out.println(&quot;c_aop updateUser()&quot;);
+    }
+
+}
+// 切面类：
+/**
+ * 切面类，存放所有的通知，使用spring 联盟提供规范，必须实现接口MethodInterceptor
+ * * 环绕通知必须手动执行目标方法
+ */
+public class MyAspect implements MethodInterceptor {
+
+    @Override
+    public Object invoke(MethodInvocation mi) throws Throwable {
+        System.out.println(&quot;c_aop 前&quot;);
+        //必须手动的执行目标方法
+        Object obj = mi.proceed();
+        System.out.println(&quot;c_aop 后&quot;);
+        return obj;
+    }
+}
+// 测试：
+public class TestAOP {
+    @Test
+    public void demo01(){
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        //经过配置，按照以前的普通方式获得bean数据，就是代理bean对象
+        UserService userService = (UserService) applicationContext.getBean(&quot;userServiceId&quot;);
+        userService.addUser();
+        userService.updateUser();
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd&quot;&gt;
+
+    &lt;!-- 1 目标类 --&gt;
+    &lt;bean id=&quot;userServiceId&quot; class=&quot;com.xiaoyu.spring.learn.UserServiceImpl&quot;&gt;&lt;/bean&gt;
+    &lt;!-- 2 切面类（通知） --&gt;
+    &lt;bean id=&quot;myAspectId&quot; class=&quot;com.xiaoyu.spring.learn.MyAspect&quot;&gt;&lt;/bean&gt;
+    &lt;!-- 3 spring aop 编程 配置
+    * aop编程 &lt;aop:config&gt;
+            proxy-target-class=&quot;true&quot; 表示强制使用cglib
+    * &lt;aop:pointcut&gt; ：配置切入点,确定目标类上那些方法需要增强
+        expression ：切入点表达式，采用aspectJ（一种AOP规范）的切入点表达式
+            execution(* com.xiaoyu.spring.learn.UserServiceImpl.addUser())  指定一种方法增强
+            execution(* com.xiaoyu.spring.learn.UserServiceImpl.*())      所有代理对象方法增强
+        id : 切入点名称，提供给别人使用。
+    * &lt;aop:advisor&gt;: 这是一个特殊切面，【一个通知 和 一个切入点 结合】
+            advice-ref 通知的引用
+            pointcut-ref 切入点的引用
+    --&gt;
+    &lt;aop:config proxy-target-class=&quot;true&quot;&gt;
+        &lt;aop:pointcut id=&quot;myPointCut&quot; expression=&quot;execution(* com.xiaoyu.spring.learn.UserServiceImpl.*())&quot; /&gt;
+        &lt;aop:advisor advice-ref=&quot;myAspectId&quot; pointcut-ref=&quot;myPointCut&quot;/&gt;
+    &lt;/aop:config&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h2><a class="header" href="#使用-aspectj-框架生成代理和-spring-集成" id="使用-aspectj-框架生成代理和-spring-集成">使用 AspectJ 框架生成代理(和 spring 集成)</a></h2>
+<h3><a class="header" href="#准备工作" id="准备工作">准备工作</a></h3>
+<p>引入 jar 包</p>
+<ul>
+<li>http://www.mvnrepository.com/artifact/org.aspectj/aspectjrt</li>
+<li>http://www.mvnrepository.com/artifact/org.aspectj/aspectjweaver</li>
+</ul>
+<p>导入的 jar 包还有另一种说法, 对错存疑:
+[aop 联盟规范](http://mvnrepository.com/artifact/org.aopalliance/com.springsource.org.aopalliance/1.0.0, 还有实现类 spring-aop), 对应的 spring-aop 实现</p>
+<img src="p5.png" width="50%">
+<h3><a class="header" href="#aspectj-通知类型" id="aspectj-通知类型">AspectJ 通知类型</a></h3>
+<pre><code>定义6中通知类型，。
+    • before:前置通知(应用：各种校验)
+            在方法执行前执行，如果通知抛出异常，阻止方法运行
+    • afterReturning:后置通知(应用：常规数据处理)
+            方法正常返回后执行，如果方法中抛出异常，通知无法执行
+            必须在方法执行后才执行，所以可以获得方法的返回值。
+    • around:环绕通知(应用：十分强大，可以做任何事情)
+            方法执行前后分别执行，可以阻止方法的执行
+    • afterThrowing:抛出异常通知(应用：包装异常信息)
+            方法抛出异常后执行，如果方法没有抛出异常，无法执行
+    • after:最终通知(应用：清理现场)
+            方法执行完毕后执行，无论方法中是否出现异常
+</code></pre>
+<img src="p6.png" width="50%">
+<pre><code class="language-java">try{
+   //前置
+   Object = //环绕--手动执行目标方法
+   //后置(可以获得返回值)
+} catch(){
+   //抛出异常
+} finally{
+   //最终
+}
+
+</code></pre>
+<h3><a class="header" href="#aspectj-编程基于-xml" id="aspectj-编程基于-xml">AspectJ 编程,基于 xml</a></h3>
+<pre><code class="language-java">/**
+1.目标类
+2.切面类（不需要实现接口）
+3.spring配置
+4.测试
+*/
+// 接口：
+public interface UserService {
+    public void addUser();
+    public String updateUser();
+}
+// 实现类：
+public class UserServiceImpl implements UserService {
+    @Override
+    public void addUser() {
+        System.out.println(&quot;d_aspectj.a_xml addUser()&quot;);
+    }
+    @Override
+    public String updateUser() {
+        System.out.println(&quot;d_aspectj.a_xml updateUser()&quot;);
+        //int i = 1/ 0;
+        return &quot;xxxxx&quot;;
+    }
+}
+// 切面类：
+/**
+ * 切面类，定义需要通知，不用实现任何接口，但之后需要通过配置文件确定具体通知类型
+ */
+public class MyAspect{
+    //前置通知方法参数类型：org.aspectj.lang.JoinPoint，可以获得方法名等内容
+    public void myBefore(JoinPoint joinPoint){
+        System.out.println(&quot;前置通知 :&quot; + joinPoint.getSignature().getName());
+    }
+//  参数1，类型 JoinPoint 获得当前操作连接点详细内容
+//  参数2：类型Object，目标对象被增强方法返回值；名称通过 returning属性 确定【需要在配置文件中配置】
+    public void myAfterReturning(JoinPoint joinPoint,Object ret){
+        System.out.println(&quot;后置通知：&quot; + joinPoint.getSignature().getName() + &quot; , &quot; + ret);
+    }
+
+//环绕通知的增强内容方法签名有规定：
+// 1.修饰符：public； 2.返回值：Object； 3.方法参数：ProceedingJoinPoint joinPoint； 4.抛出异常：throws Throwable
+// 5.手动执行目标对象的被增强方法
+    public Object myAround(ProceedingJoinPoint joinPoint) throws Throwable{
+        System.out.println(&quot;环绕前&quot;);
+        //执行目标方法
+        Object obj = joinPoint.proceed();
+        System.out.println(&quot;环绕后&quot;);
+        return obj;
+    }
+
+//   参数1：类型 JoinPoint
+//   参数2：类型 Throwable ，名称通过 throwing属性确定名称
+    public void myAfterThrowing(JoinPoint joinPoint, Throwable e){
+        System.out.println(&quot;抛出异常通知：&quot; + joinPoint.getSignature().getName() + &quot; , &quot; + e.getMessage());
+    }
+    public void myAfter(JoinPoint joinPoint){
+        System.out.println(&quot;最终&quot;+ joinPoint.getSignature().getName() );
+    }
+
+}
+// 测试：
+public class TestXml {
+    @Test
+    public void demo01(){
+        String xmlPath = &quot;config/beans.xml&quot;;
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(xmlPath);
+        //正常从spring获得bean数据即可
+        UserService userService = (UserService) applicationContext.getBean(&quot;userServiceId&quot;);
+        userService.addUser();
+        userService.updateUser();
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd&quot;&gt;
+
+    &lt;!-- 1 目标类 --&gt;
+    &lt;bean id=&quot;userServiceId&quot; class=&quot;com.xiaoyu.spring.learn.UserServiceImpl&quot;&gt;&lt;/bean&gt;
+    &lt;!-- 2 切面类（通知） --&gt;
+    &lt;bean id=&quot;myAspectId&quot; class=&quot;com.xiaoyu.spring.learn.MyAspect&quot;&gt;&lt;/bean&gt;
+
+    &lt;aop:config&gt;
+    &lt;!-- 3 &lt;aop:aspect&gt; 进行aspectj编程
+            * ref 指定切面类
+    --&gt;
+        &lt;aop:aspect ref=&quot;myAspectId&quot;&gt;
+            &lt;!--
+                1 定义“切入点”，确定目标类上，最后需要增强的方法
+                2 aspect切面定义，确定切面类所有的通知
+                3 将通知 应用到 切入点上
+             --&gt;
+            &lt;!-- 切入点 --&gt;
+            &lt;aop:pointcut expression=&quot;execution(* com.itheima.d_aspectj.a_xml.*.*(..))&quot; id=&quot;myPointcut&quot;/&gt;
+            &lt;!-- 具体通知
+                1） 前置通知
+                    格式1：&lt;aop:before method=&quot;方法名称&quot; pointcut-ref=&quot;切入点引用&quot;/&gt;
+                    格式2：&lt;aop:before method=&quot;方法名称&quot; pointcut=&quot;切入点表达式&quot;/&gt;
+                    （前置通知方法参数类型：org.aspectj.lang.JoinPoint，可以获得方法名等内容。）
+                    例如：
+                        &lt;aop:before method=&quot;myBefore&quot; pointcut-ref=&quot;myPointcut&quot; /&gt;
+                2） 后置通知
+                    格式：&lt;aop:after-returning method=&quot;&quot; pointcut-ref=&quot;&quot; returning=&quot;参数2名称&quot;/&gt;
+                    例如：&lt;aop:after-returning method=&quot;myAfterReturning&quot; pointcut-ref=&quot;myPointcut&quot; returning=&quot;ret&quot;/&gt;
+                    通知方法参数：
+                        参数1，类型 JoinPoint 获得当前操作连接点详细内容
+                        参数2：类型Object，名称通过 returning配置项确定【即需要在配置文件中指定】
+                    public void myAfterReturning(JoinPoint joinPoint,Object ret)
+
+                3）环绕通知,通知方法有要求
+                    环绕必须手动的执行目标方法
+                    格式：&lt;aop:around method=&quot;&quot; pointcut-ref=&quot;&quot;/&gt;
+                    通知方法要求
+                        public Object myAround(ProceedingJoinPoint joinPoint) throws Throwable{
+
+                            // something...
+
+                            //执行目标方法
+                            Object obj = joinPoint.proceed();
+
+                            // something...
+
+                            return obj;
+                        }
+                    例如：
+                        &lt;aop:around method=&quot;myAround&quot; pointcut-ref=&quot;myPointcut&quot;/&gt;
+                4）抛出异常通知
+                    格式：&lt;aop:after-throwing method=&quot;&quot; pointcut-ref=&quot;&quot; throwing=&quot;参数2名称&quot;/&gt;
+                    通知方法参数
+                        参数1：类型 JoinPoint
+                        参数2：类型 Throwable ，名称通过 throwing属性确定名称
+                        public void myAfterThrowing(JoinPoint joinPoint, Throwable e){}
+                    例如：
+                        &lt;aop:after-throwing method=&quot;myAfterThrowing&quot; pointcut-ref=&quot;myPointcut&quot; throwing=&quot;e&quot;/&gt;
+                5）最终通知
+                    格式：&lt;aop:after method=&quot;&quot; pointcut-ref=&quot;&quot;/&gt;
+                    通知方法参数类型 JoinPoint
+            --&gt;
+            &lt;aop:after method=&quot;myAfter&quot; pointcut-ref=&quot;myPointcut&quot;/&gt;
+        &lt;/aop:aspect&gt;
+    &lt;/aop:config&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h3><a class="header" href="#aspectj-编程基于注解" id="aspectj-编程基于注解">AspectJ 编程,基于注解</a></h3>
+<pre><code class="language-java">/**
+1. 开启包扫描, 扫描注解类：@Service 、@Component
+配置文件要配置：&lt;context:component-scan&gt;&lt;/context:component-scan&gt;
+
+2. aspectj 注解自动代理：
+    @Aspect 、标识切面类
+    @PointCut、定义可复用的切入点表达式
+    @Before、前置
+    @AfterReturning 后置
+    @Around 环绕
+    @AfterThrowing 抛出异常
+    @After 最终
+3. 最后还要配置：
+    &lt;aop:aspectj-autoproxy&gt;&lt;/aop:aspectj-autoproxy&gt;
+*/
+
+// 接口：
+public interface UserService {
+    public void addUser();
+    public String updateUser();
+}
+// 实现类：
+@Service
+public class UserServiceImpl implements UserService {
+    @Override
+    public void addUser() {
+        System.out.println(&quot;d_aspectj.a_xml addUser()&quot;);
+    }
+    @Override
+    public String updateUser() {
+        System.out.println(&quot;d_aspectj.a_xml updateUser()&quot;);
+        //int i = 1/ 0;
+        return &quot;xxxx&quot;;
+    }
+}
+// 切面类：
+/**
+ * 切面类，定义需要通知，之后需要通过配置文件确定具体通知类型
+ */
+@Component //切面类不属于任何层，所以用通用的注解
+@Aspect    //表示此类是切面类
+public class MyAspect{
+
+    //定义可复用的切入点表达式使用@Pointcut。其他增强内容方法的注解直接调用方法名myPointCut() eg：@before(&quot;myPointCut()&quot;)
+    @Pointcut(&quot;execution(* com.xiaoyu.spring.learn.*.*(..))&quot;)
+    private void myPointCut(){}
+
+    //  这个注解只有一个属性value=&quot;&quot;,可以省略属性名value，直接写值
+    //@Before(&quot;execution(* com.xiaoyu.spring.learn.*.*(..))&quot;)
+    public void myBefore(JoinPoint joinPoint){
+        System.out.println(&quot;前置通知 :&quot; + joinPoint.getSignature().getName());
+    }
+
+    //这个注解有多个属性，不能省略属性名
+    //@AfterReturning(value=&quot;execution(* com.xiaoyu.spring.learn.*.*(..))&quot;,returning=&quot;ret&quot;)
+    public void myAfterReturning(JoinPoint joinPoint,Object ret){
+        System.out.println(&quot;后置通知：&quot; + joinPoint.getSignature().getName() + &quot; , &quot; + ret);
+    }
+
+    //这里的注解直接调用了可复用的切入点表达式，直接调用对应的方法
+    //@Around(&quot;myPointCut()&quot;)
+    public Object myAround(ProceedingJoinPoint joinPoint) throws Throwable{
+        System.out.println(&quot;环绕前&quot;);
+        //执行目标方法
+        Object obj = joinPoint.proceed();
+        System.out.println(&quot;环绕后&quot;);
+        return obj;
+    }
+
+    //注解调用的是可复用的切入点表达式
+    //@AfterThrowing(value=&quot;myPointCut()&quot;,throwing=&quot;e&quot;)
+    public void myAfterThrowing(JoinPoint joinPoint, Throwable e){
+        System.out.println(&quot;抛出异常通知：&quot; + joinPoint.getSignature().getName() + &quot; , &quot; + e.getMessage());
+    }
+
+    @After(&quot;myPointCut()&quot;)
+    public void myAfter(JoinPoint joinPoint){
+        System.out.println(&quot;最终&quot;+ joinPoint.getSignature().getName() );
+    }
+}
+// 测试：
+//要引入spring-test的jar包
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations=&quot;classpath:config/beans.xml&quot;)
+public class TestAnno {
+    @Autowired
+    private UserService userService;
+    @Test
+    public void demo01(){
+        userService.addUser();
+        userService.updateUser();
+    }
+}
+
+</code></pre>
+<p>为了让注解生效, 需要配置注解扫描</p>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+
+    &lt;!-- 1.1 用注解标识目标类
+            @Service      // service层注解
+            public class UserServiceImpl
+    --&gt;
+    &lt;!-- 1.2 为了让添加注解类生效，必须开启包扫描。需要context命名空间 --&gt;
+    &lt;context:component-scan base-package=&quot;com.xiaoyu.spring.learn&quot;&gt;&lt;/context:component-scan&gt;
+    &lt;!-- 2 使用注解
+        @Component  // 切面类不属于任何层，使用通用注解
+        public class MyAspect{
+    --&gt;
+    &lt;!-- 3
+        3.1 &lt;aop:aspect ref=&quot;myAspectId&quot;&gt;
+            @Component      切面类不属于任何层
+            @Aspect        标识切面类（表示让切面类成为切面）
+            public class MyAspect{
+        3.2 确定通知
+            前置通知
+                @Before(&quot;切入点表达式&quot;)  等效
+                &lt;aop:before method=&quot;方法名称&quot; pointcut=&quot;切入点表达式&quot;/&gt;
+            后置通知
+                @AfterReturning(value=&quot;表达式&quot;,returning=&quot;参数2名称&quot;)
+            环绕
+                @Around(&quot;myPointCut()&quot;)
+            抛出异常
+                @AfterThrowing(value=&quot;myPointCut()&quot;,throwing=&quot;参数2名称&quot;)
+            最终
+                @After(&quot;myPointCut()&quot;)
+        3.3 声明公共切入点表达式(可以复用)
+            @Pointcut(&quot;execution(* com.itheima.d_aspectj.b_annotation.*.*(..))&quot;)
+            private void myPointCut(){}
+    --&gt;
+    &lt;!-- 标明使用注解开发aspectj 必须进行的配置 --&gt;
+    &lt;aop:aspectj-autoproxy&gt;&lt;/aop:aspectj-autoproxy&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h1><a class="header" href="#jdbc" id="jdbc">JDBC</a></h1>
+<p>references: <a href="https://blog.csdn.net/fysuccess/article/details/66972554">1</a></p>
+<h2><a class="header" href="#数据库连接池" id="数据库连接池">数据库连接池</a></h2>
+<h3><a class="header" href="#c3p0" id="c3p0">C3P0</a></h3>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;c3p0&lt;/groupId&gt;
+  &lt;artifactId&gt;c3p0&lt;/artifactId&gt;
+  &lt;version&gt;0.9.1.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot; destroy-method=&quot;close&quot;&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;${jdbc.url}&quot; /&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;${jdbc.driverClassName}&quot; /&gt;
+        &lt;property name=&quot;user&quot; value=&quot;${jdbc.username}&quot; /&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot; /&gt;
+        &lt;!--连接池中保留的最大连接数。Default: 15 --&gt;
+        &lt;property name=&quot;maxPoolSize&quot; value=&quot;100&quot; /&gt;
+        &lt;!--连接池中保留的最小连接数。--&gt;
+        &lt;property name=&quot;minPoolSize&quot; value=&quot;1&quot; /&gt;
+        &lt;!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 --&gt;
+        &lt;property name=&quot;initialPoolSize&quot; value=&quot;10&quot; /&gt;
+        &lt;!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 --&gt;
+        &lt;property name=&quot;maxIdleTime&quot; value=&quot;30&quot; /&gt;
+        &lt;!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 --&gt;
+        &lt;property name=&quot;acquireIncrement&quot; value=&quot;5&quot; /&gt;
+        &lt;!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。Default: 0--&gt;
+        &lt;property name=&quot;maxStatements&quot; value=&quot;0&quot; /&gt;
+        &lt;!--每60秒检查所有连接池中的空闲连接。Default: 0 --&gt;
+        &lt;property name=&quot;idleConnectionTestPeriod&quot; value=&quot;60&quot; /&gt;
+        &lt;!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 --&gt;
+        &lt;property name=&quot;acquireRetryAttempts&quot; value=&quot;30&quot; /&gt;
+        &lt;!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。Default: false--&gt;
+        &lt;property name=&quot;breakAfterAcquireFailure&quot; value=&quot;true&quot; /&gt;
+        &lt;!--因性能消耗大请只在需要的时候使用它。Default: false --&gt;
+        &lt;property name=&quot;testConnectionOnCheckout&quot;  value=&quot;false&quot; /&gt;
+    &lt;/bean&gt;
+</code></pre>
+<h3><a class="header" href="#dbcp" id="dbcp">DBCP</a></h3>
+<p>引入 jar</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;commons-dbcp&lt;/groupId&gt;
+  &lt;artifactId&gt;commons-dbcp&lt;/artifactId&gt;
+  &lt;version&gt;1.4&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;commons-collections&lt;/groupId&gt;
+  &lt;artifactId&gt;commons-collections&lt;/artifactId&gt;
+  &lt;version&gt;3.2.2&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;commons-pool&lt;/groupId&gt;
+  &lt;artifactId&gt;commons-pool&lt;/artifactId&gt;
+  &lt;version&gt;1.6&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;bean id=&quot;dataSource&quot; destroy-method=&quot;close&quot; class=&quot;org.apache.commons.dbcp.BasicDataSource&quot;&gt;
+       &lt;property name=&quot;driverClassName&quot; value=&quot;${jdbc.driverClassName}&quot;/&gt;
+       &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot;/&gt;
+       &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot;/&gt;
+       &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;/&gt;
+       &lt;!-- 池启动时创建的连接数量 --&gt;
+       &lt;property name=&quot;initialSize&quot; value=&quot;5&quot;/&gt;
+       &lt;!-- 同一时间可以从池分配的最多连接数量。设置为0时表示无限制。 --&gt;
+       &lt;property name=&quot;maxActive&quot; value=&quot;50&quot;/&gt;
+       &lt;!-- 池里不会被释放的最多空闲连接数量。设置为0时表示无限制。 --&gt;
+       &lt;property name=&quot;maxIdle&quot; value=&quot;10&quot;/&gt;
+       &lt;!-- 在不新建连接的条件下，池中保持空闲的最少连接数。 --&gt;
+       &lt;property name=&quot;minIdle&quot; value=&quot;3&quot;/&gt;
+       &lt;!-- 设置自动回收超时连接 --&gt;
+       &lt;property name=&quot;removeAbandoned&quot; value=&quot;true&quot; /&gt;
+       &lt;!-- 自动回收超时时间(以秒数为单位) --&gt;
+       &lt;property name=&quot;removeAbandonedTimeout&quot; value=&quot;200&quot;/&gt;
+       &lt;!-- 设置在自动回收超时连接的时候打印连接的超时错误  --&gt;
+       &lt;property name=&quot;logAbandoned&quot; value=&quot;true&quot;/&gt;
+       &lt;!-- 等待超时以毫秒为单位，在抛出异常之前，池等待连接被回收的最长时间（当没有可用连接时）。设置为-1表示无限等待。--&gt;
+       &lt;property name=&quot;maxWait&quot; value=&quot;100&quot;/&gt;
+     &lt;/bean&gt;
+</code></pre>
+<h3><a class="header" href="#druid" id="druid">Druid</a></h3>
+<p>数据源配置</p>
+<pre><code class="language-xml">&lt;bean id=&quot;dataSource&quot; class=&quot;com.alibaba.druid.pool.DruidDataSource&quot; init-method=&quot;init&quot; destroy-method=&quot;close&quot;&gt;
+        &lt;!-- 基本属性 url、user、password --&gt;
+        &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot; /&gt;
+        &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot; /&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot; /&gt;
+        &lt;!-- 配置初始化大小、最小、最大 --&gt;
+        &lt;property name=&quot;initialSize&quot; value=&quot;1&quot; /&gt;
+        &lt;property name=&quot;minIdle&quot; value=&quot;1&quot; /&gt;
+        &lt;property name=&quot;maxActive&quot; value=&quot;20&quot; /&gt;
+        &lt;!-- 配置获取连接等待超时的时间 --&gt;
+        &lt;property name=&quot;maxWait&quot; value=&quot;60000&quot; /&gt;
+        &lt;!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 --&gt;
+        &lt;property name=&quot;timeBetweenEvictionRunsMillis&quot; value=&quot;60000&quot; /&gt;
+        &lt;!-- 配置一个连接在池中最小生存的时间，单位是毫秒 --&gt;
+        &lt;property name=&quot;minEvictableIdleTimeMillis&quot; value=&quot;300000&quot; /&gt;
+        &lt;!-- 打开PSCache，并且指定每个连接上PSCache的大小 --&gt;
+        &lt;property name=&quot;poolPreparedStatements&quot; value=&quot;true&quot; /&gt;
+        &lt;property name=&quot;maxPoolPreparedStatementPerConnectionSize&quot; value=&quot;20&quot; /&gt;
+        &lt;!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 --&gt;
+        &lt;property name=&quot;filters&quot; value=&quot;stat&quot; /&gt;
+    &lt;/bean&gt;
+</code></pre>
+<p>web.xml 中的配置</p>
+<pre><code class="language-xml">&lt;!--druid WebStatFilter用于采集web-jdbc关联监控的数据--&gt;
+      &lt;filter&gt;
+        &lt;filter-name&gt;DruidWebStatFilter&lt;/filter-name&gt;
+        &lt;filter-class&gt;com.alibaba.druid.support.http.WebStatFilter&lt;/filter-class&gt;
+        &lt;init-param&gt;
+          &lt;param-name&gt;exclusions&lt;/param-name&gt;
+          &lt;param-value&gt;*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*&lt;/param-value&gt;
+        &lt;/init-param&gt;
+      &lt;/filter&gt;
+      &lt;filter-mapping&gt;
+        &lt;filter-name&gt;DruidWebStatFilter&lt;/filter-name&gt;
+        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+      &lt;/filter-mapping&gt;
+      &lt;!--druid访问监控界面 /druid/index.html--&gt;
+      &lt;servlet&gt;
+        &lt;servlet-name&gt;DruidStatView&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;com.alibaba.druid.support.http.StatViewServlet&lt;/servlet-class&gt;
+      &lt;/servlet&gt;
+      &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DruidStatView&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/druid/*&lt;/url-pattern&gt;
+      &lt;/servlet-mapping&gt;
+</code></pre>
+<h3><a class="header" href="#bonecp" id="bonecp">BoneCP</a></h3>
+<p>引入 jar</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;com.jolbox&lt;/groupId&gt;
+  &lt;artifactId&gt;bonecp-spring&lt;/artifactId&gt;
+  &lt;version&gt;0.8.0.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;!-- BoneCp Datasource --&gt;
+&lt;bean id=&quot;dataSourceBoneCp&quot; class=&quot;com.jolbox.bonecp.BoneCPDataSource&quot; destroy-method=&quot;close&quot;&gt;
+ &lt;property name=&quot;driverClass&quot; value=&quot;${db.driverClass}&quot; /&gt;
+ &lt;property name=&quot;jdbcUrl&quot; value=&quot;${db.url}&quot; /&gt;
+ &lt;property name=&quot;username&quot; value=&quot;${db.username}&quot; /&gt;
+ &lt;property name=&quot;password&quot; value=&quot;${db.password}&quot; /&gt;
+ &lt;property name=&quot;idleConnectionTestPeriodInMinutes&quot; value=&quot;2&quot; /&gt;
+ &lt;property name=&quot;idleMaxAgeInMinutes&quot; value=&quot;2&quot; /&gt;
+ &lt;property name=&quot;maxConnectionsPerPartition&quot; value=&quot;2&quot; /&gt;
+ &lt;property name=&quot;minConnectionsPerPartition&quot; value=&quot;0&quot; /&gt;
+ &lt;property name=&quot;partitionCount&quot; value=&quot;2&quot; /&gt;
+ &lt;property name=&quot;acquireIncrement&quot; value=&quot;1&quot; /&gt;
+ &lt;property name=&quot;statementsCacheSize&quot; value=&quot;100&quot; /&gt;
+ &lt;property name=&quot;lazyInit&quot; value=&quot;true&quot;/&gt;
+ &lt;property name=&quot;maxConnectionAgeInSeconds&quot; value=&quot;20&quot;/&gt;
+ &lt;property name=&quot;defaultReadOnly&quot; value=&quot;true&quot;/&gt;
+&lt;/bean&gt;
+</code></pre>
+<h3><a class="header" href="#hikaricp" id="hikaricp">HikariCP</a></h3>
+<pre><code class="language-xml">&lt;!-- Hikari Datasource --&gt;
+&lt;bean id=&quot;dataSourceHikari&quot; class=&quot;com.zaxxer.hikari.HikariDataSource&quot;  destroy-method=&quot;shutdown&quot;&gt;
+ &lt;!-- &lt;property name=&quot;driverClassName&quot; value=&quot;${db.driverClass}&quot; /&gt; --&gt; &lt;!-- 无需指定，除非系统无法自动识别 --&gt;
+ &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&quot; /&gt;
+ &lt;property name=&quot;username&quot; value=&quot;${db.username}&quot; /&gt;
+ &lt;property name=&quot;password&quot; value=&quot;${db.password}&quot; /&gt;
+  &lt;!-- 连接只读数据库时配置为true， 保证安全 --&gt;
+ &lt;property name=&quot;readOnly&quot; value=&quot;false&quot; /&gt;
+ &lt;!-- 等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 缺省:30秒 --&gt;
+ &lt;property name=&quot;connectionTimeout&quot; value=&quot;30000&quot; /&gt;
+ &lt;!-- 一个连接idle状态的最大时长（毫秒），超时则被释放（retired），缺省:10分钟 --&gt;
+ &lt;property name=&quot;idleTimeout&quot; value=&quot;600000&quot; /&gt;
+ &lt;!-- 一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒，参考MySQL wait_timeout参数（show variables like '%timeout%';） --&gt;
+ &lt;property name=&quot;maxLifetime&quot; value=&quot;1800000&quot; /&gt;
+ &lt;!-- 连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count) --&gt;
+ &lt;property name=&quot;maximumPoolSize&quot; value=&quot;15&quot; /&gt;
+&lt;/bean&gt;
+</code></pre>
+<h2><a class="header" href="#jdbctemplate" id="jdbctemplate">JdbcTemplate</a></h2>
+<h3><a class="header" href="#quickstart-1" id="quickstart-1">quickstart</a></h3>
+<ul>
+<li>jar 包: spring-jdbc, spring-tx, 数据库驱动, 连接池 jar</li>
+</ul>
+<pre><code class="language-java">public class TestJDBCTemplate {
+
+    @Test
+    public void test1() {
+
+        // JDBC模板依赖于连接池来获得数据的连接，所以必须先要构造连接池
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(&quot;com.mysql.jdbc.Driver&quot;);
+        dataSource.setUrl(&quot;jdbc:mysql://localhost:3306/spring&quot;);
+        dataSource.setUsername(&quot;root&quot;);
+        dataSource.setPassword(&quot;123456&quot;);
+
+        // 创建JDBC模板
+        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        // 这里也可以使用构造方法
+        jdbcTemplate.setDataSource(dataSource);
+
+        // sql语句
+        String sql = &quot;select count(*)  from user&quot;;
+        Long num = (long) jdbcTemplate.queryForObject(sql, Long.class);
+
+        System.out.println(num);
+
+    }
+
+}
+</code></pre>
+<p>使用 spring 的特性后</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+    xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd&quot;&gt;
+
+    &lt;!-- IOC和DI的注解扫描 --&gt;
+    &lt;context:component-scan base-package=&quot;com.spring&quot; &gt;&lt;/context:component-scan&gt;
+
+    &lt;!-- 打开AOP的注解 --&gt;
+    &lt;aop:aspectj-autoproxy&gt;&lt;/aop:aspectj-autoproxy&gt;
+    &lt;!-- c3p0数据源 --&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot; &gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql://localhost:3306/spring_03&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;password&quot; value=&quot;123456&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;jdbcTemplate&quot; class=&quot;org.springframework.jdbc.core.JdbcTemplate&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;userDao&quot; class=&quot;com.spring.dao.UserDao&quot;&gt;
+        &lt;property name=&quot;jdbcTemplate&quot; ref=&quot;jdbcTemplate&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;userService&quot; class=&quot;com.spring.service.UserService&quot;&gt;
+        &lt;property name=&quot;userDao&quot; ref=&quot;userDao&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+
+</code></pre>
+<pre><code class="language-java">public class UserDao {
+
+    private JdbcTemplate jdbcTemplate;
+
+    public JdbcTemplate getJdbcTemplate() {
+        return jdbcTemplate;
+    }
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public void addUser(User user) {
+
+        String sql = &quot;insert into user (username, password) values (?, ?)&quot;;
+
+        jdbcTemplate.update(sql, user.getUsername(), user.getPassword());
+
+    }
+
+}
+</code></pre>
+<h3><a class="header" href="#dao-实现类继承-jdbcdaosupport-支持类" id="dao-实现类继承-jdbcdaosupport-支持类">Dao 实现类继承 JdbcDaoSupport 支持类</a></h3>
+<pre><code class="language-java">// User:
+public class User {
+    private Integer id;
+    private String username;
+    private String password;
+    getter&amp;setter
+}
+// UserDao :
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+public class UserDao extends JdbcDaoSupport {
+    //继承了JdbcDaoSupport工具类，省略如下代码，相应配置要更改
+//  private JdbcTemplate jdbcTemplate;
+//  public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+//      this.jdbcTemplate = jdbcTemplate;
+//  }
+
+    public List&lt;User&gt; findAll(){
+        return getJdbcTemplate().query(&quot;select * from t_user&quot;, ParameterizedBeanPropertyRowMapper.newInstance(User.class));
+    }
+
+}
+// 测试：
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations=&quot;classpath:config/beans.xml&quot;)
+public class TestSupport {
+        @Autowired
+        @Qualifier(&quot;userDaoId&quot;)
+        private UserDao userDao;
+        @Test
+        public void demo01(){
+            List&lt;User&gt; findAll = userDao.findAll();
+            for (User user : findAll) {
+                System.out.println(user);
+            }
+        }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;!-- 配置数据源 c3p0 --&gt;
+    &lt;bean id=&quot;dataSourceId&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring_day02_db&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;password&quot; value=&quot;1234&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;!--这里删除了JdbcTemplate的bean--&gt;
+
+    &lt;!-- dao , 将数据源DataSource 注入给dao，dao没有相关属性，就给它的父类 JdbcDaoSupport，而JdbcDaoSupport底层使用数据源创建了Jdbc模板 --&gt;
+    &lt;bean id=&quot;userDaoId&quot; class=&quot;com.itheima.e_jdbc.d_support.UserDao&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSourceId&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h3><a class="header" href="#数据库连接配置放入-properties-文件" id="数据库连接配置放入-properties-文件">数据库连接配置放入 Properties 文件</a></h3>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+    &lt;!-- 加载properties文件 --&gt;
+    &lt;context:property-placeholder location=&quot;classpath:config/jdbc.properties&quot;/&gt;
+
+    &lt;!-- 配置数据源 c3p0，使用配置文件中内容   ${key} --&gt;
+    &lt;bean id=&quot;dataSourceId&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;${jdbc.driverClass}&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;${jdbc.jdbcUrl}&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;user&quot; value=&quot;${jdbc.user}&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- dao , 将数据源DataSource 注入给dao父类 JdbcDaoSupport，底层使用数据源创建模板 --&gt;
+    &lt;bean id=&quot;userDaoId&quot; class=&quot;com.itheima.e_jdbc.e_properties.UserDao&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSourceId&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<p>properties 文件：</p>
+<pre><code>jdbc.driverClass=com.mysql.jdbc.Driver
+jdbc.jdbcUrl=jdbc:mysql:///spring_day02_db
+jdbc.user=root
+jdbc.password=1234
+</code></pre>
+<h1><a class="header" href="#事务管理" id="事务管理">事务管理</a></h1>
+<h2><a class="header" href="#事务实现原理" id="事务实现原理">事务实现原理</a></h2>
+<p>Java 中我们平时用的最多的就是在 service 层的增删改方法上添加@Transactional 注解，让 spring 去帮我们管理事务。</p>
+<p>底层会给我们的 service 组件生成一个对应的 proxy 动态代理，这样所有对 service 组件的方法都由它对应的 proxy 来接管，当 proxy 在调用对应业务方法比如 add()时，proxy 就会基于 AOP 的思想在调用真正的业务方法前执行 setAutoCommit（false）打开事务。</p>
+<p>然后在业务方法执行完后执行 commit 提交事务，当在执行业务方法的过程中发生异常时就会执行 rollback 来回滚事务。</p>
+<h2><a class="header" href="#transactiondefinition-事务传播" id="transactiondefinition-事务传播">TransactionDefinition 事务传播</a></h2>
+<p>@transaction(propagation=...)</p>
+<p>Spring 在 TransactionDefinition 接口中规定了 7 种类型的事务传播行为, <font color="red">它们规定了事务方法和事务方法发生嵌套调用时是否加入调用方的事务</font></p>
+<p>传播行为：一个业务 A (事务方法A)，调用另一个业务 B (带有事务)，B是否加入 A 的事务</p>
+<ul>
+<li>
+<p><code>PROPAGATION_REQUIRED</code> required 必须 （默认值）</p>
+<p>如果 A 使用事务，那么 B 使用同一个事务 (此时 B 的事务配置都无效, 被 A 的事务覆盖了)。如果 A 没有事务，B 创建一个新的事务。</p>
+</li>
+<li>
+<p><code>PROPAGATION_REQUIRES_NEW</code> requires new 必须新的</p>
+<p>无论 a 是否存在事务, b 都将创建新的事务</p>
+</li>
+<li>
+<p><code>PROPAGATION_NESTED</code> nested 嵌套</p>
+<p>AB 使用嵌套事务，底层使用 Savepoint</p>
+</li>
+<li>
+<p>PROPAGATION_SUPPORTS supports 支持</p>
+<p>A 使用事务，B 使用同一个事务。A 没有事务，B 将以非事务执行</p>
+</li>
+<li>
+<p>PROPAGATION_NOT_SUPPORTED not supported 不支持</p>
+<p>无论 a 是否存在事务, b 都以非事务执行</p>
+</li>
+<li>
+<p>PROPAGATION_NEVER never 从不</p>
+<p>A 使用事务，B 将抛异常。A 没有事务，B 将以非事务执行</p>
+</li>
+<li>
+<p>PROPAGATION_MANDATORY mandatory 强制</p>
+<p>A 使用事务，B 使用同一个事务。A 没有事务，B 抛出异常</p>
+</li>
+</ul>
+<h2><a class="header" href="#事务相关-api" id="事务相关-api">事务相关 api</a></h2>
+<p>三个顶级接口(规范)</p>
+<p>涉及到的 jar: spring-tx, spring-jdbc, orm 的 jar</p>
+<h3><a class="header" href="#platformtransactionmanager" id="platformtransactionmanager">PlatformTransactionManager</a></h3>
+<p>spring dao 使用不同技术，需要的事务管理器不同。JDBC 事务管理器：DataSourceTransactionManager, Hibernate 事务管理器：HibernateTransactionManager</p>
+<pre><code class="language-java">// 事务状态 需要通过 “事务详情”的配置，从而获得事务状态，通过状态维护事务。
+TransactionStatus getTransaction(TransactionDefinition definition);
+conn.setAutocommit(false) // jdbc开启事务
+commit(TransactionStatus) //提交事务
+session.beginTransaction() //hibernate开启事务
+rollback(TransactionStatus) //回滚事务
+
+</code></pre>
+<h3><a class="header" href="#transactionstatus" id="transactionstatus">TransactionStatus</a></h3>
+<p>事务状态，一般是 spring 底层自动使用</p>
+<h3><a class="header" href="#使用-jdbc-操作事务" id="使用-jdbc-操作事务">使用 jdbc 操作事务</a></h3>
+<img src="p7.png" width="50%">
+<pre><code class="language-java">// 某个事务, 包括ABCD 四个步骤(一个整体事务)
+Connection conn = null;
+try{
+    // 获得连接
+    conn = 连接池
+    //#1 开启事务, 手动提交
+    conn.setAutocommit(false);
+
+    A
+    B
+    C
+    D
+
+} catch(){
+    //#2 回滚事务
+    conn.rollback();
+} finally{
+    //#3 提交事务
+    conn.commit();
+
+    //释放资源
+}
+
+//--Savepoint （保存点/回滚点）
+// 在一个事务中, AB（必选），CD（可选）
+Connection conn = null;
+Savepoint savepoint = null;
+try{
+    // 获得连接
+    conn = 连接池
+    //#1 开启事务, 设置手动提交
+    conn.setAutocommit(false);
+
+    A
+    B
+
+    //#2 设置回滚点
+    savepoint = conn.setSavepoint();
+
+    C
+    D
+
+} catch(){
+    if(savepoint != null){
+        // savepoint 不为空, 证明 AB成功，CD异常
+        // 回滚到CD之前
+        conn.rollback(savepoint);
+    } else {
+        // AB异常，回滚到开始
+        conn.rollback();
+    }
+} finally{
+    //#4 提交事务
+    conn.commit();
+
+    //释放资源
+}
+
+
+</code></pre>
+<h2><a class="header" href="#事务相关案例-转账" id="事务相关案例-转账">事务相关案例-转账</a></h2>
+<h3><a class="header" href="#准备" id="准备">准备</a></h3>
+<img src="p8.png" width="50%">
+<p>依赖:</p>
+<ul>
+<li>spring-core, spring-beans, spring-context, spring-context-support, (spring-web)</li>
+<li>spring-test</li>
+<li>spring-jdbc, spring-tx</li>
+<li>aop 联盟规范接口, spring-aop(spring 实现); aspectj 规范接口, spring-aspect(spring 实现);</li>
+<li>数据库驱动, 连接池</li>
+</ul>
+<p>没有事务的代码</p>
+<pre><code class="language-java">AccountDao接口：
+public interface AccountDao {
+    /**
+     * 汇款
+     * @param outer 汇款人
+     * @param money
+     */
+    public void out(String outer , int money);
+    /**
+     * 收款
+     * @param inner 收款收款人
+     * @param money
+     */
+    public void in(String inner , int money);
+
+}
+AccountDao实现：
+public class AccountDaoImpl extends JdbcDaoSupport implements AccountDao {
+    @Override
+    public void out(String outer, int money) {
+        this.getJdbcTemplate().update(&quot;update account set money = money - ? where username = ?&quot;, money,outer);
+    }
+    @Override
+    public void in(String inner, int money) {
+        this.getJdbcTemplate().update(&quot;update account set money = money + ? where username = ?&quot;, money,inner);
+    }
+}
+AccountService接口：
+public interface AccountService {
+    /**
+     * 转账
+     * @param outer 汇款人
+     * @param inner 收款人
+     * @param mo
+     */
+    public void transfer(String outer,String inner,int money);
+
+}
+AccountService实现：
+public class AccountServiceImpl implements AccountService {
+    private AccountDao accountDao;
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
+    @Override
+    public void transfer(String outer, String inner, int money) {
+        //两个操作
+        accountDao.out(outer, money);
+        // 模拟断电
+        //int i = 1/0;
+        accountDao.in(inner, money);
+    }
+}
+
+测试：
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations=&quot;classpath:applicationContext.xml&quot;)
+public class TestApp {
+    @Autowired
+    private AccountService accountService;
+    @Test
+    public void demo01(){
+        accountService.transfer(&quot;jack&quot;, &quot;rose&quot;, 100);
+    }
+
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;!-- 1.数据源 --&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring_day03_db&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;password&quot; value=&quot;1234&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 2.dao，数据源配置给dao--&gt;
+    &lt;bean id=&quot;accountDao&quot; class=&quot;com.itheima.dao.impl.AccountDaoImpl&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 3.service--&gt;
+    &lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot;&gt;
+        &lt;property name=&quot;accountDao&quot; ref=&quot;accountDao&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h3><a class="header" href="#手动开发事务" id="手动开发事务">手动开发事务</a></h3>
+<pre><code class="language-java">Dao接口：
+public interface AccountDao {
+    /**
+     * 汇款
+     * @param outer 汇款人
+     * @param money
+     */
+    public void out(String outer , int money);
+    /**
+     * 收款
+     * @param inner 收款收款人
+     * @param money
+     */
+    public void in(String inner , int money);
+}
+Dao实现类：
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import com.itheima.dao.AccountDao;
+public class AccountDaoImpl extends JdbcDaoSupport implements AccountDao {
+    @Override
+    public void out(String outer, int money) {
+        this.getJdbcTemplate().update(&quot;update account set money = money - ? where username = ?&quot;, money,outer);
+    }
+    @Override
+    public void in(String inner, int money) {
+        this.getJdbcTemplate().update(&quot;update account set money = money + ? where username = ?&quot;, money,inner);
+    }
+}
+Service接口：
+public interface AccountService {
+    /**
+     * 转账
+     * @param outer 汇款人
+     * @param inner 收款人
+     * @param mo
+     */
+    public void transfer(String outer,String inner,int money);
+}
+service实现类：
+public class AccountServiceImpl implements AccountService {
+    private AccountDao accountDao;
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
+    private TransactionTemplate transactionTemplate;
+    public void setTransactionTemplate(TransactionTemplate transactionTemplate) {
+        this.transactionTemplate = transactionTemplate;
+    }
+    @Override   //手动将参数改成final的；
+    public void transfer(final String outer, final String inner, final int money) {
+        transactionTemplate.execute(new TransactionCallbackWithoutResult() {//没有返回结果的事务回调对象，匿名内部类
+            @Override
+            public void doInTransactionWithoutResult(TransactionStatus ts) {//业务代码
+                //两个操作
+                accountDao.out(outer, money);
+                // 模拟断电
+                //int i = 1/0;
+                accountDao.in(inner, money);
+            }
+        });
+    }
+}
+测试：
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations=&quot;classpath:applicationContext.xml&quot;)
+public class TestApp {
+    @Autowired
+    private AccountService accountService;
+    @Test
+    public void demo01(){
+        accountService.transfer(&quot;jack&quot;, &quot;rose&quot;, 100);
+    }
+}
+
+
+</code></pre>
+<pre><code class="language-xml">&lt;!-- 配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;!-- 1.数据源，连接池 --&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;password&quot; value=&quot;1234&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 2.dao--&gt;
+    &lt;bean id=&quot;accountDao&quot; class=&quot;com.xiaoyu.spring.learn.AccountDaoImpl&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 3.service--&gt;
+    &lt;bean id=&quot;accountService&quot; class=&quot;com.xiaoyu.spring.learn.AccountServiceImpl&quot;&gt;
+        &lt;property name=&quot;accountDao&quot; ref=&quot;accountDao&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;transactionTemplate&quot; ref=&quot;transactionTemplate&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 4 创建模板，需要注入txManager --&gt;
+    &lt;bean id=&quot;transactionTemplate&quot; class=&quot;org.springframework.transaction.support.TransactionTemplate&quot;&gt;
+        &lt;property name=&quot;transactionManager&quot; ref=&quot;txManager&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 5 配置事务管理器,需要Connection连接，连接从连接池 --&gt;
+    &lt;bean id=&quot;txManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h3><a class="header" href="#半自动事务生成代理" id="半自动事务生成代理">半自动事务(生成代理)</a></h3>
+<p>代码无需改动, 就是没有事务的代码</p>
+<p>主要修改配置文件</p>
+<pre><code class="language-xml">配置：
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;!-- 1.数据源 --&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;password&quot; value=&quot;1234&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 2.dao--&gt;
+    &lt;bean id=&quot;accountDao&quot; class=&quot;com.xiaoyu.spring.learn.AccountDaoImpl&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 3.service--&gt;
+    &lt;bean id=&quot;accountService&quot; class=&quot;com.xiaoyu.spring.learn.service.impl.AccountServiceImpl&quot;&gt;
+        &lt;property name=&quot;accountDao&quot; ref=&quot;accountDao&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 4 手动代理
+    * TransactionProxyFactoryBean 生产一个具有事务管理能力的代理类。
+    ** 1) 提供事务管理，管理事务 ：transactionManager
+    ** 2) 接口：proxyInterfaces
+    ** 3) 目标类：target
+    ** 4) 事务详情（事务属性）：transactionAttributes ,需要类型Properties
+        prop.key : 给指定方法配置详情，直接编写方法名称【不带（）】。
+            例如：transfer 指定方法名
+        prop.text: 详情（详情需要格式）
+            格式：PROPAGATION,ISOLATION,readOnly,-Exception,+Exception
+                传播行为        隔离级别        是否只读    -有异常就回滚     +有异常仍然提交
+        例如：
+            &lt;prop key=&quot;transfer&quot;&gt;PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ&lt;/prop&gt;
+                传播行为和隔离级别 都是默认
+    --&gt;
+    &lt;bean id=&quot;proxyService&quot; class=&quot;org.springframework.transaction.interceptor.TransactionProxyFactoryBean&quot;&gt;
+        &lt;property name=&quot;transactionManager&quot; ref=&quot;txManager&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;proxyInterfaces&quot; value=&quot;com.itheima.service.AccountService&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;target&quot; ref=&quot;accountService&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;transactionAttributes&quot;&gt;
+            &lt;props&gt;
+                &lt;prop key=&quot;transfer&quot;&gt;PROPAGATION_REQUIRED,ISOLATION_REPEATABLE_READ&lt;/prop&gt;
+            &lt;/props&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 5 事务管理器 --&gt;
+    &lt;bean id=&quot;txManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+
+</code></pre>
+<h3><a class="header" href="#全自动事务基于-xml" id="全自动事务基于-xml">全自动事务基于 xml</a></h3>
+<p>同样代码无需改动, 只需设置好配置文件</p>
+<p>配置文件需要添加约束
+xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd&quot;&gt;
+
+    &lt;!-- 1.数据源 --&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring_day03_db&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;password&quot; value=&quot;1234&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 2.dao--&gt;
+    &lt;bean id=&quot;accountDao&quot; class=&quot;com.itheima.dao.impl.AccountDaoImpl&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 3.service--&gt;
+    &lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot;&gt;
+        &lt;property name=&quot;accountDao&quot; ref=&quot;accountDao&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 4 使用aop进行事务管理 --&gt;
+    &lt;!-- 4.1 事务管理器，需要注入数据源  --&gt;
+    &lt;bean id=&quot;txManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 4.2 配置事务详情（事务属性）
+    * &lt;tx:advice id=&quot;txAdvice&quot; transaction-manager=&quot;txManagerd&quot;&gt;
+        id 通知名称，用于aop引用
+        transaction-manager 确定管理器
+    * &lt;tx:attributes&gt; 配置事务详情
+        * &lt;tx:method name=&quot;transfer&quot; ...&gt;
+            * name ： 目标对象被增强方法，不带括号【对选中的切入点方法们，每个单独配置，例如具体的读写权限】
+        例如：
+        1. &lt;tx:method name=&quot;transfer&quot; propagation=&quot;REQUIRED&quot; isolation=&quot;DEFAULT&quot;/&gt;
+            传播行为，隔离级别 默认
+        2. &lt;tx:method name=&quot;transfer&quot; propagation=&quot;REQUIRED&quot; isolation=&quot;DEFAULT&quot; read-only=&quot;true&quot;/&gt;
+            只读
+        3。 &lt;tx:method name=&quot;transfer&quot; propagation=&quot;REQUIRED&quot; isolation=&quot;DEFAULT&quot; no-rollback-for=&quot;java.lang.ArithmeticException&quot; /&gt;
+            如果有 ArithmeticException异常 仍提交
+                rollback-for=&quot;&quot;  相当于  -Exception 回滚
+                no-rollback-for=&quot;&quot; 相当于 +Exception 提交
+        * 方法名称支持通配符*
+            &lt;tx:method name=&quot;add*&quot;/&gt;
+            &lt;tx:method name=&quot;update*&quot;/&gt;
+            &lt;tx:method name=&quot;delete*&quot;/&gt;
+            &lt;tx:method name=&quot;find*&quot; read-only=&quot;true&quot;/&gt;
+    --&gt;
+    &lt;tx:advice id=&quot;txAdvice&quot; transaction-manager=&quot;txManager&quot;&gt;
+        &lt;tx:attributes&gt;
+            &lt;tx:method name=&quot;transfer&quot; propagation=&quot;REQUIRED&quot; isolation=&quot;DEFAULT&quot; /&gt;
+        &lt;/tx:attributes&gt;
+    &lt;/tx:advice&gt;
+    &lt;!-- 4.3 AOP编程，确定切入点，并将通知应用到切入点 ## 切面
+        * 方便理解：
+            目标类：ABCD (连接点)
+            使用AOP：ABC(切入点)  ## AOP在目标的方法中筛选。
+     --&gt;
+    &lt;aop:config&gt;
+        &lt;aop:advisor advice-ref=&quot;txAdvice&quot; pointcut=&quot;execution(* com.itheima.service..*.*(..))&quot;/&gt;
+    &lt;/aop:config&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h3><a class="header" href="#全自动事务基于注解" id="全自动事务基于注解">全自动事务基于注解</a></h3>
+<pre><code class="language-java">Dao接口：
+public interface AccountDao {
+    /**
+     * 汇款
+     * @param outer 汇款人
+     * @param money
+     */
+    public void out(String outer , int money);
+    /**
+     * 收款
+     * @param inner 收款收款人
+     * @param money
+     */
+    public void in(String inner , int money);
+}
+Dao实现：
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import com.itheima.dao.AccountDao;
+public class AccountDaoImpl extends JdbcDaoSupport implements AccountDao {
+    @Override
+    public void out(String outer, int money) {
+        this.getJdbcTemplate().update(&quot;update account set money = money - ? where username = ?&quot;, money,outer);
+    }
+    @Override
+    public void in(String inner, int money) {
+      this.getJdbcTemplate().update(&quot;update account set money=money-? where username=?&quot;,money,inner);
+    }
+}
+Service接口：
+public interface AccountService {
+    /**
+     * 转账
+     * @param outer 汇款人
+     * @param inner 收款人
+     * @param mo
+     */
+    public void transfer(String outer,String inner,int money);
+}
+Service实现：
+//注解可加在类上，可加在某一个方法上
+@Transactional(propagation=Propagation.REQUIRED , isolation=Isolation.DEFAULT)
+public class AccountServiceImpl implements AccountService {
+    private AccountDao accountDao;
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
+    @Override
+    public void transfer(String outer, String inner, int money) {
+        //两个操作
+        accountDao.out(outer, money);
+        // 模拟断电
+        //int i = 1/0;
+        accountDao.in(inner, money);
+    }
+}
+测试：
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations=&quot;classpath:applicationContext.xml&quot;)
+public class TestApp {
+    @Autowired
+    private AccountService accountService;
+    @Test
+    public void demo01(){
+        accountService.transfer(&quot;jack&quot;, &quot;rose&quot;, 100);
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">配置：
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+    xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd&quot;&gt;
+
+    &lt;!-- 1.数据源 --&gt;
+    &lt;bean id=&quot;dataSource&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+        &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring_day03_db&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;user&quot; value=&quot;root&quot;&gt;&lt;/property&gt;
+        &lt;property name=&quot;password&quot; value=&quot;1234&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 2.dao --&gt;
+    &lt;bean id=&quot;accountDao&quot; class=&quot;com.itheima.dao.impl.AccountDaoImpl&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 3.service --&gt;
+    &lt;bean id=&quot;accountService&quot; class=&quot;com.itheima.service.impl.AccountServiceImpl&quot;&gt;
+        &lt;property name=&quot;accountDao&quot; ref=&quot;accountDao&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 4.1 事务管理器 --&gt;
+    &lt;bean id=&quot;txManager&quot;
+        class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!-- 4.2 将事务管理器，交予spring，方便进行注解的事务管理 --&gt;
+    &lt;tx:annotation-driven transaction-manager=&quot;txManager&quot; /&gt;
+&lt;/beans&gt;
+
+</code></pre>
+<h1><a class="header" href="#spring-web-开发" id="spring-web-开发">spring web 开发</a></h1>
+<p>普通的 spring 程序通过 main 函数加载 xml 即可完成启动</p>
+<p>web app 不同:</p>
+<ul>
+<li>
+<p>需要依赖 spring-web</p>
+</li>
+<li>
+<p>spring 容器存在于 application 作用域(ServletContext), 所有 servlet 共享</p>
+</li>
+<li>
+<p>在 tomcat 启动时加载 xml 配置, 加载方案有三种</p>
+<ul>
+<li>Filter --&gt; init()</li>
+<li>Listener --&gt; ServletContextListener[spring 默认使用监听器初始化, spring 通过监听器加载 xml 中的 ContextLoaderListener]</li>
+<li>Servlet --&gt; init()</li>
+</ul>
+</li>
+<li>
+<p>通过 web 项目的初始化参数 配置 xml 文件位置 <code>contextConfigLocation</code>, 如果不配置, 默认加载位置为<code>/WEB-INF/applicationContext.xml</code></p>
+</li>
+</ul>
+<pre><code class="language-java">// UserService类：
+public class UserService {
+    public void addUser(){
+        System.out.println(&quot;addUser&quot;);
+    }
+}
+// HelloServlet：没有集成springmvc
+public class HelloServlet extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //获得spring容器，
+        // 1. ServletContext作用域获得内容
+        // ** 方式1
+        ApplicationContext applicationContext = (ApplicationContext)
+                this.getServletContext().getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
+        // **  方式2 通过spring提供工具类【推荐】
+        ApplicationContext applicationContext =
+                WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+        //2.再从容器获得service
+        UserService userService = (UserService) applicationContext.getBean(&quot;userService&quot;);
+        userService.addUser();
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        this.doGet(request, response);
+    }
+}
+</code></pre>
+<pre><code class="language-xml">&lt;!-- web.xml配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;web-app version=&quot;2.5&quot;
+    xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;&gt;
+  &lt;!-- 配置xml位置 --&gt;
+  &lt;context-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;
+  &lt;/context-param&gt;
+  &lt;!-- 配置spring监听器，加载xml配置文件 --&gt;
+  &lt;listener&gt;
+    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+  &lt;/listener&gt;
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;com.xiaoyu.spring.learn.web.servlet.HelloServlet&lt;/servlet-class&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;HelloServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/HelloServlet&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;!-- applicationContext.xml配置： --&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;bean id=&quot;userService&quot; class=&quot;com.xiaoyu.spring.learn.UserService&quot;&gt;&lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+<h1><a class="header" href="#几种加载-xml-方式" id="几种加载-xml-方式">几种加载 xml 方式</a></h1>
+<pre><code class="language-java">public class Client {
+    @Test
+    public void test1() {
+        //引用资源
+        Resource resource = new ClassPathResource(&quot;com/xy/xmltest/MyXml.xml&quot;);
+        // 这个方法过时了, 不推荐
+        XmlBeanFactory factory = new XmlBeanFactory(resource);
+        XmlBean bean = factory.createBean(XmlBean.class);
+        System.out.println(bean);
+    }
+
+    @Test
+    public void test2() {
+        //编译路径
+        ApplicationContext factory=new ClassPathXmlApplicationContext(&quot;com/xy/xmltest/MyXml.xml&quot;);
+        // or
+        ApplicationContext factory=new ClassPathXmlApplicationContext(new String[] {&quot;bean1.xml&quot;,&quot;bean2.xml&quot;});
+        XmlBean bean = factory.getBean(XmlBean.class);
+        System.out.println(bean);
+    }
+
+    @Test
+    public void test3() {
+        //文件系统的路径
+        ApplicationContext factory=new FileSystemXmlApplicationContext(&quot;src/com/xy/xmltest/MyXml.xml&quot;);
+        // or
+        //使用了  classpath:  前缀,作为标志,  这样,FileSystemXmlApplicationContext 也能够读入classpath下的相对路径
+        ApplicationContext factory=new FileSystemXmlApplicationContext(&quot;classpath:appContext.xml&quot;);
+        XmlBean bean = factory.getBean(XmlBean.class);
+        System.out.println(bean);
+    }
+
+    @Test
+    public void test4() {
+        // 适用于Web工程。
+        ServletContext servletContext = request.getSession().getServletContext();
+        ApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext );
+    }
+}
+</code></pre>
+<h1><a class="header" href="#spring-中的设计模式" id="spring-中的设计模式">spring 中的设计模式</a></h1>
+<ul>
+<li>工厂模式 - BeanFactory, ApplicationContext 都是工厂</li>
+<li>单例 - spring 中的 bean 构造默认都是单例</li>
+<li>代理模式 - AOP</li>
+<li>装饰器模式 - 类名中含有 Wrapper 的类</li>
+<li>模板模式 - jdbcTemplate, JpaTemplate, RedisTemplate</li>
+<li>观察者模式 - Spring 中 Observer 模式常用的地方是 listener 的实现</li>
+</ul>
+<h1><a class="header" href="#spring-bean-生命周期" id="spring-bean-生命周期">spring bean 生命周期</a></h1>
+<p><a href="https://www.cnblogs.com/zrtqsk/p/3735273.html">详细的顺序</a></p>
+<p>https://crossoverjie.top/2018/03/21/spring/spring-bean-lifecycle/
+TODO</p>
+<ol>
+<li>
+<p>首先当然是构造函数实例化 bean, 设置属性;</p>
+</li>
+<li>
+<p>然后是 Aware 这类接口, 用于在当前类注入某个成员</p>
+<p>(如果实现了这类接口的话, 会执行对应的方法), 比如 BeanNameAware.setBeanName(id), BeanFactoryAware.setBeanFactory, ApplicationContextAware.setApplicationContext</p>
+</li>
+<li>
+<p>BeanPostProcessors 中的方法, postProcessBeforeInitialization ()</p>
+<ol>
+<li>
+<p>注解@PostConstruct 的方法</p>
+<ol>
+<li>
+<p>InitializingBean.afterPropertiesSet (Bean 的全部属性设置成功后执行的初始化方法, 只有这一个方法)</p>
+<ol>
+<li>我们自定义的 init 方法, 通过 <code>&lt;bean&gt; 的 init-method 属性指定</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>BeanPostProcessors 中的方法, postProcessAfterInitialization (是在 Bean 初始化后执行的，时机不同 )</p>
+<ol>
+<li>
+<p>DisposableBean.destroy (销毁前执行)</p>
+<ol>
+<li><code>&lt;bean&gt;的destroy-method</code>属性指定的方法</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1><a class="header" href="#常用的-spring-bean-拓展接口" id="常用的-spring-bean-拓展接口">常用的 spring bean 拓展接口</a></h1>
+<h2><a class="header" href="#beannameawareapplicationcontextaware-和-beanfactoryaware" id="beannameawareapplicationcontextaware-和-beanfactoryaware">BeanNameAware、ApplicationContextAware 和 BeanFactoryAware</a></h2>
+<p>&quot;Aware&quot;的意思是&quot;感知到的&quot;, 都有自己 setXXX(xxx) 方法需要覆盖</p>
+<ul>
+<li>
+<p>实现 BeanNameAware 接口的 Bean，在 Bean 加载的过程中可以获取到该 Bean 的 id</p>
+</li>
+<li>
+<p>实现 ApplicationContextAware 接口的 Bean，在 Bean 加载的过程中可以获取到 Spring 的 ApplicationContext，这个尤其重要，ApplicationContext 是 Spring 应用上下文，从 ApplicationContext 中可以获取包括任意的 Bean 在内的大量 Spring 容器内容和信息</p>
+</li>
+<li>
+<p>实现 BeanFactoryAware 接口的 Bean，在 Bean 加载的过程中可以获取到加载该 Bean 的 BeanFactory</p>
+</li>
+</ul>
+<p>看看怎么使用</p>
+<pre><code class="language-java">public class AwareBean implements BeanNameAware, BeanFactoryAware, ApplicationContextAware{
+
+// 如果BeanName、ApplicationContext、BeanFactory有用，那么就自己定义一个成员变量将它们保存下来，
+// 如果没用，那么只需要实现setXXX()方法，用一下Spring注入进来的参数即可
+
+    private String                     beanName;
+
+    private ApplicationContext        applicationContext;
+
+    private BeanFactory                beanFactory;
+
+    @Override
+    public void setBeanName(String beanName){
+        System.out.println(&quot;Enter AwareBean.setBeanName(), beanName = &quot; + beanName + &quot;\n&quot;);
+        this.beanName = beanName;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException{
+        System.out.println(&quot;Enter AwareBean.setApplicationContext(), applicationContext = &quot; + applicationContext + &quot;\n&quot;);
+        this.applicationContext = applicationContext;
+    }
+
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException{
+        System.out.println(&quot;Enter AwareBean.setBeanFactory(), beanfactory = &quot; + beanFactory + &quot;\n&quot;);
+        this.beanFactory = beanFactory;
+    }
+}
+</code></pre>
+<h2><a class="header" href="#beanpostprocessor-接口" id="beanpostprocessor-接口">BeanPostProcessor 接口</a></h2>
+<p>不是针对单一 bean, 而是针对每个 Bean 的生成前后做一些逻辑操作, 有两个方法, 这两个方法是有返回值的，不要返回 null 否则<code>getBean</code>的时候拿不到对象</p>
+<ul>
+<li>postProcessBeforeInitialization：在初始化 Bean 之前</li>
+<li>postProcessAfterInitialization：在初始化 Bean 之后</li>
+</ul>
+<p>attention: PostProcessorBean 本身也是一个 Bean, 会在初始化前后调用前置后置方法</p>
+<pre><code class="language-java">@Component
+public class MyBeanPostProcessor implements BeanPostProcessor {
+    //实现BeanPostProcessor接口必须实现两个方法：
+    //1.【Object postProcessBeforeInitialization(final Object bean, String beanName)】
+    //2.【Object postProcessAfterInitialization(Object bean, String beanName)】
+    @Override
+    public Object postProcessBeforeInitialization(final Object bean, String beanName)
+            throws BeansException {
+        System.out.println(&quot;初始化方法前&quot;);
+        // 生成代理对象 javaweb Proxy--jdk动态代理，前提：需要使用接口
+        return Proxy.newProxyInstance(
+                MyBeanPostProcessor.class.getClassLoader(),     //类加载器
+                bean.getClass().getInterfaces(),                //需要实现的接口
+                new InvocationHandler(){                        //自定义处理类
+                    @Override
+                    public Object invoke(
+                            Object proxy,                       //代理对象【即创建的动态代理对象】
+                            Method method,                     //当前执行方法
+                            Object[] args) throws Throwable {  //方法参数
+                        String methodName = method.getName();
+                        //需要增强的方法
+                        if(&quot;addOrder&quot;.equals(methodName)){
+                            System.out.println(&quot;代理前面&quot;);
+                            // 执行目标类
+                            Object obj = method.invoke(bean/*被代理的对象*/, args/*方法参数*/);
+                            System.out.println(&quot;代理后面&quot;);
+                            return obj;
+                        }
+                        //不需要增强的方法直接return
+                        return method.invoke(bean, args);
+                    }
+                });
+    }
+
+    @Override
+    public Object postProcessAfterInitialization(Object bean, String beanName)
+            throws BeansException {
+        System.out.println(&quot;初始化方法后&quot;);
+        return bean;
+    }
+
+
+}
+
+</code></pre>
+<h2><a class="header" href="#initialingbean-和-disposablebean" id="initialingbean-和-disposablebean">InitialingBean 和 DisposableBean</a></h2>
+<p>实现这两个接口以在 bean 构造前后执行自定义的代码; 各有一个唯一的方法, <code>afterPropertiesSet()</code>在 Bean 属性(setters())都设置完毕后调用, 做一些初始化的工作, <code>destory()</code>在 Bean 生命周期结束前调用 destory()方法做一些收尾工作</p>
+<p>但是,Spring 官方不推荐使用上面这种方式;因为它不必要地将代码耦合到 Spring。另外，我们建议使用@PostConstruct注解或指定bean定义支持的通用方法;</p>
+<ul>
+<li>
+<p>和 xml 配置 <code>init-method</code>、<code>destory-method</code>作用类似. InitializingBean 接口、Disposable 接口底层使用<code>类型强转.方法名()</code>进行直接方法调用，init-method、destory-method 底层使用反射，前者和 Spring 耦合程度更高但效率高，后者解除了和 Spring 之间的耦合但是效率低; 并且 同时配置的情况下, 前者先执行</p>
+</li>
+<li>
+<p>或者 JSR-250 为初始化之后/销毁之前方法的指定定义了两个注释类，分别是 @PostConstruct 和 @PreDestroy;  Java 9 后可能被废弃, 若还想使用, 可以导入 javax.annotation-api</p>
+<p>要让 JSR-250 的注释生效，除了在 Bean 类中标注这些注释外，还需要在 Spring 容器中注册一个负责处理这些注释的 <code>org.springframework.context.annotation.CommonAnnotationBeanPostProcessor</code>, 无需 id; 也可以使用 <code>&lt;context:annotation-config/&gt;</code> 简化配置 --&gt; 进一步使用 <code>&lt;context:component-scan package=&quot;&quot; /&gt;</code></p>
+</li>
+</ul>
+<h2><a class="header" href="#factorybean-接口" id="factorybean-接口">FactoryBean 接口</a></h2>
+<p>http://www.cnblogs.com/davidwang456/p/3688250.html</p>
+<h3><a class="header" href="#factorybean-解释" id="factorybean-解释">FactoryBean 解释</a></h3>
+<p>是一个特殊的 bean, 而不是工厂通过 getObject() 可以自定义生成 bean 的逻辑</p>
+<p>类似工厂模式, spring 提供了一个顶级工厂接口, 你自己实现具体的工厂 bean;</p>
+<ul>
+<li>
+<p>通常 Spring 容器加载一个 Bean 的整个过程，都是由 Spring 控制的, 如果实现 FactoryBean 接口, 我们可以更大的自主权来定制实例化 bean, 可通过 getObject() 定制获取 bean 的逻辑</p>
+</li>
+<li>
+<p>根据该 FactoryBean 的 ID 从 BeanFactory 中获取的实际上是 FactoryBean 的 getObject()返回的对象，而不是 FactoryBean 本身，如果要获取 FactoryBean 对象，请在 id 前面加一个&amp;符号来获取。</p>
+</li>
+<li>
+<p>FactoryBean 这个接口在 Spring 容器中有大量的子实现。</p>
+</li>
+</ul>
+<h3><a class="header" href="#factorybean-接口的-api" id="factorybean-接口的-api">FactoryBean 接口的 api</a></h3>
+<pre><code class="language-java">T getObject() throws Exception;// context.getBean(id)时, 底层就是调用的这个方法, id前添加&quot;&amp;&quot;则返回的就是这个对象的FactoryBean
+Class&lt;?&gt; getObjectType();
+default boolean isSingleton() {return true;}
+
+</code></pre>
+<h3><a class="header" href="#factorybean-简单的使用示例" id="factorybean-简单的使用示例">FactoryBean 简单的使用示例</a></h3>
+<pre><code class="language-java">// 一个接口
+public interface Animal{
+    public void move();
+}
+
+// 两个实现类
+public class Monkey implements Animal{
+    public void move()
+    {
+        System.out.println(&quot;Monkey move!&quot;);
+    }
+}
+public class Tiger implements Animal{
+    public void move(){
+        System.out.println(&quot;Tiger move!&quot;);
+    }
+}
+
+// FactoryBean实现
+public class AnimalFactoryBean implements FactoryBean&lt;Animal&gt;{
+    private String    animal;
+
+    // 最重要的，控制Bean的实例化过程
+    public Animal getObject() throws Exception{
+        if (&quot;Monkey&quot;.equals(animal)){
+            return new Monkey();
+        }
+        else if (&quot;Tiger&quot;.equals(animal)){
+            return new Tiger();
+        }
+        else{
+            return null;
+        }
+    }
+
+    // 获取接口返回的实例的class
+    public Class&lt;?&gt; getObjectType(){
+        return Animal.class;
+    }
+
+    // 该Bean是否为一个单例的Bean
+    public boolean isSingleton(){
+        return true;
+    }
+
+    public void setAnimal(String animal){
+        this.animal = animal;
+    }
+}
+
+// 测试
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {
+        &quot;classpath*:spring.xml&quot;,
+})
+public class BaseTest{
+    @Resource
+    private Animal    animal;
+
+    @Test
+    public void aa(){
+        animal.move(); // 结果: Tiger move!
+    }
+}
+</code></pre>
+<p>当然还有 xml 配置</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd&quot;&gt;
+    &lt;!-- 最后得到的并不是FactoryBean本身，而是FactoryBean的泛型对象tiger --&gt;
+    &lt;bean id=&quot;animal&quot; class=&quot;org.xrq.bean.factory.AnimalFactoryBean&quot;&gt;
+        &lt;property name=&quot;animal&quot; value=&quot;Tiger&quot;/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+<h3><a class="header" href="#factorybean-在-mabatis-spring-集成中的应用" id="factorybean-在-mabatis-spring-集成中的应用">factoryBean 在 mabatis-spring 集成中的应用</a></h3>
+<p>类似 spring 中的 &quot;静态工厂方法注入&quot;</p>
+<p>很多开源项目在集成 Spring 时都使用到 FactoryBean，比如 MyBatis3 提供 mybatis-spring 项目中的 <code>org.mybatis.spring.SqlSessionFactoryBean</code>：</p>
+<pre><code class="language-xml">&lt;!-- spring和MyBatis整合，不需要mybatis的配置映射文件 --&gt;
+&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
+
+    &lt;!-- property 将注入成为 SqlSessionFactoryBean 的成员变量 --&gt;
+
+    &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;
+    &lt;!-- 自动扫描mapping.xml文件 --&gt;
+    &lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:mapper/*.xml&quot;&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+</code></pre>
+<h3><a class="header" href="#factorybean-案例-dao-切换" id="factorybean-案例-dao-切换">factoryBean 案例-dao 切换</a></h3>
+<p>看一个案例: <a href="https://blog.csdn.net/ykdsg/article/details/18733041">check here</a></p>
+<p>系统发展到一定程度就会面临分库分表的问题，我们要考虑的是怎么让系统平滑的从老的表迁移到新的表。通常新表的数据可以通过 binlog 同步的方式同步老表的数据，在某一个时间点通过开关的方式让读写老表的操作切换到新表。</p>
+<p>那这里有个问题: 为什么 要设置一个&quot;开关&quot; 来切换 新/旧 dao 呢? 因为在数据迁移过程中, 系统不够稳定, 需要随时将 新 dao 换回 旧 dao 以保证系统不会崩. 等到数据迁移全部完成, 系统稳定下来后, 可以去掉开关, 直接用 新 dao 替换掉 旧 dao. 此时旧 dao 代码 的人生使命 就完全结束了.</p>
+<p>那么具体怎么操作呢 - 通过 FactoryBean 生产 旧 dao 的代理 (作为 新 dao), 在 InvocationHandler 中做开关的逻辑判断</p>
+<p>注入的配置时这样的:</p>
+<pre><code class="language-xml">&lt;bean id=&quot;oldDao&quot; class=&quot;com.taobao.misc.auction.repository.ProxyBidRepo&quot;/&gt; 
+&lt;bean id=&quot;newDao&quot; class=&quot;com.taobao.misc.auction.dao.impl.BidProxyDAOImpl&quot;/&gt;
+
+&lt;bean id=&quot;oldDaoProxy&quot; class=&quot;com.taobao.misc.auction.dao.impl.ProxyBidDAOProxyFactoryBean&quot;/&gt; 
+
+</code></pre>
+<p>这样系统原来引用 bidProxyDAO 的代码都不需要动就可以实现根据开关来切换新老 DAO 的实现。等系统上线稳定之后可以将 旧 dao 完全替换掉</p>
+<p>代码如下:</p>
+<pre><code class="language-java">/*
+- InvocationHandler - 代理需要invocationhandler
+- FactoryBean       - 实现其 getObject（） 方法; 如果一个类实现了FactoryBean接口，那么context.getBean得到的不是他本身了，而是它所产生的对象,如果希望得到它本身，只需要加上&amp;符号即可
+*/
+public class ProxyBidDAOProxyFactoryBean implements InvocationHandler, FactoryBean {
+    private static Logger log =  LoggerFactory.getLogger(ProxyBidDAOProxyFactoryBean.class);
+    /**
+     * 新的dao
+     */
+    @Resource
+    private BidProxyDAO bidProxyDAONew;
+    /**
+     * 老的dao
+     */
+    @Resource
+    private BidProxyDAO proxyBidRepo;
+
+    @Resource
+    private DiamondSwitchConfig diamondSwitchConfig;
+
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        //如果开关打开那么调用新的DAO
+        if(diamondSwitchConfig.isNewTableSwitch()){
+            log.warn(&quot;bid_proxy user new table..........................................&quot;);
+            return method.invoke(bidProxyDAONew, args);
+        }
+        return method.invoke(proxyBidRepo, args);
+    }
+
+    @Override
+    public Object getObject() throws Exception {
+        Object proxyObj=Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{BidProxyDAO.class}, this);
+        return (BidProxyDAO) proxyObj;
+    }
+
+    @Override
+    public Class getObjectType() {
+        return BidProxyDAO.class;
+    }
+
+    @Override
+    public boolean isSingleton() {
+        return true;
+    }
+} 
+
+</code></pre>
+<h2><a class="header" href="#beanfactory-接口" id="beanfactory-接口">BeanFactory 接口</a></h2>
+<h3><a class="header" href="#beanfactory-解释" id="beanfactory-解释">BeanFactory 解释</a></h3>
+<p>是一个接口, 相当于容器, 管理所有的 bean, 包括 factory bean</p>
+<ul>
+<li>
+<p>spring 提供多个实现, 常用的 XmlBeanFactory</p>
+</li>
+<li>
+<p>BeanFactory 和 ApplicationContext(通过前者派生)就是 spring 框架的两个 IOC 容器，现在一般使用 ApplicationnContext，其不但包含了 BeanFactory 的作用，同时还进行更多的扩展。</p>
+</li>
+</ul>
+<h3><a class="header" href="#api-有哪些" id="api-有哪些">api 有哪些</a></h3>
+<pre><code class="language-java">　　boolean containsBean(String beanName) 判断工厂中是否包含给定名称的bean定义，若有则返回true
+　　Object getBean(String) 返回给定名称注册的bean实例。根据bean的配置情况，如果是singleton模式将返回一个共享实例，否则将返回一个新建的实例，如果没有找到指定bean,该方法可能会抛出异常
+　　Object getBean(String, Class) 返回以给定名称注册的bean实例，并转换为给定class类型
+　　Class getType(String name) 返回给定名称的bean的Class,如果没有找到指定的bean实例，则排除NoSuchBeanDefinitionException异常
+　　boolean isSingleton(String) 判断给定名称的bean定义是否为单例模式
+　　String[] getAliases(String name) 返回给定bean名称的所有别名
+
+</code></pre>
+<h2><a class="header" href="#beanfactorypostprocessor" id="beanfactorypostprocessor">BeanFactoryPostProcessor</a></h2>
+<p>在所有的 Bean 创建之前，读取 Bean 的元属性(Scope 等等)，并根据自己的需求对元属性进行改变 ---------- 动态注册, 见下文</p>
+<ul>
+<li>
+<p>BeanFactoryPostProcessor 的执行先于 BeanPostProcessor</p>
+</li>
+<li>
+<p>BeanFactoryPostProcessor 的 postProcessBeanFactory()方法只会执行一次</p>
+</li>
+</ul>
+<pre><code class="language-java">public void postProcessBeanFactory(ConfigurableListableBeanFactory configurablelistablebeanfactory)
+            throws BeansException{
+    BeanDefinition beanDefinition = configurablelistablebeanfactory.getBeanDefinition(&quot;common0&quot;);
+    MutablePropertyValues beanProperty = beanDefinition.getPropertyValues();
+    System.out.println(&quot;scope before change：&quot; + beanDefinition.getScope());
+    beanDefinition.setScope(&quot;singleton&quot;);
+    System.out.println(&quot;scope after change：&quot; + beanDefinition.getScope());
+    System.out.println(&quot;beanProperty：&quot; + beanProperty);
+}
+</code></pre>
+<h2><a class="header" href="#instantiationawarebeanpostprocessor" id="instantiationawarebeanpostprocessor">InstantiationAwareBeanPostProcessor</a></h2>
+<p>继承自 BeanPostProcessor 接口</p>
+<p>bean 实例化前后做一些处理(区别于 bean 初始化); 1、实例化----实例化的过程是一个创建 Bean 的过程，即调用 Bean 的构造函数，单例的 Bean 放入单例池中. 2、初始化----初始化的过程是一个赋值的过程，即调用 Bean 的 setter，设置 Bean 的属性</p>
+<ul>
+<li>Bean 构造出来之前调用 postProcessBeforeInstantiation()方法</li>
+<li>Bean 构造出来之后调用 postProcessAfterInstantiation()方法</li>
+</ul>
+<p>通常来讲，我们不会直接实现 InstantiationAwareBeanPostProcessor 接口，而是会采用继承 InstantiationAwareBeanPostProcessorAdapter 这个抽象类的方式来使用。</p>
+<h1><a class="header" href="#动态注册-bean" id="动态注册-bean">动态注册 bean</a></h1>
+<p>https://blog.csdn.net/neweastsun/article/details/79222256</p>
+<h2><a class="header" href="#动态注册场景" id="动态注册场景">动态注册场景</a></h2>
+<p>用户定义一个接口，而接口的实现则由框架生成，不需要用户自行编写，此时实现类就需要动态注册到容器中</p>
+<h2><a class="header" href="#动态注册-api" id="动态注册-api">动态注册 api</a></h2>
+<ul>
+<li>
+<p>Spring 中的 bean 定义都保存在 <strong>BeanDefinitionRegistry</strong> 接口中，单例的 bean 的实例都保存在 <strong>SingletonBeanRegistry</strong> 接口中。</p>
+<p>DefaultListableBeanFactory 接口同时实现了这两个接口，在实践中通常会使用这个接口</p>
+<p>这种方式注册的 bean 没有 aop 支持</p>
+</li>
+<li>
+<p>还可以通过 BeanFactoryPostProcessor 进行动态注册</p>
+</li>
+<li>
+<p>ImportBeanDefinitionRegistrar 接口亦可</p>
+<p>所有实现了该接口的类的都会被 ConfigurationClassPostProcessor 处理，ConfigurationClassPostProcessor 实现了 BeanFactoryPostProcessor 接口，所以 ImportBeanDefinitionRegistrar 中动态注册的 bean 是优先与依赖其的 bean 初始化的，也能被 aop、validator 等机制处理。</p>
+</li>
+</ul>
+<h2><a class="header" href="#怎么使用动态注册" id="怎么使用动态注册">怎么使用动态注册</a></h2>
+<h3><a class="header" href="#通过-beanfactorypostprocessor-实现动态注册" id="通过-beanfactorypostprocessor-实现动态注册">通过 BeanFactoryPostProcessor 实现动态注册</a></h3>
+<p>bean 不是在 BeanFactoryPostProcessor 中被注册，那么该 bean 则无法被<strong>BeanPostProcessor</strong>处理，即无法对其应用 aop、Bean Validation 等功能。</p>
+<p>BeanDefinitionRegistryPostProcessor</p>
+<pre><code class="language-java">@component
+public class PersonBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
+
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        DefaultListableBeanFactory defaultListableBeanFactory
+                = (DefaultListableBeanFactory) beanFactory;
+
+        //注册Bean定义，容器根据定义返回bean
+        log.info(&quot;register personManager1&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+        // 构造bean 定义
+        BeanDefinitionBuilder beanDefinitionBuilder =
+                BeanDefinitionBuilder.genericBeanDefinition(PersonManager.class);
+        // 构造依赖
+        beanDefinitionBuilder.addPropertyReference(&quot;personDao&quot;, &quot;personDao&quot;);
+        BeanDefinition personManagerBeanDefinition = beanDefinitionBuilder.getRawBeanDefinition();
+        // 注册
+        defaultListableBeanFactory.registerBeanDefinition(&quot;personManager1&quot;, personManagerBeanDefinition);
+
+        //直接通过编程式注册bean实例
+        log.info(&quot;register personManager2&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+        PersonDao personDao = beanFactory.getBean(PersonDao.class);
+        PersonManager personManager = new PersonManager();
+        personManager.setPersonDao(personDao);
+        beanFactory.registerSingleton(&quot;personManager2&quot;, personManager);
+
+    }
+}
+
+</code></pre>
+<h3><a class="header" href="#通过-beandefinitionregistry-在普通-bean-中注册" id="通过-beandefinitionregistry-在普通-bean-中注册">通过 BeanDefinitionRegistry 在普通 bean 中注册</a></h3>
+<p>bean 不是在 BeanFactoryPostProcessor 中被注册，那么该 bean 则无法被<strong>BeanPostProcessor</strong>处理，即无法对其应用 aop、Bean Validation 等功能。</p>
+<pre><code class="language-java">@RestController
+@Slf4j
+public class PersonManagerRegisterController {
+
+    /**
+     * The Application context.
+     */
+    @Autowired
+    GenericApplicationContext applicationContext;
+
+    /**
+     * The Bean factory.
+     继承了 SingletonBeanRegistry
+     */
+    @Autowired
+    ConfigurableBeanFactory beanFactory;
+
+    /**
+     * 动态注册bean，此处注册的bean没有AOP的支持
+     * curl http://localhost:8080/registerPersonManager
+     */
+    @GetMapping(&quot;/registerPersonManager&quot;)
+    public void registerPersonManager() {
+        PersonDao personDao = applicationContext.getBean(PersonDao.class);
+        PersonManager personManager = new PersonManager();
+        personManager.setPersonDao(personDao);
+        beanFactory.registerSingleton(&quot;personManager3&quot;, personManager);
+
+    }
+
+    ...
+
+</code></pre>
+<h3><a class="header" href="#通过-importbeandefinitionregistrar" id="通过-importbeandefinitionregistrar">通过 ImportBeanDefinitionRegistrar</a></h3>
+<p>https://github.com/pkpk1234/registerbean-ImportBeanDefinitionRegistrar</p>
+<p>需求, 思路:</p>
+<pre><code class="language-java">/*
+主要思路是利用ClassPathScanningCandidateComponentProvider获取标注了HTTPUtil注解的接口，并使用JDK动态代理生成代理对象。
+然后使用DefaultListableBeanFactory将代理对象注册到容器中
+*/
+@Component
+@HTTPUtil
+public interface IRequestDemo {
+    //调用test1时，会对http://abc.com发送get请求
+    @HTTPRequest(url = &quot;http://abc.com&quot;)
+    HttpResult&lt;String&gt; test1();
+
+    //调用test2时，会对http://test2.com发送post请求
+    @HTTPRequest(url = &quot;http://test2.com&quot;, httpMethod = HTTPMethod.POST)
+    HttpResult&lt;String&gt; test2();
+}
+
+</code></pre>
+<p>实现:</p>
+<pre><code class="language-java">// 1. 首先编写核心ImportBeanDefinitionRegistrar接口
+
+//ImportBeanDefinitionRegistrar需要配合@Configuration和@Import注解
+//@Configuration定义Java格式的Spring配置文件，@Import注解导入实现了ImportBeanDefinitionRegistrar接口的类。
+
+public class HTTPRequestRegistrar implements ImportBeanDefinitionRegistrar,
+       ResourceLoaderAware, BeanClassLoaderAware, EnvironmentAware, BeanFactoryAware {
+   @Override
+   public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
+       registerHttpRequest(beanDefinitionRegistry);
+   }
+
+   /**
+    * 注册动态bean的主要方法
+    *
+    * @param beanDefinitionRegistry
+    */
+   private void registerHttpRequest(BeanDefinitionRegistry beanDefinitionRegistry) {
+       ClassPathScanningCandidateComponentProvider classScanner = getClassScanner();
+       classScanner.setResourceLoader(this.resourceLoader);
+       //指定只关注标注了@HTTPUtil注解的接口
+       AnnotationTypeFilter annotationTypeFilter = new AnnotationTypeFilter(HTTPUtil.class);
+       classScanner.addIncludeFilter(annotationTypeFilter);
+       //指定扫描的基础包
+       String basePack = &quot;com.example.registerbean&quot;;
+       Set&lt;BeanDefinition&gt; beanDefinitionSet = classScanner.findCandidateComponents(basePack);
+       for (BeanDefinition beanDefinition : beanDefinitionSet) {
+           if (beanDefinition instanceof AnnotatedBeanDefinition) {
+               registerBeans(((AnnotatedBeanDefinition) beanDefinition));
+           }
+       }
+   }
+
+   /**
+    * 创建动态代理，并动态注册到容器中
+    *
+    * @param annotatedBeanDefinition
+    */
+   private void registerBeans(AnnotatedBeanDefinition annotatedBeanDefinition) {
+       String className = annotatedBeanDefinition.getBeanClassName();
+       ((DefaultListableBeanFactory) this.beanFactory).registerSingleton(className, createProxy(annotatedBeanDefinition));
+   }
+
+   /**
+    * 构造Class扫描器，设置了只扫描顶级接口，不扫描内部类
+    *
+    * @return
+    */
+   private ClassPathScanningCandidateComponentProvider getClassScanner() {
+       return new ClassPathScanningCandidateComponentProvider(false, this.environment) {
+
+           @Override
+           protected boolean isCandidateComponent(
+                   AnnotatedBeanDefinition beanDefinition) {
+               if (beanDefinition.getMetadata().isInterface()) {
+                   try {
+                       Class&lt;?&gt; target = ClassUtils.forName(
+                               beanDefinition.getMetadata().getClassName(),
+                               classLoader);
+                       return !target.isAnnotation();
+                   } catch (Exception ex) {
+                       log.error(&quot;load class exception:&quot;, ex);
+                   }
+               }
+               return false;
+           }
+       };
+   }
+
+   /**
+    * 创建动态代理
+    *
+    * @param annotatedBeanDefinition
+    * @return
+    */
+   private Object createProxy(AnnotatedBeanDefinition annotatedBeanDefinition) {
+       try {
+           AnnotationMetadata annotationMetadata = annotatedBeanDefinition.getMetadata();
+           Class&lt;?&gt; target = Class.forName(annotationMetadata.getClassName());
+           InvocationHandler invocationHandler = createInvocationHandler();
+           Object proxy = Proxy.newProxyInstance(HTTPRequest.class.getClassLoader(), new Class[]{target}, invocationHandler);
+           return proxy;
+       } catch (ClassNotFoundException e) {
+           log.error(e.getMessage());
+       }
+       return null;
+   }
+
+   /**
+    * 创建InvocationHandler，将方法调用全部代理给DemoHttpHandler
+    *
+    * @return
+    */
+   private InvocationHandler createInvocationHandler() {
+       return new InvocationHandler() {
+           private DemoHttpHandler demoHttpHandler = new DemoHttpHandler();
+
+           @Override
+           public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+
+               return demoHttpHandler.handle(method);
+           }
+       };
+   }
+    ... 省略setter代码
+}
+
+////////////////////////////////////////////////////////////
+
+//2. 编写注解，并在其中使用@Import导入第1步编写的HTTPRequestRegistrar
+//3.将@EnableHttpUtil添加到@Configuration注解下
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Import(HTTPRequestRegistrar.class)
+public @interface EnableHttpUtil {
+}
+
+</code></pre>
+<h1><a class="header" href="#国际化-and-参数校验" id="国际化-and-参数校验">国际化 and 参数校验</a></h1>
+<p>https://blog.csdn.net/shuangyidehudie/article/details/40586143
+https://blog.csdn.net/catoop/article/details/51284638</p>
+<h1><a class="header" href="#spring5-新特性" id="spring5-新特性">spring5 新特性</a></h1>
+<p>https://www.ibm.com/developerworks/cn/java/j-whats-new-in-spring-framework-5-theedom/index.html</p>
+<h1><a class="header" href="#guice" id="guice">Guice</a></h1>
+<p>https://www.ibm.com/developerworks/cn/java/j-guice.html</p>
+<p>编译器依赖注入：Dagger2 - https://zhuanlan.zhihu.com/p/24454466</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="servlet.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="springboot-doc.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="servlet.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="springboot-doc.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,1137 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>php-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html" class="active"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: PHP
+date: 2014-03-14 13:40:42
+tags: [PHP]
+categories: computer science</h2>
+<div align="center">
+php（PHP: Hypertext Processor）是一种服务器上运行的脚本语言;
+php文件包括 文本、html、js、php代码这些元素;
+执行后， 返回给browser的结果是html形式的， 默认拓展名".php"
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA">环境搭建</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#traitinterface%E5%92%8Cabstract%E7%9A%84%E5%BC%82%E5%90%8C">trait，interface和abstract的异同</a></li>
+<li><a href="#%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86">表单处理</a></li>
+<li><a href="#swoole20-%E5%92%8C%E5%8D%8F%E7%A8%8B">swoole2.0 和协程</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#环境搭建" id="环境搭建">环境搭建</a></h1>
+<p>reference: <a href="https://blog.csdn.net/tojohnonly/article/details/79820471">1</a></p>
+<p>也可以使用php内置的server, <code>php -S localhost:8000 -t D:\_learn\php</code>, D:/_learn/php即为被代理的文件夹; (<a href="https://www.cnblogs.com/HouJiao/p/4985597.html">ref</a>); 访问: http://localhost:8000/demo1.php</p>
+<p>vscode的debug环境搭建: <a href="https://blog.csdn.net/x356982611/article/details/52664334">ref</a>, debug时候需要server也开启</p>
+<h1><a class="header" href="#语法" id="语法">语法</a></h1>
+<p>PHP 脚本以 <code>&lt;?php</code> 开始，以 <code>?&gt;</code> 结束</p>
+<pre><code class="language-php">&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;body&gt; 
+
+&lt;h1&gt;My first PHP page&lt;/h1&gt; 
+
+&lt;?php 
+
+///////////////////////
+//
+//        echo和print
+//
+//////////////////////////
+
+echo &quot;Hello world!&lt;br&gt;&quot;;
+echo &quot;这是一个&quot;, &quot;字符串，&quot;, &quot;使用了&quot;, &quot;多个&quot;, &quot;参数。&quot;;
+$txt1=&quot;学习 PHP&quot;;
+$txt2=&quot;RUNOOB.COM&quot;;
+$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);// 数组
+echo $txt1;
+echo &quot;&lt;br&gt;&quot;;
+echo &quot;在 $txt2 学习 PHP &quot;;
+echo &quot;&lt;br&gt;&quot;;
+echo &quot;我车的品牌是 {$cars[0]}&quot;;
+
+print &quot;xxx&quot;;
+print &quot;Hello world!&lt;br&gt;&quot;;
+// echo和print区别: echo - 可以输出一个或多个字符串; print - 只允许输出一个字符串，返回值总为 1
+// echo是语言结构(language construct)，而并不是真正的函数，因此不能作为表达式的一部分使用
+// echo 输出的速度比 print 快；函数print()打印一个值（它的参数），如果字符串成功显示则返回true，否则返回false
+
+//////////////////////
+//
+//        EOF 原样打印
+//
+//////////////////////
+
+// 如果有很多html标签需要打印, 可以使用PHP EOF(heredoc): 按照原样，包括换行格式什么的，输出在其内部的东西
+echo &lt;&lt;&lt;EOF
+    &lt;h1&gt;我的第一个标题&lt;/h1&gt;
+    &lt;p&gt;我的第一个段落。&lt;/p&gt;
+EOF;
+// 结束需要独立一行且前后不能空格
+
+// 位于开始标记和结束标记之间的变量可以被正常解析，但是函数则不可以。在heredoc中，变量不需要用连接符.或,来拼接
+$name=&quot;runoob&quot;;
+$a= &lt;&lt;&lt;EOF
+    &quot;abc&quot;$name
+    &quot;123&quot;
+EOF;
+echo $a; // 结果为 &quot;abc&quot;runoob &quot;123&quot;
+
+//       单行注释
+/*
+多行
+注释
+*/
+
+////////////////////////
+//
+//      变量作用域 四种
+//
+/////////////////////////
+/*
+local
+global
+static
+parameter
+*/
+//------------全局变量-----------
+
+// 变量, 这里都是全局变量， 在函数内部无法访问， 需要通过global访问 
+$text=&quot;xxyyzz&quot;
+$x=5;
+$y=6;
+$z=$x+$y;
+echo $z;
+
+// ------------局部变量----------
+
+function myTest() 
+{ 
+    $y=10; // 局部变量 
+    echo &quot;&lt;p&gt;测试函数内变量:&lt;p&gt;&quot;; 
+    echo &quot;变量 x 为: $x&quot;; //没有值, 函数内部无法使用
+    echo &quot;&lt;br&gt;&quot;; 
+    echo &quot;变量 y 为: $y&quot;; // 有值, 可以直接使用
+}  
+myTest(); 
+
+echo &quot;&lt;p&gt;测试函数外变量:&lt;p&gt;&quot;; 
+echo &quot;变量 x 为: $x&quot;; // 有值
+echo &quot;&lt;br&gt;&quot;; 
+echo &quot;变量 y 为: $y&quot;; // 没有值
+
+//--------在方法体内部使用全局变量需要先通过global声明------------
+
+$x=5;
+$y=10;
+function myTest1()
+{
+    global $x,$y;// 全局变量可以在函数内部如此声明使用
+    $y=$x+$y;
+    // -----------
+    // 效果等同下面, 局变量存储在一个名为 $GLOBALS[index] 的数组中。 index 保存变量的名称
+    $GLOBALS['y']=$GLOBALS['x']+$GLOBALS['y'];
+}
+ 
+myTest1();
+echo $y; // 输出 15
+
+// -----------Static变量, 任然是局部变量------------
+
+// 当一个函数完成时，它的所有变量通常都会被删除。然而，有时候您希望某个局部变量不要被删除。
+function myTest()
+{
+    static $x=0; // 该变量将会保留着函数前一次被调用时的值
+    echo $x;
+    $x++;
+}
+ 
+myTest();
+myTest();
+myTest();
+// 结果是:012
+
+//////////////////
+//
+//      数据类型
+//
+/////////////////
+// String（字符串）, Integer（整型）, Float（浮点型）, Boolean（布尔型）, Array（数组）, Object（对象）, NULL（空值）
+
+// --------String-----------
+$txt1=&quot;Hello world!&quot;; 
+$txt2=&quot;What a nice day!&quot;; 
+echo $txt1 . &quot; &quot; . $txt2; // 连接
+$text1 .= &quot;xxx&quot; // 等于 $text1 = $text1 . &quot;xxx&quot;
+echo strlen(&quot;Hello world!&quot;); // 返回长度
+echo strpos(&quot;Hello world!&quot;,&quot;world&quot;);// 搜寻, 返回6
+
+
+// ---------integer---------
+$x = 5985;
+var_dump($x);// 返回变量的数据类型和值
+echo &quot;&lt;br&gt;&quot;; 
+$x = -345; // 负数 
+var_dump($x);
+echo &quot;&lt;br&gt;&quot;; 
+$x = 0x8C; // 十六进制数
+var_dump($x);
+echo &quot;&lt;br&gt;&quot;;
+$x = 047; // 八进制数
+var_dump($x);
+var_dump(intdiv(10, 3));// 整除, 输出3
+// -------- float--------
+$x = 10.365;
+var_dump($x);
+echo &quot;&lt;br&gt;&quot;; 
+$x = 2.4e3;
+var_dump($x);
+echo &quot;&lt;br&gt;&quot;; 
+$x = 8E-5;
+var_dump($x);
+//------------布尔值------
+$x=true;
+$y=false;
+// ----------数组----------
+$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);
+var_dump($cars);
+
+//------object------
+class Car
+{
+  var $color;
+  function __construct($color=&quot;green&quot;) {
+    $this-&gt;color = $color;
+  }
+  function what_color() {
+    return $this-&gt;color;
+  }
+}
+
+// -------null-----
+$x=&quot;Hello world!&quot;;
+$x=null;// 清空数据
+var_dump($x);
+
+//////////////
+//
+//      常量
+//
+/////////////
+
+// 设置常量，使用 define() 函数, 语法: bool define ( string $name , mixed $value [, bool $case_insensitive = false ] )
+// 常量在定义后，默认是全局变量，可以在整个运行的脚本的任何地方使用
+// 默认区分大小写的常量名
+define(&quot;GREETING&quot;, &quot;hello!&quot;);
+echo GREETING;    // 输出 &quot;hello!&quot;
+echo '&lt;br&gt;';
+echo greeting;   // 输出 &quot;greeting&quot;, 如果希望不区分大小写, define(&quot;GREETING&quot;, &quot;hello!&quot;, true);定义即可
+
+// 另种方式
+const CONNECT_OK = 1;
+
+/////////////////////
+//
+//       比较运算符
+//
+///////////////////
+
+/*
+x == y	等于	如果 x 等于 y，则返回 true	5==8 返回 false
+x === y	绝对等于	如果 x 等于 y，且它们类型相同，则返回 true	5===&quot;5&quot; 返回 false
+x != y	不等于	如果 x 不等于 y，则返回 true	5!=8 返回 true
+x &lt;&gt; y	不等于	如果 x 不等于 y，则返回 true	5&lt;&gt;8 返回 true
+x !== y	绝对不等于	如果 x 不等于 y，或它们类型不相同，则返回 true	5!==&quot;5&quot; 返回 true
+x &gt; y	大于	如果 x 大于 y，则返回 true	5&gt;8 返回 false
+x &lt; y	小于	如果 x 小于 y，则返回 true	5&lt;8 返回 true
+x &gt;= y	大于等于	如果 x 大于或者等于 y，则返回 true	5&gt;=8 返回 false
+x &lt;= y	小于等于	如果 x 小于或者等于 y，则返回 true	5&lt;=8 返回 true
+ */
+
+///////////////////////////////
+//
+//          逻辑运算符 and, or, xor, &amp;&amp;, ||, !
+//
+///////////////////////////////
+/*
+x and y	与	如果 x 和 y 都为 true，则返回 true	x=6
+y=3 
+(x &lt; 10 and y &gt; 1) 返回 true
+
+x or y	或	如果 x 和 y 至少有一个为 true，则返回 true	x=6
+y=3 
+(x==6 or y==5) 返回 true
+
+x xor y	异或	如果 x 和 y 有且仅有一个为 true，则返回 true	x=6
+y=3 
+(x==6 xor y==3) 返回 false
+
+x &amp;&amp; y	与	如果 x 和 y 都为 true，则返回 true	x=6
+y=3
+(x &lt; 10 &amp;&amp; y &gt; 1) 返回 true
+
+x || y	或	如果 x 和 y 至少有一个为 true，则返回 true	x=6
+y=3
+(x==5 || y==5) 返回 false
+
+! x	非	如果 x 不为 true，则返回 true	x=6
+y=3
+!(x==y) 返回 true
+*/
+
+//////////////////////
+//
+//      数组运算符
+//
+/////////////////////
+/*
+x + y	集合	x 和 y 的集合
+x == y	相等	如果 x 和 y 具有相同的键/值对，则返回 true
+x === y	恒等	如果 x 和 y 具有相同的键/值对，且顺序相同类型相同，则返回 true
+x != y	不相等	如果 x 不等于 y，则返回 true
+x &lt;&gt; y	不相等	如果 x 不等于 y，则返回 true
+x !== y	不恒等	如果 x 不等于 y，则返回 true
+*/
+$x = array(&quot;a&quot; =&gt; &quot;red&quot;, &quot;b&quot; =&gt; &quot;green&quot;); 
+$y = array(&quot;c&quot; =&gt; &quot;blue&quot;, &quot;d&quot; =&gt; &quot;yellow&quot;); 
+$z = $x + $y; // union of $x and $y
+var_dump($z);
+echo &quot;&lt;br&gt;&quot;;
+var_dump($x == $y);
+echo &quot;&lt;br&gt;&quot;;
+var_dump($x === $y);
+echo &quot;&lt;br&gt;&quot;;
+var_dump($x != $y);
+echo &quot;&lt;br&gt;&quot;;
+var_dump($x &lt;&gt; $y);
+echo &quot;&lt;br&gt;&quot;;
+var_dump($x !== $y);
+// 结果:
+/*
+array(4) { [&quot;a&quot;]=&gt; string(3) &quot;red&quot; [&quot;b&quot;]=&gt; string(5) &quot;green&quot; [&quot;c&quot;]=&gt; string(4) &quot;blue&quot; [&quot;d&quot;]=&gt; string(6) &quot;yellow&quot; } 
+bool(false) 
+bool(false) 
+bool(true) 
+bool(true) 
+bool(true)
+*/
+
+////////////////////
+//
+//      三元运算符
+//
+/////////////////////
+$test = 'xiaoyu';
+// 普通写法
+$username = isset($test) ? $test : 'nobody';
+echo $username, PHP_EOL; // php_eol 表示换行
+ 
+// PHP 5.3+ 版本写法
+$username = $test ?: 'nobody';// 中间的那项省略了, 如果第一项有值返回第一项, 没有则返回nobody
+echo $username, PHP_EOL;
+
+// php7+版本进一步简化了
+// 判断 $_GET 请求中含有 user 值，如果有返回 $_GET['user']，否则返回 nobody
+$username = $_GET['user'] ?? 'nobody';
+
+//////////////////////
+//
+//      组合比较符, 返回-1 0 1
+//
+//////////////////////
+/*
+语法：$a&lt;=&gt;$b
+如果$a &gt; $b, 返回的值为1 
+如果$a == $b, 返回的值为0 
+如果$a &lt; $b, 返回的值为-1
+*/
+// 整型
+echo 1 &lt;=&gt; 1; // 0
+echo 1 &lt;=&gt; 2; // -1
+echo 2 &lt;=&gt; 1; // 1
+
+// 浮点型
+echo 1.5 &lt;=&gt; 1.5; // 0
+echo 1.5 &lt;=&gt; 2.5; // -1
+echo 2.5 &lt;=&gt; 1.5; // 1
+ 
+// 字符串
+echo &quot;a&quot; &lt;=&gt; &quot;a&quot;; // 0
+echo &quot;a&quot; &lt;=&gt; &quot;b&quot;; // -1
+echo &quot;b&quot; &lt;=&gt; &quot;a&quot;; // 1
+
+/////////////////////
+//
+//      条件控制    循环
+//
+///////////////////
+/*
+支持if(){}, if(){}else{}, if(){}else if(){}else{} 
+while(){}, do{}while();, for(){}, foreach($xx as $yy){$yy ...}
+*/
+$t=date(&quot;H&quot;);
+if ($t&lt;&quot;20&quot;)// 如果当前时间小于 20，
+{
+    echo &quot;Have a good day!&quot;;
+}
+
+
+
+//////////////////////
+//
+//      数组
+//
+//////////////////////
+$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);
+echo &quot;I like &quot; . $cars[0] . &quot;, &quot; . $cars[1] . &quot; and &quot; . $cars[2] . &quot;.&quot;;
+echo count($cars);// 数组长度
+/*
+有三种类型的数组: 
+    * 数值数组 - 带有数字 ID 键的数组
+    * 关联数组 - 带有指定的键的数组，每个键关联一个值
+    * 多维数组 - 包含一个或多个数组的数组
+*/
+
+// ---------数值数组------------------
+
+$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);// 自动分配 ID 键（ID 键总是从 0 开始）
+// 或者, 人工分配 ID 键：
+$cars[0]=&quot;Volvo&quot;;
+$cars[1]=&quot;BMW&quot;;
+$cars[2]=&quot;Toyota&quot;;
+
+// 遍历数值数组
+
+$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);
+$arrlength=count($cars);
+
+for($x=0;$x&lt;$arrlength;$x++)
+{
+echo $cars[$x];
+echo &quot;&lt;br&gt;&quot;;
+}
+
+// -----------关联数组(键值对)---------------
+
+$age=array(&quot;Peter&quot;=&gt;&quot;35&quot;,&quot;Ben&quot;=&gt;&quot;37&quot;,&quot;Joe&quot;=&gt;&quot;43&quot;);
+// or
+$age['Peter']=&quot;35&quot;;
+$age['Ben']=&quot;37&quot;;
+$age['Joe']=&quot;43&quot;;
+
+// 遍历关联数组
+
+$age=array(&quot;Peter&quot;=&gt;&quot;35&quot;,&quot;Ben&quot;=&gt;&quot;37&quot;,&quot;Joe&quot;=&gt;&quot;43&quot;);
+foreach($age as $x=&gt;$x_value)
+{
+echo &quot;Key=&quot; . $x . &quot;, Value=&quot; . $x_value;
+echo &quot;&lt;br&gt;&quot;;
+}
+
+////////////////////////////
+//
+//      数组排序(借助一些内建函数)
+//
+//////////////////////////
+/*
+sort() - 对数组进行升序排列
+
+rsort() - 对数组进行降序排列
+
+asort() - 根据关联数组的值，对数组进行升序排列
+
+ksort() - 根据关联数组的键，对数组进行升序排列
+
+arsort() - 根据关联数组的值，对数组进行降序排列
+
+krsort() - 根据关联数组的键，对数组进行降序排列
+*/
+
+$cars=array(&quot;Volvo&quot;,&quot;BMW&quot;,&quot;Toyota&quot;);
+sort($cars);
+print_r($cars);// Array ( [0] =&gt; BMW [1] =&gt; Toyota [2] =&gt; Volvo )
+
+/////////////////////////
+//
+//      超级全局变量  superglobals
+//
+////////////////////////
+// 在一个脚本的全部作用域中都可用
+/*
+$GLOBALS: 一个包含了全部变量的全局组合数组。变量的名字就是数组的键
+
+$_SERVER: 是一个包含了诸如头信息(header)、路径(path)、以及脚本位置(script locations)等等信息的数组。这个数组中的项目由 Web 服务器创建。
+
+$_REQUEST 用于收集HTML表单提交的数据。
+
+$_POST  被广泛应用于收集表单数据，在HTML form标签的指定该属性：&quot;method=&quot;post&quot;
+
+$_GET  同样被广泛应用于收集表单数据，在HTML form标签的指定该属性：&quot;method=&quot;get&quot;。
+        也可以收集URL中发送的数据。
+
+$_FILES
+
+$_ENV
+
+$_COOKIE
+
+$_SESSION
+*/
+
+$x = 75; 
+$y = 25;
+function addition() 
+{ 
+   $GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y']; 
+}
+addition(); 
+echo $z; // 函数外部照样可以访问
+
+/////////////////////////////////////////////////////////////////////
+
+// 当前访问地址: http://localhost:8000/demo1.php
+echo $_SERVER['PHP_SELF']; // 当前脚本名称, /demo1.php
+echo &quot;&lt;br&gt;&quot;;
+echo $_SERVER['SERVER_NAME']; // server主机名称, localhost
+echo &quot;&lt;br&gt;&quot;;
+echo $_SERVER['HTTP_HOST'];// 当前请求头中 Host: 项的内容, localhost:8000, 如果header不存在将报错
+echo &quot;&lt;br&gt;&quot;;
+echo $_SERVER['HTTP_REFERER'];// 来源地址, 测试时因为没有这个值, 报错了
+echo &quot;&lt;br&gt;&quot;;
+echo $_SERVER['HTTP_USER_AGENT'];// user agent, Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36
+echo &quot;&lt;br&gt;&quot;;
+echo $_SERVER['SCRIPT_NAME'];// 脚本名称, /demo1.php
+
+
+// 对比
+echo $_SERVER['SCRIPT_NAME'].&quot;&lt;br&gt;&quot;;
+echo $_SERVER['SCRIPT_FILENAME'].&quot;&lt;br&gt;&quot;;
+echo $_SERVER['PHP_SELF'].&quot;&lt;br&gt;&quot;;
+echo $_SERVER['SERVER_NAME'].&quot;&lt;br&gt;&quot;;
+echo $_SERVER['HTTP_HOST'].&quot;&lt;br&gt;&quot;;
+// 结果:
+/*
+/welcome/index.php
+D:\_learn\php\welcome\index.php
+/welcome/index.php
+localhost
+localhost:8000
+*/
+
+/*
+
+一些重要的 $_SERVER 变量
+
+$_SERVER['PHP_SELF']	当前执行脚本的文件名，与 document root 有关。例如，在地址为 http://example.com/test.php/foo.bar 的脚本中使用 $_SERVER['PHP_SELF'] 将得到 /test.php/foo.bar。
+$_SERVER['GATEWAY_INTERFACE']	服务器使用的 CGI 规范的版本；例如，&quot;CGI/1.1&quot;。
+$_SERVER['SERVER_ADDR']	当前运行脚本所在的服务器的 IP 地址。
+$_SERVER['SERVER_NAME']	当前运行脚本所在的服务器的主机名。如果脚本运行于虚拟主机中，该名称是由那个虚拟主机所设置的值决定。(如: www.php.cn)
+$_SERVER['SERVER_SOFTWARE']	服务器标识字符串，在响应请求时的头信息中给出。 (如：Apache/2.2.24)
+$_SERVER['SERVER_PROTOCOL']	请求页面时通信协议的名称和版本。例如，&quot;HTTP/1.0&quot;。
+$_SERVER['REQUEST_METHOD']	访问页面使用的请求方法；例如，&quot;GET&quot;, &quot;HEAD&quot;，&quot;POST&quot;，&quot;PUT&quot;。
+$_SERVER['REQUEST_TIME']	请求开始时的时间戳。从 PHP 5.1.0 起可用。 (如：1377687496)
+$_SERVER['QUERY_STRING']	query string（查询字符串），如果有的话，通过它进行页面访问。
+$_SERVER['HTTP_ACCEPT']	当前请求头中 Accept: 项的内容，如果存在的话。
+$_SERVER['HTTP_ACCEPT_CHARSET']	当前请求头中 Accept-Charset: 项的内容，如果存在的话。例如：&quot;iso-8859-1,*,utf-8&quot;。
+$_SERVER['HTTP_HOST']	当前请求头中 Host: 项的内容，如果存在的话。
+$_SERVER['HTTP_REFERER']	引导用户代理到当前页的前一页的地址（如果存在）。由 user agent 设置决定。并不是所有的用户代理都会设置该项，有的还提供了修改 HTTP_REFERER 的功能。简言之，该值并不可信。)
+$_SERVER['HTTPS']	如果脚本是通过 HTTPS 协议被访问，则被设为一个非空的值。
+$_SERVER['REMOTE_ADDR']	浏览当前页面的用户的 IP 地址。
+$_SERVER['REMOTE_HOST']	浏览当前页面的用户的主机名。DNS 反向解析不依赖于用户的 REMOTE_ADDR。
+$_SERVER['REMOTE_PORT']	用户机器上连接到 Web 服务器所使用的端口号。
+$_SERVER['SCRIPT_FILENAME']	当前执行脚本的绝对路径。
+$_SERVER['SERVER_ADMIN']	该值指明了 Apache 服务器配置文件中的 SERVER_ADMIN 参数。如果脚本运行在一个虚拟主机上，则该值是那个虚拟主机的值。(如：someone@php.cn)
+$_SERVER['SERVER_PORT']	Web 服务器使用的端口。默认值为 &quot;80&quot;。如果使用 SSL 安全连接，则这个值为用户设置的 HTTP 端口。
+$_SERVER['SERVER_SIGNATURE']	包含了服务器版本和虚拟主机名的字符串。
+$_SERVER['PATH_TRANSLATED']	当前脚本所在文件系统（非文档根目录）的基本路径。这是在服务器进行虚拟到真实路径的映像后的结果。
+$_SERVER['SCRIPT_NAME']	包含当前脚本的路径。这在页面需要指向自己时非常有用。__FILE__ 常量包含当前脚本(例如包含文件)的完整路径和文件名。
+$_SERVER['SCRIPT_URI']	URI 用来指定要访问的页面。例如 &quot;/&quot;。
+*/
+
+///////////////////////////////////////////////////////////////////////
+
+&lt;!-- 当用户通过点击 &quot;Submit&quot; 按钮提交表单数据时, 表单数据将发送至&lt;form&gt;标签中 action 属性中指定的脚本文件
+    这里, 就是自身
+ --&gt;
+&lt;form method=&quot;post&quot; action=&quot;&lt;?php echo $_SERVER['PHP_SELF'];?&gt;&quot;&gt;
+Name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;
+&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php 
+$name = $_REQUEST['fname']; 
+echo $name; 
+
+///////////////////////////////////////////////////////////////////
+&lt;form method=&quot;post&quot; action=&quot;&lt;?php echo $_SERVER['PHP_SELF'];?&gt;&quot;&gt;
+Name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;
+&lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php 
+$name = $_POST['fname']; 
+echo $name; 
+?&gt;
+
+//////////////////////////////////////////////////////////////
+
+&lt;a href=&quot;test_get.php?subject=PHP&amp;web=php.cn&quot;&gt;Test $GET&lt;/a&gt;
+
+// test_get.php代码
+echo &quot;Study &quot; . $_GET['subject'] . &quot; at &quot; . $_GET['web'];
+
+//////////////////////////
+//
+//      内建函数    自定义函数
+//
+////////////////////////////
+
+function add($x,$y)
+{
+$total=$x+$y;
+return $total;// 如果不需要返回值, 去掉这行即可
+}
+echo &quot;1 + 16 = &quot; . add(1,16);
+
+
+//////////////////////////////////
+//
+//          魔术变量
+//
+///////////////////////////////////
+/*
+PHP 向它运行的任何脚本提供了大量的预定义常量。
+
+不过很多常量都是由不同的扩展库定义的，只有在加载了这些扩展库时才会出现，或者动态加载后，或者在编译时已经包括进去了。
+
+有八个魔术常量它们的值随着它们在代码中的位置改变而改变。
+
+例如 __LINE__ 的值就依赖于它在脚本中所处的行来决定。这些特殊的常量不区分大小写
+*/
+
+echo '这是第 “ '  . __LINE__ . ' ” 行';// 当前行数
+
+echo '该文件位于 “ '  . __FILE__ . ' ” ';// 文件的完整路径和文件名(绝对路径)。如果用在被包含文件中，则返回被包含的文件名; 获取相对路径 $_SERVER['PHP_SELF']
+
+echo '该文件位于 “ '  . __DIR__ . ' ” 文件夹中';// 文件所在的目录。如果用在被包括文件中，则返回被包括的文件所在的目录
+
+echo  '函数名为：' . __FUNCTION__ ;// 返回当前函数名, 如果不再函数内, 则返回空;
+echo '类名为：'  . __CLASS__ . &quot;&lt;br&gt;&quot;;// 类名称
+
+class test {
+    function _print() {
+        echo '类名为：'  . __CLASS__ . &quot;&lt;br&gt;&quot;;
+        echo  '函数名为：' . __FUNCTION__ ;
+    }
+}
+$t = new test();
+$t-&gt;_print();
+/*输出结果:
+类名为：test
+函数名为：_print
+*/
+
+echo  '函数名为：' . __METHOD__ ;// 类的方法名（PHP 5.0.0 新加）。返回该方法被定义时的名字
+
+namespace MyProject;
+echo '命名空间为：&quot;', __NAMESPACE__, '&quot;'; // 当前命名空间的名称, 输出 &quot;MyProject&quot;, 如果没有namespace, 输出&quot;&quot;
+
+///////////////////////////////////
+//
+//          trait 代码复用
+//
+/////////////////////////////////
+class Base {// 基类
+    public function sayHello() {
+        echo 'Hello ';
+    }
+}
+trait SayWorld {// 复用类
+    public function sayHello() {
+        parent::sayHello();
+        echo 'World!';
+    }
+}
+// 优先级: MyHelloWorld中的方法会覆盖trait中的方法, trait中的会覆盖父类中的方法
+class MyHelloWorld extends Base {
+    use SayWorld;
+}
+$o = new MyHelloWorld();
+$o-&gt;sayHello();
+
+////////////////////////////////////////
+//
+//          命名空间
+//
+/////////////////////////////////////////
+
+declare(encoding='UTF-8'); //定义多个命名空间和不包含在命名空间中的代码
+namespace MyProject1;  
+// MyProject1 命名空间中的PHP代码  
+ 
+namespace MyProject2;  // 可以定义多个namespace
+// MyProject2 命名空间中的PHP代码    
+ 
+// 另一种语法
+namespace MyProject3 {  
+ // MyProject3 命名空间中的PHP代码    
+}
+
+namespace { // 全局代码
+session_start();
+$a = MyProject\connect();
+echo MyProject\Connection::start();
+}
+
+// ---------------------分层次的namespace---------------------------
+
+/*
+下面例子创建了常量 MyProject\Sub\Level\CONNECT_OK，类 MyProject\Sub\Level\Connection 和函数 MyProject\Sub\Level\Connect。
+*/
+namespace MyProject\Sub\Level;  //声明分层次的单个命名空间
+const CONNECT_OK = 1;
+class Connection { /* ... */ }
+function Connect() { /* ... */  }
+
+// --------------------怎么使用---------------------------
+
+// file1的代码
+namespace Foo\Bar\subnamespace; 
+
+const FOO = 1;
+function foo() {}
+class foo
+{
+    static function staticmethod() {}
+}
+
+// file2代码
+namespace Foo\Bar;
+include 'file1.php';// 引入file1.php
+
+const FOO = 2;
+function foo() {}
+class foo
+{
+    static function staticmethod() {}
+}
+
+/* 非限定名称, 在当前namespace使用 */
+foo(); // 解析为 Foo\Bar\foo 
+foo::staticmethod(); // 解析为类 Foo\Bar\foo的静态方法staticmethod。
+echo FOO; // resolves to constant Foo\Bar\FOO
+
+/* 限定名称 */
+subnamespace\foo(); // 解析为函数 Foo\Bar\subnamespace\foo
+subnamespace\foo::staticmethod(); // 解析为类 Foo\Bar\subnamespace\foo,
+                                  // 以及类的方法 staticmethod
+echo subnamespace\FOO; // 解析为常量 Foo\Bar\subnamespace\FOO
+                                  
+/* 完全限定名称, 在任何namespace都可以使用 */
+\Foo\Bar\foo(); // 解析为函数 Foo\Bar\foo
+\Foo\Bar\foo::staticmethod(); // 解析为类 Foo\Bar\foo, 以及类的方法 staticmethod
+echo \Foo\Bar\FOO; // 解析为常量 Foo\Bar\FOO
+
+/* 在命名空间内部访问全局类、函数和常量： */
+$a = \strlen('hi'); // 调用全局函数strlen
+$b = \INI_ALL; // 访问全局常量 INI_ALL
+$c = new \Exception('error'); // 实例化全局类 Exception
+
+// --------------------namespace的解析优先级---------------------------
+
+namespace A;
+use B\D, C\E as F;
+
+// 函数调用
+
+foo();      // 首先尝试调用定义在命名空间&quot;A&quot;中的函数foo()
+            // 再尝试调用全局函数 &quot;foo&quot;
+
+\foo();     // 调用全局空间函数 &quot;foo&quot; 
+
+my\foo();   // 调用定义在命名空间&quot;A\my&quot;中函数 &quot;foo&quot; 
+
+F();        // 首先尝试调用定义在命名空间&quot;A&quot;中的函数 &quot;F&quot; 
+            // 再尝试调用全局函数 &quot;F&quot;
+
+// 类引用
+
+new B();    // 创建命名空间 &quot;A&quot; 中定义的类 &quot;B&quot; 的一个对象
+            // 如果未找到，则尝试自动装载类 &quot;A\B&quot;
+
+new D();    // 使用导入规则，创建命名空间 &quot;B&quot; 中定义的类 &quot;D&quot; 的一个对象
+            // 如果未找到，则尝试自动装载类 &quot;B\D&quot;
+
+new F();    // 使用导入规则，创建命名空间 &quot;C&quot; 中定义的类 &quot;E&quot; 的一个对象
+            // 如果未找到，则尝试自动装载类 &quot;C\E&quot;
+
+new \B();   // 创建定义在全局空间中的类 &quot;B&quot; 的一个对象
+            // 如果未发现，则尝试自动装载类 &quot;B&quot;
+
+new \D();   // 创建定义在全局空间中的类 &quot;D&quot; 的一个对象
+            // 如果未发现，则尝试自动装载类 &quot;D&quot;
+
+new \F();   // 创建定义在全局空间中的类 &quot;F&quot; 的一个对象
+            // 如果未发现，则尝试自动装载类 &quot;F&quot;
+
+// 调用另一个命名空间中的静态方法或命名空间函数
+
+B\foo();    // 调用命名空间 &quot;A\B&quot; 中函数 &quot;foo&quot;
+
+B::foo();   // 调用命名空间 &quot;A&quot; 中定义的类 &quot;B&quot; 的 &quot;foo&quot; 方法
+            // 如果未找到类 &quot;A\B&quot; ，则尝试自动装载类 &quot;A\B&quot;
+
+D::foo();   // 使用导入规则，调用命名空间 &quot;B&quot; 中定义的类 &quot;D&quot; 的 &quot;foo&quot; 方法
+            // 如果类 &quot;B\D&quot; 未找到，则尝试自动装载类 &quot;B\D&quot;
+
+\B\foo();   // 调用命名空间 &quot;B&quot; 中的函数 &quot;foo&quot; 
+
+\B::foo();  // 调用全局空间中的类 &quot;B&quot; 的 &quot;foo&quot; 方法
+            // 如果类 &quot;B&quot; 未找到，则尝试自动装载类 &quot;B&quot;
+
+// 当前命名空间中的静态方法或函数
+
+A\B::foo();   // 调用命名空间 &quot;A\A&quot; 中定义的类 &quot;B&quot; 的 &quot;foo&quot; 方法
+              // 如果类 &quot;A\A\B&quot; 未找到，则尝试自动装载类 &quot;A\A\B&quot;
+
+\A\B::foo();  // 调用命名空间 &quot;A\B&quot; 中定义的类 &quot;B&quot; 的 &quot;foo&quot; 方法
+              // 如果类 &quot;A\B&quot; 未找到，则尝试自动装载类 &quot;A\B&quot;
+
+/*
+
+名称解析遵循这些规则:
+
+* 对完全限定名称的函数，类和常量的调用在编译时解析。例如      new \A\B 解析为类 A\B。
+
+* 所有的非限定名称和限定名称（非完全限定名称）根据当前的导入规则在编译时进行转换。例如，如果命名空间     A\B\C 被导入为 C，那么对 C\D\e()     的调用就会被转换为 A\B\C\D\e()。
+
+* 在命名空间内部，所有的没有根据导入规则转换的限定名称均会在其前面加上当前的命名空间名称。例如，在命名空间     A\B 内部调用 C\D\e()，则 C\D\e()     会被转换为 A\B\C\D\e() 。
+
+* 非限定类名根据当前的导入规则在编译时转换（用全名代替短的导入名称）。例如，如果命名空间     A\B\C 导入为C，则 new C()     被转换为 new A\B\C() 。
+
+* 在命名空间内部（例如A\B），对非限定名称的函数调用是在运行时解析的。例如对函数      foo() 的调用是这样解析的：
+
+    * 在当前命名空间中查找名为 A\B\foo() 的函数
+
+    * 尝试查找并调用 全局(global) 空间中的函数 foo()。
+
+* 在命名空间（例如A\B）内部对非限定名称或限定名称类（非完全限定名称）的调用是在运行时解析的。下面是调用      new C() 及 new D\E() 的解析过程：       new C()的解析: new D\E()的解析:为了引用全局命名空间中的全局类，必须使用完全限定名称 new \C()。
+
+    * 在类名称前面加上当前命名空间名称变成：A\B\D\E，然后查找该类。
+
+    * 尝试自动装载类 A\B\D\E。
+
+    * 在当前命名空间中查找A\B\C类。
+
+    * 尝试自动装载类A\B\C。
+*/
+
+
+//////////////////////////////////////////
+//
+//          oo的一些内容, 和java的异同
+//
+////////////////////////////////////////
+/*
+构造函数
+析构函数: 与构造函数相反，当对象结束其生命周期时（例如对象所在的函数已调用完毕），系统自动执行析构函数。析构函数往往用来做&quot;清理善后&quot; 的工作（例如在建立对象时用new开辟了一片内存空间，应在退出前在析构函数中用delete释放）。
+*/
+
+// 一个最简单的pojo类
+class Site {
+  /* 成员变量 
+    类属性必须定义为公有(public)，受保护(protected)，私有(private)之一。如果用 var 定义，则被视为公有
+  */
+  var $url;
+  var $title;
+  /* 构造函数
+    默认为public
+  */
+  function __construct( $par1, $par2 ) {
+   $this-&gt;url = $par1;
+   $this-&gt;title = $par2;
+  }
+  /* 析构函数 */
+  function __destruct() {
+       print &quot;销毁 &quot; . $this-&gt;title . &quot;\n&quot;;
+  }
+  /* 成员函数 */
+  function setUrl($par){
+     $this-&gt;url = $par;
+  }
+  function getUrl(){
+     echo $this-&gt;url . PHP_EOL;
+  }
+  function setTitle($par){
+     $this-&gt;title = $par;
+  }
+  function getTitle(){
+     echo $this-&gt;title . PHP_EOL;
+  }
+}
+
+$taobao = new Site;
+// or
+$taobao = new Site('www.taobao.com', '淘宝'); 
+$taobao-&gt;setTitle( &quot;淘宝&quot; );
+?&gt; 
+
+&lt;/body&gt; 
+&lt;/html&gt;
+</code></pre>
+<h1><a class="header" href="#traitinterface和abstract的异同" id="traitinterface和abstract的异同">trait，interface和abstract的异同</a></h1>
+<ul>
+<li>
+<p>trait看上去更像是为了代码的复用而写的一个小插件，它类似于include，可以用use放在类中间，让trait里面定义的方法作为class的一部分，本身不能直接实例化</p>
+</li>
+<li>
+<p>当abstract作用于某个类时，此类被限定为抽象类，只能用于继承，而无法实例化对象; 抽象方法是必须被子类继承实现的，所以不可以用private修饰符去限定abstract抽象方法，可以用public和protected去修饰</p>
+</li>
+<li>
+<p>interface里面的方法都是虚拟的，需要在继承的时候对这些方法进行重定义</p>
+</li>
+</ul>
+<h1><a class="header" href="#表单处理" id="表单处理">表单处理</a></h1>
+<pre><code class="language-php">&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;title&gt;php中文网(php.cn)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form action=&quot;/welcome/index.php&quot; method=&quot;post&quot;&gt;
+名字: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;
+年龄: &lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+
+&lt;?php
+echo $_SERVER['HTTP_HOST'];
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>welcome.php 文件如下所示</p>
+<pre><code class="language-php">欢迎 &lt;?php echo $_POST[&quot;fname&quot;]; ?&gt;!&lt;br&gt;
+你的年龄是 &lt;?php echo $_POST[&quot;age&quot;]; ?&gt;  岁。
+</code></pre>
+<h1><a class="header" href="#swoole20-和协程" id="swoole20-和协程">swoole2.0 和协程</a></h1>
+<p>Swoole 2.x 让 PHP 这门 20多年历史的老牌后台编程语言也能有协程的能力</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="outline-about-rest-api.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="postgres-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="outline-about-rest-api.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="postgres-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

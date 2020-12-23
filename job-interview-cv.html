@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>job-interview-cv - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html" class="active"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Interview and resume 经验之谈
+tags:</p>
+<ul>
+<li>interview
+date: 2017-05-20 17:00:01
+categories: tool</li>
+</ul>
+<hr />
+<p><a href="http://cv.ftqq.com/">markdown制作简历</a></p>
+<p>https://copyfuture.com/blogs-details/20191202124559850yxnsp1o3sur5w2y</p>
+<p>https://global.v2ex.com/go/career</p>
+<p>https://github.com/coding-daily/awesome-freelancer</p>
+<p>https://github.com/apachecn/Interview</p>
+<p>https://github.com/Snailclimb/programmer-advancement#%E5%A6%82%E4%BD%95%E4%BB%8B%E7%BB%8D%E8%87%AA%E5%B7%B1%E7%9A%84%E9%A1%B9%E7%9B%AE
+https://juejin.im/post/6844903683658874893
+https://zhuanlan.zhihu.com/p/23713529 MySQL
+https://www.cnblogs.com/JavaArchitect/p/9741085.html 
+https://crossoverjie.top/2018/08/21/skill/resume/
+TODO</p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E7%AE%80%E5%8E%86">简历</a>
+<ul>
+<li><a href="#%E5%85%B6%E4%BB%96">其他</a></li>
+<li><a href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF">个人信息</a></li>
+<li><a href="#%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86">工作经历</a></li>
+<li><a href="#%E4%B8%93%E4%B8%9A%E6%8A%80%E8%83%BD">专业技能</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E5%8E%86">项目经历</a>
+<ul>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E6%8F%8F%E8%BF%B0">项目描述</a></li>
+<li><a href="#%E6%8A%80%E6%9C%AF%E6%A0%88">技术栈</a></li>
+<li><a href="#%E6%88%91%E7%9A%84%E8%81%8C%E8%B4%A3">我的职责</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%8A%95%E9%80%92">投递</a></li>
+<li><a href="#%E9%9D%A2%E8%AF%95tips">面试tips</a>
+<ul>
+<li><a href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D">自我介绍</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E7%BB%8F%E9%AA%8C%E4%BB%8B%E7%BB%8D">项目经验介绍</a></li>
+</ul>
+</li>
+<li><a href="#%E8%81%8C%E5%9C%BAtips">职场tips</a></li>
+<li><a href="#%E6%95%B4%E6%B4%BB">整活</a></li>
+<li><a href="#remote-work">remote work</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#简历" id="简历">简历</a></h1>
+<h2><a class="header" href="#其他" id="其他">其他</a></h2>
+<ul>
+<li>简历保持在2页左右;</li>
+<li>邮件主题, 简历文件名: 姓名-原公司-职位</li>
+</ul>
+<h2><a class="header" href="#个人信息" id="个人信息">个人信息</a></h2>
+<ul>
+<li>个人信息占行数不要太多, 两三行足够</li>
+</ul>
+<h2><a class="header" href="#工作经历" id="工作经历">工作经历</a></h2>
+<ul>
+<li>工作经历详细写做了那些事情</li>
+<li>明确写好在校及各公司的起始年限</li>
+<li>体现你会什么，能开发什么。在工作经历中用一两句话小介绍一下公司本身</li>
+</ul>
+<h2><a class="header" href="#专业技能" id="专业技能">专业技能</a></h2>
+<ul>
+<li>
+<p>专业技能可写可不写, 尽量简洁</p>
+</li>
+<li>
+<p>各种熟悉精通的词汇没有什么用</p>
+</li>
+</ul>
+<p>错误的写法：</p>
+<ul>
+<li>熟练使用 Javascript （假大空，谁也不知道你的“熟练”是什么标准）</li>
+<li>了解 Flask</li>
+</ul>
+<p>正确的写法：</p>
+<ul>
+<li>使用 Javascript 的 XX 框架开发了 XX，代码量共 XX 行 /X 人合作，其中自己写了 XX 模块（约 XX 行）。在 XX 项目 /工作中大量使用了 Promise, fetch API，在工作中学习并利用 prototype 查找链实现了__轮子，分析过 babel transpile XX 特性的过程。</li>
+<li>用 Flask 开发过一个简单的 XX 系统，代码量约 XX，使用了 XX 特性</li>
+</ul>
+<h2><a class="header" href="#项目经历" id="项目经历">项目经历</a></h2>
+<h3><a class="header" href="#项目描述" id="项目描述">项目描述</a></h3>
+<p>项目描述部分尽量简短</p>
+<p>项目简介（由来、实现了什么需求, 取得的结果）在项目介绍的末尾加上一两句话阐述项目现在的状况，可能会更好一点。大概意思就是说项目已经成功运营了，什么时候上线的什么的。</p>
+<p>介绍项目时，最好先说说项目基本架构，主要实现哪些功能，各大功能用到什么技术，层次是怎样的。</p>
+<p>多个项目经历时间最好不要刚好连着, 即使确实是连着的也建议有间隔或重叠</p>
+<p>电商项目现在(2019) 过时了, 不火了, 写上去太不真实</p>
+<h3><a class="header" href="#技术栈" id="技术栈">技术栈</a></h3>
+<ul>
+<li>常用名称正确书写: Java、App、MySQL、GitHub、SDK、JS、API、Node.js、JSON、XML、OpenGL、SQLite</li>
+<li>不要写软件环境、硬件环境、开发工具之类的</li>
+</ul>
+<h3><a class="header" href="#我的职责" id="我的职责">我的职责</a></h3>
+<p>职责描述部分尽量详细</p>
+<p>突出项目中你的职责、遇到的问题, 如何解决的。不需要详细的技术点尽量笼统一点</p>
+<p>闪光点: 比如你解决了哪个很严重的生产问题，比如你应用了那些设计模式在你的项目里面，比如你有什么巧妙的解决一些棘手问题的技巧</p>
+<p>随便举个例子</p>
+<p>&quot;搜索使用 ElasticSearch 提升搜索效率&quot;, 这个事情背景是什么, 搜索效率出了什么问题, 为什么要提升? 怎么使用 es 就提升了, 原来用的是啥? 两者优缺点是什么, 你选型 es 的时候还调研了哪些其它的方案? 为什么选用了 es? 最后提升效果数据是什么?</p>
+<p>要我写这个点, 会写成这样</p>
+<p>改进使用 xxx 导致搜索过慢(列数据)问题, 调研 xx, xx, xx, 对比优缺点, 最终选用 es, 将搜索效率提升了 xxx. 如果能有业务收益是最好的.</p>
+<h1><a class="header" href="#投递" id="投递">投递</a></h1>
+<ul>
+<li>常用网站: <a href="https://www.lagou.com/">拉钩</a>, <a href="https://www.zhipin.com/">boss直聘</a>, <a href="https://www.liepin.com/">猎聘</a>, <a href="https://www.zhaopin.com/">智联</a>, <a href="http://www.51job.com/">51job</a> (直接用51job，筛选条件设为欧美企业，员工人数100到300，地区薪酬行业都可以选择)</li>
+<li>不要投递太过广泛, 时间段太过集中, 否则一天可能接到七八个面试电话.</li>
+<li>投递的第一天没人联系, 可能很正常, 因为企业处理简历有一个周期, 可能没过几天才会查看一下简历投递情况.但如果炒锅3天还没有信息, 需要思考简历是否有问题了.</li>
+<li>当然, 最好的途径还是泡论坛, 关注招聘帖, 运气好的话可以直接找到技术负责人.</li>
+</ul>
+<h1><a class="header" href="#面试tips" id="面试tips">面试tips</a></h1>
+<h2><a class="header" href="#自我介绍" id="自我介绍">自我介绍</a></h2>
+<p>赶紧报上你最自信的技术栈，最牛逼的项目，最卓越的技术贡献。</p>
+<p>一句话概括说明自己的经历和优势
+一句话简要描述之前做过的工作
+一句话简要描述最近一份工作以及重点的业绩
+一句话简要描述对目标岗位的理解和想法
+一句话表明应聘的意愿</p>
+<p>30秒到1分钟即可</p>
+<h2><a class="header" href="#项目经验介绍" id="项目经验介绍">项目经验介绍</a></h2>
+<h1><a class="header" href="#职场tips" id="职场tips">职场tips</a></h1>
+<p>https://mp.weixin.qq.com/s/e_3iPQ5ppAqGDQvhEIDmGw
+https://copyfuture.com/blogs-details/20191202124559850yxnsp1o3sur5w2y</p>
+<h1><a class="header" href="#整活" id="整活">整活</a></h1>
+<p>自建邮件服务</p>
+<p>在线简历</p>
+<p>TODO</p>
+<p><a href="https://blog.csdn.net/wolf_love666/article/details/90243310">高可用数据对账系统</a>, https://blog.csdn.net/wolf_love666/article/details/90644844</p>
+<p>报纸数字化 elasticsearch</p>
+<p>https://github.com/MatrixSeven/HotLoad java 热加载</p>
+<p>https://www.jianshu.com/p/e6d9afd562b2 Sql拦截器（自定义注解+反射）</p>
+<h1><a class="header" href="#remote-work" id="remote-work">remote work</a></h1>
+<p>https://coolshell.cn/articles/20765.html 远程工作文化
+https://github.com/lukasz-madon/awesome-remote-job
+https://github.com/remoteintech/remote-jobs 支持 remote 公司
+https://www.v2ex.com/t/717039#reply21 讨论
+https://www.zhihu.com/question/62351184 upwork 上体验</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="java-code-clean.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="joke-collecting.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="java-code-clean.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="joke-collecting.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,3690 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>maven-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html" class="active"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Maven Note
+tags:</p>
+<ul>
+<li>maven
+categories: java web
+date: 2014-03-20 13:22:27</li>
+</ul>
+<hr />
+<div align="center">
+Maven Note | [替换pom.xml为其他格式的文件](https://github.com/takari/polyglot-maven) | [一个插件使用所有前端工具](https://github.com/eirslett/frontend-maven-plugin)
+跨平台, 服务于java项目的管理工具(项目构建, 依赖管理, 项目信息管理)
+类似的还有 Gradle.
+<p>jetbrains package search : https://pkg.biuaxia.cn/</p>
+</div>
+<!--more--> 
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C">命令行</a></li>
+<li><a href="#spring-io-platform">spring-io-platform</a></li>
+<li><a href="#why-maven">why maven</a></li>
+<li><a href="#maven%E6%98%AF%E4%BB%80%E4%B9%88">Maven是什么</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a>
+<ul>
+<li><a href="#aliyun-%E9%98%BF%E9%87%8C%E4%BA%91%E4%BB%93%E5%BA%93">aliyun 阿里云仓库</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80">配置本地仓库地址</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">配置远程仓库</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E8%AE%A4%E8%AF%81%E9%9D%9E%E5%BF%85%E9%A1%BB">配置远程仓库认证(非必须)</a></li>
+<li><a href="#%E9%83%A8%E7%BD%B2%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">部署到远程仓库</a></li>
+<li><a href="#%E9%98%BF%E9%87%8C%E4%BA%91-aliyun-%E9%95%9C%E5%83%8F">阿里云 aliyun 镜像</a></li>
+</ul>
+</li>
+<li><a href="#maven%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E8%A7%84%E8%8C%83">Maven项目目录规范</a></li>
+<li><a href="#demo">demo</a></li>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%91%BD%E4%BB%A4-and-%E5%8C%85%E5%90%AB%E6%95%88%E6%9E%9C">生命周期命令 and 包含效果</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD%E6%9C%AC%E5%9C%B0%E5%8C%85">安装卸载本地包</a></li>
+<li><a href="#%E6%89%93%E5%8C%85%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8Cjar">打包成可执行jar</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8archetype%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E9%AA%A8%E6%9E%B6">使用archetype生成项目骨架</a></li>
+<li><a href="#%E5%9D%90%E6%A0%87">坐标</a></li>
+<li><a href="#%E5%BF%AB%E7%85%A7%E7%89%88%E6%9C%AC%E5%92%8C%E5%8F%91%E5%B8%83%E7%89%88%E6%9C%AC">快照版本和发布版本</a></li>
+<li><a href="#%E4%BE%9D%E8%B5%96%E7%9A%84%E9%85%8D%E7%BD%AE">依赖的配置</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0">基本元素</a></li>
+<li><a href="#scope">scope</a></li>
+<li><a href="#%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96">传递性依赖</a></li>
+<li><a href="#maven%E7%9A%84%E4%BE%9D%E8%B5%96%E8%B0%83%E8%A7%A3%E7%89%B9%E6%80%A7">Maven的依赖调解特性</a></li>
+<li><a href="#%E5%8F%AF%E9%80%89%E4%BE%9D%E8%B5%96">可选依赖</a></li>
+<li><a href="#%E6%8E%92%E9%99%A4%E4%BE%9D%E8%B5%96">排除依赖</a></li>
+<li><a href="#%E4%BE%9D%E8%B5%96%E5%BD%92%E7%B1%BB">依赖归类</a></li>
+<li><a href="#%E4%BE%9D%E8%B5%96%E7%9A%84%E4%BC%98%E5%8C%96">依赖的优化</a></li>
+<li><a href="#%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E4%BE%9D%E8%B5%96">引入外部依赖</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A1%88%E4%BE%8B%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C%E6%9C%8D%E5%8A%A1">案例:账户注册服务</a>
+<ul>
+<li><a href="#%E9%9C%80%E6%B1%82">需求</a></li>
+<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84%E8%AE%BE%E8%AE%A1">简单的设计</a></li>
+<li><a href="#account-email%E6%A8%A1%E5%9D%97">account-email模块</a>
+<ul>
+<li><a href="#parent-pom">parent-pom</a></li>
+<li><a href="#email-pom">email-pom</a></li>
+<li><a href="#%E4%B8%BB%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95">主代码&amp;测试</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E8%B5%84%E6%BA%90-%E4%B8%BB%E8%B5%84%E6%BA%90%E8%AF%BB%E5%8F%96%E9%A1%BA%E5%BA%8F">测试资源-主资源读取顺序</a></li>
+<li><a href="#spring%E6%B3%A8%E5%85%A5%E9%85%8D%E7%BD%AE">spring注入配置</a></li>
+</ul>
+</li>
+<li><a href="#account-persist%E6%A8%A1%E5%9D%97">account-persist模块</a>
+<ul>
+<li><a href="#account-persist%E7%9A%84pom">account-persist的pom</a></li>
+<li><a href="#%E4%B8%BB%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95-1">主代码&amp;测试</a></li>
+<li><a href="#%E6%B3%A8%E5%85%A5%E9%85%8D%E7%BD%AE">注入配置</a></li>
+</ul>
+</li>
+<li><a href="#account-captcha%E6%A8%A1%E5%9D%97">account-captcha模块</a>
+<ul>
+<li><a href="#captcha%E6%A8%A1%E5%9D%97%E7%9A%84pom">captcha模块的pom</a></li>
+<li><a href="#%E4%B8%BB%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95-2">主代码&amp;测试</a></li>
+<li><a href="#%E6%B3%A8%E5%85%A5%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">注入配置文件</a></li>
+</ul>
+</li>
+<li><a href="#account-service%E6%A8%A1%E5%9D%97">account-service模块</a>
+<ul>
+<li><a href="#service-pom%E9%85%8D%E7%BD%AE">service-pom配置</a></li>
+<li><a href="#%E4%B8%BB%E4%BB%A3%E7%A0%81">主代码</a></li>
+<li><a href="#spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">spring配置文件</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85account-service%E6%A8%A1%E5%9D%97%E6%B3%A8%E6%84%8F">安装account-service模块注意</a></li>
+</ul>
+</li>
+<li><a href="#account-web%E6%A8%A1%E5%9D%97">account-web模块</a>
+<ul>
+<li><a href="#webxml">web.xml</a></li>
+<li><a href="#pomxml">pom.xml</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#maven%E4%B8%AD%E7%9A%84%E6%B5%8B%E8%AF%95">Maven中的测试</a>
+<ul>
+<li><a href="#maven-surefire-plugin">maven-surefire-plugin</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%B7%B3%E8%BF%87%E6%B5%8B%E8%AF%95">如何跳过测试</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E6%8C%87%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%9A%84%E6%B5%8B%E8%AF%95%E7%B1%BB">动态指定运行的测试类</a></li>
+<li><a href="#%E5%8C%85%E5%90%AB%E6%8E%92%E9%99%A4%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B">包含&amp;排除测试用例</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87%E6%8A%A5%E5%91%8A">测试报告&amp;测试覆盖率报告</a></li>
+<li><a href="#%E6%94%B9%E7%94%A8testng%E4%BB%A3%E6%9B%BFjunit">改用TestNG代替Junit</a></li>
+<li><a href="#%E6%89%93%E5%8C%85%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81">打包测试代码</a></li>
+</ul>
+</li>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">生命周期</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6">插件</a>
+<ul>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E6%8F%92%E4%BB%B6%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3">查看插件帮助文档</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6%E7%BB%91%E5%AE%9A">插件绑定</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%91%E5%AE%9A">插件的自定义绑定</a></li>
+<li><a href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%BB%99%E6%8F%92%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%8F%82%E6%95%B0">在命令行给插件设置参数</a></li>
+<li><a href="#%E5%9C%A8pom%E4%B8%AD%E8%AE%BE%E7%BD%AE%E6%8F%92%E4%BB%B6%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%82%E6%95%B0">在pom中设置插件的全局参数</a></li>
+<li><a href="#%E5%9C%A8pom%E4%B8%AD%E7%BB%99%E6%8F%92%E4%BB%B6%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE%E4%B8%AA%E6%80%A7%E5%8C%96%E5%8F%82%E6%95%B0">在pom中给插件任务配置个性化参数</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6">常用的插件</a>
+<ul>
+<li><a href="#%E6%89%93%E5%8F%AF%E6%89%A7%E8%A1%8C%E5%8C%85%E6%8F%92%E4%BB%B6">打可执行包插件</a></li>
+<li><a href="#maven-war-plugin">maven-war-plugin</a></li>
+<li><a href="#maven-eclipse-plugin">maven-eclipse-plugin</a></li>
+<li><a href="#exec-maven-plugin">exec-maven-plugin</a></li>
+<li><a href="#bash-maven-plugin">bash-maven-plugin</a></li>
+<li><a href="#maven-antrun-plugin">maven-antrun-plugin</a></li>
+<li><a href="#versions-maven-plugin">versions-maven-plugin</a></li>
+<li><a href="#build-helper-maven-plugin">build-helper-maven-plugin</a></li>
+<li><a href="#maven-dependency-plugin">maven-dependency-plugin</a></li>
+<li><a href="#jetty%E5%92%8Ctomcat">jetty和tomcat</a></li>
+<li><a href="#maven-source-plugin">maven-source-plugin</a></li>
+<li><a href="#maven-resources-plugins">maven-resources-plugins</a></li>
+<li><a href="#maven-assembly-plugin">maven-assembly-plugin</a></li>
+<li><a href="#maven-compiler-plugin">maven-compiler-plugin</a></li>
+<li><a href="#spring-boot-maven-plugin">spring-boot-maven-plugin</a></li>
+<li><a href="#maven-install-plugin">maven-install-plugin</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BC%96%E5%86%99maven%E6%8F%92%E4%BB%B6">编写maven插件</a></li>
+</ul>
+</li>
+<li><a href="#maven%E5%B1%9E%E6%80%A7">maven属性</a></li>
+<li><a href="#%E5%BC%80%E5%90%AF%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E8%BF%87%E6%BB%A4">开启资源文件过滤</a></li>
+<li><a href="#%E5%BC%80%E5%90%AFweb%E8%B5%84%E6%BA%90%E8%BF%87%E6%BB%A4">开启web资源过滤</a></li>
+<li><a href="#maven-profile-%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">maven profile 多环境配置</a>
+<ul>
+<li><a href="#profile-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">profile 基本使用</a></li>
+<li><a href="#profile-build">profile build</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E9%BB%98%E8%AE%A4-jdk-%E7%BC%96%E8%AF%91%E7%89%88%E6%9C%AC">配置默认 jdk 编译版本</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A8%A1%E5%9D%97%E7%9A%84%E8%81%9A%E5%90%88%E7%BB%A7%E6%89%BF">模块的聚合&amp;继承</a></li>
+<li><a href="#dependencymangement%E5%85%83%E7%B4%A0">dependencyMangement元素</a></li>
+<li><a href="#pluginmanagement%E5%85%83%E7%B4%A0">pluginManagement元素</a></li>
+<li><a href="#%E5%8F%8D%E5%BA%94%E5%A0%86">反应堆</a></li>
+<li><a href="#%E5%8E%86%E5%8F%B2%E9%A1%B9%E7%9B%AE%E6%94%B9%E9%80%A0%E4%B8%BAmaven%E9%A1%B9%E7%9B%AE">历史项目改造为maven项目</a></li>
+<li><a href="#%E6%A3%80%E6%9F%A5%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81">检查依赖冲突</a></li>
+<li><a href="#maven%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90">Maven项目的持续集成</a></li>
+<li><a href="#%E7%BC%96%E5%86%99maven%E6%A8%A1%E6%9D%BFarchetype">编写Maven模板archetype</a>
+<ul>
+<li><a href="#archetype%E7%BB%84%E6%88%90%E5%85%83%E7%B4%A0">archetype组成元素</a></li>
+<li><a href="#archetype-demo">archetype-demo</a>
+<ul>
+<li><a href="#archetype%E8%87%AA%E8%BA%ABpom">archetype自身pom</a></li>
+<li><a href="#%E6%A8%A1%E7%89%88%E6%95%B0%E6%8D%AE">模版数据</a></li>
+<li><a href="#%E6%8F%8F%E8%BF%B0%E7%AC%A6%E6%96%87%E4%BB%B6">描述符文件</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8">使用</a></li>
+</ul>
+</li>
+<li><a href="#archetype-catalog">archetype-catalog</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#命令行" id="命令行">命令行</a></h1>
+<p><a href="https://blog.csdn.net/fangzg811107320/article/details/72763704">手动安装jar到本地仓库</a>: <code>mvn install:install-file -Dfile=D:/soft/ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.3 -Dpackaging=jar -DgeneratePom=true</code></p>
+<h1><a class="header" href="#spring-io-platform" id="spring-io-platform">spring-io-platform</a></h1>
+<p>Spring IO Platform框架简单来说就是一个版本号兼容系统，是一个依赖维护平台</p>
+<p>它将常用第三方类库的兼容的版本组织起来。只要我们在项目中引用了Spring IO Platform，就不需要为这些第三方类库设置版本号了，Spring IO Platform会自动帮我们设置所有兼容的版本号</p>
+<p>可以完美的支持Maven和Gradle；</p>
+<p>直接导入</p>
+<pre><code class="language-xml">&lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;io.spring.platform&lt;/groupId&gt;
+                &lt;artifactId&gt;platform-bom&lt;/artifactId&gt;
+                &lt;version&gt;Brussels-SR3&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+</code></pre>
+<p>or 设置为 parent pom</p>
+<pre><code class="language-xml">&lt;parent&gt;
+        &lt;groupId&gt;io.spring.platform&lt;/groupId&gt;
+        &lt;artifactId&gt;platform-bom&lt;/artifactId&gt;
+        &lt;version&gt;Brussels-SR3&lt;/version&gt;
+        &lt;relativePath/&gt;
+    &lt;/parent&gt;
+</code></pre>
+<p>如果需要覆盖某个类库的版本号:</p>
+<pre><code class="language-xml">&lt;properties&gt;
+    &lt;foo.version&gt;1.1.0.RELEASE&lt;/foo.version&gt;
+&lt;/properties&gt;
+</code></pre>
+<p>看一个  spring boot 项目的完整例子:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.example&lt;/groupId&gt;
+    &lt;artifactId&gt;helloworld&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+
+   &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;io.spring.platform&lt;/groupId&gt;
+                &lt;artifactId&gt;platform-bom&lt;/artifactId&gt;
+                &lt;version&gt;Athens-SR2&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+            
+            &lt;dependency&gt;
+                &lt;!-- Import dependency management from Spring Boot --&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;1.4.3.RELEASE&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+    
+    &lt;!-- Additional lines to be added here... --&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.google.code.gson&lt;/groupId&gt;
+            &lt;artifactId&gt;gson&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;1.4.3.RELEASE&lt;/version&gt;
+                &lt;!-- 因为不是继承 parent pom, --&gt;
+                &lt;!-- 需要自己添加配置，绑定repackage Goal --&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;repackage&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+&lt;/project&gt;
+</code></pre>
+<h1><a class="header" href="#why-maven" id="why-maven">why maven</a></h1>
+<p>ant有一个很致命的缺陷，那就是没办法管理依赖</p>
+<h1><a class="header" href="#maven是什么" id="maven是什么">Maven是什么</a></h1>
+<p>一般来说我们典型的工作场景是这样的: 一天的工作开始之前, 先从源码库 pull 出新的代码, 然后单元测试, 如果发现bug, 联系作者一起调试, 然后进行自己的工作(编写自己的单元测试和代码); 如果这时 QA 发过来几个bug, 先本地重现(生成war包, 部署到web容器, 启动查看), bug解决首提交代码; 如果这时leader需要看测试报告, 于是需要将相关工具集成进ide, 生成测试覆盖率报告;</p>
+<p>观察每天的这个过程, 其实大部分都是一些重复的劳动(编译, 运行单元测试, 生成文档, 打包部署), 这一类繁琐的过程都可归类于 &quot;构建&quot;;</p>
+<p>Maven为所有的项目抽象出了一个构建过程的生命周期模型, 对于不同的生命周期有大量的Maven插件可用; 这样抽象的好处是以前的10个项目可能有十种构建方式, 而现在统一可以使用Maven命令进行构建;</p>
+<p>至于依赖管理, 一般一个Java应用会依赖于大量第三方类库, 类库之间可能还会有互相的依赖, 版本冲突, 此时这些类库的管理就是个繁重的体力活, Maven给了一个优雅的解决方案, 后面细说;此外Maven还能帮我们管理分散在各个角落的项目信息(项目描述, 开发者列表, 版本控制仓库地址, 测试报告...)</p>
+<h1><a class="header" href="#安装" id="安装">安装</a></h1>
+<ul>
+<li>Maven依赖于jdk</li>
+<li>升级只需要下载新版Maven, 更新M2_HOME即可</li>
+<li>如果使用Maven报 <code>outOfMemeoryError</code>, 可设置 <code>MAVEN_OPTS</code>环境变量为<code>- Xms128m -Xmx512m</code>以扩大java默认最大可用内存;</li>
+<li><code>conf/setttings.xml</code>和<code>.m2/setttings.xml</code>都可以配置Maven, 前者是全局范围生效, 后者只对当前用户生效, 推荐修改后者, 因为升级方便;用户配置文件设定后, 全局配置文件就失效了</li>
+<li>eclipse集成时, 不要使用其内置的Maven, 使用外置的我们自己配置的Maven</li>
+</ul>
+<h2><a class="header" href="#aliyun-阿里云仓库" id="aliyun-阿里云仓库">aliyun 阿里云仓库</a></h2>
+<pre><code class="language-xml">&lt;repositories&gt;
+        &lt;!--阿里云主仓库，代理了maven central和jcenter仓库--&gt;
+        &lt;repository&gt;
+            &lt;id&gt;aliyun&lt;/id&gt;
+            &lt;name&gt;aliyun&lt;/name&gt;
+            &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+            &lt;releases&gt;
+                &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/repository&gt;
+        &lt;!--阿里云代理Spring 官方仓库--&gt;
+        &lt;repository&gt;
+            &lt;id&gt;spring-milestones&lt;/id&gt;
+            &lt;name&gt;Spring Milestones&lt;/name&gt;
+            &lt;url&gt;https://maven.aliyun.com/repository/spring&lt;/url&gt;
+            &lt;releases&gt;
+                &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/releases&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/repository&gt;
+    &lt;/repositories&gt;
+</code></pre>
+<img src= "Screenshot_27.png"/>
+<h2><a class="header" href="#配置本地仓库地址" id="配置本地仓库地址">配置本地仓库地址</a></h2>
+<p>项目寻找依赖, 会先从远程仓库将构件下载到本地仓库然后使用; 本地仓库默认在${user_dir}/.m2/repository(输入第一条Maven命令后生成); 如果希望自定义本地仓库位置, 可修改 ${user_dir}/.m2/setttings.xml(如果不存在, 可复制一份过来), 设置 localRepository 元素的值;
+<img src="Screenshot_28.png" width=50% /></p>
+<h2><a class="header" href="#配置远程仓库" id="配置远程仓库">配置远程仓库</a></h2>
+<p>如果默认的中央仓库无法满足要求, 如何配置其他的远程仓库地址呢?</p>
+<p>可以在项目pom中配置</p>
+<p><img src="Screenshot_29.png"/><img src="Screenshot_30.png" width=50% style="
+    margin-left: 370px;
+    width: 625px;
+"/></p>
+<p>通过Repository子元素, 可以声明多个远程仓库, 仓库id必须唯一, 中央仓库id=central, 如果其他仓库使用这里id, 会覆盖中央仓库的配置;release和snapshoot元素用来控制发布版构件和快照版构件的下载, <a href="#%E5%BF%AB%E7%85%A7%E7%89%88%E6%9C%AC%E5%92%8C%E5%8F%91%E5%B8%83%E7%89%88%E6%9C%AC">快照版本和发布版本</a>会写到, 此外, 这两个元素还有其他子元素
+<img src="Screenshot_31.png">
+updatePolicy指定更新频率, 可取这些值: daily(默认, 每天检查), never(从不检查), always(每次构建都检查), interval: x(每隔x分钟检查一次, x为整数)</p>
+<p>同时, 还可以在setttings中配置一份中央仓库的镜像, 规避GFW带来的慢速问题, 详细描述在<a href="#%E9%95%9C%E5%83%8F">这里</a></p>
+<pre><code class="language-xml">&lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+     --&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;alimaven&lt;/id&gt;
+        &lt;name&gt;aliyun maven&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;!-- 所有针对central仓库的请求都会被转到这个镜像 --&gt;
+    &lt;/mirror&gt;
+&lt;/mirrors&gt;
+</code></pre>
+<h2><a class="header" href="#配置远程仓库认证非必须" id="配置远程仓库认证非必须">配置远程仓库认证(非必须)</a></h2>
+<p>仓库信息可以再pom文件中配置, 认证只能在setttings中配置
+<img src="Screenshot_32.png" width=50% ></p>
+<h2><a class="header" href="#部署到远程仓库" id="部署到远程仓库">部署到远程仓库</a></h2>
+<p>编辑项目的pom, 配置distributionManagement元素
+<img src="Screenshot_33.png"></p>
+<p>构件部署到远程仓库, 和下载不同, 这时通常需要验证, 需要在setttings中配置servers</p>
+<p>最后运行 <code>mvn clean deploy</code></p>
+<h2><a class="header" href="#阿里云-aliyun-镜像" id="阿里云-aliyun-镜像">阿里云 aliyun 镜像</a></h2>
+<p>如果仓库a能够提供仓库b的全部内容, 那么a是b的一个镜像, 设置镜像通常是为了规避慢速问题</p>
+<p>setttings中配置:</p>
+<pre><code class="language-xml">&lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+     --&gt;
+    &lt;mirror&gt;
+        &lt;id&gt;alimaven&lt;/id&gt;
+        &lt;name&gt;aliyun maven&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;!-- 所有针对central仓库的请求都会被转到这个镜像 --&gt;
+    &lt;/mirror&gt;
+&lt;/mirrors&gt;
+</code></pre>
+<p>此外, Maven对于镜像的mirrorOf标签还支持更多语法</p>
+<img src="Screenshot_34.png" width=50%/>
+<h1><a class="header" href="#maven项目目录规范" id="maven项目目录规范">Maven项目目录规范</a></h1>
+<p><img src="Screenshot_1.png" alt="" /></p>
+<ul>
+<li>如果遵循这个规范, Maven会自动搜寻对应目录下的对应资源, 而无需额外配置</li>
+<li>如果是历史项目改造成Maven, 代码目录无法改变了, 也可以在pom文件中配置, <a href="#%E5%8E%86%E5%8F%B2%E9%A1%B9%E7%9B%AE%E6%94%B9%E9%80%A0%E4%B8%BAmaven%E9%A1%B9%E7%9B%AE">下文详述</a></li>
+</ul>
+<h1><a class="header" href="#demo" id="demo">demo</a></h1>
+<p>先看pom文件:</p>
+<pre><code class="language-xml">&lt;?xml version = &quot;1.0&quot; encoding = &quot;UTF-8&quot;?&gt;&lt;!-- xml头, 指定xml版本, 编码方式 --&gt;
+
+&lt;!-- project是所有pom的根元素, 属性中声明了一些命名空间, xsd, 不是必须的但是可以让第三方编辑器有智能提示 --&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;!-- pom模型版本, 对于Maven2和Maven3来说只能是4.0.0 --&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;!-- 三要素, 必须 --&gt;
+  &lt;groupId&gt;com.xy.mvnbook&lt;/groupId&gt;&lt;!-- 公司xy建立一个项目mvnbook --&gt;
+  &lt;artifactId&gt;hello-world&lt;/artifactId&gt;&lt;!-- 项目唯一id --&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;&lt;!-- 版本会不断更新, 比如从1.0到1.1-snapshoot到1.1到2.0, snapshoot表示快照 --&gt;
+  &lt;name&gt;Maven Hollo World Project&lt;/name&gt;&lt;!-- 不是必须 --&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;&lt;!-- 打包类型, 默认jar --&gt;
+  
+  &lt;dependencies&gt;
+    &lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+        &lt;version&gt;4.12&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;&lt;!-- 依赖范围, 默认是&quot;compile&quot;表示该依赖对主/测试代码均有效, 这里&quot;test&quot;表示只对测试生效, 即测试代码中可以正常import JUnit, 但是在主代码中import JUnit就会报错(证明依赖只是被加入主代码的classpath中) --&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;&lt;!-- 把依赖的lib打包到一个jar, 生成可执行jar --&gt;
+        &lt;version&gt;3.1.0&lt;/version&gt;
+        &lt;executions&gt;
+          &lt;execution&gt;
+            &lt;phase&gt;package&lt;/phase&gt;
+            &lt;goals&gt;
+              &lt;goal&gt;shade&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;configuration&gt;
+              &lt;transformers&gt;
+                &lt;transformer implementation=&quot;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&quot;&gt;
+                  &lt;mainClass&gt;com.xy.mvnbook.hello.HelloWorld&lt;/mainClass&gt;
+                &lt;/transformer&gt;
+              &lt;/transformers&gt;
+            &lt;/configuration&gt;
+          &lt;/execution&gt;
+        &lt;/executions&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+
+  
+&lt;/project&gt;
+</code></pre>
+<p>代码:</p>
+<pre><code class="language-java">/**
+ * mvn helloworld
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月24日 上午11:40:17
+ */
+public class HelloWorld {
+
+    public String hello() {
+        return &quot;Hello Maven&quot;;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(new HelloWorld().hello());
+    }
+}
+
+/**
+ * test helloWorld
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月24日 下午1:07:07
+ */
+public class HelloWorldTest {
+
+    @Test
+    public void testHello() {
+        HelloWorld hw = new HelloWorld();
+        String result = hw.hello();
+        assertEquals(&quot;Hello Maven&quot;, result);
+    }
+}
+</code></pre>
+<p>下面试试简单的mvn命令</p>
+<ul>
+<li><code>mvn clean</code>: 清除输出目录target/(Maven构建的所有输出默认在target/下); 实际是<code>maven-clean-plugin</code>插件的<code>clean</code>目标在起作用;</li>
+<li><code>mvn compile</code>: 编译项目主代码, 主要是<code>maven-resources-plugin:2.6:resources</code>和<code> maven-compiler-plugin:3.1:compile</code>在生效;一般和clean联用, <code>mvn clean compile</code>;</li>
+<li><code>mvn clean test</code>: 调用Maven执行测试, 测试前会首先进行项目主资源处理, 主代码编译, 测试资源处理, 测试代码编译,以及测试后的报告生成, 实际执行了 clean:clean, resources:resources, compiler:compile, resources:testResources, compile:testCompile, surefire:test(surefire是Maven中负责执行测试的插件, 他运行测试用例HelloWorldTest并输出测试报告); </li>
+<li><code>mvn clean package</code>: 打包, 打成jar类型包; 就是jar:jar在生效, 主代码打包成jar文件, 输出到target/目录中, 文件命名是根据artifact-version.jar规则进行命名的, 如果需要自定义输出jar的名字, 可以修改finalName;</li>
+<li><code>mvn clean install</code>: 安装到本地Maven仓库; 安装后, 其他项目才可以使用;</li>
+</ul>
+<img src="Screenshot_2.png"/>
+<img src="Screenshot_3.png"/>
+<img src="Screenshot_4.png"/>
+`mvn clean test`由于需要做资源替换, 编译的工作, 输出信息较多, 截了下面2张图片
+<img src="Screenshot_5.png"/><img src="Screenshot_6.png"/>
+`mvn clean package`需要先执行资源替换, 编译, 测试, 再才能打包, 输出信息较多
+<img src="Screenshot_7.png"/><img src="Screenshot_8.png"/>
+`mvn clean install` 需要先资源替换, 编译, 测试, 打包, 最后安装
+<img src="Screenshot_9.png"/><img src="Screenshot_10.png"/>
+<h1><a class="header" href="#生命周期命令-and-包含效果" id="生命周期命令-and-包含效果">生命周期命令 and 包含效果</a></h1>
+<p>综上, mvn的几个基本命令执行时是有包含关系的, </p>
+<ol>
+<li>compile</li>
+<li>test</li>
+<li>package</li>
+<li>install</li>
+</ol>
+<p>后面的命令效果会包含前面的命令</p>
+<p><code>mvn clean install -N</code> 只会安装 parent 工程, 不会安装子项目</p>
+<p><code>mvn install -U</code> 安装时, 强制更新 snapshot 模块, 对于 release 版本模块, 不会更新</p>
+<h1><a class="header" href="#安装卸载本地包" id="安装卸载本地包">安装卸载本地包</a></h1>
+<p>https://stackoverflow.com/questions/15358851/how-to-remove-jar-file-from-local-maven-repository-which-was-added-with-install</p>
+<pre><code class="language-sh"># 安装
+mvn install:install-file -Dfile=phonegap-1.1.0.jar -DgroupId?=phonegap -DartifactId?=phonegap -Dversion=1.1.0 -Dpackaging=jar
+
+# 卸载
+# 最方便的是直接到 $HOME/.m2 手动删除
+mvn dependency:purge-local-repository -DmanualInclude=&quot;groupId:artifactId, ...&quot;
+
+</code></pre>
+<h1><a class="header" href="#打包成可执行jar" id="打包成可执行jar">打包成可执行jar</a></h1>
+<p>需要用到<code>maven-shade-plugin</code>插件, 通过<code>mvn package</code>默认生成的jar虽然有main方法, 但是是不能够直接运行的, 因为main方法的信息没有添加到manifest中(打开jar中的META-INF/MANIFEST可以看到, 没有Main-Class这一行), </p>
+<p>增加如下配置:</p>
+<pre><code class="language-xml">&lt;plugin&gt;&lt;!-- 位于project/build/plugins下 --&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;&lt;!-- 把依赖的lib打包到一个jar, 生成可执行jar --&gt;
+    &lt;version&gt;3.1.0&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+        &lt;phase&gt;package&lt;/phase&gt;
+        &lt;goals&gt;
+            &lt;goal&gt;shade&lt;/goal&gt;
+        &lt;/goals&gt;
+        &lt;configuration&gt;
+            &lt;transformers&gt;
+            &lt;transformer implementation=&quot;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&quot;&gt;
+                &lt;mainClass&gt;com.xy.mvnbook.hello.HelloWorld&lt;/mainClass&gt;
+            &lt;/transformer&gt;
+            &lt;/transformers&gt;
+        &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+</code></pre>
+<p>此时再次打包, 输出两个jar, <code>hello-world-1.0-SNAPSHOOT.jar</code>和<code>original-hello-world-1.0-SNAPSHOOT.jar</code>, 前者是带有Main-class信息的可执行jar, 后者是原始的jar;</p>
+<h1><a class="header" href="#使用archetype生成项目骨架" id="使用archetype生成项目骨架">使用archetype生成项目骨架</a></h1>
+<p>一般称项目基本的目录结构和pom文件为骨架; Maven中使用<code>maven-archetype-plugin</code>插件完成这一工作;</p>
+<ul>
+<li>
+<p>Maven3中使用: <code>mvn archetype:generate</code>, 虽然没有指定插件版本, 但是maven3只会去下载最新的稳定版本很安全; </p>
+</li>
+<li>
+<p>Maven2中需要指定具体的插件版本(即按照严格的命令格式 mvn groupId:artifactId:version:goal), 不然maven2会去下载最新版本的插件, 可能会得到不稳定的snapshoot版本导致运行失败;</p>
+</li>
+<li>
+<p>对于maven3, 如果之前未运行过该命令, 会先下载该插件, 而后需要选择一个骨架, maven默认选了一个骨架 <code>maven-archetype-quickstart</code>直接回车以选择, 接着输入groupId, artifactId, version, package, 确认;</p>
+<ul>
+<li>package表示目录结构, 即&quot;src/main/java&quot;下的目录结构</li>
+<li>artifactId表示项目名称</li>
+<li>groupId表示安装到仓库时的目录</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#坐标" id="坐标">坐标</a></h1>
+<ul>
+<li><code>groupId</code>: 定义maven项目隶属的实际项目比如 spring-core隶属于SpringFramework, spring-context也隶属于SpringFramework; 同时也是install时安装到仓库的目录</li>
+<li><code>artifactId</code>: 定义实际项目中的一个maven模块, 推荐做法是使用实际项目名称作为其前缀, 比如groupId是'com.xy.project', 那么artifactId可设为'project-xxx', 这样方便寻找实际构件, maven生成的构件默认名称以artifactId开头</li>
+<li><code>version</code>: 版本, snapshoot..., 见 <a href="#%E5%BF%AB%E7%85%A7%E7%89%88%E6%9C%AC%E5%92%8C%E5%8F%91%E5%B8%83%E7%89%88%E6%9C%AC">快照版本和发布版本</a></li>
+<li><code>packaging</code>: 定义maven打包方式(可选, 默认jar), jar/war/pom</li>
+<li><code>classifier</code>: 帮助定义构建输出的一些附属构件; 比如定义了主构件'xxx.jar', 有时可能还会使用一些插件生成'xxx-javadoc.jar', 'xxx-source.jar'这样的附属构件, 这时, 'javadoc', 'source'就是这两个附属构件的classifier ;(classifier不能直接定义)</li>
+</ul>
+<h1><a class="header" href="#快照版本和发布版本" id="快照版本和发布版本">快照版本和发布版本</a></h1>
+<p>为什么需要区分快照版本和发布版本? </p>
+<p>考虑这个场景: 小a在开发模块A(v: 2.1), 同时, 小m在开发模块B, B -&gt; A, 开发中, 小a经常需要将模块最新版构建输出, 交给小m, 怎么方便的做这个工作呢?</p>
+<p>Maven的快照机制可以解决这个问题. </p>
+<p>小a将A版本设为2.1-snapshoot, 然后发布到私服, 这时Maven会自动为该构件打上时间戳(版本2.1表示已经稳定, 且只对应了唯一构件, 而版本2.1-snapshoot表示不稳定, 对应仓库中存在多个打了时间戳的构件)</p>
+<p>有了时间戳, Maven能够随时找到仓库中的该构件2.1-snapshoot版本的最新文件. 这时小m配置对应依赖, 版本也设为2.1-snapshoot, Maven会自动检查最新版本, 检查频率可以在<a href="#%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">配置远程仓库</a>时设置, 也可以强制检查更新通过<code>mvn clean install-U</code></p>
+<h1><a class="header" href="#依赖的配置" id="依赖的配置">依赖的配置</a></h1>
+<h2><a class="header" href="#基本元素" id="基本元素">基本元素</a></h2>
+<ul>
+<li>groupId, artifactId, version</li>
+<li>type: 对应于坐标定义中的packaging, 一般不必声明, 默认为jar </li>
+<li>scope: 依赖的范围, <code>compile(默认), test, provided, runtime, system, import</code>, 见<a href="#scope">#scope</a></li>
+<li>optional: 指定依赖是否可选, 见<a href="#%E5%8F%AF%E9%80%89%E4%BE%9D%E8%B5%96">可选依赖</a></li>
+<li>exclusion: 排除<a href="#%E4%BC%A0%E9%80%92%E6%80%A7%E4%BE%9D%E8%B5%96">#传递性依赖</a>, 见<a href="#%E6%8E%92%E9%99%A4%E4%BE%9D%E8%B5%96">#排除依赖</a></li>
+</ul>
+<h2><a class="header" href="#scope" id="scope">scope</a></h2>
+<p>项目的 编译, 测试, 运行 会使用三套不同的classpath, </p>
+<ul>
+<li>
+<p><code>compile</code>: 默认范围, 使用这种范围的构件在 编译, 测试, 运行时均有效, 典型如spring-core;</p>
+</li>
+<li>
+<p><code>test</code>: 只在 测试时引入, 在编译/运行时无法使用对应依赖, 如JUnit;</p>
+</li>
+<li>
+<p><code>provided</code>: 表示别的设施(Web Container)会提供, 所以不会被打包; 其他和 compile 等同</p>
+</li>
+<li>
+<p><code>runtime</code>: 依赖对于测试, 运行有效, 而在编译代码时不参与</p>
+<p>典型如:jdbc驱动实现(主代码编译只需要jdk提供的jdbc接口, 只有在执行测试和运行时才需要jdbc的具体实现)</p>
+<p>另外runtime的依赖通常和optional搭配使用，optional为true 表示不会传递。我可以用A实现，也可以用B实现</p>
+</li>
+<li>
+<p><code>system</code>: 和provided完全一致, 但是使用system时, 必须显式的指定依赖文件的路径(通过systemPath元素, systemPath可以使用环境变量如${JAVA_HOME}), 用于引入本地的不在maven仓库中的依赖, 由于不可移植,要慎用;</p>
+</li>
+<li>
+<p><code>import</code>: 导入依赖的范围, 不会对3种classpath产生实际的影响, 参见 <a href="#dependencyMangement%E5%85%83%E7%B4%A0">dependencyMangement元素</a></p>
+</li>
+</ul>
+<h2><a class="header" href="#传递性依赖" id="传递性依赖">传递性依赖</a></h2>
+<p>下面说说 <code>传递性依赖</code></p>
+<p>以案例中的 email模块为例, 项目依赖spring-core, 而spring-core又依赖 common-logging, email模块有一个'compile'范围的spring-core依赖, spring-core有一个'compile'范围的common-logging依赖, 那么email就会有一个'compile'范围的common-logging依赖(或者说commons-logging是email的一个传递性依赖), 看下图:
+<img src="Screenshot_17.png"/>
+有了传递性依赖机制, 使用spring framework就不需要考虑它依赖了什么;
+第一直接依赖和第二直接依赖决定了传递性依赖, 关系如下图:
+<img src="Screenshot_18.png"/></p>
+<p>可以这么理解: </p>
+<ul>
+<li>当 '第二直接依赖' 范围 = 'compile' 时, '传递性依赖'范围 = '第一直接依赖'范围</li>
+<li>当 '第二直接依赖' 范围 = 'runtime' 时, '传递性依赖'范围 = '第一直接依赖'范围, 特例: 第一依赖范围 = 'compile', 第二依赖范围 = 'runtime', 则传递性依赖 = 'runtime'</li>
+<li>当 '第二直接依赖' 范围 = 'test' 时, 依赖不会传递</li>
+<li>当 '第二直接依赖' 范围 = 'provided' 时, '传递性依赖' 范围 = 'provided', 但是 '第一直接依赖' = 'provided'时, '传递性依赖' 才会传递</li>
+</ul>
+<p><img src="Screenshot_19.png"/><img src="Screenshot_22.png"/><img src="Screenshot_21.png"/></p>
+<h2><a class="header" href="#maven的依赖调解特性" id="maven的依赖调解特性">Maven的依赖调解特性</a></h2>
+<p>传递性依赖问题---Maven的 <code>依赖调解特性</code></p>
+<p>问题1: 有这样的依赖 a -&gt; b -&gt; c -&gt; x(version: 1.0), a -&gt; d -&gt; x(version: 2.0); 此时有2个版本的x, 前者路径长度为3, 后者长度为2, 选择哪个呢?
+Maven依赖调解第一原则: <code>路径最近者优先</code>; 根据这个原则 x(version: 2.0) 会被Maven选中引入</p>
+<p>问题2: 有这样的依赖 a-&gt; b -&gt; x(version: 1.0), a -&gt; c -&gt; x(version: 2.0);  此时2个版本的x, 路径长度都一样, 但是b在pom中声明的位置比c靠前, 选择哪个版本呢?
+Maven依赖调解第二原则: <code>第一声明者优先</code>; 根据这个原则, x(version: 1.0)会被选中</p>
+<h2><a class="header" href="#可选依赖" id="可选依赖">可选依赖</a></h2>
+<p>考虑这个场景: a -&gt; b -&gt; x(optional: true), a -&gt; b -&gt; y(optional: true); b模块实现了x, y两个特性, 这两个特性互斥(用户不能同时使用两个特性, 比如b是一个持久层隔离工具包, 支持MySQL, Oracle), 在构建的时候, 需要需要这两种数据库的驱动程序, 但在使用的时候只会依赖其中一个; </p>
+<p>如果x, y被指定为可选依赖, 此时, x, y 只会对 b 产生影响, 将不会对 a 产生任何影响, 如果a需要使用需要显式的声明;</p>
+<p>通过基本元素里的<code> optional</code>元素指定依赖为可选依赖
+<img src="Screenshot_23.png"/></p>
+<p>不过不推荐使用optional, 因为这违背了解耦的原则, 实际上,可以为两个数据库分别建立 Maven项目, 分配统一的groupId, 不同的artifactId, 在各自的pom中声明对应的jdbc依赖, 用户根据需要引入两个项目之一, 这样就避免了使用 optional;</p>
+<h2><a class="header" href="#排除依赖" id="排除依赖">排除依赖</a></h2>
+<p>考虑这个场景: a -&gt; b -&gt; x(version: 1.0-snapshoot), snapshoot不稳定, 我们需要替换这个不稳定版本的x, 然后在a中声明一个稳定版本的x;
+如何替换呢?
+<img src="Screenshot_24.png">
+需要注意的是: 声明exclusion时, 只需要groupId, artifactId, 而不需要version;</p>
+<h2><a class="header" href="#依赖归类" id="依赖归类">依赖归类</a></h2>
+<p>即归类版本相同的构件, 放在一起, 共用一个版本
+先声明一个属性: 公用版本(这里简单用到了Maven属性, 详细使用见 <a href="todo">这里</a>)
+<img src="Screenshot_25.png"/>
+引入时使用这个公共版本
+<img src="Screenshot_26.png"/></p>
+<h2><a class="header" href="#依赖的优化" id="依赖的优化">依赖的优化</a></h2>
+<ul>
+<li>
+<p><code>mvn dependency:list</code>: 查看已解析依赖列表</p>
+</li>
+<li>
+<p><code>mvn dependency:tree</code>: 查看依赖树</p>
+<ul>
+<li><code>mvn dependency:tree</code> 简要的列出项目的依赖树</li>
+<li><code>mvn dependency:tree -D verbose</code> 详细列出项目的依赖树</li>
+<li><code>mvn dependency:tree -D includes=groupid:artifactId excludes=groupId:artifactId</code> 根据自己的喜好列出依赖树</li>
+</ul>
+</li>
+<li>
+<p><code>mvn dependency:analyze</code>: 分析项目依赖; 比如a -&gt; b -&gt; c, 同时 a -&gt; c, 这时去掉a中的c也不报错, 因为b中含有c, 但是如果去掉a总显式声明的c, 一旦b版本变化, b中的c版本也会发生变化, 给项目带来失败的风险, 而且不容易查出来; 因此要显式声明项目中直接使用的依赖;</p>
+</li>
+</ul>
+<h2><a class="header" href="#引入外部依赖" id="引入外部依赖">引入外部依赖</a></h2>
+<p>https://blog.csdn.net/qq_30938705/article/details/79245820</p>
+<h1><a class="header" href="#案例账户注册服务" id="案例账户注册服务">案例:账户注册服务</a></h1>
+<h2><a class="header" href="#需求" id="需求">需求</a></h2>
+<p>先看需求用例:</p>
+<table>
+    <tr>
+    <td><img src="Screenshot_11.png"/></td>
+    <td><img src="Screenshot_12.png"/></td>
+    </tr>
+</table>
+<p>界面原型类似这样
+<img src="Screenshot_13.png"/></p>
+<h2><a class="header" href="#简单的设计" id="简单的设计">简单的设计</a></h2>
+<p>接口可能有:</p>
+<ul>
+<li>生成验证码图片(String generateCaptchaKey(), void generateCaptchaImage(String key))</li>
+<li>处理注册请求(void signUp(SignUpRequest rqt))</li>
+<li>激活账户(boolean activate(String activationNumber))</li>
+<li>处理登录(boolean login(String id, String pwd))</li>
+</ul>
+<p>验证码部分是这样: 通过 generateCaptchaKey() 生成一个 key, 然后通过 generateCaptchaImage(String key)生成image, key和image传递给client, user肉眼识别image, client传回key和image的值, server端通过key查到正确的image值, 和client传回的image值对比;</p>
+<p>singUp方法创建一个未被激活的账户, 同时发送一封带有链接的激活邮件, active方法接受一个激活码, 查找对应的账户激活;</p>
+<p>麻雀虽小, 五脏俱全, 模块也需要划分一下:</p>
+<ul>
+<li>web: 包含所有和web 相关的内容, JSP, Servlet, web.xml...直接依赖service模块, 使用其提供的服务;</li>
+<li>service: 系统的核心, 封装了所有细节, 对外暴露简单的接口(Facade模式);</li>
+<li>persist: 处理账户信息的持久化;</li>
+<li>captcha: 处理验证码key的生成, image生成, 验证;</li>
+<li>email: 激活邮件的编写发送;</li>
+</ul>
+<h2><a class="header" href="#account-email模块" id="account-email模块">account-email模块</a></h2>
+<p>目录结构如下:
+<img src="Screenshot_14.png"></p>
+<h3><a class="header" href="#parent-pom" id="parent-pom">parent-pom</a></h3>
+<p>首先看看<span id="parent-pom"> parent pom配置</span>:</p>
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;groupId&gt;com.xy.mvnbook.account&lt;/groupId&gt;
+  &lt;artifactId&gt;account-parent&lt;/artifactId&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+  &lt;packaging&gt;pom&lt;/packaging&gt; &lt;!-- 作为parent项目, 这里必须为pom, 否则无法构建 --&gt;
+  &lt;name&gt;Account Parent&lt;/name&gt;
+  
+  &lt;modules&gt;
+    &lt;module&gt;../account-email&lt;/module&gt;
+    &lt;module&gt;../account-persist&lt;/module&gt;
+    &lt;module&gt;../account-captcha&lt;/module&gt;
+    &lt;module&gt;../account-service&lt;/module&gt;
+  &lt;/modules&gt;
+  
+  &lt;properties&gt;
+    &lt;springframework.version&gt;4.3.12.RELEASE&lt;/springframework.version&gt;
+    &lt;junit.version&gt;4.12&lt;/junit.version&gt;
+    &lt;lombok.version&gt;1.16.18&lt;/lombok.version&gt;
+    &lt;mail.version&gt;1.4.7&lt;/mail.version&gt;
+    &lt;greenmail.version&gt;1.4.1&lt;/greenmail.version&gt;
+    &lt;dom4j.version&gt;1.6.1&lt;/dom4j.version&gt;
+    &lt;kaptcha.version&gt;2.3.2&lt;/kaptcha.version&gt;
+    &lt;maven-compiler-plugin.version&gt;3.6.0&lt;/maven-compiler-plugin.version&gt;
+    &lt;maven-resource-plugin.version&gt;3.0.1&lt;/maven-resource-plugin.version&gt;
+    &lt;maven-site-plugin.version&gt;3.6&lt;/maven-site-plugin.version&gt;
+    
+    &lt;!-- 文件拷贝时的编码 --&gt;  
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;  
+    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;  
+    &lt;!-- 编译时的编码 --&gt;  
+    &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;
+  &lt;/properties&gt;
+  
+  &lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+      &lt;!-- &lt;dependency&gt;
+        &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+        &lt;artifactId&gt;account-email&lt;/artifactId&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+        &lt;artifactId&gt;account-persist&lt;/artifactId&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+        &lt;artifactId&gt;account-captcha&lt;/artifactId&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
+      &lt;/dependency&gt; --&gt;
+      &lt;!-- https://mvnrepository.com/artifact/com.github.penggle/kaptcha --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;com.github.penggle&lt;/groupId&gt;
+          &lt;artifactId&gt;kaptcha&lt;/artifactId&gt;
+          &lt;version&gt;${kaptcha.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- **************spring start******************************* --&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-core --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+          &lt;version&gt;${springframework.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-beans --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+          &lt;version&gt;${springframework.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+          &lt;version&gt;${springframework.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+          &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;
+          &lt;version&gt;${springframework.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      
+      &lt;!-- ****************spring end******************** --&gt;
+      
+      &lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;junit&lt;/groupId&gt;
+          &lt;artifactId&gt;junit&lt;/artifactId&gt;
+          &lt;version&gt;${junit.version}&lt;/version&gt;
+          &lt;scope&gt;test&lt;/scope&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/javax.mail/mail --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;javax.mail&lt;/groupId&gt;
+          &lt;artifactId&gt;mail&lt;/artifactId&gt;
+          &lt;version&gt;${mail.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/com.icegreen/greenmail --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;com.icegreen&lt;/groupId&gt;
+          &lt;artifactId&gt;greenmail&lt;/artifactId&gt;
+          &lt;version&gt;${greenmail.version}&lt;/version&gt;
+          &lt;scope&gt;test&lt;/scope&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+          &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+          &lt;version&gt;${lombok.version}&lt;/version&gt;
+          &lt;scope&gt;provided&lt;/scope&gt;
+      &lt;/dependency&gt;
+      &lt;!-- https://mvnrepository.com/artifact/dom4j/dom4j --&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;dom4j&lt;/groupId&gt;
+          &lt;artifactId&gt;dom4j&lt;/artifactId&gt;
+          &lt;version&gt;${dom4j.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+  &lt;/dependencyManagement&gt;
+  &lt;build&gt;
+    &lt;pluginManagement&gt;
+        &lt;plugins&gt;
+         &lt;plugin&gt;
+           &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+           &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+           &lt;version&gt;${maven-compiler-plugin.version}&lt;/version&gt;
+           &lt;configuration&gt;
+             &lt;source&gt;1.5&lt;/source&gt;
+             &lt;target&gt;1.5&lt;/target&gt;
+           &lt;/configuration&gt;
+         &lt;/plugin&gt;
+         &lt;plugin&gt;
+           &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+             &lt;artifactId&gt;maven-resource-plugin&lt;/artifactId&gt;
+                    &lt;version&gt;${maven-resource-plugin.version}&lt;/version&gt;
+           &lt;configuration&gt;
+              &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+            &lt;/configuration&gt;
+          &lt;/plugin&gt;
+          &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-site-plugin&lt;/artifactId&gt;
+            &lt;version&gt;${maven-site-plugin.version}&lt;/version&gt;
+          &lt;/plugin&gt;
+          &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.0.1&lt;/version&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;attach-sources&lt;/id&gt;
+                    &lt;phase&gt;verify&lt;/phase&gt;
+                    &lt;goals&gt;
+                      &lt;goal&gt;jar-no-fork&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;!-- &lt;inherited&gt;false&lt;/inherited&gt;
+                    &lt;configuration&gt;
+                    &lt;/configuration&gt; --&gt;&lt;!-- 注释掉, 不然源码jar包无法生成, mvn clean verify --&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+          &lt;/plugin&gt;
+          &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-antrun-plugin&lt;/artifactId&gt;
+            &lt;version&gt;1.8&lt;/version&gt;
+            &lt;executions&gt;
+                &lt;!-- 同一个插件目标绑定到了不同的生命周期阶段 --&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;ant-validate&lt;/id&gt;
+                    &lt;phase&gt;validate&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;run&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;tasks&gt;
+                            &lt;echo&gt;绑定到了&quot;validate&quot;阶段&lt;/echo&gt;
+                        &lt;/tasks&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+                &lt;execution&gt;
+                    &lt;id&gt;ant-verify&lt;/id&gt;
+                    &lt;phase&gt;verify&lt;/phase&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;run&lt;/goal&gt;
+                    &lt;/goals&gt;
+                    &lt;configuration&gt;
+                        &lt;tasks&gt;
+                            &lt;echo&gt;绑定到了&quot;verify&quot;阶段&lt;/echo&gt;
+                        &lt;/tasks&gt;
+                    &lt;/configuration&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+          &lt;/plugin&gt;
+	    &lt;/plugins&gt;
+    &lt;/pluginManagement&gt;
+    &lt;plugins&gt;
+      &lt;!-- &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-site-plugin&lt;/artifactId&gt;
+      &lt;/plugin&gt; --&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;
+      &lt;/plugin&gt;
+      
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+<h3><a class="header" href="#email-pom" id="email-pom">email-pom</a></h3>
+<p>email-pom配置</p>
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;!-- &lt;groupId&gt;com.xy.mvnbook.account&lt;/groupId&gt; --&gt; &lt;!-- 可以去掉, parent项目已经定义的groupId了 --&gt;
+  &lt;artifactId&gt;account-email&lt;/artifactId&gt; &lt;!-- 以groupId &quot;account&quot;做前缀 , 方便区分其他模块--&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+  &lt;name&gt;Account Email&lt;/name&gt;
+  &lt;parent&gt;
+    &lt;groupId&gt;com.xy.mvnbook.account&lt;/groupId&gt;
+    &lt;artifactId&gt;account-parent&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;relativePath&gt;../account-parent/pom.xml&lt;/relativePath&gt;&lt;!-- 父pom文件相对路径， 默认是 [../pom.xml]  --&gt;
+  &lt;/parent&gt;
+  
+  &lt;dependencies&gt;
+    &lt;!-- **************spring*** 实现DI所必须的spring组件(spring-core, spring-context, spring-context-support, spring-beans)******************************* --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-core --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-beans --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    
+       &lt;!-- ****************spring end************************************************* --&gt;
+    
+    &lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/javax.mail/mail
+        实现邮件发送必须 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;javax.mail&lt;/groupId&gt;
+        &lt;artifactId&gt;mail&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/com.icegreen/greenmail 
+      邮件服务测试套件 --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;com.icegreen&lt;/groupId&gt;
+	    &lt;artifactId&gt;greenmail&lt;/artifactId&gt;
+	&lt;/dependency&gt;
+	&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;
+	&lt;dependency&gt;
+	    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+	    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+	&lt;/dependency&gt;
+    
+  &lt;/dependencies&gt;
+
+    &lt;!-- 如果没有在parent pom.xml中配置comiler插件, 这里还要补上该插件, 指定编译版本 --&gt;
+
+&lt;/project&gt;
+</code></pre>
+<h3><a class="header" href="#主代码测试" id="主代码测试">主代码&amp;测试</a></h3>
+<pre><code class="language-java">/**
+ * sendMail interface
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月24日 下午5:29:20
+ */
+public interface AccountEmailService {
+    /**
+     * send email
+     * 
+     * @param to 接受地址
+     * @param subject 主题
+     * @param htmlText 正文
+     * @throws AccountEmailException 邮件发送错误
+     */
+    void sendMail(String to, String subject, String htmlText) throws AccountEmailException;
+
+}
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package com.xy.mvnbook.account.email.impl;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+
+import com.xy.mvnbook.account.email.AccountEmailService;
+import com.xy.mvnbook.account.email.exception.AccountEmailException;
+
+import lombok.Data;
+
+/**
+ * 'sendMail' implements
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月24日 下午5:30:37
+ */
+@Data
+public class AccountEmailServiceImpl implements AccountEmailService {
+    
+    /**
+     *  sender, spring提供的简化邮件发送的util
+     */
+    private JavaMailSender sender;
+    /**
+     * 系统邮箱
+     */
+    private String systemEmail;
+
+    public void sendMail(String to, String subject, String htmlText) throws AccountEmailException {
+        MimeMessage msg = sender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(msg);
+        try {
+            helper.setFrom(systemEmail);
+            helper.setTo(to);
+            helper.setSubject(subject);
+            helper.setText(htmlText);
+            
+            sender.send(msg);
+        } catch (MessagingException e) {
+            throw new AccountEmailException(&quot;Faild to send email.&quot;, e);
+        }
+    }
+
+}
+
+</code></pre>
+<pre><code class="language-java">package com.xy.mvnbook.account.email;
+
+import static org.junit.Assert.assertEquals;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.icegreen.greenmail.util.GreenMail;
+import com.icegreen.greenmail.util.GreenMailUtil;
+import com.icegreen.greenmail.util.ServerSetup;
+import com.xy.mvnbook.account.email.exception.AccountEmailException;
+
+/**
+ * 测试
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月24日 下午6:00:36
+ */
+public class AccountEmailServiceTest {
+
+    private GreenMail green;
+    
+    @Before
+    public void startGreen() {
+        // 基于smtp协议初始化greenmail
+        green = new GreenMail(ServerSetup.SMTP);
+        green.setUser(&quot;test@xiaoyu.com&quot;, &quot;123456&quot;);// 创建账户
+        green.start(); // 默认监听25端口
+    }
+    
+    @Test
+    public void testSendMail() {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;account-email.xml&quot;);
+        AccountEmailService service = (AccountEmailService) ctx.getBean(&quot;accountEmailService&quot;);
+        try {
+            service.sendMail(&quot;test@xiaoyu.com&quot;, &quot;Test subject&quot;, &quot;&lt;h3&gt;Test&lt;/h3&gt;&quot;);
+        } catch (AccountEmailException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
+        green.waitForIncomingEmail(2000, 1); // 接受一封邮件, 最多等待2s
+        MimeMessage[] msgs = green.getReceivedMessages();
+        assertEquals(1, msgs.length);
+        try {
+            assertEquals(&quot;Test subject&quot;, msgs[0].getSubject());
+        } catch (MessagingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        assertEquals(&quot;&lt;h3&gt;Test&lt;/h3&gt;&quot;, GreenMailUtil.getBody(msgs[0]).trim());
+        ctx.close();
+    }
+    
+    @After
+    public void stopGreen() {
+        green.stop();
+    }
+}
+
+</code></pre>
+<h3><a class="header" href="#测试资源-主资源读取顺序" id="测试资源-主资源读取顺序">测试资源-主资源读取顺序</a></h3>
+<p>这里需要注意: 测试类会到src/test/reources下找service.properties, 如果没有找到, 再到src/main/resources下找, 不必担心classpath下有2个service.properties;</p>
+<h3><a class="header" href="#spring注入配置" id="spring注入配置">spring注入配置</a></h3>
+<p>当然还有必要的注入配置</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:util=&quot;http://www.springframework.org/schema/util&quot;
+       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+       xsi:schemaLocation=&quot;
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd&quot;&gt;
+  
+  &lt;context:property-placeholder location=&quot;classpath:service.properties&quot;/&gt;
+  &lt;bean id=&quot;javaMailSender&quot; class=&quot;org.springframework.mail.javamail.JavaMailSenderImpl&quot;&gt;
+    &lt;property name=&quot;protocol&quot; value=&quot;${email.protocol}&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;host&quot; value=&quot;${email.host}&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;port&quot; value=&quot;${email.port}&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;username&quot; value=&quot;${email.username}&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;password&quot; value=&quot;${email.password}&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;javaMailProperties&quot;&gt;
+      &lt;props&gt;
+        &lt;prop key=&quot;mail.${email.protocol}.auth&quot;&gt;${email.auth}&lt;/prop&gt;
+      &lt;/props&gt;
+    &lt;/property&gt;
+  &lt;/bean&gt;
+  &lt;bean id=&quot;accountEmailService&quot; class=&quot;com.xy.mvnbook.account.email.impl.AccountEmailServiceImpl&quot;&gt;
+    &lt;property name=&quot;sender&quot; ref=&quot;javaMailSender&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;systemEmail&quot; value=&quot;${email.systemEmail}&quot;&gt;&lt;/property&gt;
+  &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<p>以及邮件发送相关props</p>
+<pre><code>
+email.protocol=smtp
+email.host=localhost
+email.port=25
+email.username=test@xiaoyu.com
+email.password=123456
+email.auth=true
+email.systemEmail=775000738sdfs@qq.com
+</code></pre>
+<p><code>mvn clean test</code>, 输出如下:</p>
+<table><thead><tr><th>p1</th><th>p2</th></tr></thead><tbody>
+<tr><td><img src="Screenshot_15.png"/></td><td><img src="Screenshot_16.png"/></td></tr>
+</tbody></table>
+<h2><a class="header" href="#account-persist模块" id="account-persist模块">account-persist模块</a></h2>
+<p>负责数据的持久化， 以xml保存数据</p>
+<p>目录结构
+<img src="Screenshot_40.png"/></p>
+<p>在<a href="#parent-pom">parent-pom文件</a>存在的情况下, 添加本模块的pom</p>
+<h3><a class="header" href="#account-persist的pom" id="account-persist的pom">account-persist的pom</a></h3>
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;artifactId&gt;account-persist&lt;/artifactId&gt;
+  &lt;name&gt;Account Persist&lt;/name&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+  &lt;parent&gt;
+    &lt;groupId&gt;com.xy.mvnbook.account&lt;/groupId&gt;
+    &lt;artifactId&gt;account-parent&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;relativePath&gt;../account-parent/pom.xml&lt;/relativePath&gt;&lt;!-- 父pom文件相对路径， 默认是 [../pom.xml]  --&gt;
+  &lt;/parent&gt;
+  
+  &lt;dependencies&gt;
+    &lt;!-- https://mvnrepository.com/artifact/dom4j/dom4j --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;dom4j&lt;/groupId&gt;
+        &lt;artifactId&gt;dom4j&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- *************************************************spring依赖 start， 主要用来支持依赖注入****************************************** --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-core --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-beans --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- *************************************************spring依赖 end， 主要用来支持依赖注入****************************************** --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    
+    &lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+        &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    
+  &lt;/dependencies&gt;
+  
+  &lt;build&gt;
+    &lt;!-- 开启测试资源目录过滤 --&gt;
+    &lt;testResources&gt;
+      &lt;testResource&gt;
+        &lt;directory&gt;src/test/resources&lt;/directory&gt;&lt;!-- 这里是否加${project.basedir}均可 --&gt;
+        &lt;filtering&gt;true&lt;/filtering&gt;
+      &lt;/testResource&gt;
+    &lt;/testResources&gt;
+    &lt;!-- 开启主资源目录过滤 --&gt;
+    &lt;resources&gt;
+      &lt;resource&gt;
+        &lt;directory&gt;src/main/resources&lt;/directory&gt;
+        &lt;filtering&gt;true&lt;/filtering&gt;
+      &lt;/resource&gt;
+    &lt;/resources&gt;
+    
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;&lt;!-- 支持java8 --&gt;
+      &lt;/plugin&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-resource-plugin&lt;/artifactId&gt;&lt;!-- 使用utf-8处理资源处理 --&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+  
+  
+&lt;/project&gt;
+</code></pre>
+<h3><a class="header" href="#主代码测试-1" id="主代码测试-1">主代码&amp;测试</a></h3>
+<pre><code class="language-java">package com.xy.mvnbook.account.persist;
+
+import com.xy.mvnbook.account.persist.dto.Account;
+import com.xy.mvnbook.account.persist.exception.AccountPersistException;
+/**
+ * 持久化 interface, crud方法
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午6:08:15
+ */
+public interface AccountPersistService {
+
+    Account createAccount(Account account) throws AccountPersistException;
+    boolean deleteAccount(String id) throws AccountPersistException;
+    Account updateAccount(Account account) throws AccountPersistException;
+    Account readAccount(String id) throws AccountPersistException;
+}
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package com.xy.mvnbook.account.persist.exception;
+
+/**
+ * 自定义异常
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午6:12:51
+ */
+public class AccountPersistException extends Exception {
+
+    public AccountPersistException(String msg, Exception e) {
+        super(msg, e);
+    }
+
+    private static final long serialVersionUID = -7205545969802653298L;
+
+}
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * 常量(自定义的标签元素名称)
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午6:13:34
+ */
+public interface AccountPersist {
+
+    String ELEMENT_ROOT = &quot;account-persist&quot;;
+    String ELEMENT_ACCOUNTS = &quot;accounts&quot;;
+    String ELEMENT_ACCOUNT = &quot;account&quot;;
+    String ELEMENT_ACCOUNT_ID = &quot;id&quot;;
+    String ELEMENT_ACCOUNT_NAME = &quot;name&quot;;
+    String ELEMENT_ACCOUNT_PASSWORD = &quot;password&quot;;
+    String ELEMENT_ACCOUNT_EMAIL = &quot;email&quot;;
+    String ELEMENT_ACCOUNT_ACTIVATED = &quot;activated&quot;;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package com.xy.mvnbook.account.persist.dto;
+
+import lombok.Data;
+/**
+ * dto
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午6:15:11
+ */
+@Data
+public class Account {
+
+    private String id;
+    private String name;
+    private String password;
+    private String email;
+    private boolean activated;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package com.xy.mvnbook.account.persist.impl;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.Iterator;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.DocumentFactory;
+import org.dom4j.Element;
+import org.dom4j.io.OutputFormat;
+import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
+
+import com.xy.mvnbook.account.persist.AccountPersistService;
+import com.xy.mvnbook.account.persist.constants.AccountPersist;
+import com.xy.mvnbook.account.persist.dto.Account;
+import com.xy.mvnbook.account.persist.exception.AccountPersistException;
+
+import lombok.Data;
+/**
+ * 持久化 实现
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午6:09:54
+ */
+@Data
+public class AccountPersistServiceImpl implements AccountPersistService {
+    
+    /**
+     * 文件存储地址
+     */
+    private String fileUrl;
+    /**
+     * dom4j reader
+     */
+    private SAXReader reader = new SAXReader();
+
+    public Account createAccount(Account account) throws AccountPersistException {
+        Document doc = this.readDocument();
+        Element accountsEle = doc.getRootElement().element(AccountPersist.ELEMENT_ACCOUNTS);
+        Element accountEle = accountsEle.addElement(AccountPersist.ELEMENT_ACCOUNT);
+        accountEle.addElement(AccountPersist.ELEMENT_ACCOUNT_ID).addText(account.getId());
+        accountEle.addElement(AccountPersist.ELEMENT_ACCOUNT_NAME).addText(account.getName());
+        accountEle.addElement(AccountPersist.ELEMENT_ACCOUNT_PASSWORD).addText(account.getPassword());
+        accountEle.addElement(AccountPersist.ELEMENT_ACCOUNT_EMAIL).addText(account.getEmail());
+        accountEle.addElement(AccountPersist.ELEMENT_ACCOUNT_ACTIVATED).addText(account.isActivated() ? &quot;true&quot; : &quot;false&quot;);
+        this.writeDocument(doc);
+        return account;
+    }
+
+    public boolean deleteAccount(String id) throws AccountPersistException {
+        Document doc = this.readDocument();
+        Element accountsEle = doc.getRootElement().element(AccountPersist.ELEMENT_ACCOUNTS);
+        @SuppressWarnings(&quot;unchecked&quot;)
+        Iterator&lt;Element&gt; ei = accountsEle.elementIterator();
+        while(ei.hasNext()) {
+            Element next = ei.next();
+            if (next.elementText(AccountPersist.ELEMENT_ACCOUNT_ID).equals(id)) {
+                accountsEle.remove(next);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public Account updateAccount(Account account) throws AccountPersistException {
+        Document doc = this.readDocument();
+        Element accountsEle = doc.getRootElement().element(AccountPersist.ELEMENT_ACCOUNTS);
+        @SuppressWarnings(&quot;unchecked&quot;)
+        Iterator&lt;Element&gt; ei = accountsEle.elementIterator();
+        Account old  = null;
+        while(ei.hasNext()) {
+            Element next = ei.next();
+            if (next.elementText(AccountPersist.ELEMENT_ACCOUNT_ID).equals(account.getId())) {
+                old = this.buildAccount(next);
+                if (account.getEmail() != null &amp;&amp; !&quot;&quot;.equals(account.getEmail())) {
+                    next.element(AccountPersist.ELEMENT_ACCOUNT_EMAIL).addText(account.getEmail());
+                }
+                if (account.getName() != null &amp;&amp; !&quot;&quot;.equals(account.getName())) {
+                    next.element(AccountPersist.ELEMENT_ACCOUNT_NAME).addText(account.getName());
+                }
+                if (account.getPassword() != null &amp;&amp; !&quot;&quot;.equals(account.getPassword())) {
+                    next.element(AccountPersist.ELEMENT_ACCOUNT_PASSWORD).addText(account.getPassword());
+                }
+                if (account.isActivated()) {
+                    next.element(AccountPersist.ELEMENT_ACCOUNT_ACTIVATED).addText(&quot;true&quot;);
+                }
+            }
+        }
+        return old;
+    }
+
+    public Account readAccount(String id) throws AccountPersistException {
+        Document doc = readDocument();
+        Element accounts = doc.getRootElement().element(AccountPersist.ELEMENT_ACCOUNTS);
+        @SuppressWarnings(&quot;unchecked&quot;)
+        List&lt;Element&gt; elements = accounts.elements();
+        for (Element ele : elements) {
+            if (ele.elementText(AccountPersist.ELEMENT_ACCOUNT_ID).equals(id)) {
+                return buildAccount(ele);
+            }
+        }
+        return null;
+    }
+    
+    private Account buildAccount(Element ele) {
+        Account account = new Account();
+        account.setActivated(&quot;true&quot;.equals(ele.elementText(AccountPersist.ELEMENT_ACCOUNT_ACTIVATED)) ? true : false);
+        account.setEmail(ele.elementText(AccountPersist.ELEMENT_ACCOUNT_EMAIL));
+        account.setId(ele.elementText(AccountPersist.ELEMENT_ACCOUNT_ID));
+        account.setName(ele.elementText(AccountPersist.ELEMENT_ACCOUNT_NAME));
+        account.setPassword(ele.elementText(AccountPersist.ELEMENT_ACCOUNT_PASSWORD));
+        return account;
+    }
+
+    /**
+     * read document
+     * 
+     * @return
+     * @throws AccountPersistException
+     */
+    private Document readDocument() throws AccountPersistException {
+        File file = new File(fileUrl);
+        // if the file doesn't exits, create it. contain basic element
+        if (!file.exists()) {
+            File parentFile = file.getParentFile();
+            parentFile.mkdirs();
+            Document doc = DocumentFactory.getInstance().createDocument();
+            doc.addElement(AccountPersist.ELEMENT_ROOT).addElement(AccountPersist.ELEMENT_ACCOUNTS);
+            writeDocument(doc);
+        }
+        try {
+            return reader.read(new File(fileUrl));
+        } catch (DocumentException e) {
+            throw new AccountPersistException(&quot;unable to read data.xml&quot;, e);
+        }
+    }
+    
+    private void writeDocument(Document doc) throws AccountPersistException {
+        OutputStreamWriter osw = null;
+        try {
+            osw = new OutputStreamWriter(new FileOutputStream(fileUrl), &quot;utf-8&quot;);
+            XMLWriter xmlWriter = new XMLWriter(osw, OutputFormat.createPrettyPrint());
+            xmlWriter.write(doc);
+        } catch (IOException e) {
+            throw new AccountPersistException(&quot;unable to write data.xml&quot;, e);
+        } finally {
+            if (osw != null) {
+                try {
+                    osw.close();
+                } catch (IOException e) {
+                    throw new AccountPersistException(&quot;unable to close data.xml&quot;, e);
+                }
+            }
+        }
+    }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package com.xy.mvnbook.account.persist;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.io.File;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.xy.mvnbook.account.persist.dto.Account;
+
+/**
+ * 测试
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午6:16:14
+ */
+public class AccountPersistServiceTest {
+
+    private AccountPersistService service;
+    
+    @Before
+    public void pre() throws Exception {
+        File file = new File(&quot;target/test-classes/persist-data.xml&quot;);
+        if (file.exists()) {
+            file.delete();
+        }
+        
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(&quot;account-persist.xml&quot;);
+        service = (AccountPersistService) context.getBean(&quot;accountPersistService&quot;);
+        
+        Account account = new Account();
+        account.setId(&quot;id&quot;);
+        account.setName(&quot;name&quot;);
+        account.setPassword(&quot;password&quot;);
+        account.setEmail(&quot;email&quot;);
+        account.setActivated(true);
+        
+        service.createAccount(account);
+    }
+    
+    @Test
+    public void testReadAccount() throws Exception {
+        Account account = service.readAccount(&quot;id&quot;);
+        
+        assertNotNull(account);
+        assertEquals(&quot;id&quot;, account.getId());
+        assertEquals(&quot;name&quot;, account.getName());
+        assertEquals(&quot;password&quot;, account.getPassword());
+        assertEquals(&quot;email&quot;, account.getEmail());
+        assertTrue(account.isActivated());
+    }
+}
+
+
+</code></pre>
+<h3><a class="header" href="#注入配置" id="注入配置">注入配置</a></h3>
+<p>当然还有一些资源文件</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:util=&quot;http://www.springframework.org/schema/util&quot;
+       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+       xsi:schemaLocation=&quot;
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd&quot;&gt;
+  
+  &lt;!-- &lt;context:property-placeholder location=&quot;classpath:service.properties&quot;/&gt; --&gt;
+  &lt;bean id=&quot;propertyConfigurer&quot; class=&quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&quot;&gt;
+    &lt;property name=&quot;location&quot; value=&quot;classpath:persist.properties&quot;&gt;&lt;/property&gt;
+  &lt;/bean&gt;
+  &lt;bean id=&quot;accountPersistService&quot; class=&quot;com.xy.mvnbook.account.persist.impl.AccountPersistServiceImpl&quot;&gt;
+    &lt;property name=&quot;fileUrl&quot; value=&quot;${persist.fileUrl}&quot;&gt;&lt;/property&gt;
+  &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<p>properties文件: </p>
+<pre><code class="language-props">persist.fileUrl=${project.build.outputDirectory}/persist-data.xml
+</code></pre>
+<p>(这里包含了一个maven属性 <code>${project.build.outputDirectory}</code> maven的主输出目录, 详细看<a href="#maven%E5%B1%9E%E6%80%A7">maven属性</a> )</p>
+<h2><a class="header" href="#account-captcha模块" id="account-captcha模块">account-captcha模块</a></h2>
+<img src="Screenshot_48.png">
+<h3><a class="header" href="#captcha模块的pom" id="captcha模块的pom">captcha模块的pom</a></h3>
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;parent&gt;
+    &lt;groupId&gt;com.xy.mvnbook.account&lt;/groupId&gt;
+    &lt;artifactId&gt;account-parent&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;relativePath&gt;../account-parent/pom.xml&lt;/relativePath&gt;&lt;!-- 父pom文件相对路径， 默认是 [../pom.xml]  --&gt;
+    
+  &lt;/parent&gt;
+  &lt;artifactId&gt;account-captcha&lt;/artifactId&gt;
+  &lt;name&gt;Account Captcha&lt;/name&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+  
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.github.penggle&lt;/groupId&gt;
+      &lt;artifactId&gt;kaptcha&lt;/artifactId&gt;
+      &lt;version&gt;2.3.2&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- *************************************************spring依赖 start， 主要用来支持依赖注入****************************************** --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-core --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-beans --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-beans&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- *************************************************spring依赖 end， 主要用来支持依赖注入****************************************** --&gt;
+    &lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    
+    &lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+        &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  
+&lt;/project&gt;
+</code></pre>
+<h3><a class="header" href="#主代码测试-2" id="主代码测试-2">主代码&amp;测试</a></h3>
+<pre><code class="language-java">package com.xy.mvnbook.account.captcha;
+
+import java.util.List;
+
+import com.xy.mvnbook.account.captcha.exception.AccountCaptchaException;
+/**
+ * 验证码服务 interface
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午10:18:02
+ */
+public interface AccountCaptchaService {
+
+    /**
+     * 获取 key
+     * @return
+     * @throws AccountCaptchaException
+     */
+    String generageCaptchaKey() throws AccountCaptchaException;
+    /**
+     * 根据key获取img
+     * @param key
+     * @return
+     * @throws AccountCaptchaException
+     */
+    byte[] genarateCaptchaImage(String key) throws AccountCaptchaException;
+    /**
+     * 验证
+     * @param key
+     * @param value
+     * @return
+     * @throws AccountCaptchaException
+     */
+    boolean validate(String key, String value) throws AccountCaptchaException;
+    /**
+     * 获取预定义的验证码内容, 方便测试
+     * @return
+     */
+    List&lt;String&gt; getPreText();
+    void setPreText(List&lt;String&gt; preText);
+    
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package com.xy.mvnbook.account.captcha.impl;
+
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.imageio.ImageIO;
+
+import org.springframework.beans.factory.InitializingBean;
+
+import com.google.code.kaptcha.impl.DefaultKaptcha;
+import com.google.code.kaptcha.util.Config;
+import com.xy.mvnbook.account.captcha.AccountCaptchaService;
+import com.xy.mvnbook.account.captcha.exception.AccountCaptchaException;
+import com.xy.mvnbook.account.captcha.util.RandomGenerator;
+
+/**
+ * 验证码服务 实现
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午10:22:10
+ */
+public class AccountCaptchaServiceImpl implements AccountCaptchaService, InitializingBean {
+    /**
+     * 验证码生成器
+     */
+    private DefaultKaptcha producer;
+    /**
+     * InitializingBean接口中的方法, 会在spring初始化bean时调用; 这里用来初始化  producer
+     */
+    public void afterPropertiesSet() throws Exception {
+        producer = new DefaultKaptcha();
+        producer.setConfig(new Config(new Properties()));
+    }
+    /**
+     * 存储key和验证码正确的值
+     */
+    private Map&lt;String, String&gt; captchaMap = new HashMap&lt;String, String&gt;();
+    /**
+     * 预定义字符串, 方便测试
+     */
+    private List&lt;String&gt; preText;
+
+    public String generageCaptchaKey() throws AccountCaptchaException {
+        String key = RandomGenerator.getRandomString();
+        String value = this.getCaptchaText();
+        captchaMap.put(key, value);
+        return key;
+    }
+
+    public byte[] genarateCaptchaImage(String key) throws AccountCaptchaException {
+        String value = captchaMap.get(key);
+        if (null == value) {
+            throw new AccountCaptchaException(&quot;Captcha key: &quot; + key + &quot;not found.&quot;);
+        }
+        BufferedImage img = producer.createImage(value);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        try {
+            ImageIO.write(img, &quot;jpg&quot;, out);
+        } catch (IOException e) {
+            throw new AccountCaptchaException(&quot;Faild to write captcha stream.&quot;, e);
+        }
+        return out.toByteArray();
+    }
+
+    public boolean validate(String key, String value) throws AccountCaptchaException {
+        String text = captchaMap.get(key);
+        if (null == text) {
+            throw new AccountCaptchaException(&quot;Captcha key: &quot; + key + &quot;not found.&quot;);
+        }
+        if (value.equals(text)) {
+            captchaMap.remove(key);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public List&lt;String&gt; getPreText() {
+        return this.getPreText();
+    }
+
+    public void setPreText(List&lt;String&gt; preText) {
+        this.preText = preText;
+    }
+    
+    private int count = 0;
+    private String getCaptchaText() {
+        // 如果 预定义验证码文本 != null, 则顺序循环该字符串列表读取值, 否则, 随机创建一个串
+        if (preText != null &amp;&amp; !preText.isEmpty()) {
+            String text = preText.get(count);
+            count = (count + 1) % preText.size();
+            return text;
+        } else {
+            return producer.createText();
+        }
+    }
+
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package com.xy.mvnbook.account.captcha.util;
+
+import java.util.Random;
+/**
+ * 生成随机串 工具类
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午11:06:06
+ */
+public class RandomGenerator {
+
+    /**
+     * 字符范围
+     */
+    private static final String RANGE = &quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;;
+    /**
+     * 生成随机的8位字符串
+     * @return
+     */
+    public static synchronized String getRandomString() {
+        Random random = new Random();
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i &lt; 8; i++) {
+            result.append(RANGE.charAt(random.nextInt(RANGE.length())));
+        }
+        return result.toString();
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package com.xy.mvnbook.account.captcha;
+
+import static org.junit.Assert.*;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.xy.mvnbook.account.captcha.util.RandomGenerator;
+/**
+ * 测试
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年3月25日 下午11:04:24
+ */
+public class AccountCaptchaServiceTest {
+    
+    private AccountCaptchaService service;
+    
+    @Before
+    public void pre() throws Exception {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(&quot;account-captcha.xml&quot;);
+        service = (AccountCaptchaService)context.getBean(&quot;accountCaptchaService&quot;);
+    }
+
+    @Test
+    public void testRandomString() throws Exception{
+        HashSet&lt;String&gt; set = new HashSet&lt;String&gt;(100);
+        for (int i=0; i&lt;100; i++) {
+            String random = RandomGenerator.getRandomString();
+            assertFalse(set.contains(random));
+            set.add(random);
+        }
+    }
+    
+    @Test
+    public void testGenerateCaptcha() throws Exception {
+        String key = service.generageCaptchaKey();
+        assertNotNull(key);
+        
+        byte[] imgArray = service.genarateCaptchaImage(key);
+        assertTrue(imgArray.length &gt; 0);
+        
+        File imgFile = new File(&quot;target/&quot; + key + &quot;.jpg&quot;);
+        FileOutputStream out = new FileOutputStream(imgFile);
+        out.write(imgArray);
+        if (out != null) {
+            out.close();
+        }
+        assertTrue(imgFile.exists() &amp;&amp; imgFile.length() &gt; 0);
+    }
+    
+    @Test
+    public void testValidateCorrect() throws Exception{
+        ArrayList&lt;String&gt; preDefinedText = new ArrayList&lt;String&gt;();
+        preDefinedText.add(&quot;12345&quot;);
+        preDefinedText.add(&quot;abcde&quot;);
+        service.setPreText(preDefinedText);
+        
+        String key = service.generageCaptchaKey();
+        service.genarateCaptchaImage(key);
+        assertTrue(service.validate(key, &quot;12345&quot;));// 顺序读取preDefinedText的元素
+        
+        String key1 = service.generageCaptchaKey();
+        service.genarateCaptchaImage(key1);
+        assertTrue(service.validate(key1, &quot;abcde&quot;));
+    }
+    
+    @Test
+    public void testValidateIncorrect() throws Exception {
+        ArrayList&lt;String&gt; preDefinedText = new ArrayList&lt;String&gt;();
+        preDefinedText.add(&quot;12345&quot;);
+        service.setPreText(preDefinedText);
+        
+        String key = service.generageCaptchaKey();
+        service.genarateCaptchaImage(key);
+        assertFalse(service.validate(key, &quot;1234&quot;));
+    }
+    
+}
+
+</code></pre>
+<h3><a class="header" href="#注入配置文件" id="注入配置文件">注入配置文件</a></h3>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:util=&quot;http://www.springframework.org/schema/util&quot;
+       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+       xsi:schemaLocation=&quot;
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd&quot;&gt;
+  
+  &lt;!-- &lt;context:property-placeholder location=&quot;classpath:service.properties&quot;/&gt; --&gt;
+  &lt;!-- &lt;bean id=&quot;propertyConfigurer&quot; class=&quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&quot;&gt;
+    &lt;property name=&quot;location&quot; value=&quot;classpath:persist.properties&quot;&gt;&lt;/property&gt;
+  &lt;/bean&gt; --&gt;
+  &lt;bean id=&quot;accountCaptchaService&quot; class=&quot;com.xy.mvnbook.account.captcha.impl.AccountCaptchaServiceImpl&quot;&gt;
+  &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<h2><a class="header" href="#account-service模块" id="account-service模块">account-service模块</a></h2>
+<p>web项目打包成war包, 部署到web容器中的war包一般有如下的目录结构</p>
+<img src="Screenshot_63.png" width=50%>
+<p>本模块用来封装前三个模块的细节</p>
+<h3><a class="header" href="#service-pom配置" id="service-pom配置">service-pom配置</a></h3>
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;parent&gt;
+    &lt;groupId&gt;com.xy.mvnbook.account&lt;/groupId&gt;
+    &lt;artifactId&gt;account-parent&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;relativePath&gt;../account-parent/pom.xml&lt;/relativePath&gt;&lt;!-- 父pom文件相对路径， 默认是 [../pom.xml]  --&gt;
+    
+  &lt;/parent&gt;
+  &lt;artifactId&gt;account-service&lt;/artifactId&gt;
+  &lt;name&gt;Account Service&lt;/name&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+  
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+        &lt;artifactId&gt;account-email&lt;/artifactId&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+        &lt;artifactId&gt;account-persist&lt;/artifactId&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+        &lt;artifactId&gt;account-captcha&lt;/artifactId&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
+      &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+          &lt;groupId&gt;com.icegreen&lt;/groupId&gt;
+          &lt;artifactId&gt;greenmail&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+    &lt;dependency&gt;
+          &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+          &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+      &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
+<h3><a class="header" href="#主代码" id="主代码">主代码</a></h3>
+<pre><code class="language-java">package com.xy.mvnbook.account.service.bean;
+
+import lombok.Data;
+/**
+ * 请求对象
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年4月11日 下午7:49:19
+ */
+@Data
+public class SignUpRequest {
+
+    private String id;
+    private String email;
+    private String username;
+    private String pwd;
+    private String confirmPwd;
+    private String captchaKey;
+    private String captchaValue;
+    private String activateServiceUrl;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package com.xy.mvnbook.account.service;
+
+import com.xy.mvnbook.account.service.bean.SignUpRequest;
+import com.xy.mvnbook.account.service.exception.AccountServiceException;
+/**
+ * 封装后暴露的接口
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年4月11日 下午7:50:44
+ */
+public interface AccountService {
+
+    String generateCaptchaKey() throws AccountServiceException;
+    byte[] generateCaptchaImage(String captchaKey) throws AccountServiceException;
+    void activate(String activateNum) throws AccountServiceException;
+    void login(String id, String pwd) throws AccountServiceException;
+    void singUp(SignUpRequest rqt) throws AccountServiceException;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package com.xy.mvnbook.account.service.impl;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.xy.mvnbook.account.captcha.AccountCaptchaService;
+import com.xy.mvnbook.account.captcha.exception.AccountCaptchaException;
+import com.xy.mvnbook.account.captcha.util.RandomGenerator;
+import com.xy.mvnbook.account.email.AccountEmailService;
+import com.xy.mvnbook.account.email.exception.AccountEmailException;
+import com.xy.mvnbook.account.persist.AccountPersistService;
+import com.xy.mvnbook.account.persist.dto.Account;
+import com.xy.mvnbook.account.persist.exception.AccountPersistException;
+import com.xy.mvnbook.account.service.AccountService;
+import com.xy.mvnbook.account.service.bean.SignUpRequest;
+import com.xy.mvnbook.account.service.exception.AccountServiceException;
+
+import lombok.Data;
+/**
+ * 接口实现
+ *
+ * @version 0.1
+ * @author xy
+ * @date 2018年4月11日 下午7:51:32
+ */
+@Data
+public class AccountServiceImpl implements AccountService {
+    
+    private AccountCaptchaService accountCaptchaService;
+    private AccountEmailService accountEmailService;
+    private AccountPersistService accountPersistService;
+    
+    private Map&lt;String, String&gt; activateMap = new HashMap&lt;String, String&gt;();
+    
+
+    public String generateCaptchaKey() throws AccountServiceException {
+        try {
+            return accountCaptchaService.generageCaptchaKey();
+        } catch (AccountCaptchaException e) {
+            throw new AccountServiceException(&quot;无法创建验证码key。&quot;, e);
+        }
+    }
+
+    public byte[] generateCaptchaImage(String captchaKey) throws AccountServiceException {
+        try {
+            return accountCaptchaService.genarateCaptchaImage(captchaKey);
+        } catch (AccountCaptchaException e) {
+            throw new AccountServiceException(&quot;无法创建验证码image&quot;, e);
+        }
+    }
+
+    public void activate(String activateNum) throws AccountServiceException {
+        String accountId = this.getActivateMap().get(activateNum);
+        if (accountId == null) {
+            throw new AccountServiceException(&quot;无效的激活码。&quot;);
+        }
+        try {
+            Account account = accountPersistService.readAccount(accountId);
+            account.setActivated(true);
+            accountPersistService.updateAccount(account);
+        } catch (AccountPersistException e) {
+            throw new AccountServiceException(&quot;无法激活。&quot;);
+        }
+    }
+
+    public void login(String id, String pwd) throws AccountServiceException {
+        try {
+            Account account = accountPersistService.readAccount(id);
+            if (account == null) {
+                throw new AccountServiceException(&quot;account不存在&quot;);
+            }
+            if (!account.isActivated()) {
+                throw new AccountServiceException(&quot;account未激活&quot;);
+            }
+            if (!account.getPassword().equals(pwd)) {
+                throw new AccountServiceException(&quot;密码错误&quot;);
+            }
+        } catch (AccountPersistException e) {
+            throw new AccountServiceException(&quot;无法登录.&quot;, e);
+        }
+        
+
+    }
+
+    public void singUp(SignUpRequest rqt) throws AccountServiceException {
+        if (!rqt.getPwd().equals(rqt.getConfirmPwd())) {
+            throw new AccountServiceException(&quot;两次输入的密码不一致。&quot;);
+        }
+        boolean validate;
+        try {
+            validate = accountCaptchaService.validate(rqt.getCaptchaKey(), rqt.getCaptchaValue());
+        } catch (AccountCaptchaException e) {
+            throw new AccountServiceException(&quot;验证码验证动作失败。&quot;, e);
+        }
+        if (!validate) {
+            throw new AccountServiceException(&quot;验证码输入错误。&quot;);
+        }
+        
+        Account account = new Account();
+        account.setActivated(false);
+        account.setEmail(rqt.getEmail());
+        account.setId(rqt.getId());
+        account.setName(rqt.getUsername());
+        account.setPassword(rqt.getPwd());
+        
+        try {
+            accountPersistService.createAccount(account);
+        } catch (AccountPersistException e) {
+            throw new AccountServiceException(&quot;保存account失败&quot;, e);
+        }
+        
+        String activateId = RandomGenerator.getRandomString();
+        activateMap.put(activateId, account.getId());
+        
+        try {
+            accountEmailService.sendMail(account.getEmail(), &quot;请激活。。。&quot;, rqt.getActivateServiceUrl().endsWith(&quot;/&quot;) ? 
+                 rqt.getActivateServiceUrl() + activateId : rqt.getActivateServiceUrl() + &quot;/&quot; + activateId);
+        } catch (AccountEmailException e) {
+            throw new AccountServiceException(&quot;发送邮件失败。&quot;, e);
+        }
+
+    }
+
+}
+
+</code></pre>
+<h3><a class="header" href="#spring配置文件" id="spring配置文件">spring配置文件</a></h3>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:util=&quot;http://www.springframework.org/schema/util&quot;
+       xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+       xsi:schemaLocation=&quot;
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd&quot;&gt;
+  
+  &lt;!-- &lt;context:property-placeholder location=&quot;classpath:service.properties&quot;/&gt; --&gt;
+  &lt;!-- &lt;bean id=&quot;propertyConfigurer&quot; class=&quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&quot;&gt;
+    &lt;property name=&quot;location&quot; value=&quot;classpath:persist.properties&quot;&gt;&lt;/property&gt;
+  &lt;/bean&gt; --&gt;
+  &lt;import resource=&quot;classpath*:/account-captcha.xml&quot;/&gt;
+  &lt;import resource=&quot;classpath*:/account-email.xml&quot;/&gt;
+  &lt;import resource=&quot;classpath*:/account-persist.xml&quot;/&gt;
+  &lt;bean id=&quot;accountService&quot; class=&quot;com.xy.mvnbook.account.service.impl.AccountServiceImpl&quot;&gt;
+    &lt;property name=&quot;accountCaptchaService&quot; ref=&quot;accountCaptchaService&quot;&gt;&lt;/property&gt;&lt;!-- 这里小心ref错写成value --&gt;
+    &lt;property name=&quot;accountEmailService&quot; ref=&quot;accountEmailService&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;accountPersistService&quot; ref=&quot;accountPersistService&quot;&gt;&lt;/property&gt;
+  &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<h3><a class="header" href="#安装account-service模块注意" id="安装account-service模块注意">安装account-service模块注意</a></h3>
+<p>需要先安装parent的pom, 否则安装service项目时会报错, 因为service的pom中引用了parent 的pom信息</p>
+<p>进入parent项目目录 <code>mvn -N clean install</code>, <code>-N</code>表示不要构建子项目</p>
+<h2><a class="header" href="#account-web模块" id="account-web模块">account-web模块</a></h2>
+<p>包括servlet和前端页面</p>
+<h3><a class="header" href="#webxml" id="webxml">web.xml</a></h3>
+<pre><code class="language-xml">&lt;!DOCTYPE web-app PUBLIC
+ &quot;-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN&quot;
+ &quot;http://java.sun.com/dtd/web-app_2_3.dtd&quot; &gt;
+
+&lt;web-app&gt;
+  &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;
+  
+  &lt;context-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;
+        classpath:/account-persist.xml
+        classpath:/account-captcha.xml
+        classpath:/account-email.xml
+        classpath:/account-service.xml
+    &lt;/param-value&gt;
+  &lt;/context-param&gt;
+  &lt;listener&gt;&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;&lt;/listener&gt;
+  
+  &lt;servlet&gt;
+  	&lt;servlet-name&gt;CaptchaImageServlet&lt;/servlet-name&gt;
+  	&lt;display-name&gt;CaptchaImageServlet&lt;/display-name&gt;
+  	&lt;description&gt;return captcha image to jsp&lt;/description&gt;
+  	&lt;servlet-class&gt;com.xy.mvnbook.account.web.CaptchaImageServlet&lt;/servlet-class&gt;
+  &lt;/servlet&gt;
+  &lt;servlet&gt;
+  	&lt;servlet-name&gt;SignUpServlet&lt;/servlet-name&gt;
+  	&lt;display-name&gt;SignUpServlet&lt;/display-name&gt;
+  	&lt;description&gt;&lt;/description&gt;
+  	&lt;servlet-class&gt;com.xy.mvnbook.account.web.SignUpServlet&lt;/servlet-class&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+  	&lt;servlet-name&gt;CaptchaImageServlet&lt;/servlet-name&gt;
+  	&lt;url-pattern&gt;/captcha_image&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+  &lt;servlet-mapping&gt;
+  	&lt;servlet-name&gt;SignUpServlet&lt;/servlet-name&gt;
+  	&lt;url-pattern&gt;/sign_up&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+
+</code></pre>
+<h3><a class="header" href="#pomxml" id="pomxml">pom.xml</a></h3>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;project xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot; xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;parent&gt;
+    &lt;groupId&gt;com.xy.mvnbook.account&lt;/groupId&gt;
+    &lt;artifactId&gt;account-parent&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+  &lt;/parent&gt;
+  
+  &lt;artifactId&gt;account-web&lt;/artifactId&gt;
+  &lt;packaging&gt;war&lt;/packaging&gt;
+  &lt;name&gt;account-web Maven Webapp&lt;/name&gt;
+  
+  &lt;dependencies&gt;
+    
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+        &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- &lt;dependency&gt;
+        &lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;
+        &lt;artifactId&gt;jsp-api&lt;/artifactId&gt;
+    &lt;/dependency&gt; --&gt;
+    
+    &lt;dependency&gt;
+        &lt;groupId&gt;${project.groupId}&lt;/groupId&gt;
+        &lt;artifactId&gt;account-service&lt;/artifactId&gt;
+        &lt;version&gt;${project.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  &lt;build&gt;
+    &lt;finalName&gt;account&lt;/finalName&gt;&lt;!-- 最终生成的jar名字; 默认为${project.artifactId}-${project.version} --&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+	        &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
+		    &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
+		    &lt;version&gt;9.4.5.v20170502&lt;/version&gt;
+	       &lt;configuration&gt;
+	            &lt;scanIntervalSeconds&gt;5&lt;/scanIntervalSeconds&gt;
+	            &lt;webAppConfig&gt; 
+	               &lt;contextPath&gt;/${project.artifactId}&lt;/contextPath&gt;  
+	           &lt;/webAppConfig&gt;
+	           &lt;connectors&gt;
+	               &lt;connector implementation=&quot;org.eclipse.jetty.server.nio.SelectChannelConnector&quot;&gt;
+	                   &lt;port&gt;8081&lt;/port&gt;
+	               &lt;/connector&gt;
+	           &lt;/connectors&gt;
+	       &lt;/configuration&gt;
+	    &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+
+</code></pre>
+<h1><a class="header" href="#maven中的测试" id="maven中的测试">Maven中的测试</a></h1>
+<h2><a class="header" href="#maven-surefire-plugin" id="maven-surefire-plugin">maven-surefire-plugin</a></h2>
+<p>Maven使用<code>maven-surefire-plugin</code>调用JUnit执行测试, <code>mvn test</code>即可, 如果某个测试方法希望忽略, 使用<code>@Ignore</code>标注</p>
+<p>默认下, 该插件会自动执行符合如下规范的测试用例</p>
+<img src="Screenshot_49.png" width=50%/>
+<h2><a class="header" href="#如何跳过测试" id="如何跳过测试">如何跳过测试</a></h2>
+<p>方法1: <code>mvn package -D skipTests</code>(有无空格都可), 不执行测试用例，但编译测试类生成相应的class文件至target/test-classes下 (idea 跳过默认是这种)</p>
+<p>方法2: <code>mvn package -D maven.test.skip=true</code>(有无空格都可) 跳过测试, 测试代码不编译, 但是不推荐这么做</p>
+<p>方法3: 在pom中配置surefire插件, 如
+<img src="Screenshot_50.png"></p>
+<p>但是不推荐这么做</p>
+<h2><a class="header" href="#动态指定运行的测试类" id="动态指定运行的测试类">动态指定运行的测试类</a></h2>
+<p><img src="Screenshot_51.png" width=50%><img width=50% src="Screenshot_52.png"><img width=50% src="Screenshot_53.png"></p>
+<p>如果-D test 没有找到测试用例, 会报错, 如果希望这时不报错,</p>
+<img src="Screenshot_54.png" width=50%/>
+<h2><a class="header" href="#包含排除测试用例" id="包含排除测试用例">包含&amp;排除测试用例</a></h2>
+<p><img src="Screenshot_55.png"><img src="Screenshot_56.png"></p>
+<h2><a class="header" href="#测试报告测试覆盖率报告" id="测试报告测试覆盖率报告">测试报告&amp;测试覆盖率报告</a></h2>
+<p><img src="Screenshot_57.png" width=50%><img width=50% src="Screenshot_58.png"></p>
+<h2><a class="header" href="#改用testng代替junit" id="改用testng代替junit">改用TestNG代替Junit</a></h2>
+<p>TestNG一大优点就是<code>支持测试组</code>的概念, 对测试可以达到方法级别的归类, 而JUnit只能到类级别的归类;
+<img src="Screenshot_60.png" width=50%/></p>
+<p>将JUnit依赖替换成TestNG, <code>mvn test</code>即可</p>
+<p>需要配置testng.xml来配置需要运行的测试集合
+<img src="Screenshot_59.png" width=50%></p>
+<h2><a class="header" href="#打包测试代码" id="打包测试代码">打包测试代码</a></h2>
+<p>默认测试代码不会打包, 如下配置才会打包测试代码</p>
+<p><img src="Screenshot_61.png"><img src="Screenshot_62.png"></p>
+<h1><a class="header" href="#生命周期" id="生命周期">生命周期</a></h1>
+<p>Maven拥有3套独立的生命周期, 每个周期又有自己的阶段, 这些阶段有序, <code>后面阶段依赖于前面的阶段</code></p>
+<ul>
+<li>clean
+<ul>
+<li>pre-clean 这个阶段执行一些清理前需要完成的工作</li>
+<li>clean 清理上次构建生成的文件</li>
+<li>post-clean 执行一次清理后需要完成的工作</li>
+</ul>
+</li>
+<li>site
+<ul>
+<li>pre-site</li>
+<li>site</li>
+<li>post-site</li>
+<li>site-deploy 将站点发布到服务器</li>
+</ul>
+</li>
+<li>default(定义了构建的所有步骤, 最全)
+<ul>
+<li>validate</li>
+<li>initialize</li>
+<li>generate-sources</li>
+<li>process-sources: 处理项目主资源文件, 对src/main/resources下的文件进行变量替换, 然后复制到输出的主classpath目录中</li>
+<li>generate-resources</li>
+<li>process-resources</li>
+<li>compile : 编译项目主代码到主输出classpath目录</li>
+<li>process-classes</li>
+<li>generate-test-sources</li>
+<li>process-test-sources : 处理项目测试资源文件</li>
+<li>generate-test-resources</li>
+<li>process-test-resources</li>
+<li>test-compile</li>
+<li>process-test-classes</li>
+<li>test 使用单元测试框架测试, </li>
+<li>prepare-package</li>
+<li>package</li>
+<li>pre-integration-test</li>
+<li>integration-test</li>
+<li>post-integration-test</li>
+<li>verify</li>
+<li>install</li>
+<li>deploy</li>
+</ul>
+</li>
+</ul>
+<p>mvn命令实际上就是调用三套生命周期的不同阶段进行组合</p>
+<h1><a class="header" href="#插件" id="插件">插件</a></h1>
+<h2><a class="header" href="#查看插件帮助文档" id="查看插件帮助文档">查看插件帮助文档</a></h2>
+<p><code>mvn help:describe -Dplugin=&lt;plugin_name&gt; -Dgoal=&lt;goal&gt; -Ddetail=true</code></p>
+<h2><a class="header" href="#插件绑定" id="插件绑定">插件绑定</a></h2>
+<p>插件绑定(生命周期的阶段和插件目标相互绑定)</p>
+<p>Maven内置绑定(为了开箱即用, Maven为核心的一些生命周期阶段绑定了很多插件目标, 当user运行命令调用生命周期阶段的时候, 对应的插件目标就会执行对应任务, 这有点像设计模式中的模板方法模式)</p>
+<p>内置绑定的例子看下图
+<img src="Screenshot_35.png" width=50%/><img width=50% src="Screenshot_36.png"/></p>
+<p>default生命周期还有很多阶段, 这里只是列出了内置绑定了插件的阶段, 其他没有绑定插件的阶段就没有实际行为;</p>
+<h2><a class="header" href="#插件的自定义绑定" id="插件的自定义绑定">插件的自定义绑定</a></h2>
+<p>比如创建源码jar包, 内置绑定中并没有这一项任务, 我们可以自定义绑定关系, 生成源码jar要使用<code>maven-source-plugin</code>插件</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.0.1&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;attach-sources&lt;/id&gt; &lt;!-- id名称随意 --&gt;
+            &lt;phase&gt;verify&lt;/phase&gt; &lt;!-- 生命周期阶段 --&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;jar-no-fork&lt;/goal&gt;&lt;!-- 插件目标 --&gt;
+            &lt;/goals&gt;
+            &lt;!-- &lt;inherited&gt;false&lt;/inherited&gt;
+            &lt;configuration&gt;
+            &lt;/configuration&gt; --&gt;&lt;!-- 注释掉, 不然源码jar包无法生成, mvn clean verify --&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+</code></pre>
+<p>运行 <code>mvn clean verify</code> 会在打包同时生成源码jar包</p>
+<p>这里考虑一个问题: 如果有多个插件目标被绑定到同一个阶段, 目标的执行顺序是怎样的呢? ------<code>插件声明的先后顺序决定了目标的执行顺序</code></p>
+<h2><a class="header" href="#在命令行给插件设置参数" id="在命令行给插件设置参数">在命令行给插件设置参数</a></h2>
+<p>maven-surefire-plugin 提供一个参数 maven.test.skip ,如果为 true, 会跳过测试, 于是希望跳过测试可以这么做:
+<code>mvn clean install -Dmaven.test.skip=true</code></p>
+<h2><a class="header" href="#在pom中设置插件的全局参数" id="在pom中设置插件的全局参数">在pom中设置插件的全局参数</a></h2>
+<p>还是生成源代码jar包的那个例子</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.0.1&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;attach-sources&lt;/id&gt; &lt;!-- id名称随意 --&gt;
+            &lt;phase&gt;verify&lt;/phase&gt; &lt;!-- 生命周期阶段 --&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;jar-no-fork&lt;/goal&gt;&lt;!-- 插件目标 --&gt;
+            &lt;/goals&gt;
+            
+            &lt;configuration&gt;
+                &lt;!-- 在这里配置参数 --&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+</code></pre>
+<h2><a class="header" href="#在pom中给插件任务配置个性化参数" id="在pom中给插件任务配置个性化参数">在pom中给插件任务配置个性化参数</a></h2>
+<p>以<code>maven-antrun-plugin</code>为例, 它可以执行ant任务</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-antrun-plugin&lt;/artifactId&gt;
+    &lt;version&gt;1.8&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;!-- 同一个插件目标绑定到了不同的生命周期阶段 --&gt;
+        &lt;execution&gt;
+            &lt;id&gt;ant-validate&lt;/id&gt;
+            &lt;phase&gt;validate&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;run&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;configuration&gt;
+                &lt;tasks&gt;
+                    &lt;echo&gt;绑定到了&quot;validate&quot;阶段&lt;/echo&gt;
+                &lt;/tasks&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+        &lt;execution&gt;
+            &lt;id&gt;ant-verify&lt;/id&gt;
+            &lt;phase&gt;verify&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;run&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;configuration&gt;
+                &lt;tasks&gt;
+                    &lt;echo&gt;绑定到了&quot;verify&quot;阶段&lt;/echo&gt;
+                &lt;/tasks&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+</code></pre>
+<p>运行 <code>mvn clean verify -D maven.test.skip</code>, 会跳过测试， 输出如下：</p>
+<table><thead><tr><th>p1</th><th>p2</th><th>p3</th></tr></thead><tbody>
+<tr><td><img src="Screenshot_37.png" /></td><td><img src="Screenshot_38.png"/></td><td><img src="Screenshot_39.png"/></td></tr>
+</tbody></table>
+<h2><a class="header" href="#常用的插件" id="常用的插件">常用的插件</a></h2>
+<h3><a class="header" href="#打可执行包插件" id="打可执行包插件">打可执行包插件</a></h3>
+<p>https://www.baeldung.com/executable-jar-with-maven</p>
+<p>常用的打包插件有如下3种
+<img src="Screenshot_64.png"></p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;phase&gt;package&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;shade&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;configuration&gt;
+                &lt;shadedArtifactAttached&gt;true&lt;/shadedArtifactAttached&gt;
+                &lt;transformers&gt;
+                    &lt;transformer implementation=
+                                &quot;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&quot;&gt;
+                        &lt;mainClass&gt;
+                            jetty.Main
+                        &lt;/mainClass&gt;
+                    &lt;/transformer&gt;
+                &lt;/transformers&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+</code></pre>
+<p>主要说说第三种</p>
+<p>两种使用方式</p>
+<ul>
+<li>
+<p>使用 descriptorRefs(官方提供的定制化打包方式)，官方提供的 descriptorRef 有 bin, jar-with-dependencies, src, project。[不建议使用]</p>
+</li>
+<li>
+<p>使用 descriptors，指定打包文件 src/assembly/src.xml，在该配置文件内指定打包操作。</p>
+<pre><code class="language-xml">&lt;project&gt;
+[...]
+&lt;build&gt;
+    [...]
+    &lt;plugins&gt;
+    &lt;plugin&gt;
+        &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
+        &lt;version&gt;3.0.0&lt;/version&gt;
+        &lt;configuration&gt;
+        &lt;descriptors&gt;
+            &lt;descriptor&gt;src/assembly/assembly.xml&lt;/descriptor&gt;&lt;!-- 指定插件配置文件路径 --&gt;
+        &lt;/descriptors&gt;
+        &lt;!--这样配置后，mvn deploy不会把assembly打的zip包上传到nexus--&gt;
+        &lt;attach&gt;false&lt;/attach&gt;
+        &lt;/configuration&gt;
+        &lt;executions&gt;
+            &lt;execution&gt;  
+                &lt;id&gt;make-assembly&lt;/id&gt;  
+                &lt;phase&gt;package&lt;/phase&gt;&lt;!--绑定到package--&gt;  
+                &lt;goals&gt;  
+                    &lt;goal&gt;single&lt;/goal&gt;&lt;!--只运行一次--&gt;  
+                &lt;/goals&gt;  
+            &lt;/execution&gt;  
+        &lt;/executions&gt;  
+        [...]
+&lt;/project&gt;
+</code></pre>
+<p>再看插件自身的配置文件 assembly.xml</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;assembly
+    xmlns=&quot;http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd&quot;&gt;
+
+    &lt;id&gt;mini&lt;/id&gt;
+
+    &lt;formats&gt;
+        &lt;format&gt;tar.gz&lt;/format&gt;&lt;!-- 打包的文件格式, 可以有 zip、tar、tar.gz (or tgz)、tar.bz2 (or tbz2)、jar、dir、war，可以同时指定多个打包格式 --&gt;
+        &lt;!-- &lt;format&gt;dir&lt;/format&gt; --&gt;
+    &lt;/formats&gt;
+
+    &lt;includeBaseDirectory&gt;false&lt;/includeBaseDirectory&gt;&lt;!-- 是否将工程名作为压缩包的根路径 --&gt;
+
+    &lt;fileSets&gt;&lt;!-- 管理一组文件的存放位置 --&gt;
+        &lt;fileSet&gt;
+            &lt;directory&gt;src/main/webapp&lt;/directory&gt;&lt;!-- 需要打包的目录 --&gt;
+            &lt;excludes&gt;
+                &lt;exclude&gt;**/*config.yml&lt;/exclude&gt;
+                &lt;exclude&gt;**/*.data&lt;/exclude&gt;&lt;!-- admin user &amp; role --&gt;
+                &lt;exclude&gt;**/admin_log/**&lt;/exclude&gt;
+                &lt;exclude&gt;**/docs/**&lt;/exclude&gt;&lt;!-- 有中文打包会出乱码 --&gt;
+            &lt;/excludes&gt;
+            &lt;outputDirectory&gt;/&lt;/outputDirectory&gt;&lt;!-- 打包后输出目录 --&gt;
+        &lt;/fileSet&gt;
+
+        &lt;fileSet&gt;
+            &lt;directory&gt;${project.build.directory}/${project.build.finalName}/WEB-INF/lib&lt;/directory&gt;
+            &lt;includes&gt;
+                &lt;include&gt;${project.build.finalName}*.jar&lt;/include&gt;
+                &lt;include&gt;sodo-*.jar&lt;/include&gt;
+            &lt;/includes&gt;
+            &lt;outputDirectory&gt;/WEB-INF/lib&lt;/outputDirectory&gt;
+        &lt;/fileSet&gt;
+
+    &lt;/fileSets&gt;
+
+     &lt;files&gt;&lt;!-- 可以指定目的文件名到指定目录，其他和 fileSets 相同 --&gt;
+        &lt;file&gt;
+        &lt;source&gt;README.txt&lt;/source&gt;&lt;!-- 源文件 --&gt;
+        &lt;outputDirectory&gt;/&lt;/outputDirectory&gt;&lt;!-- 输出目录 --&gt;
+        &lt;/file&gt;
+    &lt;/files&gt;
+
+    &lt;dependencySets&gt;&lt;!-- 用来定制工程依赖 jar 包的打包方式 --&gt;
+     &lt;dependencySet&gt;
+         &lt;!--是否把本项目添加到依赖文件夹下--&gt;
+         &lt;useProjectArtifact&gt;true&lt;/useProjectArtifact&gt;
+         &lt;outputDirectory&gt;lib&lt;/outputDirectory&gt;&lt;!-- 指定包依赖目录，该目录是相对于根目录 --&gt;
+         &lt;!--将scope为runtime的依赖包打包--&gt;
+         &lt;scope&gt;runtime&lt;/scope&gt;
+         &lt;!--此外还有两个元素: includes/include*	List&lt;String&gt;	包含依赖;  excludes/exclude*	List&lt;String&gt;	排除依赖 --&gt;
+     &lt;/dependencySet&gt;
+    &lt;/dependencySets&gt;
+&lt;/assembly&gt;
+
+</code></pre>
+</li>
+</ul>
+<h3><a class="header" href="#maven-war-plugin" id="maven-war-plugin">maven-war-plugin</a></h3>
+<p>打war包插件, 打包时对web资源开启资源过滤, 使得能够使用Maven属性. 见<a href="#%E5%BC%80%E5%90%AFweb%E8%B5%84%E6%BA%90%E8%BF%87%E6%BB%A4">开启web资源过滤</a></p>
+<p>另外, 如果使用 servlet 3.0, 需要配置 'failOnMissingWebXml'</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-war-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.4&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+<h3><a class="header" href="#maven-eclipse-plugin" id="maven-eclipse-plugin">maven-eclipse-plugin</a></h3>
+<p>生成.classpath和.project文件，并且配置Eclispe将Maven作为External工具</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;artifactId&gt;maven-eclipse-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.9&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;additionalProjectnatures&gt;
+            &lt;projectnature&gt;org.springframework.ide.eclipse.core.springnature&lt;/projectnature&gt;
+        &lt;/additionalProjectnatures&gt;
+        &lt;additionalBuildcommands&gt;
+            &lt;buildcommand&gt;org.springframework.ide.eclipse.core.springbuilder&lt;/buildcommand&gt;
+        &lt;/additionalBuildcommands&gt;
+        &lt;downloadSources&gt;true&lt;/downloadSources&gt;
+        &lt;downloadJavadocs&gt;true&lt;/downloadJavadocs&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+
+</code></pre>
+<p>运行：mvn eclipse:eclipse 生成.classpath和.project文件</p>
+<h3><a class="header" href="#exec-maven-plugin" id="exec-maven-plugin">exec-maven-plugin</a></h3>
+<p>可以执行命令行, or 执行 shell</p>
+<p>通过命令行 执行java main。<code>mvn exec:java -Dexec.mainClass=&quot;com.demo.HelloWorld&quot;</code> 并不打可执行包</p>
+<pre><code class="language-xml">&lt;plugin&gt;  
+    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;  
+    &lt;artifactId&gt;exec-maven-plugin&lt;/artifactId&gt;  
+    &lt;version&gt;1.2.1&lt;/version&gt;  
+    &lt;executions&gt;  
+        &lt;execution&gt;
+            &lt;phase&gt;test&lt;/phase&gt;  
+            &lt;goals&gt;  
+                &lt;goal&gt;java&lt;/goal&gt;  
+            &lt;/goals&gt;  
+        &lt;/execution&gt;  
+    &lt;/executions&gt;  
+    &lt;configuration&gt;  
+        &lt;mainClass&gt;com.demo.config.DocMapper&lt;/mainClass&gt;  
+        &lt;arguments&gt;
+            &lt;argument&gt;${project.build.outputDirectory}\doc-path-map.txt&lt;/argument&gt;
+            &lt;argument&gt;${basedir}\src&lt;/argument&gt;
+            &lt;argument&gt;**/resource/*.java&lt;/argument&gt;
+        &lt;/arguments&gt;
+    &lt;/configuration&gt;  
+&lt;/plugin&gt;  
+</code></pre>
+<p>or 简单点的</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+    &lt;artifactId&gt;exec-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;1.2.1&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;mainClass&gt;org.test.int1.Main&lt;/mainClass&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+<p>或者, 直接执行 shell 脚本:</p>
+<pre><code class="language-xml">&lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;artifactId&gt;exec-maven-plugin&lt;/artifactId&gt;
+                &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;uncompress&lt;/id&gt;
+                        &lt;phase&gt;install&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;exec&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;configuration&gt;
+                            &lt;executable&gt;${basedir}/uncompress.sh&lt;/executable&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+</code></pre>
+<h3><a class="header" href="#bash-maven-plugin" id="bash-maven-plugin">bash-maven-plugin</a></h3>
+<p>执行 bash 脚本</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;!-- Run with:
+        mvn bash:run
+        mvn install
+    --&gt;
+    &lt;groupId&gt;com.atlassian.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;bash-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;test&lt;/id&gt;
+            &lt;phase&gt;integration-test&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;run&lt;/goal&gt;
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+    &lt;configuration&gt;
+        &lt;script&gt;
+            # Here you can execute shell commands
+            echo &quot;Tomcat will start&quot;
+            /opt/apache-tomcat/bin/startup.sh
+        &lt;/script&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+<h3><a class="header" href="#maven-antrun-plugin" id="maven-antrun-plugin">maven-antrun-plugin</a></h3>
+<p>执行脚本</p>
+<p>```xml`</p>
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <version>1.8</version>
+    <executions>
+        <execution>
+            <id>generateSources</id>
+            <phase>generate-sources</phase>
+            <configuration>
+            <!-- 提供各种不同 task 类型的标签, echo, replaceregexp... -->
+                <tasks> 
+                    <exec executable="/bin/bash">
+                        <arg value="myFirst.sh" />
+                        <arg value="inputOne" />
+                    </exec>
+                    <exec executable="/bin/bash">
+                        <arg value="src/mySecond.sh" />
+                        <arg value="inputTwo" />
+                    </exec>
+            <!-- 替换util模块Global.PRODUCT_VERSION版本号 -->
+                    <replaceregexp file="datagear-util/src/main/java/org/datagear/util/Global.java" encoding="UTF-8" match="VERSION = &quot;\d+(\.\d+){1,2}(\-\w+){0,1}&quot;" replace="VERSION = &quot;${project.version}&quot;"/>
+            <!-- 为management模块的datagear.sql添加版本号行 -->
+                    <echo file="datagear-management/src/main/resources/org/datagear/management/ddl/datagear.sql" encoding="UTF-8" append="true">
+${line.separator}
+-----------------------------------------
+--version[${project.version}], DO NOT EDIT THIS LINE!
+-----------------------------------------
+${line.separator}
+                    </echo>
+                </tasks>
+            </configuration>
+            <goals>
+                <goal>run</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+<pre><code>
+### versions-maven-plugin
+
+统一更新子模块版本号为父模块版本号插件
+
+```xml
+&lt;!-- mvn -N versions:update-child-modules --&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+				&lt;artifactId&gt;versions-maven-plugin&lt;/artifactId&gt;
+				&lt;version&gt;2.3&lt;/version&gt;
+				&lt;configuration&gt;
+					&lt;generateBackupPoms&gt;false&lt;/generateBackupPoms&gt;
+				&lt;/configuration&gt;
+			&lt;/plugin&gt;
+
+</code></pre>
+<h3><a class="header" href="#build-helper-maven-plugin" id="build-helper-maven-plugin">build-helper-maven-plugin</a></h3>
+<p>codehaus提供了build-helper-maven-plugin插件来支持自定义的项目目录结构(相对于Maven默认目录结构来说)。</p>
+<p>比较全的配置:</p>
+<pre><code class="language-xml">&lt;!-- 设置多个源文件夹 --&gt;  
+&lt;plugin&gt;  
+    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;  
+    &lt;artifactId&gt;build-helper-maven-plugin&lt;/artifactId&gt;  
+    &lt;version&gt;1.8&lt;/version&gt;  
+    &lt;executions&gt;  
+        &lt;!-- 添加主资源文件目录 --&gt;  
+        &lt;execution&gt;  
+            &lt;!--自定义名称,不可重复--&gt;  
+            &lt;id&gt;add-resource&lt;/id&gt;  
+            &lt;!--指定绑定到生命周期--&gt;  
+            &lt;phase&gt;initialize&lt;/phase&gt;  
+            &lt;!--指定指定的目标,可添加多个--&gt;  
+            &lt;goals&gt;  
+                &lt;goal&gt;add-resource&lt;/goal&gt;  
+            &lt;/goals&gt;  
+            &lt;configuration&gt;  
+                &lt;resources&gt;  
+                    &lt;!--资源文件目录,可添加多个--&gt;  
+                    &lt;resource&gt;  
+                        &lt;directory&gt;${basedir}/src/main/one&lt;/directory&gt;  
+                        &lt;!--是否启用变量过滤--&gt;  
+                        &lt;filtering&gt;true&lt;/filtering&gt;  
+                        &lt;!--排除的文件,可添加多个--&gt;  
+                        &lt;excludes&gt;  
+                            &lt;exclude&gt;**/*.java&lt;/exclude&gt;  
+                        &lt;/excludes&gt;  
+                    &lt;/resource&gt;  
+                    &lt;resource&gt;  
+                        &lt;directory&gt;${basedir}/src/main/two&lt;/directory&gt;  
+                        &lt;filtering&gt;true&lt;/filtering&gt;  
+                        &lt;excludes&gt;  
+                            &lt;exclude&gt;**/*.java&lt;/exclude&gt;  
+                        &lt;/excludes&gt;  
+                    &lt;/resource&gt;  
+                &lt;/resources&gt;  
+            &lt;/configuration&gt;  
+        &lt;/execution&gt;  
+  
+        &lt;!-- 添加主源码目录 --&gt;  
+        &lt;execution&gt;  
+            &lt;id&gt;add-source&lt;/id&gt;  
+            &lt;phase&gt;initialize&lt;/phase&gt;  
+            &lt;goals&gt;  
+                &lt;goal&gt;add-source&lt;/goal&gt;  
+            &lt;/goals&gt;  
+            &lt;configuration&gt;  
+                &lt;sources&gt;  
+                    &lt;source&gt;${basedir}/src/main/three&lt;/source&gt;  
+                    &lt;source&gt;${basedir}/src/main/four&lt;/source&gt;  
+                &lt;/sources&gt;  
+            &lt;/configuration&gt;  
+        &lt;/execution&gt;  
+  
+        &lt;!-- 添加测试源码目录 --&gt;  
+        &lt;execution&gt;  
+            &lt;id&gt;add-test-source&lt;/id&gt;  
+            &lt;phase&gt;initialize&lt;/phase&gt;  
+            &lt;goals&gt;  
+                &lt;goal&gt;add-test-source&lt;/goal&gt;  
+            &lt;/goals&gt;  
+            &lt;configuration&gt;  
+                &lt;sources&gt;  
+                    &lt;source&gt;${basedir}/src/main/five&lt;/source&gt;  
+                    &lt;source&gt;${basedir}/src/main/six&lt;/source&gt;  
+                &lt;/sources&gt;  
+            &lt;/configuration&gt;  
+        &lt;/execution&gt;  
+    &lt;/executions&gt;  
+&lt;/plugin&gt;  
+
+</code></pre>
+<p>用的多点的是这个这个简单点的配置, 源码在多个目录:</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
+    &lt;artifactId&gt;build-helper-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;1.12&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;add-source&lt;/id&gt;
+            &lt;phase&gt;generate-sources&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;add-source&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;configuration&gt;
+                &lt;sources&gt;
+                    &lt;source&gt;src/common&lt;/source&gt;&lt;!-- 添加规范外的源码目录 --&gt;
+                &lt;/sources&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+</code></pre>
+<h3><a class="header" href="#maven-dependency-plugin" id="maven-dependency-plugin">maven-dependency-plugin</a></h3>
+<p>依赖项插件, 提供了处理工件的功能。它可以将本地或远程存储库中的工件(或构件中的文件)复制和/或解包到指定的位置。</p>
+<p>参考: https://www.cnblogs.com/lianshan/p/7350614.html</p>
+<p>比如, 部署的时候, 希望将依赖都打包到一个文件夹下</p>
+<pre><code class="language-xml">&lt;plugin&gt;   
+    &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;   
+        &lt;executions&gt;   
+        &lt;execution&gt;   
+            &lt;phase&gt;install&lt;/phase&gt;   
+            &lt;goals&gt;   
+                &lt;goal&gt;copy-dependencies&lt;/goal&gt;   
+            &lt;/goals&gt;   
+            &lt;configuration&gt;   
+                &lt;outputDirectory&gt;${project.build.directory}/lib&lt;/outputDirectory&gt;   
+            &lt;/configuration&gt;   
+        &lt;/execution&gt;   
+    &lt;/executions&gt;   
+&lt;/plugin&gt;  
+</code></pre>
+<h3><a class="header" href="#jetty和tomcat" id="jetty和tomcat">jetty和tomcat</a></h3>
+<p>jetty:</p>
+<p>相关参考: 多模块项目, 希望 启动的 web-module 可以随时反应 core-module 的修改</p>
+<p><a href="https://stackoverflow.com/questions/25725552/maven-jetty-plugin-automatic-reload-using-a-multi-module-project?noredirect=1&amp;lq=1">Maven jetty plugin - automatic reload using a multi-module project</a></p>
+<p>其他参考: <a href="https://stackoverflow.com/questions/3636493/multi-module-maven-project-and-jettyrun/3637829#3637829">link1</a>, <a href="https://stackoverflow.com/questions/3636493/multi-module-maven-project-and-jettyrun">link2</a></p>
+<p><a href="https://www.cnblogs.com/yiwangzhibujian/p/5856857.html">jetty配置项</a></p>
+<p><code>mvn jetty:run</code></p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    &lt;!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin --&gt;
+    &lt;!-- 默认会去加载:
+    resources in ${project.basedir}/src/main/webapp  
+    classes in ${project.build.outputDirectory}  
+    web.xml in ${project.basedir}/src/main/webapp/WEB-INF/  
+        --&gt;
+    &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
+    &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;9.4.9.v20180320&lt;/version&gt;
+    &lt;configuration&gt;  
+        &lt;scanIntervalSeconds&gt;3&lt;/scanIntervalSeconds&gt;  
+        &lt;httpConnector&gt;  
+            &lt;port&gt;8082&lt;/port&gt;  
+        &lt;/httpConnector&gt;  
+        &lt;webApp&gt;  
+            &lt;contextPath&gt;/${project.artifactId}&lt;/contextPath&gt;  
+        &lt;/webApp&gt;  
+    &lt;/configuration&gt;  
+&lt;/plugin&gt;
+</code></pre>
+<p>tomcat:</p>
+<p><code>mvn tomcat7:run</code></p>
+<pre><code class="language-xml">&lt;!-- https://tomcat.apache.org/maven-plugin-2.2/
+    (参考: https://www.cnblogs.com/llguanli/p/7131253.html)
+    --&gt;
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+    &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.2&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;path&gt;/taobao&lt;/path&gt;
+        &lt;port&gt;9090&lt;/port&gt;
+        &lt;uriEncoding&gt;UTF-8&lt;/uriEncoding&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+<h3><a class="header" href="#maven-source-plugin" id="maven-source-plugin">maven-source-plugin</a></h3>
+<p>程序打包时候, 同时打包源码</p>
+<pre><code class="language-xml">&lt;!-- 打包时添加源码 --&gt;
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-source-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.0.1&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;attach-sources&lt;/id&gt;
+            &lt;phase&gt;package&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;jar-no-fork&lt;/goal&gt;
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+
+</code></pre>
+<h3><a class="header" href="#maven-resources-plugins" id="maven-resources-plugins">maven-resources-plugins</a></h3>
+<p>springboot 默认提供, 用于 maven 打包时资源文件的复制, 占位符的替换</p>
+<p>处理 spring boot profile 和 maven profile 集成</p>
+<p>在 spring boot 配置中, 使用 <code>@xxxx@</code> 来引用 maven 的 profile, 同时要打开 maven resource filter</p>
+<p>不要复制某些文件, 在分环境打包时可以减少包体积:</p>
+<pre><code class="language-xml">&lt;resources&gt;
+    &lt;resource&gt;
+        &lt;directory&gt;src/main/resources&lt;/directory&gt;
+        &lt;!--①--&gt;
+        &lt;excludes&gt;
+            &lt;exclude&gt;application*.properties&lt;/exclude&gt;
+        &lt;/excludes&gt;
+    &lt;/resource&gt;
+    &lt;resource&gt;
+        &lt;directory&gt;src/main/resources&lt;/directory&gt;
+        &lt;!--②--&gt;
+        &lt;filtering&gt;true&lt;/filtering&gt;
+        &lt;includes&gt;
+            &lt;include&gt;application.properties&lt;/include&gt;
+            &lt;include&gt;application-${profile.active}.properties&lt;/include&gt;
+        &lt;/includes&gt;
+    &lt;/resource&gt;
+&lt;/resources&gt;
+</code></pre>
+<p>①中，我们通过 excludes 来将所有的 application*.properties 排除在外，这样 maven 在打包时就不会复制这些文件。毕竟我们不希望把 application-dev.properties 也包含在 prod 的 jar 包里。</p>
+<p>②中，通过开启 filtering，maven 会将文件中的 @XX@ 替换 profile 中定义的 XX 变量/属性。另外，我们还通过 includes 来告诉 maven 根据 自定义的 maven profile 来复制对应的 properties 文件。</p>
+<h3><a class="header" href="#maven-assembly-plugin" id="maven-assembly-plugin">maven-assembly-plugin</a></h3>
+<p>根据不同环境打包成tar.gz或者zip</p>
+<h3><a class="header" href="#maven-compiler-plugin" id="maven-compiler-plugin">maven-compiler-plugin</a></h3>
+<p>编译插件, 可以设置 Java compile version</p>
+<pre><code class="language-xml">&lt;plugin&gt;                                                                                                                                      
+    &lt;!-- 指定maven编译的jdk版本,如果不指定,maven3默认用jdk 1.5 maven2默认用jdk1.3 --&gt;                                                                           
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;                                                                                               
+    &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;                                                                                            
+    &lt;version&gt;3.1&lt;/version&gt;                                                                                                                    
+    &lt;configuration&gt;                                                                                                                           
+        &lt;!-- 一般而言，target与source是保持一致的，但是，有时候为了让程序能在其他版本的jdk中运行(对于低版本目标jdk，源代码中不能使用低版本jdk中不支持的语法)，会存在target不同于source的情况 --&gt;                    
+        &lt;source&gt;1.8&lt;/source&gt; &lt;!-- 源代码使用的JDK版本 --&gt;                                                                                             
+        &lt;target&gt;1.8&lt;/target&gt; &lt;!-- 需要生成的目标class文件的编译版本 --&gt;                                                                                     
+        &lt;encoding&gt;UTF-8&lt;/encoding&gt;&lt;!-- 字符集编码 --&gt;
+        &lt;skipTests&gt;true&lt;/skipTests&gt;&lt;!-- 跳过测试 --&gt;                                                                             
+        &lt;verbose&gt;true&lt;/verbose&gt;
+        &lt;showWarnings&gt;true&lt;/showWarnings&gt;                                                                                                               
+        &lt;fork&gt;true&lt;/fork&gt;&lt;!-- 要使compilerVersion标签生效，还需要将fork设为true，用于明确表示编译版本配置的可用 --&gt;                                                        
+        &lt;executable&gt;&lt;!-- path-to-javac --&gt;&lt;/executable&gt;&lt;!-- 使用指定的javac命令，例如：&lt;executable&gt;${JAVA_1_4_HOME}/bin/javac&lt;/executable&gt; --&gt;           
+        &lt;compilerVersion&gt;1.3&lt;/compilerVersion&gt;&lt;!-- 指定插件将使用的编译器的版本 --&gt;                                                                         
+        &lt;meminitial&gt;128m&lt;/meminitial&gt;&lt;!-- 编译器使用的初始内存 --&gt;                                                                                      
+        &lt;maxmem&gt;512m&lt;/maxmem&gt;&lt;!-- 编译器使用的最大内存 --&gt;                                                                                              
+        &lt;compilerArgument&gt;-verbose -bootclasspath ${java.home}\lib\rt.jar&lt;/compilerArgument&gt;&lt;!-- 这个选项用来传递编译器自身不包含但是却支持的参数选项 --&gt;               
+        &lt;parameters&gt;true&lt;/parameters&gt;//插件的配置就可以从用户属性中获取, 即可以在 properties 中配置 java.version, maven.compiler.source, maven.compiler.target; springboot 已经配置了为 true, 所以只需引入插件即可在 properties 中设置 java.version...
+    &lt;/configuration&gt;  
+    &lt;executions&gt;
+					&lt;execution&gt;
+						&lt;id&gt;compile-tests&lt;/id&gt;
+						&lt;phase&gt;process-test-sources&lt;/phase&gt;
+						&lt;goals&gt;
+							&lt;goal&gt;testCompile&lt;/goal&gt;
+						&lt;/goals&gt;
+						&lt;configuration&gt;
+							&lt;source&gt;${maven.compile.source}&lt;/source&gt;
+							&lt;target&gt;${maven.compile.target}&lt;/target&gt;
+						&lt;/configuration&gt;
+					&lt;/execution&gt;
+				&lt;/executions&gt;                                                                                                                        
+&lt;/plugin&gt;    
+</code></pre>
+<h3><a class="header" href="#spring-boot-maven-plugin" id="spring-boot-maven-plugin">spring-boot-maven-plugin</a></h3>
+<p>为Spring Boot应用提供了执行Maven操作的可能。允许你打包可执行文件和war文件，并且就地运行。</p>
+<p>spring-boot:repackage, 绑定到 package 阶段. 也就是在mvn package之后，再次打包可执行的jar/war，同时保留mvn package生成的jar/war为.origin (需要自己绑定)</p>
+<p>spring-boot:run，运行Spring Boot应用, 指定 spring boot profile 启动 <code>mvn spring-boot:run -Dspring-boot.run.profiles=dev</code></p>
+<pre><code class="language-xml">
+&lt;plugin&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+    &lt;!-- 临时使其失效 --&gt;
+    &lt;configuration&gt;
+        &lt;skip&gt;true&lt;/skip&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+<h3><a class="header" href="#maven-install-plugin" id="maven-install-plugin">maven-install-plugin</a></h3>
+<p>本地依赖加入本地仓库</p>
+<h2><a class="header" href="#编写maven插件" id="编写maven插件">编写maven插件</a></h2>
+<p>TODO 代码生成器插件https://zhuanlan.zhihu.com/p/69935918</p>
+<p>处理文件复制, 比如灾备文件</p>
+<p>插件前缀: 可以让你更方便地输入指令，因为在命令行里，一般调用插件目标，需要完整输入“groupId”、“artifactId”、“version”等等定位到某个插件，然后通过“:”写下插件目标，就可以运行插件的目标了。</p>
+<p>maven-${prefix}-plugin，这个方式是官网插件使用的</p>
+<p>${prefix}-maven-plugin，这个方式是第三方插件（包括我们自己写的）使用的</p>
+<p>可以自己在 pom 中指定前缀:</p>
+<pre><code class="language-xml">&lt;plugin&gt;
+    ...
+    &lt;configuration&gt;
+        ...
+        &lt;globalPrefix&gt;xxxx
+
+
+</code></pre>
+<h1><a class="header" href="#maven属性" id="maven属性">maven属性</a></h1>
+<p>有6中类型的maven属性</p>
+<ul>
+<li>
+<p>内置属性, 如 ${basedir}表示项目根目录(pom所在目录), ${version}项目版本</p>
+</li>
+<li>
+<p>pom属性, pom中对应元素的值。例如${project.artifactId}对应了<code>&lt;project&gt;下的&lt;artifactId&gt;</code>元素的值</p>
+<ul>
+<li>${project.build.sourceDirectory}:项目的主源码目录，默认为src/main/java/.</li>
+<li>${project.build.testSourceDirectory}:项目的测试源码目录，默认为/src/test/java/. </li>
+<li>${project.build.directory}:项目构建输出目录，默认为target/. </li>
+<li>${project.outputDirectory}:项目主代码编译输出目录，默认为target/classes/.</li>
+<li>${project.testOutputDirectory}:项目测试代码编译输出目录，默认为target/testclasses/.</li>
+<li>${project.build.finalName}:项目打包输出文件的名称，默认为${project.artifactId}${project.version}.</li>
+</ul>
+</li>
+<li>
+<p>Settings属性：与POM属性同理。如${settings.localRepository}指向用户本地仓库的地址</p>
+</li>
+<li>
+<p>Java系统属性：所有Java系统属性都可以使用Maven属性引用，例如${user.home}指向了用户目录。可以通过命令行mvn help:system查看所有的Java系统属性</p>
+</li>
+<li>
+<p>环境变量属性：所有环境变量都可以使用以env.开头的Maven属性引用。例如${env.JAVA_HOME}指代了JAVA_HOME环境变量的值。也可以通过命令行mvn help:system查看所有环境变量。</p>
+</li>
+<li>
+<p>自定义属性</p>
+<pre><code class="language-xml">&lt;project&gt;  
+    &lt;properties&gt;  
+        &lt;my.prop&gt;hello&lt;/my.prop&gt;  
+    &lt;/properties&gt;  
+&lt;/project&gt;  
+</code></pre>
+</li>
+</ul>
+<p>在pom中其他地方使用<code>${my.prop}</code>会被替换为hello</p>
+<h1><a class="header" href="#开启资源文件过滤" id="开启资源文件过滤">开启资源文件过滤</a></h1>
+<p>通过 maven-resources-plugin 实现, 在打包时, 会有资源文件的复制, 在复制时, 替换 资源文件中的 <code>@xxx@</code> 占位符</p>
+<p>默认情况下，Maven属性只有在POM中才会被解析。资源过滤就是指让Maven属性在资源文件(src/main/resources、src/test/resources)中也能被解析。</p>
+<img src="Screenshot_66.png" width=50%/>
+<pre><code class="language-xml">&lt;build&gt;  
+    &lt;resources&gt;  
+        &lt;resource&gt;  
+            &lt;!-- ${project.basedir}可以省略 --&gt;
+            &lt;directory&gt;${project.basedir}/src/main/resources&lt;/directory&gt;  
+            &lt;filtering&gt;true&lt;/filtering&gt;  
+        &lt;/resource&gt;  
+    &lt;/resources&gt;
+    &lt;testResources&gt;  
+        &lt;testResource&gt;  
+            &lt;directory&gt;${project.basedir}/src/test/resources&lt;/directory&gt;  
+            &lt;filtering&gt;true&lt;/filtering&gt;
+        &lt;/testResource&gt;
+    &lt;/testResources&gt;
+&lt;/build&gt;
+</code></pre>
+<p>从上面的配置中可以看出，我们其实可以配置多个主资源目录和多个测试资源目录。</p>
+<h1><a class="header" href="#开启web资源过滤" id="开启web资源过滤">开启web资源过滤</a></h1>
+<p>普通资源位于[src/main/reousrces]下;
+web资源位于[src/main/webapp]下;</p>
+<p>借助插件<code>maven-war-plugin</code></p>
+<img src="Screenshot_68.png" width=50%/>
+<p>include标签指定要过滤的文件, 这里表示过滤所有的css和js文件</p>
+<h1><a class="header" href="#maven-profile-多环境配置" id="maven-profile-多环境配置">maven profile 多环境配置</a></h1>
+<h2><a class="header" href="#profile-基本使用" id="profile-基本使用">profile 基本使用</a></h2>
+<p>需要首先 <a href="#%E5%BC%80%E5%90%AF%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E8%BF%87%E6%BB%A4">开启资源文件过滤</a></p>
+<p><code>mvn help:active-profiles</code>查看哪些profile被激活了, <code>mvn help:all-profiles </code>列出所有的profile;</p>
+<p>profile可以声明在三个文件中：</p>
+<ul>
+<li>
+<p><code>pom.xml</code>：很显然，这里声明的profile只对当前项目有效(此时profile中的properties和直接在pom的properties标签下定义效果是一样的); </p>
+</li>
+<li>
+<p><code>用户settings.xml</code>：.m2/settings.xml中的profile对该用户的Maven项目有效(比全局的优先级高); </p>
+</li>
+<li>
+<p><code>全局settings.xml</code>：conf/settings.xml，对本机上所有Maven项目有效</p>
+</li>
+</ul>
+<p>profile在pom.xml中可声明的元素, 和在settings.xml中可声明的元素是不一样的, 在 pom 中可以声明:</p>
+<pre><code class="language-xml">&lt;project&gt;
+    &lt;repositories&gt;&lt;/repositories&gt;
+    &lt;pluginRepositories&gt;&lt;/pluginRepositories&gt;  
+    &lt;distributionManagement&gt;&lt;/distributionManagement&gt;  
+    &lt;dependencies&gt;&lt;/dependencies&gt;  
+    &lt;dependencyManagement&gt;&lt;/dependencyManagement&gt;  
+    &lt;modules&gt;&lt;/modules&gt;  
+    &lt;properties&gt;&lt;/properties&gt;  
+    &lt;reporting&gt;&lt;/reporting&gt;  
+    &lt;build&gt;  
+        &lt;plugins&gt;&lt;/plugins&gt;  
+        &lt;defaultGoal&gt;&lt;/defaultGoal&gt;  
+        &lt;resources&gt;&lt;/resources&gt;  
+        &lt;testResources&gt;&lt;/testResources&gt;  
+        &lt;finalName&gt;&lt;/finalName&gt;  
+    &lt;/build&gt;  
+&lt;/project&gt;  
+</code></pre>
+<p>而setttings中只能声明这些元素</p>
+<pre><code class="language-xml">&lt;project&gt;  
+    &lt;repositories&gt;&lt;/repositories&gt;  
+    &lt;pluginRepositories&gt;&lt;/pluginRepositories&gt;  
+    &lt;properties&gt;&lt;/properties&gt;  
+&lt;/project&gt;
+</code></pre>
+<p>编写profile,在pom中的project元素下:</p>
+<pre><code class="language-xml">&lt;profiles&gt;
+    &lt;profile&gt;
+        &lt;id&gt;dev&lt;/id&gt;
+        &lt;properties&gt;
+            &lt;env&gt;dev&lt;/env&gt;
+        &lt;/properties&gt;
+        &lt;activation&gt;
+            &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+        &lt;/activation&gt;
+    &lt;/profile&gt;
+    &lt;profile&gt;
+        &lt;id&gt;prd&lt;/id&gt;
+        &lt;properties&gt;
+            &lt;env&gt;prd&lt;/env&gt;
+        &lt;/properties&gt;
+    &lt;/profile&gt;
+&lt;/profiles&gt;
+</code></pre>
+<p>如何激活profile呢?</p>
+<p>命令行方式: 比如有两个profile, id为 devx, devy, 那么激活命令为 <code>mvn clean install  -P devx,devy  </code> (-P 后面有无空格都可)</p>
+<p>系统属性激活，用户可以配置当某系统属性存在或其值等于期望值时激活profile，如</p>
+<pre><code class="language-xml">&lt;profiles&gt;  
+    &lt;profile&gt;  
+        &lt;activation&gt;  
+            &lt;property&gt;  
+                &lt;name&gt;actProp&lt;/name&gt;  
+                &lt;value&gt;x&lt;/value&gt;  
+            &lt;/property&gt;  
+        &lt;/activation&gt;  
+    &lt;/profile&gt;  
+&lt;/profiles&gt;  
+</code></pre>
+<p>上面配置表示只有系统属性 actProp 为 x 时激活 profile, 可以在命令行声明系统属性 <code>mvn clean install -DactProp=x </code>, 这也是一种变相的从命令行激活profile的方法，<code>而且多个profile完全可以使用同一个系统属性来激活</code>。系统属性可以通过<code>mvn help:system</code>来查看 (-P, -D 区别: 前者用来制定 profile id, 后者用来指定 activation property)</p>
+<p>操作系统环境激活</p>
+<pre><code class="language-xml">&lt;profiles&gt;  
+    &lt;profile&gt;  
+        &lt;activation&gt;  
+            &lt;os&gt;  
+                &lt;name&gt;Windows XP&lt;/name&gt;  
+                &lt;family&gt;Windows&lt;/family&gt;  
+                &lt;arch&gt;x86&lt;/arch&gt;  
+                &lt;version&gt;5.1.2600&lt;/version&gt;  
+            &lt;/os&gt;  
+        &lt;/activation&gt;  
+    &lt;/profile&gt;  
+&lt;/profiles&gt;  
+</code></pre>
+<p>这里的family值包括Window、UNIX和Mac等，而其他几项对应系统属性的os.name、os.arch、os.version</p>
+<p>文件存在与否激活</p>
+<pre><code class="language-xml">&lt;profiles&gt;  
+    &lt;profile&gt;  
+        &lt;activation&gt;  
+            &lt;file&gt;  
+                &lt;missing&gt;x.properties&lt;/missing&gt;  
+                &lt;exists&gt;y.properties&lt;/exists&gt;  
+            &lt;/file&gt;  
+        &lt;/activation&gt;
+    &lt;/profile&gt;
+&lt;/profiles&gt;
+</code></pre>
+<p>settings文件显式激活 (不实用): </p>
+<pre><code class="language-xml">&lt;settings&gt;  
+    ...  
+    &lt;activeProfiles&gt;  
+        &lt;activeProfile&gt;devx&lt;/activeProfile&gt;  
+        &lt;activeProfile&gt;devy&lt;/activeProfile&gt;  
+    &lt;/activeProfiles&gt;  
+    ...  
+&lt;/settings&gt;  
+</code></pre>
+<p>默认激活(如果有其他profile被激活了, 默认激活就自动失效了)</p>
+<img src="Screenshot_67.png" width=50%/>
+<profiles>
+    <profile>
+        <id>dev</id>
+        <properties>
+            <env>dev</env>
+        </properties>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+    </profile>
+</profiles>
+<h2><a class="header" href="#profile-build" id="profile-build">profile build</a></h2>
+<p>在  profile 中定义 配置, 比如定义 build 配置, 使得不同 profile 打包不同的 配置文件</p>
+<h2><a class="header" href="#配置默认-jdk-编译版本" id="配置默认-jdk-编译版本">配置默认 jdk 编译版本</a></h2>
+<pre><code class="language-xml">&lt;profiles&gt;
+    &lt;profile&gt;
+        &lt;id&gt;jdk1.8&lt;/id&gt;
+        &lt;activation&gt;
+            &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+            &lt;jdk&gt;1.8&lt;/jdk&gt;
+        &lt;/activation&gt;
+        &lt;properties&gt;
+            &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+            &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+            &lt;maven.compiler.compailerVersion&gt;1.8&lt;/...&gt;
+        &lt;/properties&gt;
+&lt;/profile&gt;
+</code></pre>
+<h1><a class="header" href="#模块的聚合继承" id="模块的聚合继承">模块的聚合&amp;继承</a></h1>
+<p>maven的聚合为这种场景服务: 我们一次希望构建两个项目/模块, 而不是到两个模块目录下分别构建</p>
+<p>为了实现聚合, 需要有额外一个项目充当parent, 可以查看 <a href="#parent-pom">parent-pom</a>, 作为parent项目, 该项目只有一个pom文件吗没有代码和资源文件, packaging 为 pom 类型</p>
+<p>现在使用 <code>mvn clean install</code> maven会先按照一定顺序构建一个<a href="#%E5%8F%8D%E5%BA%94%E5%A0%86">反应堆</a>, 依次构建各个模块</p>
+<p>接下来看看继承.</p>
+<p>继承主要是为了解决pom文件的重复配置问题; 重点是要正确设置<code>relativePath</code>元素的值, 默认值为<code>../pom.xml</code>; (默认值似乎无效, 需要手动指定)</p>
+<p>子模块可以省略<code>groupId和version</code>, 会从parent继承;</p>
+<p>父pom中有哪些元素可以被继承呢? (group, version, dependencies, dependencyManagement, plugins, pluginManagement, properties ...)</p>
+<p><img src="maven-note/Screenshot_41.png" width=50%/><img width=50% src="maven-note/Screenshot_42.png"/></p>
+<p>聚合&amp;继承实际上经常同时使用;</p>
+<h1><a class="header" href="#dependencymangement元素" id="dependencymangement元素">dependencyMangement元素</a></h1>
+<p>一般在parent pom中使用, 提供依赖管理功能, 并不会真正引入. 如果需要引入, 还需要在dependency中声明, 这时只需要groupId和artifactId元素就可以唯一标识一个依赖了;</p>
+<p>这时可以介绍scope: import 了, 如果一个构件声明为import范围, 那么它只能在dependencyMangement元素中声明才有效, 该构件通常指向一个pom, 作用是将该pom中的dependencyMangement元素内容导入当前pom的dependencyMangement元素下; 只是对依赖进行管理(如版本号), 并不会引入到 classpath</p>
+<img src="Screenshot_43.png"/>
+<h1><a class="header" href="#pluginmanagement元素" id="pluginmanagement元素">pluginManagement元素</a></h1>
+<p>和dependencyMangement元素类似;</p>
+<h1><a class="header" href="#反应堆" id="反应堆">反应堆</a></h1>
+<p>反应堆构件顺序: Maven按照顺序读取A的pom, 如果该A的pom没有依赖任何模块, 直接构建该项目A, 否则就先构建其依赖的模块B, 如果B还依赖构建C, 则进一步先构建模块C;</p>
+<p>剪切反应堆: 希望只构件parent的某几个模块而不希望全部构建, maven提供这些命令
+<img src="Screenshot_45.png" width=50%/><img width=50% src="Screenshot_46.png"><img width=50% src="Screenshot_47.png"/></p>
+<h1><a class="header" href="#历史项目改造为maven项目" id="历史项目改造为maven项目">历史项目改造为maven项目</a></h1>
+<p>这时可能需要修改maven项目的规范, 比如修改源码目录</p>
+<img src="Screenshot_44.png"/>
+<p>如果需要包含or排除命名不规范的测试用例 ,参见[包含&amp;排除测试用例]</p>
+<ul>
+<li><code>mvn -s &lt;自定义位置的setttings&gt; xx:xx</code> -s表示用户settings, -gs表示设定全局settings</li>
+<li><code>mvn -f &lt;自定义位置的pom&gt;</code></li>
+</ul>
+<h1><a class="header" href="#检查依赖冲突" id="检查依赖冲突">检查依赖冲突</a></h1>
+<ul>
+<li><code>mvn dependency:tree</code> 简要的列出项目的依赖树</li>
+<li><code>mvn dependency:tree -D verbose</code> 详细列出项目的依赖树</li>
+<li><code>mvn dependency:tree -D includes=groupid:artifactId excludes=groupId:artifactId</code> 根据自己的喜好列出依赖树</li>
+</ul>
+<h1><a class="header" href="#maven项目的持续集成" id="maven项目的持续集成">Maven项目的持续集成</a></h1>
+<h1><a class="header" href="#编写maven模板archetype" id="编写maven模板archetype">编写Maven模板archetype</a></h1>
+<h2><a class="header" href="#archetype组成元素" id="archetype组成元素">archetype组成元素</a></h2>
+<ul>
+<li>archetype特性是通过插件<code>maven-archetype-plugin</code>实现的</li>
+<li><code>mvn archetype:generate</code> 会进入生成的交互界面, 有多个archetype供选择, 他们来自于archetype-catalog.xml, 详细使用见<a href="#%E4%BD%BF%E7%94%A8archetype%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E9%AA%A8%E6%9E%B6">使用archetype生成项目骨架</a></li>
+<li>在自动化shell脚本中<code>mvn archetype:generate -B</code>, -B表示不要进入交互式界面.</li>
+</ul>
+<p>怎么自定义?</p>
+<p>一个archetype项目包括这几个部分</p>
+<img src="Screenshot_70.png" width=30%/>
+<ol>
+<li>pom.xml 模版自身的pom; 有基本的坐标, 默认jar打包方式即可</li>
+<li>src/main/resources/archetype-resources/* 下面的数据用于生成新的项目;包括pom原型, 主代码原型;</li>
+<li>src/main/resources/META-INF/maven/archetype.xml 模版的描述符文件; 声明哪些文件会包含在模版中, 使用了哪些属性参数</li>
+</ol>
+<p>下面创建一个简单的archetype</p>
+<h2><a class="header" href="#archetype-demo" id="archetype-demo">archetype-demo</a></h2>
+<h3><a class="header" href="#archetype自身pom" id="archetype自身pom">archetype自身pom</a></h3>
+<p>首先是archetype的pom:</p>
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  
+  &lt;groupId&gt;com.xiaoyu.archetype&lt;/groupId&gt;
+  &lt;artifactId&gt;archetype-learn&lt;/artifactId&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+  &lt;name&gt;Archetype - archetype-learn&lt;/name&gt;
+&lt;/project&gt;
+
+</code></pre>
+<h3><a class="header" href="#模版数据" id="模版数据">模版数据</a></h3>
+<p>接着是模板数据, 包括pom和代码</p>
+<pre><code class="language-java">package $com.xiaoyu.archetype.learn;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( &quot;Hello World!&quot; );
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package $com.xiaoyu.archetype.learn;
+
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest 
+    extends TestCase
+{
+    /**
+     * Create the test case
+     *
+     * @param testName name of the test case
+     */
+    public AppTest( String testName )
+    {
+        super( testName );
+    }
+
+    /**
+     * @return the suite of tests being tested
+     */
+    public static Test suite()
+    {
+        return new TestSuite( AppTest.class );
+    }
+
+    /**
+     * Rigourous Test :-)
+     */
+    public void testApp()
+    {
+        assertTrue( true );
+    }
+}
+
+</code></pre>
+<pre><code class="language-xml">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  
+  &lt;!-- 设置artifactId和groupId作为变量 ( ${artifactId} / ${groupId} )。这两个变量都将在archetype:generate从命令行运行时被初始化 --&gt;
+  &lt;groupId&gt;${groupId}&lt;/groupId&gt;
+  &lt;artifactId&gt;${artifactId}&lt;/artifactId&gt;
+  &lt;version&gt;${version}&lt;/version&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+  &lt;name&gt;${artifactId}&lt;/name&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;3.8.1&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  
+  &lt;build&gt;
+    &lt;pluginManagement&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+			    &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+			    &lt;version&gt;3.7.0&lt;/version&gt;
+			    &lt;configuration&gt;
+			         &lt;source&gt;1.8&lt;/source&gt;
+			         &lt;target&gt;1.8&lt;/target&gt;
+			    &lt;/configuration&gt;
+            &lt;/plugin&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+			    &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+			    &lt;version&gt;3.0.2&lt;/version&gt;
+			    &lt;configuration&gt;
+			         &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+			    &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/pluginManagement&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+
+</code></pre>
+<h3><a class="header" href="#描述符文件" id="描述符文件">描述符文件</a></h3>
+<p>最重要的一步: 编辑描述符信息</p>
+<pre><code class="language-xml">&lt;archetype xmlns=&quot;http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0 http://maven.apache.org/xsd/archetype-1.0.0.xsd&quot;&gt;
+  
+  &lt;id&gt;archetype-learn&lt;/id&gt;&lt;!-- 应该和archetype的artifactId相同 --&gt;
+  &lt;!-- 
+  &lt;sources&gt; = src/main/java
+&lt;resources&gt; = src/main/resources
+&lt;testSources&gt; = src/test/java
+&lt;testResources&gt; = src/test/resources
+&lt;siteResources&gt; = src/site
+1. &lt;sources&gt; 和&lt;testSources&gt;都能包含&lt;source&gt;元素来指定源文件。
+2. &lt;resources&gt;和&lt;testResources&gt;和&lt;siteResources&gt;能包含&lt;resource&gt;元素来指定资源文件
+3. 比如src/main/webapp目录放在&lt;resource&gt;标签中
+   --&gt;
+  &lt;sources&gt;
+    &lt;source&gt;src/main/java/App.java&lt;/source&gt;
+  &lt;/sources&gt;
+  &lt;testSources&gt;
+    &lt;source&gt;src/test/java/AppTest.java&lt;/source&gt;
+  &lt;/testSources&gt;
+  &lt;!-- &lt;allowPartial&gt;true&lt;/allowPartial&gt;标签是可选的，它使得archetype:generate可以在一个已存在的工程中运行 --&gt;
+  &lt;!-- &lt;allowPartial&gt;true&lt;/allowPartial&gt; --&gt;
+&lt;/archetype&gt;
+</code></pre>
+<h3><a class="header" href="#使用" id="使用">使用</a></h3>
+<p><code>mvn install</code> 安装这个archetype, <code>mvn archetype:generate -D archetypeGroupId=com.xiaoyu.archetype -D archetypeArtifactId=archetype-learn -D archetypeVersion=0.0.1-SNAPSHOT -D groupId=com.xiaoyu.archetype.generate -D artifactId=demo</code>使用这个archetype</p>
+<p>如果直接使用<code>mvn archetype:generate</code> 而不带参数, 回出来一个列表供选择, 如何让自定义的archetype出现在这个列表呢? 见<a href="#archetype-catalog">archetype-catalog</a></p>
+<h2><a class="header" href="#archetype-catalog" id="archetype-catalog">archetype-catalog</a></h2>
+<p>参考: http://maven.apache.org/archetype/maven-archetype-plugin/specification/archetype-catalog.html</p>
+<p>maven-archetype-plugin会从这些位置读取catalog:</p>
+<ol>
+<li><code>internal</code>: 插件内置的catalog</li>
+<li><code>local</code>(插件默认): 本地的默认位置, 位于<code>~/.m2/archetype-catalog.xml</code>(默认不存在)</li>
+<li><code>remote</code>(插件默认): maven中央仓库的</li>
+<li><code>file://</code> : 指定本地任意位置的catalog </li>
+<li><code>http://</code> : 远程的catalog</li>
+</ol>
+<p>如何读取这些catalog?</p>
+<p><code>mvn archetype:generate -D archetypeCatalog=file:// /xxx/xxx/archetype-catalog.xml,local</code> 指定多个catalog</p>
+<p>典型的<code>archetype-catalog.xml</code>长这样:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;archetype-catalog  xmlns=&quot;http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0 http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd&quot;&gt;
+  &lt;archetypes&gt;
+    &lt;archetype&gt;
+       &lt;groupId&gt;org.appfuse.archetypes&lt;/groupId&gt;&lt;!-- 必须 --&gt;
+       &lt;artifactId&gt;appfuse-basic-jsf&lt;/artifactId&gt;&lt;!-- 必须 --&gt;
+       &lt;version&gt;2.0&lt;/version&gt;&lt;!-- 必须 --&gt;
+       &lt;repository&gt;http://static.appfuse.org/releases&lt;/repository&gt;&lt;!-- 可选, 如果省略, 会在archetype-catalog.xml所在的仓库找archetype --&gt;
+       &lt;description&gt;AppFuse archetype for creating a web application with Hibernate, Spring and JSF&lt;/description&gt;&lt;!-- 可选 --&gt;
+    &lt;/archetype&gt;
+    ...
+  &lt;/archetypes&gt;
+&lt;/archetype-catalog&gt;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="how-to-test-java-app.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="mac.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="how-to-test-java-app.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="mac.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,890 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>outline-about-http - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html" class="active"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: HTTP协议概述
+tags:</p>
+<ul>
+<li>http</li>
+<li>outline
+date: 2016-04-10 22:27:26
+categories: java web</li>
+</ul>
+<hr />
+<div align="center">
+http://www.httpbin.org/ 在线演示 http 标准
+https://httpie.org/ http 访问工具, 代替 curl
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E6%A6%82%E5%BF%B5">概念</a></li>
+<li><a href="#http%E5%92%8Ctcpip%E6%AF%94%E8%BE%83">http和tcp/ip比较</a></li>
+<li><a href="#%E6%80%8E%E4%B9%88%E6%9F%A5%E7%9C%8B">怎么查看</a></li>
+<li><a href="#http%E8%AF%B7%E6%B1%82">http请求</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F">常见请求方式</a></li>
+<li><a href="#get-vs-post">GET vs. POST</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4">常见请求头</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E8%AF%B7%E6%B1%82%E4%BF%A1%E6%81%AF">获取请求信息</a></li>
+<li><a href="#%E7%BD%91%E9%A1%B5%E5%8F%82%E6%95%B0%E6%8F%90%E4%BA%A4%E8%8E%B7%E5%8F%96">网页参数提交获取</a></li>
+<li><a href="#servicedogetdopost%E5%85%B3%E7%B3%BB">service(),doGet(),doPost()关系</a></li>
+<li><a href="#request%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98">request中文乱码问题</a></li>
+</ul>
+</li>
+<li><a href="#http%E5%93%8D%E5%BA%94">http响应</a>
+<ul>
+<li><a href="#%E5%93%8D%E5%BA%94%E8%A1%8C%E7%8A%B6%E6%80%81%E7%A0%81">响应行&amp;状态码</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E5%93%8D%E5%BA%94%E5%A4%B4">常见响应头</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AEhttp%E5%93%8D%E5%BA%94">设置http响应</a></li>
+<li><a href="#api%E7%A4%BA%E4%BE%8B">api示例</a></li>
+<li><a href="#%E8%AF%B7%E6%B1%82%E9%87%8D%E5%AE%9A%E5%90%91">请求重定向</a></li>
+<li><a href="#%E5%93%8D%E5%BA%94%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81">响应中文乱码</a></li>
+</ul>
+</li>
+<li><a href="#url%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81">url中文乱码</a>
+<ul>
+<li><a href="#%E5%9C%A8js%E4%B8%AD%E5%A4%84%E7%90%86">在JS中处理</a></li>
+<li><a href="#%E5%9C%A8java%E4%B8%AD%E5%A4%84%E7%90%86">在java中处理</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9F%BA%E4%BA%8Ehttp%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%AE%9E%E6%97%B6%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96">基于HTTP协议的实时数据获取</a>
+<ul>
+<li><a href="#%E7%9F%AD%E8%BD%AE%E8%AF%A2">短轮询</a></li>
+<li><a href="#%E9%95%BF%E8%BF%9E%E6%8E%A5">长连接</a></li>
+<li><a href="#websocket">WebSocket</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E6%AC%A1%E5%AE%8C%E6%95%B4%E7%9A%84http%E8%AF%B7%E6%B1%82">一次完整的http请求</a>
+<ul>
+<li><a href="#http%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B">http请求流程</a></li>
+<li><a href="#%E5%8F%91%E8%B5%B7http%E8%AF%B7%E6%B1%82">发起http请求</a></li>
+<li><a href="#http%E8%A7%A3%E6%9E%90">http解析</a>
+<ul>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%93%8D%E5%BA%94%E5%A4%B4%E7%8A%B6%E6%80%81%E7%A0%81">常用的请求头响应头，状态码</a></li>
+</ul>
+</li>
+<li><a href="#dns%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90">DNS域名解析</a>
+<ul>
+<li><a href="#%E6%95%B4%E4%B8%AA%E6%B5%81%E7%A8%8B">整个流程</a></li>
+<li><a href="#%E6%B8%85%E9%99%A4dns%E7%BC%93%E5%AD%98">清除DNS缓存</a></li>
+<li><a href="#%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E6%96%B9%E5%BC%8F">域名解析方式</a></li>
+</ul>
+</li>
+<li><a href="#cdn-%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6">CDN 工作机制</a></li>
+</ul>
+</li>
+<li><a href="#https">https</a>
+<ul>
+<li><a href="#%E5%92%8C-http-%E5%AF%B9%E6%AF%94">和 http 对比</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%85%8D%E8%B4%B9%E5%BC%80%E5%90%AF-https">如何免费开启 https</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#概念" id="概念">概念</a></h1>
+<p>http协议是定义的一套client和server之间数据传输的规范</p>
+<p><img src="./sh-1.png" style="width:70%"></img></p>
+<h1><a class="header" href="#http和tcpip比较" id="http和tcpip比较">http和tcp/ip比较</a></h1>
+<p><img src="./Screenshot_1.png" alt="" /></p>
+<h1><a class="header" href="#怎么查看" id="怎么查看">怎么查看</a></h1>
+<ol>
+<li>使用浏览器</li>
+<li>使用系统自带的telnet工具(远程访问工具)</li>
+</ol>
+<h1><a class="header" href="#http请求" id="http请求">http请求</a></h1>
+<p>先看一个全景:</p>
+<pre><code>请求（浏览器 -&gt; 服务器）
+GET /day09/hello HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,en-us;q=0.8,zh;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+
+
+响应（服务器-&gt;浏览器）
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Length: 24
+Date: Fri, 30 Jan 2015 01:54:57 GMT
+
+this is hello servlet!!!
+
+</code></pre>
+<img src="p1.png" style="width:90%"/>
+<h2><a class="header" href="#常见请求方式" id="常见请求方式">常见请求方式</a></h2>
+<p>GET: 获取资源
+POST:传输实体文本, Restful风格api里用于新增
+HEAD: 获取报文首部, 和get类似, 只是不返回报文的主题部分
+PUT: 传输文件, Restful风格api里用于修改; 类似文件上传, 但是HTTP/1.1的PUT方法自身不带验证机制，任何人都可以上传文件，存在安全问题，故一般不用。
+DELETE: 删除文件
+OPTIONS: 询问支持的方法(client询问server可以提交那些请求方法)
+TRACE: 追踪路径(户端可以对请求消息的传输路径进行追踪，TRACE方法是让Web服务器端将之前的请求通信还给客户端的方法)
+CONNECT：要求用隧道协议连接代理(主要使用SSL（安全套接层）和TLS（传输层安全）协议把通信内容加密后经网络隧道传输)</p>
+<h2><a class="header" href="#get-vs-post" id="get-vs-post">GET vs. POST</a></h2>
+<ul>
+<li>get提交参数有限制, 不超过1kb.</li>
+<li>GET参数通过URL传递，POST放在Request body中。</li>
+<li>GET在浏览器回退时是无害的，而POST会再次提交请求。</li>
+<li>GET产生的URL地址可以被Bookmark，而POST不可以。</li>
+<li>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</li>
+<li>GET请求只能进行url编码，而POST支持多种编码方式。</li>
+<li>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</li>
+<li>GET请求在URL中传送的参数是有长度限制的，而POST没有。</li>
+<li>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。</li>
+</ul>
+<h2><a class="header" href="#常见请求头" id="常见请求头">常见请求头</a></h2>
+<p>Accept: text/html,image/*　　-- 浏览器接受的数据类型
+Accept-Charset: ISO-8859-1　　-- 浏览器接受的编码格式
+Accept-Encoding: gzip,compress　　--浏览器接受的数据压缩格式
+Accept-Language: en-us,zh-       　　--浏览器接受的语言
+Host: www.it315.org:80          　　--（必须的）当前请求访问的目标地址（主机:端口）
+If-Modified-Since: Tue, 11 Jul 2000 18:23:51 GMT　　  --浏览器最后的缓存时间
+Referer: http://www.it315.org/index.jsp      　　-- 当前请求来自于哪里
+User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0)  　　--浏览器类型
+Cookie:name=eric　　                     -- 浏览器保存的cookie信息
+Connection: close/Keep-Alive   　　         -- 浏览器跟服务器连接状态。close: 连接关闭  keep-alive：保持连接。使用http1.1时，如果想主动和服务器断开连接，发送包含此键值对的请求头
+Date: Tue, 11 Jul 2000 18:23:51 GMTds　　--请求发出的时间</p>
+<img src="p2.png"/>
+<h2><a class="header" href="#获取请求信息" id="获取请求信息">获取请求信息</a></h2>
+<img src="p3.png"/>
+<p>demo:</p>
+<pre><code class="language-java">/**
+ * 请求数据的获取
+ */
+public class RequestDemo1 extends HttpServlet {
+	/**
+	 * 1)tomcat服务器接收到浏览器发送的请求数据，然后封装到HttpServetRequest对象
+	 * 2）tomcat服务器调用doGet方法，然后把request对象传入到servlet中。
+	 */
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/**
+		 * 3)从request对象取出请求数据。
+		 */
+		t1(request);
+		t2(request); 
+	}
+	// 为了接收POST方式提交的请求
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse resp)
+			throws ServletException, IOException {
+		/**
+		 * 3.3 请求的实体内容
+		 */
+		InputStream in = request.getInputStream(); //得到实体内容
+		byte[] buf = new byte[1024];
+		int len = 0;
+		while(  (len=in.read(buf))!=-1 ){
+			String str = new String(buf,0,len);
+			System.out.println(str);
+		}
+	}
+	private void t2(HttpServletRequest request) {
+		/**
+		 * 3.2 请求头
+		 */
+		String host = request.getHeader(&quot;Host&quot;); //根据头名称的到头的内容
+		System.out.println(host);
+		//遍历所有请求头
+		Enumeration&lt;String&gt; enums = request.getHeaderNames(); //得到所有的请求头名称列表
+		while(enums.hasMoreElements()){//判断是否有下一个元素
+			String headerName = enums.nextElement(); //取出下一个元素
+			String headerValue = request.getHeader(headerName);
+			System.out.println(headerName+&quot;:&quot;+headerValue);
+		}
+	}
+	private void t1(HttpServletRequest request) {
+		/**
+		 * 3.1 请求行   格式：（GET /day09/hello HTTP/1.1）
+		 */
+		System.out.println(&quot;请求方式：&quot;+request.getMethod());//请求方式
+		System.out.println(&quot;URI:&quot;+request.getRequestURI());//请求资源
+		System.out.println(&quot;URL:&quot;+request.getRequestURL());
+		System.out.println(&quot;http协议版本：&quot;+request.getProtocol());//http协议
+	}
+}
+
+
+/**
+get browser type
+*/
+public class RequestDemo3 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType(&quot;text/html;charset=utf-8&quot;);
+		//获取请求头： user-agent
+		String userAgent = request.getHeader(&quot;user-agent&quot;);
+		System.out.println(userAgent);
+		
+		//判断用户使用的浏览器类型
+		if(userAgent.contains(&quot;Firefox&quot;)){
+			response.getWriter().write(&quot;你正在使用火狐浏览器&quot;);
+		}else if(userAgent.contains(&quot;Chrome&quot;)){
+			response.getWriter().write(&quot;你正在使用谷歌浏览器&quot;);
+		}else if(userAgent.contains(&quot;Trident&quot;)){
+			response.getWriter().write(&quot;你正在使用IE浏览器&quot;);
+		}else{
+			response.getWriter().write(&quot;地球上没有这个浏览器，建议使用火狐浏览器&quot;);
+		}
+	}
+}
+
+/**
+ * 案例- 防止非法链接
+ */
+public class RequestDemo4 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType(&quot;text/html;charset=utf-8&quot;);
+		//得到referer头
+		String referer = request.getHeader(&quot;referer&quot;);
+		System.out.println(&quot;referer=&quot;+referer);
+		/**
+		 * 判断非法链接：
+		 * 	1）直接访问的话referer=null
+		 *  2）如果当前请求不是来自广告   
+		 */
+		if(referer==null || !referer.contains(&quot;/day09/adv.html&quot;)){
+			response.getWriter().write(&quot;当前是非法链接，请回到首页。&lt;a href='/day09/adv.html'&gt;首页&lt;/a&gt;&quot;);
+		}else{
+			//正确的链接
+			response.getWriter().write(&quot;资源正在下载...&quot;);
+		}
+	}
+}
+
+
+</code></pre>
+<h2><a class="header" href="#网页参数提交获取" id="网页参数提交获取">网页参数提交获取</a></h2>
+<img src="p4.png"/>
+<pre><code class="language-java">// 获取指定名称的参数
+protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+		throws ServletException, IOException {
+	System.out.println(req.getMethod() + &quot;方式！&quot;);
+	Enumeration&lt;String&gt; enums = req.getParameterNames();
+	while(enums.hasMoreElements()) {     //遍历参数名
+		String name = enums.nextElement();
+		if(&quot;hobbit&quot;.equals(name)) {//如果找到hobbit
+			String[] values = req.getParameterValues(name);
+			System.out.print(name + &quot;:&quot;);
+			for(String str : values) {
+				System.out.print(str + &quot;, &quot;);
+			}
+			System.out.println();
+		}else {        //其他的参数
+			String value = req.getParameter(name);
+			System.out.println(name + &quot;----&quot; + value);
+		}
+	}
+}
+
+</code></pre>
+<h2><a class="header" href="#servicedogetdopost关系" id="servicedogetdopost关系">service(),doGet(),doPost()关系</a></h2>
+<p>container server (tomcat/jetty...) 会首先 service(), 然后在 service() 内部根据 get/post 调用 doGet()/doPost()</p>
+<img src="p5.png"/>
+<p>servlet本质就是一个接口, 定义了一种规范, 自定义的servlet需要实现这个接口, 实现init(), service(), destroy()等方法.</p>
+<h2><a class="header" href="#request中文乱码问题" id="request中文乱码问题">request中文乱码问题</a></h2>
+<img src="Screenshot_2.png"/>
+<img src="p6.png"/>
+<h1><a class="header" href="#http响应" id="http响应">http响应</a></h1>
+<img src="p7.png"/>
+<h2><a class="header" href="#响应行状态码" id="响应行状态码">响应行&amp;状态码</a></h2>
+<p>http://www.w3school.com.cn/tags/html_ref_httpmessages.asp</p>
+<img src="Screenshot_3.png"/>
+<h2><a class="header" href="#常见响应头" id="常见响应头">常见响应头</a></h2>
+<img src="p8.png"/>
+<h2><a class="header" href="#设置http响应" id="设置http响应">设置http响应</a></h2>
+<img src="p9.png"/>
+<h2><a class="header" href="#api示例" id="api示例">api示例</a></h2>
+<pre><code class="language-java">/**
+ * 设置响应信息
+ */
+public class ResponseDemo1 extends HttpServlet {
+	/**
+	 * 1)tomcat服务器把请求信息封装到HttpServletRequest对象，且把响应信息封装到HttpServletResponse
+	 * 2）tomcat服务器调用doGet方法，传入request，和response对象
+	 */
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/**
+		 * 3）通过response对象改变响应信息
+		 * 3.1 响应行
+		 */
+		response.setStatus(404);//修改状态码
+		response.sendError(404); // 发送404的状态码+404的错误页面
+		/**
+		 * 3.2 响应头
+		 */
+		response.setHeader(&quot;server&quot;, &quot;JBoss&quot;);
+		/**
+		 * 3.3 实体内容(浏览器直接能够看到的内容就是实体内容)
+		 */
+		response.getWriter().write(&quot;01.hello world&quot;); //字符内容。
+		response.getOutputStream().write(&quot;02.hello world&quot;.getBytes());//字节内容
+	}
+}
+
+
+/**
+ * 案例- content-Type作用: 设置响应类容格式
+ *
+ */
+public class ResponseDemo4 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/**
+		 * 设置响应实体内容编码
+		 */
+//		response.setCharacterEncoding(&quot;utf-8&quot;);
+//		response.setHeader(&quot;content-type&quot;, &quot;text/html&quot;);
+		response.setContentType(&quot;text/html;charset=utf-8&quot;);//和上面代码等价。推荐使用此方法
+		//response.setContentType(&quot;text/xml&quot;);
+		//response.setContentType(&quot;image/jpg&quot;);
+		
+		response.getWriter().write(&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;this is tilte&lt;/title&gt;&lt;/head&gt;&lt;body&gt;中国&lt;/body&gt;&lt;/html&gt;&quot;);
+		response.getOutputStream().write(&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;this is tilte&lt;/title&gt;&lt;/head&gt;&lt;body&gt;中国&lt;/body&gt;&lt;/html&gt;&quot;.getBytes(&quot;utf-8&quot;));
+		
+		File file = new File(&quot;e:/mm.jpg&quot;);
+		/**
+		 * 设置以下载方式打开文件
+		 */
+		response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment; filename=&quot;+file.getName());
+		/**
+		 * 下载图片
+		 */
+		FileInputStream in = new FileInputStream(file);
+		byte[] buf = new byte[1024];
+		int len = 0;
+		//把图片内容写出到浏览器
+		while( (len=in.read(buf))!=-1 ){
+			response.getOutputStream().write(buf, 0, len);
+		}
+	}
+}
+
+
+</code></pre>
+<h2><a class="header" href="#请求重定向" id="请求重定向">请求重定向</a></h2>
+<img src="p10.png"/>
+<pre><code class="language-java">/**
+ * 案例- 请求重定向
+ * （相当于超链接跳转页面）
+ */
+public class ResponseDemo2 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/**
+		 * 需求： 跳转到adv.html
+		 * 使用请求重定向： 发送一个302状态码+location的响应头
+		 */
+		/*response.setStatus(302);//发送一个302状态码
+		response.setHeader(&quot;location&quot;, &quot;/day09/adv.html&quot;); //location的响应头
+*/		
+		//请求重定向简化写法
+		response.sendRedirect(&quot;/day09/adv.html&quot;);          //此时这里的路径是给浏览器用，首位斜杠代表webapps目录
+	}
+}
+
+/**
+ * 案例- 定时刷新, 定时跳转
+ */
+public class ResponseDemo3 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/**
+		 * 定时刷新
+		 * 原理：浏览器认识refresh头，得到refresh头之后重新请求当前资源
+		 */
+		response.setHeader(&quot;refresh&quot;, &quot;1&quot;); //每隔1秒刷新次页面
+		/**
+		 * 隔n秒之后跳转另外的资源
+		 */
+		response.setHeader(&quot;refresh&quot;, &quot;3;url=/day09/adv.html&quot;);//隔3秒之后跳转到adv.html
+	}
+}
+
+/**
+ * BufferedImage:内存图像
+    Graphics：画笔
+    ImageIO：输出图像
+    放在html页面上&lt;img src/&gt;
+ */
+public class CaptchaDemo4 extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType(&quot;image/jpeg&quot;);// conf/web.xml中查jpg       文件类型的MIME值
+        int width = 120,height=25;
+        //1.得到一个内存中的图像
+        BufferedImage bimage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        //2.得到画笔
+        Graphics g = bimage.getGraphics();
+        //3.设置画笔颜色
+        g.setColor(Color.BLUE);
+        //4.画一个矩形
+        g.drawRect(0, 0, width, height);
+        //5.设置填充色
+        g.setColor(Color.YELLOW);
+        g.fillRect(1, 1, width-1, height-1);
+        //6.画随机干扰线条
+        Random random = new Random();
+        g.setColor(Color.GRAY);
+        for (int i = 0; i &lt; 20; i++) {
+            g.drawLine(random.nextInt(width-1),random.nextInt(height-1),random.nextInt(width-1),random.nextInt(height-1));
+        }
+        //7.画随机数字
+        g.setColor(Color.RED);
+        g.setFont(new Font(&quot;黑体&quot;,Font.BOLD|Font.ITALIC,20));
+        for (int i = 0; i &lt; 4; i++) {
+            g.drawString(random.nextInt(9)+&quot;&quot;, 20+i*20, 18);
+        }
+        
+        //不需要有缓存
+        response.setHeader(&quot;Cache-Control&quot;, &quot;no-cache&quot;);//http1.1
+        response.setHeader(&quot;pragma&quot;, &quot;no-cache&quot;); //http1.0
+        response.setHeader(&quot;Expires&quot;, &quot;-1&quot;);  //只要小于1970-1-1距离现在的毫秒数就可以
+        
+        //8.输出内存中的图像
+        ImageIO.write(bimage, &quot;jpg&quot;, response.getOutputStream());
+    }
+}
+
+</code></pre>
+<p>jsp页面:</p>
+<pre><code class="language-jsp">&lt;script&gt;
+   function changeImg(){
+        var imgObj =   document.getElementById(&quot;mycode&quot;);
+        imgObj.src=imgObj.src+&quot;?time=&quot;+new Date().getTime();// 加时间戳, 表示不要使用缓存的图像
+   }
+&lt;/script&gt;
+  
+&lt;body&gt;
+&lt;!-- servlet/CaptchaDemo4     --&gt;
+ 验证码:&lt;input type=&quot;text&quot; name=&quot;code&quot;&gt; &lt;img  id=&quot;mycode&quot; alt=&quot;&quot; src=&quot;servlet/CaptchaDemo4&quot;&gt;  &lt;a href=&quot;javascript:changeImg()&quot;&gt;看不清，换一张&lt;/a&gt;
+&lt;/body&gt;
+</code></pre>
+<p>转发&amp;重定向:</p>
+<img src="p11.png"/>
+<img src="p12.png"/>
+<pre><code class="language-java">/**
+ * 转发（效果：跳转页面）
+ */
+public class ForwardDemo1 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//转发	
+		/**
+		 * 注意：不能转发当前web应用以外的资源。
+		 */
+		this.getServletContext().getRequestDispatcher(&quot;/GetDateServlet&quot;).forward(request, response);
+		//包含
+		this.getServletContext().getRequestDispatcher(&quot;&quot;).include(request, response);//将目标结果包含到源；
+	}
+
+}
+/*重定向效果
+ */
+public class RedirectDemo1 extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/**
+		 * 保存数据到request域对象
+		 */
+		request.setAttribute(&quot;name&quot;, &quot;rose&quot;);
+		//重定向
+		/**
+		 * 注意：可以跳转到web应用内，或其他web应用，甚至其他外部域名。
+		 */
+		//response.sendRedirect(&quot;/day09/adv.html&quot;);
+		response.sendRedirect(&quot;/day10/GetDataServlet&quot;);
+	}
+
+}
+
+</code></pre>
+<h2><a class="header" href="#响应中文乱码" id="响应中文乱码">响应中文乱码</a></h2>
+<img src="p13.png"/>
+<p>最便捷的办法是:</p>
+<pre><code class="language-java">response.setContentType(&quot;text/html;charset=utf-8&quot;);
+</code></pre>
+<h1><a class="header" href="#url中文乱码" id="url中文乱码">url中文乱码</a></h1>
+<h2><a class="header" href="#在js中处理" id="在js中处理">在JS中处理</a></h2>
+<img src="p14.png"/>
+<img src="p15.png" />
+<h2><a class="header" href="#在java中处理" id="在java中处理">在java中处理</a></h2>
+<pre><code class="language-java">// 需要使用user-agent头信息，获取当前正在使用的浏览器
+String agent = request.getHeader(&quot;user-agent&quot;);
+// Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+// System.out.println(agent);
+
+// 火狐采用的Base64编码 IE或者谷歌采用URL编码
+if(agent.contains(&quot;Firefox&quot;)){
+    // 使用的火狐
+    filename = DownloadUtil.base64EncodeFileName(filename);
+    
+}else{
+    // 使用的IE或者谷歌
+    filename = URLEncoder.encode(filename, &quot;UTF-8&quot;);
+}
+
+// downloadUtil代码：
+import java.io.UnsupportedEncodingException;
+import sun.misc.BASE64Encoder;
+public class DownloadUtil {
+    /**
+     * 把文件名称进行Base64编码
+     * @param fileName
+     * @return
+     */
+    public static String base64EncodeFileName(String fileName) {
+        
+        BASE64Encoder base64Encoder = new BASE64Encoder();
+        try {
+            return &quot;=?UTF-8?B?&quot;
+                    + new String(base64Encoder.encode(fileName
+                            .getBytes(&quot;UTF-8&quot;))) + &quot;?=&quot;;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+}
+
+
+</code></pre>
+<h1><a class="header" href="#基于http协议的实时数据获取" id="基于http协议的实时数据获取">基于HTTP协议的实时数据获取</a></h1>
+<p>服务器主动推数据给 client</p>
+<h2><a class="header" href="#短轮询" id="短轮询">短轮询</a></h2>
+<ul>
+<li>
+<p>定义: 客户端向服务端请求数据，服务端立即将数据返回给客户端，客户端没有拿到想要的数据（比如返回结果告诉客户端，数据处理中），客户端继续发请求，服务端继续立即响应，周而复始</p>
+</li>
+<li>
+<p>利弊: 浪费带宽和服务器的计算资源</p>
+</li>
+<li>
+<p>场景: 数据变化比较频繁或者能预期到数据在短时间内会发生一次变化的场景可以使用短轮询</p>
+</li>
+</ul>
+<p>比如: 用户在PC端买了一个东西唤起网页端，由于PC端和网页端是不通的，我们预期到用户应该很快会完成付款，这种时候为了开发简单短轮询是一种可以使用的方式，直接服务端提供一个接口告诉客户端订单状态，客户端每5秒请求一次即可，拿到结果就可以不用请求了</p>
+<p>Note: 注意要做好请求次数上限的控制，比如请求100次还没检测到用户付款，可以弹窗&quot;请完成付款后去我的订单页面查询&quot;就可以不用请求了</p>
+<h2><a class="header" href="#长连接" id="长连接">长连接</a></h2>
+<p>或者叫 长轮询</p>
+<ul>
+<li>
+<p>定义: 本质上没有改变，依然是客户端在没有收到自己想要数据的情况下不断发送请求给服务端，差别在于服务端收到请求不再直接给响应，而是将请求挂起，自己去定时判断数据的变化，有变化就立马返回给客户端，没有就等到超时为止。</p>
+</li>
+<li>
+<p>利弊: 长轮询的优点就是客户端的请求少了很多避免了无谓的客户端请求，缺点则是服务端会挂起大量请求增加资源消耗且服务器对HTTP请求并发数量是有限制的</p>
+</li>
+<li>
+<p>场景: 微信网页版的登陆, 客户端不断发送请求到服务器，服务器第一时间并没有给出回应，于是客户端等待，在超时的情况下继续发送请求。</p>
+</li>
+</ul>
+<h2><a class="header" href="#websocket" id="websocket">WebSocket</a></h2>
+<p>references: https://www.cnblogs.com/xrq730/p/9280404.html</p>
+<p>当服务端数据有变化的时候，服务端可以主动推送到客户端, 建立了 server 和 browser 的全双工通信</p>
+<p><img src="Snipaste_2018-11-04_21-39-32.png" alt="alt" /></p>
+<p>WebSocket客户端首先通过HTTP协议发送几个特别的header到服务端，告诉服务端现在我发起的是HTTP请求，但我要升级到WebSocket了, 服务器响应后就建立了 websocket连接</p>
+<p>Netty-Socketio 有现成的 websocket api, 真正的开发成本在于分布式环境下的数据同步问题</p>
+<h1><a class="header" href="#一次完整的http请求" id="一次完整的http请求">一次完整的http请求</a></h1>
+<h2><a class="header" href="#http请求流程" id="http请求流程">http请求流程</a></h2>
+<img src="http_flow.png" width=50%/>
+<h2><a class="header" href="#发起http请求" id="发起http请求">发起http请求</a></h2>
+<ul>
+<li>发起http请求本质就是建立socket</li>
+</ul>
+<p>浏览器根据地址栏的URL访问DNS server解析出IP地址，与server建立socket连接⇒浏览器根据URL组装一个http request header，通过outputStream.write发送到目标server⇒服务器等待outputStream.read返回数据，最后断开连接</p>
+<ul>
+<li>发起http的工具</li>
+</ul>
+<p>Java中的httpclient、Linux中的curl+URL命令</p>
+<h2><a class="header" href="#http解析" id="http解析">http解析</a></h2>
+<h3><a class="header" href="#常用的请求头响应头状态码" id="常用的请求头响应头状态码">常用的请求头响应头，状态码</a></h3>
+<ul>
+<li>http header：控制浏览器的渲染行为和server的执行逻辑</li>
+</ul>
+<img src="request_header.png" width=50%/>
+<img src="screenshot_1_r.png" width=50%/>
+<img src="screenshot_2_r.png" width=50%/>
+<ul>
+<li>浏览器缓存相关的header</li>
+</ul>
+<p>Cache-Control：no-cache ---------------优先级最高的header，有多个可选值<br />
+Expire：时间 -------------------------超过后失效<br />
+lastModified：时间--------------------最后修改时间，响应头；对应if-modified-since请求头</p>
+<h2><a class="header" href="#dns域名解析" id="dns域名解析">DNS域名解析</a></h2>
+<h3><a class="header" href="#整个流程" id="整个流程">整个流程</a></h3>
+<p>当你在浏览器的地址栏中输入 http://xxx.yyy.com/</p>
+<ol>
+<li>提取出域名: xxx.yyy.com</li>
+<li>如果系统中配置了 Hosts 文件，那么电脑会先查询 Hosts 文件，看这个xxx.yyy.com 否已经在 Hosts 里面有了对应的记录。如果有，直接就可以拿到该记录中的 IP地址，过程就结束</li>
+<li>如果没有host文件这个别名，会向配置的DNS server 发送DNS查询请求，获取到IP地址</li>
+<li>浏览器根据这个IP地址发送http请求</li>
+</ol>
+<p>但是，DNS server 如何知道IP这些信息？</p>
+<ul>
+<li>
+<p>DNS 缓存</p>
+<p>域名服务器叫“递归域名服务器”，server内部会有一个DNS记录的缓存，如果DNS 请求无法在缓存中查到，再进入下一步：缓存同步</p>
+<p>缓存里每条记录都有一个过期时间，如果到了过期时间，就会被删除，然后重新同步</p>
+</li>
+<li>
+<p>缓存同步</p>
+<ol>
+<li>“递归服务器”发现缓存中没有DNS记录，那么它会问“根服务器”，“根服务器”会告诉“递归服务器”说：这个域名属于 com 这个分支之下，你去找 com 这个域名的“权威服务器”，这个权威服务器的 IP地址 是 mmm</li>
+<li>然后“递归服务器”根据拿到的这个 mmm 地址，又去找“com 域名的权威服务器”。“com 域名的权威服务器”告诉它：你应该去找“yyy.com 域名的权威服务器”，这个权威服务器的 IP地址 是 nnn</li>
+<li>然后“递归服务器”又根据nnn找“yyy.com 域名的权威服务器”，这时候“yyy.com 域名的权威服务器”才会告诉它/xxx.yyy.com/这个域名的IP是多少</li>
+</ol>
+</li>
+</ul>
+<p>整个缓存同步过程像是踢皮球，效率低下，所以需要一个DNS缓存</p>
+<h3><a class="header" href="#清除dns缓存" id="清除dns缓存">清除DNS缓存</a></h3>
+<ul>
+<li>主要在两个地方：1. LDNS,无法介入；2. 本机 cmd下：ipconfig /flushdns</li>
+</ul>
+<h3><a class="header" href="#域名解析方式" id="域名解析方式">域名解析方式</a></h3>
+<ul>
+<li>A记录-------记录域名，IP映射</li>
+<li>MX记录-------邮件相关</li>
+<li>CNAME记录-------多个别名映射到一个域名</li>
+<li>NS记录---------为某个域名指定一个DNS server</li>
+<li>TXT记录-----------为某个主机/域名设置说明</li>
+</ul>
+<h2><a class="header" href="#cdn-工作机制" id="cdn-工作机制">CDN 工作机制</a></h2>
+<p>cdn以缓存静态数据为主<br />
+浏览器从主站请求动态数据后，再从cdn下载静态数据 </p>
+<p>{% asset_img screenshot_4.png %}</p>
+<h1><a class="header" href="#https" id="https">https</a></h1>
+<h2><a class="header" href="#和-http-对比" id="和-http-对比">和 http 对比</a></h2>
+<p>http: http消息直接基于tcp传输</p>
+<p>https: http消息通过 SSL/TLS 协议加密, 再通过 tcp 传输</p>
+<p>ssl协议依靠证书来验证服务器的身份, 获取 ca 证书可以购买收费的(云厂商提供), 也能使用免费的 (Letsencrypt是一个免费、自动化和开放的证书颁发机构，其颁发的证书一次有效期为三个月，但是只要能持续更新，基本可以永久使用。)</p>
+<h2><a class="header" href="#如何免费开启-https" id="如何免费开启-https">如何免费开启 https</a></h2>
+<p>https://mp.weixin.qq.com/s/wtVxG0weBUiC0-Lwu7vVDw</p>
+<p>Spring Boot Secured By Let’s Encrypt, Let's Encrypt提供免费的TLS证书</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&amp;mid=2247484381&amp;idx=1&amp;sn=f6919853976da79e52602589ec164a15&amp;chksm=eb5386ebdc240ffd9d9f0b869c2ecad755a8d1f5a78115da40634ce87e906251c919c8bb32cf&amp;scene=21#wechat_redirect">tomcat 开启 https 支持</a>, spring boot也要做设置, 继承 WebSecurityConfigurerAdapter, 覆盖 configure(HttpSecurity http), http.requiresChannel().requiresSecure()</p>
+<p>https://www.cnblogs.com/imfjj/p/9058443.html</p>
+<p>TODO</p>
+<p>https://github.com/Neilpang/acme.sh , 脚本acme.sh，实现了 acme 协议, 可以帮你持续自动从Letsencrypt更新CA证书</p>
+<pre><code class="language-sh">curl https://get.acme.sh | sh
+
+
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="outline-about-db-design-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="outline-about-rest-api.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="outline-about-db-design-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="outline-about-rest-api.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,1209 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>money - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html" class="active"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: 投资概述
+tags:</p>
+<ul>
+<li>money
+categories: money
+date: 2020-04-17 14:48:05</li>
+</ul>
+<hr />
+<p>(Robert Kiyosaki), 常识投资(John bogle)</p>
+<p>https://zhuanlan.zhihu.com/p/136478708 - 书推荐</p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E6%8A%95%E8%B5%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">投资的基本概念</a>
+<ul>
+<li><a href="#%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8">资产负债表</a></li>
+<li><a href="#%E7%9F%AD%E6%9C%9F%E7%BB%8F%E6%B5%8E%E5%A2%9E%E9%95%BF-and-%E9%95%BF%E6%9C%9F%E7%BB%8F%E6%B5%8E%E5%A2%9E%E9%95%BF">短期经济增长 and 长期经济增长</a>
+<ul>
+<li><a href="#%E6%8A%95%E8%B5%84%E4%B8%8E%E7%9F%AD%E6%9C%9F%E7%BB%8F%E6%B5%8E%E5%A2%9E%E9%95%BF">投资与短期经济增长</a></li>
+<li><a href="#%E6%8A%95%E8%B5%84%E4%B8%8E%E9%95%BF%E6%9C%9F%E7%BB%8F%E6%B5%8E%E5%A2%9E%E9%95%BF">投资与长期经济增长</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A1%8C%E4%B8%9A%E6%8A%95%E8%B5%84%E5%88%86%E6%9E%90">行业投资分析</a>
+<ul>
+<li><a href="#%E8%A1%8C%E4%B8%9A%E7%9A%84%E5%AE%9A%E4%B9%89">行业的定义</a></li>
+<li><a href="#%E8%A1%8C%E4%B8%9A%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">行业生命周期</a></li>
+<li><a href="#%E5%BD%B1%E5%93%8D%E8%A1%8C%E4%B8%9A%E5%85%B4%E8%A1%B0%E7%9A%84%E5%9B%A0%E7%B4%A0">影响行业兴衰的因素</a>
+<ul>
+<li><a href="#%E5%90%88%E7%90%86%E5%88%A9%E7%94%A8%E7%BB%8F%E6%B5%8E%E5%91%A8%E6%9C%9F">合理利用经济周期</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A1%8C%E4%B8%9A%E7%AB%9E%E4%BA%89">行业竞争</a></li>
+<li><a href="#%E5%AF%B9%E8%A1%8C%E4%B8%9A%E8%BF%9B%E8%A1%8C%E5%AE%9A%E9%87%8F%E5%88%86%E6%9E%90">对行业进行定量分析</a></li>
+<li><a href="#%E6%A1%88%E4%BE%8B-%E6%88%BF%E5%9C%B0%E4%BA%A7%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90">案例-房地产行业分析</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E9%87%91%E8%9E%8D%E5%B7%A5%E5%85%B7">有哪些金融工具</a></li>
+<li><a href="#%E8%AF%81%E5%88%B8%E7%9A%84%E5%8F%91%E8%A1%8C">证券的发行</a>
+<ul>
+<li><a href="#%E6%B6%89%E5%8F%8A%E5%88%B04%E4%B8%AA%E8%A7%92%E8%89%B2">涉及到4个角色，</a></li>
+<li><a href="#%E8%AF%81%E5%88%B8%E5%8F%91%E8%A1%8C%E5%88%B6%E5%BA%A6">证券发行制度:</a></li>
+<li><a href="#%E8%AF%81%E5%88%B8%E6%89%BF%E9%94%80%E5%88%B6%E5%BA%A6">证券承销制度</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E7%9A%84%E5%8F%91%E8%A1%8C-and-ipo">股票的发行 and ipo</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AF%81%E5%88%B8%E4%BA%A4%E6%98%93">证券交易</a>
+<ul>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E8%AF%81%E5%88%B8%E5%8F%AF%E4%BB%A5%E4%BA%A4%E6%98%93">有哪些证券可以交易</a></li>
+<li><a href="#%E8%AF%81%E5%88%B8%E4%BA%A4%E6%98%93%E6%89%80">证券交易所</a></li>
+<li><a href="#%E4%BA%A4%E6%98%93%E5%88%B6%E5%BA%A6">交易制度</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AE%97%E6%B3%95%E4%BA%A4%E6%98%93-%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84">算法交易-量化投资</a></li>
+</ul>
+</li>
+<li><a href="#%E9%93%B6%E8%A1%8C%E7%90%86%E8%B4%A2">银行理财</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8">股票</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">基本概念</a>
+<ul>
+<li><a href="#a-%E8%82%A1%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E7%8E%A9%E5%AE%B6">a 股中有哪些玩家</a></li>
+</ul>
+</li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E5%88%86%E6%9E%90">股票分析</a>
+<ul>
+<li><a href="#%E8%B4%B4%E7%8E%B0%E5%88%86%E6%9E%90">贴现分析</a></li>
+<li><a href="#%E5%B8%82%E7%9B%88%E7%8E%87%E5%88%86%E6%9E%90">市盈率分析</a></li>
+<li><a href="#k%E7%BA%BF%E5%9B%BE">k线图</a></li>
+<li><a href="#%E7%BB%A9%E4%BC%98%E8%82%A1%E7%9A%84%E4%BC%B0%E5%80%BC%E5%90%88%E7%90%86%E6%80%A7">绩优股的估值合理性</a></li>
+</ul>
+</li>
+<li><a href="#%E8%8E%B7%E5%88%A9%E6%96%B9%E5%BC%8F">获利方式</a></li>
+<li><a href="#%E4%B8%8A%E6%89%8B%E6%93%8D%E4%BD%9C">上手操作</a></li>
+<li><a href="#%E8%82%A1%E7%A5%A8%E5%B8%82%E5%9C%BAtips">股票市场tips</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9F%BA%E9%87%91">基金</a>
+<ul>
+<li><a href="#%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88">经验之谈</a></li>
+<li><a href="#%E5%9F%BA%E9%87%91%E5%AE%9A%E4%B9%89">基金定义</a></li>
+<li><a href="#%E5%9F%BA%E9%87%91%E5%88%86%E7%B1%BB">基金分类</a></li>
+<li><a href="#%E5%9F%BA%E9%87%91%E5%8B%9F%E9%9B%86%E5%8F%91%E8%A1%8C-and-%E4%BA%A4%E6%98%93">基金募集发行 and 交易</a></li>
+</ul>
+</li>
+<li><a href="#%E5%80%BA%E5%88%B8">债券</a>
+<ul>
+<li><a href="#%E8%B5%84%E4%BA%A7%E8%AF%81%E5%88%B8%E5%8C%96">资产证券化</a></li>
+<li><a href="#%E5%8F%AF%E8%BD%AC%E5%80%BA">可转债</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%9F%E8%B4%A7-and-%E6%9C%9F%E6%9D%83">期货 and 期权</a></li>
+<li><a href="#%E7%82%92%E6%88%BF">炒房</a></li>
+<li><a href="#%E4%B9%A6%E7%B1%8D%E5%BD%B1%E8%A7%86">书籍影视</a></li>
+<li><a href="#%E8%B4%A7%E5%B8%81%E5%8E%9F%E7%90%86">货币原理</a></li>
+<li><a href="#%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8E%9F%E7%90%86">经济学原理</a>
+<ul>
+<li><a href="#%E7%BB%8F%E6%B5%8E%E5%AD%A6%E4%B8%89%E7%B1%BB%E9%97%AE%E9%A2%98">经济学三类问题</a></li>
+<li><a href="#%E7%A0%94%E7%A9%B6%E5%B7%A5%E5%85%B7">研究工具</a>
+<ul>
+<li><a href="#%E4%BE%9B%E7%BB%99%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90">供给需求分析</a></li>
+<li><a href="#%E5%BC%B9%E6%80%A7%E5%88%86%E6%9E%90">弹性分析</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%82%E5%9C%BA%E5%92%8C%E6%94%BF%E5%BA%9C%E6%94%BF%E7%AD%96">市场和政府政策</a></li>
+</ul>
+</li>
+<li><a href="#%E6%88%BF%E4%BA%A7">房产</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#投资的基本概念" id="投资的基本概念">投资的基本概念</a></h1>
+<p>投资主体分为 家庭/个人, 企业, 政府</p>
+<p>直接投资: 资金所有者, 资金使用者 是同一个人;  如 居民建造房屋等不动产, 企业投入研发费用, 政府兴建基础设施(铁路, 公路)</p>
+<p>间接投资: 资金所有者, 资金使用者 并非同个人; 如 居民购买商品房 or 金融资产, 企业购买金融资产, 政府购买国内外金融资产</p>
+<h2><a class="header" href="#资产负债表" id="资产负债表">资产负债表</a></h2>
+<ul>
+<li>
+<p>资产</p>
+<ul>
+<li>
+<p>非金融资产/实体资产</p>
+<p>比如公司有 厂房, 机器设备， 存货</p>
+<p>家庭/个人 有住房, 耐用品(汽车)</p>
+</li>
+<li>
+<p>金融资产</p>
+<p>银行存款， 其他公司股票, 债券</p>
+</li>
+</ul>
+</li>
+<li>
+<p>负债</p>
+<p>公司: 发行的债券, 贷款</p>
+<p>个人: 贷款</p>
+</li>
+</ul>
+<p>金融泡沫: 金融资产价格上涨, 居民/企业投入更多资金，反过来又会催生金融资产的价格进一步上涨，金融泡沫因此产生.</p>
+<p>虚拟经济: 个人或者企业都将自己的资产配置为金融资产，整个闭环没有产生任何实体商品或者服务，</p>
+<h2><a class="header" href="#短期经济增长-and-长期经济增长" id="短期经济增长-and-长期经济增长">短期经济增长 and 长期经济增长</a></h2>
+<p>c + s = c + i (居民消费 + 居民储蓄 = 企业生产产品 + 企业投资)</p>
+<h3><a class="header" href="#投资与短期经济增长" id="投资与短期经济增长">投资与短期经济增长</a></h3>
+<p>2008 金融危机, 政府的 4万亿计划, 大部分投资到基础设施建设, 固定资产上了</p>
+<ul>
+<li>
+<p>正面效果</p>
+<p>刺激Gdp增长，大兴基础设施建设</p>
+<p>引导了社会投资，投资率大幅增长，</p>
+</li>
+<li>
+<p>负面效果</p>
+<p>各部门债务高企，因为4万亿里面很大一部分来自地方债</p>
+<p>企业产能过剩, 急需供给侧改革，(因为 居民储蓄都被来投资，自然消费会减少)</p>
+<p>民企倒闭, 工人失业</p>
+<p>房价飙升</p>
+</li>
+</ul>
+<h3><a class="header" href="#投资与长期经济增长" id="投资与长期经济增长">投资与长期经济增长</a></h3>
+<p>索洛模型</p>
+<p>供给侧改革</p>
+<ul>
+<li>
+<p>削减落后产能，</p>
+<p>常见的做法是关停传统行业的落后工厂，短期来看会对经济增长有一定的影响，但是长期来看，市场上的资本会投入到投资回报率更高的朝阳产业，因此有利于长期的经济增长，</p>
+</li>
+<li>
+<p>体制改革, 包括人口和土地政策改革，</p>
+<ul>
+<li>
+<p>户籍, 计生</p>
+</li>
+<li>
+<p>土地政策, 影响城镇化</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#行业投资分析" id="行业投资分析">行业投资分析</a></h2>
+<p>行业是影响投资回报率最主要的因素，</p>
+<h3><a class="header" href="#行业的定义" id="行业的定义">行业的定义</a></h3>
+<p>满足消费者需求的某个企业或者某群企业，</p>
+<p>高级定制服装和普通服装，不属于同一个行业，因为他们满足的消费者群体不同，</p>
+<p>洗衣液和超声波洗衣机可能同属一个行业，因为他们都满足了消费者清洁衣物的需求，</p>
+<h3><a class="header" href="#行业生命周期" id="行业生命周期">行业生命周期</a></h3>
+<ul>
+<li>
+<p>创业阶段, 业绩缓慢增长，</p>
+<p>大众对产品缺乏认识，市场风险非常大，适合投资者和创业投资人，</p>
+</li>
+<li>
+<p>成长阶段，业绩快速增长，</p>
+<p>大众对产品有基本认识，风险一般</p>
+</li>
+<li>
+<p>成熟阶段，业绩保持稳定，</p>
+<p>产品已经完全完全成熟，企业对投资的需求不大，</p>
+</li>
+<li>
+<p>衰退阶段，</p>
+<p>出现大量同类产品，投资风险非常大，</p>
+</li>
+</ul>
+<h3><a class="header" href="#影响行业兴衰的因素" id="影响行业兴衰的因素">影响行业兴衰的因素</a></h3>
+<ul>
+<li>
+<p>技术进步，</p>
+<p>电子血糖仪</p>
+</li>
+<li>
+<p>人们的生活习惯，</p>
+<p>包装水代替可乐</p>
+<p>空气净化器</p>
+<p>旅游, 健身</p>
+</li>
+<li>
+<p>经济的全球化，</p>
+<p>全球化导致制造业转移，</p>
+</li>
+<li>
+<p>政府的产业政策调整，</p>
+<p>新能源汽车，</p>
+</li>
+<li>
+<p>经济周期;  对于企业来说, 有三个因素: </p>
+<ul>
+<li>
+<p>销售额对经济周期的敏感度，</p>
+</li>
+<li>
+<p>每生产一个产品的固定成本 (经营杠杆)</p>
+<p>固定成本越少, 经济下行时候, 削减成本越容易</p>
+</li>
+<li>
+<p>财务杠杆 (借贷)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#合理利用经济周期" id="合理利用经济周期">合理利用经济周期</a></h4>
+<p>非周期性行业: 不受经济周期影响行业，如 计算机行业</p>
+<p>防御性行业: 受经济周期影响比较小，如 医药, 生活必需品(快消品)</p>
+<p>周期性行业: 受经济周期影响比较大的行业，如 汽车, 钢铁, 电子配件; 好起来贼好, 坏起来更坏</p>
+<p>美林公司的投资时钟理论: (每个阶段持续 20 month, 一个经济周期为 6 year)</p>
+<ol>
+<li>
+<p>经济衰退</p>
+<p>此时低增长, 低通胀(钱不值钱, 利率低)，</p>
+<p>适合债券投资，</p>
+</li>
+<li>
+<p>经济复苏</p>
+<p>此时高增长，低通胀，</p>
+<p>适合股票投资</p>
+</li>
+<li>
+<p>过热阶段 (比如 我国 06, 07年)</p>
+<p>此时高增长，高通胀(利率高)，</p>
+<p>适合大宗商品投资</p>
+</li>
+<li>
+<p>滞涨阶段</p>
+<p>此时低增长, 高通胀</p>
+<p>适合现金持币观望</p>
+</li>
+</ol>
+<p>再给我们投资经验的指导就是，</p>
+<ul>
+<li>
+<p>当经济高增长时，也是处于复苏阶段和过热阶段，资产类别选择 股票 &amp; 大宗商品, 行业选择 周期性行业</p>
+</li>
+<li>
+<p>当经济增长减慢时，也就是经济处于滞涨或者衰退阶段时，这是投资债券或者现金最好，行业选择防御性行业，</p>
+</li>
+<li>
+<p>当通胀率下降时，资产选择债券或股票，并且选择久期长的债券, 成长型股票，</p>
+</li>
+<li>
+<p>当通胀率上升时，折现率上升，大宗商品或现金表现较好，</p>
+</li>
+</ul>
+<p>对于中国市场不适用, 因为:</p>
+<ul>
+<li>
+<p>央行的货币政策逆周期调整，金融市场影响巨大，</p>
+<p>经济增长快, 央行会提高存款准备金率，提高利率, 来给市场降温</p>
+<p>反之, 经济下行, 行会降低存款准备金率，降低利率，来增加市场的流动性，也就是更多的钱会流入市场，</p>
+</li>
+</ul>
+<h3><a class="header" href="#行业竞争" id="行业竞争">行业竞争</a></h3>
+<p>竞争分类:</p>
+<ul>
+<li>
+<p>完全竞争型，</p>
+<p>多个供应商生产相同质量的产品，</p>
+<p>现实中基本不存在，少数行业比如 农产品</p>
+</li>
+<li>
+<p>垄断型，</p>
+<p>多个生产厂商生产不同质量的产品，</p>
+<p>行业: 洗发水, 家电等消费品行业</p>
+</li>
+<li>
+<p>行业寡头垄断型，</p>
+<p>少数几个厂商占据市场绝大部分份额，行业存在进入壁垒，</p>
+<p>行业: 资本, 技术密集型行业，</p>
+</li>
+<li>
+<p>完全垄断性，</p>
+<p>单个厂商生产单个产品，该产品没有替代品，厂商对价格有完全的控制权，厂商是受反垄断法和政府管制的约束，</p>
+<p>分为政府垄断, 和私人垄断，</p>
+<p>行业: 公共事业(国家电网)，稀有金属开采，</p>
+</li>
+</ul>
+<p>有哪些分析工具呢?</p>
+<p>波特五力模型:</p>
+<ul>
+<li>
+<p>上游供应商议价能力</p>
+<p>供应商所在行业企业数量，原材料稀缺程度，买方转换成本，</p>
+</li>
+<li>
+<p>购买者议价能力</p>
+<p>买方所属行业企业数量，...</p>
+</li>
+<li>
+<p>行业进入壁垒</p>
+</li>
+<li>
+<p>替代品威胁</p>
+</li>
+<li>
+<p>竞争对手能力</p>
+<p>行业的成长性，就是行业的整个蛋糕能够做多大，</p>
+</li>
+</ul>
+<p>pestle 模型:</p>
+<ul>
+<li>
+<p>p: policy 政治因素</p>
+<p>政府的稳定性，税收政策，外贸法规，</p>
+</li>
+<li>
+<p>e: 经济</p>
+<p>经济周期，国民收入的变化趋势，货币供应,利率，</p>
+</li>
+<li>
+<p>s: 社会文化</p>
+<p>人口分布，收入分布，社会流动性，生活方式的变化，人们对待生活和休闲的态度变化，教育程度，</p>
+</li>
+<li>
+<p>t: 技术因素</p>
+<p>新的技术发明，政府的科研投入，</p>
+</li>
+<li>
+<p>l: 法律因素</p>
+<p>反垄断法，劳动法，</p>
+</li>
+<li>
+<p>e: 环保因素</p>
+<p>环保法律,废弃物处理，能源消耗，</p>
+</li>
+</ul>
+<h3><a class="header" href="#对行业进行定量分析" id="对行业进行定量分析">对行业进行定量分析</a></h3>
+<p>市盈率: 行业价格指数/行业利润率 (行业指数: 指数越高，代表投资者对这个行业越看好)</p>
+<ul>
+<li>
+<p>行业市盈率越高，表示行业价格超出利润的倍数越大，投资时应该尽量选择行业指数和行业，利率均较高，但是行业市盈率较低的行业进行投资，</p>
+</li>
+<li>
+<p>多个行业的行业市盈率不具备可比性，</p>
+</li>
+</ul>
+<h3><a class="header" href="#案例-房地产行业分析" id="案例-房地产行业分析">案例-房地产行业分析</a></h3>
+<ul>
+<li>
+<p>房地产行业概述</p>
+<ul>
+<li>
+<p>行业定义</p>
+<p>指的是从事土地和房产开发，中介, 管理的行业</p>
+</li>
+<li>
+<p>发展周期历史</p>
+<p>2000年以前，行业发展迅速，但是不规范，2000年的时候，国家出台政策，停止了单位建房单位分配房的模式，</p>
+<p>02年到07年，行业发展更加规范化，同时发展也很迅速，</p>
+<p>08年到09年，受到国家4万亿经济刺激计划的影响，繁荣发展，</p>
+<p>12年之后，竞争更加剧烈，开始产品差异化, 去库存，</p>
+</li>
+</ul>
+</li>
+<li>
+<p>和经济周期的关系</p>
+<p>房地产对宏观经济拉动提升作用， </p>
+</li>
+<li>
+<p>五力模型，</p>
+</li>
+</ul>
+<h2><a class="header" href="#有哪些金融工具" id="有哪些金融工具">有哪些金融工具</a></h2>
+<p>按照期限分类:</p>
+<ul>
+<li>
+<p>一年期以上，为资本市场，高风险高收益</p>
+</li>
+<li>
+<p>一年期以下为货币市场，低风险低收益</p>
+</li>
+</ul>
+<p>按照 wind 万德咨询终端上的 分类: (债权清偿顺序: 工人工资, 税收, 银行贷款, 债券, 股权)</p>
+<ul>
+<li>
+<p>债券市场，</p>
+<p>国债风险小, 公司债风险大</p>
+<p>短期国债基本等同于现金. 非常安全</p>
+</li>
+<li>
+<p>资产证券化</p>
+<p>属于 债券市场 的深度发展的结果</p>
+</li>
+<li>
+<p>股权市场，</p>
+</li>
+<li>
+<p>股指市场，</p>
+</li>
+</ul>
+<h2><a class="header" href="#证券的发行" id="证券的发行">证券的发行</a></h2>
+<p>针对的不同的投资者分为: 公募, 私募</p>
+<p>证券发行市场, 又称为一级市场，</p>
+<h3><a class="header" href="#涉及到4个角色" id="涉及到4个角色">涉及到4个角色，</a></h3>
+<ul>
+<li>发行者，只需要融资的人 or 公司，</li>
+<li>投资者，是资金供应者，可以是个人, 可以是机构(比如基金)</li>
+<li>中介机构，指证券发行的承销商，</li>
+<li>监管者，就是证监会，</li>
+</ul>
+<h3><a class="header" href="#证券发行制度" id="证券发行制度">证券发行制度:</a></h3>
+<ul>
+<li>
+<p>注册制(美国)</p>
+<p>美国联邦证券法为代表，实际上是一种财务公开制度，</p>
+<p>监管者只保证上市的公司，注册时提交的资料的真实性，并不阻止质量差的公司上市，</p>
+<p>投资者有权起诉信息造假而上市的公司，</p>
+<p>优势是所需时间短，市场效率高，</p>
+</li>
+<li>
+<p>核准制 (中国大陆, 香港)</p>
+<p>以欧洲各国公司法为代表，上市公司必须符合公司法中的若干条件，</p>
+<p>上市过程耗时长，效率低，</p>
+</li>
+</ul>
+<h3><a class="header" href="#证券承销制度" id="证券承销制度">证券承销制度</a></h3>
+<p>(证券公司包销或者代销上市公司的股票，收取一定的佣金，)</p>
+<ul>
+<li>
+<p>包销</p>
+</li>
+<li>
+<p>代销</p>
+</li>
+</ul>
+<h3><a class="header" href="#股票的发行-and-ipo" id="股票的发行-and-ipo">股票的发行 and ipo</a></h3>
+<ul>
+<li>
+<p>初次发行</p>
+<ul>
+<li>
+<p>设立发行: 新建立的股份制公司发行股票，或者是非股份制企业改制为股份制企业发行股票，</p>
+</li>
+<li>
+<p>首次公开发行: 私人持股公司改制为公众持股公司，发行股票(ipo)</p>
+<p>主板上市 ipo要求 &gt; 创业板上市 ipo &gt; 新三板上市 ipo</p>
+</li>
+</ul>
+</li>
+<li>
+<p>再次发行</p>
+</li>
+</ul>
+<h2><a class="header" href="#证券交易" id="证券交易">证券交易</a></h2>
+<h3><a class="header" href="#有哪些证券可以交易" id="有哪些证券可以交易">有哪些证券可以交易</a></h3>
+<p>也就是所谓的二级市场，</p>
+<ul>
+<li>
+<p>股票交易，</p>
+</li>
+<li>
+<p>基金交易，</p>
+</li>
+<li>
+<p>债券交易，</p>
+</li>
+<li>
+<p>金融衍生品交易，</p>
+</li>
+</ul>
+<p>交易必须通过证券交易所进行，就是上交所, 纽交所, 港交所</p>
+<h3><a class="header" href="#证券交易所" id="证券交易所">证券交易所</a></h3>
+<p>交易所分为:</p>
+<ul>
+<li>
+<p>会员制交易所</p>
+<p>每个证券交易所都有自己的会员 (会员制)，有会员才可以进行交易，个人投资者必须在证券公司内部开户，通过证券公司的会员资格进行交易，</p>
+</li>
+<li>
+<p>公司制交易所</p>
+<p>交易所 管理权 和 交易权分离, 确保公平</p>
+<p>有第三方担保 </p>
+<p>西方发达国家, 中国香港都属于公司制交易所;</p>
+<p>以盈利为目的, 比如 港交所甚至是上市公司</p>
+</li>
+</ul>
+<p>证券交易所类的交易称为场内交易，此外还有场外交易，比如说柜台市场，</p>
+<h3><a class="header" href="#交易制度" id="交易制度">交易制度</a></h3>
+<ul>
+<li>
+<p>做市商市场制度</p>
+<p>通过做市商的报价驱动, 投资者看到做市商的报价之后，决定是否下单，</p>
+<p>监管少</p>
+</li>
+<li>
+<p>竞价市场制度(常见)</p>
+<p>指令驱动, 通过市场上买卖双方的订单指令来进行撮合，</p>
+<p>严格监管</p>
+<ul>
+<li>
+<p>集合竞价</p>
+</li>
+<li>
+<p>连续竞价</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>指令驱动制度下的交易完整过程:</p>
+<ol>
+<li>
+<p>开户: 投资者在证券公司开户，</p>
+<p>证券账户</p>
+<p>资金账户</p>
+</li>
+<li>
+<p>委托: 投资者向证券公司下达买进或卖出指令</p>
+<p>市价委托</p>
+<p>限价委托: 设置两个位置，只有当市场价格高于某个位置才会卖出，只有市场价格低于某个位置才会买入，</p>
+<p>止损委托</p>
+<p>止损限价委托</p>
+</li>
+</ol>
+<h2><a class="header" href="#算法交易-量化投资" id="算法交易-量化投资">算法交易-量化投资</a></h2>
+<p>算法交易: 利用计算机技术，并采用一定数学模型来实践某些投资理念，</p>
+<ul>
+<li>量化选股</li>
+<li>量化择时</li>
+<li>股指期货套利</li>
+<li>期权套利</li>
+<li>算法交易</li>
+<li>高频交易</li>
+</ul>
+<p>变量包括: 择时, 价格, 交易量</p>
+<p>被动型算法交易最为成熟，最为广泛，不在国际市场上使用最为广泛的，成交量加权平均价格(vwap)，时间加权平均价格(twap)，</p>
+<p>vwap: 简单易操作, 基本思想是, 让自己的交易量提交比例，尽可能的符合市场成交比例，</p>
+<p>数学家西蒙斯创办的 &quot;文艺复兴&quot;技术公司 是有名的量化投资公司</p>
+<p>国内的代表性公司是，深圳国泰君安信息技术有限公司，</p>
+<p>高频交易: </p>
+<p>暗池交易: </p>
+<p>人工神经网络</p>
+<p>支持向量机</p>
+<h1><a class="header" href="#银行理财" id="银行理财">银行理财</a></h1>
+<p>所以理财产品，想要高收益就买小银行，长期。想要安全流动性好，就买四大行的短期产品。当然最稳健的选择是大银行的中长期产品</p>
+<h1><a class="header" href="#股票" id="股票">股票</a></h1>
+<h2><a class="header" href="#基本概念" id="基本概念">基本概念</a></h2>
+<p>开户 (银行账户, 券商股票账户)</p>
+<p>一级市场, 发行新股
+二级市场, 交易, 散户通过券商进入证券交易所交易, 券商收取手续费</p>
+<p>ipo, 公司通过券商卖股票, 由散户购买, 没买完的由券商买单</p>
+<p>一手 == 100股</p>
+<p>T+1, 当天买入, 第二天才能卖出 (沪深两市都是), 抑制投机</p>
+<p>股票代码, 沪市600/601开头, 深市000开头</p>
+<p>新股上市, 名称&quot;N&quot;开头, </p>
+<p>做多, 低位买高位卖, 多头投资者, 相反的是空头投资者, 但是国内股市不存在做空机制</p>
+<p>涨跌幅限制, 相邻交易日收市价格禁止超过10%, 价格触达边界则出现涨停板/跌停板; 也有例外: 新股上市首日;增发股票上市当天...</p>
+<p>大盘指数, 上证综合指数</p>
+<p>满/空仓, 股票账户的现金全部买入股票为满, 只有现金没有买入股票为空</p>
+<p>集合竞价, 就是投资者买入卖出操作, 每天 9:15 -- 9:25 买人/卖出(后5min不能撤销了), 9:30 机器开始撮合交易</p>
+<p>开盘价, 由集合竞价产生, 即每个股票最大成交量的成交价格</p>
+<p>休市, 节假日停止所有股票交易</p>
+<p>停牌/复牌, 个股暂停回复交易, 是为了保证信息披露公平, 一般在个股走势波动明显, 由重大信息公布时停牌....</p>
+<p>委买盘, 委卖盘? 投资者希望买入/卖出的股票数量</p>
+<p>主动性买盘, 主动性卖盘? 真实发生的买入/卖出股票, 买卖双方都发生了真实的交易</p>
+<p>===============股票指数</p>
+<p>反应股权市场景气程度</p>
+<ul>
+<li>
+<p>综合指数: 所有股票</p>
+<p>上证综合指数, 纽约证券综合指数</p>
+</li>
+<li>
+<p>成分指数: 少数几只股票</p>
+<p>道琼斯指数, 沪深300指数</p>
+</li>
+<li>
+<p>分类指数: 某一类股票为样本(如某个行业)</p>
+<p>上证行业指数分为 材料, 医药....</p>
+</li>
+</ul>
+<p>==================个股分类</p>
+<p>为什么分类? 不同的个股走势差异巨大, 分类研究</p>
+<p>按照业绩分类:
+绩优股, 长线投资(分红, 交易)
+成长股, 长线(交易)
+绩差股, 连续两年亏损为ST股, 三年则为&quot;*ST&quot;股, 标识可能退市</p>
+<p>股本规模分类:
+大盘股,股本10亿以上的 如中国石油, 工商银行,万科A; 盘子大, 容易受到大盘指数影响
+中盘股, 5-10亿
+小盘股, 适合投机炒作</p>
+<p>按照上市地址分类:
+a股, 内地上市公司的股票, 人民币结算 (常见)
+b股, 内地上市公司, 以美元结算
+h股: 国企股, 上市在香港, 注册地在内地
+n股: 内地注册, 纽交所上市</p>
+<p>按照收益率分类:
+蓝筹股: 收益稳定可靠的股票
+红筹股: 香港和国际投资者把在境外注册, 香港上市带有&quot;大陆概念&quot;的公司股票
+st股: 利润不好的股票</p>
+<p>新股和题材股</p>
+<p>新股, 刚进入二级市场的个股, 新股上市往往带有许多宣传, 以及公司本身的行业优势</p>
+<p>如何判断新股是否会上涨? 是否有主力资金进入, </p>
+<ul>
+<li>首日换手率, 超过50%, 可以积极关注, 是否有大单买入</li>
+<li>首日涨幅, 如果超过 200%, 后面难有表现</li>
+<li>股本大小, 小盘股最容易被主力资金炒作</li>
+</ul>
+<p>===============板块划分</p>
+<p>按照行业, 地域, 甚至概念划分板块</p>
+<h3><a class="header" href="#a-股中有哪些玩家" id="a-股中有哪些玩家">a 股中有哪些玩家</a></h3>
+<ul>
+<li>
+<p>企业高管</p>
+<p>拥有原始股, 拥有的股票没有成本, 一定赢</p>
+</li>
+<li>
+<p>国家队</p>
+<p>社保基金, 养老基金, 只投资央企国企, 钱一般只是左手到右手, 肥水不流外人田</p>
+</li>
+<li>
+<p>券商</p>
+<p>收取散户手续费, 同时配合庄家在软件中放出好坏消息/交易行情, 控制散户</p>
+<p>券商的手续费大头来自庄家, 所以庄家和券商关系一般非同一般</p>
+</li>
+<li>
+<p>机构(基金)</p>
+<ul>
+<li>
+<p>公募: 机构只收取手续费, 不参与获利分红</p>
+</li>
+<li>
+<p>私募: 机构参与获利分红</p>
+</li>
+</ul>
+</li>
+<li>
+<p>散户</p>
+<p>散户的对立面就是庄家, 庄家可以通过各种手段 (放消息, 配合券商控制价格...) 操纵股价, 他们的投资逻辑是: </p>
+<ol>
+<li>首先放出坏消息打压股价, 同时大量买入吸筹. </li>
+</ol>
+<pre><code>  如果此时散户入场, 吞不下那么多货, 最后只能割肉离场; 
+</code></pre>
+<ol>
+<li>然后 放出好消息, 抬升股价, 同时放筹出货. 抬升过程不是平滑抬升, 而是有很多小周期, 这些小周期内有多次下跌.</li>
+</ol>
+<pre><code>  如果散户不割肉, 庄家会操纵股票在整体抬升的小周期内一直下跌 or 横盘震荡, 直到散户忍受不住割肉离场.
+</code></pre>
+<p>被恶炒的股票(题材股)有大量的庄家, 他们控制股价, 散户容易亏损. 散户应该多关注基本面良好发展前景良好的股票</p>
+</li>
+</ul>
+<h2><a class="header" href="#股票分析" id="股票分析">股票分析</a></h2>
+<ul>
+<li>
+<p>基本面分析</p>
+<ul>
+<li>宏观经济，</li>
+<li>行业背景</li>
+<li>企业经营财务情况</li>
+</ul>
+</li>
+<li>
+<p>技术面分析</p>
+</li>
+</ul>
+<h3><a class="header" href="#贴现分析" id="贴现分析">贴现分析</a></h3>
+<h3><a class="header" href="#市盈率分析" id="市盈率分析">市盈率分析</a></h3>
+<p>pe: 市盈率</p>
+<p>pb: 市净率</p>
+<h3><a class="header" href="#k线图" id="k线图">k线图</a></h3>
+<p>四个基本参数: 开盘价, 收盘价, 最高价, 最低价 (都是一天之内), </p>
+<p>就是一段竖线 (上升为阳线, 空心/实心红色, 下跌为阴线, 实心黑色/绿色); 若开盘价低于收盘价，表示股价上升，用阳线表示，</p>
+<p>下方的柱状图是每日成交量</p>
+<p><img src="Snipaste_2020-04-18_15-35-47.png" alt="k 线图" /></p>
+<h3><a class="header" href="#绩优股的估值合理性" id="绩优股的估值合理性">绩优股的估值合理性</a></h3>
+<p>市盈率20-30倍</p>
+<h2><a class="header" href="#获利方式" id="获利方式">获利方式</a></h2>
+<ul>
+<li>
+<p>短线交易</p>
+<p>低买高卖, 快速换手</p>
+</li>
+<li>
+<p>长线交易</p>
+<p>买绩优股, 长期持有, 股价增值, 并且享受分红</p>
+</li>
+<li>
+<p>新股申购/打新 https://zhuanlan.zhihu.com/p/142104384</p>
+</li>
+</ul>
+<h2><a class="header" href="#上手操作" id="上手操作">上手操作</a></h2>
+<p>第三方看盘工具 - 同花顺(可交易, 开户, 佣金 万2.5, 找优惠连接可以到万2以下), 钠镁股票和股票灯塔 (只能看盘, 无法交易), 雪球APP (带论坛版块)</p>
+<h2><a class="header" href="#股票市场tips" id="股票市场tips">股票市场tips</a></h2>
+<ul>
+<li>
+<p>牛市来临: 券商先行、消灭低价、做多中国、权重收官</p>
+<p>券商股是最先上涨且涨幅最大的, </p>
+<p>券商涨完之后就轮到低价股了，市场中所有单价低于10块钱的个股全部突破十块, </p>
+<p>接着 , 只要是中字开头的股票，不管盘子大小，给我涨, 重工涨完涨机械，机械涨完涨动车，东北涨完涨上海、上海涨完涨内陆，中国几十个省一个也不会落下</p>
+<p>最后一个阶段，就是权重股来收官了，也不能只涨中小盘啊，银行、石油也得来一轮，这个阶段的特征是，大家都没赚到钱，指数还在疯狂涨</p>
+</li>
+<li>
+<p>看盘: 涨幅榜, 跌幅榜, 版块热点榜</p>
+<p>至于大盘指数和个股其实不需要一直盯着看，你只需要看开盘价，收盘价，成交量和成交额就好，价位不需要多说，成交量和成交额代表的是人气，这个对于短期来说非常重要，常年成交量比较活跃的股票和成交额比较活跃的股票都是热门的股票，这些股票更容易上涨</p>
+</li>
+<li>
+<p>新闻 and 公告</p>
+<p>东方财富，雪球，证监会官网，巨潮网，一财网，人民网</p>
+</li>
+<li>
+<p>财务报表/企业年报: 东方财富网，雪球网，巨潮网都可以直接下载年报</p>
+<p>财务报表需要不断更新，每年公布4次，一季报在4月份，年报在2-4月份，中报在7-9月份，三季报10月份</p>
+</li>
+</ul>
+<h1><a class="header" href="#基金" id="基金">基金</a></h1>
+<p>基金排行榜: 东方财富, </p>
+<p>1、市盈率PE (Price-to-Earning Ratio)
+静态市盈率PE：总市值 / 上年总净利润
+滚动市盈率PE：总市值 / 前4季度总净利润
+2、市净率PB (Price-to-Book Ratio)
+静态市净率PB：总市值 / 上年净资产
+滚动市净率PB：总市值 / 最近季度净资产</p>
+<p>中证指数：http://www.csindex.com.cn/zh-CN/downloads/index-information
+指数基金：http://www.indexfunds.com.cn/</p>
+<h2><a class="header" href="#经验之谈" id="经验之谈">经验之谈</a></h2>
+<p>想在指数基金上面定投赚钱，就选择一个大型指数基金(最好在百亿以上)，然后定期投资，只要不是大牛市的时候投资，基本上长期来看都是可以赚钱的</p>
+<p>定投指数+网格交易: 定投指数可以选择指数ETF。比如看好中国金融行业，选择50ETF（510050），看好科技兴国，选择创业板相关ETF, 每月拨出一部分资金，在固定时间买入。比如每月10号发工资，1万元，拿出2000元买入50ETF。中国股市3000点是牛熊分界线，3000点以下都是熊市，3000以上就可能是牛市。创业板对应的是2000点。只要股市在3000以下，每月就坚持买入，不管涨跌。一旦超过3000点，每超过500点卖出总仓位的20%。并且停止买入. 在5000点以上基本清空，超过5000点的部分，已经有2次特大牛市后血淋淋的例子摆在那，那不是普通人该挣的钱</p>
+<h2><a class="header" href="#基金定义" id="基金定义">基金定义</a></h2>
+<p>个体投资者将资金集合, 交给专人(投资公司)打理</p>
+<p>涉及到三个角色: </p>
+<ul>
+<li>基金持有人, 也就是个体投资者</li>
+<li>基金管理人, 如基金经理</li>
+<li>仅仅托管人, 如银行</li>
+</ul>
+<p>基金的存在形式:</p>
+<ul>
+<li>
+<p>单位投资信托, 一旦成立, 投资组合固定不变，所以又称为无需管理基金</p>
+</li>
+<li>
+<p>投资管理公司, 需要管理</p>
+</li>
+</ul>
+<p>基金名称: 末尾带 a 的适合长期投资, 因为短期卖出, 费率较高, c 类适合短期投资, 长期卖出费率较高</p>
+<p>买入方法:</p>
+<ul>
+<li>定投 - 设置固定时间, 固定金额进行买入</li>
+<li>支付宝智慧定投: 固定时间, 金额根据大盘浮动智能决定</li>
+<li>趋势定投 - 时间, 金额都不固定, 手动决定, 小跌小买(1~2个点为小跌), 大跌(3个点以上是大跌)大买, 涨不买</li>
+</ul>
+<p>术语:</p>
+<ul>
+<li>建仓, </li>
+</ul>
+<h2><a class="header" href="#基金分类" id="基金分类">基金分类</a></h2>
+<p>按照能否申购赎回分:</p>
+<ul>
+<li>
+<p>开放基金(共同基金): 随时可以基金的资产净值申购or赎回的基金, 没有期限, 不可上市, 价格完全取决于净值</p>
+<p>当开放型基金的投资者希望变现他们的股份，那就以资产净值把股份又卖回给基金，</p>
+</li>
+<li>
+<p>封闭基金: 发行期满后, 无法赎回或申购, 进入封闭状态 , 有期限, 可上市, 价格取决于供求关系</p>
+<p>希望变现的投资者必须将股份卖给其他投资者，类似股票</p>
+</li>
+</ul>
+<p>按照投资对象分类:</p>
+<ul>
+<li>
+<p>债券型基金(推荐): 基金中的资金用于购买国债, 企业债金融债, 获取利息利息, 收益稳定</p>
+</li>
+<li>
+<p>指数型基金(推荐): 以股市指数中的代表股票为投资组合, 不需要基金经理</p>
+<p>被动式管理</p>
+<p>行业型指数基金 (管理费高, 风险大, 避雷): 这种行业型的基金就是专门投资这一种行业的股票，投资的是这个行业的指数。发行的数量多且杂，和股票型基金异曲同工，都是用短线高收益率来骗人，最终赚取管理费用为目的</p>
+</li>
+<li>
+<p>股票型基金: 大部分资金投资股票 (避雷, 管理费高, 和直接投资股票类似, 不如直接买股票, 还不收管理费)</p>
+</li>
+<li>
+<p>混合型基金</p>
+</li>
+<li>
+<p>货币市场基金 (货币基金): 如余额宝， 专门投资一年期以内的安全性非常高的基金</p>
+</li>
+<li>
+<p>etf 基金：交易型开放式指数证券投资基金</p>
+<p>类似封闭基金，可上市， 可在二级市场交易</p>
+<p>同时又可以在一级市场申赎</p>
+<p>推荐购买, 因为可以自由交易</p>
+<p>短期看资金成交额, 对于每天成交额低于3500万的etf说不！因为流动性太差，不容易交易，不容易成交</p>
+<p>长期看稳定性, 稳定性就是份额，这个就像是看之前基金档案里面的基金规模一样，30亿以上的最好，越大越稳定，越大越值得定投; 综合来看就是结合起来看，日成交额平均高于3500万，规模高于30亿，这种的etf才有交易价值，才值得关注。</p>
+</li>
+<li>
+<p>lof基金： 上市型开放基金</p>
+<p>流动性太差, 不如直接直接选择etf基金</p>
+</li>
+<li>
+<p>fof 基金: 投资基金的基金</p>
+</li>
+<li>
+<p>全球投资基金(QDii)</p>
+<p>投资境外股市</p>
+</li>
+<li>
+<p>专户理财</p>
+</li>
+</ul>
+<p>按照投资获利目标分类:</p>
+<ul>
+<li>成长型投资基金: 追求中小型企业发展红利的长期投资, 风险大</li>
+<li>收入型投资基金: 追求短期收益, 风险小, 主要投资债券, 绩优股</li>
+<li>平衡型</li>
+</ul>
+<p>按照募集方式不同分类:</p>
+<ul>
+<li>公墓基金</li>
+<li>私募基金</li>
+</ul>
+<h2><a class="header" href="#基金募集发行-and-交易" id="基金募集发行-and-交易">基金募集发行 and 交易</a></h2>
+<p>基金有 1-3 个月的募集期/发行期, 期间投资者可以认购. 到期后, 进入存续期, 此时开放基金可以申购赎回</p>
+<p>认购渠道:</p>
+<ul>
+<li>银行之间</li>
+<li>基金公司官网</li>
+<li>证券公司代销</li>
+<li>第三方理财平台, 需证监会认证, 如淘宝理财, 天天基金</li>
+</ul>
+<p>基金净值: (基金净资产 - 基金负债)/售出份数</p>
+<p>基金评级: 晨星公司</p>
+<h1><a class="header" href="#债券" id="债券">债券</a></h1>
+<p>债券是一种有价证券，是经济主体向投资者出具的一份承诺，按照一定利率定期支付利息, 到期偿还本金，</p>
+<p>特点:</p>
+<ul>
+<li>
+<p>需要偿还</p>
+</li>
+<li>
+<p>一定有收益</p>
+</li>
+<li>
+<p>流动性好, 安全性高</p>
+</li>
+</ul>
+<p>短期国债目的:</p>
+<ul>
+<li>调节市场流动性, 市场流动性不好的时候，也就是市场上钱，不多时可以通过购买国债投放资金到市场，</li>
+</ul>
+<h2><a class="header" href="#资产证券化" id="资产证券化">资产证券化</a></h2>
+<p>凭借可预见的现金流, 向资本市场发行证券, 进行融资</p>
+<p>这个可预见的现金流从哪里产生的？</p>
+<ul>
+<li>
+<p>实物资产, 如 高速公路收费</p>
+</li>
+<li>
+<p>非实物资产, 如 住房抵押贷款，汽车消费贷款，信用卡，</p>
+</li>
+</ul>
+<p>抵押支持证券 (mbs): 抵押贷款(一般是住房贷款)发起人比如银行，将贷款打包后在二级市场出售 (银行以抵押贷款作为支持，抵押贷款是银行的一种可预期的现金流，)</p>
+<p><img src="mbs.png" alt="mbs" /></p>
+<p>资产支持证券 (abs): </p>
+<p>cdo: 抵押债券凭证. 在已经进行资产证券化的基础上, 如在 mbs 基础上，再次资产证券化，就想套娃一样. --------- 引发次贷危机</p>
+<p>spv: 特别目的机构, 隔在二级市场投资者和 银行之间, 其实是有利于二级市场的投资者的， 因为投资者直接从银行手里购买证券化的产品，会承担两份风险，正是证券化产品自身的风险，还有一份是银行其他业务破产带来的风险，Spv 为投资者隔离了第二类风险</p>
+<p>案例: 京东白条的证券化</p>
+<p>属于 abs, 15年9月，京东白条资产证券化项目已经获得证监会的批复，并由华泰证券发行完毕，10月在深交所挂牌，</p>
+<h2><a class="header" href="#可转债" id="可转债">可转债</a></h2>
+<p>TODO</p>
+<h1><a class="header" href="#期货-and-期权" id="期货-and-期权">期货 and 期权</a></h1>
+<h1><a class="header" href="#炒房" id="炒房">炒房</a></h1>
+<h1><a class="header" href="#书籍影视" id="书籍影视">书籍影视</a></h1>
+<p>副业赚钱之道：从0到1打造多元化收入》作者安晓辉
+小狗钱钱, 曼昆的经济学原理(宏观, 微观两本), 海龟交易法则, 闭着眼睛买指数基金放个三年</p>
+<p>股疯: 上海早期人民炒股</p>
+<h1><a class="header" href="#货币原理" id="货币原理">货币原理</a></h1>
+<ul>
+<li>
+<p>金属货币制，</p>
+<p>金本位 (如美元), 银本位</p>
+</li>
+<li>
+<p>信用货币制度，</p>
+<p>如 人民币</p>
+</li>
+</ul>
+<p>布雷顿森林体系: 双挂钩, 美元和黄金挂钩, 会员国货币和美元挂钩</p>
+<h1><a class="header" href="#经济学原理" id="经济学原理">经济学原理</a></h1>
+<h2><a class="header" href="#经济学三类问题" id="经济学三类问题">经济学三类问题</a></h2>
+<ul>
+<li>
+<p>How people make decisions 人们如何做出决策？. (微观经济学)</p>
+<ul>
+<li>
+<p>People face tradeoffs 人们面临得失交换(权衡取舍)</p>
+</li>
+<li>
+<p>The cost of something is what you give up to get it 某物的成本是为此放弃的东西 (机会成本).</p>
+</li>
+<li>
+<p>Rational people think at the Margin 理性人思考边际量</p>
+<p>通过边际变化控制边际量, 即 对已有的行动进行微量调整</p>
+<p>如 我们并不考虑吃不吃饭，而是考虑多吃一口还是少吃一口</p>
+<p>边际成本: 航本允许雇员 and 亲属在乘客上完仍有剩余座位时免费乘坐</p>
+</li>
+<li>
+<p>People response to incentives.人们对激励做出反应</p>
+<p>造成的结果是, &quot;淹死的都是会游泳的&quot;</p>
+</li>
+</ul>
+</li>
+<li>
+<p>How people interact 人们如何相互作用，.(微观经济学)</p>
+<ul>
+<li>
+<p>Trade can make everyone better off 贸易使得人人获益.</p>
+<p>贸易促使更细化的分工, 比较优势, 绝对优势</p>
+</li>
+<li>
+<p>Markets Are usually a good way to organize Economic activity 市场经济通常是组织经济活动的好方式，.</p>
+<p>亚当斯密的 &quot;看不见的手&quot;</p>
+<p>中国有更深切的体会</p>
+</li>
+<li>
+<p>Governments Can sometimes improve market incomes.政府有时可以改进市场结果，</p>
+<p>market failure: 市场经济有时候也无法有效的配置资源 (市场失灵)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>How the economy as a whole works 整体经济如何运行？. (宏观经济学)</p>
+<ul>
+<li>
+<p>The standard of living Depends on the country's production 生活水平取决于国家的生产力.</p>
+</li>
+<li>
+<p>Prices rise when the government prints too much money. 当政府发行过多货币, 造成物价上涨，(通货膨胀)</p>
+</li>
+<li>
+<p>Society faces a short-run tradeoffs between inflation and unemployment. 社会面临通货膨胀和失业之间的短期得失交换，</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#研究工具" id="研究工具">研究工具</a></h2>
+<p>供给, 需求, 弹性/弹性系数</p>
+<h3><a class="header" href="#供给需求分析" id="供给需求分析">供给需求分析</a></h3>
+<p>政府制定了价格上限, 并且对实际价格有限制作用 (binding constraint), 此时价格上限低于正常价格. 造成短缺, 进而造成配给制</p>
+<p><img src="Snipaste_2020-04-19_15-20-07.png" alt="alt" /></p>
+<p>会产生一些现象, 比如:</p>
+<ul>
+<li>
+<p>排队</p>
+</li>
+<li>
+<p>卖家对买家的歧视</p>
+<p>发票/凭证</p>
+<p>走后门</p>
+</li>
+</ul>
+<h3><a class="header" href="#弹性分析" id="弹性分析">弹性分析</a></h3>
+<h2><a class="header" href="#市场和政府政策" id="市场和政府政策">市场和政府政策</a></h2>
+<p>政府制定价格上限</p>
+<p>政府制定价格下限</p>
+<h1><a class="header" href="#房产" id="房产">房产</a></h1>
+<p>https://github.com/facert/beijing_house_knowledge</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="js-tutorial.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="mongodb-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="js-tutorial.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="mongodb-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

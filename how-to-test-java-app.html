@@ -1,0 +1,499 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>how-to-test-java-app - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html" class="active"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: How to Test Java App
+tags:</p>
+<ul>
+<li>mock</li>
+<li>test
+date: 2019-08-14 15:23:16
+categories: java web</li>
+</ul>
+<hr />
+<p>相关工具和类库</p>
+<ul>
+<li>Junit、TestNG, Spring Test</li>
+<li>断言库：AssertJ (推荐), Hamcrest（不更新了，Matcher分散在多个类中，编写困难，JUnit仅依赖了Hamcrest核心包，只附带了最基本的断言功能，如果我们希望断言数字大小之类的话，还需要自己引入Hamcrest完整包，比较麻烦）</li>
+<li>MOCK 框架，例如 Jmock、Easymock、PowerMock (mock静态方法, 私有方法...) ， Mockito(推荐, springboot-test 默认提供);</li>
+<li>rest api 自动化测试：REST Assured， postman</li>
+<li>Selenium: ui测试</li>
+<li>JSONassert：JSON 断言库</li>
+<li>JsonPath：JSON XPath</li>
+</ul>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#spring-boot-starter-test">spring-boot-starter-test</a></li>
+<li><a href="#assertj">AssertJ</a></li>
+<li><a href="#mockito">Mockito</a>
+<ul>
+<li><a href="#%E5%92%8C-springboot-%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8">和 springboot 配合使用</a></li>
+</ul>
+</li>
+<li><a href="#powermock">powerMock</a></li>
+<li><a href="#web%E5%B1%82%E6%B5%8B%E8%AF%95">web层测试</a></li>
+<li><a href="#%E5%8E%8B%E6%B5%8B">压测</a>
+<ul>
+<li><a href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87">性能指标</a></li>
+<li><a href="#siege">siege</a></li>
+<li><a href="#gatling">Gatling</a></li>
+<li><a href="#jmeter">jmeter</a></li>
+<li><a href="#ab">ab</a></li>
+</ul>
+</li>
+<li><a href="#junit">Junit</a></li>
+<li><a href="#ab-test">ab test</a></li>
+<li><a href="#%E7%BB%A7%E6%89%BF%E6%B5%8B%E8%AF%95-testcontainers">继承测试 Testcontainers</a></li>
+</ul>
+<!-- /TOC -->
+<h2><a class="header" href="#spring-boot-starter-test" id="spring-boot-starter-test">spring-boot-starter-test</a></h2>
+<p>用于 spring boot 单元测试</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+            &lt;groupId&gt;org.junit.vintage&lt;/groupId&gt; // 最新版可以不排除了
+            &lt;artifactId&gt;junit-vintage-engine&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>需要排除掉 <code>junit-vintage-engine</code> (若不排除, 则测试类需要用 <code>@RunWith(SpringRunner.class)</code> 标注才能正常注入 bean)</p>
+<p>最新版现在使用只需要添加类注解 <code>@SpringBootTest</code> 即可</p>
+<h2><a class="header" href="#assertj" id="assertj">AssertJ</a></h2>
+<p>流式断言库, spring-boot-starter-test 提供了依赖</p>
+<p>Hamcrest 提供了更多断言, springboot 维护了其版本</p>
+<p>https://assertj.github.io/doc/#assertj-core
+http://joel-costigliola.github.io/assertj/</p>
+<pre><code class="language-java">import static org.assertj.core.api.Assertions.assertThat;
+
+// 常用断言:
+
+// 集合
+// 至少有一个符合
+Assertions.assertThat(tree).anyMatch(cate -&gt; !CollectionUtils.isEmpty(cate.getChildren()));
+// 全都要符合 allMatch
+// 全都不符合 noMatch
+
+assertThat(Arrays.asList(&quot;world&quot;, &quot;hello&quot;))
+				.as(&quot;列表断言描述&quot;)
+				.isNotEmpty() 
+				.isNotNull()
+				.isInstanceOf(List.class)
+				.isSubsetOf(&quot;hello&quot;, &quot;world&quot;)
+				.contains(&quot;hello&quot;)
+				.containsOnlyOnce(&quot;world&quot;)
+				.startsWith(&quot;world&quot;)
+				.endsWith(&quot;hello&quot;);
+
+
+// 单个对象
+// matches 符合多个条件
+
+assertThat(user1)
+				.as(&quot;对象断言描述&quot;)
+				.isEqualToComparingFieldByField(user2) //user1的每个字段是否与user2相同
+				.isExactlyInstanceOf(User.class) //user1是否是User类的对象
+				.isSameAs(user3) //是否是同一个对象
+				.isNotNull() //是否非空
+				.hasFieldOrProperty(&quot;name&quot;) //是否含有name字段
+				.hasFieldOrPropertyWithValue(&quot;age&quot;, 12); //是否含有age字段，且值为12
+
+
+
+// 字符串
+assertThat(&quot;test&quot;).isNotBlank() // 是否为&quot; &quot;字符串
+				.as(&quot;字符串断言描述&quot;).isSubstringOf(&quot;test1&quot;) // 是否为test1的一部分
+				.isSameAs(&quot;test&quot;) // 对象内元素是否相等
+				.isNotEmpty() // 是否为空字符串
+				.isEqualTo(&quot;test&quot;) // 是否相等
+				.isEqualToIgnoringCase(&quot;Test&quot;) // 是否相等（忽略大小写）
+				.isExactlyInstanceOf(String.class) // 是否是实例
+				.isIn(Arrays.asList(&quot;test&quot;, &quot;hello&quot;)) // 是否在列表中
+				.isIn(&quot;test&quot;, &quot;hello&quot;) // 是否在参数列表中
+				.isInstanceOfAny(String.class, Integer.class) // 是否是实例中任何一个
+				.isNotNull() // 是否不为空
+				.contains(&quot;es&quot;) // 是否包含es子串
+				.startsWith(&quot;te&quot;) // te开始
+				.endsWith(&quot;st&quot;) // st结束
+				.matches(&quot;.e.t&quot;); // 是否匹配 .e.t 格式
+		assertThat(&quot;&quot;).isNullOrEmpty();
+
+
+// 数字断言
+		assertThat(new Integer(100))
+				.as(&quot;数字断言描述&quot;).isEqualTo(100) // 是否相等
+				.isBetween(0, 300) // 是否在0，300之间
+				.isNotNull() // 是否非空
+				.isNotZero() // 是否不等于0
+				.isGreaterThanOrEqualTo(80) // 是否大约等于80
+				.isLessThan(200) // 是否小于200
+				.isPositive() // 是否是正数
+				.isNotNegative() // 是否是非负数
+				.isIn(Arrays.asList(100, 200)) // 是否在列表中
+				.isInstanceOf(Integer.class); // 是否是Integer类型
+
+// 日期断言
+		assertThat(new Date())
+				.as(&quot;日期断言描述&quot;)
+				.isAfter(&quot;2018-08-01&quot;)
+				.isAfterYear(2017)
+				.isBetween(&quot;2018-01-01&quot;, &quot;2018-08-31&quot;)
+				.isEqualToIgnoringHours(new Date().toLocaleString())
+				.isExactlyInstanceOf(Date.class)
+				.isInSameHourAs(new Date())
+				.isInThePast()
+				.isToday();
+
+
+
+// 字典断言
+Map foo = Maps.newHashMap();
+foo.put(&quot;A&quot;, 1);
+foo.put(&quot;B&quot;, 2);
+foo.put(&quot;C&quot;, 3);
+assertThat(foo)
+        .as(&quot;字典断言描述&quot;)
+        .isNotNull() // 是否不为空
+        .isNotEmpty() // 是否size为0
+        .hasSize(3) // size是否为3
+        .contains(entry(&quot;A&quot;, 1)) // 是否包含entry
+        .containsKeys(&quot;A&quot;) // 是否包含key
+        .containsValue(1); // 是否包含value
+
+// 异常断言
+//https://www.baeldung.com/assertj-exception-assertion#:~:text=AssertJ%20Exception%20Assertions%201%20Overview.%20In%20this%20quick,expressions.%204%20Conclusion.%20And%20there%20we%20are.%20
+assertThatThrownBy(() -&gt; {
+    List&lt;String&gt; list = Arrays.asList(&quot;String one&quot;, &quot;String two&quot;);
+    list.get(2);
+}).isInstanceOf(IndexOutOfBoundsException.class)
+  .hasMessageContaining(&quot;Index: 2, Size: 2&quot;);
+			//.hasMessage(&quot;Index: %s, Size: %s&quot;, 2, 2)
+		// .hasMessageStartingWith(&quot;Index: 2&quot;)
+		// .hasMessageContaining(&quot;2&quot;)
+		// .hasMessageEndingWith(&quot;Size: 2&quot;)
+		// .hasMessageMatching(&quot;Index: \\d+, Size: \\d+&quot;)
+		// .hasCauseInstanceOf(IOException.class)
+		// .hasStackTraceContaining(&quot;java.io.IOException&quot;);
+//or
+assertThatExceptionOfType(IndexOutOfBoundsException.class)
+  .isThrownBy(() -&gt; {
+      // ...
+}).hasMessageMatching(&quot;Index: \\d+, Size: \\d+&quot;);
+
+</code></pre>
+<h2><a class="header" href="#mockito" id="mockito">Mockito</a></h2>
+<p>测试用 mocking framework, 比如 web app 测试, spring boot-starter-test提供了她的依赖</p>
+<p>demo: https://github.com/xiaoyureed/springboot-demos/tree/master/mockito-mybatis-plus-demo</p>
+<p>http://wiki.jikexueyuan.com/project/spring-boot-cookbook-zh/test-mockito.html</p>
+<pre><code class="language-java">import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+</code></pre>
+<h3><a class="header" href="#和-springboot-配合使用" id="和-springboot-配合使用">和 springboot 配合使用</a></h3>
+<p>scenario1: 需要 mock 的对象成员如 RedisService 使用 @mock, 不需要 mock 的成员使用 @Spy @Autowired;  填充到目标测试对象 使用 @InjectMocks 标注目标对象, 每次测试前需要初始化 <code>@BeforeEach void xxx() {MockitoAnnotations.initMocks(this);}</code></p>
+<p>scenario2: @MockBean 标注需要 mock 的成员, @Autowired 标注目标对象, 无需初始化, 但是这种方式造成 appContext 重启, 性能低</p>
+<h2><a class="header" href="#powermock" id="powermock">powerMock</a></h2>
+<p>用于解决 mockito 无法覆盖的 case, </p>
+<h2><a class="header" href="#web层测试" id="web层测试">web层测试</a></h2>
+<ul>
+<li>MockMVC 单元测试</li>
+<li><a href="https://www.baeldung.com/spring-boot-testresttemplate">TestRestTemplate</a>, RestAssured 集成测试</li>
+</ul>
+<p>[区别]](https://stackoverflow.com/questions/52051570/whats-the-difference-between-mockmvc-restassured-and-testresttemplate)</p>
+<p><a href="https://github.com/xiaoyureed/springboot-demos/blob/master/mockito-mybatis-plus-demo/src/test/java/io/github/xiaoyureed/mockitomybatisplusdemo/controller/UserControllerTest.java">web层unit test demo</a></p>
+<p>https://github.com/rest-assured/rest-assured - rest api 测试库</p>
+<pre><code class="language-java">@SpringBootTest(classes = GeneratorApp.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+
+/**
+     * @LocalServerPort 提供了 @Value(&quot;${local.server.port}&quot;) 的代替
+     */
+    @LocalServerPort
+    private int port;
+
+
+
+
+@AutoConfigureMockMvc
+@SpringBootTest
+public class ExceptionTest {
+    @Autowired
+    MockMvc mockMvc;
+
+    @Test
+    void should_return_400_if_param_not_valid() throws Exception {
+        mockMvc.perform(get(&quot;/api/illegalArgumentException&quot;))
+                .andExpect(status().is(400))
+                .andExpect(jsonPath(&quot;$.message&quot;).value(&quot;参数错误!&quot;));
+    }
+
+    @Test
+    void should_return_404_if_resourse_not_found() throws Exception {
+        mockMvc.perform(get(&quot;/api/resourceNotFoundException&quot;))
+                .andExpect(status().is(404))
+                .andExpect(jsonPath(&quot;$.message&quot;).value(&quot;Sorry, the resourse not found!&quot;));
+    }
+}
+</code></pre>
+<h2><a class="header" href="#压测" id="压测">压测</a></h2>
+<p>https://www.ibm.com/developerworks/cn/java/j-lo-performance-analysissy-tools/index.html
+https://www.ibm.com/developerworks/cn/java/j-lo-performance-analysissy-tools2/index.html
+https://www.ibm.com/developerworks/cn/java/j-lo-performance-analysissy-tools3/</p>
+<p>测试 内存泄漏 , 并发, 同步, ...问题</p>
+<h3><a class="header" href="#性能指标" id="性能指标">性能指标</a></h3>
+<p>RS: response time </p>
+<p>QPS：Queries Per Second意思是“每秒查询数”，是一台服务器每秒能够的查询次数, 次/秒 , qps 衡量接口性能</p>
+<p>TPS：是TransactionsPerSecond的缩写, 每秒交易数, 笔/秒, 一个交易/事务可能包含多个请求, tps 用来衡量整个业务流程性能; 金融系统 1000tps-5000tps, 保险系统 100-100000tps, 制造行业 100-5000tps, 电商 10000-1000000tps, 中小型网站类似金融系统</p>
+<p>吞吐量: 表示应用系统每秒钟最大能接受的用户访问量 , 反应系统的承压能力; 单个reqeust 对CPU消耗越高，外部系统接口、IO影响速度越慢，系统吞吐能力越低，反之越高, 类似 tps, qps</p>
+<h3><a class="header" href="#siege" id="siege">siege</a></h3>
+<p>http 压测工具</p>
+<p>https://www.joedog.org/siege-manual/</p>
+<p>TODO</p>
+<h3><a class="header" href="#gatling" id="gatling">Gatling</a></h3>
+<p>类似 jmeter, 使用 Scala</p>
+<h3><a class="header" href="#jmeter" id="jmeter">jmeter</a></h3>
+<p>一般查看 吞吐量, 90% 请求响应时间, 99%响应时间</p>
+<h3><a class="header" href="#ab" id="ab">ab</a></h3>
+<p>apache benchmark并发测试工具</p>
+<h2><a class="header" href="#junit" id="junit">Junit</a></h2>
+<p>这里主要介绍 Junit5 (https://junit.org/junit5/docs/current/user-guide/#overview-getting-started)</p>
+<pre><code class="language-xml">    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+        &lt;maven.compiler.target&gt;${maven.compiler.source}&lt;/maven.compiler.target&gt;
+        &lt;junit.jupiter.version&gt;5.6.2&lt;/junit.jupiter.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+            &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+            &lt;version&gt;${junit.jupiter.version}&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+</code></pre>
+<p>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</p>
+<h2><a class="header" href="#ab-test" id="ab-test">ab test</a></h2>
+<p>https://mp.weixin.qq.com/s/tmbGaWHp8k2MjByIa6z7MA</p>
+<p>TODO</p>
+<h2><a class="header" href="#继承测试-testcontainers" id="继承测试-testcontainers">继承测试 Testcontainers</a></h2>
+<p>https://blog.csdn.net/mail_liuxing/article/details/99075606
+https://github.com/testcontainers/testcontainers-java</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="docker-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="maven-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="docker-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="maven-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

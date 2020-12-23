@@ -1,0 +1,1595 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>html-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html" class="active"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: html-note
+tags:</p>
+<ul>
+<li>html
+date: 2014-03-11 10:59:27
+categories: frontend</li>
+</ul>
+<hr />
+<div align="center">
+HTML NOte
+MDN web文档: https://developer.mozilla.org/zh-CN/
+w3shcool国内镜像: https://www.quanzhanketang.com/default.html
+一个html slide tool: https://github.com/hakimel/reveal.js
+[chrome devtools](https://umaar.com/dev-tips/)
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#html%E8%AF%AD%E4%B9%89%E5%8C%96">html语义化</a></li>
+<li><a href="#dom%E7%BB%93%E6%9E%84">dom结构</a></li>
+<li><a href="#html5%E6%96%B0%E5%A2%9E%E5%86%85%E5%AE%B9">html5新增内容</a>
+<ul>
+<li><a href="#%E5%90%88%E5%9C%A8%E4%B8%80%E8%B5%B7">合在一起</a></li>
+<li><a href="#%E8%A7%86%E9%A2%91">视频</a></li>
+<li><a href="#%E9%9F%B3%E9%A2%91">音频</a></li>
+<li><a href="#%E6%8B%96%E6%94%BE">拖放</a></li>
+</ul>
+</li>
+<li><a href="#demo">demo</a>
+<ul>
+<li><a href="#w3c%E7%BB%8F%E5%85%B8%E9%A1%B5%E9%9D%A2">w3c经典页面</a></li>
+<li><a href="#%E7%AE%80%E5%8E%86%E5%85%B8%E5%9E%8B%E9%A1%B5%E9%9D%A2">简历典型页面</a></li>
+<li><a href="#table%E4%B8%AD%E5%8C%85%E5%90%ABform">table中包含form</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#语法" id="语法">语法</a></h1>
+<pre><code class="language-html">&lt;!--注释--&gt;
+&lt;!-- 快捷键： ctrl+/ 是注释 --&gt;
+&lt;!-- html文档 == 网页 
+	元素：完整标签结构
+--&gt;
+&lt;!-- 文档类型声明 表明我们是用的HTML5的标准 --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;!-- 告诉浏览器HTML文档从 html 开始到 /html 结束 
+	head
+	body
+--&gt;
+&lt;html  lang=&quot;zh&quot;&gt;
+	&lt;!-- head:所有头部元素的容器，内部是HTMl网页的相关配置，比如，网页标题，文字的编码 --&gt;
+	&lt;head&gt;
+		&lt;!-- 提供关于HTML文档的元数据。比如文字的编码，关键字，网页作者，网站的关键字，网站内容，描述；这些设置不会在浏览器中显示
+		charset=&quot;utf-8&quot;：属性 key=&quot;value&quot;
+		 --&gt;
+		&lt;meta charset=&quot;utf-8&quot;&gt;
+		&lt;meta name=&quot;author&quot; content=&quot;作者名字&quot;&gt;
+		&lt;meta name=&quot;keywords&quot; content=&quot;关键字1,关键字2&quot;&gt;
+		&lt;!-- 文档标题 ：显示在网页的选项卡上，书签，网页上搜索的结果标题--&gt;
+        &lt;title&gt;网页的标题&lt;/title&gt;
+        
+        &lt;!-- base:基础标签 
+		href：给页面所有的相对路径规定默认的基准URL
+		target:a链接默认窗口模式，下面a链接会覆盖当前的设置
+        --&gt;
+        &lt;base href=&quot;www.xxx.com/img/&quot;&gt;
+        &lt;!-- 
+            以下图片地址为：www.xxx.com/img/1.jpg
+            &lt;img src=&quot;1.jpg&quot;&gt; 
+        --&gt;
+        &lt;!-- 默认设置链接从新的窗口打开 --&gt;
+        &lt;base target=&quot;_blank&quot; /&gt;
+    &lt;/head&gt;
+
+	&lt;!-- 用户能看的内容，比如文字。。图片。。 --&gt;
+	&lt;body&gt;
+		&lt;!-- h1-h6标题标签，文字的大小依次减小，在文档中的重要性也依次变小
+	标题一般只用一次
+	宽度独占一整行
+	 --&gt;
+	&lt;h1 style=&quot;background-color:red;&quot;&gt;this is heading1&lt;/h1&gt;
+	&lt;h2 style=&quot;background-color:red;&quot;&gt;this is heading2&lt;/h2&gt;
+	&lt;h3 style=&quot;background-color:red;&quot;&gt;this is heading3&lt;/h3&gt;
+	&lt;h4 style=&quot;background-color:red;&quot;&gt;this is heading4&lt;/h4&gt;
+	&lt;h5 style=&quot;background-color:red;&quot;&gt;this is heading5&lt;/h5&gt;
+	&lt;h6 style=&quot;background-color:red;&quot;&gt;this is heading6&lt;/h6&gt;
+	&lt;!--无h7标签 &lt;h7&gt;this is heading7&lt;/h7&gt; --&gt;
+
+	&lt;!-- p标签，段落标签，宽度占据一整行
+	高度适应文本高度
+	 --&gt;
+	&lt;p style=&quot;background-color:green;&quot;&gt;这是我的第一个段落文章，有点丑，因为没有样式&lt;/p&gt;
+	&lt;p style=&quot;background-color:green;&quot; id=&quot;htmltext&quot;&gt;超文本标记语言，标准通用标记语言下的一个应用。 “超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。&lt;br&gt; 超文本标记语言的结构包括“头”部分（英语：Head）、和“主体”部分（英语：Body），其中“头”部提供关于网页的信息，“主体”部分提供网页的具体内容。&lt;/p&gt;
+
+	&lt;!-- hr：水平分割线单标签，没有结束标签 --&gt;
+	&lt;hr&gt;
+	
+	&lt;!--br 换行标签，一般结合段落使用  --&gt;
+	小明：--------------
+	&lt;br&gt;
+	小红：--------------
+	&lt;br&gt;
+	
+	&lt;!--  qoute q 标签，引用标签(即加引号)，标签大小适应内容大小--&gt;
+	&lt;q style=&quot;background:red;&quot;&gt;传道授业解惑也&lt;/q&gt;
+	&lt;q style=&quot;background:red;&quot;&gt;传道授业解惑也&lt;/q&gt;
+	&lt;q style=&quot;background:red;&quot;&gt;传道授业解惑也&lt;/q&gt;
+
+	
+	&lt;p&gt;111&lt;/p&gt;
+	&lt;p&gt;222&lt;/p&gt;
+
+	&lt;!-- 引用一大段话，自动缩进(整段文字都缩进, 每行缩进) --&gt;
+	&lt;blockquote style=&quot;background:green;&quot;&gt;超文本标记语言，标准通用标记语言下的一个应用。 “超文本”就是指页面内可以包含图片、链接，甚至音乐、程序等非文字元素。超文本标记语言的结构包括“头”部分（英语：Head）、和“主体”部分（英语：Body），其中“头”部提供关于网页的信息，“主体”部分提供网页的具体内容&lt;/blockquote&gt;
+
+
+	&lt;!-- 告诉浏览器内部是代码,大小适应内容, 字体较小 --&gt;
+	int a = 10; for(int i= 0;i&amp;lt;10;i++)&lt;br&gt;
+	&lt;code&gt;
+		int a = 10; for(int i= 0;i&amp;lt;10;i++)
+	&lt;/code&gt;
+	&lt;br&gt;
+
+	for(int a =10; i &amp;lt; 100; i++){
+		print(&quot;%d&quot;,i);
+	}
+	&lt;br&gt;
+
+	&lt;!-- pre:预处理标签，告诉浏览器内容愿样式显示，保留空格换行等--&gt;
+	&lt;pre&gt;
+		for(int a =10; i &amp;lt; 100; i++){
+			print(&quot;%d&quot;,i);
+		}
+	&lt;/pre&gt;
+
+	&lt;!-- strong标签 强调加粗 , 同b标签, 同 em 标签
+		em标签：强调斜体
+	--&gt;
+	&lt;strong style=&quot;background-color:red;&quot;&gt;强调加粗&lt;/strong&gt;
+	&lt;p&gt;房贷还款双方都&lt;strong&gt;强调加粗&lt;/strong&gt;会发生大火焚烧发电是否合适的&lt;/p&gt;
+	&lt;p&gt;房贷还款双方都&lt;em&gt;强调唯一性&lt;/em&gt;会发生大火焚烧发电是否合适的&lt;/p&gt;
+
+	&lt;!-- b：加粗 
+	--&gt;
+	&lt;p&gt;房贷还款双方都&lt;b&gt;强调加粗&lt;/b&gt;会发生大火焚烧发电是否合适的&lt;/p&gt;
+	&lt;!-- i: 倾斜 
+	--&gt;
+	&lt;p&gt;房贷还款双方都&lt;i&gt;强调唯一性&lt;/i&gt;会发生大火焚烧发电是否合适的&lt;/p&gt;
+
+	&lt;!-- 上标：sup 
+		下标：sub
+	--&gt;
+	x&lt;sup&gt;2&lt;/sup&gt; + y&lt;sup&gt;2&lt;/sup&gt; - 1
+	&lt;br&gt;
+	x&lt;sub&gt;1&lt;/sub&gt; + y&lt;sub&gt;1&lt;/sub&gt; = 10
+	&lt;br&gt;
+
+	&lt;!-- 
+	img:图片标签
+		src：图片路径 网络路径和本地路径
+		alt: 图片描述 图片加载失败显示
+	--&gt;
+	&lt;img src=&quot;http://img73.nipic.com/file/20160414/9252150_120745103583_1.jpg&quot; alt=&quot;&quot;&gt;
+	&lt;br&gt;
+
+	&lt;!-- a标签：超链接
+	href:跳转位置（网络链接，本地地址）
+	target:1._self:默认：当前窗口打开
+			2._blank：新的页面
+	 --&gt;
+	&lt;a href=&quot;http://www.baidu.com&quot; 	target=&quot;_blank&quot;&gt;百度&lt;/a&gt;
+	&lt;a href=&quot;index1.html&quot; target=&quot;_blank&quot;&gt;index1&lt;/a&gt;
+
+	&lt;!-- 返回顶部 --&gt;
+	&lt;a href=&quot;#&quot;&gt;返回顶部&lt;/a&gt;
+
+	&lt;!-- 回到某个标签位置 --&gt;
+    &lt;a href=&quot;#htmltext&quot;&gt;超文本标记语言&lt;/a&gt;
+    &lt;!-- 发送邮件 --&gt;
+    &lt;div class=&quot;button&quot;&gt;
+    &lt;a class=&quot;mail&quot; data-img=&quot;mail.png&quot; href=&quot;mailto:example@gmail.com?subject=xxx&amp;body=xxx&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- 段落跳转 --&gt;
+    &lt;div id=&quot;html5&quot;&gt;&lt;/div&gt;
+    &lt;a name=&quot;user-content-html5&quot; href=&quot;#html5&quot; class=&quot;headeranchor-link&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;headeranchor&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+
+	&lt;!-- 
+	列表：无序列表，有序列表，自定义列表
+	 --&gt;
+	&lt;!-- 无序 --&gt;
+	&lt;ul&gt;
+		&lt;li style=&quot;background-color:red;&quot;&gt;H5&lt;/li&gt;
+		&lt;li&gt;IOS&lt;/li&gt;
+		&lt;li&gt;Android&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;!-- 有序 --&gt;
+	&lt;ol style=&quot;background-color:red;&quot;&gt;
+		&lt;li&gt;吃饭&lt;/li&gt;
+		&lt;li&gt;睡觉&lt;/li&gt;
+		&lt;li&gt;打豆豆&lt;/li&gt;
+	&lt;/ol&gt;
+	&lt;!-- 自定义列表 --&gt;
+	&lt;dl&gt;
+		&lt;!-- 标题 --&gt;
+		&lt;dt style=&quot;background-color:red;&quot;&gt;内容标题&lt;/dt&gt;
+		&lt;!-- 内容 --&gt;
+		&lt;dd style=&quot;background-color:green;&quot;&gt;标题内容1&lt;/dd&gt;
+		&lt;dd&gt;标题内容2&lt;/dd&gt;
+		&lt;dd&gt;标题内容3&lt;/dd&gt;
+		&lt;!-- 标题 --&gt;
+		&lt;dt&gt;内容标题&lt;/dt&gt;
+		&lt;!-- 内容 --&gt;
+		&lt;dd&gt;标题内容1&lt;/dd&gt;
+		&lt;dd&gt;标题内容2&lt;/dd&gt;
+		&lt;dd&gt;标题内容3&lt;/dd&gt;
+    &lt;/dl&gt;
+    
+    &lt;!-- 
+		div：定义文档中的一个区域部分
+		一般用于组合块级元素，可以方便css来对子元素进行设置
+
+		div：块元素
+		px:像素单位
+	 --&gt;
+	&lt;div style=&quot;color:pink;background-color:red;width:200px;&quot;&gt;
+		&lt;p style=&quot;color:blue; background-color:yellow;width:100px;height:50px;&quot;&gt;pppppppppppppp&lt;/p&gt;
+		&lt;p&gt;pppppppppppppp&lt;/p&gt;
+		&lt;h3&gt;pppppppppppppp&lt;/h3&gt;
+		&lt;strong style=&quot;background-color:yellow;width:200px;height:100px;&quot;&gt;我是一个内线元素&lt;/strong&gt;&lt;span&gt;111&lt;/span&gt;
+		&lt;div style=&quot;width:100px;height:100px;background-color:blue;&quot;&gt;.............&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- &lt;span&gt;:本身没有任何的格式表现，主要用于对文档行内元素进行组合，给审判标签设置样式
+	属于内嵌元素
+	无法定义宽高		
+	 --&gt;
+	&lt;p style=&quot;color:red;&quot;&gt;今天是个&lt;span style=&quot;color:green;font-size:20px;&quot;&gt;好日子&lt;/span&gt;，是一个考试的好日子&lt;/p&gt;
+
+    &lt;!-- 嵌套：
+		1.块元素可以嵌套大部分块元素，可以嵌套行内元素
+		特殊块元素P h1-h6 dt dl dd:不能嵌套块元素
+
+        2.（内嵌元素）行元素可以嵌套内嵌元素，但是不可以嵌套块元素 --&gt;
+        
+	&lt;!-- 不能嵌套块元素，浏览器布局改变 --&gt;
+	&lt;p&gt;块元素可以嵌套大部分块元素，&lt;p&gt;我是一个嵌套p&lt;/p&gt;可以嵌套行内元素&lt;/p&gt;
+	&lt;!-- 不能嵌套块元素，浏览器布局改变 --&gt;
+    &lt;h3&gt;块元素可以嵌套&lt;h2&gt;大部分块元&lt;/h2&gt;素，可以嵌套行内元素&lt;/h3&gt;
+    &lt;br&gt;
+	&lt;span style=&quot;&quot;&gt;
+		（内嵌元素）行&lt;strong&gt;元素&lt;/strong&gt;可以嵌套内嵌元素，但是不可以嵌套块元素
+	&lt;/span&gt;
+	&lt;br&gt;&lt;br&gt;
+
+	&lt;!-- 不可以嵌套块元素 --&gt;
+	&lt;span style=&quot;&quot;&gt;
+	（内嵌元素）行&lt;div&gt;元素&lt;/div&gt;可以嵌套内嵌元素，但是不可以嵌套块元素&lt;/span&gt;
+
+    &lt;!-- 
+        tfoot 表格尾(尾一般在前面) 
+		thead 表格头
+		tbody 表格主体
+		caption 标题
+		
+		表格样式重置
+		table{border-collapse:collapse;} 
+
+     --&gt;
+     &lt;!-- 
+		table:表格；tr:行；td:列；th：标题
+
+		tbody：当表格内容非常多的时候，表格下载一点一点下载，但是加上tbody后，就会等表格body下载完成后显示。（内容多的话会有多个tbody）
+
+		表格优化：将tfoot放到tbody上面，可以让浏览器有限解析加载，显示正常位置显示
+	 --&gt;
+    &lt;!-- border: 外层边框粗细
+		border-collapse：设置表格边框是否被合并为单一的边框
+			collapse：边框合并
+			separate：边框分开
+	--&gt;
+    &lt;h3&gt;table1 添加表头&lt;/h3&gt;
+	&lt;table border=&quot;1&quot; style=&quot;border-collapse:collapse; width:500px;height:200px; text-align:center;&quot;&gt;
+		&lt;tr&gt;
+            &lt;th rowspan=&quot;4&quot;&gt;课程基本信息&lt;/th&gt;&lt;!-- 多行合并单元格 --&gt;
+			&lt;th&gt;星期一&lt;/th&gt;&lt;!-- 标识表头 --&gt;
+			&lt;th&gt;星期二&lt;/th&gt;
+			&lt;th&gt;星期三&lt;/th&gt;
+			&lt;th&gt;星期四&lt;/th&gt;
+			&lt;th&gt;星期五&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;!-- tr：确定表格行 --&gt;
+		&lt;tr&gt;
+			&lt;!-- td：确定表格列 --&gt;
+			&lt;td&gt;语文&lt;/td&gt;
+			&lt;td&gt;数学&lt;/td&gt;
+			&lt;td&gt;英语&lt;/td&gt;
+			&lt;td&gt;体育&lt;/td&gt;
+			&lt;td&gt;美术&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;!-- 第二行 --&gt;
+		&lt;tr&gt;
+			&lt;!-- td：确定表格列 --&gt;
+			&lt;td&gt;语文&lt;/td&gt;
+			&lt;td&gt;数学&lt;/td&gt;
+			&lt;td&gt;英语&lt;/td&gt;
+			&lt;td&gt;体育&lt;/td&gt;
+			&lt;td&gt;美术&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+			&lt;td colspan=&quot;5&quot;&gt;课程安排计划总结&lt;/td&gt;&lt;!-- 多列合并单元格 --&gt;
+		&lt;!--&lt;td&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+		--&gt;
+		&lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;h3&gt;table7 列分组&lt;/h3&gt;
+	&lt;table border=&quot;1&quot; style=&quot;border-collapse:collapse; width:500px;height:200px; text-align:center; background-color:yellow;&quot;&gt;
+		&lt;!-- 标题 --&gt;
+		&lt;caption&gt;课程表&lt;/caption&gt;
+		&lt;!-- 设置列 --&gt;
+		&lt;colgroup&gt;
+			&lt;!-- 每个col中的span规定占据列数 --&gt;
+			&lt;!-- 第一个col只起到占位作用，第二三个设置列样式 --&gt;
+			&lt;col span=&quot;2&quot;&gt;
+			&lt;col style=&quot;background-color:#ff0000;&quot;&gt;
+			&lt;col style=&quot;background-color:blue;&quot;&gt;
+		&lt;/colgroup&gt;
+		&lt;tr&gt;
+			&lt;th rowspan=&quot;4&quot;&gt;课程基本信息&lt;/th&gt;
+			&lt;th&gt;星期一&lt;/th&gt;
+			&lt;th&gt;星期二&lt;/th&gt;
+			&lt;th&gt;星期三&lt;/th&gt;
+			&lt;th&gt;星期四&lt;/th&gt;
+			&lt;th&gt;星期五&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;!-- tr：确定表格行 --&gt;
+		&lt;tr style=&quot;color:pink;&quot;&gt;
+			&lt;!-- td：确定表格列 --&gt;
+			&lt;td&gt;语文&lt;/td&gt;
+			&lt;td&gt;数学&lt;/td&gt;
+			&lt;td&gt;英语&lt;/td&gt;
+			&lt;td&gt;体育&lt;/td&gt;
+			&lt;td&gt;美术&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;!-- 第二行 --&gt;
+		&lt;tr&gt;
+			&lt;!-- td：确定表格列 --&gt;
+			&lt;td&gt;语文&lt;/td&gt;
+			&lt;td&gt;数学&lt;/td&gt;
+			&lt;td&gt;英语&lt;/td&gt;
+			&lt;td&gt;体育&lt;/td&gt;
+			&lt;td&gt;美术&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td colspan=&quot;5&quot;&gt;课程安排计划总结&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/table&gt;
+
+    &lt;h3&gt;表单-登陆类型界面&lt;/h3&gt;
+	&lt;!-- action:可以为空，默认提交到本界面，也可以是#或者### --&gt;
+	&lt;form action=&quot;#&quot;&gt;
+
+		&lt;h4&gt;1.type = text 输入框，默认20个字符左右&lt;/h4&gt;
+		用户名：&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;
+		密码：&lt;input type=&quot;password&quot; name=&quot;pass&quot;&gt;
+
+		&lt;h4&gt;2.type-submit 数据提交&lt;/h4&gt;
+		登陆：&lt;input type=&quot;submit&quot; value=&quot;登陆&quot;&gt;
+		注册：&lt;input type=&quot;submit&quot; value=&quot;注册&quot;&gt;
+
+		&lt;h4&gt;3.type = iamge，图片，&lt;/h4&gt;
+		&lt;!-- 定义一张图片作为提交按钮 --&gt;
+		&lt;input type=&quot;image&quot; src=&quot;img/1.png&quot;&gt;
+
+		&lt;h4&gt;4.单选框 type=radio&lt;/h4&gt;
+		&lt;!-- 单选框：name属性必须一样，才可以单选（保证提交到服务器的key相同）
+		value:对应提交参数的值
+		checked:默认选项，可以直接checked不加值
+		disabled：禁用input元素
+		 --&gt;
+		学历：
+		&lt;input type=&quot;radio&quot; name=&quot;education&quot; value=&quot;0&quot; checked&gt;小学
+		&lt;input type=&quot;radio&quot; name=&quot;education&quot; value=&quot;1&quot; disabled&gt;初中
+		&lt;input type=&quot;radio&quot; name=&quot;education&quot; value=&quot;2&quot;&gt;高中
+		&lt;input type=&quot;radio&quot; name=&quot;education&quot; value=&quot;3&quot;&gt;大学
+
+		&lt;h4&gt;5.复选框 type=checkbox&lt;/h4&gt;
+		爱好：
+		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;0&quot;&gt;吃饭
+		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;1&quot;&gt;sleep
+		&lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;2&quot;&gt;打豆豆
+
+		&lt;h4&gt;6.type=button 按钮，不会出发form里面的action,而是单独用js交互处理的&lt;/h4&gt;
+		&lt;input type=&quot;button&quot; value=&quot;我是一个按钮&quot;&gt;
+
+		&lt;h4&gt;7.type=file 文件上传，添加附件 value:没有这个属性&lt;/h4&gt;
+		&lt;input type=&quot;file&quot; value=&quot;点击我选择文件&quot;&gt;
+
+		&lt;h4&gt;8.type=reset 重置，将输入框中的内容情况（慎用）&lt;/h4&gt;
+		&lt;input type=&quot;reset&quot; value=&quot;重置&quot;&gt;
+
+		&lt;h4&gt;9.type=hidden 隐藏input,一般是用来传递一些固定信息，不让用户看到&lt;/h4&gt;
+		&lt;input type=&quot;hidden&quot; name=&quot;order&quot; value=&quot;1110000101&quot;&gt;
+		&lt;!-- dispaly:隐藏标签，不会保存他的位置，直接隐藏掉 --&gt;
+		&lt;input type=&quot;text&quot; style=&quot;display:none;&quot;&gt;
+		&lt;!-- visibillity:hidden 隐藏标签，占位隐藏，会留下空白的位置 --&gt;
+		&lt;input type=&quot;text&quot; style=&quot;visibility:hidden;&quot;&gt;
+
+		&lt;h4&gt;10.多行输入文本 textarea&lt;/h4&gt;
+		留言：&lt;textarea name=&quot;message&quot; id=&quot;&quot; cols=&quot;20&quot; rows=&quot;20&quot;&gt;&lt;/textarea&gt;
+
+		&lt;h4&gt;11.选择下拉：select&lt;/h4&gt;
+		&lt;select name=&quot;gender&quot; id=&quot;&quot;&gt;
+			&lt;option value=&quot;&quot; checked&gt;&lt;/option&gt;
+			&lt;option value=&quot;0&quot;&gt;男&lt;/option&gt;
+			&lt;option value=&quot;1&quot;&gt;女&lt;/option&gt;
+			&lt;option value=&quot;2&quot;&gt;其他&lt;/option&gt;
+		&lt;/select&gt;
+
+		&lt;h3&gt;HTML5的新增type类型&lt;/h3&gt;
+		&lt;!-- color、date、datetime、datetime-local、month、week、time、email、number、range、search、tel 和 url。 --&gt;
+		&lt;input type=&quot;color&quot;&gt;&lt;br&gt;
+		date
+		&lt;input type=&quot;date&quot;&gt;&lt;br&gt;
+		datetime
+		&lt;input type=&quot;datetime&quot;&gt;&lt;br&gt;
+		datetime-local
+		&lt;input type=&quot;datetime-local&quot;&gt;&lt;br&gt;
+		month
+		&lt;input type=&quot;month&quot;&gt;&lt;br&gt;
+		week
+		&lt;input type=&quot;week&quot;&gt;&lt;br&gt;
+		time
+		&lt;input type=&quot;time&quot;&gt;&lt;br&gt;
+		&lt;!-- email：输入类型应该对于的是包含邮件地址的字段，提交表单的时候，自动的对email进行检查 --&gt;
+		email
+		&lt;input type=&quot;email&quot;&gt;&lt;br&gt;
+		number
+		&lt;input type=&quot;number&quot;&gt;&lt;br&gt;
+		range
+		&lt;input type=&quot;range&quot;&gt;&lt;br&gt;
+		search
+		&lt;input type=&quot;search&quot;&gt;&lt;br&gt;
+		tel
+		&lt;input type=&quot;tel&quot;&gt;&lt;br&gt;
+		url
+		&lt;input type=&quot;url&quot;&gt;&lt;br&gt;
+
+		&lt;!-- for是属性的值=input 下的id的属性值 , 这样, 点击 文字, 相当于点击 input, 他们合为一体了--&gt;
+		&lt;!-- 若想省略指定 for, 需要将 input 放入 label 内部 --&gt;
+		&lt;label for=&quot;upfile&quot;&gt;文件上传&lt;/label&gt;
+		&lt;input type=&quot;file&quot; id=&quot;upfile&quot;&gt;
+	&lt;/form&gt; 
+
+	&lt;!-- 总结
+		1.块元素：p pre ul ol li dl h1-h6等
+		{
+			特点：默认都占一行
+			支持设置宽高
+			高度自适应（自适应内容）
+			支持所有css样式
+        }
+        
+		2.内嵌元素（行元素）：
+		{
+			特点：可以同行显示
+			内容撑开宽高
+			不支持宽高设置
+			有些css样式不支持（margin）
+        }
+
+            3. div：定义文档中的一个区域部分
+            一般用于组合块级元素，可以方便css来对子元素进行设置
+        
+
+	 --&gt;
+
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h1><a class="header" href="#html语义化" id="html语义化">html语义化</a></h1>
+<h1><a class="header" href="#dom结构" id="dom结构">dom结构</a></h1>
+<p>DOM: Document Object Module, 文档对象模型。我们通过JavaScript操作页面的元素，进行添加、移动、改变或移除的方法和属性, 都是DOM提供的。</p>
+<p>根据 W3C 的 HTML DOM 标准，HTML 文档中的所有内容都是节点：</p>
+<p>整个文档是一个文档节点
+每个 HTML 元素是元素节点
+HTML 元素内的文本是文本节点
+每个 HTML 属性是属性节点
+注释是注释节点</p>
+<img src="Snipaste_2018-05-21_17-02-41.png">
+<h1><a class="header" href="#html5新增内容" id="html5新增内容">html5新增内容</a></h1>
+<p>HTML5 是对 HTML 标准的第五次修订。其主要的目标是将互联网语义化，以便更好地被人和机器阅读，并同时提供更好地支持各种媒体的嵌入</p>
+<h2><a class="header" href="#合在一起" id="合在一起">合在一起</a></h2>
+<p>一些新特性:</p>
+<ul>
+<li>用于绘画的 canvas 元素</li>
+<li>用于媒介回放的 video 和 audio 元素</li>
+<li>对本地离线存储的更好的支持</li>
+<li>新的特殊内容元素，比如 article、footer、header、nav、section</li>
+<li>新的表单控件，比如 calendar、date、time、email、url、search</li>
+</ul>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot; /&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;style&gt;
+			mark{
+				/* tarnsparent 透明色 */
+				/* background-color: transparent; */
+			}
+			.wbr_c{
+				width: 150px;
+				background-color: red;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!--
+			h5:新增标签
+			新增标签作用：语义化，更加适合SEO，容易被搜索引擎爬虫识别
+			
+			视频，音频
+			本地存储
+			画布
+			废弃的一些可以用css代替的标签，center标签,form标签等等
+		--&gt;
+		&lt;!--mark：标记，突出显示文本--&gt;
+		&lt;p&gt;&lt;mark&gt;今天&lt;/mark&gt;是个好天气&lt;/p&gt;
+
+		&lt;!--meter:电池条，度量
+			value:当前的值（默认范围是0-1），小于等于最小值不显示
+			min: 最小值
+			max：最大值
+			high: 最高预警值，value大于high后颜色预警
+			low: 最低预警值，value小于low后颜色预警
+			
+			标签文本内容： 浏览器不支持会被显示
+		--&gt;
+		&lt;meter value=&quot;20&quot; min=&quot;10&quot; max=&quot;100&quot; high=&quot;70&quot; low=&quot;20&quot;&gt;浏览器不支持&lt;/meter&gt;
+		
+		&lt;!--progress:进度条
+			value：当前值（默认0-1）
+			max: 最大值
+			
+			没有最小值属性，最小默认是0
+		--&gt;
+		&lt;progress value=&quot;50&quot; max=&quot;100&quot; min=&quot;50&quot;&gt;&lt;/progress&gt;
+		
+		&lt;!--wbr:单词间换行，拆分换行
+			
+		--&gt;
+		&lt;p class=&quot;wbr_c&quot;&gt;
+			I am a loag words hahhahahhahahhhaaahahah.
+		&lt;/p&gt;
+		&lt;p class=&quot;wbr_c&quot;&gt;
+			I am a loag words hahhahahhahahhha&lt;wbr&gt;aahahah&lt;/wbr&gt;.
+		&lt;/p&gt;
+		
+		&lt;!--ruby: 象拼音一样标注
+			rt: 标注内容
+		--&gt;
+		&lt;ruby&gt;
+			你好&lt;rt&gt;ni hao&lt;/rt&gt;
+			&amp;nbsp;
+			阿西吧&lt;rt&gt;叹气&lt;/rt&gt;
+		&lt;/ruby&gt;
+		
+		&lt;!--datalist:可选列表
+			input标签的 list属性值 == datalist 的id值
+		--&gt;
+		&lt;form action=&quot;#&quot; method=&quot;post&quot; id=&quot;top_form&quot;&gt;
+			&lt;input type=&quot;text&quot; name=&quot;key&quot; id=&quot;key&quot; value=&quot;&quot; list=&quot;gender_list&quot; /&gt;
+			&lt;datalist id=&quot;gender_list&quot;&gt;
+				&lt;option -value=&quot;1&quot;&gt;男&lt;/option&gt;
+				&lt;option -value=&quot;2&quot;&gt;女&lt;/option&gt;
+				&lt;option -value=&quot;3&quot;&gt;其他&lt;/option&gt;
+			&lt;/datalist&gt;
+			
+			&lt;select name=&quot;&quot;&gt;
+				&lt;option -value=&quot;&quot;&gt;男&lt;/option&gt;
+				&lt;option -value=&quot;&quot;&gt;女&lt;/option&gt;
+			&lt;/select&gt;
+			&lt;input type=&quot;submit&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;提交&quot; /&gt;
+		&lt;/form&gt;
+		&lt;!--details: 折叠信息
+			summary: 标题，内容可见
+			open属性: 显示隐藏内容
+		--&gt;
+		&lt;details open=&quot;&quot;&gt;
+			&lt;summary&gt;电脑配置&lt;/summary&gt;
+			&lt;p&gt;内存：16G&lt;/p&gt;
+			&lt;p&gt;双卡双待&lt;/p&gt;
+		&lt;/details&gt;
+		
+		&lt;!--figure:注释，标记，一般用于图片
+			figcaption：元素标题，显示位置和放置位置有关
+		--&gt;
+		&lt;figure&gt;
+			&lt;figcaption&gt;这是一个图片&lt;/figcaption&gt;
+			&lt;img src=&quot;img/1.jpg&quot; alt=&quot;&quot; /&gt;
+		&lt;/figure&gt;
+		
+		&lt;!--time: 标记时间，告诉浏览器是一个时间
+			datetime:告诉浏览器是一个时间，时间由datetime决定
+			T: 间隔
+			datetime格式：YYYY-MM-DDThh:mm:ss
+		--&gt;
+		&lt;p&gt;现在&lt;time&gt;8:00&lt;/time&gt;整&lt;/p&gt;
+		&lt;p&gt;&lt;time datetime=&quot;2016-06-21T09:30:30&quot;&gt;今天&lt;/time&gt;是个好日子&lt;/p&gt;
+		
+		&lt;!--form: 新类型
+			
+		--&gt;
+		&lt;!--novalidate： 不验证输入格式，form属性--&gt;
+		&lt;form id=&quot;formId&quot; action=&quot;#&quot; novalidate&gt;
+			&lt;!--自动匹配格式--&gt;
+			电子邮件：&lt;input type=&quot;email&quot; /&gt;
+			&lt;!--step: 每次加或者减得数值--&gt;
+			数字：&lt;input type=&quot;number&quot; name=&quot;number&quot; value=&quot;10&quot; max=&quot;20&quot; min=&quot;5&quot; step=&quot;5&quot; /&gt;
+			网址：&lt;input type=&quot;url&quot; name=&quot;url&quot; /&gt;&lt;br /&gt;
+			取值范围： &lt;input type=&quot;range&quot; name=&quot;range&quot; min=&quot;10&quot; max=&quot;50&quot; value=&quot;10&quot; /&gt;
+			
+			&lt;!--时间--&gt;
+			年月日: &lt;input type=&quot;date&quot; name=&quot;date&quot; /&gt;
+			&lt;br /&gt;
+			年月: &lt;input type=&quot;month&quot; name=&quot;month&quot; /&gt;
+			&lt;br /&gt;
+			年周: &lt;input type=&quot;week&quot; name=&quot;week&quot; /&gt;
+			&lt;br /&gt;
+			时分: &lt;input type=&quot;time&quot; name=&quot;time&quot; /&gt;
+			&lt;br /&gt;
+			本地时间：&lt;input type=&quot;datetime-local&quot; name=&quot;loacl&quot; min=&quot;2016-11-25T00:00:00&quot; /&gt;
+			
+			&lt;br /&gt;
+			颜色：&lt;input type=&quot;color&quot; name=&quot;color&quot; /&gt;
+			&lt;br /&gt;
+			搜索：&lt;input type=&quot;search&quot; /&gt;
+			&lt;br /&gt;
+
+			&lt;hr /&gt;
+			
+			&lt;!--表单新增属性--&gt;
+			&lt;!--
+				autofocus: 自动获取焦点,只允许一个，默认第一个
+			--&gt;
+			焦点: &lt;input type=&quot;text&quot; autofocus /&gt;
+			&lt;hr /&gt;
+			&lt;input type=&quot;text&quot; autofocus=&quot;&quot; /&gt;
+			&lt;hr /&gt;
+			&lt;!--placeholder: 占位文本，文本框为空时显示内容--&gt;
+			站位文本: &lt;input type=&quot;text&quot; placeholder=&quot;请输入名字&quot; /&gt;
+			&lt;hr /&gt;
+			&lt;!--required:验证表单是否为空，为空不允许提交--&gt;
+			&lt;input type=&quot;text&quot; -required=&quot;&quot; /&gt;
+			&lt;hr /&gt;
+			&lt;!--
+				autocomplete:自动提示功能；
+				默认：on
+				off：关闭
+			--&gt;
+			&lt;input type=&quot;text&quot; name=&quot;key_t&quot; autocomplete=&quot;off&quot;/&gt;
+			&lt;hr /&gt;
+			&lt;!--
+				multiple: 文件多选
+			--&gt;
+			&lt;input type=&quot;file&quot; multiple=&quot;&quot; /&gt;
+			&lt;hr /&gt;
+			&lt;input type=&quot;email&quot; name=&quot;email_2&quot; /&gt;
+				
+			&lt;hr /&gt;
+			提交: &lt;input type=&quot;submit&quot; value=&quot;提交&quot; /&gt;
+		&lt;/form&gt;
+			&lt;!--form:属性值==form的id属性值--&gt;
+            &lt;input type=&quot;submit&quot; name=&quot;outside&quot; form=&quot;fomtId&quot; /&gt;
+        
+
+        &lt;!--
+			video:ie8或更早不支持
+			视频格式：{
+				mp4:ie高版本chrome，火狐
+				webM:谷歌发明，火狐支持，主流模式
+				OGG:火狐，chrome支持
+			}
+			controls:是否显示控件
+		--&gt;
+		&lt;!--controls:显示播放控件--&gt;
+		&lt;!--autoplay：自动播放--&gt;
+		&lt;!--&lt;video src=&quot;img/1.mp4&quot; width=&quot;400px&quot; height=&quot;400px&quot; controls autoplay=&quot;&quot;&gt;&lt;!--&lt;/video&gt;--&gt;
+
+		&lt;!--loop:循环播放--&gt;
+		&lt;!--&lt;video src=&quot;img/1.mp4&quot; width=&quot;400px&quot; height=&quot;400px&quot; controls autoplay=&quot;&quot; loop=&quot;&quot;&gt;&lt;/video&gt;--&gt;
+
+		&lt;!--muted:静音--&gt;
+		&lt;video src=&quot;img/1.mp4&quot; width=&quot;400px&quot; height=&quot;400px&quot; controls autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;&lt;/video&gt;
+
+		&lt;!--poster:视频播放前的占位图--&gt;
+		&lt;video src=&quot;img/1.mp4&quot; width=&quot;400px&quot; height=&quot;400px&quot; controls -autoplay=&quot;&quot; loop=&quot;&quot; poster=&quot;img/weibo.jpg&quot;&gt;&lt;/video&gt;
+
+		&lt;!--兼容所有浏览器--&gt;
+		&lt;video width=&quot;200px&quot; height=&quot;200px&quot; controls&gt;
+			&lt;!--
+				chrome和火狐
+				type:视频类型
+			--&gt;
+			&lt;source src=&quot;img/1.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/source&gt;
+			&lt;source src=&quot;img/1.webm&quot; type=&quot;video/webm&quot;&gt;&lt;/source&gt;
+			&lt;source src=&quot;img/1.ogg&quot; type=&quot;video/ogg&quot;&gt;&lt;/source&gt;
+		&lt;/video&gt;
+
+		&lt;!--audio: 和视频一样
+			mp3,ogg,wav
+		--&gt;
+		&lt;audio controls=&quot;&quot;&gt;
+			&lt;source src=&quot;img/music.mp3&quot; type=&quot;audio/mp3&quot;&gt;&lt;/source&gt;
+			&lt;source src=&quot;img/music.ogg&quot; type=&quot;audio/ogg&quot;&gt;&lt;/source&gt;
+			&lt;source src=&quot;img/music.wav&quot; type=&quot;audio/wav&quot;&gt;&lt;/source&gt;
+		&lt;/audio&gt;
+		
+		&lt;!----&gt;
+		&lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;nav&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;section&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+		
+		&lt;!--头部标签--&gt;
+		&lt;header&gt;&lt;/header&gt;
+		&lt;!--标签导航--&gt;
+		&lt;nav&gt;&lt;/nav&gt;
+		&lt;!--管理h1-h6--&gt;
+		&lt;hgroup&gt;
+			&lt;h3&gt;h3333&lt;/h3&gt;
+			&lt;h4&gt;h4444&lt;/h4&gt;
+		&lt;/hgroup&gt;
+		&lt;!--文章侧边栏--&gt;
+		&lt;aside&gt;&lt;/aside&gt;
+		&lt;!--文章内容，一个评论区--&gt;
+		&lt;artical&gt;&lt;/artical&gt;
+		&lt;!--文章分区--&gt;
+		&lt;section&gt;&lt;/section&gt;
+		&lt;!--尾部--&gt;
+		&lt;footer&gt;&lt;/footer&gt;
+		
+		
+		&lt;header&gt;头部&lt;/header&gt;
+		&lt;nav&gt;导航&lt;/nav&gt;
+		&lt;section&gt;
+			&lt;aside&gt;侧边栏&lt;/aside&gt;
+			&lt;artical&gt;
+				&lt;hgroup&gt;
+					&lt;h2&gt;文章标题&lt;/h2&gt;
+				&lt;/hgroup&gt;
+				&lt;footer&gt;文章的尾部&lt;/footer&gt;
+			&lt;/artical&gt;
+		&lt;/section&gt;
+		&lt;footer&gt;结尾&lt;/footer&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2><a class="header" href="#视频" id="视频">视频</a></h2>
+<pre><code class="language-html">&lt;video width=&quot;320&quot; height=&quot;240&quot; controls=&quot;controls&quot;&gt;
+  &lt;source src=&quot;movie.ogg&quot; type=&quot;video/ogg&quot;&gt;
+  &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot;&gt;
+Your browser does not support the video tag.
+&lt;/video&gt;
+</code></pre>
+<p>使用dom控制</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt; 
+&lt;html&gt; 
+&lt;body&gt; 
+
+&lt;div style=&quot;text-align:center;&quot;&gt;
+  &lt;button onclick=&quot;playPause()&quot;&gt;播放/暂停&lt;/button&gt; 
+  &lt;button onclick=&quot;makeBig()&quot;&gt;大&lt;/button&gt;
+  &lt;button onclick=&quot;makeNormal()&quot;&gt;中&lt;/button&gt;
+  &lt;button onclick=&quot;makeSmall()&quot;&gt;小&lt;/button&gt;
+  &lt;br /&gt; 
+  &lt;video id=&quot;video1&quot; width=&quot;420&quot; style=&quot;margin-top:15px;&quot;&gt;
+    &lt;source src=&quot;/example/html5/mov_bbb.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+    &lt;source src=&quot;/example/html5/mov_bbb.ogg&quot; type=&quot;video/ogg&quot; /&gt;
+    Your browser does not support HTML5 video.
+  &lt;/video&gt;
+&lt;/div&gt; 
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+var myVideo=document.getElementById(&quot;video1&quot;);
+
+function playPause()
+{ 
+if (myVideo.paused) 
+  myVideo.play(); 
+else 
+  myVideo.pause(); 
+} 
+
+function makeBig()
+{ 
+myVideo.width=560; 
+} 
+
+function makeSmall()
+{ 
+myVideo.width=320; 
+} 
+
+function makeNormal()
+{ 
+myVideo.width=420; 
+} 
+&lt;/script&gt; 
+
+&lt;/body&gt; 
+&lt;/html&gt;
+
+</code></pre>
+<h2><a class="header" href="#音频" id="音频">音频</a></h2>
+<pre><code class="language-html">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;audio controls=&quot;controls&quot;&gt;
+  &lt;source src=&quot;/i/song.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+  &lt;source src=&quot;/i/song.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+Your browser does not support the audio element.
+&lt;/audio&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h2><a class="header" href="#拖放" id="拖放">拖放</a></h2>
+<p>在 HTML5 中，拖放是标准的一部分，任何元素都能够拖放</p>
+<pre><code class="language-html">&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+#div1 {width:198px; height:66px;padding:10px;border:1px solid #aaaaaa;}
+&lt;/style&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData(&quot;Text&quot;,ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData(&quot;Text&quot;);
+ev.target.appendChild(document.getElementById(data));
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;请把 W3School 的图片拖放到矩形中：&lt;/p&gt;
+
+&lt;div id=&quot;div1&quot; ondrop=&quot;drop(event)&quot; ondragover=&quot;allowDrop(event)&quot;&gt;&lt;/div&gt;
+&lt;br /&gt;
+&lt;!-- 
+    draggable=&quot;true&quot;, 元素可拖放 
+    ondragstart 拖动时触发
+
+--&gt;
+&lt;img id=&quot;drag1&quot; src=&quot;/i/eg_dragdrop_w3school.gif&quot; draggable=&quot;true&quot; ondragstart=&quot;drag(event)&quot; /&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h1><a class="header" href="#demo" id="demo">demo</a></h1>
+<h2><a class="header" href="#w3c经典页面" id="w3c经典页面">w3c经典页面</a></h2>
+<pre><code class="language-css">body{
+	margin:40px 5px;
+	font-size:100%;
+}
+h1{
+	font-weight:800;/* 删掉也没啥变化 */
+	font-size:1.6em;/* 跳脱h1标签原始字体size, 自己设定 */
+	margin-bottom:0px;
+}
+hr{
+	border:1px solid #B0B0B0;/* 设置hr公共属性, 下面可以分别设置; solid表示实心, 不加hr就消失了 */
+}
+.hr1{
+	margin-top:0px;/* 如果不加这条, 默认都是有一定间距的, 希望没有间距, 必须加上这条 */
+}
+.pagebutton{
+	margin-top:20px;
+	height:28px;
+	width:240px;
+}
+.button1{
+	padding-top:.1em;
+	height:25px;
+	width:100px;
+	border:1px solid #E3E3E3;
+	background-color:#F3F3F3;
+	float:left;/* 浮动到左侧 */
+	margin-right:30px;
+	text-align:center;
+}
+.button1 a{
+	text-decoration:none;/* 去掉默认的下划线 */
+	color:black;
+	font-size:.7em;
+}
+.button2{
+	padding-top:.1em;
+	height:25px;
+	width:100px;
+	border:1px solid #E3E3E3;
+	background-color:#F3F3F3;
+	float:left;/* 浮动到左侧 */
+	text-align:center;
+}
+.button2 a{
+	text-decoration:none;
+	color:black;
+	font-size:.7em;
+}
+.hr2{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+h2{	
+	color:black;
+	font-size:.9em;
+	font-weight:bold;/* 加粗, 不过h2标签默认就是加粗了 */
+}
+p{
+	font-size:.8em;
+	line-height:1.5em;/* 行高 */
+}
+#color1{
+	color:#F4A283;
+}
+b{
+	font-size:.7em;
+}
+.demo{
+	margin-top:10px;
+	border:1px solid #D5D5D0;
+	background-color:#F5F5F6;
+	padding-left:15px;
+	padding-top:0px;
+}
+.try{
+	margin-top:10px;
+	background-color:#F98D8A;
+	width:85px;
+	height:22px;
+	color:#FFFFFF;
+	font-size:.8px;
+	text-align:center;
+	padding-top:.5em;
+	
+}
+.try a{
+	color:#fff;
+	text-decoration:none;/* 不加下划线 */
+}
+li{
+	line-height:1.5em;
+	font-size:.8em;
+}
+sub{
+	width: 100px;
+	height: 10%;
+	margin: 5em;
+	
+}
+
+</code></pre>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head land=&quot;ch&quot;&gt;
+	&lt;meta charset=&quot;utf-8&quot;&gt;
+	&lt;title&gt;w3cschool&lt;/title&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/demo.css&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;h1&gt;基本的HTML标签-四个实例&lt;/h1&gt;
+	&lt;hr class=&quot;hr1&quot;&gt;
+	&lt;div class=&quot;pagebutton&quot;&gt;
+		&lt;div class=&quot;button1&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;上一节&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;button2&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;下一节&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;hr class=&quot;hr2&quot;&gt;
+	&lt;h2&gt;本章通过实例向您演示最常用的HTML标签&lt;/h2&gt;
+	&lt;p&gt;
+		&lt;span id=&quot;color1&quot;&gt;提示：&lt;/span&gt;不要担心本章中您还没有学过的例子，您将在下面的章节中学到它们。&lt;/p&gt;
+	&lt;p&gt;
+		&lt;span id=&quot;color1&quot;&gt;提示：&lt;/span&gt;学习HTML最好的方式就是边学边做实验。我们为您准备了很好的HTML编辑器。使用这个编辑器，您可以任意编辑一段HTML源码。然后单机TRY按钮来产看结果。&lt;/p&gt;
+	&lt;hr&gt;
+	&lt;h2&gt;HTML标题&lt;/h2&gt;
+	&lt;p&gt;HTML标题（Heading）是通过&amp;lt;h1&amp;gt;-&amp;lt;h6&amp;gt;等标签进行定义的&lt;/p&gt;
+	&lt;b&gt;实例&lt;/b&gt;
+	&lt;br&gt;
+	&lt;div class=&quot;demo&quot;&gt;
+		&lt;pre&gt;&lt;code&gt;&amp;lt;h1&amp;gt;this is a heading&amp;lt;/h1&amp;gt;
+&amp;lt;h2&amp;gt;this is a heading&amp;lt;/h2&amp;gt;
+&amp;lt;h3&amp;gt;this is a heading&amp;lt;/h3&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;try&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;
+			亲自试一试
+		&lt;/a&gt;
+	&lt;/div&gt;
+
+	&lt;hr class=&quot;hr2&quot;&gt;
+	&lt;h2&gt;HTML段落&lt;/h2&gt;
+	&lt;p&gt;HTML段落是通过&amp;lt;p&amp;gt;-&amp;lt;h6&amp;gt;标签进行定义的.&lt;/p&gt;
+	&lt;b&gt;实例&lt;/b&gt;
+	&lt;br&gt;
+	&lt;div class=&quot;demo&quot;&gt;
+		&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;this is a paragraph&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;this is another paragraph&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;try&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;
+			亲自试一试
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;hr&gt;
+	&lt;h2&gt;HTML链接&lt;/h2&gt;
+	&lt;p&gt;HTML链接是通过&amp;lt;a&amp;gt;标签进行定义的.&lt;/p&gt;
+	&lt;b&gt;实例&lt;/b&gt;
+	&lt;br&gt;
+	&lt;div class=&quot;demo&quot;&gt;
+		&lt;pre&gt;&lt;code&gt;&amp;lt;a href=&amp;quot;http://www.w3cschool.com.cn&amp;quot;&amp;gt;this is a link&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;try&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;
+			亲自试一试
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;p&gt;
+		&lt;b&gt;注释：&lt;/b&gt;在href属性中指定链接的地址。
+	&lt;/p&gt;
+	&lt;p&gt;
+		(您将在本教程稍后的章节中学习更多有关属性的知识)。
+	&lt;/p&gt;
+	&lt;hr&gt;
+	&lt;h2&gt;HTML图像&lt;/h2&gt;
+	&lt;p&gt;HTML图像是通过&amp;lt;img&amp;gt;标签进行定义的.&lt;/p&gt;
+	&lt;b&gt;实例&lt;/b&gt;
+	&lt;br&gt;
+	&lt;div class=&quot;demo&quot;&gt;
+		&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;w3school.jpg&amp;quot; width=&amp;quot;104&amp;quot; height=&amp;quot;142&amp;quot; /&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;try&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;
+			亲自试一试
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;p&gt;
+		&lt;b&gt;注释：&lt;/b&gt;图像的名称和尺寸是以属性的形式提供的。
+	&lt;/p&gt;
+	&lt;hr&gt;
+	&lt;div class=&quot;pagebutton&quot;&gt;
+		&lt;div class=&quot;button1&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;上一节&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;button2&quot;&gt;
+			&lt;a href=&quot;#&quot;&gt;下一节&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h2><a class="header" href="#简历典型页面" id="简历典型页面">简历典型页面</a></h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot;&gt;
+	&lt;title&gt;Table demo2&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class=&quot;table&quot;&gt;
+		&lt;!-- 
+			border=&quot;2px&quot; 整个table的外边框粗细
+			margin:auto 或者 margin: 0 auto 
+				设置整个元素水平居中
+			font-size:.9em; 字体相对大小
+			
+
+		 --&gt;
+	&lt;table border=&quot;2px&quot; style=&quot;border-collapse:collapse; text-align:center; margin:auto; margin-top:50px; height:820px;font-size:.9em;&quot;&gt;
+		&lt;colgroup&gt;
+			&lt;col style=&quot;width:110px;&quot;&gt;
+			&lt;col style=&quot;width:100px;&quot;&gt;
+			&lt;col style=&quot;width:80px;&quot;&gt;
+			&lt;col style=&quot;width:80px;&quot;&gt;
+			&lt;col style=&quot;width:70px;&quot;&gt;
+			&lt;col style=&quot;width:110px;&quot;&gt;
+			&lt;col style=&quot;width:100px;&quot;&gt;
+
+		&lt;/colgroup&gt;
+		&lt;!-- 
+			font-weight:bold; 加粗
+			letter-spacing:1em; 字间距
+		 --&gt;
+		&lt;caption style=&quot;font-weight:bold;margin-bottom:20px; font-size:1.1em; letter-spacing:1em;&quot;&gt;个人简历&lt;/caption&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;姓名&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;性别&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;出生年月&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td rowspan=&quot;4&quot;&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;民族&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;政治面貌&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;身高&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;学制&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;学历&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;户籍&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;专业&lt;/td&gt;
+				&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;毕业学校&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th colspan=&quot;7&quot; style=&quot;border-width:2px;&quot;&gt;技能、特长或爱好&lt;/th&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;外语等级&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;计算机&lt;/td&gt;
+				&lt;td colspan=&quot;3&quot;&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th colspan=&quot;7&quot; style=&quot;border-width:2px;&quot;&gt;个人履历&lt;/th&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;时间&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;单位&lt;/td&gt;
+				&lt;td colspan=&quot;4&quot;&gt;经历&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;2002年4月&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td colspan=&quot;4&quot;&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;2003年3月&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td colspan=&quot;4&quot;&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;2003年8月&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td colspan=&quot;4&quot;&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th colspan=&quot;7&quot; style=&quot;border-width:2px;&quot;&gt;联系方式&lt;/th&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;通讯地址&lt;/td&gt;
+				&lt;td colspan=&quot;3&quot;&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;联系电话&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;E-mail&lt;/td&gt;
+				&lt;td colspan=&quot;3&quot;&gt;&amp;nbsp;&lt;/td&gt;
+				&lt;td&gt;邮编&lt;/td&gt;
+				&lt;td colspan=&quot;2&quot;&gt;&amp;nbsp;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th colspan=&quot;7&quot; style=&quot;height:70px; border-width:2px;&quot;&gt;自我评价&lt;/th&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th colspan=&quot;7&quot; style=&quot;height:150px;&quot;&gt;&amp;nbsp;&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>还一个</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot;&gt;
+	&lt;title&gt;Table demo1&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;!-- border加px是可选的 --&gt;
+	&lt;table border=&quot;1&quot; style=&quot;border-collapse:collapse;height:250px; text-align:center; font-size:.9em; margin:auto; margin-top:50px;&quot;&gt;
+		&lt;colgroup&gt;
+			&lt;!-- 对于被th包住的单元格, 是无法设置字体粗细的, 这里的font:bold无效 --&gt;
+			&lt;col style=&quot;background-color:rgb(155, 128, 128); font:bold; width:100px;&quot;&gt;
+			&lt;col style=&quot; width:120px;&quot;&gt;
+			&lt;col style=&quot;background-color:#E0E0E0; font-weight:800;width:100px;&quot;&gt;
+			&lt;col style=&quot; width:120px;&quot;&gt;
+			&lt;col style=&quot;width:120px&quot;&gt;
+		&lt;/colgroup&gt;
+		&lt;caption style=&quot;font-size:1.1em; font-weight:bold; margin-bottom:20px;&quot;&gt;个人简历&lt;/caption&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;th&gt;姓名&lt;/th&gt;
+				&lt;td&gt;张小萌&lt;/td&gt;
+				&lt;th&gt;性别&lt;/th&gt;
+				&lt;td&gt;女&lt;/td&gt;
+				&lt;td rowspan=&quot;5&quot;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;民族&lt;/td&gt;
+				&lt;td&gt;汉族&lt;/td&gt;
+				&lt;th&gt;籍贯&lt;/th&gt;
+				&lt;td&gt;四川&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;出生日期&lt;/th&gt;
+				&lt;td&gt;1991.5&lt;/td&gt;
+				&lt;th&gt;婚姻状况&lt;/th&gt;
+				&lt;td&gt;否&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;学历&lt;/th&gt;
+				&lt;td&gt;大专&lt;/td&gt;
+				&lt;th&gt;体重身高&lt;/th&gt;
+				&lt;td&gt;165CM、49KG&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;专业&lt;/th&gt;
+				&lt;td&gt;音乐舞蹈&lt;/td&gt;
+				&lt;th&gt;健康状况&lt;/th&gt;
+				&lt;td&gt;健康&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;求职意向&lt;/th&gt;
+				&lt;td colspan=&quot;4&quot;&gt;幼儿教师，舞蹈老师&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2><a class="header" href="#table中包含form" id="table中包含form">table中包含form</a></h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+	&lt;meta charset=&quot;UTF-8&quot;&gt;
+	&lt;title&gt;table+form&lt;/title&gt;
+	&lt;style&gt;
+		table&gt;tbody&gt;tr&gt;th{
+			text-align:left;
+			padding-left:5px;
+		}
+		.col2{
+			text-align:left;
+			padding-left:10px;
+		}
+		.col3{
+			text-align:center;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;table border=&quot;1px&quot; 
+	style=&quot;border-collapse:collapse; margin:auto; margin-top:20px; border-color:#C7A285&quot;&gt;
+		&lt;colgrounp&gt;
+			&lt;col style=&quot;width:100px;&quot;&gt;
+			&lt;col style=&quot;width:160px;&quot;&gt;
+			&lt;col style=&quot;width:250px;&quot; class=&quot;col3&quot;&gt;
+		&lt;/colgrounp&gt;
+		&lt;caption style=&quot;margin-bottom:3px; font-weight:bold; font-size:.8em;&quot;&gt;表1 input元素type属性值&lt;/caption&gt;
+		&lt;thead&gt;
+			&lt;!-- 
+				border:none 当前行无表框
+				color:#fff; 文本颜色
+			 --&gt;
+			&lt;tr style=&quot;border:none; 
+				background-color:#F99547;
+				color:#fff;
+				font-size:.9em;
+			&quot;&gt;
+				&lt;th&gt;type属性值&lt;/th&gt;
+				&lt;th&gt;说明&lt;/th&gt;
+				&lt;th&gt;浏览器效果（参考效果）&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;th&gt;text&lt;/th&gt;
+				&lt;td class=&quot;col2&quot;&gt;单行文本框&lt;/td&gt;
+				&lt;td class=&quot;col3&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;text&quot; value=&quot;admin&quot;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;password&lt;/th&gt;
+				&lt;td class=&quot;col2&quot; class=&quot;col2&quot;&gt;密码文本框&lt;/td&gt;
+				&lt;td class=&quot;col3&quot;&gt;&lt;input type=&quot;password&quot; value=&quot;123456&quot;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;button&lt;/th&gt;
+				&lt;td class=&quot;col2&quot;&gt;按钮&lt;/td&gt;
+				&lt;td class=&quot;col3&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;注册&quot;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;reset&lt;/th&gt;
+				&lt;td class=&quot;col2&quot;&gt;重置按钮&lt;/td&gt;
+				&lt;td class=&quot;col3&quot;&gt;&lt;input type=&quot;reset&quot;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;image&lt;/th&gt;
+				&lt;td class=&quot;col2&quot;&gt;图形形式的提交按钮&lt;/td&gt;
+				&lt;td class=&quot;col3&quot;&gt;&lt;input type=&quot;image&quot; src=&quot;img/imgsub.jpg&quot;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;radio&lt;/th&gt;
+				&lt;td class=&quot;col2&quot;&gt;单选按钮&lt;/td&gt;
+				&lt;td class=&quot;col3&quot;&gt;性别：
+				&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;0&quot; checked&gt;男
+				&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;1&quot;&gt;女
+				&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;checkbox&lt;/th&gt;
+				&lt;td class=&quot;col2&quot;&gt;复选框&lt;/td&gt;
+				&lt;td class=&quot;col3&quot;&gt;
+					兴趣：
+					&lt;input type=&quot;checkbox&quot; name=&quot;habby&quot; value=&quot;0&quot; checked&gt;旅游
+					&lt;input type=&quot;checkbox&quot; name=&quot;habby&quot; value=&quot;1&quot;&gt;摄影
+					&lt;input type=&quot;checkbox&quot; name=&quot;habby&quot; value=&quot;2&quot; checked&gt;运动
+				&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;hidden&lt;/th&gt;
+				&lt;td class=&quot;col2&quot;&gt;隐藏字段&lt;/td&gt;
+				&lt;td&gt;&lt;input type=&quot;hidden&quot; name=&quot;sname&quot; value=&quot;1111&quot;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th&gt;file&lt;/th&gt;
+				&lt;td class=&quot;col2&quot;&gt;文件上传&lt;/td&gt;
+				&lt;td class=&quot;col3&quot;&gt;
+					上传个人照片&lt;br&gt;
+					&lt;input type=&quot;file&quot; name=&quot;upfile&quot; style=&quot;margin-left:145px;&quot;&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="hello-world.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="idea-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="hello-world.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="idea-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

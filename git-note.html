@@ -1,0 +1,767 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>git note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html" class="active"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: Git Backup
+date: 2017-06-20 13:46:04
+tags: [git]
+categories: tool</h2>
+<p>references: ， <a href="http://ndpsoftware.com/git-cheatsheet.html">2</a>， <a href="https://github.com/k88hudson/git-flight-rules">3</a>
+https://gogs.io/
+https://git-scm.com/book/zh/v2</p>
+<!-- TOC -->
+<ul>
+<li><a href="#%E5%9B%BE%E8%A7%A3">图解</a></li>
+<li><a href="#github-%E8%AE%BE%E7%BD%AE-ssh-%E8%AE%BF%E9%97%AE">github 设置 ssh 访问</a></li>
+<li><a href="#git-%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%BE%E7%BD%AE">git 初始化设置</a></li>
+<li><a href="#%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E5%88%B0%E8%BF%9C%E7%A8%8B">上传本地项目到远程</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令</a></li>
+<li><a href="#%E6%97%B6%E5%85%89%E6%9C%BA">时光机</a>
+<ul>
+<li><a href="#git-checkout">git checkout</a></li>
+<li><a href="#git-reset">git reset</a></li>
+<li><a href="#git-revert">git revert</a></li>
+<li><a href="#git-rebase">git rebase</a></li>
+<li><a href="#%E5%85%B8%E5%9E%8B%E5%9C%BA%E6%99%AF%E7%9A%84%E7%BB%BC%E5%90%88%E7%94%A8%E6%B3%95">典型场景的综合用法</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93">远程仓库</a></li>
+<li><a href="#%E5%88%86%E6%94%AF">分支</a></li>
+<li><a href="#git-diff-%E6%89%93%E8%A1%A5%E4%B8%81-patch">git diff 打补丁 patch</a></li>
+<li><a href="#%E6%9A%82%E5%AD%98-%E6%81%A2%E5%A4%8D%E5%B7%A5%E4%BD%9C%E5%8C%BA">暂存-恢复工作区</a></li>
+<li><a href="#%E6%A0%87%E7%AD%BE">标签</a></li>
+<li><a href="#gitignore-%E6%96%87%E4%BB%B6">.gitignore 文件</a></li>
+<li><a href="#lf-%E5%92%8C-crlf">LF 和 CRLF</a></li>
+<li><a href="#git-hooks">git hooks</a></li>
+<li><a href="#git-subtree-%E5%AD%90%E4%BB%93%E5%BA%93">git subtree 子仓库</a></li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#图解" id="图解">图解</a></h1>
+<p><a href="https://github.com/geeeeeeeeek/git-recipes/wiki/4.1-%E5%9B%BE%E8%A7%A3-Git-%E5%91%BD%E4%BB%A4">1</a></p>
+<img src="Screenshot_1.png" width=60%>
+<p><img src="git-full.png" alt="alt" /></p>
+<p><a href="https://www.draw.io/?lightbox=1&amp;highlight=0000ff&amp;edit=_blank&amp;layers=1&amp;nav=1&amp;title=Untitled%20Diagram.xml#R5ZpLc6M4EIB%2FjY9OIcTzOElmdi9bNVWZqp09KiAbVbDlEnLszK9fCQTWA2LHgTjjySWo9UB0tz61Wp7Bu9X%2BL4Y2xT80x%2BXM9%2FL9DN7PfPEXQvFPSl4aSRwFjWDJSN6IwEHwQH5hJfSUdEtyXBkNOaUlJxtTmNH1GmfckCHG6M5stqCl%2BdYNWmJH8JCh0pX%2BS3JeNNLEjw%2FyvzFZFu2bQZQ2NSvUNlZfUhUopztNBL%2FO4B2jlDdPq%2F0dLqXyWr00%2Fb4N1HYTY3jNT%2BngNx2eUblV36bmxV%2Faj2V0u86xbA9m8HZXEI4fNiiTtTthXiEr%2BKpU1Sv6jB7rnrLEcEV%2B6WXKEdfKwi%2BwXsY50YvKfJpEzRYzjveDXww6PQoHxHSFOXsRTVSHOYjDpo9yPj9QttgdTOknSlZoZuyMhpT7LLvBDxoWD0rJ%2FQoPHIUXpOJUDXK23kdQTNjqQekFBKGjF%2BD16AWOoZfQ0UvF5Sq0tSJ6iVWOP0QjfgpvjvsK8Ht0AtIRdBIdX5x4nX%2BRQBOlx5JmT6YORO03UralbMueO3%2FCe8J%2Fas%2F%2FiWfvxvciVf6OGRETxkzK66HE5H%2FWjUBbbPqAOG0Fdqdmujh3aGpZQHwS3bIMG0ziiC0x17zDtZNmhbDHCK2M4RJx8mxOos8w6g3fKRHT69wAxNbCiC3bNpNXvXTYWgPB8MhAzSc7AwkLoxet2UY2qIYn3O2T1nsObteMeHDCTqcn%2BWXs%2BOWSyNejPJ%2FJxRChlVyMpTDD7YIIV20lS147RVTXPDLxVEsoc2X6iDeO24s1zU1X17ca6XpKR6J1eDsL74UElWS5FoJM%2BJ700FvJBiI29S%2BqYkXyXPa%2FLdEjLm9R9rSsGXxHS8rq98JF%2FfcaXcw967DR6z4fvb5BiWWYeL5hwTmA73PltgldLCrMLW94q%2F2Tj%2BaSzh%2BhHg%2BaBJJ8GJVAoUug4JIECjxobUPReQSy93ghmIRAQWxNGIxLoHSAQBldrQi%2FMlwkH4%2BLvQH6dlR7gFFg0u5VJ9JkTdd4CCbeEExEkBIkRqDjeeHxQCcBJmiGICMiVcbbCWYlqiqS%2FSjIuq3SWDdaRORfkkfCv6zAGERnEgn4zlATRUVzaLIvGRdJAAwxqcie6FY%2BCbaI1oIudUhzehSUFbhnCPFYB1eyYPfL8WIuJ%2Faltj%2FK%2B1vU3es2SH6K3eTKMAq8We%2BS%2BW3CrnYyZ5MyR1XRsfFUEl2MMVaoEoTheYSx170fWAMN8OUMC%2FVkMXaUPZH1Ughzwq5tRcFjKwqkqQn3OfhMC8o113aTI45rIxXjWGvLadUksIFmvBIveI%2FpOJXH5GqDMuEzP2Thfh68M5nVun3qpvPinuU7RjIPuJmrrMRofSUa7aIgC1GwjWU1FQdTqdhNwrxtMzghbAYiTA6MsDmJ2vJw2KyHzOBC0fFl84VRYu5c8MzYGIahNdBpO9eb84W%2BtdUGI4fGbsKoCWzFYsdTR7WeykBeeXAbH9uKJ0sSQN86wM395MZy1HG2azfrMzry5KE%2FNpCXQt%2FMCtjZxxh2FyIOFHtAOTkOP1%2Fy0tol05GSl93AYycvo2lx6LsZLxOH83lFFzUXjasUktsXKdeFsPRiCAMOwmA6CcJ8N0k0BcKaG1mFMNAmOzWEWVe4qe9%2FKoT1RHQXRRhMLSJEFnnORlgcT4Iw30JYOPL9S2uh4YjuTyLXsXPihORKEptcdnZrHG69N%2FX4Grc0Lvkz6%2FD43vsW%2FQYoMqEIho6y18GsufWrlcDOOpzMrBBYzJrmFAoSi1kjX9D0%2FPTODrsKxPIT4GUcUq%2BLZEczur8ZyUTx8GPapvnhJ8nw6%2F8%3D">drawio</a></p>
+<h1><a class="header" href="#github-设置-ssh-访问" id="github-设置-ssh-访问">github 设置 ssh 访问</a></h1>
+<pre><code class="language-shell"># 进入 ${user}/.ssh
+ssh-keygen -t rsa -C &quot;775000738@qq.com&quot; # 可能弹出交互&quot;要设置passphrase?&quot;直接回车(可通过ssh-keygen -p 修改)
+# 复制xxx.pub下的text到github即可
+# 测试
+ssh -T git@github.com
+</code></pre>
+<p>github 和 gitee 同时设置 ssh 访问: https://blog.csdn.net/weixin_36191602/article/details/80946242</p>
+<h1><a class="header" href="#git-初始化设置" id="git-初始化设置">git 初始化设置</a></h1>
+<pre><code class="language-sh">$ git config --global user.name &quot;xiaoyu&quot;
+$ git config --global user.email 775000738@qq.com
+
+# 查看配置信息
+$ git config --list
+# 查看特定
+$ git config user.name
+
+</code></pre>
+<h1><a class="header" href="#上传本地项目到远程" id="上传本地项目到远程">上传本地项目到远程</a></h1>
+<p>首先需要在服务器上创建项目</p>
+<pre><code class="language-sh"># 创建裸仓库
+ssh user@host git init --bare /path/to/repo.git
+
+</code></pre>
+<p>接下来分几种情况</p>
+<ul>
+<li>本地什么都没有, 在本地克隆一个 git 仓库</li>
+</ul>
+<pre><code class="language-bash">git clone git@116.62.50.152:PAI_Portal/pai-portal-user-service.git
+cd pai-portal-user-service
+touch README.md
+git add README.md
+git commit -m &quot;add README&quot;
+git push -u origin master
+</code></pre>
+<ul>
+<li>本地已经存在项目, 项目还未纳入 git</li>
+</ul>
+<pre><code class="language-bash">cd existing_folder
+git init
+git remote add origin git@116.62.50.152:PAI_Portal/pai-portal-user-service.git
+git add . # 将当前文件纳入缓存区
+git commit -m &quot;Initial commit&quot;
+git branch --set-upstream-to=origin/master master # 绑定远程分支到本地分支
+git push -u origin master
+</code></pre>
+<ul>
+<li>已经纳入 git 的项目</li>
+</ul>
+<pre><code class="language-bash">cd existing_repo
+git remote add origin git@116.62.50.152:PAI_Portal/pai-portal-user-service.git
+git push -u origin --all # `-u`表示upstream, 当有多个远程仓库是需要指定;同时会有这个效果: 以后可以直接使用git push, git pull 而不必加哪个server
+git push -u origin --tags
+</code></pre>
+<h1><a class="header" href="#常用命令" id="常用命令">常用命令</a></h1>
+<pre><code class="language-sh"># add 同时 commit
+git commit -a -m &quot;xxxxx&quot;
+# 将改动提交到上次的 commit 中
+# 还能顺便修改上次 commit 的提交信息(可选)
+# 如果缓存区什么修改也没有, 就只修改上次 commit 的提交信息
+# 注意:这条命令是生成新的快照, 所以 commit code 也会变化; 不要用在已经推送到 remote 中的内容上
+git commit [-m &quot;xxxxx&quot;] --amend
+# 如果不希望修改提交信息, 不希望弹出 vim 让你修改, 则:
+git commit --amend --no-edit
+
+# 提交信息换行
+# - 单引号
+git commit -m '
+first line
+second line
+'
+# - 多个 -m 项
+git commit -m &quot;line one&quot; -m &quot;line two&quot;
+# - 单引号前添加$
+git commit -m $'first line\nsecond line'
+
+
+
+
+ # 查看 指定的 commit 信息, 如 id 号, 提交注释, 作者, parent commit (比如merge形成的commit 就有两个 parent)
+git show &lt;commit id&gt;
+
+
+# [ 提交历史 ] 
+
+# 空格键滚动, q 退出
+# 可以定义多种输出方式:
+
+-   `git log -n &lt;n&gt;` --显示 n 个提交;
+-   `git log --oneline` --每个提交压缩到 1 行 (常用)
+-   `git log --stat` --那些文件改动, 增删行数
+-   `git log -p` -- 全部信息, 最详细
+-   `git log --author=&quot;&lt;pattern&gt;&quot;` --特定作者的提交, 支持 regex
+-   `git log --grep=&quot;&lt;pattern&gt;&quot;` --特定的提交信息, 支持 regex
+-   `git log &lt;since&gt;..&lt;until&gt;` --特定起止标志,两个参数可以是提交 ID、分支名、HEAD 或是任何一种引用
+-   `git log &lt;file&gt;` --特定文件的提交
+-   `git log --graph --decorate --oneline` ----graph 标记会绘制一幅字符组成的图形，左边是提交，右边是提交信息。--decorate 标记会加上提交所在的分支名称和标签。--oneline 标记将提交信息显示在同一行，一目了然。
+
+</code></pre>
+<h1><a class="header" href="#时光机" id="时光机">时光机</a></h1>
+<p>关于 reset, checkout, revert</p>
+<h2><a class="header" href="#git-checkout" id="git-checkout">git checkout</a></h2>
+<p>可以切换分支 (见 <a href="#%E5%88%86%E6%94%AF">分支</a>)</p>
+<p>可以从历史 commit  中 检出 内容到 work dir. 使用: <code>git checkout [commit] [file]</code></p>
+<ul>
+<li>
+<p><code>git checkout &lt;commit&gt; &lt;file&gt;</code> 从历史 commit 检出文件 , 检出的文件被复制到 work dir, 且添加到 index</p>
+<p>类似 <code>git reset --soft &lt;commit&gt; &lt;file&gt;</code> , 区别是 git checkout 对 历史 commit 没有影响. 可以通过 <code>git checkout &lt;branch/newest_commit&gt; &lt;file&gt;</code> 又回到该文件最新版本</p>
+<p>如:</p>
+<p><code>git checkout HEAD~ foo.c</code> 将 foo.c 的上个版本复制到 work dir, 并且 添加到 index</p>
+</li>
+<li>
+<p><code>git checkout &lt;commit&gt;</code> 检出提交 , work dir 中的所有文件都被替换为历史版本. </p>
+<p>此时处于&quot;deteched HEAD&quot;/&quot;head 分离状态&quot;, 处于一个匿名分支上. 任何的修改提交在回到 newest commit 之后都会被丢弃.相当于 checkout 出来的内容都是只读的 (因为所有的修改在切回去后都会丢失嘛), </p>
+<p>如果查看之后,确实希望回滚, 可以使用 <code>git revert</code> 或 <code>git reset</code> 来回滚任何不想要的更改; </p>
+<p>如果希望退出&quot;deteched head&quot;状态, <code>git checkout &lt;branch_name/newest_commit&gt;</code>即可</p>
+<p>如果在&quot;deteched head&quot;状态下还是想做修改, 在回到 head 时希望保留更改, 可以在该状态下创建分支 <code>git checkout -b name</code>, 再在该分支上进行修改提交.(相当于为这个匿名分支命名了)</p>
+</li>
+<li>
+<p><code>git checkout [--] [file]</code> 从 index 中复制某个文件到 work dir, 相当于丢弃 work dir 中的脏数据</p>
+<p><code>git checkout .</code> 表示丢弃全部工作区文件修改;</p>
+</li>
+</ul>
+<h2><a class="header" href="#git-reset" id="git-reset">git reset</a></h2>
+<p>将 head 移动到之前的某个 commit, 即回滚到指定 commit, 隔在中间的 commit 都会丢失 , 用于回退本地分支上的 commit, </p>
+<p>可以和 git revert 对比, git revert 会保留区间内的 commit 然后将改动生成新的 commit;</p>
+<p>基本用法 <code>git reset [id] [file]</code>, <code>id 默认 head</code>, <code>file 默认 all file (不写or用点号代替)</code></p>
+<p>回退前，查看从近到远的提交日志及版本号：<code>git log</code>，如果输出日志太多，可加参数<code>--pretty=oneline</code>or <code>--oneline</code>简化输出结果；</p>
+<p>可以带 三个 配置项:</p>
+<ul>
+<li>
+<p><code>git reset --soft [id] [file]</code> - 回退到某个版本，回退的内容不会丢失, 保存在 index, 对 work dir 没有影响. </p>
+<p>若想恢复回退内容, 直接 commit 即可. 可以用于 push 前合并 commit 信息, 或者修改上一个版本的 commit 信息</p>
+<p>若想继续回退内容到 work dir, <code>git reset [file]</code>. </p>
+<p>如:</p>
+<p>git reset --soft head^ 回退到上个版本, 回退内容保存在 index</p>
+<p>id 默认 head, 若省略 即 git reset --soft: 没有任何效果, 无论 work dir , index 区域是否脏的</p>
+</li>
+<li>
+<p><code>git reset [--mixed] [id] [file]</code> -  回退到某个版本, 回退内容不会丢失, 也不会保存在index, 而是保存在 work dir. </p>
+<p>若想恢复回退内容, add, commit 即可. 可用于 push 前 细化, 合并 commit 信息</p>
+<p>若想完全删除回退内容, <code>git checkout .</code> 删除全部文件上的更改 or <code>git checkout &lt;file&gt;</code>删除指定文件上的更改</p>
+<p>id 默认 head, 若省略 即 git reset : 清空 index 区域, 清空的内容变为 work dir 中的脏数据</p>
+<p>--mixed  默认选项</p>
+</li>
+<li>
+<p><code>git reset --hard &lt;id&gt;</code> - 回退到某个版本, 回退内容彻底丢失, 不会保留在 index, work dir </p>
+<p>如:</p>
+<p>git reset --hard head^ 彻底回退到上一个版本 (上上一个版本就是HEAD^^, 上100个版本是 HEAD~100)</p>
+<p>如果还想恢复已经删除的回退内容(重返未来), <code>git reflog</code> 查看命令历史, 使用 <code>git reset &lt;commit code&gt; --hard</code> reset 回去, 最近的活动用 HEAD@{0} 标记在上方显示; reflog 引用日志提供的安全网只对提交到本地仓库的更改有效，而且只有移动操作会被记录</p>
+<p>id 默认 head, 若省略 (即 git reset --hard): 会清空 work dir, index 区域, 如果这两个区域本来就是干净的, 则不产生任何效果</p>
+</li>
+</ul>
+<h2><a class="header" href="#git-revert" id="git-revert">git revert</a></h2>
+<p>https://segmentfault.com/a/1190000012897697</p>
+<p>https://www.jianshu.com/p/5e7ee87241e4</p>
+<p><code>git revert &lt;commit&gt;</code>: 撤销指定 commit, 作用和 git reset 类似. 区别是 git revert 会删除间隔内的 commit 内容, 然后生成新的提交;</p>
+<p>相比git reset，它是生成新的 commit。因此，git revert可以用来回退已经推送到远程的分支上的内容. </p>
+<p>需要分两种情况，因为有两种 commit: </p>
+<ul>
+<li>
+<p>普通 commit</p>
+<p>使用 <code>git revert &lt;commit id&gt;</code> 即可, 生成一个新的 commit，将指定的 commit 内容从当前分支上撤除。</p>
+</li>
+<li>
+<p>merge commit (通过 merge 形成的 commit, 有两个 parent commit)</p>
+<p>使用 <code>git revert -m &lt;1 or 2&gt; &lt;id&gt;</code> , -m 标识出主分支, 取值 1 or 2, 也就是 <code>git show &lt;id&gt;</code> Merge 行里面列出来的第一个还是第二个。</p>
+<p>来自主分支上的内容将被保留, 来自另外一个分支的内容将被撤销</p>
+</li>
+</ul>
+<p>看看示例:</p>
+<ul>
+<li>
+<p><code>git convert</code> 可以查看帮助信息</p>
+</li>
+<li>
+<p><code>git revert &lt;id&gt;</code> 撤销指定 commit (仅仅适用于 普通 commit 的 撤销)</p>
+<p>如:</p>
+<p><code>git revert head</code> 撤销当前 commit, 即回退到上个版本</p>
+<p><code>git revert HEAD~2</code> , 找到上上版本, 然后创建一个新的提交来撤销间隔区间内的修改</p>
+<p>若出现错误, 则修正冲突, 然后 git add, git revert --continue, 如果解决不了冲突希望放弃, git revert --abort</p>
+</li>
+<li>
+<p><code>git commit -n &lt;id start&gt;..&lt;id end&gt;</code> 撤销一串连续的提交, 这是一个前开后闭区间，即不包括 commit start，但包括 commit end</p>
+<p>revert 命令会对每个撤销的 commit 进行一次提交，--no-commit 或者 -n 后可以最后一起手动提交。</p>
+</li>
+</ul>
+<h2><a class="header" href="#git-rebase" id="git-rebase">git rebase</a></h2>
+<ul>
+<li>
+<p><code>git rebase &lt;branch&gt;</code> 移动分支, 将当前分支 rebase 到 指定分支的最前面</p>
+<p>这里 branch 其实可以是任何类型的提交引用（ID、分支名、标签，或是 HEAD 的相对引用）</p>
+<p><code>git rebase -i &lt;branch&gt;</code> 交互式地进行 rebase, 一般是在 push 到远程之前对 commit 进行一次统一大清理</p>
+<p>执行这条交互式命令后, 会进入 vim, 是几个 commit 的 SHA id 值, 从上到下是越来越新的 commit. 如果没有比 指定的 commit 新的提交的话则出现 noop</p>
+</li>
+<li>
+<p><code>git rebase &lt;commit id&gt;</code> 合并多个 commit. 当前提交点--&gt; 指定提交点, 比指定 commit id 新的 commit 都有被合并 or 修改的可能</p>
+<p>如果 rebase 出现冲突退出来, rebase 会被锁定, 再次执行时, 提示有三个选项:</p>
+<ul>
+<li><code>git rebase --abort</code>来忽略之前的 rebase 尝试,并恢复 HEAD 到开始的分支.</li>
+<li><code>git rebase --continue</code>就继续上次修改, 一般是 rebase 中间处理 merge 冲突后 git add 后 使用.</li>
+<li><code>git rebase --skip</code>是重新开始 rebase 并跳过现在所进行的处理.</li>
+</ul>
+</li>
+</ul>
+<p>进入vim 中, 初始状态所有出现的 commit id 前面都是 pick. 这个 pick 表示对该 commit 进行的操作, 有:</p>
+<ul>
+<li><font style="color:yellow;">pick</font> pick, 就是说保留该 commit, 也可以用缩写 p, 必须要有一个 commit 是 pick. (黄色)</li>
+<li><font color="green">squash</font> squash, 使用该 commit 但合并到前一个老的 commit 去(常用). 可以用缩写 s 代替 (绿色).</li>
+<li><font color="pink">reword</font> reword, 和 pick 类似, 但可以修改 commit 时的提交信息(中间会弹出来让你修改 commit).可以用缩写 r 代替 (紫红色).</li>
+<li>edit, 使用 commit, 但停下来进行修改, 可能用于 merge 冲突.可以用缩写 e 代替.</li>
+<li>fixup, 和 squash 类似, 但会舍弃 commit 信息. 可以用缩写 f (红色)</li>
+<li>exec, 执行 shell 命令.可以用缩写 x</li>
+</ul>
+<p>设定完毕,rebase 开始, 接下来会陆续弹出几个 vi 编辑框, 设置 commit 信息</p>
+<h2><a class="header" href="#典型场景的综合用法" id="典型场景的综合用法">典型场景的综合用法</a></h2>
+<p>【撤销修改--还未 git add 暂存区】</p>
+<ul>
+<li><code>git checkout -- &lt;file&gt;</code> or <code>git checkout &lt;file&gt;</code> : 让这个文件回到最近一次 git commit 或 git add 时的状态，修改直接撤销了; * * <code>git checkout .</code> : 丢弃所有文件的修改</li>
+</ul>
+<p>【撤销修改--已经 add 暂存区】</p>
+<ul>
+<li><code>git reset [HEAD] &lt;file&gt;</code> 把指定文件“修改”重新放回工作区(如果没有给出 commit code 如 HEAD, 默认使用 HEAD)⇒ <code>git checkout -- &lt;file&gt;</code>撤销修改
+这两个步骤&lt;=&gt; <code>git reset --hard [HEAD]</code> 取消缓存,而且要丢弃工作目录中修改</li>
+</ul>
+<p>[撤销 commit 历史]</p>
+<ul>
+<li><code>git log --oneline</code> 查看需要 reset 到哪个 commit code, 然后<code>git reset &lt;commit code&gt; --soft</code>, 此时修改会被撤销到 index 区, 然后提交 <code>git commit -m &quot;xxx&quot;</code>或者进行其他操作</li>
+</ul>
+<p>【回退到上一个版本--已经 commit 了】
+有两个方法, 推荐 git revert</p>
+<h1><a class="header" href="#远程仓库" id="远程仓库">远程仓库</a></h1>
+<p>[ 查看和远程仓库的连接 ]
+<code>git remote [-v]</code> -v 表示同时显示 URL 连接</p>
+<p>【本地 Git 仓库<strong>关联远程仓库</strong>】
+<code>git remote add origin &lt;remote address&gt;</code> origin 以后就是远程库名</p>
+<p>[替换远程的地址]: <code>git remote set-url origin https://mirrors.ustc.edu.cn/brew.git</code></p>
+<p>[ <strong>取消关联远程仓库</strong> ]
+<code>git remote rm/remove &lt;name&gt;</code></p>
+<p>[ 关联仓库的<strong>更名</strong> ]
+<code>git remote rename &lt;old-name&gt; &lt;new-name&gt;</code></p>
+<p>【克隆远程仓库】 可以指定本地仓库名
+<code>git clone &lt;remote address&gt; [custom_proj_name]</code></p>
+<p>【克隆远程指定分支 】
+<code>git clone -b 分支名称 remote地址</code></p>
+<p>【只克隆最近一次 commit】
+<code>git clone --depth=1 git://someserver/somerepo</code></p>
+<p>克隆到指定目录
+<code>git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions</code></p>
+<p>【首次上传项目到远程】<br />
+<code>git init</code>初始化成 Git 仓库⇒
+<code>git checkout -b branch_name</code>创建本地分支⇒
+<code>git add .</code>add 所有文件⇒
+<code>git commit -m &quot;xxxx&quot;</code>本地提交⇒
+<code>git remote add origin git_address</code>关联远程库⇒
+<code>git push -u origin branch_name</code>推送，如果 remote 不为空，推送前要拉取：<code>git pull --rebase origin branch_name</code>
+说明: <code>-u origin</code> 表示将当前分支添加为远程跟踪的分支, 之后可以直接使用 <code>git pull</code> 来推送</p>
+<h1><a class="header" href="#分支" id="分支">分支</a></h1>
+<ul>
+<li>
+<p>查看有哪些分支分支</p>
+<p><code>git branch [-a]</code> 查看分支/所有分支</p>
+</li>
+<li>
+<p>切换分支 <code>git checkout branch_name</code> </p>
+<p>【切换分支, 如果没有就创建】: <code>git checkout -b &lt;new branch name&gt; [base branch name]</code> </p>
+<p>&lt;=&gt; 先创建分支 <code>git branch &lt;new branch_name&gt; [base branch name]</code> =&gt; <code>git checkout branch_name</code> 切换分支</p>
+</li>
+<li>
+<p>创建分支</p>
+<ul>
+<li>
+<p>创建远程分支 : <code>git push origin &lt;local_branch&gt;:&lt;remote_branch&gt;</code> or <code>git push --set-upstream origin &lt;remote_branch&gt;</code>  即推送当前分支到远程分支, 远程分支可以不存在</p>
+</li>
+<li>
+<p>【创建本地分支】<code>git checkout -b dev </code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>重命名当前分支 </p>
+<p><code>git branch -m &lt;branch new name&gt;</code></p>
+</li>
+<li>
+<p>删除分支</p>
+<ul>
+<li>
+<p>删除本地分支    <code>git branch -d branch_name</code>, 如果是 -D 则是强制删除分支,不管改动是否合并</p>
+</li>
+<li>
+<p>删除远程分支 </p>
+<p>方式 1: 推送一个空分支到远程分支 &lt;=&gt; 删除远程分支 <code>git push origin :&lt;remote_branch&gt;</code></p>
+<p>方式 2: <code>git push origin --delete dbg_lichen_star</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>和远程分支建立联系</p>
+<p>创建同时建立联系 <code>git checkout -b dev origin/dev</code></p>
+<p>建立联系<code>git branch --set-upstream-to=origin/&lt;remote_branch&gt; &lt;local_branch&gt;</code></p>
+<p>【已有分支和远程分支建立联系】<del><code>git branch --set-upstream &lt;localBranch&gt; origin/&lt;remoteBranch&gt;</code></del>(已经废弃)</p>
+</li>
+<li>
+<p>推送到远程 push</p>
+<p>push 推送 同时建立联系 <code>git push --set-upstream origin origin_master</code> (等价 <code>git push -u origin local_branch_name</code>) or <code>git push origin &lt;remoteBranchName&gt;</code></p>
+<p><code>git push</code> 推送当前分支</p>
+<p>[ 推送所有本地分支到远程 ] <code>git push origin --all</code></p>
+<p>[ 推送所有标签到远程 ] <code>git push &lt;remote&gt; --tags</code></p>
+<p>【本地分支推送到远程对应分支】: <code>git pull</code>先拉取 =&gt; 解决冲突 =&gt; <code>git push -u origin local_branch_name</code> -u 表示关联那个远程库，后面推送可以简化为 <code>git push origin local_branch_name</code>，</p>
+</li>
+<li>
+<p>【拉取远程分支】</p>
+<ul>
+<li>
+<p>方法1: <code>git pull [remote name] [remoteBranch]</code> 如果报错，可能是没有建立分支关联，可以：<code>git branch --set-upstream dev origin/dev</code>. 效果等同先 fetch, 后 merge</p>
+</li>
+<li>
+<p>方法2: <code>git pull --rebase [remote name] [remoteBranch]</code> &lt;=&gt; 先 fetch, 后将当前分支 rebase 到 fetch 分支(更新的代码总是在最前), 将本地修改放在其他人已经提交的修改之后</p>
+</li>
+<li>
+<p>方法3:</p>
+<ul>
+<li>第一步: <code>git fetch &lt;remote&gt; [branch]</code> --- 拉取远程指定分支, 在本地通过<code>git branch -r</code>展示, 通常表示有 remotes 前缀. </li>
+</ul>
+<pre><code>  然后查看 fetch 到本地的远程分支: `git checkout &lt;remotes/origin/xxx&gt;`, `git log`来查看这些远程分支,如果接受别人在远程分支所做的更改; 如果直接`git checkout &lt;xxx&gt;`,(其中 xxx 是&lt; remotes/origin/xxx&gt;中的 xxx)那么会在本地创建并切换到 xxx 分支
+</code></pre>
+<ul>
+<li>第二步: <code>git merge &lt;remotes/origin/xxx&gt;</code> 合并</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>合并分支</p>
+<ul>
+<li>
+<p>方法1: <code>git merge branch_name</code> 合并指定分支到当前分支,采用 fast foward 方式，删除分支后会丢掉分支信息</p>
+<p>会产生一个三路合并（3-way merge）和一个合并提交, 不推荐</p>
+<p>[<strong>推荐</strong>]的是：<code>git merge --no-ff -m &quot;commit_info&quot; branch_name</code>,--no-ff 表示禁用快速合并方式，merge 后会生成一个 commit，-m 表示后面紧跟着提交信息</p>
+</li>
+<li>
+<p>方法2: <code>git rebase &lt;target_branch&gt;</code> [ rebase 当前分支到目标分支最前端, 保持线性提交历史 ]</p>
+<p>第一步: 在需要合并的分支上<code>git rebase &lt;base&gt;</code> ---将当前分支 rebase 到 &lt; base &gt;，这里可以是任何类型的提交引用（ID、分支名、标签，或是 HEAD 的相对引用）</p>
+<p>第二步: 切换到主干分支, 正常 merge </p>
+</li>
+</ul>
+</li>
+<li>
+<p>【合并冲突分支】: <code>git merge branch_name</code>提示有冲突 =&gt; <code>git status</code>查看冲突 =&gt; 修改后再 add，commit</p>
+</li>
+<li>
+<p>【查看分支合并情况】: <code>git log --graph --pretty=oneline --abbrev-commit</code></p>
+<p>git log --oneline</p>
+<p>分支合并情况-详细信息:  <code>git log --graph --decorate --oneline --simplify-by-decoration --all</code></p>
+</li>
+<li>
+<p>【比较两个分支，输出到 text 文件】<code>git diff &lt;branchName1&gt; &lt;branchName2&gt; &gt;&gt; d:/xxx.text</code></p>
+</li>
+<li>
+<p>合并其他分支的部分内容</p>
+<p><code>git cherry-pick &lt;commit_id&gt;</code></p>
+<p><code>git cherry-pick (start_id^..end_id)</code> ^表示包含头部, 没有 ^ 则不包含头部, 包含尾部</p>
+</li>
+</ul>
+<h1><a class="header" href="#git-diff-打补丁-patch" id="git-diff-打补丁-patch">git diff 打补丁 patch</a></h1>
+<pre><code class="language-sh"># 比较工作区与暂存区
+git diff [file...] # 不加参数即默认比较工作区与暂存区所有文件
+
+# 比较暂存区与最新本地版本库（本地库中最近一次commit的内容）
+git diff --cached  [&lt;path&gt;...] 
+
+#比较工作区与最新本地版本库 (HEAD 就表示最新的本地版本库)
+# 如果HEAD指向的是master分支，那么HEAD还可以换成master
+git diff HEAD [&lt;path&gt;...]
+
+#比较工作区与指定commit-id的差异
+git diff commit-id  [&lt;path&gt;...] 
+#比较暂存区与指定commit-id的差异
+git diff --cached [&lt;commit-id&gt;] [&lt;path&gt;...]
+#比较两个分支/commit，输出到 text 文件
+git diff &lt;branchName1&gt; &lt;branchName2&gt; &gt;&gt; d:/xxx.text
+
+
+
+# 生成补丁 (工作区相对于 暂存区的修改)
+git diff &gt; patch_name 
+# 先检验一下补丁能否应用
+git apply --check patch_name # 如果没有任何输出，那么表示可以顺利接受这个补丁
+# 打补丁
+git apply patch_name
+
+git apply --reject patch # 将能打的补丁先打上，有冲突的会生成.rej文件，此时可以找到这些文件进行手动打补丁
+
+git diff --cached &gt; patch //是将我们暂存区与版本库的差异做成补丁
+git diff [--]HEAD &gt; patch //是将工作区与版本库的差异做成补丁
+git diff [file...] &gt; patch # 工作区比较暂存区生成补丁
+
+git diff Testfile &gt; patch//将单个文件做成一个单独的补丁 (工作区 and 暂存区)
+</code></pre>
+<h1><a class="header" href="#暂存-恢复工作区" id="暂存-恢复工作区">暂存-恢复工作区</a></h1>
+<p>【bug 分支-储藏工作区】<br />
+修复 bug 需新建一条分支如 issue-001，修复完后合并<br />
+<code>git stash</code>将当前工作区内容储存，使工作区看起来是干净的，用于当前工作未完成但是接到新任务，如修复 bug<br />
+【bug 分支-回复工作区】<br />
+<code>git stash list</code>查看储藏列表⇒<code>git stash apply [stash_id]</code>回复全部 stash 内容或指定 ID 的内容⇒<code>git stash drop</code>删除 stash；简化的命令是：<code>git stash pop</code>回复同时删除 stash</p>
+<p>【feature 分支-开发新功能】<br />
+添加一个新功能，新建一个 feature 分支，完成后，合并，最后，删除该 feature 分支<br />
+现在如果新功能作废，删除没有合并的分支需要使用强制删除<code>git branch -D branch_name</code></p>
+<h1><a class="header" href="#标签" id="标签">标签</a></h1>
+<p>类似 branch, 但是不可移动, 就好像有名字的 commit</p>
+<pre><code class="language-sh"># 创建标签
+git tag -a v1.0.0 -m &quot;内容：v1.0.0&quot;
+# 标签默认打在最新的 commit 上 
+git tag &lt;tag_name&gt; [commit_id]
+
+# show all tags
+git tag
+# 查看某个版本系列的tag
+git tag -l 'v1.0.*'
+# 查看指定标签的详情，可以看到你commit的内容
+git show v0.0.6
+
+# 推送标签
+git push origin v1.0.0
+# 推送全部标签
+git push origin --tags
+
+# 删除
+# 先删除本地
+git tag -d v1.0.0
+# 再删除远程的
+git push origin :refs/tags/v1.0.0
+
+
+</code></pre>
+<h1><a class="header" href="#gitignore-文件" id="gitignore-文件">.gitignore 文件</a></h1>
+<p>https://www.gitignore.io</p>
+<ul>
+<li>
+<p><code>/aaa/</code> 过滤文件夹所有内容(以斜杠“/”开头表示根目录下的目录 or 文件)</p>
+</li>
+<li>
+<p><code>/aaa/*</code>: 同上</p>
+</li>
+<li>
+<p><code>/*/.settings/</code> 忽略 任何目录(只有一级)下的 xxx</p>
+</li>
+<li>
+<p><code>fd1/*</code>: 忽略目录目录名为 fd1 下的全部内容; 不管是根目录下的 /fd1/ 目录，还是某个子目录 /child/fd1/ 目录，都会被忽略)</p>
+</li>
+<li>
+<p><code>*.zip</code> 过滤所有.zip 文件</p>
+<p>(以星号“*”通配多个字符, 以问号“?”通配单个字符, 以方括号“[]”包含单个字符的匹配列表)</p>
+</li>
+<li>
+<p><code>/mtk/do.c</code> 过滤某个具体文件</p>
+</li>
+<li>
+<p><code>!*.zip</code> 指定跟踪所有.zip 文件(以叹号“!”表示不忽略(跟踪)匹配到的文件或目录)</p>
+</li>
+<li>
+<p><code>!/mtk/one.txt</code> 指定跟踪某个具体文件</p>
+</li>
+<li>
+<p><code>!**/src/main/**</code> 指定跟踪任何目录下的 src/main/</p>
+</li>
+</ul>
+<p>git 对于 .ignore 配置文件是按行从上到下进行规则匹配的，意味着如果前面的规则匹配的范围更大，则后面的规则将不会生效</p>
+<p>如果文件已经被加入了 git 版本库, 则无法忽略. 此时需要使用命令 <code>git rm --cached &lt;file&gt;</code> 在 History 中删除， 这时【删除操作】会显示在 Index 中, 然后 <code>git commit</code> 将删除操作归档到 History 中， 则 指定的 file 就完全脱离 version control 了</p>
+<ul>
+<li>
+<p><code>git rm --cached readme1.txt</code> 删除 readme1.txt 在版本库中，并保留在 work dir 和 index</p>
+</li>
+<li>
+<p><code>git rm --f readme1.txt</code> 删除 readme1.txt 的跟踪，并且删除本地文件</p>
+</li>
+<li>
+<p><code>git rm -r --cached .</code>　　对所有文件取消跟踪, 保留在本地 和 index 中. -r 表示 递归删除文件夹</p>
+</li>
+<li>
+<p><code>git rm -r --f .</code> 　对所有文件取消跟踪, 删除本地文件</p>
+</li>
+</ul>
+<p>对于取消跟踪的所有文件/文件夹, 使用 <code>git clean -df [xxx file]</code> 删除 (-d 表示文件夹, -f 表示强制)</p>
+<h1><a class="header" href="#lf-和-crlf" id="lf-和-crlf">LF 和 CRLF</a></h1>
+<p>https://segmentfault.com/q/1010000011799577
+https://www.cnblogs.com/sdgf/p/6237847.html</p>
+<pre><code class="language-sh">#提交时转换为LF，检出时不转换, (input 是对于 git repo 来说的)
+# 默认为 true (commit就转为 lf, 检出就转为 crlf)
+git config --global core.autocrlf input
+#拒绝提交包含混合换行符的文件, 默认 false
+git config --global core.safecrlf true
+
+</code></pre>
+<p>IDEA 的设置 File -&gt; Settings -&gt; Editor -&gt; Code Style Line separator (for new lines) ，选择：Unix and OS X (\n)</p>
+<p>idea 可以批量转换 crlf: File -&gt; line separators -&gt; ...</p>
+<h1><a class="header" href="#git-hooks" id="git-hooks">git hooks</a></h1>
+<p>husky </p>
+<p>https://githooks.com/</p>
+<p>TODO</p>
+<h1><a class="header" href="#git-subtree-子仓库" id="git-subtree-子仓库">git subtree 子仓库</a></h1>
+<p>https://segmentfault.com/a/1190000012002151</p>
+<pre><code>git subtree add   --prefix=&lt;prefix&gt; &lt;commit&gt;
+git subtree add   --prefix=&lt;prefix&gt; &lt;repository&gt; &lt;ref&gt;
+git subtree pull  --prefix=&lt;prefix&gt; &lt;repository&gt; &lt;ref&gt;
+git subtree push  --prefix=&lt;prefix&gt; &lt;repository&gt; &lt;ref&gt;
+git subtree merge --prefix=&lt;prefix&gt; &lt;commit&gt;
+git subtree split --prefix=&lt;prefix&gt; [OPTIONS] [&lt;commit&gt;]
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="rust-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="linux-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="rust-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="linux-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

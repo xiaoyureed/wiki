@@ -1,0 +1,2950 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>cpp - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html" class="active"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: CPP and C
+tags: cpp
+categories: language
+date: 2020-06-15 21:57:31</h2>
+<p>https://github.com/jobbole/awesome-c-cn 资源集合</p>
+<p>https://github.com/changkun/modern-cpp-tutorial</p>
+<p>https://www.learncpp.com/</p>
+<p>https://zh.cppreference.com/w/cpp 参考文档</p>
+<p>《Essential C++ 中文版》
+《C++ Primer Plus 第6版中文版》
+《C++ Primer中文版（第5版）》</p>
+<p><a href="http://www.sunistudio.com/cppfaq/">cpp 常见问题</a></p>
+<p><a href="https://www.thefreecountry.com/sourcecode/cpp.shtml">cpp 类库框架搜索</a></p>
+<p><a href="http://www.hal9k.com/cug/">C 和 C++ 的用户组</a>, 提供了免费的涵盖各种编程领域 C++ 项目的源代码，包括 AI、动画、编译器、数据库、调试、加密、游戏、图形、GUI、语言工具、系统编程</p>
+<p><a href="https://www.bookstack.cn/books/modern-cpp-tutorial-zh">现代 cpp</a></p>
+<p><a href="https://www.bookstack.cn/books/algorithm-essentials-cpp">算法珠玑 cpp 版本</a>, <a href="https://www.bookstack.cn/read/algorithm-essentials-java/3.md">java 版本</a>, <a href="https://www.bookstack.cn/books/fucking-algorithm">算法总结</a></p>
+<p>https://github.com/luohaha/Chinese-uvbook libuv 教程</p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%99%A8">编译器</a>
+<ul>
+<li><a href="#gcc">GCC</a></li>
+<li><a href="#clang">Clang</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5%E5%BA%93-%E5%8A%A8%E6%80%81%E7%BC%96%E8%AF%91-%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91">链接库 动态编译 静态编译</a></li>
+</ul>
+</li>
+<li><a href="#make-%E5%92%8C-makefile">make 和 makefile</a>
+<ul>
+<li><a href="#make-makefile">make Makefile</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B">存储类型</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E5%88%92%E5%88%86">内存划分</a>
+<ul>
+<li><a href="#c-%E4%B8%AD%E5%88%92%E5%88%86">c 中划分</a></li>
+<li><a href="#cpp-%E4%B8%AD%E7%9A%84%E5%88%92%E5%88%86">cpp 中的划分</a></li>
+</ul>
+</li>
+<li><a href="#c-%E8%AF%AD%E6%B3%95">c 语法</a>
+<ul>
+<li><a href="#%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E6%8C%87%E4%BB%A4">预处理器指令</a></li>
+<li><a href="#%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA">标准输入输出</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F-%E5%B8%B8%E9%87%8F-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">变量-常量-数据类型</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B">变量存储类型</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0">函数</a></li>
+<li><a href="#%E6%8C%87%E9%92%88">指针</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99-io">文件读写-io</a></li>
+<li><a href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86">错误处理</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%87%BD%E6%95%B0">内存管理函数</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0">使用命令行参数</a></li>
+<li><a href="#%E5%B7%A5%E7%A8%8B%E7%BB%93%E6%9E%84">工程结构</a></li>
+</ul>
+</li>
+<li><a href="#cpp-%E8%AF%AD%E6%B3%95">cpp 语法</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97-cpp">数据类型-数学计算-cpp</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B-cpp">存储类型-cpp</a></li>
+<li><a href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6">流程控制</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0-cpp">函数-cpp</a></li>
+<li><a href="#%E6%8C%87%E9%92%88-cpp">指针-cpp</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8">引用</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98">动态分配内存</a></li>
+<li><a href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4">命名空间</a></li>
+<li><a href="#%E6%A8%A1%E6%9D%BF">模板</a></li>
+<li><a href="#%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93-stl">标准模板库 stl</a></li>
+<li><a href="#%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4">日期时间</a></li>
+<li><a href="#io-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA">io-输入输出</a></li>
+<li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">面向对象</a>
+<ul>
+<li><a href="#%E7%B1%BB-%E5%AF%B9%E8%B1%A1">类-对象</a></li>
+<li><a href="#%E5%8F%8B%E5%85%83">友元</a></li>
+<li><a href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0">内联函数</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD">函数重载-运算符重载</a></li>
+<li><a href="#%E7%BB%A7%E6%89%BF">继承</a></li>
+<li><a href="#%E5%A4%9A%E6%80%81-%E8%99%9A%E5%87%BD%E6%95%B0">多态-虚函数</a></li>
+</ul>
+</li>
+<li><a href="#io-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA-cpp">io-输入输出-cpp</a></li>
+<li><a href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-cpp">异常处理-cpp</a></li>
+<li><a href="#%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86">信号处理</a></li>
+<li><a href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B">多线程</a></li>
+<li><a href="#web-%E5%BC%80%E5%8F%91">web 开发</a></li>
+</ul>
+</li>
+<li><a href="#qt-%E6%A1%86%E6%9E%B6">qt 框架</a></li>
+<li><a href="#%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7">开发工具</a></li>
+<li><a href="#debug-%E5%B7%A5%E5%85%B7">debug 工具</a></li>
+<li><a href="#%E6%8B%BE%E9%81%97">拾遗</a>
+<ul>
+<li><a href="#%E6%8C%87%E9%92%88%E7%9A%84%E6%8C%87%E9%92%88%E5%92%8C%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB">指针的指针和二维数组的区别</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#编译器" id="编译器">编译器</a></h1>
+<h2><a class="header" href="#gcc" id="gcc">GCC</a></h2>
+<p>gcc 是来自GNU套装 的 C/C++ 编译器, 原本只能处理 C语言。GCC 很快地扩展，变得可处理 C++。之后也变得可处理 Fortran、Pascal、Objective-C、Java, 以及 Ada与其他语言</p>
+<p>GCC 5.1以下的所有版本，都默认对C语言使用C89, <del>建议 用 C99 标准</del>， 通过为 compiler 设置参数 “-std=c99” 开启 (当前最新的C语言标准为 C11 ，用这个)</p>
+<p>GCC将编译：<code>*C/*cpp</code>文件，分别作为C和C++。</p>
+<p>G++ 是 gnu 专门用来编译 cpp 的, 默认使用 c++ 语法标准 (Gcc 不会, 但是可以给 gcc 指定语法标准), 将编译：<code>*.c/*.cpp</code>文件，但它们都将被视为C++文件。</p>
+<p>GCC编译C文件的预定义宏较少。</p>
+<pre><code class="language-sh"># 查看版本
+gcc -v
+
+# build
+# 生成 a.out 文件
+gcc hello.c
+# 指定输出文件名， 编译多个文件
+gcc test1.c test2.c -o main
+
+# run
+./a.out
+./main
+
+
+# g++ 用法类似
+
+# g++ 有些系统默认是使用 C++98，我们可以指定使用 C++11 来编译 
+g++ -g -Wall -std=c++11 main.cpp
+
+
+-ansi	只支持 ANSI 标准的 C 语法。这一选项将禁止 GNU C 的某些特色， 例如 asm 或 typeof 关键词。
+-c	只编译并生成目标文件。
+-DMACRO	以字符串&quot;1&quot;定义 MACRO 宏。
+-DMACRO=DEFN	以字符串&quot;DEFN&quot;定义 MACRO 宏。
+-E	只运行 C 预编译器。
+-g	生成调试信息。GNU 调试器可利用该信息。
+-IDIRECTORY	指定额外的头文件搜索路径DIRECTORY。
+-LDIRECTORY	指定额外的函数库搜索路径DIRECTORY。
+-lLIBRARY	连接时搜索指定的函数库LIBRARY。
+-m486	针对 486 进行代码优化。
+-o	FILE 生成指定的输出文件。用在生成可执行文件时。
+-O0	不进行优化处理。
+-O	或 -O1 优化生成代码。
+-O2	进一步优化。
+-O3	比 -O2 更进一步优化，包括 inline 函数。
+-shared	生成共享目标文件。通常用在建立共享库时。
+-static	禁止使用共享连接。
+-UMACRO	取消对 MACRO 宏的定义。
+-w	不生成任何警告信息。
+-Wall	生成所有警告信息
+</code></pre>
+<h2><a class="header" href="#clang" id="clang">Clang</a></h2>
+<p>Clang 是一个 C++ 编写、基于 LLVM、发布于 LLVM BSD 许可证下的 C/C++/Objective C/Objective C++ 编译器，其目标（之一）就是超越 GCC</p>
+<p>mac 自带, clang比gcc编译速度更快一些，而且错误提示更人性化。</p>
+<p>分为 clang， clang++</p>
+<p>clang++ 默认按照 c++ 处理代码</p>
+<p>编译参数最好使用 “-std=c++2a”</p>
+<p>编译过程: ( 以编译单文件 test.cc)</p>
+<ol>
+<li>
+<p>预处理阶段 - 处理源码文件, 比如包含头文件到文件中，替换宏定义。生成预处理后的文件test.i <code>clang++ -E test.cc -o test.i</code></p>
+</li>
+<li>
+<p>编译阶段 - 将预处理文件翻译成汇编程序 test.s <code>clang++ -S test.i</code></p>
+</li>
+<li>
+<p>汇编阶段 - 将汇编程序翻译为 机器指令, 打包成 目标文件 test.o (windows 下为 test.obj, 即 object file ) <code>clang++ -c test.s</code></p>
+<p>进一步可生成静态链接库 xxx.a <code>ar -rcs xxx.a test.o</code> (一般将独立的文件如一个方法编译为静态链接库)</p>
+</li>
+<li>
+<p>链接阶段 - 将多个 object file 合并成可执行文件. 比如: 若调用了系统函数 cout, 链接器将该函数对应的目标文件 cout.o 合并到 test.o, 生成可执行二进制文件 </p>
+<p>(可以加入静态链接文件) <code>clang++ -o main main.cc [xxx.a]</code>; </p>
+<p>或者 在系统目录下查找指定静态链接库中的方法 add <code>clang++ -o main main.cc -l add</code>, </p>
+<p>或者不在系统目录查找, 自己指定目录 <code>clang++ -o main main.cc -L ./ -l add</code></p>
+</li>
+</ol>
+<p>编译多文件:</p>
+<p><code>clang++ -o main main.cc add.cc</code> 生成可执行文件, <code>/main</code> 执行</p>
+<pre><code class="language-cpp">// main.cc
+#include &lt;iostream&gt;
+
+extern int add(int, int);
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cin &gt;&gt; a &gt;&gt; b;
+    cout &lt;&lt; &quot;a + b = &quot; &lt;&lt; add(a, b) &lt;&lt; endl;
+}
+
+// add.cc
+int add(int a, int b) 
+{
+    return a + b;
+}
+
+</code></pre>
+<h2><a class="header" href="#链接库-动态编译-静态编译" id="链接库-动态编译-静态编译">链接库 动态编译 静态编译</a></h2>
+<ul>
+<li>
+<p>静态链接库: 即 obj 文件 (xxx.o) 的集合, 形如 xxx.a, <code>ar -rcs xxx.a xxx.o</code>, 在生成二进制文件可直接使用, 无需编译 (静态库的另一个优势是开发者可以提供库文件给使用人员不用开放源代码。理论上静态库比动态库速度快1%-5%.)</p>
+</li>
+<li>
+<p>动态链接库: 动态库是程序运行时加载的库, 是 目标文件的集合; 动态库的名称有别名(soname),真名(realname)和链接名(linker name)。</p>
+<p>别名由一个前缀lib，然后是库的名字加上.so构成。</p>
+<p>真名是动态库的真实名称，一般总是在别名的基础上加上一个小的版本号</p>
+<p>链接名，即程序链接时使用的库的名字。在动态链接库安装的时候总是复制库文件到某个目录，然后用软连接生成别名，在库文件进行更新的时候仅仅更新软连接即可</p>
+</li>
+</ul>
+<pre><code class="language-sh"># shared:生成动态链接库
+# -soname:生成动态链接库的别名libadd.so
+# 实际的动态链接库libstr.so.1
+clang++ -shared -Wl,-soname,libadd.so -o libstr.so.1 add.cc
+
+
+</code></pre>
+<ul>
+<li>
+<p>动态编译</p>
+</li>
+<li>
+<p>静态编译</p>
+</li>
+</ul>
+<h1><a class="header" href="#make-和-makefile" id="make-和-makefile">make 和 makefile</a></h1>
+<h2><a class="header" href="#make-makefile" id="make-makefile">make Makefile</a></h2>
+<p>构建工具, 类似 java 的 maven, 大型工程必备</p>
+<p>make 通过 调用 通过调用makefile文件中用户指定的命令来进行编译和链接</p>
+<p>cmake 和 make 类似, 用来和 clang 搭配使用</p>
+<pre><code class="language-sh"># 编译当前目录下的 c 文件, 生成 main 
+# 默认替我们做了这些事:
+# 1. 找到 main.c, 
+# 2. 执行 cc main.c -o main (cc 是就是编译器的别名, 在 mac 中就是 clang)
+make main
+
+# 编译时, 传递参数项
+CFLAGS=&quot;-Wall&quot; make ex1 # 显示警告, CFLAGS 也可以在环境变量中设置
+</code></pre>
+<h1><a class="header" href="#存储类型" id="存储类型">存储类型</a></h1>
+<table><thead><tr><th align="center">存储类</th><th align="center">时期</th><th align="center">作用域</th><th align="center">连接</th><th align="center">声明方式</th></tr></thead><tbody>
+<tr><td align="center">自动</td><td align="center">自动</td><td align="center">代码块</td><td align="center">空</td><td align="center">代码块内 or 加 auto</td></tr>
+<tr><td align="center">寄存器</td><td align="center">自动</td><td align="center">代码块</td><td align="center">空</td><td align="center">代码块内，使用关键字register</td></tr>
+<tr><td align="center">具有外部连接的静态</td><td align="center">静态</td><td align="center">文件</td><td align="center">外部</td><td align="center">所有函数之外</td></tr>
+<tr><td align="center">具有内部连接的静态</td><td align="center">静态</td><td align="center">文件</td><td align="center">内部</td><td align="center">所有函数之外，使用关键字static</td></tr>
+<tr><td align="center">空连接的静态</td><td align="center">静态</td><td align="center">代码块</td><td align="center">空</td><td align="center">代码块内，使用关键字static</td></tr>
+</tbody></table>
+<h1><a class="header" href="#内存划分" id="内存划分">内存划分</a></h1>
+<p>https://blog.csdn.net/derkampf/article/details/51000466</p>
+<h2><a class="header" href="#c-中划分" id="c-中划分">c 中划分</a></h2>
+<ol>
+<li>内存栈区： 存放局部变量名， 函数的形参/局部变量，由编译器自动分配释放；</li>
+<li>内存堆区： 存放new或者malloc出来的对象，需要手动分配释放；</li>
+<li>常量区： 常量字符串就是放在这里的。 程序结束后由系统释放；</li>
+<li>静态区/全局区： 用于存放全局变量或者静态局部变量, 程序结束后由系统释放；</li>
+<li>代码区：存放函数体的二进制代码</li>
+</ol>
+<p>使用free和delete销毁new和malloc申请的堆内存，而栈内存是动态释放。</p>
+<p>了减少内存碎片的产生，编译器可能会将堆区又分为block和heap区。block由一系列大小相等的内存块组成。分配内存时先在block中分配，如果block占满则从heap区中分配。同时block的大小和个数可以通过配置文件进行配置，使之达到一个合适的数量</p>
+<p>在静态全局区中， 初始化的全局变量和静态变量在一块区域（RW）， 未初始化的全局变量和未初始化的静态变量在相邻的另一块区域（ZI）</p>
+<h2><a class="header" href="#cpp-中的划分" id="cpp-中的划分">cpp 中的划分</a></h2>
+<ul>
+<li>
+<p>栈，就是那些由编译器在需要的时候分配，在不需要的时候自动清除的变量的存储区。里面的变量通常是局部变量、函数参数等。</p>
+</li>
+<li>
+<p>堆(C里面的概念)，就是那些由malloc分配的内存块 (用于动态分配的内存)，一般一个malloc就要对应一个free.</p>
+</li>
+<li>
+<p>自由存储区（C++引入的概念），就是那些由new等分配的内存块，他和堆是十分相似的</p>
+</li>
+<li>
+<p>常量存储区，这是一块比较特殊的存储区，他们里面存放的是常量，不允许修改(当然，你要通过非正当手段也可以修改)</p>
+</li>
+<li>
+<p>全局/静态存储区，全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，在C++里面没有这个区分了，他们共同占用同一块内存区。</p>
+</li>
+</ul>
+<h1><a class="header" href="#c-语法" id="c-语法">c 语法</a></h1>
+<p>hello.c 文件拓展名 </p>
+<p>(clang 默认 将 *.c 视为 c++ 文件, 但是已经 过时了 deprecated)</p>
+<p>C11（也被称为C1X）指ISO标准ISO/IEC 9899:2011，是当前最新的C语言标准。在它之前的C语言标准为C99</p>
+<p>C 是区分大小写的编程语言</p>
+<h2><a class="header" href="#预处理器指令" id="预处理器指令">预处理器指令</a></h2>
+<pre><code class="language-cpp">// 预处理器命令
+//C 预处理器不是编译器的组成部分，但是它是编译过程中一个单独的步骤。简言之，是一个文本替换工具，在实际编译之前完成所需的预处理。 C 预处理器（C Preprocessor）简写为 CPP
+// 常见预处理器:
+// #define	定义宏
+// #include	包含一个源代码文件
+// #undef	取消已定义的宏
+// #ifdef	如果宏已经定义，则返回真
+// #ifndef	如果宏没有定义，则返回真
+// #if	如果给定条件为真，则编译下面代码
+// #else	#if 的替代方案
+// #elif	如果前面的 #if 给定条件不为真，当前条件为真，则编译下面代码
+// #endif	结束一个 #if……#else 条件编译块
+// #error	当遇到标准错误时，输出错误消息
+// #pragma	使用标准化方法，向编译器发布特殊的命令到编译器中
+
+#define MAX_ARRAY_LENGTH 20 // 告诉 CPP 把所有的 MAX_ARRAY_LENGTH 替换为 20。使用 #define 定义常量来增强可读性
+#undef  FILE_SIZE  // 告诉 CPP 取消已定义的 FILE_SIZE，并重新定义它为 42
+#define FILE_SIZE 42
+// 引入头文件
+#include &lt;stdio.h&gt; // 告诉 CPP 从系统库中获取 stdio.h，并添加文本到当前的源文件中
+#include &quot;myheader.h&quot; //告诉 CPP 从本地目录中获取 myheader.h
+// 告诉 CPP 只有当 MESSAGE 未定义时，才定义 MESSAGE
+// 推荐引入头文件时这样做, 先验证是否引入过
+#ifndef MESSAGE
+   #define MESSAGE &quot;You wish!&quot;
+#endif
+// 告诉 CPP 如果定义了 DEBUG，则执行处理语句。在编译时，如果向 gcc 编译器传递了 -DDEBUG 开关量，可以在编译期间随时开启或关闭调试
+#ifdef DEBUG
+   /* Your debugging statements here */
+#endif
+// 有条件引用
+// SYSTEM_H 可通过 -D 选项被 Makefile 定义
+#if SYSTEM_1
+   # include &quot;system_1.h&quot;
+#elif SYSTEM_2
+   # include &quot;system_2.h&quot;
+#elif SYSTEM_3
+   ...
+#endif
+// 如果头文件较多
+#define SYSTEM_H &quot;system_1.h&quot;
+ ...
+ #include SYSTEM_H
+
+// 保证只引用一次头文件 (因为多次引用头文件, 编译器会报错)
+//当再次引用头文件时，条件为假，因为 HEADER_FILE 已定义。此时，预处理器会跳过文件的整个内容，编译器会忽略它。
+#ifndef HEADER_FILE
+#define HEADER_FILE
+the entire header file file
+#endif
+
+// 预定义宏
+// ANSI C 已经定义了许多宏
+// __DATE__	当前日期，一个以 &quot;MMM DD YYYY&quot; 格式表示的字符常量。
+// __TIME__	当前时间，一个以 &quot;HH:MM:SS&quot; 格式表示的字符常量。
+// __FILE__	这会包含当前文件名，一个字符串常量。
+// __LINE__	这会包含当前行号，一个十进制常量。
+// __STDC__	当编译器以 ANSI 标准编译时，则定义为 1。
+
+// 预处理器运算符
+// 宏延续运算符（\）: 一个宏通常写在一个单行上。但是如果宏太长，一个单行容纳不下, 可以折行
+// 字符串常量化运算符（#）: 把一个宏的参数转换为字符串常量
+#define  message_for(a, b)  \
+    printf(#a &quot; and &quot; #b &quot;: We love you!\n&quot;)
+int main(void)
+{
+   message_for(Carole, Debra);
+   return 0;
+}
+
+// 标记粘贴运算符（##）: 在宏定义中将两个独立的标记/令牌 被合并为一个标记/令牌
+#define tokenpaster(n) printf (&quot;token&quot; #n &quot; = %d&quot;, token##n)
+int main(void)
+{
+   int token34 = 40;
+   
+   tokenpaster(34); // 输出 token34 = 40
+   return 0;
+}
+
+// defined() 运算符: 确定一个标识符是否已经使用 #define 定义过
+#if !defined (MESSAGE)
+   #define MESSAGE &quot;You wish!&quot;
+#endif
+int main(void)
+{
+   printf(&quot;Here is the message: %s\n&quot;, MESSAGE);  
+   return 0;
+}
+
+// 参数化的宏, 使用宏定义取代函数
+// 宏名称和左圆括号之间不允许有空格
+#define MAX(x,y) ((x) &gt; (y) ? (x) : (y))
+int main(void)
+{
+   printf(&quot;Max between 20 and 10 is %d\n&quot;, MAX(10, 20));  
+   return 0;
+}
+
+</code></pre>
+<h2><a class="header" href="#标准输入输出" id="标准输入输出">标准输入输出</a></h2>
+<pre><code class="language-cpp">
+//引入标准输入输出头文件
+// 编译器遇到 printf() 函数时，如果没有找到 stdio.h 头文件，会发生编译错误。
+// 使用 #include &lt;iostream&gt; 亦可
+#include &lt;stdio.h&gt;
+ 
+int main()
+{
+    char str[100];
+   int i;
+   printf( &quot;Enter a value :&quot;);
+   scanf(&quot;%s %d&quot;, str, &amp;i);
+   printf( &quot;\nYou entered: %s %d &quot;, str, i);
+   printf(&quot;\n&quot;);
+
+    int c;
+    printf( &quot;Enter a value :&quot;);
+    // 只读取一个字符, 以数字返回
+    c = getchar( );
+    printf( &quot;\nYou entered: &quot;);
+    // 只打印一个字符
+    putchar( c );
+    printf( &quot;\n&quot;);
+
+    char str[100];
+   printf( &quot;Enter a value :&quot;);
+   // 读取一行到 s 所指向的缓冲区，直到一个终止符或 EOF
+   gets( str );
+   printf( &quot;\nYou entered: &quot;);
+   // 把字符串 s 和一个尾随的换行符写入到 stdout。
+   puts( str );
+
+    return 0;
+}
+
+</code></pre>
+<h2><a class="header" href="#变量-常量-数据类型" id="变量-常量-数据类型">变量-常量-数据类型</a></h2>
+<pre><code class="language-cpp">
+// 变量
+//左值（lvalue）：指向内存位置的表达式被称为左值（lvalue）表达式。左值可以出现在赋值号的左边或右边。
+//右值（rvalue）：术语右值（rvalue）指的是存储在内存中某些地址的数值。右值是不能对其进行赋值的表达式，也就是说，右值可以出现在赋值号的右边，但不能出现在赋值号的左边
+
+// 局部变量
+// 也叫 auto自动变量(auto可写可不写)，栈区存储，代码块{}内部定义的变量都是自动变量， 
+// 只在函数/代码块内部有效
+// 局部变量未初始化，值为乱码
+
+// 全局变量
+// 在函数外定义，可被本文件及其它文件中的函数所共用，若其它文件中的函数调用此变量,须用extern声明
+// 全局变量的生命周期和程序运行周期一样
+// 全局变量未初始化、值为0
+//不同文件的全局变量不可重名
+
+// 静态局部变量
+// 作用域也是在定义的函数内有效
+//生命周期和程序运行周期一样
+//只会初始化一次，可以多次赋值
+//若未赋以初值，则由系统自动赋值：数值型变量自动赋初值0，字符型变量赋空字符
+// 变量只被引用而不改变其值，则这时用静态局部变量比较方便，如不必要，不要多用静态局部变量（用静态存储要多占内存，而且降低了程序的可读性）
+
+//静态(static)全局变量
+//在函数外定义,作用范围被限制在所定义的文件中
+//static全局变量的生命周期和程序运行周期一样，同时staitc全局变量的值只初始化一次
+//不同文件静态全局变量可以重名,但作用域不冲突
+
+// 变量修饰符
+//const	const 类型的对象在程序执行期间不能被修改改变。
+// volatile	修饰符 volatile 告诉编译器不需要优化volatile声明的变量，让程序可以直接从内存中读取变量。对于一般的变量编译器会对变量进行优化，将内存中的变量值放在寄存器中以加快读写效率。
+// restrict	由 restrict 修饰的指针是唯一一种访问它所指向的对象的方式。只有 C99 增加了新的类型限定符 restrict。
+
+int main()
+{
+    // 数据类型 
+    // 定义，会分配空间 
+    // 初始化, 局部变量需要手动初始化
+    float f,x=3.6,y=5.2; // 4 byte
+    // 4 byte
+    int i=4,a,b;
+    
+    a=x+y;
+    b=(int)(x+y);
+    f=10/i;
+    printf(&quot;a=%d,b=%d,f=%f,x=%f\n&quot;,a,b,f,x);
+
+    // 定义
+    char   c, ch; // 1 byte
+    short sh; // 2 byte
+    long lo; // 4 byte  
+    double d; // 8 byte
+    byte z = 22;
+
+    // 变量声明
+    //向编译器保证变量以指定的类型和名称存在，这样编译器在不需要知道
+    //变量完整细节的情况下也能继续进一步的编译。变量声明只在编译时有它的意义
+
+    int j; // 声明， 也是定义，分配了空间
+    extern int i; //声明，不是定义， 不分配空间， 变量 i 可以在别处定义， 如在 函数外部， 甚至另外的文件
+
+    // 运算符
+    // 移位运算 https://www.runoob.com/cprogramming/c-operators.html
+}
+
+// 获取 int 类型的大小
+// sizeof是用来求类型的字节数的。如int a;那么无论sizeof(int)或者是sizeof(a)都是等于4，因为sizeof(a)其实就是sizeof(type of a)
+#include &lt;stdio.h&gt;
+#include &lt;limits.h&gt;
+ 
+int main()
+{
+   printf(&quot;int 存储大小 : %lu \n&quot;, sizeof(int));
+   
+   return 0;
+}
+
+
+// 常量
+//前缀指定基数：0x 或 0X 表示十六进制，0 表示八进制，不带前缀则默认表示十进制。
+//整数常量也可以带一个后缀，后缀是 U 和 L 的组合，U 表示无符号整数（unsigned），L 表示长整数（long）。后缀可以是大写，也可以是小写，U 和 L 的顺序任意。
+
+// 字符串常量
+// 三者等价
+&quot;hello, dear&quot;
+
+&quot;hello, \
+dear&quot;
+
+&quot;hello, &quot; &quot;d&quot; &quot;ear&quot;
+
+// 定义常量
+#define LENGTH 10   
+#define WIDTH  5
+#define NEWLINE '\n'
+
+//等价
+const int  LENGTH = 10;
+//Const  将数据定为不变的
+// 以后不可改变其值。在指针中使用时，const的位置决定是指针本身不变还是指针指向的数据不变
+
+
+
+// 数组
+// 声明
+double balance[10];
+// 初始化
+double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+
+// 数组和指针
+//balance 是一个指向 &amp;balance[0] 的常量指针 (常量指针就是指针无法加减, 只能通过这个指针获取值)，即数组 balance 的第一个元素的地址， 可以通过 *balance 访问这个元素
+// balance+4 是指向 &amp;balance[4] 的指针，可以通过 *(balance+4)访问元素
+
+// 指针数组
+int  var[] = {10, 100, 200};
+int i, *ptr[MAX];
+
+for ( i = 0; i &lt; MAX; i++)
+{
+    ptr[i] = &amp;var[i]; /* 赋值为整数的地址 */
+}
+for ( i = 0; i &lt; MAX; i++)
+{
+    printf(&quot;Value of var[%d] = %d\n&quot;, i, *ptr[i] );
+}
+
+//// 字符指针可以指向一个字符串
+char *str = &quot;This is a string.&quot;; // 字符指针指向的是一个字符串常量的首地址
+// 用一个指向字符的指针数组来存储一个字符串列表
+const char *names[] = {
+                &quot;Zara Ali&quot;,
+                &quot;Hina Ali&quot;,
+                &quot;Nuha Ali&quot;,
+                &quot;Sara Ali&quot;,
+};
+int i = 0;
+
+for ( i = 0; i &lt; MAX; i++)
+{
+    printf(&quot;Value of names[%d] = %s\n&quot;, i, names[i] );
+}
+
+
+
+
+/**
+  * 字符串 字符数组 
+  *  
+  * （字符串实际上是使用 null 字符 '\0' 终止的一维字符数组）
+  * 
+ 以字符串形式出现的，编译器都会为该字符串自动添加一个0作为结束符，如在代码中写：&quot;abc&quot;,那么编译器帮你存储的是&quot;abc\0&quot;
+ 字符串常量的类型可以理解为相应字符常量数组的类型，如：
+    &quot;abcdef&quot;的类型就可以看成是const char[7]
+*/
+// &quot;abc&quot;是常量吗？答案是有时是，有时不是
+ char str[] = &quot;abc&quot;; // 此时不是常量，存放于栈
+ // 等价于
+char str[4] = {'a','b','c','/0'};
+
+  // 此时是常量，存放在常量区
+  //ptr[0] = 'x';能编译通过，但是执行ptr[0] = 'x';就会发生运行时异常，因为这个语句试图去修改程序常量区中的东西
+char* ptr = &quot;abc&quot;;
+// 推荐的写法
+const char* ptr = &quot;abc&quot;
+
+char string[]=&quot;This is a string.&quot;;
+// 字符数组
+//字符指针
+// 字符指针可以指向一个字符串，指向的是一个字符串常量的首地址
+char *str, *str1=&quot;This is another string.&quot;;
+char string[100]=&quot;This is a string.&quot;;
+str++; /* 指针str加1 */
+str = &quot;This is a NEW string.&quot;; /* 使指针指向新的字符串常量 */
+str = str1; /* 改变指针str的指向，回复原来的值 */
+strcpy( string, &quot;This is a NEW string.&quot;) /* 改变字符串的的内容 */
+strcat( string, str) /* 进行串连接操作 */
+
+string++; /* 不能对数组名进行++运算 */
+string = &quot;This is a NEW string.&quot;; /* 错误的串操作，字符数组无法整体赋值，只能单个元素赋值 */
+string = str1; /* 对数组名不能进行赋值 */
+strcat(str, &quot;This is a NEW string.&quot;) /* 不能在指针的后面进行串连接 */
+strcpy(str, string) /* 不能向指针进行串复制 */
+// 区别：
+// (1)字符数组由若干个元素组成，每个元素中存放字符串的一个字符，而字符指针变量中存放的是字符串的首地址。
+// (2)初始化方式不同。对字符数组初始化要用static存储类别，在编译时进行。而对字符指针变量初始化不必加static，在实际执行时进行。
+// (3)赋值方式不同。对字符数组不能整体赋值，只能转化成份量，对单个元素进行。而字符指针变量赋值可整体进行
+// (4)在定义一个字符数组时，编译时即已分配内存单元，有确定的地址。而定义一个字符指针变量时，给指针变量分配内存单元，但该指针变量具体指向哪个字符串，并不知道，即指针变量存放的地址不确定
+
+// 字符串操作函数u
+strcpy(s1, s2); // 复制字符串 s2 到字符串 s1。
+strcat(s1, s2); //连接字符串 s2 到字符串 s1 的末尾。
+strlen(s1); //返回字符串 s1 的长度。
+strcmp(s1, s2); // 如果 s1 和 s2 是相同的，则返回 0；如果 s1&lt;s2 则返回小于 0；如果 s1&gt;s2 则返回大于 0。
+strchr(s1, ch); // 返回一个指针，指向字符串 s1 中字符 ch 的第一次出现的位置。
+strstr(s1, s2); // 返回一个指针，指向字符串 s1 中字符串 s2 的第一次出现的位置   
+
+
+// 枚举
+//在C 语言中，枚举类型是被当做 int 或者 unsigned int 类型来处理的， 因此可以将整数转换为枚举
+// 定义类型
+enum DAY
+{//第一个枚举成员的默认值为整型的 0，后续枚举成员的值在前一个成员上加 1。我们在这个实例中把第一个枚举成员的值定义为 1，第二个就为 2，以此类推。
+      MON=1, TUE, WED, THU, FRI, SAT, SUN
+};
+//没有指定值的枚举元素，其值为前一元素加 1。也就说 spring 的值为 0，summer 的值为 3，autumn 的值为 4，winter 的值为 5
+enum season {spring, summer=3, autumn, winter};
+
+// 定义枚举变量
+enum DAY day;
+// 可以同时进行
+enum DAY
+{
+      MON=1, TUE, WED, THU, FRI, SAT, SUN
+} day;
+// 甚至 枚举名称可省略
+enum
+{
+      MON=1, TUE, WED, THU, FRI, SAT, SUN
+} day;
+
+// 整型转换
+enum day
+{
+    saturday,
+    sunday,
+    monday,
+    tuesday,
+    wednesday,
+    thursday,
+    friday
+} workday;
+
+int a = 1;
+enum day weekend;
+weekend = ( enum day ) a;  //类型转换
+//weekend = a; //错误
+
+
+/**
+  * 结构体
+  * 
+  *
+ **/
+// 完整声明
+struct Books
+{
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+} book;
+// 没有标签
+struct 
+{
+    int a;
+    char b;
+    double c;
+} s1;
+// 没有声明变量
+struct SIMPLE
+{
+    int a;
+    char b;
+    double c;
+};
+//用SIMPLE标签的结构体，另外声明了变量t1、t2、t3
+struct SIMPLE t1, t2[20], *t3;
+
+//也可以用typedef创建新类型
+typedef struct
+{
+    int a;
+    char b;
+    double c; 
+} Simple2;
+//现在可以用Simple2作为类型声明新的结构体变量
+Simple2 u1, u2[20], *u3;
+
+
+/** typeof 
+为类型取一个新的名字
+
+typedef vs #define
+- typedef 仅限于为类型定义符号名称，#define 不仅可以为类型定义别名，也能为数值定义别名，比如您可以定义 1 为 ONE。
+- typedef 是由编译器执行解释的，#define 语句是由预编译器进行处理的。
+*/
+typedef unsigned char BYTE;// 为单字节数字定义了一个术语 BYTE
+BYTE  b1, b2; // BYTE 可作为类型 unsigned char 的缩写
+
+
+
+
+// 结构体可嵌套
+//此结构体的声明包含了其他的结构体
+struct COMPLEX
+{
+    char string[100];
+    struct SIMPLE a;
+};
+ 
+//此结构体的声明包含了指向自己类型的指针
+struct NODE
+{
+    char string[100];
+    struct NODE *next_node;
+};
+
+// 如果两个结构体互相包含，则需要对其中一个结构体进行不完整声明，如下所示：
+struct B;    //对结构体B进行不完整声明
+//结构体A中包含指向结构体B的指针
+struct A
+{
+    struct B *partner;
+    //other members;
+};
+//结构体B中包含指向结构体A的指针，在A声明完后，B也随之进行声明
+struct B
+{
+    struct A *partner;
+    //other members;
+};
+
+// 结构体定义 &amp; 初始化
+struct Books
+{
+   char  title[50];
+   char  author[50];
+   char  subject[100];
+   int   book_id;
+} book = {&quot;C 语言&quot;, &quot;RUNOOB&quot;, &quot;编程语言&quot;, 123456};
+
+// 也可以先定义再初始化
+struct Books Book1;        /* 声明 Book1，类型为 Books */
+/* Book1 详述 */
+strcpy( Book1.title, &quot;C Programming&quot;);
+strcpy( Book1.author, &quot;Nuha Ali&quot;); 
+strcpy( Book1.subject, &quot;C Programming Tutorial&quot;);
+Book1.book_id = 6495407;
+/* 输出 Book1 信息 */
+printf( &quot;Book 1 title : %s\n&quot;, Book1.title);
+printf( &quot;Book 1 author : %s\n&quot;, Book1.author);
+printf( &quot;Book 1 subject : %s\n&quot;, Book1.subject);
+printf( &quot;Book 1 book_id : %d\n&quot;, Book1.book_id);
+
+/* 通过传 Book1 的地址来输出 Book1 信息 */
+printBook( &amp;Book1 );
+
+// 作为函数参数
+void printBook( struct Books *book ) {
+    // 通过指针访问结构体
+   printf( &quot;Book title : %s\n&quot;, book-&gt;title);
+   printf( &quot;Book author : %s\n&quot;, book-&gt;author);
+   printf( &quot;Book subject : %s\n&quot;, book-&gt;subject);
+   printf( &quot;Book book_id : %d\n&quot;, book-&gt;book_id);
+}
+
+/**
+ 位域/位段
+ 把一个字节中的二进位划分为几个不同的区域，并说明每个区域的位数。每个域有一个域名，允许在程序中按域名进行操作。这样就可以把几个不同的对象用一个字节的二进制位域来表示
+ 如: 用 1 位二进位存放一个开关量时，只有 0 和 1 两种状态。
+-  一个位域不能跨字节, 如一个字节所剩空间不够存放另一位域时，则会从下一单元起存放该位域。也可以有意使某位域从下一单元开始
+*/
+// 定义
+// data 为 bs 变量，共占两个字节。其中位域 a 占 8 位，位域 b 占 2 位，位域 c 占 6 位
+struct bs{
+    int a:8; // 位域a
+    int  :4;    /* 空域/无名位域 , 会在对应位填 0 表示不用*/
+    int b:2; // 位域b, 从下一单元(字节)开始存放  // 最大能够表示 3
+    int c:6; // 位域c
+} data;
+struct bs{
+    unsigned a:1;
+    unsigned b:3; // 最大可以表示 7
+    unsigned c:4;
+} bit,*pbit;
+bit.a=1;    /* 给位域赋值（应注意赋值不能超过该位域的允许范围） */
+bit.b=7;    /* 给位域赋值（应注意赋值不能超过该位域的允许范围） */
+bit.c=15;    /* 给位域赋值（应注意赋值不能超过该位域的允许范围） */
+printf(&quot;%d,%d,%d\n&quot;,bit.a,bit.b,bit.c);    /* 以整型量格式输出三个域的内容 */
+pbit=&amp;bit;    /* 把位域变量 bit 的地址送给指针变量 pbit */
+pbit-&gt;a=0;    /* 用指针方式给位域 a 重新赋值，赋为 0 */
+pbit-&gt;b&amp;=3;    /* 使用了复合的位运算符 &quot;&amp;=&quot;，相当于：pbit-&gt;b=pbit-&gt;b&amp;3，位域 b 中原有值为 7，与 3 作按位与运算的结果为 3（111&amp;011=011，十进制值为 3） */
+pbit-&gt;c|=1;    /* 使用了复合位运算符&quot;|=&quot;，相当于：pbit-&gt;c=pbit-&gt;c|1，其结果为 15 */
+printf(&quot;%d,%d,%d\n&quot;,pbit-&gt;a,pbit-&gt;b,pbit-&gt;c);    /* 用指针方式输出了这三个域的值 */
+
+
+/** 共用体
+在相同的内存位置存储不同的数据类型, 但是任何时候只能有一个成员带有值
+共用体占用的内存应足够存储共用体中最大的成员
+*/
+// Data 类型的变量可以存储一个整数、一个浮点数，或者一个字符串。这意味着一个变量（相同的内存位置）可以存储多个多种类型的数据
+//Data 将占用 20 个字节的内存空间，因为在各个成员中，字符串所占用的空间是最大的
+union Data
+{
+   int i;
+   float f;
+   char  str[20];
+} data;
+int main( )
+{
+   union Data data;        
+   printf( &quot;Memory size occupied by data : %d\n&quot;, sizeof(data));// 20
+
+   data.i = 10;
+   data.f = 220.5;
+   strcpy( data.str, &quot;C Programming&quot;);// 会覆盖前面赋给的值
+ 
+   printf( &quot;data.i : %d\n&quot;, data.i);// 无法正确显示
+   printf( &quot;data.f : %f\n&quot;, data.f);// 无法正确显示
+   printf( &quot;data.str : %s\n&quot;, data.str);// 显示正常
+
+   // 正确的用法: (同一时间只用到一个成员)
+   data.i = 10;
+   printf( &quot;data.i : %d\n&quot;, data.i);
+   
+   data.f = 220.5;
+   printf( &quot;data.f : %f\n&quot;, data.f);
+   
+   strcpy( data.str, &quot;C Programming&quot;);
+   printf( &quot;data.str : %s\n&quot;, data.str);
+
+   return 0;
+}
+
+</code></pre>
+<h2><a class="header" href="#变量存储类型" id="变量存储类型">变量存储类型</a></h2>
+<pre><code class="language-cpp">
+/**
+存储类型 storage type
+用来定义变量/函数的作用域/生命（存储）周期/连接属性
+分为：动态存储、静态存储(static)、自动变量(auto)、寄存器变量 (register)、外部变量(extern)
+
+auto char c; //字符型自动变量，在函数内定义  
+register int d; //整型寄存器变量，在函数内定义  
+static int a; //静态局部整型变量或静态外部整型变量  
+extern int b; //声明一个已定义的外部整型变量  
+
+作用域：也就是变量的可见范围， 有三个等级：
+      - 代码块作用域 (在函数内部代码块中定义的变量、形参，称为局部变量)
+      - 函数原型作用域（从变量定义处一直到原型声明的末尾）
+      - 文件作用域 (在函数之外定义的变量，整个文件都可见，称为全局变量)
+      - 函数作用域 (只适用于goto语句使用的标签, 意味着一个特定函数中的goto标签对该函数中任何地方的代码都是可见的，无论该标签出现在哪一个代码块中。)
+存储周期/生命周期：定义变量在内存中的存储方式，分2类
+      - 静态存储周期 （变量在静态存储区存储，系统对变量分配固定的存储空间，在程序执行期间一直存在， 例如全局变量）
+      - 自动/动态存储周期 （变量动态存储区存储，系统对变量在运行期间动态地分配存储空间，  在程序进入定义的变量代码块中时在栈中分配内存，退出时释放内存,例如局部变量）
+连接属性：
+      - 外部连接 （具有外部连接的变量可以在多文件程序的任何地方使用，多个文件可有共享）
+      - 内部连接 （具有内部连接的变量可以在一个文件的任何地方使用，归该文件私有）如 用static在所有函数的外部进行定义来创建
+      - 空连接 （具有代码块作用域和函数原型作用域的变量是空连接，由定义所在的代码块和函数原型所私有）
+
+自动变量 （auto）
+- 用auto修饰或者不修饰就默认属于自动存储类的变量，具有自动存储周期、代码块作用域、空连接。
+- 在默认下，在代码快或者函数开头定义的任意变量都属于自动存储类。也只能用于代码块内/函数内部的变量
+- 对于自动变量，除非显式的初始化，否则不会自动初始化, 在运行时程序才赋初值， 每运行一次， 赋初值一次
+
+寄存器变量（register ）
+- 用于将局部变量的值放在CPU中的寄存器中，需要用时直接从寄存器取出参加运算，不必再到内存中去存取 (所以无法获得其地址，变量的最大尺寸等于寄存器的大小 （通常是一个词），且不能对它应用一元的 '&amp;' 运算符（因为它没有内存位置）)
+- register i;等价于register int i;,register默认是int类型.
+- 只能用在具有代码块作用域的变量
+- 只用于需要快速访问的变量，比如计数器
+- 仅仅意味着变量可能存储在寄存器中，这取决于硬件和实现的限制。
+
+静态存储变量（static）
+- 在程序的生命周期内始终保持变量不销毁 
+- 赋初值是在编译时进行的，即只赋初值一次，在程序运行时它已有初值，若不指定，编译时自动初始化为0
+- 使用 static 修饰局部变量可以在函数调用之间保持局部变量的值 （也就是使该变量具有静态存储周期，变量仍保留代码块作用域和空连接， 在其他函数中它是“不可见”的）
+- 当 static 修饰全局变量时，会使变量的作用域限制在声明它的文件内 （也就是 使该变量具有内部连接）
+
+外部变量(extern)
+- 用于提供一个已定义的全局变量的引用 （这个全局变量可能定义在另外的文件），声明一个在其他地方定义了的变量
+- 定义在函数外部的变量的存储类型都是extern,即使不使用关键字extern.
+
+
+*/
+
+
+
+</code></pre>
+<h2><a class="header" href="#函数" id="函数">函数</a></h2>
+<pre><code class="language-cpp">
+
+/** 函数
+ * 存储在 代码区
+
+函数声明可以不要参数名 如： int max(int, int);
+
+匿名内部函数
+- 执行完后立即销毁， 用 {} 包裹
+
+函数作用域
+- 所有的函数默认都是全局的，意味着所有的函数都不能重名，但如果是staitc函数，那么作用域是文件级的，在其他文件中不能调用，所以不同的文件static函数名是可以相同的。 
+- 同一源文件中,允许全局变量和局部变量同名，在局部变量的作用域内，全局变量暂时被覆盖
+
+值传递：c 默认采用，传递的是 复制拷贝
+引用传递：传递指针
+
+数组作为参数：
+void myFunction(int *param) {}
+void myFunction(int param[10]){}
+void myFunction(int param[]){} // 就函数而言，数组的长度是无关紧要的，因为 C++ 不会对形式参数执行边界检查
+如果形参为数组，则编译器把其解释为普通的指针类型，如
+   对于void func(char sa[100],int ia[20],char *p)
+  则sa的类型为char*，ia的类型为int*，p的类型为char*
+
+
+数组作为返回值 (返回值类型为指针, 因为 c / c++ 不支持返回一个数组, 只能返回执行数组的指针)
+int * myFunction(){
+    C 不支持函数返回局部变量的地址，除非定义局部变量为 static 变量
+    static int result[10];
+    ...
+    return result;
+}
+*/
+
+
+/**
+可变参数
+省略号之前的那个参数是 int，代表了要传递的可变参数的总数。为了使用这个功能，您需要使用 stdarg.h 头文件，该文件提供了实现可变参数功能的函数和宏
+int func(int, ... ) {}
+int main()
+{
+   func(2, 2, 3);
+   func(3, 2, 3, 4);
+}
+*/
+#include &lt;stdio.h&gt;
+#include &lt;stdarg.h&gt;
+ 
+double average(int num,...)
+{
+ 
+    // 创建一个 va_list 类型变量，该类型是在 stdarg.h 头文件中定义的
+    // 代表参数列表
+    va_list valist;
+    double sum = 0.0;
+    int i;
+ 
+    // 初始化参数列表
+    // 宏 va_start 是在 stdarg.h 头文件中定义的
+    va_start(valist, num);
+ 
+    /* 访问所有赋给 valist 的参数 */
+    for (i = 0; i &lt; num; i++)
+    {
+        // 访问参数列表中的每个元素
+       sum += va_arg(valist, int);
+    }
+    /* 清理为 valist 保留的内存 */
+    va_end(valist);
+ 
+    // 返回平均值
+    return sum/num;
+}
+ 
+int main()
+{
+   printf(&quot;Average of 2, 3, 4, 5 = %f\n&quot;, average(4, 2,3,4,5));
+   printf(&quot;Average of 5, 10, 15 = %f\n&quot;, average(3, 5,10,15));
+}
+
+</code></pre>
+<h2><a class="header" href="#指针" id="指针">指针</a></h2>
+<pre><code class="language-cpp">
+
+/**
+
+    指针
+
+
+ * 指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址
+ * 4/8 byte
+*/
+// 指针声明
+int    *ip;    /* 一个整型的指针 */
+double *dp;    /* 一个 double 型的指针 */
+float  *fp;    /* 一个浮点型的指针 */
+char   *ch;     /* 一个字符型的指针 */
+
+// 对变量取地址
+int  var1;
+char var2[10];
+printf(&quot;var1 变量的地址： %p\n&quot;, &amp;var1  );
+printf(&quot;var2 变量的地址： %p\n&quot;, &amp;var2  );
+
+int  var = 20;   
+//推荐初始化为 null，赋为 NULL 值的指针被称为空指针，NULL 指针是一个定义在标准库中的值为零的常量，
+// 检查空指针可以这样做: if(!ip)  如果为空。。。
+int  *ip = NULL;        /* 指针变量的声明 */
+
+ip = &amp;var;  /* 在指针变量中存储 var 的地址 */
+
+printf(&quot;Address of var variable: %p\n&quot;, &amp;var  );
+/* 在指针变量中存储的地址 */
+printf(&quot;Address stored in ip variable: %p\n&quot;, ip );
+/* 使用指针访问值 */
+printf(&quot;Value of *ip variable: %d\n&quot;, *ip );
+
+
+// 指针运算 ++、--、+、-
+//指针的每一次递增，它其实会指向下一个元素的存储单元 （跳跃的字节数取决于指针所指向变量数据类型长度，比如 int 就是 4 个字节）
+//v指针的每一次递减，它都会指向前一个元素的存储单元。
+
+// 指针递增
+// 使用指针代替数组，因为变量指针可以递增，而数组不能递增，数组可以看成一个指针常量
+int  var[] = {10, 100, 200};
+int  i, *ptr;
+// 数组名可以直接赋值给指针, 指向数组第一个元素
+ptr = var;
+for ( i = 0; i &lt; MAX; i++)
+{
+
+    printf(&quot;存储地址：var[%d] = %x\n&quot;, i, ptr );
+    printf(&quot;存储值：var[%d] = %d\n&quot;, i, *ptr );
+
+    /* 移动到下一个位置 */
+    ptr++;
+}
+
+// 指针比较
+int  var[] = {10, 100, 200};
+int  i, *ptr;
+ptr = var;
+i = 0;
+while ( ptr &lt;= &amp;var[MAX - 1] )
+{
+
+    printf(&quot;Address of var[%d] = %p\n&quot;, i, ptr );
+    printf(&quot;Value of var[%d] = %d\n&quot;, i, *ptr );
+
+    /* 指向上一个位置 */
+    ptr++;
+    i++;
+}
+
+
+
+
+
+// 函数指针
+// 指向函数的指针变量
+// typedef int (*fun_ptr)(int,int); // 声明一个指向同样参数、返回值的函数指针类型
+int max(int x, int y)
+{
+    return x &gt; y ? x : y;
+}
+int main(void)
+{
+    /* p 是函数指针 */
+    int (* p)(int, int) = &amp; max; // &amp;可以省略
+    int a, b, c, d;
+ 
+    printf(&quot;请输入三个数字:&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp; a, &amp; b, &amp; c);
+ 
+    /* 与直接调用函数等价，d = max(max(a, b), c) */
+    d = p(p(a, b), c); 
+ 
+    printf(&quot;最大的数字是: %d\n&quot;, d);
+ 
+    return 0;
+}
+
+// 函数指针作为参数
+// 回调函数
+// size_t 就是 unsigned int ，为了跨平台
+void populate_array(int *array, size_t arraySize, int (*getNextValue)(void))
+{
+    for (size_t i=0; i&lt;arraySize; i++)
+        array[i] = getNextValue();
+}
+// 获取随机值
+int getNextRandomValue(void)
+{
+    return rand();
+}
+int main(void)
+{
+    int myarray[10];
+    populate_array(myarray, 10, getNextRandomValue);
+    for(int i = 0; i &lt; 10; i++) {
+        printf(&quot;%d &quot;, myarray[i]);
+    }
+    printf(&quot;\n&quot;);
+    return 0;
+}
+
+</code></pre>
+<h2><a class="header" href="#文件读写-io" id="文件读写-io">文件读写-io</a></h2>
+<pre><code class="language-cpp">
+/** 文件读写
+打开文件
+FILE *fopen( const char * filename, const char * mode );
+mode 打开模式:
+r	打开一个已有的文本文件，允许读取文件。
+w	打开一个文本文件，允许写入文件。如果文件不存在，则会创建一个新文件。在这里，您的程序会从文件的开头写入内容。如果文件存在，则该会被截断为零长度，重新写入。
+a	打开一个文本文件，以追加模式写入文件。如果文件不存在，则会创建一个新文件。在这里，您的程序会在已有的文件内容中追加内容。
+r+	打开一个文本文件，允许读写文件。
+w+	打开一个文本文件，允许读写文件。如果文件已存在，则文件会被截断为零长度，如果文件不存在，则会创建一个新文件。
+a+	打开一个文本文件，允许读写文件。如果文件不存在，则会创建一个新文件。读取会从文件的开头开始，写入则只能是追加模式。
+如果处理二进制文件, 需要加 &quot;b&quot;
+
+关闭文件
+int fclose( FILE *fp ); 会清空缓冲区中的数据, 返回 0
+
+写入文件
+int fputc( int c, FILE *fp ); 写入一个字符
+int fputs( const char *s, FILE *fp ); 写入字符串, 写入成功，它会返回一个非负值，如果发生错误，则会返回 EOF
+int fprintf(FILE *fp,const char *format, ...) 
+
+读取文件
+int fgetc( FILE * fp ); 读取一个字符
+char *fgets( char *buf, int n, FILE *fp ); 读取字符串
+int fscanf(FILE *fp, const char *format, ...) 在遇到第一个空格和换行符时，它会停止读取
+
+读写二进制流
+用于存储块的读写 - 通常是数组或结构体
+size_t fread(void *ptr, size_t size_of_elements, 
+             size_t number_of_elements, FILE *a_file);
+size_t fwrite(const void *ptr, size_t size_of_elements, 
+             size_t number_of_elements, FILE *a_file);
+*/
+#include &lt;stdio.h&gt;
+ 
+int main()
+{
+   FILE *fp = NULL;
+ 
+   fp = fopen(&quot;/tmp/test.txt&quot;, &quot;w+&quot;);
+   fprintf(fp, &quot;This is testing for fprintf...\n&quot;);
+   fputs(&quot;This is testing for fputs...\n&quot;, fp);
+   fclose(fp);
+
+   char buff[255];
+ 
+   fp = fopen(&quot;/tmp/test.txt&quot;, &quot;r&quot;);
+   fscanf(fp, &quot;%s&quot;, buff);
+   printf(&quot;1: %s\n&quot;, buff );
+ 
+   fgets(buff, 255, (FILE*)fp);
+   printf(&quot;2: %s\n&quot;, buff );
+   
+   fgets(buff, 255, (FILE*)fp);
+   printf(&quot;3: %s\n&quot;, buff );
+   fclose(fp);
+}
+
+</code></pre>
+<h2><a class="header" href="#错误处理" id="错误处理">错误处理</a></h2>
+<pre><code class="language-cpp">
+/** 错误处理
+发生错误时，大多数的 C 或 UNIX 函数调用返回 1 或 NULL，同时会设置一个错误代码 errno，该错误代码是全局变量
+可以在errno.h 头文件中找到各种各样的错误代码
+
+perror() 函数显示您传给它的字符串，后跟一个冒号、一个空格和当前 errno 值的文本表示形式。
+strerror() 函数，返回一个指针，指针指向当前 errno 值的文本表示形式。
+
+*/
+#include &lt;stdio.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;string.h&gt;
+ 
+extern int errno ;
+ 
+int main ()
+{
+   FILE * pf;
+   int errnum;
+   pf = fopen (&quot;unexist.txt&quot;, &quot;rb&quot;);
+   if (pf == NULL)
+   {
+      errnum = errno;
+      fprintf(stderr, &quot;错误号: %d\n&quot;, errno);
+      perror(&quot;通过 perror 输出错误&quot;);
+      fprintf(stderr, &quot;打开文件错误: %s\n&quot;, strerror( errnum ));
+      // 程序出错, 宏 EXIT_FAILURE，被定义为 -1
+    //   exit(EXIT_FAILURE);
+   }
+   else
+   {
+      fclose (pf);
+   }
+   return 0;
+   // 顺利结束, 宏 EXIT_SUCCESS 被定义为 0 
+   // exit(EXIT_SUCCESS);
+}
+// 错误号: 2
+// 通过 perror 输出错误: No such file or directory
+// 打开文件错误: No such file or directory
+
+</code></pre>
+<h2><a class="header" href="#内存管理函数" id="内存管理函数">内存管理函数</a></h2>
+<p>https://blog.csdn.net/u014427196/article/details/52568029
+https://blog.csdn.net/weixin_40548136/article/details/101351135
+TODO</p>
+<pre><code class="language-cpp">
+/**
+
+内存管理函数
+
+C 语言为内存的分配和管理提供了几个函数。这些函数可以在 &lt;stdlib.h&gt; 头文件中找到
+void *calloc(int num, int size); 在内存中动态地分配 num 个长度为 size 字节 的连续空间，并将每一个字节都初始化为 0
+void free(void *address); 释放 address 所指向的内存块,释放的是动态分配的内存空间 (void * 类型表示未确定类型的指针)
+void *malloc(int num); 在堆区分配一块指定大小的内存空间，用来存放数据。这块内存空间在函数执行完成后不会被初始化
+void *realloc(void *address, int newsize); 该函数重新分配内存，把内存扩展到 newsize。
+
+*/
+// 动态分配内存
+//重新调整内存的大小和释放内存
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+   char name[100]; // 固定容量的字符串
+   char *description; // 字符指针, 大小未确定
+ 
+   strcpy(name, &quot;Zara Ali&quot;);
+ 
+   /* 动态分配内存 200 个字符大小 */
+   description = (char *)malloc( 200 * sizeof(char) );
+   // 等价
+   // calloc(200, sizeof(char));
+
+   if( description == NULL )
+   {
+       // 输出错误信息
+      fprintf(stderr, &quot;Error - unable to allocate required memory\n&quot;);
+   }
+   else
+   {
+       // 初始化
+      strcpy( description, &quot;Zara ali a DPS student in class 10th&quot;);
+   }
+   printf(&quot;Name = %s\n&quot;, name );
+   printf(&quot;Description: %s\n&quot;, description );
+
+
+    // 重新分配内存大小
+   description = (char *) realloc( description, 100 * sizeof(char) );
+   if( description == NULL )
+   {
+      fprintf(stderr, &quot;Error - unable to allocate required memory\n&quot;);
+   }
+   else
+   {
+      strcat( description, &quot;She is in class 10th&quot;);
+   }
+   
+   printf(&quot;Name = %s\n&quot;, name );
+   printf(&quot;Description: %s\n&quot;, description );
+ 
+   /* 使用 free() 函数释放内存 */
+   free(description);
+}
+
+
+</code></pre>
+<h2><a class="header" href="#使用命令行参数" id="使用命令行参数">使用命令行参数</a></h2>
+<pre><code class="language-cpp">
+// 命令行参数
+
+#include &lt;stdio.h&gt;
+//argc 是指传入参数的个数 (参数个数 包括命令执行本身, 如 ./main.out)，argv[] 是一个指针数组，指向传递给程序的每个参数
+int main( int argc, char *argv[] )  
+{
+   if( argc == 2 )
+   {
+      printf(&quot;The argument supplied is %s\n&quot;, argv[1]);
+   }
+   else if( argc &gt; 2 )
+   {
+      printf(&quot;Too many arguments supplied.\n&quot;);
+   }
+   else
+   {
+      printf(&quot;One argument expected.\n&quot;);
+   }
+}
+
+</code></pre>
+<h2><a class="header" href="#工程结构" id="工程结构">工程结构</a></h2>
+<p>如何引入其他 c 代码中的方法?</p>
+<p>需要一个中间桥梁 <code>xxx.h</code>, 在其中声明方法, add.c 中具体实现这个方法(需要引入 xxx.h), , main.c 中引入 xxx.h 后, 即可使用 add.c 中定义的方法了 (<a href="https://www.cnblogs.com/ifantastic/p/3914756.html">ref</a>)</p>
+<h1><a class="header" href="#cpp-语法" id="cpp-语法">cpp 语法</a></h1>
+<p>文件拓展名 &quot;.cpp .cc .C .cxx&quot;</p>
+<p>多个标准:</p>
+<ul>
+<li>
+<p>c++98 传统 c++</p>
+</li>
+<li>
+<p>c++11，c++14/17， c++20 现代 c++</p>
+</li>
+</ul>
+<p>C++ 是 C 的一个超集，事实上，任何合法的 C 程序都是合法的 C++ 程序。</p>
+<p>C++ 通常用于编写设备驱动程序和其他要求实时性的直接操作硬件的软件。</p>
+<p>标准的 C++ 由三个重要部分组成：</p>
+<ul>
+<li>核心语言，提供了所有构件块，包括变量、数据类型和常量，等等。</li>
+<li>C++ 标准库，提供了大量的函数，用于操作文件、字符串等。</li>
+<li>标准模板库（STL），提供了大量的方法，用于操作数据结构等</li>
+</ul>
+<h2><a class="header" href="#数据类型-数学计算-cpp" id="数据类型-数学计算-cpp">数据类型-数学计算-cpp</a></h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;stdio.h&gt; //可以继续使用，但C++建议使用 #include &lt;cstdio&gt;
+using namespace std;
+int main()
+{
+    cout &lt;&lt; &quot;Hello, world!&quot; &lt;&lt; endl; // 可以用 &quot;\n&quot; 代替以上代码里的 endl
+    return 0;
+}
+
+/**
+数据类型
+ 
+变量
+
+bool:         所占字节数：1    最大值：1        最小值：0
+char:         所占字节数：1    最大值：        最小值：?
+signed char:     所占字节数：1    最大值：        最小值：?
+unsigned char:     所占字节数：1    最大值：?        最小值：
+short:         所占字节数：2    最大值：32767        最小值：-32768
+int:         所占字节数：4    最大值：2147483647    最小值：-2147483648
+unsigned:     所占字节数：4    最大值：4294967295    最小值：0
+long:         所占字节数：8    最大值：9223372036854775807    最小值：-9223372036854775808
+unsigned long:     所占字节数：8    最大值：18446744073709551615    最小值：0
+double:     所占字节数：8    最大值：1.79769e+308    最小值：2.22507e-308
+long double:     所占字节数：16    最大值：1.18973e+4932    最小值：3.3621e-4932
+float:         所占字节数：4    最大值：3.40282e+38    最小值：1.17549e-38
+size_t:     所占字节数：8    最大值：18446744073709551615    最小值：0
+wchar_t:     所占字节数：4    最大值：2147483647        最小值：-2147483648
+string:     所占字节数：24
+
+*/
+extern int d = 3, f = 5;    // d 和 f 的声明 
+int d = 3, f = 5;           // 定义并初始化 d 和 f
+byte z = 22;                // 定义并初始化 z
+char x = 'x';               // 变量 x 的值为 'x'
+
+/**
+数字
+c++ 对数学运算加强了
+打印数字更加方便
+数学头文件 &lt;cmath&gt; 提供了多种数学运算方法
+*/
+// 数字定义
+short  s;
+int    i;
+long   l;
+float  f;
+double d;
+// 数字赋值
+s = 10;      
+i = 1000;    
+l = 1000000; 
+f = 230.47;  
+d = 30949.374;
+// 数字输出
+cout &lt;&lt; &quot;short  s :&quot; &lt;&lt; s &lt;&lt; endl;
+cout &lt;&lt; &quot;int    i :&quot; &lt;&lt; i &lt;&lt; endl;
+cout &lt;&lt; &quot;long   l :&quot; &lt;&lt; l &lt;&lt; endl;
+cout &lt;&lt; &quot;float  f :&quot; &lt;&lt; f &lt;&lt; endl;
+cout &lt;&lt; &quot;double d :&quot; &lt;&lt; d &lt;&lt; endl;
+
+double cos(double); //该函数返回弧度角（double 型）的余弦。
+double sin(double);//该函数返回弧度角（double 型）的正弦。
+double tan(double);//该函数返回弧度角（double 型）的正切。
+double log(double);//该函数返回参数的自然对数。
+double pow(double, double);//假设第一个参数为 x，第二个参数为 y，则该函数返回 x 的 y 次方。
+double hypot(double, double);//该函数返回两个参数的平方总和的平方根，也就是说，参数为一个直角三角形的两个直角边，函数会返回斜边的长度。
+double sqrt(double);//该函数返回参数的平方根。
+int abs(int);//该函数返回整数的绝对值。
+double fabs(double);//该函数返回任意一个浮点数的绝对值。
+double floor(double);//该函数返回一个小于或等于传入参数的最大整数
+
+// 随机数
+#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+#include &lt;cstdlib&gt;
+using namespace std;
+int main ()
+{
+   int i,j;
+   // 生成随机数之前必须先调用 srand() 函数。
+   // 设置种子
+   //  time() 函数来获取系统时间的秒数
+   srand( (unsigned)time( NULL ) );
+   /* 生成 10 个随机数 */
+   for( i = 0; i &lt; 10; i++ )
+   {
+      // 生成实际的随机数
+      // 如果不设置种子, 将会只返回一个伪随机数
+      j= rand();
+      cout &lt;&lt;&quot;随机数： &quot; &lt;&lt; j &lt;&lt; endl;
+   }
+   return 0;
+}
+
+// 常量
+
+// 字符常量
+//字符常量是括在单引号中。如果常量以 L（仅当大写时）开头，则表示它是一个宽字符常量（例如 L'x'），此时它必须存储在 wchar_t 类型的变量中。否则，它就是一个窄字符常量（例如 'x'），此时它可以存储在 char 类型的简单变量中
+
+/**
+
+字符串 String 类
+
+
+C++ 标准库提供了 string 类类型
+*/
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+ 
+using namespace std;
+ 
+int main ()
+{
+   string str1 = &quot;Hello&quot;;
+   string str2 = &quot;World&quot;;
+   string str3;
+   int  len ;
+ 
+   // 复制 str1 到 str3
+   str3 = str1;
+   cout &lt;&lt; &quot;str3 : &quot; &lt;&lt; str3 &lt;&lt; endl;
+ 
+   // 连接 str1 和 str2
+   str3 = str1 + str2;
+   cout &lt;&lt; &quot;str1 + str2 : &quot; &lt;&lt; str3 &lt;&lt; endl;
+ 
+   // 连接后，str3 的总长度
+   len = str3.size();
+   cout &lt;&lt; &quot;str3.size() :  &quot; &lt;&lt; len &lt;&lt; endl;
+ 
+   return 0;
+}
+
+</code></pre>
+<h2><a class="header" href="#存储类型-cpp" id="存储类型-cpp">存储类型-cpp</a></h2>
+<pre><code class="language-cpp">
+/**
+
+存储类型:
+从 C++ 17 开始，auto 关键字不再是 C++ 存储类说明符，且 register 关键字被弃用。
+
+auto: 用于两种情况：声明变量时根据初始化表达式自动推断该变量的类型、声明函数时函数返回值的占位符
+
+register: 同 c
+
+static: 同 c 
+此外, 在 C++ 中，当 static 用在类数据成员上时，会导致仅有一个该成员的副本被类的所有对象共享。
+
+extern: 同 c
+
+mutable: 仅适用于类的对象, 允许对象的成员替代常量。也就是说，mutable 成员可以通过 const 成员函数修改。
+
+thread_local (C++11): 每个线程都有一个该变量的副本
+
+*/
+
+</code></pre>
+<h2><a class="header" href="#流程控制" id="流程控制">流程控制</a></h2>
+<pre><code class="language-cpp">
+/**
+循环 流程控制
+goto 语句允许把控制无条件转移到同一函数内的被标记的语句。
+不建议使用
+*/
+
+// 局部变量声明
+int a = 10;
+
+// 定义一个 label: LOOP
+LOOP:do
+{
+    if( a == 15)
+    {
+        // 跳过迭代
+        a = a + 1;
+        goto LOOP;
+    }
+    cout &lt;&lt; &quot;a 的值：&quot; &lt;&lt; a &lt;&lt; endl;
+    a = a + 1;
+}while( a &lt; 20 );
+
+// goto 语句一个很好的作用是退出深嵌套例程
+for(...) {
+   for(...) {
+      while(...) {
+         if(...) goto stop;
+         .
+         .
+         .
+      }
+   }
+}
+stop:
+cout &lt;&lt; &quot;Error in program.\n&quot;;
+
+
+</code></pre>
+<h2><a class="header" href="#函数-cpp" id="函数-cpp">函数-cpp</a></h2>
+<pre><code class="language-cpp">
+/**
+
+函数
+
+
+传值调用	该方法把参数的实际值赋值给函数的形式参数。在这种情况下，修改函数内的形式参数对实际参数没有影响。
+指针调用	该方法把参数的地址赋值给形式参数。在函数内，该地址用于访问调用中要用到的实际参数。这意味着，修改形式参数会影响实际参数。
+引用调用	该方法把参数的引用赋值给形式参数。在函数内，该引用用于访问调用中要用到的实际参数。这意味着，修改形式参数会影响实际参数。
+
+C++ 使用传值调用来传递参数
+*/
+// 参数默认值
+int sum(int a, int b=20)
+{
+  int result;
+  result = a + b;
+  return (result);
+}
+
+//Lambda 函数与表达式
+// 语法:
+[capture](parameters)-&gt;return-type{body} // 有返回值的 lambda
+[capture](parameters){body} // 没有返回值的 lambda
+
+// &quot;[]&quot; 中括号 用来指定外部变量, 以便在表达式内部访问
+
+// []      // 沒有定义任何变量。使用未定义变量会引发错误。
+// [x, &amp;y] // x以传值方式传入（默认），y以引用方式传入。
+// [&amp;]     // 任何被使用到的外部变量都隐式地以引用方式加以引用。
+// [=]     // 任何被使用到的外部变量都隐式地以传值方式加以引用。
+// [&amp;, x]  // x显式地以传值方式加以引用。其余变量以引用方式加以引用。
+// [=, &amp;z] // z显式地以引用方式加以引用。其余变量以传值方式加以引用。
+
+//对于[=]或[&amp;]的形式，lambda 表达式可以直接使用 this 指针。但是，对于[]的形式，如果要使用 this 指针，必须显式传入：
+[this]() { this-&gt;someFunc(); }();
+
+
+[](int x, int y){ return x &lt; y ; }
+[]{ ++global_x; } 
+[](int x, int y) -&gt; int { int z = x + y; return z + x; }
+
+
+</code></pre>
+<h2><a class="header" href="#指针-cpp" id="指针-cpp">指针-cpp</a></h2>
+<pre><code class="language-cpp">
+/**
+
+    指针
+        
+声明指针, 最好为指针变量赋一个 NULL 值 (NULL 指针是一个定义在标准库中的值为零的常量)
+
+
+*/
+#include &lt;iostream&gt;
+ 
+using namespace std;
+ 
+int main ()
+{
+   int  var = 20;   // 实际变量的声明
+   int  *ip;        // 指针变量的声明
+ 
+   ip = &amp;var;       // 在指针变量中存储 var 的地址
+ 
+   cout &lt;&lt; &quot;Value of var variable: &quot;;
+   cout &lt;&lt; var &lt;&lt; endl;
+ 
+   // 输出在指针变量中存储的地址
+   cout &lt;&lt; &quot;Address stored in ip variable: &quot;;
+   cout &lt;&lt; ip &lt;&lt; endl;
+ 
+   // 访问指针中地址的值
+   cout &lt;&lt; &quot;Value of *ip variable: &quot;;
+   cout &lt;&lt; *ip &lt;&lt; endl;
+ 
+   return 0;
+}
+
+//检查空指针:
+if(ptr)     /* 如果 ptr 非空，则完成 */
+if(!ptr)    /* 如果 ptr 为空，则完成 */
+
+
+//c++ 允许 指向指针的指针。
+int  var;
+int  *ptr;
+int  **pptr;
+
+var = 3000;
+
+// 获取 var 的地址
+ptr = &amp;var;
+
+// 使用运算符 &amp; 获取 ptr 的地址
+pptr = &amp;ptr;
+
+// 使用 pptr 获取值
+cout &lt;&lt; &quot;var 值为 :&quot; &lt;&lt; var &lt;&lt; endl;
+cout &lt;&lt; &quot;*ptr 值为:&quot; &lt;&lt; *ptr &lt;&lt; endl;
+cout &lt;&lt; &quot;**pptr 值为:&quot; &lt;&lt; **pptr &lt;&lt; endl;
+
+</code></pre>
+<h2><a class="header" href="#引用" id="引用">引用</a></h2>
+<pre><code class="language-cpp">
+/**
+
+    引用 reference
+
+类似指针，它们之间有三个主要的不同：
+- 不存在空引用。引用必须连接到一块合法的内存。
+- 一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。
+- 引用必须在创建时被初始化。指针可以在任何时间被初始化
+
+所以, 准确的类比是: 引用相当于第二个变量名
+
+引用通常用于函数参数列表和函数返回值, 比使用指针更方便
+*/
+int i = 17;
+int&amp;  r = i; // r 是一个初始化为 i 的整型引用
+double&amp; s = d;
+
+
+// 引用作为函数参数
+// 函数声明
+void swap(int&amp; x, int&amp; y);
+// 函数定义
+void swap(int&amp; x, int&amp; y)
+{
+   int temp;
+   temp = x; /* 保存地址 x 的值 */
+   x = y;    /* 把 y 赋值给 x */
+   y = temp; /* 把 x 赋值给 y  */
+  
+   return;
+}
+
+// 引用作为函数返回值
+//当函数返回一个引用时，则返回一个指向返回值的隐式指针。这样，函数就可以放在赋值语句的左边
+//当返回一个引用时，要注意被引用的对象不能超出作用域。所以返回一个对局部变量的引用是不合法的，但是，可以返回一个对静态变量的引用。
+
+double vals[] = {10.1, 12.6, 33.1, 24.1, 50.0};
+double&amp; setValues( int i )
+{
+  return vals[i];   // 返回第 i 个元素的引用
+}
+int main ()
+{
+   cout &lt;&lt; &quot;改变前的值&quot; &lt;&lt; endl;
+   for ( int i = 0; i &lt; 5; i++ )
+   {
+       cout &lt;&lt; &quot;vals[&quot; &lt;&lt; i &lt;&lt; &quot;] = &quot;;
+       cout &lt;&lt; vals[i] &lt;&lt; endl;
+   }
+   setValues(1) = 20.23; // 改变第 2 个元素
+   setValues(3) = 70.8;  // 改变第 4 个元素
+   cout &lt;&lt; &quot;改变后的值&quot; &lt;&lt; endl;
+   for ( int i = 0; i &lt; 5; i++ )
+   {
+       cout &lt;&lt; &quot;vals[&quot; &lt;&lt; i &lt;&lt; &quot;] = &quot;;
+       cout &lt;&lt; vals[i] &lt;&lt; endl;
+   }
+   return 0;
+}
+
+
+</code></pre>
+<h2><a class="header" href="#动态分配内存" id="动态分配内存">动态分配内存</a></h2>
+<pre><code class="language-cpp">
+/**
+    new , 类似 malloc()
+
+malloc() 函数在 C 语言中就出现了，在 C++ 中仍然存在，但建议尽量不要使用 malloc() 函数。
+new 与 malloc() 函数相比，其主要的优点是，new 不只是分配了内存，它还创建了对象
+*/
+
+double* pvalue  = NULL;
+// new 用于在堆中动态分配内存
+// 如果堆区已被用完，可能无法成功分配内存, 需要检查分配是否成功
+if( !(pvalue  = new double ))
+{
+   cout &lt;&lt; &quot;Error: out of memory.&quot; &lt;&lt;endl;
+   exit(1);
+ 
+}
+*pvalue = 29494.99;     // 在分配的地址存储值
+cout &lt;&lt; &quot;Value of pvalue : &quot; &lt;&lt; *pvalue &lt;&lt; endl;
+delete pvalue;        // 释放 pvalue 所指向的内存
+
+// 数组动态内存分配
+// 多维数组 https://www.runoob.com/cplusplus/cpp-dynamic-memory.html
+char* pvalue  = NULL;   // 初始化为 null 的指针
+pvalue  = new char[20]; // 为变量请求内存
+delete [] pvalue;        // 删除 pvalue 所指向的数组
+
+
+</code></pre>
+<h2><a class="header" href="#命名空间" id="命名空间">命名空间</a></h2>
+<pre><code class="language-cpp">//作为附加信息来区分不同库中相同名称的函数、类、变量
+#include &lt;iostream&gt;
+// using 指令
+// 用于指定默认使用的命名空间, 这样在使用命名空间时就可以不用在前面加上命名空间的名称。这个指令会告诉编译器，后续的代码将使用指定的命名空间中的名称。
+using namespace std; 
+// using 指令也可以用来指定命名空间中的特定项目
+// 如: using std::cout;, 随后的代码中，在使用 cout 时就可以不用加上命名空间名称作为前缀，但是 std 命名空间中的其他项目仍然需要加上命名空间名称作为前缀
+
+// 第一个命名空间
+// 创建新的命名空间
+// or
+// 为已有的命名空间增加新的元素
+namespace first_space{
+   void func(){
+      cout &lt;&lt; &quot;Inside first_space&quot; &lt;&lt; endl;
+   }
+}
+// 第二个命名空间
+namespace second_space{
+   void func(){
+      cout &lt;&lt; &quot;Inside second_space&quot; &lt;&lt; endl;
+   }
+}
+int main ()
+{
+ 
+   // 调用第一个命名空间中的函数
+   first_space::func();
+   
+   // 调用第二个命名空间中的函数
+   second_space::func(); 
+ 
+   return 0;
+}
+
+
+
+// 命名空间嵌套
+#include &lt;iostream&gt;
+using namespace std;
+ 
+// 第一个命名空间
+namespace first_space{
+   void func(){
+      cout &lt;&lt; &quot;Inside first_space&quot; &lt;&lt; endl;
+   }
+   // 第二个命名空间
+   namespace second_space{
+      void func(){
+         cout &lt;&lt; &quot;Inside second_space&quot; &lt;&lt; endl;
+      }
+   }
+}
+using namespace first_space::second_space;
+int main ()
+{
+ 
+   // 调用第二个命名空间中的函数
+   func();
+   
+   return 0;
+}
+</code></pre>
+<h2><a class="header" href="#模板" id="模板">模板</a></h2>
+<pre><code class="language-cpp">// 模板是泛型编程的基础
+
+// 函数模板
+template &lt;typename type&gt; 
+ret-type func-name(parameter list) {.....}
+// 类模板
+template &lt;class type&gt; 
+class class-name {.....} 
+
+// 函数模板 demo
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+template &lt;typename T&gt;
+inline T const&amp; Max (T const&amp; a, T const&amp; b) 
+{ 
+    return a &lt; b ? b:a; 
+} 
+int main ()
+{
+    int i = 39;
+    int j = 20;
+    cout &lt;&lt; &quot;Max(i, j): &quot; &lt;&lt; Max(i, j) &lt;&lt; endl; 
+    double f1 = 13.5; 
+    double f2 = 20.7; 
+    cout &lt;&lt; &quot;Max(f1, f2): &quot; &lt;&lt; Max(f1, f2) &lt;&lt; endl; 
+    string s1 = &quot;Hello&quot;; 
+    string s2 = &quot;World&quot;; 
+    cout &lt;&lt; &quot;Max(s1, s2): &quot; &lt;&lt; Max(s1, s2) &lt;&lt; endl; 
+   return 0;
+}
+
+// 类模板 demo
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;cstdlib&gt;
+#include &lt;string&gt;
+#include &lt;stdexcept&gt;
+using namespace std;
+template &lt;class T&gt;
+class Stack { 
+  private: 
+    vector&lt;T&gt; elems;     // 元素 
+ 
+  public: 
+    void push(T const&amp;);  // 入栈
+    void pop();               // 出栈
+    T top() const;            // 返回栈顶元素
+    bool empty() const{       // 如果为空则返回真。
+        return elems.empty(); 
+    } 
+}; 
+ 
+template &lt;class T&gt;
+void Stack&lt;T&gt;::push (T const&amp; elem) 
+{ 
+    // 追加传入元素的副本
+    elems.push_back(elem);    
+} 
+ 
+template &lt;class T&gt;
+void Stack&lt;T&gt;::pop () 
+{ 
+    if (elems.empty()) { 
+        throw out_of_range(&quot;Stack&lt;&gt;::pop(): empty stack&quot;); 
+    }
+    // 删除最后一个元素
+    elems.pop_back();         
+} 
+ 
+template &lt;class T&gt;
+T Stack&lt;T&gt;::top () const 
+{ 
+    if (elems.empty()) { 
+        throw out_of_range(&quot;Stack&lt;&gt;::top(): empty stack&quot;); 
+    }
+    // 返回最后一个元素的副本 
+    return elems.back();      
+} 
+ 
+int main() 
+{ 
+    try { 
+        Stack&lt;int&gt;         intStack;  // int 类型的栈 
+        Stack&lt;string&gt; stringStack;    // string 类型的栈 
+ 
+        // 操作 int 类型的栈 
+        intStack.push(7); 
+        cout &lt;&lt; intStack.top() &lt;&lt;endl; 
+ 
+        // 操作 string 类型的栈 
+        stringStack.push(&quot;hello&quot;); 
+        cout &lt;&lt; stringStack.top() &lt;&lt; std::endl; 
+        stringStack.pop(); 
+        stringStack.pop(); 
+    } 
+    catch (exception const&amp; ex) { 
+        cerr &lt;&lt; &quot;Exception: &quot; &lt;&lt; ex.what() &lt;&lt;endl; 
+        return -1;
+    } 
+}
+
+</code></pre>
+<h2><a class="header" href="#标准模板库-stl" id="标准模板库-stl">标准模板库 stl</a></h2>
+<p>C++ STL（标准模板库）是一套功能强大的 C++ 模板类，提供了通用的模板类和函数，这些模板类和函数可以实现多种流行和常用的算法和数据结构，如向量、链表、队列、栈。</p>
+<p>容器（Containers）	容器是用来管理某一类对象的集合。C++ 提供了各种不同类型的容器，比如 deque、list、vector、map 等。 (https://www.cnblogs.com/Cnxz/p/12313780.html)</p>
+<p>算法（Algorithms）	算法作用于容器。它们提供了执行各种操作的方式，包括对容器内容执行初始化、排序、搜索和转换等操作。</p>
+<p>迭代器（iterators）	迭代器用于遍历对象集合的元素。这些集合可能是容器，也可能是容器的子集。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+ 
+int main()
+{
+   // 创建一个向量存储 int
+   vector&lt;int&gt; vec; 
+   int i;
+ 
+   // 显示 vec 的原始大小
+   cout &lt;&lt; &quot;vector size = &quot; &lt;&lt; vec.size() &lt;&lt; endl;
+ 
+   // 推入 5 个值到向量中
+   for(i = 0; i &lt; 5; i++){
+       // 在向量的末尾插入值，如果有必要会扩展向量的大小
+      vec.push_back(i);
+   }
+ 
+   // 显示 vec 扩展后的大小
+   cout &lt;&lt; &quot;extended vector size = &quot; &lt;&lt; vec.size() &lt;&lt; endl;
+ 
+   // 访问向量中的 5 个值
+   for(i = 0; i &lt; 5; i++){
+      cout &lt;&lt; &quot;value of vec [&quot; &lt;&lt; i &lt;&lt; &quot;] = &quot; &lt;&lt; vec[i] &lt;&lt; endl;
+   }
+ 
+   // 使用迭代器 iterator 访问值
+   // begin( )  返回一个指向向量开头的迭代器, end( ) 函数返回一个指向向量末尾的迭代器
+   vector&lt;int&gt;::iterator v = vec.begin();
+   while( v != vec.end()) {
+      cout &lt;&lt; &quot;value of v = &quot; &lt;&lt; *v &lt;&lt; endl;
+      v++;
+   }
+ 
+   return 0;
+}
+</code></pre>
+<h2><a class="header" href="#日期时间" id="日期时间">日期时间</a></h2>
+<pre><code class="language-cpp">
+/**
+
+    日期时间
+
+需要在 C++ 程序中引用 &lt;ctime&gt; 头文件。
+有四个与时间相关的类型：clock_t、time_t、size_t 和 tm
+*/
+struct tm {
+  int tm_sec;   // 秒，正常范围从 0 到 59，但允许至 61
+  int tm_min;   // 分，范围从 0 到 59
+  int tm_hour;  // 小时，范围从 0 到 23
+  int tm_mday;  // 一月中的第几天，范围从 1 到 31
+  int tm_mon;   // 月，范围从 0 到 11
+  int tm_year;  // 自 1900 年起的年数
+  int tm_wday;  // 一周中的第几天，范围从 0 到 6，从星期日算起
+  int tm_yday;  // 一年中的第几天，范围从 0 到 365，从 1 月 1 日算起
+  int tm_isdst; // 夏令时
+}
+
+// 关于时间日期的函数
+time_t time(time_t *time); //该函数返回系统的当前日历时间，自 1970 年 1 月 1 日以来经过的秒数。如果系统没有时间，则返回 .1。
+char *ctime(const time_t *time); //该返回一个表示当地时间的字符串指针，字符串形式 day month year hours:minutes:seconds year\n\0。
+struct tm *localtime(const time_t *time); //该函数返回一个指向表示本地时间的 tm 结构的指针。
+clock_t clock(void); //该函数返回程序执行起（一般为程序的开头），处理器时钟所使用的时间。如果时间不可用，则返回 .1。
+char * asctime ( const struct tm * time ); //该函数返回一个指向字符串的指针，字符串包含了 time 所指向结构中存储的信息，返回形式为：day month date hours:minutes:seconds year\n\0。
+struct tm *gmtime(const time_t *time); //该函数返回一个指向 time 的指针，time 为 tm 结构，用协调世界时（UTC）也被称为格林尼治标准时间（GMT）表示。
+time_t mktime(struct tm *time); //该函数返回日历时间，相当于 time 所指向结构中存储的时间。
+double difftime ( time_t time2, time_t time1 ); //该函数返回 time1 和 time2 之间相差的秒数。
+size_t strftime(); //该函数可用于格式化日期和时间为指定的格式。
+
+// 获取当前日期时间
+#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+using namespace std;
+int main( )
+{
+   // 基于当前系统的当前日期/时间
+   time_t now = time(0);
+   
+   // 把 now 转换为字符串形式
+   char* dt = ctime(&amp;now);
+ 
+   cout &lt;&lt; &quot;本地日期和时间：&quot; &lt;&lt; dt &lt;&lt; endl; // Sat Jan  8 20:07:41 2011
+ 
+   // 把 now 转换为 tm 结构
+   tm *gmtm = gmtime(&amp;now);
+   dt = asctime(gmtm);
+   cout &lt;&lt; &quot;UTC 日期和时间：&quot;&lt;&lt; dt &lt;&lt; endl; // Sat Jan  8 20:07:41 2011
+
+    //////////////////////////////
+
+   // 格式化时间
+   
+   // 基于当前系统的当前日期/时间
+   time_t now = time(0);
+   cout &lt;&lt; &quot;1970 到目前经过秒数:&quot; &lt;&lt; now &lt;&lt; endl;
+   tm *ltm = localtime(&amp;now);
+   // 输出 tm 结构的各个组成部分
+   cout &lt;&lt; &quot;年: &quot;&lt;&lt; 1900 + ltm-&gt;tm_year &lt;&lt; endl;
+   cout &lt;&lt; &quot;月: &quot;&lt;&lt; 1 + ltm-&gt;tm_mon&lt;&lt; endl;
+   cout &lt;&lt; &quot;日: &quot;&lt;&lt;  ltm-&gt;tm_mday &lt;&lt; endl;
+   cout &lt;&lt; &quot;时间: &quot;&lt;&lt; ltm-&gt;tm_hour &lt;&lt; &quot;:&quot;;
+   cout &lt;&lt; ltm-&gt;tm_min &lt;&lt; &quot;:&quot;;
+   cout &lt;&lt; ltm-&gt;tm_sec &lt;&lt; endl;
+   //1970 到目前时间:1503564157
+    //年: 2017
+    //月: 8
+   // 日: 24
+   // 时间: 16:42:37
+}
+
+</code></pre>
+<h2><a class="header" href="#io-输入输出" id="io-输入输出">io-输入输出</a></h2>
+<pre><code class="language-cpp">
+
+/**
+
+    io 输入输出
+
+io 库头文件:
+&lt;iostream&gt;	该文件定义了 cin、cout、cerr 和 clog 对象，分别对应于标准输入流、标准输出流、非缓冲标准错误流和缓冲标准错误流。
+&lt;iomanip&gt;	该文件通过所谓的参数化的流操纵器（比如 setw 和 setprecision），来声明对执行标准化 I/O 有用的服务。
+&lt;fstream&gt;	该文件为用户控制的文件处理声明服务。
+*/
+// 标准输出/输入, 都是 iostream 中定义的实例
+#include &lt;iostream&gt;
+using namespace std; // cout 这些对象都在 std 空间下
+int main( )
+{
+   char str[] = &quot;Hello C++&quot;;
+   // &quot;&lt;&lt;&quot; 运算符被重载来输出内置类型（整型、浮点型、double 型、字符串和指针）, 可以多次使用
+   // endl 用于在行末添加一个换行符
+   cout &lt;&lt; &quot;Value of str is : &quot; &lt;&lt; str &lt;&lt; endl;
+
+   char name[50];
+   cout &lt;&lt; &quot;请输入您的名称： &quot;;
+   cin &gt;&gt; name;
+   // 流提取运算符 &gt;&gt; 在一个语句中可以多次使用
+   // 如:
+   cin &gt;&gt; name &gt;&gt; age;
+}
+
+// 标准错误流（cerr）
+//cerr 对象附属到标准错误设备，通常也是显示屏，但是 cerr 对象是非缓冲的，且每个流插入到 cerr 都会立即输出。
+#include &lt;iostream&gt;
+using namespace std;
+int main( )
+{
+   char str[] = &quot;Unable to read....&quot;;
+   cerr &lt;&lt; &quot;Error message : &quot; &lt;&lt; str &lt;&lt; endl; // Error message : Unable to read....
+}
+
+//标准日志流（clog）
+//clog 对象附属到标准错误设备，通常也是显示屏，但是 clog 对象是缓冲的。这意味着每个流插入到 clog 都会先存储在缓冲区，直到缓冲填满或者缓冲区刷新时才会输出。
+// 用法 和 cerr 类似
+// 使用 cerr 流来显示错误消息，而其他的日志消息则使用 clog 流来输出
+
+
+</code></pre>
+<h2><a class="header" href="#面向对象" id="面向对象">面向对象</a></h2>
+<h3><a class="header" href="#类-对象" id="类-对象">类-对象</a></h3>
+<pre><code class="language-cpp">
+
+/**
+
+    类, 对象
+
+class 和 struct 区别:
+- 默认的读取权限不同。struct是public,而class是private。
+- class可用于声明类模板，而struct不可以
+
+* ---struct好的地方在于，你能够直接从栈中获取数据，而不需要再到堆中去找。
+
+*/
+#include &lt;iostream&gt;
+ 
+using namespace std;
+ 
+class Box
+{
+    // 类访问修饰符
+    // private、在类的外部是不可访问的, 如果不指定修饰符,默认 成员都是私有的
+    //protected, 类似 private, 但是 保护成员在派生类（即子类）中是可访问的
+    //public、 类外部可直接访问
+   public:
+      static int objectCount;// 声明类的成员为静态时，这意味着成员独立于对象实例存在，无论有多少个实例, 静态成员都只有一个副本
+      double length;   // 长度
+      double breadth;  // 宽度
+      double height;   // 高度
+      double getVolume(void); // 声明成员函数, 成员函数把函数声明为内联的，即便没有使用 inline 标识符
+      // 可以声明定义在一起
+      double getVolume(void)
+      {
+         return length * breadth * height;
+      }
+};
+// 可以在类内部声明, 外部定义, 借助 &quot;::&quot;
+double Box::getVolume(void)
+{
+    return length * breadth * height;
+}
+
+int main( )
+{
+   Box Box1;        // 声明 Box1，类型为 Box
+   Box Box2;        // 声明 Box2，类型为 Box
+   double volume = 0.0;     // 用于存储体积
+   // box 1 详述
+   Box1.height = 5.0; 
+   Box1.length = 6.0; 
+   Box1.breadth = 7.0;
+   // box 2 详述
+   Box2.height = 10.0;
+   Box2.length = 12.0;
+   Box2.breadth = 13.0;
+   // box 1 的体积
+   volume = Box1.height * Box1.length * Box1.breadth;
+   cout &lt;&lt; &quot;Box1 的体积：&quot; &lt;&lt; volume &lt;&lt;endl;
+   // box 2 的体积
+   volume = Box2.height * Box2.length * Box2.breadth;
+   cout &lt;&lt; &quot;Box2 的体积：&quot; &lt;&lt; volume &lt;&lt;endl;
+   return 0;
+}
+
+
+// 构造函数 : 每次定义/创建对象时运行, 用于初始化对象
+            //可重载
+//析构函数: 每次删除所创建的对象时执行, 用于释放资源
+            // 不可重载
+//拷贝构造函数: 作用有 三, (也就是在这三个场景会调用拷贝构造函数); 可重载
+//      - 使用同一类型之前创建的对象来初始化新定义的对象
+//      - 复制对象把它作为参数传递给函数
+//      - 复制对象，并从函数返回这个对象
+
+// - 如果在类中没有定义拷贝构造函数，编译器会自行定义一个。(默认拷贝构造函数, 执行的是浅拷贝, 一旦对象存在了动态成员 (即存在指针时)，那么浅拷贝就会出问题 必须深拷贝)
+//      - 为什么会出问题: 因为默认的拷贝构造函数是按成员拷贝构造，这导致了两个不同的指针(如ptr1=ptr2)指向了相同的内存。当一个实例销毁时，调用析构函数 free(ptr1)释放了这段内存，那么剩下的一个实例的指针ptr2就无效了，在被销毁的时候free(ptr2)就会出现错误了
+// -  如果类带有指针变量，并有动态内存分配，则它必须有一个拷贝构造函数
+// - 拷贝构造函数必须的一个参数是本类型的一个引用变量。(构造函数 和 拷贝构造函数可以合并在一起)
+// - 为什么拷贝构造函数必须是引用传递，不能是值传递？- 是为了防止递归引用 (因为如果使用值传递, 拷贝构造函数调用的时候, 实参需要传入一个拷贝, 那么有需要调动拷贝构造函数, 套娃了)
+
+class Line
+{
+   public:
+      void setLength( double len );
+      double getLength( void );
+      Line();  // 这是构造函数
+      Line(double len);// 带参树构造函数
+      ~Line();  // 这是析构函数声明
+      Line( const Line &amp;obj);      // 拷贝构造函数, 形式通常这样: classname (const classname &amp;obj) {}
+
+   private:
+      double length;
+      int *ptr;
+};
+Line::Line(void)
+{
+    cout &lt;&lt; &quot;Object is being created&quot; &lt;&lt; endl;
+}
+// 也可带有参数
+Line::Line( double len)
+{
+    cout &lt;&lt; &quot;Object is being created, length = &quot; &lt;&lt; len &lt;&lt; endl;
+    length = len;
+    // 为指针分配内存
+    ptr = new double;
+    // 为指针赋值
+    *ptr = len;
+}
+
+void display(Line obj)
+{
+   cout &lt;&lt; &quot;line 大小 : &quot; &lt;&lt; obj.getLength() &lt;&lt;endl;
+}
+
+// 程序的主函数
+int main( )
+{
+   Line line; // 定义 Line 变量, 调用构造函数, 拷贝构造函数
+   Line line1(10);
+ 
+   Line line2 = line1; // 这里也调用了拷贝构造函数
+
+   display(line1); // 调用完后, line1 会被销毁, 调用析构函数
+   display(line2);
+}
+
+// 使用初始化列表来初始化字段
+Line::Line( double len): length(len) // 等价于 代码 length = len;
+{
+    cout &lt;&lt; &quot;Object is being created, length = &quot; &lt;&lt; len &lt;&lt; endl;
+} 
+// 若有多个字段 X、Y、Z 需要初始化
+C::C( double a, double b, double c): X(a), Y(b), Z(c)
+{
+  ....
+}
+
+// 析构函数定义
+Line::~Line(void)
+{
+    cout &lt;&lt; &quot;Object is being deleted&quot; &lt;&lt; endl;
+    delete ptr;
+}
+// 拷贝构造函数定义
+Line::Line(const Line &amp;obj)
+{
+    cout &lt;&lt; &quot;调用拷贝构造函数并为指针 ptr 分配内存&quot; &lt;&lt; endl;
+    ptr = new int;
+    *ptr = *obj.ptr; // 拷贝值
+}
+
+</code></pre>
+<h3><a class="header" href="#友元" id="友元">友元</a></h3>
+<pre><code class="language-cpp">
+/**
+
+    友元函数
+    类的友元函数是定义在类外部 (不属于类成员)，但有权访问类的所有私有（private）成员和保护（protected）成员
+
+友元可以是一个函数，该函数被称为友元函数；友元也可以是一个类，该类被称为友元类，在这种情况下，整个类及其所有成员都是友元
+*/
+class Box
+{
+   double width;
+public:
+   double length;
+   friend void printWidth( Box box ); //声明函数为一个类的友元
+   void setWidth( double wid );
+};
+
+
+// 请注意：printWidth() 不是任何类的成员函数
+void printWidth( Box box )
+{
+   /* 因为 printWidth() 是 Box 的友元，它可以直接访问该类的任何成员 */
+   cout &lt;&lt; &quot;Width of box : &quot; &lt;&lt; box.width &lt;&lt;endl;
+}
+
+// 程序的主函数
+int main( )
+{
+   Box box;
+   // 使用成员函数设置宽度
+   box.setWidth(10.0);
+   // 使用友元函数输出宽度
+   printWidth( box );
+   return 0;
+}
+
+// 声明类 ClassTwo 的所有成员函数作为类 ClassOne 的友元，需要在类 ClassOne 的定义中放置
+friend class ClassTwo; 
+// 把一个类定义为另一个类的友元类，会暴露实现细节，从而降低了封装性
+
+
+</code></pre>
+<h3><a class="header" href="#内联函数" id="内联函数">内联函数</a></h3>
+<pre><code class="language-cpp">
+/**
+
+    内联函数
+
+编译器会把内联函数的代码副本替换到每个调用该函数的地方 (而对于其他的函数，都是在运行时候才被替代。) 是空间换时间的思想
+
+- 类成员函数都是内联函数，即使没有使用 inline 说明符。(如 构造函数、析构函数、普通成员函数等）)
+- 对于类内声明，在类外定义函数，则可以在类内声明时, 或者在类外定义函数时加上inline关键字
+- 内联函数的函数体过大，一般的编译器会放弃内联方式，而采用普通的方式调用函数。一般不要内联超过 10 行的函数, 不要内联含有循环or 流程控制的函数
+- 函数即使声明为内联的也不一定会被编译器内联 (使用内联函数，只不过是向编译器提出一个申请，编译器可以拒绝你的申请); 比如虚函数和递归函数就不会被正常内联
+
+内联函数和宏定义的区别:
+- 宏是由预处理器对宏进行替代，而内联函数是通过编译器控制来实现的
+- 宏定义在使用时只是简单的文本替换，并没有做严格的参数检查，也就不能享受C++编译器严格类型检查的好处
+
+*/
+inline int Max(int x, int y)
+{
+   return (x &gt; y)? x : y;
+}
+
+// 程序的主函数
+int main( )
+{
+   cout &lt;&lt; &quot;Max (20,10): &quot; &lt;&lt; Max(20,10) &lt;&lt; endl;// 会被编译器替换为  (x &gt; y)? x : y
+   cout &lt;&lt; &quot;Max (0,200): &quot; &lt;&lt; Max(0,200) &lt;&lt; endl;
+   cout &lt;&lt; &quot;Max (100,1010): &quot; &lt;&lt; Max(100,1010) &lt;&lt; endl;
+   return 0;
+}
+
+</code></pre>
+<h3><a class="header" href="#函数重载-运算符重载" id="函数重载-运算符重载">函数重载-运算符重载</a></h3>
+<pre><code class="language-cpp">
+// 函数重载, 运算符重载
+// 可以声明几个功能类似的同名函数，但是这些同名函数的形式参数（指参数的个数、类型或者顺序）必须不同。您不能仅通过返回类型的不同来重载函数
+// 重载 + 运算符，用于把两个 Box 对象相加
+Box operator+(const Box&amp; b)
+{
+    Box box;
+    box.length = this-&gt;length + b.length;
+    box.breadth = this-&gt;breadth + b.breadth;
+    box.height = this-&gt;height + b.height;
+    return box;
+}
+// https://www.runoob.com/cplusplus/cpp-overloading.html
+// 可重载的运算符:
+// 双目算术运算符	+ (加)，-(减)，*(乘)，/(除)，% (取模)
+// 关系运算符	==(等于)，!= (不等于)，&lt; (小于)，&gt; (大于&gt;，&lt;=(小于等于)，&gt;=(大于等于)
+// 逻辑运算符	||(逻辑或)，&amp;&amp;(逻辑与)，!(逻辑非)
+// 单目运算符	+ (正)，-(负)，*(指针)，&amp;(取地址)
+// 自增自减运算符	++(自增)，--(自减)
+// 位运算符	| (按位或)，&amp; (按位与)，~(按位取反)，^(按位异或),，&lt;&lt; (左移)，&gt;&gt;(右移)
+// 赋值运算符	=, +=, -=, *=, /= , % = , &amp;=, |=, ^=, &lt;&lt;=, &gt;&gt;=
+// 空间申请与释放	new, delete, new[ ] , delete[]
+// 其他运算符	()(函数调用)，-&gt;(成员访问)，,(逗号)，[](下标)
+
+// 不可重载的运算符:
+// .：成员访问运算符
+// .*, -&gt;*：成员指针访问运算符
+// ::：域运算符
+// sizeof：长度运算符
+// ?:：条件运算符
+// #： 预处理符号
+
+</code></pre>
+<h3><a class="header" href="#继承" id="继承">继承</a></h3>
+<pre><code class="language-cpp">
+// 类的继承
+// 继承时, 可指定 父类的 访问级别:
+// public (在 struct 中默认 public 继承): 
+// protected
+// private (如果继承时不显示声明, 默认就是 private 继承)
+// 总结:
+继承方式	基类的public成员	基类的protected成员	基类的private成员	继承引起的访问控制关系变化
+public继承	仍为public成员	仍为protected成员	不可见	基类的非私有成员在子类的访问属性不变
+protected继承	变为protected成员	变为protected成员	不可见	基类的非私有成员都为子类的保护成员
+private继承	变为private成员	变为private成员	不可见	基类中的非私有成员都称为子类的私有成员
+class Box
+{
+   protected: // protect 成员, 可被子类访问到
+      double width;
+};
+class SmallBox:Box, public OtherClass // SmallBox 是派生类
+{
+   public:
+      void setSmallWidth( double wid );
+      double getSmallWidth( void );
+};
+// 子类的成员函数
+double SmallBox::getSmallWidth(void)
+{
+    return width ;
+}
+void SmallBox::setSmallWidth( double wid )
+{
+    width = wid;
+}
+
+// 一个派生类继承了所有的基类方法，但下列情况除外：
+//基类的构造函数、析构函数和拷贝构造函数。
+//基类的重载运算符。
+//基类的友元函数。
+
+
+
+
+// 多重继承
+// 问题: 歧义问题
+#include &lt;iostream&gt;
+using namespace std;
+class Dog
+{
+public:
+    virtual void eat() {cout &lt;&lt; &quot;The Dog has eaten.&quot; &lt;&lt; endl;};
+};
+class Bird
+{
+public:
+    virtual void eat() {cout &lt;&lt; &quot;The Bird has eaten.&quot; &lt;&lt; endl;};
+};
+class DogBird : public Dog, public Bird
+{
+};
+int main()
+{
+    DogBird db;
+    // 为了消除歧义，要么在 DogBird类重写 eat() 方法，要么显示的指明调用的是哪一个父类的版本。
+    static_cast&lt;Dog&gt;(db).eat(); // Slices, calling Dog::eat()
+    db.Bird::eat();             // Calls Bird::eat()
+    return 0;
+}
+/*
+Output:
+The Dog has eaten.
+The Bird has eaten.
+*/
+
+
+</code></pre>
+<h3><a class="header" href="#多态-虚函数" id="多态-虚函数">多态-虚函数</a></h3>
+<pre><code class="language-cpp">
+/**
+
+    多态, 虚函数, 纯虚函数(接口)
+
+多态:调用成员函数时，会根据对象具体类型来执行不同的函数
+虚函数: 通过 virtual 将父类方法定义为虚函数, 子类重写后, 可以实现多态
+纯虚函数: 就是java 中的抽象方法 (如果类中至少有一个函数被声明为纯虚函数，则这个类就是抽象类)
+*/
+class Shape {
+   protected:
+      int width, height;
+   public:
+      Shape( int a=0, int b=0)
+      {
+         width = a;
+         height = b;
+      }
+      virtual int area() // 多态需要 关键字 virtual 支持
+      // 也叫做 虚函数, 在派生类中重新定义基类中定义的虚函数时，会告诉编译器不要静态链接到该函数, 而要动态链接 (后期绑定) 到具体类型对应的函数
+      {
+         cout &lt;&lt; &quot;Parent class area :&quot; &lt;&lt;endl;
+         return 0;
+      }
+      // pure virtual function 纯虚函数
+      // 父类中暂时无法给出虚函数具体实现, 就可以定义为纯虚函数
+      virtual int area() = 0;
+};
+class Rectangle: public Shape{
+   public:
+      Rectangle( int a=0, int b=0):Shape(a, b) { }
+      int area ()
+      { 
+         cout &lt;&lt; &quot;Rectangle class area :&quot; &lt;&lt;endl;
+         return (width * height); 
+      }
+};
+class Triangle: public Shape{
+   public:
+      Triangle( int a=0, int b=0):Shape(a, b) { }
+      int area ()
+      { 
+         cout &lt;&lt; &quot;Triangle class area :&quot; &lt;&lt;endl;
+         return (width * height / 2); 
+      }
+};
+// 程序的主函数
+int main( )
+{
+   Shape *shape;
+   Rectangle rec(10,7);
+   Triangle  tri(10,5);
+ 
+   // 存储矩形的地址
+   shape = &amp;rec;
+   // 调用矩形的求面积函数 area
+   shape-&gt;area();
+ 
+   // 存储三角形的地址
+   shape = &amp;tri;
+   // 调用三角形的求面积函数 area
+   shape-&gt;area();
+   
+   return 0;
+}
+</code></pre>
+<h2><a class="header" href="#io-输入输出-cpp" id="io-输入输出-cpp">io-输入输出-cpp</a></h2>
+<pre><code class="language-cpp">//iostream 标准输入输出
+//ofstream	该数据类型表示输出文件流，用于创建文件并向文件写入信息。
+//ifstream	该数据类型表示输入文件流，用于从文件读取信息。
+//fstream	该数据类型通常表示文件流，且同时具有 ofstream 和 ifstream 两种功能，这意味着它可以创建文件，向文件写入信息，从文件读取信息。
+
+
+// 打开文件
+//open() 函数是 fstream、ifstream 和 ofstream 对象的一个成员
+// 打开模式:
+// ios::app	追加模式。所有写入都追加到文件末尾。
+// ios::ate	文件打开后定位到文件末尾。
+// ios::in	打开文件用于读取。
+// ios::out	打开文件用于写入。
+// ios::trunc	如果该文件已经存在，其内容将在打开文件之前被截断，即把文件长度设为 0。
+void open(const char *filename, ios::openmode mode);
+
+//想要以写入模式打开文件，并希望截断文件，以防文件已存在
+ofstream outfile;
+outfile.open(&quot;file.dat&quot;, ios::out | ios::trunc );
+
+//想要打开一个文件用于读写
+ifstream  afile;
+afile.open(&quot;file.dat&quot;, ios::out | ios::in );
+
+// 关闭文件
+// close() 函数是 fstream、ifstream 和 ofstream 对象的一个成员。
+void close();
+
+
+// 文件读写 demo
+#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+using namespace std;
+int main ()
+{
+   char data[100];
+ 
+   // 以写模式打开文件
+   ofstream outfile;
+   outfile.open(&quot;afile.dat&quot;);
+ 
+   cout &lt;&lt; &quot;Writing to the file&quot; &lt;&lt; endl;
+   cout &lt;&lt; &quot;Enter your name: &quot;; 
+   cin.getline(data, 100); // 从标准输入读取一行
+ 
+   // 向文件写入用户输入的数据
+   outfile &lt;&lt; data &lt;&lt; endl;
+ 
+   cout &lt;&lt; &quot;Enter your age: &quot;; 
+   cin &gt;&gt; data;
+   cin.ignore(); // 忽略掉之前读语句留下的多余字符
+   
+   // 再次向文件写入用户输入的数据
+   outfile &lt;&lt; data &lt;&lt; endl;
+ 
+   // 关闭打开的文件
+   outfile.close();
+ 
+   // 以读模式打开文件
+   ifstream infile; 
+   infile.open(&quot;afile.dat&quot;); 
+ 
+   cout &lt;&lt; &quot;Reading from the file&quot; &lt;&lt; endl; 
+   infile &gt;&gt; data; 
+ 
+   // 在屏幕上写入数据
+   cout &lt;&lt; data &lt;&lt; endl;
+   
+   // 再次从文件读取数据，并显示它
+   infile &gt;&gt; data; 
+   cout &lt;&lt; data &lt;&lt; endl; 
+ 
+   // 关闭打开的文件
+   infile.close();
+ 
+   return 0;
+}
+
+// 文件位置指针
+// 是一个整数值，指定了从文件的起始位置到指针所在位置的字节数
+//  istream 的 seekg（意思 为&quot;seek get&quot;）
+//  ostream 的 seekp（&quot;seek put&quot;）。
+// seekg 和 seekp 的参数通常是一个长整型。第二个参数可以用于指定查找方向。查找方向可以是 ios::beg（默认的，从流的开头开始定位），也可以是 ios::cur（从流的当前位置开始定位），也可以是 ios::end（从流的末尾开始定位）
+
+// 定位到 fileObject 的第 n 个字节（假设是 ios::beg）
+fileObject.seekg( n );
+ 
+// 把文件的读指针从 fileObject 当前位置向后移 n 个字节
+fileObject.seekg( n, ios::cur );
+ 
+// 把文件的读指针从 fileObject 末尾往回移 n 个字节
+fileObject.seekg( n, ios::end );
+ 
+// 定位到 fileObject 的末尾
+fileObject.seekg( 0, ios::end );
+</code></pre>
+<h2><a class="header" href="#异常处理-cpp" id="异常处理-cpp">异常处理-cpp</a></h2>
+<pre><code class="language-cpp">// 抛出异常
+double division(int a, int b)
+{
+   if( b == 0 )
+   {
+      throw &quot;Division by zero condition!&quot;;
+   }
+   return (a/b);
+}
+// 捕获异常
+int main ()
+{
+   int x = 50;
+   int y = 0;
+   double z = 0;
+ 
+   try {
+     z = division(x, y);
+     cout &lt;&lt; z &lt;&lt; endl;
+   }
+   //由于抛出了一个类型为 const char* 的异常，因此，当捕获该异常时，我们必须在 catch 块中使用 const char*
+   // 想让 catch 块能够处理任何类型的异常，则必须在括号内使用省略号 ... (三个点)
+   catch (const char* msg) {
+     cerr &lt;&lt; msg &lt;&lt; endl;
+   }
+ 
+   return 0;
+}
+
+
+// 标准异常
+// C++ 提供了一系列标准的异常，定义在 &lt;exception&gt; 中, 具有层级结构:
+std::exception	该异常是所有标准 C++ 异常的父类。
+    std::bad_alloc	该异常可以通过 new 抛出。
+    std::bad_cast	该异常可以通过 dynamic_cast 抛出。
+    std::bad_exception	这在处理 C++ 程序中无法预期的异常时非常有用。
+    std::bad_typeid	该异常可以通过 typeid 抛出。
+    std::logic_error	理论上可以通过读取代码来检测到的异常。
+        std::domain_error	当使用了一个无效的数学域时，会抛出该异常。
+        std::invalid_argument	当使用了无效的参数时，会抛出该异常。
+        std::length_error	当创建了太长的 std::string 时，会抛出该异常。
+        std::out_of_range	该异常可以通过方法抛出，例如 std::vector 和 std::bitset&lt;&gt;::operator[]()。
+    std::runtime_error	理论上不可以通过读取代码来检测到的异常。
+        std::overflow_error	当发生数学上溢时，会抛出该异常。
+        std::range_error	当尝试存储超出范围的值时，会抛出该异常。
+        std::underflow_error	当发生数学下溢时，会抛出该异常
+
+// 自定义异常
+//可以通过继承和重载 exception 类来定义新的异常
+#include &lt;iostream&gt;
+#include &lt;exception&gt;
+using namespace std;
+struct MyException : public exception
+{
+    // what() 是异常类提供的一个公共方法，它已被所有子异常类重载
+  const char * what () const throw ()
+  {
+    return &quot;C++ Exception&quot;;
+  }
+};
+ 
+int main()
+{
+  try
+  {
+    throw MyException();
+  }
+  catch(MyException&amp; e)
+  {
+    std::cout &lt;&lt; &quot;MyException caught&quot; &lt;&lt; std::endl;
+    std::cout &lt;&lt; e.what() &lt;&lt; std::endl;
+  }
+  catch(std::exception&amp; e)
+  {
+    //其他的错误
+  }
+}
+</code></pre>
+<h2><a class="header" href="#信号处理" id="信号处理">信号处理</a></h2>
+<pre><code class="language-cpp">// 信号是由操作系统传给进程的中断，会提早终止一个程序
+//这些信号是定义在 C++ 头文件 &lt;csignal&gt; 中。
+// 有哪些信号:
+SIGABRT	程序的异常终止，如调用 abort。
+SIGFPE	错误的算术运算，比如除以零或导致溢出的操作。
+SIGILL	检测非法指令。
+SIGINT	接收到交互注意信号。
+SIGSEGV	非法访问内存。
+SIGTERM	发送到程序的终止请求
+
+
+// 捕获信号
+// 这个函数接收两个参数：第一个参数是一个整数，代表了信号的编号；第二个参数是一个指向信号处理函数的指针。
+void (*signal (int sig, void (*func)(int)))(int); 
+// 生成信号
+// SIGINT、SIGABRT、SIGFPE、SIGILL、SIGSEGV、SIGTERM、SIGHUP
+int raise (signal sig);
+
+// 捕获信号
+#include &lt;iostream&gt;
+#include &lt;csignal&gt;
+#include &lt;unistd.h&gt;
+using namespace std;
+void signalHandler( int signum )
+{
+    cout &lt;&lt; &quot;Interrupt signal (&quot; &lt;&lt; signum &lt;&lt; &quot;) received.\n&quot;;
+    // 清理并关闭
+    // 终止程序  
+   exit(signum);  
+}
+int main ()
+{
+    // 注册信号 SIGINT 和信号处理程序
+    //  Ctrl+C 来中断程序
+    signal(SIGINT, signalHandler);  
+    while(1){
+       cout &lt;&lt; &quot;Going to sleep....&quot; &lt;&lt; endl;
+       sleep(1);
+    }
+    return 0;
+}
+
+// 生成信号
+#include &lt;iostream&gt;
+#include &lt;csignal&gt;
+#include &lt;unistd.h&gt;
+using namespace std;
+void signalHandler( int signum )
+{
+    cout &lt;&lt; &quot;Interrupt signal (&quot; &lt;&lt; signum &lt;&lt; &quot;) received.\n&quot;;
+    // 清理并关闭
+    // 终止程序 
+   exit(signum);  
+}
+int main ()
+{
+    int i = 0;
+    // 注册信号 SIGINT 和信号处理程序
+    signal(SIGINT, signalHandler);  
+    while(++i){
+       cout &lt;&lt; &quot;Going to sleep....&quot; &lt;&lt; endl;
+       if( i == 3 ){
+          raise( SIGINT);
+       }
+       sleep(1);
+    }
+    return 0;
+}
+
+</code></pre>
+<h2><a class="header" href="#多线程" id="多线程">多线程</a></h2>
+<pre><code class="language-cpp">
+
+</code></pre>
+<h2><a class="header" href="#web-开发" id="web-开发">web 开发</a></h2>
+<p>公共网关接口（CGI）</p>
+<h1><a class="header" href="#qt-框架" id="qt-框架">qt 框架</a></h1>
+<p>https://www.bookstack.cn/read/qt-study-road-2/b173882cafb6bb28.md</p>
+<p>不再需要研究 STL，不再需要 C++ 的 <code>&lt;string&gt;</code>，不再需要到处去找解析 XML、连接数据库、访问网络的各种第三方库，因为 Qt 自己内置了</p>
+<p>提供 gui 库</p>
+<h1><a class="header" href="#开发工具" id="开发工具">开发工具</a></h1>
+<p>Qt Creator, CLion, vscode</p>
+<h1><a class="header" href="#debug-工具" id="debug-工具">debug 工具</a></h1>
+<p>valgrind, 用来分析程序错误</p>
+<h1><a class="header" href="#拾遗" id="拾遗">拾遗</a></h1>
+<h2><a class="header" href="#指针的指针和二维数组的区别" id="指针的指针和二维数组的区别">指针的指针和二维数组的区别</a></h2>
+<p>https://www.zhihu.com/question/40973588/answer/91761240</p>
+<pre><code class="language-cpp">#include&lt;stdio.h&gt;
+  2 int main (void)
+  3 {
+  4     int a[2][3] = {{1,2,3},{4,5,6}};
+  5     int ** array_ptr = a; // 错误, a 是一个指向 a 这个数组第一个元素的指针, 而第一个元素还是一个数组, 所以 a 是一个指向数组的指针; array_ptr 代表一个指针的地址, 即指向指针的指针, 明显不是指向数组的指针
+         // 改成这样既可:
+         int (*array_ptr)[3] = a;
+
+         
+  6     printf(&quot;%d\n&quot;,a[0][0]);
+  8     printf(&quot;%p\n&quot;,a);
+  9     printf(&quot;%p\n&quot;,*a);
+ 10     printf(&quot;%p\n&quot;,array_ptr);
+ 11     printf(&quot;%p\n&quot;,*array_ptr);
+ 12     return 0;
+ 13 }
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="class-conflict-check.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="create-blog-by-react.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="class-conflict-check.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="create-blog-by-react.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

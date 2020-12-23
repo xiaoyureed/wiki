@@ -1,0 +1,2440 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>springboot-doc - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html" class="active"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: SpringBoot reference Doc
+date: 2017-12-30 22:40:32
+tags: [springboot]
+categories: java web</h2>
+<div align="center">
+springboot reference doc 翻译
+开箱即用，提供各种默认配置来简化项目配置|内嵌式容器简化Web项目| 没有冗余代码生成和XML配置的要求
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#quickstart">quickstart</a>
+<ul>
+<li><a href="#%E7%94%9F%E6%88%90%E9%AA%A8%E6%9E%B6">生成骨架</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BB%93%E6%9E%84-structuring-your-code">项目代码的结构 Structuring your code</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+</ul>
+</li>
+<li><a href="#starter">starter</a></li>
+<li><a href="#%E6%A0%87%E8%AF%86%E5%85%A5%E5%8F%A3%E7%B1%BB">标识入口类</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E7%B1%BBconfiguration-classes-">配置类(Configuration classes )</a>
+<ul>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E9%85%8D%E7%BD%AE%E7%B1%BBimporting-additional-configuration-classes">添加配置类(Importing additional configuration classes)</a></li>
+<li><a href="#importing-xml-configuration-%E6%B7%BB%E5%8A%A0xml%E9%85%8D%E7%BD%AE">Importing XML configuration 添加xml配置</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%90%AF%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AEauto-configuration">开启自动配置(Auto-configuration)</a>
+<ul>
+<li><a href="#%E5%8F%96%E6%B6%88%E7%89%B9%E5%AE%9A%E7%9A%84%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AEdisabling-specific-auto-configuration-">取消特定的自动配置(Disabling specific auto-configuration )</a></li>
+</ul>
+</li>
+<li><a href="#bean%E6%B3%A8%E5%86%8C-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5">bean注册 依赖注入</a></li>
+<li><a href="#springbootapplication%E4%BD%BF%E7%94%A8">@SpringBootApplication使用</a></li>
+<li><a href="#%E5%B7%A5%E7%A8%8B%E8%B7%91%E8%B5%B7%E6%9D%A5running-your-application">工程跑起来(Running your application)</a></li>
+<li><a href="#%E5%BC%80%E5%8F%91%E8%80%85%E7%BB%84%E4%BB%B6developer-tools">(开发者组件)Developer tools</a>
+<ul>
+<li><a href="#%E7%89%B9%E6%80%A7%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%80%BC">特性：自动设置默认值</a></li>
+<li><a href="#%E7%89%B9%E6%80%A7%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AFautomatic-restart">特性：自动重启(Automatic restart)</a>
+<ul>
+<li><a href="#%E9%87%8D%E5%90%AF%E6%97%B6%E7%9A%84%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95logging-changes-in-condition-evaluation">重启时的日志记录（Logging changes in condition evaluation）</a></li>
+<li><a href="#%E6%8E%92%E9%99%A4%E5%8F%97%E7%9B%91%E6%8E%A7%E8%B5%84%E6%BA%90excluding-resources">排除受监控资源(Excluding resources)</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E9%A2%9D%E5%A4%96%E7%9B%91%E6%8E%A7%E8%B7%AF%E5%BE%84watching-additional-paths-">添加额外监控路径(Watching additional paths )</a></li>
+<li><a href="#%E9%87%8D%E5%90%AF%E5%A4%B1%E6%95%88disabling-restart">重启失效（Disabling restart）</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AAtrigger-file">设置一个trigger file</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89restart-classloader">自定义restart classloader</a></li>
+<li><a href="#devtools%E7%9A%84%E5%B1%80%E9%99%90">devtools的局限</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0livereload">浏览器自动刷新(LiveReload)</a></li>
+<li><a href="#%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AEglobal-settings-">全局设置(Global settings )</a></li>
+<li><a href="#%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95appremote-applications">远程调试app(Remote applications)</a>
+<ul>
+<li><a href="#%E5%90%AF%E5%8A%A8%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF">启动本地的客户端</a></li>
+<li><a href="#%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95">远程调试</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%89%93%E5%8C%85%E5%88%B0%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83">打包到生产环境</a></li>
+<li><a href="#springapplication">SpringApplication</a>
+<ul>
+<li><a href="#%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5startup-failure">启动失败(Startup failure)</a></li>
+<li><a href="#%E5%AE%9A%E5%88%B6banner">定制banner</a>
+<ul>
+<li><a href="#%E7%9B%B4%E6%8E%A5%E9%80%9A%E8%BF%87%E8%AE%BE%E7%BD%AEfile">直接通过设置file</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F">通过编程方式</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6banner%E6%89%93%E5%8D%B0%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9">控制banner打印到的地方</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9A%E5%88%B6springapplication">定制SpringApplication</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%92%8C%E7%9B%91%E5%90%AC%E5%99%A8">应用的事件和监听器</a></li>
+<li><a href="#%E6%B3%A8%E5%85%A5applicationcontext">注入ApplicationContext</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E8%AE%BE%E7%BD%AEweb%E7%8E%AF%E5%A2%83">自动设置web环境</a></li>
+<li><a href="#application-exit">Application exit</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96admin%E5%B1%9E%E6%80%A7admin-features">获取admin属性(Admin features)</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%95%E5%85%A5%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6externalized-configuration">引入配置文件(Externalized Configuration)</a>
+<ul>
+<li><a href="#%E6%80%8E%E4%B9%88%E5%BC%95%E5%85%A5%E5%91%A2">怎么引入呢</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7">配置文件的优先级</a></li>
+<li><a href="#%E4%B8%8D%E5%90%8C%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84applicationproperties">不同文件夹中的application.properties</a></li>
+<li><a href="#%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEprofile-specific-properties">多环境配置(Profile-specific properties)</a></li>
+<li><a href="#%E6%B3%A8%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7-%E5%8D%A0%E4%BD%8D%E7%AC%A6">注入自定义属性-占位符</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8yaml">使用YAML</a>
+<ul>
+<li><a href="#%E8%BD%BD%E5%85%A5yaml">载入yaml</a></li>
+<li><a href="#%E5%B0%86yml%E8%BD%AC%E4%B8%BAproperties">将yml转为properties</a></li>
+<li><a href="#yaml%E7%9A%84%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">yaml的多环境配置</a></li>
+<li><a href="#yaml%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8propertysource">yaml不能使用@PropertySource</a></li>
+<li><a href="#ymal%E4%B8%AD%E7%9A%84list">ymal中的list</a></li>
+</ul>
+</li>
+<li><a href="#configurationproperties">@ConfigurationProperties</a>
+<ul>
+<li><a href="#%E7%BB%9F%E4%B8%80%E5%89%8D%E7%BC%80">统一前缀</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E7%BB%84%E4%BB%B6%E5%8E%BB%E9%85%8D%E7%BD%AE%E5%8C%96">第三方组件去配置化</a></li>
+<li><a href="#%E6%9D%BE%E7%BB%91%E5%AE%9Arelaxed-binding">松绑定（relaxed binding）</a></li>
+<li><a href="#%E5%A4%8D%E6%9D%82%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%B7%B7%E5%90%88merge">复杂类型的混合(merge)</a></li>
+<li><a href="#%E5%B1%9E%E6%80%A7-%E8%BD%AC%E6%8D%A2">属性 转换</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#profiles">profiles</a>
+<ul>
+<li><a href="#%E6%B7%BB%E5%8A%A0active-profiles">添加active-profiles</a></li>
+</ul>
+</li>
+<li><a href="#springboot%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95">springboot单元测试</a></li>
+<li><a href="#%E6%97%A5%E5%BF%97">日志</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE">输出配置</a>
+<ul>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F">输出格式</a></li>
+<li><a href="#console%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BA">console控制台输出</a></li>
+<li><a href="#%E5%B8%A6%E9%A2%9C%E8%89%B2%E8%BE%93%E5%87%BA">带颜色输出</a></li>
+<li><a href="#file%E6%96%87%E4%BB%B6%E8%BE%93%E5%87%BA">file文件输出</a></li>
+</ul>
+</li>
+<li><a href="#%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%ABlog-levels">日志级别(Log Levels)</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89log-configration">自定义log configration</a></li>
+<li><a href="#mdc%E7%89%B9%E6%80%A7">MDC特性</a></li>
+<li><a href="#logback%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE">logback详细配置</a>
+<ul>
+<li><a href="#%E4%BE%9D%E8%B5%96">依赖</a></li>
+<li><a href="#logback-springxml">logback-spring.xml</a></li>
+<li><a href="#%E7%9C%8B%E4%B8%80%E4%B8%AA%E5%85%B7%E4%BD%93%E6%97%A5%E5%BF%97%E9%9C%80%E6%B1%82">看一个具体日志需求</a></li>
+<li><a href="#%E6%8E%92%E9%99%A4%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9A%84%E6%97%A5%E5%BF%97">排除不需要的日志</a></li>
+</ul>
+</li>
+<li><a href="#logback%E6%89%A9%E5%B1%95%E7%89%B9%E6%80%A7">logback扩展特性</a>
+<ul>
+<li><a href="#logback%E7%9A%84%E5%A4%9A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">logback的多环境配置</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E4%B8%AD%E4%BD%BF%E7%94%A8environment-properties">配置中使用Environment properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E5%8F%91-web-app">开发 web app</a>
+<ul>
+<li><a href="#%E5%BC%95%E5%85%A5webjars">引入WebJars</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AFwebjars">什么是webjars</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8webjars">为什么使用webjars</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-webjars">如何使用 webjars</a></li>
+</ul>
+</li>
+<li><a href="#gradle-%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7">Gradle 构建工具</a></li>
+<li><a href="#%E5%BC%80%E5%8F%91filter">开发filter</a></li>
+<li><a href="#spring-web-mvc%E6%A1%86%E6%9E%B6">Spring Web MVC框架</a>
+<ul>
+<li><a href="#%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AEspringmvc">自动配置Springmvc</a></li>
+<li><a href="#http%E6%B6%88%E6%81%AF%E8%BD%AC%E6%8D%A2%E5%99%A8httpmessageconverters">http消息转换器(HttpMessageConverters)</a></li>
+<li><a href="#messagecodesresolver">MessageCodesResolver</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90">静态资源</a></li>
+<li><a href="#%E6%AC%A2%E8%BF%8E%E9%A1%B5">欢迎页</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87">自定义网站图标</a></li>
+<li><a href="#%E8%AF%B7%E6%B1%82%E5%8C%B9%E9%85%8D%E5%92%8C%E8%B5%84%E6%BA%90%E5%AF%BC%E8%88%AApath-matching-and-content-negotiation">请求匹配和资源导航(Path Matching and Content Negotiation)</a></li>
+<li><a href="#configurablewebbindinginitializer">ConfigurableWebBindingInitializer</a></li>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E">模板引擎</a></li>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">全局异常处理</a>
+<ul>
+<li><a href="#%E5%A6%82%E6%9E%9C%E8%BF%94%E5%9B%9E%E8%A7%86%E5%9B%BE">如果返回视图</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9C%E8%BF%94%E5%9B%9Ejson">如果返回json</a></li>
+<li><a href="#%E5%AE%9A%E5%88%B6%E8%87%AA%E5%B7%B1%E7%9A%84%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2">定制自己的错误页面</a></li>
+<li><a href="#%E4%B8%8D%E4%BD%BF%E7%94%A8springmvc">不使用springmvc</a></li>
+</ul>
+</li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E5%85%81%E8%AE%B8%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE">配置允许跨域访问</a></li>
+</ul>
+</li>
+<li><a href="#spring-webflux-framework">Spring WebFlux Framework</a></li>
+<li><a href="#jax-rs-and-jersey">JAX-RS and Jersey</a></li>
+<li><a href="#%E5%B5%8C%E5%85%A5%E5%BC%8Fservlet%E5%AE%B9%E5%99%A8">嵌入式servlet容器</a>
+<ul>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%86%85%E5%B5%8C%E5%AE%B9%E5%99%A8">自定义内嵌容器</a></li>
+<li><a href="#servlets-filters-and-listeners">Servlets, Filters, and listeners</a></li>
+<li><a href="#servlet%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%9D%E5%A7%8B%E5%8C%96">servlet上下文初始化</a></li>
+<li><a href="#%E5%AF%B9jsp%E7%9A%84%E9%99%90%E5%88%B6">对jsp的限制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E5%85%A8security">安全(Security)</a>
+<ul>
+<li><a href="#oauth2">OAuth2</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E8%B7%B5">实践</a>
+<ul>
+<li><a href="#%E6%8E%A5%E5%8F%A3%E5%BC%80%E5%8F%91">接口开发</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E">使用模板引擎</a>
+<ul>
+<li><a href="#themeleaf">themeleaf</a></li>
+<li><a href="#freemarker">freemarker</a></li>
+<li><a href="#velocity">velocity</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9B%86%E6%88%90swagger2">集成swagger2</a></li>
+<li><a href="#%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">统一异常处理</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8jdbctemplate">使用JdbcTemplate</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8spring-data-jpa">使用Spring-data-jpa</a></li>
+<li><a href="#%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90%E9%85%8D%E7%BD%AE">多数据源配置</a>
+<ul>
+<li><a href="#mybatis">mybatis</a></li>
+<li><a href="#jdbctemplate">JdbcTemplate</a></li>
+<li><a href="#spring-data-jpa">Spring-data-jpa</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8redis%E4%BD%9C%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93">使用redis作为数据库</a></li>
+<li><a href="#async%E5%BC%82%E6%AD%A5%E8%B0%83%E7%94%A8">@Async异步调用</a></li>
+<li><a href="#log4j%E6%94%AF%E6%8C%81">log4j支持</a></li>
+<li><a href="#%E5%A4%9A%E7%8E%AF%E5%A2%83%E4%B8%8B%E7%9A%84%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE">多环境下的日志配置</a></li>
+<li><a href="#aop%E7%BB%9F%E4%B8%80%E5%A4%84%E7%90%86%E8%AF%B7%E6%B1%82%E6%97%A5%E5%BF%97">aop统一处理请求日志</a></li>
+<li><a href="#%E7%BC%93%E5%AD%98%E6%94%AF%E6%8C%81">缓存支持</a></li>
+<li><a href="#%E6%B6%88%E6%81%AF%E6%9C%8D%E5%8A%A1">消息服务</a></li>
+<li><a href="#%E7%9B%91%E6%8E%A7%E7%AE%A1%E7%90%86">监控管理</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#quickstart" id="quickstart">quickstart</a></h1>
+<h2><a class="header" href="#生成骨架" id="生成骨架">生成骨架</a></h2>
+<p>访问：http://start.spring.io/</p>
+<p>生成的Application和ApplicationTests类都可以直接运行来启动当前创建的项目，由于目前该项目未配合任何数据访问或Web模块，程序会在加载完Spring之后结束运行。</p>
+<p>此时的pom.xml内容如下，仅引入了两个模块</p>
+<ul>
+<li>spring-boot-starter：核心模块，包括自动配置支持、日志和YAML</li>
+<li>spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito</li>
+</ul>
+<p>为了引入Web模块，需添加spring-boot-starter-web模块</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+	&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ul>
+<li>
+<p>这里比较下<code>&lt;dependency&gt;</code>和<code>&lt;dependencyManagement&gt;</code>区别：</p>
+<ul>
+<li>
+<p><code>&lt;dependencyManagement&gt;</code>只是对jar版本号进行管理，不会引入，只是声明,需在子pom中显式引入(子pom中可以不加版本号 )</p>
+<p>例如：父pom在dependencyManagement中引入spring-boot-dependencies，则所有子pom中引入依赖时无需版本号</p>
+</li>
+<li>
+<p><code>&lt;dependency&gt;</code>真正引入，子pom均会继承</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#项目代码的结构-structuring-your-code" id="项目代码的结构-structuring-your-code">项目代码的结构 Structuring your code</a></h2>
+<p>其中src/main/java中推荐的结构如下：</p>
+<pre><code>com
++- example
+    +- myproject
+        +- Application.java
+        |
+        +- domain
+        |   +- Customer.java
+        |   +- CustomerRepository.java
+        |
+        +- service
+        |   +- CustomerService.java
+        |
+        +- web
+            +- CustomerController.java
+</code></pre>
+<h2><a class="header" href="#代码" id="代码">代码</a></h2>
+<pre><code class="language-java">@RestController
+@RequestMapping(&quot;/&quot;)
+public class DemoController {
+
+    @GetMapping(&quot;index&quot;)
+    public String index() {
+        return &quot;hello&quot;;
+    }
+}
+
+</code></pre>
+<p>通过ide启动主程序，打开浏览器访问http://localhost:8080/index，可以看到页面输出Hello</p>
+<p>通过maven启动：进入根目录，<code>mvn spring-boot:run</code></p>
+<p>通过命令行, <code>java -jar xxx</code>启动. 先打包，生成jar：<code>mvn package </code>,如果要忽略测试：<code>mvn package -DskipTests</code>,jar包在target目录</p>
+<p>如果没有继承spring-boot-starter-parent，pom需要引入：</p>
+<pre><code class="language-xml">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+
+</code></pre>
+<p>单元测试用例：不用启动即可测试</p>
+<pre><code class="language-java">/**
+注意引入下面内容，让status、content、equalTo函数可用
+
+    import static org.hamcrest.Matchers.equalTo;
+    import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+    import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+*/
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class Chapter1ApplicationTests {
+
+    private MockMvc mvc;
+
+    @Before
+    public void setUp() throws Exception {
+        mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
+    }
+
+	@Test
+	public void getHello() throws Exception {
+	    mvc.perform(MockMvcRequestBuilders.get(&quot;/index&quot;).accept(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(content().string(equalTo(&quot;Hello World!&quot;)));
+	}
+
+}
+</code></pre>
+<h1><a class="header" href="#starter" id="starter">starter</a></h1>
+<p>https://www.nosuchfield.com/2017/10/15/Spring-Boot-Starters/
+https://www.cnblogs.com/yuansc/p/9088212.html</p>
+<h1><a class="header" href="#标识入口类" id="标识入口类">标识入口类</a></h1>
+<p><code>@EnableAutoConfiguration</code> 一般设置在入口类上, 他隐式地将当前类所在包设置为&quot;base search package&quot;, 整个app将搜寻这个包及其子包中的items(eg: 一个jpa app, 被该注解表示类所在的包将会被用来搜寻@Entity items).</p>
+<p>使用了<code>@EnableAutoConfiguration</code>标识base package之后,  使用<code>@ComponentScan</code>就无需设置<code>basePackage </code>属性了</p>
+<p><code>@Configuration</code> 用@Configuration注解的类，等价 与XML中配置beans；用@Bean标注方法等价于XML中配置的bean</p>
+<p>例子如下: (相当于 配置spring开启注解扫描<code>&lt;context:component-scan base-package=&quot;com.xiaoyu.demo&quot; /&gt;</code>)</p>
+<pre><code class="language-java">@Configuration  
+public class ExampleConfiguration {  
+  
+    @Value(&quot;${batch.jdbc.driver}&quot;)  
+    private String driverClassName;  
+  
+    @Value(&quot;${batch.jdbc.url}&quot;)  
+    private String driverUrl;  
+  
+    @Value(&quot;${batch.jdbc.user}&quot;)  
+    private String driverUsername;  
+  
+    @Value(&quot;${batch.jdbc.password}&quot;)  
+    private String driverPassword;  
+  
+    @Bean(name = &quot;dataSource&quot;)  
+    public DataSource dataSource() {  
+        BasicDataSource dataSource = new BasicDataSource();  
+        dataSource.setDriverClassName(driverClassName);  
+        dataSource.setUrl(driverUrl);  
+        dataSource.setUsername(driverUsername);  
+        dataSource.setPassword(driverPassword);  
+        return dataSource;  
+    }  
+  
+    @Bean  
+    public PlatformTransactionManager transactionManager() {  
+        return new DataSourceTransactionManager(dataSource());  
+    }  
+  
+}  
+</code></pre>
+<h1><a class="header" href="#配置类configuration-classes-" id="配置类configuration-classes-">配置类(Configuration classes )</a></h1>
+<p>入口类也是作为@configuration class 的 好选择(Usually the class that defines the main method is also a good candidate as the primary <code>@Configuration</code>.)</p>
+<p>想要添加配置文件时, 先试试搜索<code>@Enable*</code>注解, 如果不能解决, 再考虑添加xml配置</p>
+<h2><a class="header" href="#添加配置类importing-additional-configuration-classes" id="添加配置类importing-additional-configuration-classes">添加配置类(Importing additional configuration classes)</a></h2>
+<p>如果不止一个@Configuration class, 可以在选定的主配置类上(比如入口类)使用<code>@Import({xxxConfig.class})</code>来导入另外的配置类,这种方式情况下, 只需要主配置类使用<code>@Configuration和@Import({xxxConfig.class})</code>, 其他配置类无需任何注解</p>
+<p>或者也可以<code>@ComponentScan</code>自动扫描所有spring component, 当然也包括@Configuration classes, 此时每个配置类都需要@Configuration</p>
+<h2><a class="header" href="#importing-xml-configuration-添加xml配置" id="importing-xml-configuration-添加xml配置">Importing XML configuration 添加xml配置</a></h2>
+<p>首先创建一个<code>@Configuration</code>类, 然后在类上通过<code>@ImportResource(&quot;classpath:cons-injec.xml&quot;)</code>来导入xml配置文件</p>
+<p>用来兼容老的 spring 项目</p>
+<h1><a class="header" href="#开启自动配置auto-configuration" id="开启自动配置auto-configuration">开启自动配置(Auto-configuration)</a></h1>
+<p>选择一个<code>@Configuration</code> classes 添加 <code>@EnableAutoConfiguration</code> or <code>@SpringBootApplication</code>, 推荐入口类</p>
+<p>自动配置开启后, 引入其他特定的组件那么相应的自动配置会被自动替换, 通过<code>--debug</code>运行查看有哪些自动配置(Auto-configuration is noninvasive, at any point you can start to define your own configuration to replace specific parts of the auto-configuration. For example, if you add your own DataSource bean, the default embedded database support will back away)</p>
+<h2><a class="header" href="#取消特定的自动配置disabling-specific-auto-configuration-" id="取消特定的自动配置disabling-specific-auto-configuration-">取消特定的自动配置(Disabling specific auto-configuration )</a></h2>
+<p><code>@EnableAutoConfiguration(exclude={xxxAutoConfiguration.class})</code></p>
+<pre><code class="language-java">@Configuration
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+public class MyConfiguration {
+}
+</code></pre>
+<p>如果想取消的 自动配置类 不在classpath下, 使用该注解的<code>excludeName </code> 来指定fully qualified name</p>
+<p>同时, 也可使用<code>spring.autoconfigure.exclude</code> property.</p>
+<h1><a class="header" href="#bean注册-依赖注入" id="bean注册-依赖注入">bean注册 依赖注入</a></h1>
+<p><code>@ComponentScan</code> 和 <code>@Autowired</code> 联合使用</p>
+<p>如果按照推荐的代码结构, <code>@ComponentScan</code>无需配置任何额外属性, 就能将 All of your application components (<code>@Component, @Service, @Repository, @Controller</code> etc.) will be automatically registered as Spring Beans.</p>
+<pre><code class="language-java">@Service
+public class DatabaseAccountService implements AccountService {
+
+    private final RiskAssessor riskAssessor = null;// 这里是final的, 意味着不能修改它了
+
+    // @Autowired// 此时由于有了构造函数, @Autowired其实可以省略
+    public DatabaseAccountService(RiskAssessor riskAssessor) {
+        this.riskAssessor = riskAssessor;
+    }
+
+    // ...
+
+}
+
+// 或者直接
+@Service
+public class DatabaseAccountService implements AccountService {
+
+    @Autowired
+    private final RiskAssessor riskAssessor;// 这里是final的, 意味着不能修改它了
+
+    // ...
+
+}
+</code></pre>
+<h1><a class="header" href="#springbootapplication使用" id="springbootapplication使用">@SpringBootApplication使用</a></h1>
+<p>The <code>@SpringBootApplication</code> annotation is equivalent to using <code>@Configuration, @EnableAutoConfiguration and @ComponentScan</code> with their default attributes</p>
+<p><code>@SpringBootApplication</code>也提供属性来排除auto-configration class, 设置 base package</p>
+<pre><code class="language-java">@SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+}
+
+//@Configuration, @EnableAutoConfiguration and @ComponentScan不是非有不可的
+// 比如不使用@ComponentScan
+@Configuration
+@EnableAutoConfiguration
+@Import({ MyConfig.class, MyAnotherConfig.class })
+public class Application {
+
+	public static void main(String[] args) {
+			SpringApplication.run(Application.class, args);
+	}
+
+}
+
+</code></pre>
+<h1><a class="header" href="#工程跑起来running-your-application" id="工程跑起来running-your-application">工程跑起来(Running your application)</a></h1>
+<p>Running from an IDE就不说了</p>
+<p>Running as a packaged application <code>java -jar target/myproject-0.0.1-SNAPSHOT.jar</code></p>
+<p>Using the Maven plugin <code>mvn spring-boot:run</code>, 设置合适的环境变量: <code>export MAVEN_OPTS=-Xmx1024m -XX:MaxPermSize=128M</code></p>
+<p>热拔插(热部署)效果(Hot Swapping): springboot工程是一个简单的java app, 所以热部署是out of the box的,但是在字节码替换方面有限制( JVM hot swapping is somewhat limited with the bytecode that it can replace), 更强的功能可以看看 <a href="https://zeroturnaround.com/software/jrebel/">🚪</a></p>
+<h1><a class="header" href="#开发者组件developer-tools" id="开发者组件developer-tools">(开发者组件)Developer tools</a></h1>
+<p>spring-boot-devtools 能够提供开发阶段的一系列特性(比如模版引擎会缓存解析后的模版, DevTools会禁用它, 再比如在为静态资源提供服务时，Spring MVC可以将HTTP缓存头添加到响应中, DevTool也禁用他)，当运行一个打包好的程序APP时(比如:java -jar xxx)，这些禁用会自动失效：</p>
+<pre><code class="language-xml">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+        &lt;optional&gt;true&lt;/optional&gt; &lt;!--  最佳实践, 防止传递到其他module --&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+<h2><a class="header" href="#特性自动设置默认值" id="特性自动设置默认值">特性：自动设置默认值</a></h2>
+<p>例如：无需手动设置spring.thymeleaf.cache=false，还有其他一些默认属性：</p>
+<pre><code class="language-java">properties.put(&quot;spring.thymeleaf.cache&quot;, &quot;false&quot;);
+properties.put(&quot;spring.freemarker.cache&quot;, &quot;false&quot;);
+properties.put(&quot;spring.groovy.template.cache&quot;, &quot;false&quot;);
+properties.put(&quot;spring.mustache.cache&quot;, &quot;false&quot;);
+properties.put(&quot;server.session.persistent&quot;, &quot;true&quot;);
+properties.put(&quot;spring.h2.console.enabled&quot;, &quot;true&quot;);
+properties.put(&quot;spring.resources.cache-period&quot;, &quot;0&quot;);
+properties.put(&quot;spring.resources.chain.cache&quot;, &quot;false&quot;);
+properties.put(&quot;spring.template.provider.cache&quot;, &quot;false&quot;);
+properties.put(&quot;spring.mvc.log-resolved-exception&quot;, &quot;true&quot;);
+properties.put(&quot;server.jsp-servlet.init-parameters.development&quot;, &quot;true&quot;);
+</code></pre>
+<p>具体有那些default properties, see https://github.com/spring-projects/spring-boot/blob/v1.5.9.RELEASE/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/env/DevToolsPropertyDefaultsPostProcessor.java</p>
+<h2><a class="header" href="#特性自动重启automatic-restart" id="特性自动重启automatic-restart">特性：自动重启(Automatic restart)</a></h2>
+<p>classpath下的文件改动，APP自动重启, 通过spring-boot-devtools实现</p>
+<p>autorestart和LiveReload合作良好， 和Jrebel合作自动重启会关闭以支持动态类重新加载(此时也没必要自动重启了，JRebel牛🐮多了)</p>
+<p>如何关闭?</p>
+<pre><code class="language-java">//spring-boot-devtools依赖 application context’s shutdown hook 
+// 会使得自动重启失效 ,如果不指定默认是开启的 
+SpringApplication.setRegisterShutdownHook(false) 
+</code></pre>
+<p>当然，触发重启会忽略这些名称的project：spring-boot, spring-boot-devtools, spring-boot-autoconfigure, spring-boot-actuator, and spring-boot-starter.</p>
+<h3><a class="header" href="#重启时的日志记录logging-changes-in-condition-evaluation" id="重启时的日志记录logging-changes-in-condition-evaluation">重启时的日志记录（Logging changes in condition evaluation）</a></h3>
+<p>默认下， 每次restart， 日志都会记录造成重启的配置修改， 如果想disable， <code>spring.devtools.restart.log-condition-evaluation-delta=false</code></p>
+<h3><a class="header" href="#排除受监控资源excluding-resources" id="排除受监控资源excluding-resources">排除受监控资源(Excluding resources)</a></h3>
+<p>默认情况下, <code>/META-INF/maven, /META-INF/resources, /resources, /static, /public or /templates </code>中的文件改变不会触发restart, 但会触发 live reload. 如果希望自定义排除监控的文件, <code>spring.devtools.restart.exclude</code></p>
+<p>如排除/static包，/public包下文件：  <code>spring.devtools.restart.exclude=static/**,public/**</code></p>
+<p>如果希望保持默认, 在默认的基础上添加排除监控的文件, <code>spring.devtools.restart.additional-exclude</code></p>
+<h3><a class="header" href="#添加额外监控路径watching-additional-paths-" id="添加额外监控路径watching-additional-paths-">添加额外监控路径(Watching additional paths )</a></h3>
+<p>如果需要添加额外的监控文件, 如将非classpath下文件纳入监控  <code>spring.devtools.restart.additional-paths </code></p>
+<h3><a class="header" href="#重启失效disabling-restart" id="重启失效disabling-restart">重启失效（Disabling restart）</a></h3>
+<p>如何使重启失效？</p>
+<pre><code class="language-java">// 简单的方法是：配置文件中设置
+spring.devtools.restart.enabled=false  
+
+// 当然还有更“全局”的方法：  
+public static void main(String[] args) {
+    System.setProperty(&quot;spring.devtools.restart.enabled&quot;, &quot;false&quot;);
+    SpringApplication.run(MyApp.class, args);
+
+    // 另一种方法关闭
+    SpringApplication.setRegisterShutdownHook(false) ;
+}
+</code></pre>
+<h3><a class="header" href="#设置一个trigger-file" id="设置一个trigger-file">设置一个trigger file</a></h3>
+<p>如果你的IDE会随改随编译，你可能会倾向于只在特定时刻引发重启（否则会很烦人，而且性能下降）。这时，你可以使用“trigger file”，就是一个特定的文件，只有修改这个文件时才会触发重启。使用 <code>spring.devtools.restart.trigger-file</code> 属性即可。</p>
+<p>比如: spring.devtools.restart.trigger-file=.reloadtregger</p>
+<p>全局设置 用户文件夹下的<code>.spring-boot-devtools.properties  </code>  在 $HOME folder ，见 <a href="#%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AEglobal-settings-">全局trigger-file</a></p>
+<h3><a class="header" href="#自定义restart-classloader" id="自定义restart-classloader">自定义restart classloader</a></h3>
+<p>当一个项目有多个module，而并不是每个module都导入ide时，DevTools 需要自定义“restart classloader” ，定义哪个model是重启监控对象</p>
+<blockquote>
+<p>restart vs. reload：
+“自动重启”由两个classloader实现，不变的jar（如引入的第三方jar）会被“base” classloaer载入，ide中打开的项目自身会被“restart” classloader载入, 触发重启时, 只有“restart” classloader会被销毁重建, 所以restart速度更快.替代技术JRebel。</p>
+</blockquote>
+<p>通过创建<code>META-INF/spring-devtools.properties</code>实现（classpath下所有的META-INF/spring-devtools.properties均会被载入,即使是jar包中的）</p>
+<p><code>spring-devtools.properties</code>介绍
+properties文件中properties值为正则表达式, 会匹配整个classpath, 其中包含两类properties, 一类以<code>restart.exclude.</code>作为前缀, 表示会被放进“base” classloader中的jar, 一类以<code>restart.include.</code>开头, 表示会被放进“restart” classloader中的jar</p>
+<p>后缀任意即可</p>
+<p>eg:</p>
+<pre><code class="language-js">restart.exclude.companycommonlibs=/mycorp-common-[\\w-]+\.jar
+restart.include.projectcommon=/mycorp-myproj-[\\w-]+\.jar
+</code></pre>
+<h3><a class="header" href="#devtools的局限" id="devtools的局限">devtools的局限</a></h3>
+<p>如果项目中的对象是通过<code>ObjectInputStream</code>进行反序列化得来的, 监控重启特性就不好使了(此时应该使用Spring’s <code>ConfigurableObjectInputStream</code> in combination with <code>Thread.currentThread().getContextClassLoader()</code>.)</p>
+<h2><a class="header" href="#浏览器自动刷新livereload" id="浏览器自动刷新livereload">浏览器自动刷新(LiveReload)</a></h2>
+<p><code>spring-boot-devtools</code>模块内置了一个LiveReload server，资源改动会触发浏览器自动刷新，需要拓展配合：http://livereload.com/extensions/</p>
+<p>如果想关闭：set the <code>spring.devtools.livereload.enabled</code> property to <code>false</code>.</p>
+<p>注意: LiveReload server一次只可能启动一个, 如果同时启动多个带DevTools 的app, 只有第一个启动的app有 livereload功能.</p>
+<h2><a class="header" href="#全局设置global-settings-" id="全局设置global-settings-">全局设置(Global settings )</a></h2>
+<p>$HOME 文件夹下添加一个文件<code>.spring-boot-devtools.properties</code>，该文件中的内容会被作用于所有的Spring Boot项目。例如设置 触发文件：在 <code>~/.spring-boot-devtools.properties</code> 里面设置 <code>spring.devtools.reload.trigger-file=.reloadtrigger</code></p>
+<h2><a class="header" href="#远程调试appremote-applications" id="远程调试appremote-applications">远程调试app(Remote applications)</a></h2>
+<p>(这个特性具有安全风险, 生产环境需要禁用该特性)</p>
+<p>Spring Boot developer tools不止可以在local app使用, 也能在 remote app使用, 远程特性是可选择的, 为了打开这个特性, 需要确定remote app包含如下配置:</p>
+<pre><code class="language-xml">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;configuration&gt;
+                &lt;excludeDevtools&gt;false&lt;/excludeDevtools&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+<p>此外, 还需设置一个 <code>spring.devtools.remote.secret</code> properties作为口令, 比如spring.devtools.remote.secret=mysecret</p>
+<p>remote devtools支持在两方面体现：一方面server端有endpoint接受connection，另一方面client app 运行在IDE; 当设置<code>spring.devtools.remote.secret</code> 之后，server端会自动可用，client端需手动启动；</p>
+<h3><a class="header" href="#启动本地的客户端" id="启动本地的客户端">启动本地的客户端</a></h3>
+<p>运行<code>org.springframework.boot.devtools.RemoteSpringApplication </code></p>
+<p><img src="Snipaste_2018-06-13_11-03-52.png" alt="alt" /><img src="Snipaste_2018-06-13_11-10-17.png" alt="alt" /></p>
+<p>启动成功后, 类似这样:</p>
+<pre><code>  .   ____          _                                              __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _          ___               _      \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` |        | _ \___ _ __  ___| |_ ___ \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| []::::::[]   / -_) '  \/ _ \  _/ -_) ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, |        |_|_\___|_|_|_\___/\__\___|/ / / /
+ =========|_|==============|___/===================================/_/_/_/
+ :: Spring Boot Remote :: 2.0.2.RELEASE
+
+2015-06-10 18:25:06.632  INFO 14938 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Starting RemoteSpringApplication on pwmbp with PID 14938 (/Users/pwebb/projects/spring-boot/code/spring-boot-devtools/target/classes started by pwebb in /Users/pwebb/projects/spring-boot/code/spring-boot-samples/spring-boot-sample-devtools)
+2015-06-10 18:25:06.671  INFO 14938 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2a17b7b6: startup date [Wed Jun 10 18:25:06 PDT 2015]; root of context hierarchy
+2015-06-10 18:25:07.043  WARN 14938 --- [           main] o.s.b.d.r.c.RemoteClientConfiguration    : The connection to http://localhost:8080 is insecure. You should use a URL starting with 'https://'.
+2015-06-10 18:25:07.074  INFO 14938 --- [           main] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2015-06-10 18:25:07.130  INFO 14938 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Started RemoteSpringApplication in 0.74 seconds (JVM running for 1.105)
+</code></pre>
+<p>远程方式下，客户端的任何更新都会被push到服务器端，并按设置触发restart。比较快</p>
+<p>使用代理的话, 设置spring.devtools.remote.proxy.host 和 spring.devtools.remote.proxy.port properties.</p>
+<h3><a class="header" href="#远程调试" id="远程调试">远程调试</a></h3>
+<p>devtools支持Http协议的远程调试通道。远程客户端提供了一个本地服务器（默认8000端口，可修改），用于绑定远程调试器。当一个连接被创建时，debug信息就会通过HTTP发送到远程应用。
+修改默认端口： spring.devtools.remote.debug.local-port 。但是，首先，你需要确认远程应用以远程调试方式启动。通常，配置JAVA_OPTS即可达到目的。例如，在Cloud Foundry上，你可以在 manifest.yml 中添加如下信息：</p>
+<pre><code>---
+  env:
+    JAVA_OPTS: &quot;-Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n&quot;
+</code></pre>
+<p>过网络进行远程调试，可能很慢，所以你需要增加超时时间。Eclipse中：Java -&gt; Debug -&gt; Debugger timeout (ms)，设成60000很不错。</p>
+<h1><a class="header" href="#打包到生产环境" id="打包到生产环境">打包到生产环境</a></h1>
+<p>打成可执行包即可, 更多适用于生产环境的特性比如监控等添加<code>spring-boot-actuator</code> starter</p>
+<h1><a class="header" href="#springapplication" id="springapplication">SpringApplication</a></h1>
+<p>启动引导程序</p>
+<pre><code class="language-java">public static void main(String[] args) {
+    // 使用默认配置启动
+    SpringApplication.run(MySpringConfiguration.class, args);
+}
+</code></pre>
+<h2><a class="header" href="#启动失败startup-failure" id="启动失败startup-failure">启动失败(Startup failure)</a></h2>
+<p>如果启动失败, 注册的<code>FailureAnalyzers</code>会提供相应的失败信息, 同时尝试解决</p>
+<p>springboot中有很多FailureAnalyzer 的实现, 也可以自己定义一个实现;</p>
+<p>debug模式下会显示更多错误信息 <code>java -jar myproject-0.0.1-SNAPSHOT.jar --debug</code></p>
+<h2><a class="header" href="#定制banner" id="定制banner">定制banner</a></h2>
+<h3><a class="header" href="#直接通过设置file" id="直接通过设置file">直接通过设置file</a></h3>
+<p>classpath中加入banner.txt ，or 设置 <code>spring.banner.location</code>属性, <code>spring.banner.charset</code>设置banner编码(默认utf-8), 支持banner.gif, banner.jpg, or banner.png格式(或者spring.banner.image.location设置动图), </p>
+<p><a href="https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-banner">banner中可以使用一些预定义的变量</a></p>
+<h3><a class="header" href="#通过编程方式" id="通过编程方式">通过编程方式</a></h3>
+<pre><code class="language-java">// 实现org.springframework.boot.Banner 接口 and implement your own printBanner() method
+SpringApplication.setBanner(...)
+</code></pre>
+<h3><a class="header" href="#控制banner打印到的地方" id="控制banner打印到的地方">控制banner打印到的地方</a></h3>
+<p>设置<code>spring.main.banner-mode</code>属性(console|log|off)</p>
+<p>如果是yml文件, 加引号</p>
+<pre><code class="language-yml">spring:
+	main:
+		banner-mode: &quot;off&quot;
+</code></pre>
+<h2><a class="header" href="#定制springapplication" id="定制springapplication">定制SpringApplication</a></h2>
+<pre><code class="language-java">public static void main(String[] args) {
+    // 这种启动方式可以自定义一些特性
+    SpringApplication app = new SpringApplication(MySpringConfiguration.class);//MySpringConfiguration配置类，被@Configuration标注，也可以是xml文件，或者一个包路径(全包扫描)；也可以通过application.properties配置
+    app.setBannerMode(Banner.Mode.OFF);//banner不输出到console
+    app.run(args);
+}
+
+// app还可以做哪些设置, 见https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/api/org/springframework/boot/SpringApplication.html
+
+//这种方式也行，允许层级结构
+// 限制: Web components must be contained within the child context, and the same Environment will be used for both parent and child contexts. 
+// 层级结构存疑(https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-fluent-builder-api)
+new SpringApplicationBuilder()
+        .sources(Parent.class)
+        .child(Application.class)
+        .bannerMode(Banner.Mode.OFF)
+        .run(args);
+
+</code></pre>
+<h2><a class="header" href="#应用的事件和监听器" id="应用的事件和监听器">应用的事件和监听器</a></h2>
+<p>除了传统的Spring Framework events, 如: ContextRefreshedEvent, springboot app提供一些额外的event</p>
+<p>有些event在ApplicationContext 创建之前就被触发, 因此不能作为@Bean注册listener, 此时有如下方法:
+一种方法是：<code>SpringApplication.addListeners(…​)</code> or <code>SpringApplicationBuilder.listeners(…​)</code> methods.</p>
+<p>另一种：<code> META-INF/spring.factories</code>文件中添加一行:  <code>org.springframework.context.ApplicationListener=com.example.project.MyListener  </code>这种方法会忽略app是以何种方式创建的;</p>
+<p>共有如下几种application events：同时也是他们的触发顺序</p>
+<ol>
+<li><code>ApplicationStartingEvent</code> :在注册listeners和initializers之后, 此时还未进行任何processing, </li>
+<li><code>ApplicationEnvironmentPreparedEvent</code> : Environment 准备好之后, context创建之前, </li>
+<li><code>ApplicationPreparedEvent</code> : bean被载入之后, context重建之前, 标志app正在准备中</li>
+<li><code>ApplicationStartedEvent </code>: context 重建之后,  application and command-line runners调用之前</li>
+<li><code>ApplicationReadyEvent</code> : application and command-line runners 调用之后, 标志着app已经准备好提供服务</li>
+<li><code>ApplicationFailedEvent</code> : 启动时碰到exception触发</li>
+</ol>
+<p>Application events 是通过spring framework的事件机制触发的, 这就保证了在具有层级结构的springContext中, child context中触发的事件会传递到 ancestors context, 所以一个listener可能会接收到多个事件实例</p>
+<p>一个listener为了区分它自己的context中的事件和层级结构中的事件, 需要该listener的application context被注入, 然后比较listener的context和event的context, 如何注入listener的 app context? The context can be injected by implementing <code>ApplicationContextAware</code> or, if the listener is a bean, using <code>@Autowired</code>.</p>
+<h2><a class="header" href="#注入applicationcontext" id="注入applicationcontext">注入ApplicationContext</a></h2>
+<p>The context can be injected by implementing <code>ApplicationContextAware</code> or, if the listener is a bean, by using <code>@Autowired</code>.</p>
+<p>可以方便的比较event所处的context和app的context</p>
+<h2><a class="header" href="#自动设置web环境" id="自动设置web环境">自动设置web环境</a></h2>
+<ul>
+<li>
+<p>SpringApplication 会试图创建正确的 ApplicationContext。默认的，使用 AnnotationConfigApplicationContext 或者 AnnotationConfigEmbeddedWebApplicationContext ，这取决于是否web应用。</p>
+</li>
+<li>
+<p>可以使用覆盖 setWebEnvironment(boolean webEnvironment) 默认设置。</p>
+</li>
+<li>
+<p>也可以使用 setApplicationContextClass(…) 来控制 ApplicationContext 的类型。</p>
+</li>
+<li>
+<p>注意：当在JUnit环境下使用SpringApplication时，通常需要设置 setWebEnvironment(false) 或者setWebApplicationType(WebApplicationType.NONE) when using SpringApplication within a JUnit test。</p>
+</li>
+</ul>
+<h2><a class="header" href="#application-exit" id="application-exit">Application exit</a></h2>
+<p>spring boot app会注册一个 a shutdown hook 到 the JVM中 以保证 ApplicationContext 顺利关闭. 所有的Spring生命周期中的回调（如 DisposableBean 接口，或者 @PreDestroy 注解）都可以使用。</p>
+<p>另外，如果想在应用退出时返回特定的exit code，那beans可以实现 org.springframework.boot.ExitCodeGenerator 接口。(同样可以使用@Order控制顺序，只不过相反)</p>
+<pre><code class="language-java">@SpringBootApplication
+public class ExitCodeApplication {
+
+	@Bean
+	public ExitCodeGenerator exitCodeGenerator() {
+		/* return new ExitCodeGenerator() {
+			@Override
+			public int getExitCode() {
+				return 42;
+			}
+		}; */
+        // 拉姆达表达式更简单
+        return () -&gt; 42;
+	}
+
+	public static void main(String[] args) {
+		System.exit(SpringApplication
+				.exit(SpringApplication.run(ExitCodeApplication.class, args)));
+	}
+
+}
+</code></pre>
+<h2><a class="header" href="#获取admin属性admin-features" id="获取admin属性admin-features">获取admin属性(Admin features)</a></h2>
+<p>It is possible to enable admin-related features for the application by specifying the <code>spring.application.admin.enabled</code> property</p>
+<p>eg: If you want to know on which HTTP port the application is running, get the property with key <code>local.server.port</code></p>
+<h1><a class="header" href="#引入配置文件externalized-configuration" id="引入配置文件externalized-configuration">引入配置文件(Externalized Configuration)</a></h1>
+<p>properties files, YAML files, environment variables and command-line arguments to externalize configuration.</p>
+<h2><a class="header" href="#怎么引入呢" id="怎么引入呢">怎么引入呢</a></h2>
+<p>两种方法</p>
+<p>其中Property values可以通过<code>@Value</code>直接注入到bean; 通过spring的<code>Environment</code> 获取; 不通用(@Value 的工作是在SpringApplication启动完成之后进行的，在此之前值为null)</p>
+<p>通过<code>@ConfigurationProperties</code>绑定到结构化的object上</p>
+<pre><code class="language-java">@ConfigurationProperties(prefix = &quot;spring.datasource&quot;, ignoreUnknownFields = false)// 加上ignoreUnknownFields = false, 那么配置文件中有多余的配置项(bean中没有的属性项)则启动报错
+public class SomeconfigurationBean {
+}
+
+</code></pre>
+<p>具体使用见 <a href="#%E6%B3%A8%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7-%E5%8D%A0%E4%BD%8D%E7%AC%A6">注入自定义属性-占位符</a></p>
+<h2><a class="header" href="#配置文件的优先级" id="配置文件的优先级">配置文件的优先级</a></h2>
+<p>各种Properties 优先级：(由高到低, 优先级高 👉 读取顺序为最后)</p>
+<ul>
+<li>
+<p>Devtools的全局设置文件: <code>~/.spring-boot-devtools.properties</code>，当然是devtools激活的状态下.</p>
+</li>
+<li>
+<p><code>@TestPropertySource</code> annotations ，测试时候使用</p>
+</li>
+<li>
+<p><code>@SpringBootTest中的#properties 属性</code>，也是测试情况下</p>
+</li>
+<li>
+<p>命令行设置的参数</p>
+<p>系统默认会把命令行option参数转换到Environment中, 如果不希望转换到Environment(可能是正式环境中需要禁用来自命令行的参数), 可以这么禁用<code>SpringApplication.setAddCommandLineProperties(false);</code></p>
+</li>
+<li>
+<p><code>SPRING_APPLICATION_JSON</code> 中的 properties</p>
+<p>在命令行中的用法：（作为一个 environment variable设置）</p>
+<pre><code class="language-sh">$ SPRING_APPLICATION_JSON='{&quot;foo&quot;:{&quot;bar&quot;:&quot;spam&quot;}}' java -jar myapp.jar
+$ java -Dspring.application.json='{&quot;foo&quot;:&quot;bar&quot;}' -jar myapp.jar
+$ java -jar myapp.jar --spring.application.json='{&quot;foo&quot;:&quot;bar&quot;}'
+</code></pre>
+<p>最终在spring的environment中 foo.bar=spam;</p>
+</li>
+<li>
+<p><code>ServletConfig</code>中的初始化参数 init parameters</p>
+</li>
+<li>
+<p><code>ServletContext</code>中的初始化参数</p>
+</li>
+<li>
+<p>JNDI attributes from java:comp/env.(存疑)</p>
+</li>
+<li>
+<p>Java System properties (System.getProperties()).</p>
+</li>
+<li>
+<p>OS的环境变量</p>
+</li>
+<li>
+<p>通过RandomValuePropertySource 得到的随机值</p>
+<p>在配置文件中这样配置</p>
+<pre><code class="language-js">my.secret=${random.value}
+my.number=${random.int}
+my.bignumber=${random.long}
+my.uuid=${random.uuid}
+/*${random.int*} 语法: OPEN value (,max) CLOSE , OPEN,CLOSE是任意符号, value,max是int类型, max可选, 如果提供, value为最小值,max为最大值 */
+my.number.less.than.ten=${random.int(10)} 
+my.number.in.range=${random.int[1024,65536]}
+</code></pre>
+</li>
+<li>
+<p>jar包<code>外部</code>的 <code>application-{profile}.properties and YAML variants</code></p>
+</li>
+<li>
+<p>jar包<code>内部</code>的 <code>application-{profile}.properties and YAML variants</code></p>
+</li>
+<li>
+<p>jar包<code>外部</code>的 <code>application.properties and YAML variants</code></p>
+</li>
+<li>
+<p>jar包<code>内部</code>的 <code>application.properties and YAML variants</code></p>
+</li>
+<li>
+<p>配置类上的<code>@PropertySource(&quot;classpath:/com/myco/app.properties&quot;)</code> (<code>@PropertySource</code> annotations on your <code>@Configuration</code> classes)</p>
+</li>
+<li>
+<p>Default properties (specified using <code>SpringApplication.setDefaultProperties</code>).</p>
+</li>
+</ul>
+<p>举个🌰:</p>
+<p>假设开发一个component</p>
+<pre><code class="language-java">@Component
+public class MyBean {
+
+    @Value(&quot;${name}&quot;)
+    private String name;
+
+    // ...
+
+}
+</code></pre>
+<p>那么class path中需要有application.properties包含一行&quot;name=xxx&quot;;</p>
+<p>打包这个app成为jar后运行于新的环境, 此时可以在jar包外部提供一个新的application.properties文件覆盖jar内部的那个配置文件</p>
+<p>如果仅仅是一次性的测试, 可以使用命令行参数(For one-off testing, you can launch with a specific command line switch (for example,    <code>java -jar app.jar --name=&quot;Spring&quot;</code>).)</p>
+<h2><a class="header" href="#不同文件夹中的applicationproperties" id="不同文件夹中的applicationproperties">不同文件夹中的application.properties</a></h2>
+<p>springboot app从 application.properties获取properties, 并将其设置进spring <code>Environment</code>;</p>
+<p>分为两种文件application-{profile}.properties 或者 application.properties</p>
+<p>这里先看application.properties ，SpringApplication默认从以下默认地址顺序搜寻(搜到即停止)，并添加到Spring Environment 中：</p>
+<ol>
+<li>当前目录的<code>./config</code>子目录（file:./config/）</li>
+<li>当前目录<code>./</code>（file:./）</li>
+<li>classpath下的 <code>/config</code> package（classpath:/config/）</li>
+<li>The classpath root<code>classpath:/</code>（classpath:/ ）</li>
+</ol>
+<p>配置文件默认为application.properties, 如果配置文件有其他的名字，用 <code>spring.config.name</code>  environment property来指定</p>
+<p>如果配置文件还有其他的位置，用 <code>spring.config.location</code> 来指定可以是路径，可以是具体文件位置，以逗号分开，路径都以'/'结尾<br />
+命令行启动的话，like this:</p>
+<pre><code class="language-sh"># 可以使用SPRING_CONFIG_NAME 代替 spring.config.name 。
+$ java -jar myproject.jar --spring.config.name=myproject
+# or
+$ java -jar myproject.jar --spring.config.location=classpath:/default.properties,classpath:/override.properties
+</code></pre>
+<p>默认情况下, spring app按照Config locations的配置逆序搜寻文件(默认的加载地址永远有效), 默认提供配置是
+<code>spring.config.location=classpath:/,classpath:/config/,file:./,file:./config/</code>, 那么默认搜寻顺序如下:</p>
+<ol>
+<li>file:./config/</li>
+<li>file:./</li>
+<li>classpath:/config/</li>
+<li>classpath:/</li>
+</ol>
+<p>如果自定义了<code>spring.config.location</code>，原来的默认位置会被替换  , 如<code>spring.config.location=classpath:/custom-config/,file:./custom-config/</code>, 搜寻顺序变为:</p>
+<ol>
+<li>file:./custom-config/</li>
+<li>classpath:custom-config/</li>
+</ol>
+<p>如果使用<code>spring.config.additional-location</code>制定位置, 自定义路径会被加到默认路径之前. 比如: 如果<code>spring.config.additional-location=classpath:/custom-config/,file:./custom-config/</code>，那么顺序如下：</p>
+<ol>
+<li>file:./custom-config/</li>
+<li>classpath:custom-config/</li>
+<li>file:./config/</li>
+<li>file:./</li>
+<li>classpath:/config/</li>
+<li>classpath:/</li>
+</ol>
+<p>不同的优先级使得我们能够给属性一个默认值（如：application.properties中设置），然后通过<code>spring.config.location</code>指定新的文件代替默认文件 </p>
+<h2><a class="header" href="#多环境配置profile-specific-properties" id="多环境配置profile-specific-properties">多环境配置(Profile-specific properties)</a></h2>
+<p>在Spring Boot中多环境配置文件名需要满足<code>application-{profile}.properties</code>的格式，其中{profile}对应你的环境标识</p>
+<pre><code>application-dev.properties：开发环境
+application-test.properties：测试环境
+application-prod.properties：生产环境
+</code></pre>
+<p>至于哪个具体的配置文件会被加载，需要在application.properties文件中通过<code>spring.profiles.active</code>属性来设置(如果spring.profiles.active和SpringApplication API 中同时指定了specific profile, 以前者为准)，其值对应{profile}值。  如果没有profile被激活, <code>application-default.properties</code>会默认激活</p>
+<p>总结多环境配置思路：</p>
+<ul>
+<li>
+<p>application.properties中配置通用内容，并设置spring.profiles.active=dev，以开发环境为默认配置</p>
+</li>
+<li>
+<p>application-{profile}.properties中配置各个环境不同的内容</p>
+</li>
+<li>
+<p>通过命令行方式去激活不同环境的配置</p>
+</li>
+</ul>
+<p>这里讨论 <code>application-{profile}.properties</code>这样的配置文件.</p>
+<p><code>Environment</code> 本来就有很多默认属性是通过<code>application-default.properties</code>加载而来.</p>
+<p><code>application-{profile}.properties</code>的优先级总是要高于<code>application.properties</code>的, 不管 <code>application-{profile}.properties</code>是在jar包外还是在jar内部</p>
+<h2><a class="header" href="#注入自定义属性-占位符" id="注入自定义属性-占位符">注入自定义属性-占位符</a></h2>
+<p>application.properties中默认了很多配置，如果添加自己的属性怎么办呢？</p>
+<p>定义如下属性：</p>
+<pre><code class="language-sh">com.xy.blog.name=xy
+com.xy.blog.title=reed
+
+# 参数间引用, 注意只能调用前面定义过的变量
+com.xy.blog.desc=${com.xy.blog.title}xxx
+
+# 随机值
+
+my.secret=${random.value}
+my.number=${random.int}
+my.bignumber=${random.long}
+my.uuid=${random.uuid}
+my.number.less.than.ten=${random.int(10)}
+my.number.in.range=${random.int[1024,65536]}
+</code></pre>
+<p>如果这些属性是定义在application.properties中，那么：</p>
+<p>相应Javabean：</p>
+<pre><code class="language-java">@Data
+@Component
+public class Blog {
+
+    @Value(&quot;${com.xy.blog.name}&quot;)
+    private String name;
+    
+    @Value(&quot;${com.xy.blog.title}&quot;)
+    private String title;
+}
+
+//或者（推荐这种方式）
+@Component
+@ConfigurationProperties(prefix=&quot;com.xy.blog&quot;)
+public class ConnectionSettings {
+
+    private String name;
+    private String title;
+}
+
+</code></pre>
+<p>测试：</p>
+<pre><code class="language-java">@RunWith(SpringRunner.class)
+@SpringBootTest
+public class Chapter1ApplicationTests {
+    
+    @Autowired
+    private Blog blog;
+
+	@Test
+	public void testBlog() {
+	    System.out.println(blog.getName());
+	    System.out.println(blog.getTitle());
+	}
+
+}
+</code></pre>
+<p>若果定义在新的配置文件中：aaa.properties，那么：</p>
+<pre><code class="language-java">@ConfigurationProperties(prefix = &quot;spring.test&quot;/*, ignoreUnknownFields = true*/)
+@PropertySource(value = {&quot;classpath:apptest.properties&quot;}, encoding = &quot;utf-8&quot;, ignoreResourceNotFound = false)// classpath后面不要加空格
+public class ConnectionSettings {
+
+    private String name;
+    private String title;
+}
+</code></pre>
+<p>最后注意：如果发现@ConfigurationProperties不生效，有可能是项目的目录结构问题，你可以通过在入口类加上@EnableConfigurationProperties(ConnectionSettings.class)来明确指定需要用哪个实体类来装载配置信息。如下:</p>
+<pre><code class="language-java">@SpringBootApplication  
+@EnableConfigurationProperties({aaa.class,bbb.class})  
+public class DemoApplication {  
+  
+    public static void main(String[] args) {  
+        SpringApplication.run(DemoApplication.class, args);  
+    }  
+} 
+</code></pre>
+<h2><a class="header" href="#使用yaml" id="使用yaml">使用YAML</a></h2>
+<p>spring-boot-starter会提供yaml的相关支持  , or 提供 <a href="http://www.snakeyaml.org/">SnakeYAML</a> lib (<a href="https://www.jianshu.com/p/d8136c913e52">入门</a>) 来支持yaml配置文件</p>
+<p>springboot提供<code>YamlPropertiesFactoryBean</code> will load YAML as <code>Properties</code> and the <code>YamlMapFactoryBean</code> will load YAML as a <code>Map</code></p>
+<h3><a class="header" href="#载入yaml" id="载入yaml">载入yaml</a></h3>
+<pre><code class="language-yml">environments:
+    dev:
+        url: http://dev.bar.com
+        name: Developer Setup
+    prod:
+        url: http://foo.bar.com
+        name: My Cool App
+my:
+   servers:
+       - dev.bar.com
+       - foo.bar.com
+# 为了保证list类型能够被覆盖, 建议定义成如下类型
+my:
+   servers: dev.bar.com,foo.bar.com
+
+
+</code></pre>
+<p>上面会被转为如下properties:</p>
+<pre><code class="language-sh"># 会被转成：
+environments.dev.url=http://dev.bar.com
+environments.dev.name=Developer Setup
+environments.prod.url=http://foo.bar.com
+environments.prod.name=My Cool App
+my.servers[0]=dev.bar.com
+my.servers[1]=foo.bar.com
+</code></pre>
+<p>怎么在app内部使用? <code>@Value</code> or <code>@ConfigurationProperties()</code></p>
+<h3><a class="header" href="#将yml转为properties" id="将yml转为properties">将yml转为properties</a></h3>
+<p><code>YamlPropertySourceLoader </code>可以将变量从yaml形式转为properties形式注入到<code>Environment</code>中, 方便直接通过<code>@Value</code>使用yaml(默认下, @value只能使用properties)</p>
+<h3><a class="header" href="#yaml的多环境配置" id="yaml的多环境配置">yaml的多环境配置</a></h3>
+<p>借助<code>spring.profiles</code>key</p>
+<pre><code class="language-yml"># 如果development和production文件都不可用，为192.168.1.100
+server:
+    address: 192.168.1.100
+---
+# 如果development文件被激活，server.address=127.0.0.1
+spring:
+    profiles: development
+server:
+    address: 127.0.0.1
+---
+# 如果production文件被激活，server.address=192.168.1.120
+spring:
+    profiles: production
+server:
+    address: 192.168.1.120
+---
+# 如果没有profile被指定
+spring:
+  profiles: default
+  security:
+    user:
+      password: weak
+</code></pre>
+<h3><a class="header" href="#yaml不能使用propertysource" id="yaml不能使用propertysource">yaml不能使用@PropertySource</a></h3>
+<p>不支持 @PropertySource  ，只有properties文件才支持@PropertySource</p>
+<p>@PropertySource 可以指定是哪个配置文件，读取的编码格式</p>
+<pre><code class="language-java">@RestController  
+@PropertySource(value = {&quot;classpath:application.properties&quot;},encoding=&quot;utf-8&quot;)  
+@RequestMapping(value=&quot;hello&quot;)  
+public class HelloController {  
+    /** 使用@value注解，从配置文件读取值 */  
+    @Value(&quot;${TestValue}&quot;)  
+    private String testValueAnno;  
+      
+    @RequestMapping(value=&quot;sayHello&quot;)  
+    @ResponseBody  
+    private String sayHello() {  
+        System.out.println(&quot;测试:&quot;+testValueAnno);  
+        return &quot;hello world!&quot;;  
+    }  
+} 
+</code></pre>
+<h3><a class="header" href="#ymal中的list" id="ymal中的list">ymal中的list</a></h3>
+<pre><code class="language-yml">foo:
+  list: # 表示默认，如果dev profile么有被激活，那么list中的Mypojo就是这个
+    - name: my name
+      description: my description
+---
+spring:
+  profiles: dev # 如果dev被激活，list中的pojo就是这个，总之，list中的元素只有一个
+foo:
+  list:
+    - name: my another name
+</code></pre>
+<pre><code class="language-java">@ConfigurationProperties(&quot;foo&quot;)
+public class FooProperties {
+
+    private final List&lt;MyPojo&gt; list = new ArrayList&lt;&gt;();//mypojo中定义的有name，description
+
+    public List&lt;MyPojo&gt; getList() {
+        return this.list;
+    }
+
+}
+</code></pre>
+<h2><a class="header" href="#configurationproperties" id="configurationproperties">@ConfigurationProperties</a></h2>
+<h3><a class="header" href="#统一前缀" id="统一前缀">统一前缀</a></h3>
+<p>通过@Value(&quot;${property}&quot;) 的方式实太过笨重  ，另一种方式如下：</p>
+<pre><code class="language-java">@Component// 保证注册到了context中
+@ConfigurationProperties(&quot;foo&quot;)
+public class FooProperties {
+
+    private boolean enabled;//定义了：foo.enabled, false by default
+
+    private InetAddress remoteAddress;//定义了：foo.remote-address，ip地址, 能够从string强转
+
+    private final Security security = new Security();//定义了：foo.security.username，foo.security.password，foo.security.roles；这里的属性名security，对应配置文件中的security
+
+
+    public static class Security {
+
+        private String username;
+
+        private String password;
+
+        private List&lt;String&gt; roles = new ArrayList&lt;&gt;(Collections.singleton(&quot;USER&quot;));//（一个string的集合）
+
+
+    }
+}
+</code></pre>
+<p>其中有些属性可以不要setter方法，具体参见：<a href="https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/#boot-features-external-config-typesafe-configuration-properties">这里</a></p>
+<p>如果 @ConfigurationProperties 不生效(比如指定的前缀无效), 可以通过在主配置类上加@EnableConfigurationProperties来列出有哪些类用来装载配置变量</p>
+<pre><code class="language-java">
+@Configuration
+// 这样注册后, FooProperties在context中会有一个默认名字, &lt;prefix&gt;-&lt;fullQualifiedName&gt;, 比如此处即为: foo-com.xxx.xxx.FooProperties 
+@EnableConfigurationProperties(FooProperties.class)
+public class MyConfiguration {
+}
+</code></pre>
+<h3><a class="header" href="#第三方组件去配置化" id="第三方组件去配置化">第三方组件去配置化</a></h3>
+<p>@ConfigurationProperties除了可以标注class, 还可以标注 @Bean 方法;</p>
+<p>用在将environment中的properties配置到一个第三方bean中特别方便，将@ConfigurationProperties添加到这个bean的注册过程：</p>
+<pre><code class="language-java">@ConfigurationProperties(prefix = &quot;bar&quot;)// 任何以bar为前缀的属性定义都会被映射到BarComponent上
+@Bean
+public BarComponent barComponent() {
+    ...
+}
+</code></pre>
+<p><a href="http://blog.csdn.net/liuchuanhong1/article/details/70105193">Springboot整合quartz的例子</a></p>
+<h3><a class="header" href="#松绑定relaxed-binding" id="松绑定relaxed-binding">松绑定（relaxed binding）</a></h3>
+<pre><code class="language-java">@Data
+@ConfigurationProperties(prefix=&quot;person&quot;)
+public class OwnerProperties {
+
+    private String name;
+
+}
+</code></pre>
+<p>如下形式书写的属性均可匹配：</p>
+<p><code>person.name</code>
+<code>person.first-name</code>--------(推荐)
+<code>person.first_name</code>
+<code>PERSON_FIRST_NAME</code></p>
+<h3><a class="header" href="#复杂类型的混合merge" id="复杂类型的混合merge">复杂类型的混合(merge)</a></h3>
+<p>对于 List</p>
+<pre><code class="language-java">@ConfigurationProperties(&quot;acme&quot;)
+public class AcmeProperties {
+
+	private final List&lt;MyPojo&gt; list = new ArrayList&lt;&gt;();// MyPojo 有name, description属性
+
+	public List&lt;MyPojo&gt; getList() {
+		return this.list;
+	}
+
+}
+
+</code></pre>
+<pre><code class="language-yml">acme:
+  list:
+    - name: my name
+      description: my description
+---
+spring:
+  profiles: dev
+acme:
+  list:
+    - name: my another name
+</code></pre>
+<p>如果 dev 没有激活, 启用默认值, list含有一个元素, 如果 dev 激活, 含有一个元素, description = null;(这里没有merge)</p>
+<p>对于 Map</p>
+<pre><code class="language-java">@ConfigurationProperties(&quot;acme&quot;)
+public class AcmeProperties {
+
+	private final Map&lt;String, MyPojo&gt; map = new HashMap&lt;&gt;();
+
+	public Map&lt;String, MyPojo&gt; getMap() {
+		return this.map;
+	}
+
+}
+
+</code></pre>
+<pre><code class="language-yml">acme:
+  map:
+    key1:
+      name: my name 1
+      description: my description 1
+---
+spring:
+  profiles: dev
+acme:
+  map:
+    key1:
+      name: dev name 1
+    key2:
+      name: dev name 2
+      description: dev description 2
+</code></pre>
+<p>如果 dev 没有激活, map 包含一个元素
+如果 dev 激活, map包含2个元素, 元素1 key1:{name: dev name 1, description: my description 1}, 元素2 key2: {...}</p>
+<p>这里混合了</p>
+<h3><a class="header" href="#属性-转换" id="属性-转换">属性 转换</a></h3>
+<p>可能和@ConfigurationPropertiesBinding 有关  ，这里Mark一下，后面完成。</p>
+<p>自定义类型转换, 三种方式:</p>
+<ul>
+<li>
+<p>提供一个 ConversionService  bean(命名该bean为 conversionService)</p>
+</li>
+<li>
+<p>定制 property editors (通过 CustomEditorConfigurer bean)</p>
+</li>
+<li>
+<p>定制 Converters  (通过注解 @ConfigurationPropertiesBinding)</p>
+</li>
+</ul>
+<p>https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-external-config-conversion</p>
+<h1><a class="header" href="#profiles" id="profiles">profiles</a></h1>
+<h2><a class="header" href="#添加active-profiles" id="添加active-profiles">添加active-profiles</a></h2>
+<p>Spring profiles 给这种需求提供了实 ----&gt; 根据不同的环境启用不同的属性配置文件</p>
+<p>任何被@component、@@Configuration 标注的类，都能通过@Profile来实现限制何时被加载：</p>
+<pre><code class="language-java">@Configuration
+@Profile(&quot;production&quot;)
+public class ProductionConfiguration {
+
+    // ...
+
+}
+</code></pre>
+<p>当然，也有其他的方法：</p>
+<ul>
+<li>
+<p>在属性配置文件中（如：application.properties）配置环境属性： <code>spring.profiles.active=dev,hsqldb</code></p>
+</li>
+<li>
+<p>命令行启动时，加参数：<code>--spring.profiles.active=dev,hsqldb</code></p>
+</li>
+<li>
+<p>但是，这些方法都是直接替换，有时候添加比替换更好，环境属性：<code>spring.profiles.include</code>提供了这种特性. </p>
+</li>
+<li>
+<p>也可通过Java API在app run()之前设置： <code>SpringApplication.setAdditionalProfiles(…​)  </code></p>
+</li>
+<li>
+<p>也可以通过<code>ConfigurableEnvironment interface.</code>(不常用)</p>
+</li>
+</ul>
+<p>下面看看例子:</p>
+<p>当指定prod启用时，proddb 和 prodmq也会被启用</p>
+<pre><code class="language-yml">---
+my.property: fromyamlfile
+---
+spring.profiles: prod
+spring.profiles.include:
+  - proddb
+  - prodmq
+</code></pre>
+<h1><a class="header" href="#springboot单元测试" id="springboot单元测试">springboot单元测试</a></h1>
+<p>https://www.cnblogs.com/aston/p/7259825.html</p>
+<h1><a class="header" href="#日志" id="日志">日志</a></h1>
+<p>Springboot 内部日志系统采用 Commons Logging，但是开放了日志接口，提供了这些日志的默认配置： Java Util Logging, Log4J2 and Logback；默认情况下，如果使用starters，Logback日志会被采用, 默认console输出, file输出可选</p>
+<pre><code class="language-properties">logging.path=/user/local/log
+logging.level.com.favorites=DEBUG
+logging.level.org.springframework.web=INFO
+logging.level.org.hibernate=ERROR
+
+</code></pre>
+<h2><a class="header" href="#输出配置" id="输出配置">输出配置</a></h2>
+<h3><a class="header" href="#输出格式" id="输出格式">输出格式</a></h3>
+<p>默认的日志输出如下：</p>
+<pre><code>2014-03-05 10:57:51.112  INFO 45469 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.52
+2014-03-05 10:57:51.253  INFO 45469 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2014-03-05 10:57:51.253  INFO 45469 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1358 ms
+2014-03-05 10:57:51.698  INFO 45469 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2014-03-05 10:57:51.702  INFO 45469 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+</code></pre>
+<p>有这些信息：</p>
+<ul>
+<li>日期和时间</li>
+<li>日志级别，ERROR, WARN, INFO, DEBUG or TRACE.</li>
+<li>进程ID</li>
+<li>“---”，表示后面是真正的日志信息</li>
+<li>“[xxx]”,线程名</li>
+<li>Logger名，通常是source class name</li>
+<li>真正的日志信息</li>
+</ul>
+<p>注: Logback does not have a FATAL level (it is mapped to ERROR)</p>
+<h3><a class="header" href="#console控制台输出" id="console控制台输出">console控制台输出</a></h3>
+<p>By default ERROR, WARN and INFO level messages are logged. 如果希望debug级别日志也记录, <code> java -jar myapp.jar --debug</code>(You can also specify debug=true in your application.properties.)</p>
+<h3><a class="header" href="#带颜色输出" id="带颜色输出">带颜色输出</a></h3>
+<p>需要设置 spring.output.ansi.enabled 。
+see: https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#boot-features-logging-color-coded-output</p>
+<h3><a class="header" href="#file文件输出" id="file文件输出">file文件输出</a></h3>
+<p>spring boot默认只输出日志到console, 如果希望输出到文件, 设置<code>logging.file</code> or <code>logging.path</code>属性到application.properties</p>
+<table><thead><tr><th>logging.file</th><th>logging.path</th><th>Example</th><th>Description</th></tr></thead><tbody>
+<tr><td></td><td></td><td></td><td>Console only logging.</td></tr>
+<tr><td>Specific file</td><td></td><td>my.log</td><td>写入到指定的文件</td></tr>
+<tr><td></td><td>Specific directory</td><td>/var/log</td><td>Writes <code>spring.log</code> to the specified directory.</td></tr>
+</tbody></table>
+<p>Log files 达到 10 MB 自动另提一个文件记录, 通过<code>logging.file.max-size</code> 更改 file size</p>
+<p><code>logging.file.max-history=30</code>日志文件保存30天的</p>
+<h2><a class="header" href="#日志级别log-levels" id="日志级别log-levels">日志级别(Log Levels)</a></h2>
+<p><code>logging.level.&lt;logger-name&gt;=&lt;level&gt;</code> where level is one of TRACE, DEBUG, INFO, WARN, ERROR, FATAL, or OFF</p>
+<p>The root logger can be configured by using <code>logging.level.root</code>.</p>
+<p>输出优先级: fatal &gt; error &gt; warn &gt;  info &gt; debug &gt; TRACE</p>
+<p>如果不配置, application.properties中已经默认配置了如下属性:</p>
+<pre><code class="language-yml">logging.level.root=WARN # root logger
+logging.level.org.springframework.web=DEBUG
+logging.level.org.hibernate=ERROR
+</code></pre>
+<h2><a class="header" href="#自定义log-configration" id="自定义log-configration">自定义log configration</a></h2>
+<ul>
+<li>
+<p>springboot支持多种日志系统的自动配置, 当引入一个特定的日志lib, 这个日志系统会被自动激活,而日志系统的配置文件一般在classpath的根目录下, or 通过<code>logging.config</code> property指定日志的配置文件位置(如:logging.config=classpath:log/logback-spring.xml);</p>
+</li>
+<li>
+<p>可以通过<code>org.springframework.boot.logging.LoggingSystem</code>这个system property来强制springboot使用某个日志系统, 属性值是<code> fully-qualified class name of a LoggingSystem implementation</code>, 值为<code>none</code>时, app的日志系统被禁用;</p>
+</li>
+</ul>
+<p>注: 日志系统在ApplicationContext 创建前就进行了初始化, 因此通过@PropertySources指定@Configuration配置文件不可行,  <code>System properties</code> and the conventional <code>Spring Boot external configuration files</code>则可以控制日志系统;</p>
+<p>根据不同的日志系统, 如下的文件会被系统自动读取:</p>
+<p><img src="./SpringBoot%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91/Screenshot_2.png" alt="" /></p>
+<p>此外, 为了方便自定义log, 一些String Environment 被转为了 System property</p>
+<table><thead><tr><th>Spring Environment</th><th>System Property</th><th>Comments</th></tr></thead><tbody>
+<tr><td>logging.exception-conversion-word</td><td>LOG_EXCEPTION_CONVERSION_WORD</td><td>The conversion word used when logging exceptions.</td></tr>
+<tr><td>logging.file</td><td>LOG_FILE</td><td>If defined, it is used in the default log configuration.</td></tr>
+<tr><td>logging.file.max-size</td><td>LOG_FILE_MAX_SIZE</td><td>Maximum log file size (if LOG_FILE enabled). (Only supported with the default Logback setup.)</td></tr>
+<tr><td>logging.file.max-history</td><td>LOG_FILE_MAX_HISTORY</td><td>Maximum number of archive log files to keep (if LOG_FILE enabled). (Only supported with the default Logback setup.)</td></tr>
+<tr><td>logging.path</td><td>LOG_PATH</td><td>If defined, it is used in the default log configuration.</td></tr>
+<tr><td>logging.pattern.console</td><td>CONSOLE_LOG_PATTERN</td><td>The log pattern to use on the console (stdout). (Only supported with the default Logback setup.)</td></tr>
+<tr><td>logging.pattern.dateformat</td><td>LOG_DATEFORMAT_PATTERN</td><td>Appender pattern for log date format. (Only supported with the default Logback setup.)</td></tr>
+<tr><td>logging.pattern.file</td><td>FILE_LOG_PATTERN</td><td>The log pattern to use in a file (if LOG_FILE is enabled). (Only supported with the default Logback setup.)</td></tr>
+<tr><td>logging.pattern.level</td><td>LOG_LEVEL_PATTERN</td><td>The format to use when rendering the log level (default %5p). (Only supported with the default Logback setup.)</td></tr>
+<tr><td>PID</td><td>PID</td><td>The current process ID (discovered if possible and when not already defined as an OS environment variable).</td></tr>
+</tbody></table>
+<p>在 spring-boot.jar 中查阅配置信息 <a href="https://github.com/spring-projects/spring-boot/tree/v2.0.2.RELEASE/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/defaults.xml">logback</a> | <a href="https://github.com/spring-projects/spring-boot/tree/v2.0.2.RELEASE/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2.xml">log4j 2</a></p>
+<h2><a class="header" href="#mdc特性" id="mdc特性">MDC特性</a></h2>
+<p>https://blog.csdn.net/n447194252/article/details/73864046
+https://logging.apache.org/log4j/2.x/manual/thread-context.html</p>
+<p>log4j 2中借助[MDC ] 特性将当前访问user加入日志: 覆盖<code>LOG_LEVEL_PATTERN</code>or Logback 中的<code>logging.pattern.level</code>, 举个 🌰:</p>
+<p>设置 <code>logging.pattern.level=user:%X{user} %5p</code>, 默认的日志格式包含一个 MDC entry  &quot;user&quot;, 如果这个user存在, 打印如下:</p>
+<pre><code>2015-09-30 12:30:04.031 user:someone INFO 22174 --- [  nio-8080-exec-0] demo.Controller
+Handling authenticated request
+</code></pre>
+<p><a href="https://blog.csdn.net/xingbaozhen1210/article/details/89230570">logback利用mdc机制为日志增加traceId</a></p>
+<h2><a class="header" href="#logback详细配置" id="logback详细配置">logback详细配置</a></h2>
+<h3><a class="header" href="#依赖" id="依赖">依赖</a></h3>
+<p>ogback当前分成三个模块：logback-core,logback- classic和logback-access。</p>
+<p>logback-core是其它两个模块的基础模块。logback-classic是log4j的一个 改良版本。此外logback-classic完整实现SLF4J API, logback-access访问模块与Servlet容器集成提供通过Http来访问日志的功能。</p>
+<p>单独在spring项目中使用logback需要导入: classic包, core包, slf4j-api的包</p>
+<p>在springboot中引入 <code>spring-boot-starter-web</code> starter即可使用logback</p>
+<p>注意: 🐖logback的依赖不要混在一个项目, 如果引入第三方包, 注意一定要 排除<code>slf4j-log4j12.jar</code></p>
+<h3><a class="header" href="#logback-springxml" id="logback-springxml">logback-spring.xml</a></h3>
+<p>https://www.cnblogs.com/cb0327/p/5759441.html</p>
+<p>logback-spring.xml</p>
+<p>另外一份配置, 存在这里, 存疑</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;configuration scan=&quot;true&quot;&gt;
+    &lt;include resource=&quot;org/springframework/boot/logging/logback/base.xml&quot;/&gt;
+
+&lt;!-- The FILE and ASYNC appenders are here as examples for a production configuration --&gt;
+&lt;!--
+    &lt;appender name=&quot;FILE&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+            &lt;fileNamePattern&gt;logFile.%d{yyyy-MM-dd}.log&lt;/fileNamePattern&gt;
+            &lt;maxHistory&gt;90&lt;/maxHistory&gt;
+        &lt;/rollingPolicy&gt;
+        &lt;encoder&gt;
+            &lt;charset&gt;utf-8&lt;/charset&gt;
+            &lt;Pattern&gt;%d %-5level [%thread] %logger{0}: %msg%n&lt;/Pattern&gt;
+        &lt;/encoder&gt;
+    &lt;/appender&gt;
+
+    &lt;appender name=&quot;ASYNC&quot; class=&quot;ch.qos.logback.classic.AsyncAppender&quot;&gt;
+        &lt;queueSize&gt;512&lt;/queueSize&gt;
+        &lt;appender-ref ref=&quot;FILE&quot;/&gt;
+    &lt;/appender&gt;
+--&gt;
+
+    &lt;logger name=&quot;com.paasit.pai.core.rest&quot; level=&quot;#logback.loglevel#&quot;/&gt;
+
+    &lt;logger name=&quot;io.github.jhipster&quot; level=&quot;DEBUG&quot;/&gt;
+
+    &lt;logger name=&quot;javax.activation&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;javax.mail&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;javax.xml.bind&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;ch.qos.logback&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;com.codahale.metrics&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;com.netflix&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;com.netflix.discovery&quot; level=&quot;INFO&quot;/&gt;
+    &lt;logger name=&quot;com.ryantenney&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;com.sun&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;com.zaxxer&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;io.undertow&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;io.undertow.websockets.jsr&quot; level=&quot;ERROR&quot;/&gt;
+    &lt;logger name=&quot;org.apache&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.apache.catalina.startup.DigesterFactory&quot; level=&quot;OFF&quot;/&gt;
+    &lt;logger name=&quot;org.bson&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.hibernate.validator&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.hibernate&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.hibernate.ejb.HibernatePersistence&quot; level=&quot;OFF&quot;/&gt;
+    &lt;logger name=&quot;org.springframework&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.springframework.web&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.springframework.security&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.springframework.cache&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.thymeleaf&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;org.xnio&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;springfox&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;sun.rmi&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;liquibase&quot; level=&quot;WARN&quot;/&gt;
+    &lt;logger name=&quot;LiquibaseSchemaResolver&quot; level=&quot;INFO&quot;/&gt;
+    &lt;logger name=&quot;sun.net.www&quot; level=&quot;INFO&quot;/&gt;
+    &lt;logger name=&quot;sun.rmi.transport&quot; level=&quot;WARN&quot;/&gt;
+
+    &lt;contextListener class=&quot;ch.qos.logback.classic.jul.LevelChangePropagator&quot;&gt;
+        &lt;resetJUL&gt;true&lt;/resetJUL&gt;
+    &lt;/contextListener&gt;
+
+    &lt;root level=&quot;#logback.loglevel#&quot;&gt;
+        &lt;appender-ref ref=&quot;CONSOLE&quot;/&gt;
+    &lt;/root&gt;
+
+&lt;/configuration&gt;
+
+</code></pre>
+<h3><a class="header" href="#看一个具体日志需求" id="看一个具体日志需求">看一个具体日志需求</a></h3>
+<p>https://blog.csdn.net/wohaqiyi/article/details/72853962</p>
+<ul>
+<li>日志需要控制台打印和文件打印两种。</li>
+<li>其中文件打印按照日志级别分别保存到各自的文件里。</li>
+<li>文件日志每天一个日志，并且保存30天。</li>
+<li>文件日志可以自由指定保存路径、打印格式等。</li>
+<li>控制台打印可指定打印格式，并且自由增加删除某些日志。</li>
+</ul>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot;&gt;  
+    &lt;!-- 都说spring boot使用日志需要引入这个，但是我引入了之后总是打印两份日志，所以我去除了，并不影响使用 --&gt;
+    &lt;!-- &lt;include resource=&quot;org/springframework/boot/logging/logback/base.xml&quot;/&gt; --&gt;
+    &lt;!-- 控制台设置 --&gt;  
+    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;  
+        &lt;encoder&gt;  
+            &lt;pattern&gt;${CONSOLE_LOG_PATTERN}&lt;/pattern&gt;  
+        &lt;/encoder&gt;  
+    &lt;/appender&gt;  
+    &lt;!-- INFO --&gt;  
+    &lt;appender name=&quot;infoAppender&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;  
+        &lt;!-- 文件路径 ，注意LOG_PATH是默认值，
+            它的配置对应application.properties里的logging.path值--&gt;  
+        &lt;file&gt;${LOG_PATH}/info/info.log&lt;/file&gt;  
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;  
+            &lt;!-- 文件名称 --&gt;  
+            &lt;fileNamePattern&gt;info/info-%d{yyyy-MM-dd}.log  
+            &lt;/fileNamePattern&gt;  
+            &lt;!-- 文件最大保存历史数量 --&gt;  
+            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;  
+        &lt;/rollingPolicy&gt;  
+        &lt;encoder&gt;  
+            &lt;pattern&gt;${FILE_LOG_PATTERN}&lt;/pattern&gt;  
+        &lt;/encoder&gt;  
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;  
+            &lt;level&gt;INFO&lt;/level&gt;  
+            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;    
+            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;    
+        &lt;/filter&gt;  
+    &lt;/appender&gt;
+
+    &lt;!-- DEBUG --&gt;  
+    &lt;appender name=&quot;debugAppender&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;  
+        &lt;!-- 文件路径 ，注意LOG_PATH是默认值，
+            它的配置对应application.properties里的logging.path值--&gt;  
+        &lt;file&gt;${LOG_PATH}/debug/debug.log&lt;/file&gt;  
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;  
+            &lt;!-- 文件名称 --&gt;  
+            &lt;fileNamePattern&gt;debug/debug-%d{yyyy-MM-dd}.log&lt;/fileNamePattern&gt;  
+            &lt;!-- 文件最大保存历史数量 --&gt;  
+            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;  
+        &lt;/rollingPolicy&gt;  
+        &lt;encoder&gt;  
+            &lt;pattern&gt;${FILE_LOG_PATTERN}&lt;/pattern&gt;  
+        &lt;/encoder&gt;  
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;  
+            &lt;level&gt;DEBUG&lt;/level&gt;  
+            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;    
+            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;    
+        &lt;/filter&gt;  
+    &lt;/appender&gt; 
+     &lt;!-- WARN --&gt;  
+    &lt;appender name=&quot;warnAppender&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;  
+        &lt;!-- 文件路径 ，注意LOG_PATH是默认值，
+            它的配置对应application.properties里的logging.path值--&gt;   
+        &lt;file&gt;${LOG_PATH}/warn/warn.log&lt;/file&gt;  
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;  
+            &lt;!-- 文件名称 --&gt;  
+            &lt;fileNamePattern&gt;warn/warn-%d{yyyy-MM-dd}.log  
+            &lt;/fileNamePattern&gt;  
+            &lt;!-- 文件最大保存历史数量 --&gt;  
+            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;  
+        &lt;/rollingPolicy&gt;  
+        &lt;encoder&gt;  
+            &lt;pattern&gt;${FILE_LOG_PATTERN}&lt;/pattern&gt;  
+        &lt;/encoder&gt;  
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;  
+            &lt;level&gt;WARN&lt;/level&gt;  
+            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;    
+            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;    
+        &lt;/filter&gt;  
+    &lt;/appender&gt; 
+
+    &lt;!-- ERROR --&gt;  
+    &lt;appender name=&quot;errorAppender&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;  
+        &lt;!-- 文件路径 ，注意LOG_PATH是默认值，
+            它的配置对应application.properties里的logging.path值--&gt;  
+        &lt;file&gt;${LOG_PATH}/error/error.log&lt;/file&gt;  
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;  
+            &lt;!-- 文件名称 --&gt;  
+            &lt;fileNamePattern&gt;error/error-%d{yyyy-MM-dd}.log  
+            &lt;/fileNamePattern&gt;  
+            &lt;!-- 文件最大保存历史数量 --&gt;  
+            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;  
+        &lt;/rollingPolicy&gt;  
+        &lt;encoder&gt;  
+            &lt;pattern&gt;${FILE_LOG_PATTERN}&lt;/pattern&gt;  
+        &lt;/encoder&gt;  
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;  
+            &lt;level&gt;ERROR&lt;/level&gt;  
+            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;    
+            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;    
+        &lt;/filter&gt;  
+    &lt;/appender&gt;
+      &lt;logger name=&quot;org.springframework&quot; additivity=&quot;false&quot;&gt;
+        &lt;level value=&quot;ERROR&quot; /&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;
+        &lt;appender-ref ref=&quot;errorAppender&quot; /&gt;
+    &lt;/logger&gt;
+
+    &lt;!-- 由于启动的时候，以下两个包下打印debug级别日志很多 ，所以调到ERROR--&gt;
+    &lt;logger name=&quot;org.apache.tomcat.util&quot; additivity=&quot;false&quot;&gt;
+        &lt;level value=&quot;ERROR&quot;/&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;
+        &lt;appender-ref ref=&quot;errorAppender&quot;/&gt;
+    &lt;/logger&gt;
+
+    &lt;!-- 默认spring boot导入hibernate很多的依赖包，启动的时候，会有hibernate相关的内容，直接去除 --&gt;
+    &lt;logger name=&quot;org.hibernate.validator&quot; additivity=&quot;false&quot;&gt;
+        &lt;level value=&quot;ERROR&quot;/&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;
+        &lt;appender-ref ref=&quot;errorAppender&quot;/&gt;
+    &lt;/logger&gt;
+    &lt;root level=&quot;DEBUG&quot;&gt;
+         &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;  
+         &lt;appender-ref ref=&quot;infoAppender&quot;/&gt;
+         &lt;appender-ref ref=&quot;debugAppender&quot;/&gt;
+          &lt;appender-ref ref=&quot;warnAppender&quot;/&gt;
+         &lt;appender-ref ref=&quot;errorAppender&quot;/&gt;
+    &lt;/root&gt; 
+&lt;/configuration&gt;  
+</code></pre>
+<p>application.properties里配置:</p>
+<pre><code class="language-props">logging.path=d:/logs/springBoot
+logging.config=classpath:logback-spring.xml
+# 以下是控制台打印日志格式设置，注意在logback-spring.xml里用CONSOLE_LOG_PATTERN才能获取
+logging.pattern.console=[%d{yyyy-MM-dd HH:mm:ss}] -- [%-5p]: [%c] -- %m%n
+# 以下是文件打印日志格式设置，注意在logback-spring.xml里用FILE_LOG_PATTERN才能获取到
+logging.pattern.file=[%d{yyyy-MM-dd HH:mm:ss}] -- [%-5p]: [%c] -- %m%n
+
+</code></pre>
+<h3><a class="header" href="#排除不需要的日志" id="排除不需要的日志">排除不需要的日志</a></h3>
+<p>比如不需要下面三行</p>
+<pre><code>[2017-06-05 19:14:23] -- [INFO ]: [org.I0Itec.zkclient.ZkClient] -- zookeeper state changed (SyncConnected)
+[2017-06-05 19:14:23] -- [DEBUG]: [org.I0Itec.zkclient.ZkClient] -- Leaving process event
+[2017-06-05 19:14:23] -- [DEBUG]: [org.I0Itec.zkclient.ZkClient] -- State is SyncConnected
+</code></pre>
+<p>如下配置即可</p>
+<pre><code class="language-xml">&lt;!-- 
+- name表示日志的打印位置，从上边可以看出是来自该类。 
+- additivity设置为false表示该日志打印设置（控制台打印还是文件打印等具体设置）不会向根root标签传递，也就是说该logger里怎么设置的那就会怎么打印，跟root无关。 
+- level value=’error’表示将该类日志级别设置为error级才会打印。 
+- 最后两行表示error级时会打印控制台和error文件同时打印日志。
+ --&gt;
+&lt;logger name=&quot;org.I0Itec.zkclient.ZkClient&quot; additivity=&quot;false&quot;&gt;
+        &lt;level value=&quot;ERROR&quot; /&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;
+        &lt;appender-ref ref=&quot;errorAppender&quot; /&gt;
+&lt;/logger&gt;
+</code></pre>
+<h2><a class="header" href="#logback扩展特性" id="logback扩展特性">logback扩展特性</a></h2>
+<p>LogBack有很多拓展特性, 可以在<code>logback-spring.xml</code>中定义</p>
+<p>推荐使用名称<code>logback-spring.xml</code>而不是<code>logback.xml</code>, 因为后者在启动时就会加载，加载非常早，会导致配置文件中的springboot标签不识别。所以推荐命名<code>xxxxx-spring.xml</code>形式</p>
+<h3><a class="header" href="#logback的多环境配置" id="logback的多环境配置">logback的多环境配置</a></h3>
+<p>以下配置, 处于<code>&lt;configuration&gt;</code>标签</p>
+<pre><code class="language-xml">&lt;springProfile name=&quot;staging&quot;&gt;
+    &lt;!-- configuration to be enabled when the &quot;staging&quot; profile is active --&gt;
+&lt;/springProfile&gt;
+
+&lt;springProfile name=&quot;dev, staging&quot;&gt;
+    &lt;!-- configuration to be enabled when the &quot;dev&quot; or &quot;staging&quot; profiles are active --&gt;
+&lt;/springProfile&gt;
+
+&lt;springProfile name=&quot;!production&quot;&gt;
+    &lt;!-- configuration to be enabled when the &quot;production&quot; profile is not active --&gt;
+&lt;/springProfile&gt;
+</code></pre>
+<p>实例: 通过application.properties文件中 <code>spring.profiles.active=test </code>来指定logback-spring.xml 中使用哪一段来记录日志</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- 从高到地低 OFF 、 FATAL 、 ERROR 、 WARN 、 INFO 、 DEBUG 、 TRACE 、 ALL --&gt;  
+&lt;!-- 日志输出规则  根据当前ROOT 级别，日志输出时，级别高于root默认的级别时  会输出 --&gt;  
+&lt;!-- 以下  每个配置的 filter 是过滤掉输出文件里面，会出现高级别文件，依然出现低级别的日志信息，通过filter 过滤只记录本级别的日志--&gt; 
+&lt;configuration&gt;
+    &lt;!-- 文件输出格式 --&gt;
+    &lt;property name=&quot;PATTERN&quot;
+        value=&quot;%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n&quot; /&gt;
+    &lt;!-- 文件路径 --&gt;
+    &lt;!--&lt;property name=&quot;FILE_PATH&quot; value=&quot;D:/DevData/kmcmsLogs&quot; /&gt; --&gt;
+
+    &lt;!-- 开发环境 --&gt;
+    &lt;springProfile name=&quot;dev&quot;&gt;
+        &lt;appender name=&quot;CONSOLE&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+            &lt;encoder&gt;
+                &lt;pattern&gt;${PATTERN}&lt;/pattern&gt;
+            &lt;/encoder&gt;
+        &lt;/appender&gt;
+
+        &lt;logger name=&quot;com.km.controller&quot; level=&quot;debug&quot; /&gt;
+
+        &lt;root level=&quot;info&quot;&gt;
+            &lt;appender-ref ref=&quot;CONSOLE&quot; /&gt;
+        &lt;/root&gt;
+    &lt;/springProfile&gt;
+
+    &lt;!-- 测试环境 --&gt;
+    &lt;springProfile name=&quot;test&quot;&gt;
+        &lt;appender name=&quot;ROLLING&quot;
+            class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+            &lt;!-- 文件路径 --&gt;
+            &lt;file&gt;D:/DevData/kmAppletLogs/kmapplet.log&lt;/file&gt;
+            &lt;rollingPolicy
+                class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy&quot;&gt;
+                &lt;!-- rollover daily --&gt;
+                &lt;fileNamePattern&gt;D:/DevData/kmAppletLogs/kmapplet_%d{yyyy-MM-dd}.%i.log
+                &lt;/fileNamePattern&gt;
+                &lt;!-- each file should be at most 100MB, keep 60 days worth of history, 
+                    but at most 20GB --&gt;
+                &lt;maxFileSize&gt;1MB&lt;/maxFileSize&gt;
+                &lt;maxHistory&gt;60&lt;/maxHistory&gt;
+                &lt;totalSizeCap&gt;10MB&lt;/totalSizeCap&gt;
+            &lt;/rollingPolicy&gt;
+            &lt;!-- &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt; &lt;pattern&gt;${PATTERN}&lt;/pattern&gt; 
+                &lt;/layout&gt; --&gt;
+            &lt;encoder&gt;
+                &lt;pattern&gt;${PATTERN}&lt;/pattern&gt;
+            &lt;/encoder&gt;
+        &lt;/appender&gt;
+
+        &lt;root level=&quot;DEBUG&quot;&gt;
+            &lt;appender-ref ref=&quot;ROLLING&quot; /&gt;
+        &lt;/root&gt;
+    &lt;/springProfile&gt;
+
+    &lt;!-- 生产环境 --&gt;
+    &lt;springProfile name=&quot;prod&quot;&gt;
+        &lt;appender name=&quot;ROLLING&quot;
+            class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+            &lt;!-- 文件路径 --&gt;
+            &lt;file&gt;/ftp/private/kmAppletLogs/kmapplet.log&lt;/file&gt;
+            &lt;rollingPolicy
+                class=&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy&quot;&gt;
+                &lt;!-- rollover daily --&gt;
+                &lt;fileNamePattern&gt;/ftp/private/kmAppletLogs/kmapplet_%d{yyyy-MM-dd}.%i.log
+                &lt;/fileNamePattern&gt;
+                &lt;!-- each file should be at most 10MB, keep 30 days worth of history, 
+                    but at most 1GB --&gt;
+                &lt;!-- 每个日志文件最大10MB, 保留30天的日志文件, 但是最多总文件大小为 5GB --&gt;
+                &lt;maxFileSize&gt;10MB&lt;/maxFileSize&gt;
+                &lt;maxHistory&gt;30&lt;/maxHistory&gt;
+                &lt;totalSizeCap&gt;5GB&lt;/totalSizeCap&gt;
+            &lt;/rollingPolicy&gt;
+            &lt;!-- &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt; &lt;pattern&gt;${PATTERN}&lt;/pattern&gt; 
+                &lt;/layout&gt; --&gt;
+            &lt;encoder&gt;
+                &lt;pattern&gt;${PATTERN}&lt;/pattern&gt;
+            &lt;/encoder&gt;
+        &lt;/appender&gt;
+
+        &lt;!--这里控制日志输出级别 --&gt;
+        &lt;root level=&quot;DEBUG&quot;&gt;
+            &lt;appender-ref ref=&quot;ROLLING&quot; /&gt;
+        &lt;/root&gt;
+    &lt;/springProfile&gt;
+
+&lt;/configuration&gt;
+</code></pre>
+<h3><a class="header" href="#配置中使用environment-properties" id="配置中使用environment-properties">配置中使用Environment properties</a></h3>
+<p>logback配置文件中可以获取application.properties中的属性</p>
+<p>这里用到了<code>&lt;springProperty&gt;</code>, 和<code>&lt;property&gt;</code>用法类似</p>
+<pre><code class="language-xml">&lt;!-- 
+scope: context 希望将这个属性作用域在context级别, 
+scope: local  仅仅存储在本地范围
+ --&gt;
+&lt;springProperty scope=&quot;context&quot; name=&quot;fluentHost&quot; source=&quot;myapp.fluentd.host&quot;
+        defaultValue=&quot;localhost&quot;/&gt;
+&lt;appender name=&quot;FLUENT&quot; class=&quot;ch.qos.logback.more.appenders.DataFluentAppender&quot;&gt;
+    &lt;remoteHost&gt;${fluentHost}&lt;/remoteHost&gt;
+    ...
+&lt;/appender&gt;
+</code></pre>
+<p>注: 这里会默认采用松绑定匹配, 指定了source=&quot;aa.bb.cc&quot;, 那么,属性&quot;aaBbCc, aa-bb-cc, 等等&quot; 也会被匹配上.</p>
+<h1><a class="header" href="#开发-web-app" id="开发-web-app">开发 web app</a></h1>
+<p>一般会引入<code>spring-boot-starter-web</code> module. 此时不必引入 spring-boot-starter 了， 前者已经包含了</p>
+<p>也可以引入<code>spring-boot-starter-webflux</code> 开发响应式web app</p>
+<h2><a class="header" href="#引入webjars" id="引入webjars">引入WebJars</a></h2>
+<h3><a class="header" href="#什么是webjars" id="什么是webjars">什么是webjars</a></h3>
+<p>以 Jar 包的形式来使用前端的各种框架、组件。</p>
+<p>WebJars 是将客户端（浏览器）资源（JavaScript，Css等）打成 Jar 包文件，以对资源进行统一依赖管理。WebJars 的 Jar 包部署在 Maven 中央仓库上。</p>
+<h3><a class="header" href="#为什么使用webjars" id="为什么使用webjars">为什么使用webjars</a></h3>
+<p>对于 JavaScript，Css 等前端资源包，我们只能采用拷贝到 webapp 下的方式，这样做就无法对这些资源进行依赖管理。那么 WebJars 就提供给我们这些前端资源的 Jar 包形势，我们就可以进行依赖管理。</p>
+<h3><a class="header" href="#如何使用-webjars" id="如何使用-webjars">如何使用 webjars</a></h3>
+<p>在 https://www.webjars.org/ 查找需要框架的maven依赖</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.webjars&lt;/groupId&gt;
+    &lt;artifactId&gt;vue&lt;/artifactId&gt;
+    &lt;version&gt;2.5.16&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>thymeleaf页面中引入：</p>
+<pre><code class="language-html">&lt;link th:href=&quot;@{/webjars/bootstrap/3.3.6/dist/css/bootstrap.css}&quot; rel=&quot;stylesheet&quot;&gt;&lt;/link&gt;
+
+</code></pre>
+<h2><a class="header" href="#gradle-构建工具" id="gradle-构建工具">Gradle 构建工具</a></h2>
+<pre><code class="language-gradle">buildscript {
+    repositories {
+        maven { url &quot;http://repo.spring.io/libs-snapshot&quot; }
+        mavenLocal()
+    }
+    dependencies {
+        classpath(&quot;org.springframework.boot:spring-boot-gradle-plugin:1.3.6.RELEASE&quot;)
+    }
+}
+
+apply plugin: 'java'  //添加 Java 插件, 表明这是一个 Java 项目
+apply plugin: 'spring-boot' //添加 Spring-boot支持
+apply plugin: 'war'  //添加 War 插件, 可以导出 War 包
+apply plugin: 'eclipse' //添加 Eclipse 插件, 添加 Eclipse IDE 支持, Intellij Idea 为 &quot;idea&quot;
+
+war {
+    baseName = 'favorites'
+    version =  '0.1.0'
+}
+
+sourceCompatibility = 1.7  //最低兼容版本 JDK1.7
+targetCompatibility = 1.7  //目标兼容版本 JDK1.7
+
+repositories {     //  Maven 仓库
+    mavenLocal()        //使用本地仓库
+    mavenCentral()      //使用中央仓库
+    maven { url &quot;http://repo.spring.io/libs-snapshot&quot; } //使用远程仓库
+}
+ 
+dependencies {   // 各种 依赖的jar包
+    compile(&quot;org.springframework.boot:spring-boot-starter-web:1.3.6.RELEASE&quot;)
+    compile(&quot;org.springframework.boot:spring-boot-starter-thymeleaf:1.3.6.RELEASE&quot;)
+    compile(&quot;org.springframework.boot:spring-boot-starter-data-jpa:1.3.6.RELEASE&quot;)
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    compile(&quot;org.springframework.boot:spring-boot-devtools:1.3.6.RELEASE&quot;)
+    compile(&quot;org.springframework.boot:spring-boot-starter-test:1.3.6.RELEASE&quot;)
+    compile 'org.webjars.bower:bootstrap:3.3.6'
+	compile 'org.webjars.bower:jquery:2.2.4'
+    compile(&quot;org.webjars:vue:1.0.24&quot;)
+	compile 'org.webjars.bower:vue-resource:0.7.0'
+
+}
+
+bootRun {
+    addResources = true
+}
+
+</code></pre>
+<h2><a class="header" href="#开发filter" id="开发filter">开发filter</a></h2>
+<p>Spring Boot 自动添加了 OrderedCharacterEncodingFilter 和 HiddenHttpMethodFilter，并且我们可以自定义 Filter</p>
+<ul>
+<li>实现 Filter 接口，实现 Filter 方法</li>
+<li>添加@Configuration 注解，将自定义Filter加入过滤链</li>
+</ul>
+<pre><code class="language-java">public class MyFilter implements Filter
+
+@Bean
+public FilterRegistrationBean testFilterRegistration() {
+
+    FilterRegistrationBean registration = new FilterRegistrationBean();
+    registration.setFilter(new MyFilter());
+    registration.addUrlPatterns(&quot;/*&quot;);
+    registration.addInitParameter(&quot;paramName&quot;, &quot;paramValue&quot;);
+    registration.setName(&quot;MyFilter&quot;);
+    registration.setOrder(1);
+    return registration;
+}
+
+</code></pre>
+<h2><a class="header" href="#spring-web-mvc框架" id="spring-web-mvc框架">Spring Web MVC框架</a></h2>
+<p>相关的注解: @Controller or @RestController, @RequestMapping</p>
+<h3><a class="header" href="#自动配置springmvc" id="自动配置springmvc">自动配置Springmvc</a></h3>
+<p>Spring boot 已经自动配置了如下特性：</p>
+<ul>
+<li>Inclusion of <code>ContentNegotiatingViewResolver</code> and <code>BeanNameViewResolver</code> beans.</li>
+<li>对静态资源的支持，包括对WebJars的支持.</li>
+<li>自动注册 Converter, GenericConverter, Formatter beans.</li>
+<li>Support for <code>HttpMessageConverters</code> (see below).</li>
+<li>自动注册<code> MessageCodesResolver</code> (see below).</li>
+<li>Static <code>index.html</code> support.</li>
+<li>Custom Favicon support (see below).</li>
+<li>Automatic use of a <code>ConfigurableWebBindingInitializer</code> bean (see below).</li>
+</ul>
+<p>如果希望添加额外的mvc特性（如：interceptors, formatters, view controllers etc.），创建@Configuration类继承WebMvcConfigurerAdapter(继承WebMvcConfigurer 亦可貌似?存疑),但是不能有@EnableWebMvc，例如：给app添加跨域访问支持</p>
+<p>解决跨域问题:</p>
+<pre><code class="language-java">@Configuration  
+public class CorsConfig extends WebMvcConfigurerAdapter {  
+
+    @Override  
+    public void addCorsMappings(CorsRegistry registry) {  
+        registry.addMapping(&quot;/**&quot;)  
+                .allowedOrigins(&quot;*&quot;)  
+                .allowCredentials(true)  
+                .allowedMethods(&quot;OPTIONS&quot;, &quot;GET&quot;, &quot;POST&quot;, &quot;DELETE&quot;, &quot;PUT&quot;)
+                .maxAge(3600);  
+    }
+}  
+</code></pre>
+<p>如果希望自己定制<code>RequestMappingHandlerMapping</code>, <code>RequestMappingHandlerAdapter</code> or <code>ExceptionHandlerExceptionResolver</code>，可以声明一个<code>WebMvcRegistrationsAdapter</code>实例来提供这些组件</p>
+<p>如果希望完全控制Springmvc，可以提供自己的@Configration类，用@EnableWebMvc标记</p>
+<h3><a class="header" href="#http消息转换器httpmessageconverters" id="http消息转换器httpmessageconverters">http消息转换器(HttpMessageConverters)</a></h3>
+<p>springmvc使用HttpMessageConverters接口来转换http request和response，框架已经默认实现了一些特性，如：object自动转json(Jackson lib)或xml(Jackson lib, 如果没有Jackson, 则Jaxb)。  String默认使用utf-8编码; </p>
+<p>如果需要自定义消息转换器，可以利用Spring boot的HttpMessageConverters类：</p>
+<pre><code class="language-java">@Configuration
+public class MyConfiguration {
+
+    @Bean
+    public HttpMessageConverters customConverters() {
+        HttpMessageConverter&lt;?&gt; additional = ...//这些HttpMessageConverter 会被放入HttpMessageConverters 的一个列表中，呈现在上下文中, 默认的list会被覆盖
+        HttpMessageConverter&lt;?&gt; another = ...
+        return new HttpMessageConverters(additional, another);
+    }
+
+}
+</code></pre>
+<h3><a class="header" href="#messagecodesresolver" id="messagecodesresolver">MessageCodesResolver</a></h3>
+<p>Spring boot会使用MessageCodesResolver来生成error code，环境属性<code>spring.mvc.message-codes-resolver.format</code> 需要配置为 <code>PREFIX_ERROR_CODE</code> or <code>POSTFIX_ERROR_CODE</code>  , 具体可设置那些值, 见<code>DefaultMessageCodesResolver.Format</code>枚举类</p>
+<h3><a class="header" href="#静态资源" id="静态资源">静态资源</a></h3>
+<p>存疑, https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-spring-mvc-static-content</p>
+<ul>
+<li>
+<p>Spring boot的规范中，静态资源默认放在classpath下的 /static (or /public or /resources or /META-INF/resources），使用ResourceHttpRequestHandler 处理，所以我们可以添加自己的WebMvcConfigurerAdapter覆盖addResourceHandlers方法来定制自己的资源目录</p>
+</li>
+<li>
+<p>或者使用environment property：<code>spring.mvc.static-path-pattern=/resources/**</code> or <code>spring.resources.static-locations=# a list of directory locations</code>(如果使用后面这个属性，index.html将会使用你自己的目录下的index.html), 默认下, <code>spring.resources.static-locations=classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/</code>, 优先级从从高到低</p>
+</li>
+<li>
+<p>在默认规范中，有一个目录：classpath: /webjars/**  是为 Webjars content 留的。所有/webjars/**中的资源将从jar 文件中读取，如果他们以符合Webjars 规范的方式打包了的话。</p>
+</li>
+<li>
+<p>不要使用src/main/webapp目录，如果应用被打包成jar包。因为这个目录只有在war包中才会工作，而且会被大部分构建工具忽略</p>
+</li>
+<li>
+<p>对于引用第三方静态资源, 可以做到版本无感知的效果, 比如 &quot;/webjars/jquery/jquery.min.js&quot; results in &quot;/webjars/jquery/x.y.z/jquery.min.js&quot;. where x.y.z is the Webjar version.需要引入<code>webjars-locator-core </code>依赖</p>
+</li>
+<li>
+<p>版本无感知, 还一种方法</p>
+<pre><code>spring.resources.chain.strategy.fixed.enabled=true
+spring.resources.chain.strategy.fixed.paths=/js/lib/
+spring.resources.chain.strategy.fixed.version=v12
+</code></pre>
+<p>使用以上策略，JavaScript模块加载器加载&quot;/js/lib/&quot;下的文件时会使用一个固定的版本策略&quot;/v12/js/lib/mymodule.js&quot;</p>
+</li>
+<li>
+<p>静态资源的缓存清除</p>
+<pre><code>spring.resources.chain.strategy.content.enabled=true
+spring.resources.chain.strategy.content.paths=/**
+</code></pre>
+<p>原理实际上是将内容hash添加到URLs中，比如<code>&lt;link href=&quot;/css/spring-2a2d595e6ed9a0b24f027f2b63b134d6.css&quot;/&gt;</code></p>
+<p>注 实现该功能的是ResourceUrlEncodingFilter，它在模板运行期会重写资源链接，Thymeleaf，Velocity和FreeMarker会自动配置该filter，JSP需要手动配置。其他模板引擎还没自动支持，不过你可以使用ResourceUrlProvider自定义模块宏或帮助类</p>
+</li>
+</ul>
+<h3><a class="header" href="#欢迎页" id="欢迎页">欢迎页</a></h3>
+<p>先找 index.html在静态资源目录中, 没找到然后在模板文件中找index</p>
+<h3><a class="header" href="#自定义网站图标" id="自定义网站图标">自定义网站图标</a></h3>
+<p>Spring boot会自动搜寻网站图标<code>favicon.ico</code>，在如下目录：</p>
+<ul>
+<li>静态资源目录</li>
+<li>classpath根目录</li>
+</ul>
+<h3><a class="header" href="#请求匹配和资源导航path-matching-and-content-negotiation" id="请求匹配和资源导航path-matching-and-content-negotiation">请求匹配和资源导航(Path Matching and Content Negotiation)</a></h3>
+<p>Spring MVC可以通过查看请求路径并将其与应用程序中定义的映射进行匹配，将传入的HTTP请求映射到处理程序, 比如： @GetMapping(&quot;/projects/spring-boot&quot;)...</p>
+<p>springboot默认禁用后缀匹配， 比如请求路径“&quot;GET /projects/spring-boot.json&quot;” 无法匹配到 @GetMapping(&quot;/projects/spring-boot&quot;)</p>
+<p>存疑， https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-spring-mvc-pathmatch</p>
+<h3><a class="header" href="#configurablewebbindinginitializer" id="configurablewebbindinginitializer">ConfigurableWebBindingInitializer</a></h3>
+<p>Spring MVC使用WebBindingInitializer为每个特殊的请求初始化相应的WebDataBinder，如果你创建自己的ConfigurableWebBindingInitializer @Bean，Spring Boot会自动配置Spring MVC使用它</p>
+<h3><a class="header" href="#模板引擎" id="模板引擎">模板引擎</a></h3>
+<p>Springboot为这些template engine提供自动配置：</p>
+<pre><code>FreeMarker
+Groovy
+Thymeleaf
+Mustache
+</code></pre>
+<p>模板文件默认放置在src/main/resources/templates</p>
+<h3><a class="header" href="#全局异常处理" id="全局异常处理">全局异常处理</a></h3>
+<p>Springboot默认提供了一个错误处理机制，所有的异常会匹配/error. 但是这明显不够。我们需要自定义。</p>
+<p>为了完全取代默认设置, 可以实现<code>ErrorController</code>接口, 并将这个bean注册; 或者直接注册一个 <code>ErrorAttributes </code>类型的bean;</p>
+<p>一种方法是：创建controller实现ErrorController接口；BasicErrorController可以作为errorcontroller的基类，添加一个方法用@requestmappong（produces =xxx）标记；这种方法尤其在这种情况下有用：当你想为新的content-type（默认的一般是text/html）添加一个Handler</p>
+<p>另种方法：（推荐）</p>
+<h4><a class="header" href="#如果返回视图" id="如果返回视图">如果返回视图</a></h4>
+<pre><code class="language-java">/**
+ * 全局异常处理类
+ *
+ * @version: 1.0.0
+ * @author: 肖雨
+ * @date: 2017年8月23日 下午11:32:23
+ */
+@ControllerAdvice
+public class ExceptionAdvice {
+
+    private static final String DEFAULT_ERROR_VIEW = &quot;error&quot;;
+    
+    @ExceptionHandler(Exception.class)
+    public ModelAndView defaultErrorHandler(HttpServletRequest req, Exception e) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject(&quot;exception&quot;, e);
+        mav.addObject(&quot;url&quot;, req.getRequestURL());
+        mav.setViewName(DEFAULT_ERROR_VIEW);
+        return mav;
+    }
+    
+    //后面可以继续添加，匹配不同异常
+}
+
+</code></pre>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;统一异常处理&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Error Handler&lt;/h1&gt;
+    &lt;div th:text=&quot;${url}&quot;&gt;&lt;/div&gt;
+    &lt;div th:text=&quot;${exception.message}&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4><a class="header" href="#如果返回json" id="如果返回json">如果返回json</a></h4>
+<pre><code class="language-java">@ControllerAdvice(basePackageClasses = FooController.class)//basePackageClasses属性表示服务特定的controller
+public class FooControllerAdvice extends ResponseEntityExceptionHandler {
+
+    @ExceptionHandler(YourException.class)// 为特定的exception服务
+    @ResponseBody
+    ResponseEntity&lt;?&gt; handleControllerException(HttpServletRequest request, Throwable ex) {
+        HttpStatus status = getStatus(request);
+        return new ResponseEntity&lt;&gt;(new CustomErrorType(status.value(), ex.getMessage()), status);
+    }
+
+    private HttpStatus getStatus(HttpServletRequest request) {
+        Integer statusCode = (Integer) request.getAttribute(&quot;javax.servlet.error.status_code&quot;);
+        if (statusCode == null) {
+            return HttpStatus.INTERNAL_SERVER_ERROR;
+        }
+        return HttpStatus.valueOf(statusCode);
+    }
+
+}
+</code></pre>
+<h4><a class="header" href="#定制自己的错误页面" id="定制自己的错误页面">定制自己的错误页面</a></h4>
+<p>根据返回的 error code 匹配到不同页面</p>
+<p>（匹配到404）</p>
+<pre><code>src/
++- main/
+    +- java/
+    |   + &lt;source code&gt;
+    +- resources/
+        +- public/
+            +- error/
+            |   +- 404.html
+            +- &lt;other public assets&gt;
+</code></pre>
+<p>（匹配所有以5开头的 error code）</p>
+<pre><code>src/
++- main/
+    +- java/
+    |   + &lt;source code&gt;
+    +- resources/
+        +- templates/
+            +- error/
+            |   +- 5xx.ftl
+            +- &lt;other templates&gt;
+</code></pre>
+<p>对于更复杂的情况，可以添加一个bean实现ErrorViewResolver接口：</p>
+<pre><code class="language-java">public class MyErrorViewResolver implements ErrorViewResolver {
+
+    @Override
+    public ModelAndView resolveErrorView(HttpServletRequest request, HttpStatus status, Map&lt;String, Object&gt; model) {
+        // Use the request or status to optionally return a ModelAndView
+        return ...
+    }
+
+}
+</code></pre>
+<p>也可以使用Spring MVC特性，比如@ExceptionHandler方法和@ControllerAdvice，ErrorController将处理所有未处理的异常</p>
+<p>存疑， https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-error-handling-custom-error-pages</p>
+<h4><a class="header" href="#不使用springmvc" id="不使用springmvc">不使用springmvc</a></h4>
+<p>但是，如果不用Springmvc，该如何匹配error pages呢 ，通过ErrorPageRegistrar接口直接注册ErrorPages</p>
+<pre><code class="language-java">@Bean
+public ErrorPageRegistrar errorPageRegistrar(){
+    return new MyErrorPageRegistrar();
+}
+
+// ...
+
+private static class MyErrorPageRegistrar implements ErrorPageRegistrar {
+
+    @Override
+    public void registerErrorPages(ErrorPageRegistry registry) {
+        registry.addErrorPages(new ErrorPage(HttpStatus.BAD_REQUEST, &quot;/400&quot;));
+    }
+
+}
+</code></pre>
+<p>这里需要注意的是：如果你注册一个ErrorPage，该页面需要被一个Filter处理（在一些非Spring web框架中很常见，比如Jersey，Wicket），那么该Filter需要明确注册为一个ERROR分发器（dispatcher），如：</p>
+<pre><code class="language-java">@Bean
+public FilterRegistrationBean myFilter() {
+    FilterRegistrationBean registration = new FilterRegistrationBean();
+    registration.setFilter(new MyFilter());
+    ...
+    registration.setDispatcherTypes(EnumSet.allOf(DispatcherType.class));
+    return registration;
+}
+</code></pre>
+<h3><a class="header" href="#配置允许跨域访问" id="配置允许跨域访问">配置允许跨域访问</a></h3>
+<p>只需要在Spring Boot应用的controller方法上注解@CrossOrigin，并添加CORS配置。通过注册一个自定义addCorsMappings(CorsRegistry)方法的WebMvcConfigurer bean可以指定全局CORS配置</p>
+<pre><code class="language-java">@Configuration  
+public class CorsConfig extends WebMvcConfigurerAdapter {  
+
+    @Override  
+    public void addCorsMappings(CorsRegistry registry) {  
+        registry.addMapping(&quot;/**&quot;)  
+                .allowedOrigins(&quot;*&quot;)  
+                .allowCredentials(true)  
+                .allowedMethods(&quot;OPTIONS&quot;, &quot;GET&quot;, &quot;POST&quot;, &quot;DELETE&quot;, &quot;PUT&quot;)
+                .maxAge(3600);  
+    }
+}  
+
+</code></pre>
+<p>或者：</p>
+<pre><code class="language-java">@Configuration//标明这是一个配置类
+public class MyConfiguration {
+
+    @Bean//@bean表示返回值被Spring管理
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping(&quot;/api/**&quot;);
+            }
+        };
+    }
+}
+</code></pre>
+<h2><a class="header" href="#spring-webflux-framework" id="spring-webflux-framework">Spring WebFlux Framework</a></h2>
+<p>https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-webflux</p>
+<h2><a class="header" href="#jax-rs-and-jersey" id="jax-rs-and-jersey">JAX-RS and Jersey</a></h2>
+<p>https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/#boot-features-jersey</p>
+<h2><a class="header" href="#嵌入式servlet容器" id="嵌入式servlet容器">嵌入式servlet容器</a></h2>
+<p>Springboot内嵌 Tomcat, Jetty, and Undertow servers，只需要引入合适的Starter获取一个完全配置好的实例即可，内嵌服务器默认监听8080端口的HTTP请求</p>
+<p>如果使用的内嵌server是Tomcat，需要自定义tmpwatch配置 or 设置server.tomcat.basedir</p>
+<h3><a class="header" href="#自定义内嵌容器" id="自定义内嵌容器">自定义内嵌容器</a></h3>
+<p>https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-customizing-embedded-containers</p>
+<p>通过程序的方式定制：https://docs.spring.io/spring-boot/docs/2.0.2.RELEASE/reference/htmlsingle/#boot-features-programmatic-embedded-container-customization</p>
+<h3><a class="header" href="#servlets-filters-and-listeners" id="servlets-filters-and-listeners">Servlets, Filters, and listeners</a></h3>
+<p>注册Servlets, Filters, and listeners，可以有如下方法：</p>
+<ul>
+<li>使用 Spring beans</li>
+<li>通过扫描 servlet 组件</li>
+</ul>
+<p>默认情况下，如果context只包括一个servlet，将会匹配 /, 如果有多个servlet bean，bean name将会作为前缀，filters将会匹配 /*</p>
+<p>如果这些惯例无法满足需求，<code>ServletRegistrationBean</code>, <code>FilterRegistrationBean</code> and <code>ServletListenerRegistrationBean</code> classes 可以提供更完全的控制</p>
+<p>扫描Servlets, Filters和listeners：</p>
+<p>当使用一个内嵌容器时，通过@ServletComponentScan可以启用对注解@WebServlet，@WebFilter和@WebListener类的自动注册。</p>
+<h3><a class="header" href="#servlet上下文初始化" id="servlet上下文初始化">servlet上下文初始化</a></h3>
+<p>内嵌的servlet容器不会执行Servlet 3.0+ javax.servlet.ServletContainerInitializer接口，或者Spring’s org.springframework.web.WebApplicationInitializer接口；这是有意的设计，为的是防止被设计在war中运行的第三方库阻断Springboot的运行；</p>
+<p>如果希望初始化，使用这种方法：</p>
+<p>注册一个bean，实现<code>org.springframework.boot.context.embedded.ServletContextInitializer</code>接口， onStartup方法可以获取ServletContext，如果需要的话可以轻松用来适配一个已存在的WebApplicationInitializer</p>
+<h3><a class="header" href="#对jsp的限制" id="对jsp的限制">对jsp的限制</a></h3>
+<p>当使用内嵌servlet容器运行Spring Boot应用时（并打包成一个可执行的存档archive），容器对JSP的支持有一些限制：</p>
+<ul>
+<li>
+<p>Tomcat只支持war的打包方式，不支持可执行jar。</p>
+</li>
+<li>
+<p>Jetty只支持war的打包方式。</p>
+</li>
+<li>
+<p>Undertow不支持JSPs。</p>
+</li>
+<li>
+<p>创建的自定义error.jsp页面不会覆盖默认的error handling视图。</p>
+</li>
+</ul>
+<p>jsp实例：https://github.com/spring-projects/spring-boot/blob/v2.0.2.RELEASE/spring-boot-samples/spring-boot-sample-web-jsp/src/main/resources/application.properties</p>
+<h1><a class="header" href="#安全security" id="安全security">安全(Security)</a></h1>
+<p>如果引入了  Spring Security 依赖， app默认就被保护了， 添加方法级别的安全自定义设置使用@EnableGlobalMethodSecurity</p>
+<p>默认的 UserDetailsService 提供一个 user 实例，  name为“user”， password为随机， 打印在info级别日志， 确保org.springframework.boot.autoconfigure.security的日志级别为info， 可以通过 <code>spring.security.user.name </code>和<code> spring.security.user.password</code>修改默认的username, password</p>
+<h2><a class="header" href="#oauth2" id="oauth2">OAuth2</a></h2>
+<p>如果添加了spring-security-oauth2依赖，你可以利用自动配置简化认证（Authorization）或资源服务器（Resource Server）的设置</p>
+<h1><a class="header" href="#实践" id="实践">实践</a></h1>
+<h2><a class="header" href="#接口开发" id="接口开发">接口开发</a></h2>
+<ul>
+<li>@restcontroller注解相当于@controller+@responsebody</li>
+<li>使用了模板引擎就不要用@restcontroller了</li>
+<li>@getmapping，@postmapping。。。</li>
+</ul>
+<h2><a class="header" href="#使用模板引擎" id="使用模板引擎">使用模板引擎</a></h2>
+<h3><a class="header" href="#themeleaf" id="themeleaf">themeleaf</a></h3>
+<ul>
+<li>依赖spring-boot-starter-thymeleaf</li>
+</ul>
+<h3><a class="header" href="#freemarker" id="freemarker">freemarker</a></h3>
+<ul>
+<li>依赖：spring-boot-starter-freemarker</li>
+</ul>
+<h3><a class="header" href="#velocity" id="velocity">velocity</a></h3>
+<ul>
+<li>依赖：spring-boot-starter-velocity</li>
+</ul>
+<h2><a class="header" href="#集成swagger2" id="集成swagger2">集成swagger2</a></h2>
+<ul>
+<li>引入依赖 springfox-swagger2 https://mvnrepository.com/artifact/io.springfox/springfox-swagger2</li>
+<li>各个操作接口上：@ApiOperation，@ApiImplicitParam</li>
+<li>swagger2配置类，和APP启动类同级，@Configuration，@EnableSwagger2</li>
+<li>访问：http://localhost:8080/swagger-ui.html</li>
+<li>配置mvc时候， 如果继承了WebMvcConfigurationSupport， 需要重新注入资源文件， 否则访问不到swagger-ui.html;(<a href="https://blog.csdn.net/zjcjava/article/details/78064264">ref</a>)</li>
+</ul>
+<h2><a class="header" href="#统一异常处理" id="统一异常处理">统一异常处理</a></h2>
+<ul>
+<li>创建@ControllerAdvice类，@ExceptionHandler(xxxException.class)方法</li>
+</ul>
+<h2><a class="header" href="#使用jdbctemplate" id="使用jdbctemplate">使用JdbcTemplate</a></h2>
+<ul>
+<li>依赖：spring-boot-starter-jdbc</li>
+<li>JdbcTemplate通过@autowired注入直接使用</li>
+</ul>
+<h2><a class="header" href="#使用spring-data-jpa" id="使用spring-data-jpa">使用Spring-data-jpa</a></h2>
+<ul>
+<li>依赖spring-boot-starter-data-jpa</li>
+<li>通过env属性配置表生成策略：spring.jpa.properties.hibernate.hbm2ddl.auto=create-drop</li>
+<li>创建xxxRepository接口继承JpaRepository接口，方法无需实现，特殊的可通过@Query(&quot;from User u where u.name=:name&quot;)注解</li>
+<li>通过@Autowired注入直接使用</li>
+<li>@Entity标注实体，和表名对应；@Column标注字段</li>
+</ul>
+<pre><code class="language-properties">spring.datasource.url=jdbc:mysql://localhost:3306/test
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+
+spring.jpa.properties.hibernate.hbm2ddl.auto=update # 第一次加载 hibernate 时根据 model 类会自动建立起表的结构（前提是先建立好数据库），以后加载 hibernate 时根据 model 类自动更新表结构
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect # 存储引擎 innodb
+spring.jpa.show-sql= true
+
+</code></pre>
+<h2><a class="header" href="#多数据源配置" id="多数据源配置">多数据源配置</a></h2>
+<p>首先需要配置文件中两个数据源的连接信息</p>
+<h3><a class="header" href="#mybatis" id="mybatis">mybatis</a></h3>
+<p>https://github.com/imcloudfloating/rw-separate-spring-boot-starter, https://www.cnblogs.com/cloudfloating/archive/2019/09/17/11536531.html //todo</p>
+<p>https://www.cnblogs.com/wuyoucao/p/10965903.html 数据库集群</p>
+<p>https://www.luvnaxx.com/post/%E6%8A%80/spring-boot/multiple-data-source/</p>
+<h3><a class="header" href="#jdbctemplate" id="jdbctemplate">JdbcTemplate</a></h3>
+<ul>
+<li>数据源@Configuration类</li>
+<li>注册数据源，@Bean(name = &quot;secondaryDataSource&quot;)注解 注册bean，name指定bean名字；@Primary指定默认数据源；@ConfigurationProperties匹配指定属性</li>
+<li>注册jdbctemplate，@Bean(name = &quot;primaryJdbcTemplate&quot;)</li>
+<li>@Autowired+@Qualifier(&quot;primaryJdbcTemplate&quot;)注入使用</li>
+</ul>
+<h3><a class="header" href="#spring-data-jpa" id="spring-data-jpa">Spring-data-jpa</a></h3>
+<ul>
+<li>数据源@Configuration类</li>
+<li>数据源注册</li>
+</ul>
+<p>待完成</p>
+<p>##使用redis作为数据库</p>
+<ul>
+<li>依赖：spring-boot-starter-redis</li>
+<li>添加配置文件 </li>
+</ul>
+<p>Spring Boot 1.0 默认使用的是 Jedis 客户端，2.0 替换成 Lettuce</p>
+<pre><code class="language-props"># Redis数据库索引（默认为0）
+spring.redis.database=0  
+# Redis服务器地址
+spring.redis.host=localhost
+# Redis服务器连接端口
+spring.redis.port=6379  
+# Redis服务器连接密码（默认为空）
+spring.redis.password=
+# 连接池最大连接数（使用负值表示没有限制） 默认 8
+spring.redis.lettuce.pool.max-active=8
+# 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+spring.redis.lettuce.pool.max-wait=-1
+# 连接池中的最大空闲连接 默认 8
+spring.redis.lettuce.pool.max-idle=8
+# 连接池中的最小空闲连接 默认 0
+spring.redis.lettuce.pool.min-idle=0
+</code></pre>
+<h2><a class="header" href="#async异步调用" id="async异步调用">@Async异步调用</a></h2>
+<ul>
+<li>任务类@Component</li>
+<li>方法上@Async</li>
+<li>返回值Future<String>，AsyncResult&lt;&gt;</li>
+</ul>
+<h2><a class="header" href="#log4j支持" id="log4j支持">log4j支持</a></h2>
+<ul>
+<li>
+<p>依赖：spring-boot-starter-log4j</p>
+</li>
+<li>
+<p>排除掉Springboot自己的日志系统：logback</p>
+<pre><code>  &lt;dependency&gt;
+  	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  	&lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;
+  	&lt;exclusions&gt;
+  		&lt;exclusion&gt;
+  			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  			&lt;artifactId&gt;spring-boot-starter-logging&lt;/artifactId&gt;
+  		&lt;/exclusion&gt;
+  	&lt;/exclusions&gt;
+  &lt;/dependency&gt;
+</code></pre>
+</li>
+<li>
+<p>properties文件</p>
+<pre><code>  # LOG4J配置
+  log4j.rootCategory=INFO, stdout, file, errorfile
+  log4j.category.com.didispace=DEBUG, didifile # com.didispace包下
+  log4j.logger.error=errorfile
+
+  # 控制台输出
+  log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+  log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+  log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n
+
+  # root日志输出
+  log4j.appender.file=org.apache.log4j.DailyRollingFileAppender # 按天分文件
+  log4j.appender.file.file=logs/all.log
+  log4j.appender.file.DatePattern='.'yyyy-MM-dd
+  log4j.appender.file.layout=org.apache.log4j.PatternLayout
+  log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n
+
+  # error日志输出
+  log4j.appender.errorfile=org.apache.log4j.DailyRollingFileAppender
+  log4j.appender.errorfile.file=logs/error.log
+  log4j.appender.errorfile.DatePattern='.'yyyy-MM-dd
+  log4j.appender.errorfile.Threshold = ERROR
+  log4j.appender.errorfile.layout=org.apache.log4j.PatternLayout
+  log4j.appender.errorfile.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n
+
+  # com.didispace下的日志输出，
+  log4j.appender.didifile=org.apache.log4j.DailyRollingFileAppender
+  log4j.appender.didifile.file=logs/my.log
+  log4j.appender.didifile.DatePattern='.'yyyy-MM-dd
+  log4j.appender.didifile.layout=org.apache.log4j.PatternLayout
+  log4j.appender.didifile.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L ---- %m%n
+</code></pre>
+</li>
+<li>
+<p>使用</p>
+<pre><code>  private Logger logger = Logger.getLogger(getClass());
+</code></pre>
+</li>
+</ul>
+<h2><a class="header" href="#多环境下的日志配置" id="多环境下的日志配置">多环境下的日志配置</a></h2>
+<ul>
+<li>log4j.properties中使用占位符${xxx}</li>
+<li>在不同的application-profiles.properties中指定占位符的值</li>
+<li>命令行启动：java -jar xxx.jar --spring.profiles.active=prod；或者直接更改application.properties中的spring.profiles.active</li>
+</ul>
+<h2><a class="header" href="#aop统一处理请求日志" id="aop统一处理请求日志">aop统一处理请求日志</a></h2>
+<ul>
+<li>依赖：spring-boot-starter-aop</li>
+<li>需要使用CGLIB来实现AOP的时候，需要配置spring.aop.proxy-target-class=true，不然默认使用的是标准Java的实现</li>
+<li>@Order(i)标明切面类的优先级，i越小，优先级越高；@Component，@Aspect</li>
+</ul>
+<h2><a class="header" href="#缓存支持" id="缓存支持">缓存支持</a></h2>
+<h2><a class="header" href="#消息服务" id="消息服务">消息服务</a></h2>
+<h2><a class="header" href="#监控管理" id="监控管理">监控管理</a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="spring-note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="springmvc-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="spring-note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="springmvc-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

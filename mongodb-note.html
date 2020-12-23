@@ -1,0 +1,812 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>mongodb-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html" class="active"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: mongodb-note
+tags:</p>
+<ul>
+<li>mongodb</li>
+<li>nosql</li>
+<li>db
+categories: java web
+date: 2020-08-31 22:19:28</li>
+</ul>
+<hr />
+<div align="center">
+https://university.mongodb.com/ 官方课程
+<p>https://mongoing.com/ 中文社区
+https://docs.mongoing.com/ 文档</p>
+<p>https://www.mongodb.com/cloud 免费版云服务</p>
+<p>https://zhuanlan.zhihu.com/p/24377636
+https://zhuanlan.zhihu.com/p/26483750
+https://www.zhihu.com/question/20059632/answer/14981332
+https://www.zhihu.com/question/19882468/answer/18329680</p>
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#what-is-mongodb">what is mongodb</a>
+<ul>
+<li><a href="#%E7%89%B9%E6%80%A7">特性</a></li>
+<li><a href="#%E5%92%8C-mysql-%E6%A6%82%E5%BF%B5%E5%AF%B9%E6%AF%94">和 MySQL 概念对比</a></li>
+<li><a href="#%E5%92%8C-es-%E5%AF%B9%E6%AF%94">和 es 对比</a></li>
+<li><a href="#rdbms-%E5%92%8C-nosql">rdbms 和 nosql</a></li>
+</ul>
+</li>
+<li><a href="#why-mongodb">why mongodb</a>
+<ul>
+<li><a href="#%E7%89%B9%E7%82%B9">特点</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">使用场景</a></li>
+</ul>
+</li>
+<li><a href="#how">how</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8">使用</a>
+<ul>
+<li><a href="#%E5%92%8C-spring-boot-%E9%9B%86%E6%88%90">和 spring boot 集成</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-%E5%91%BD%E4%BB%A4%E8%A1%8C">使用 命令行</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%B4%A2%E5%BC%95">索引</a>
+<ul>
+<li><a href="#%E7%B4%A2%E5%BC%95%E4%BB%8B%E7%BB%8D">索引介绍</a></li>
+<li><a href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E6%93%8D%E4%BD%9C%E7%B4%A2%E5%BC%95">在命令行中操作索引</a></li>
+<li><a href="#%E7%B4%A2%E5%BC%95%E8%AF%84%E4%BC%B0%E4%BC%98%E5%8C%96">索引评估优化</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%86%E7%89%87%E9%9B%86%E7%BE%A4-shard-cluster">分片集群 Shard Cluster</a>
+<ul>
+<li><a href="#%E6%9E%B6%E6%9E%84%E5%9B%BE">架构图</a></li>
+<li><a href="#%E5%88%86%E7%89%87%E6%9C%BA%E5%88%B6">分片机制</a></li>
+<li><a href="#%E5%89%AF%E6%9C%AC%E9%9B%86">副本集</a></li>
+<li><a href="#mongo-%E4%B8%AD%E7%9A%84-cap-%E6%94%AF%E6%8C%81">mongo 中的 cap 支持</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#what-is-mongodb" id="what-is-mongodb">what is mongodb</a></h1>
+<h2><a class="header" href="#特性" id="特性">特性</a></h2>
+<p>基于分布式文件存储的数据库。由C++语言编写</p>
+<p>nosql (非关系数据库)</p>
+<p>文档型 - mongo 本质是 key-value 存储, key需要唯一, value会以json的形式存储(json 的 field 可以不同), 而关系型通过一条条记录(具有相同 column)来存储数据</p>
+<p>高性能计算，提供基于内存的快速数据查询</p>
+<p>容易扩展，利用数据分片可以实现分布式存储, 副本集可以实现高可用集群</p>
+<p>丰富的功能集，支持二级索引、强大的聚合管道功能，为开发者量身定做的功能，如数据自动老化、固定集合</p>
+<p>存储方式为虚拟内存+持久化存储，Mongo将数据写入内存中，再由虚拟内存管理器将其持久化到硬盘中，因此写操作会比关系型数据库快很多</p>
+<h2><a class="header" href="#和-mysql-概念对比" id="和-mysql-概念对比">和 MySQL 概念对比</a></h2>
+<ul>
+<li>
+<p>数据库 (databases): 和 MySQL类似, 一台mongodb服务器可以包含多个数据库</p>
+</li>
+<li>
+<p>集合 (collections): 类似MySQL中的表, 可以包含多个文档, 这些文档有相关性, 结构可以不同</p>
+<p>不同之处就在于集合的结构(schema)是动态的，不需要预先声明一个严格的表结构。</p>
+<p>更重要的是，默认情况下 MongoDB 并不会对写入的数据做任何schema的校验。</p>
+</li>
+<li>
+<p>文档 (documents):  就是一个 json, 多个 field 组成, 是 mongo 独有的概念,类似 MySQL的 row</p>
+</li>
+<li>
+<p>字段 (field ): json 中的某个 key, 类似 MySQL的 column</p>
+<p>支持嵌套的文档、数组</p>
+<p>MongoDB中字段的类型是固定的、区分大小写、并且文档中的字段也是有序的</p>
+</li>
+<li>
+<p>_id 主键:  默认使用一个_id 字段来保证文档的唯一性</p>
+<p>若 insert 时不指定, 会自动生成 id, 由客户端(Driver)生成</p>
+</li>
+<li>
+<p>reference 引用: 类似 MySQL的外键</p>
+<p>但是没有任何强制约束, 只是用于查询使用</p>
+</li>
+<li>
+<p>view 视图: 视图是基于表/集合之上进行动态查询的一层对象，可以是虚拟的，也可以是物理的(物化视图), 类似 MySQL</p>
+</li>
+<li>
+<p>index 索引: 与SQL 的索引相同</p>
+</li>
+<li>
+<p><code>$lookup</code>: 聚合操作符，可以用于实现类似 SQL-join 连接的功能</p>
+</li>
+<li>
+<p>transaction 事务，从 MongoDB 4.0 版本开始</p>
+</li>
+<li>
+<p>aggregation 聚合: 类似 MySQL 的分组操作</p>
+<p>MongoDB 提供了强大的聚合计算框架，group by 是其中的一类聚合操作</p>
+</li>
+<li>
+<p>mapreduce: </p>
+</li>
+<li>
+<p>Projection (投影): 类似传统的SQL语法中，可以限定返回的字段</p>
+</li>
+</ul>
+<h2><a class="header" href="#和-es-对比" id="和-es-对比">和 es 对比</a></h2>
+<p>https://www.zhihu.com/question/274485040/answer/1242910052</p>
+<h2><a class="header" href="#rdbms-和-nosql" id="rdbms-和-nosql">rdbms 和 nosql</a></h2>
+<p>关系型 vs. 非关系型</p>
+<ul>
+<li>
+<p>rdbms 数据都是结构化的 (有严格的行/列约束), nosql 没有预定义的约束</p>
+</li>
+<li>
+<p>rdbms 支持 sql</p>
+<p>mongodb 在 client 使用sql: mongobooster、studio3t</p>
+</li>
+<li>
+<p>rdbms 支持事务 , nosql 不支持</p>
+<p>nosql 放弃事务，追求高性能、高可扩展</p>
+<p>最初 mongo 仅仅支持 单文档的事务, 4.0后, mongodb 支持多文档的事务 (事务中的操作可以跨副本集, 跨分片)</p>
+<p>在事务的隔离性上，MongoDB 支持快照(snapshot)的隔离级别，可以避免脏读、不可重复读和幻读。</p>
+</li>
+<li>
+<p>rdbms 有严格的一致性, nosql 仅仅最终一致性</p>
+</li>
+</ul>
+<h1><a class="header" href="#why-mongodb" id="why-mongodb">why mongodb</a></h1>
+<h2><a class="header" href="#特点" id="特点">特点</a></h2>
+<p>可以和关系型数据库(MySQL)对比着看:</p>
+<p>优点:</p>
+<ul>
+<li>
+<p>没有schema约束, 可以迅速开发, 不必定义字段名, 字段类型等等</p>
+</li>
+<li>
+<p>速度更快, mongo存储方式是 先写内存, 然后刷入磁盘</p>
+<p>用于缓存, 不过一般不这么干, redis 就够了</p>
+</li>
+<li>
+<p>MongoDB自带复制、分片等高可用方案</p>
+</li>
+<li>
+<p>支持二维空间/地理位置索引, 可以存储经纬度</p>
+</li>
+<li>
+<p>GridFS, 将文件存储在MongoDB集合中</p>
+</li>
+<li>
+<p>文档可以嵌套, 解决了 MySQL 中多表 join损失性能的问题</p>
+</li>
+</ul>
+<p>缺点: </p>
+<ul>
+<li>
+<p>没有数据完整性检查, 现在已经有了 (Mongoose 可以解决一切约束缺失问题)</p>
+<p>MongoDB 支持模式验证</p>
+</li>
+<li>
+<p>没有强制的外键约束</p>
+</li>
+<li>
+<p>事务支持 (MongoDB 目前只支持单文档事务，需要复杂事务支持的场景暂时不适合)</p>
+</li>
+<li>
+<p>开源协议问题 (AGPLv3切换到SSPL)</p>
+</li>
+</ul>
+<h2><a class="header" href="#使用场景" id="使用场景">使用场景</a></h2>
+<ol>
+<li>
+<p>适合 日志系统, 爬虫爬取的原始数据</p>
+</li>
+<li>
+<p>适合数据规模巨大的系统 (自带分片, 复制功能, 分布式, 高可用实现方便)</p>
+</li>
+<li>
+<p>o2o app, 用于地理位置存储 (查询附近的人, 距离、或者订餐系统、配送系统等)</p>
+</li>
+<li>
+<p>作为文件存储系统</p>
+</li>
+<li>
+<p>解决 MySQL 多表 join 的性能问题</p>
+</li>
+</ol>
+<h1><a class="header" href="#how" id="how">how</a></h1>
+<h2><a class="header" href="#安装" id="安装">安装</a></h2>
+<p>=================== docker 安装</p>
+<p>https://www.jianshu.com/p/576a156f6877
+https://www.cnblogs.com/yunquan/p/11174265.html</p>
+<pre><code class="language-sh"># https://hub.docker.com/_/mongo
+# 由于添加了 env params, 往 admin 数据库 的 system.users 集合中 插入了记录, 开启了 auth
+docker run -d -p 27017:27017 --name mongodb -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=mongoadmin mongo
+
+# check -&gt; http://localhost:8081/
+docker run --restart=always --name mongo-express --link mongodb:mongodb -d -p 8081:8081 -e ME_CONFIG_OPTIONS_EDITORTHEME=&quot;3024-night&quot; -e ME_CONFIG_BASICAUTH_USERNAME=&quot;mongoexpress&quot; -e ME_CONFIG_BASICAUTH_PASSWORD=&quot;mongoexpress&quot; -e ME_CONFIG_MONGODB_ADMINUSERNAME=&quot;mongoadmin&quot; -e ME_CONFIG_MONGODB_ADMINPASSWORD=&quot;mongoadmin&quot; -e ME_CONFIG_MONGODB_SERVER=&quot;mongodb&quot; mongo-express
+
+</code></pre>
+<p>================= 压缩包安装</p>
+<p>下载 zip 包, 新建文件夹 <code>data</code> 用来存储数据; 新建 <code>daemon_start.sh</code> 作为server启动脚本:</p>
+<pre><code class="language-sh">cd D:\\program_green\\mongodb\\mongodb-win32-x86_64-2008plus-ssl-4.0.11\\bin
+./mongod.exe --dbpath D:\\program_green\\mongodb\\data
+</code></pre>
+<p>新建 <code>client_start.sh</code> 为client脚本:</p>
+<pre><code class="language-sh">cd D:\\program_green\\mongodb\\mongodb-win32-x86_64-2008plus-ssl-4.0.11\\bin
+./mongo localhost:27017
+</code></pre>
+<p>mongoDB默认占用端口为27017</p>
+<p>默认mongo启动是以test用户, 即 <code>mongo localhost:27017/test</code>, 可以以别的用户启动 <code>mongo localhost:27017/admin</code></p>
+<p>数据建模时的区别可以参考: https://www.yiibai.com/mongodb/mongodb_data_modeling.html</p>
+<h2><a class="header" href="#使用" id="使用">使用</a></h2>
+<h3><a class="header" href="#和-spring-boot-集成" id="和-spring-boot-集成">和 spring boot 集成</a></h3>
+<p>spring boot data mongodb</p>
+<pre><code class="language-sh">use demo
+#需要创建非 admin 的 user, 否则 spring boot 会报认证异常
+db.createUser({&quot;user&quot;: &quot;tiger&quot;, &quot;pwd&quot;: &quot;tiger&quot;, &quot;roles&quot;: [{&quot;role&quot;: &quot;readWrite&quot;, &quot;db&quot;: &quot;demo&quot;}]})
+</code></pre>
+<p>spring boot 配置: ...uri: <code>mongodb://tiger:tiger@172.24.208.103:27017/demo</code></p>
+<h3><a class="header" href="#使用-命令行" id="使用-命令行">使用 命令行</a></h3>
+<pre><code class="language-sh"># 进入
+# 远程连接使用 mongo username:password@ip:port/dbname
+# 不带 username 也可进入, 但是不是同一个系统
+mongo --username mongoadmin --password
+    使用 -u -p 亦可
+
+# 使用/创建数据库, 默认 test
+use DATABASE_NAME
+
+# 当前db
+db
+# 查看所有
+show dbs  
+
+# 添加 user
+db.createUser(
+     {
+       user: &quot;wenqiang&quot;,
+       pwd: &quot;1438438&quot;,
+       roles: [&quot;readWrite&quot;]
+     }
+)
+#or
+db.createUser(
+     {
+       user: &quot;wenqiang&quot;,
+       pwd: &quot;1438438&quot;,
+       roles: [{
+           &quot;role&quot;:&quot;readWrite&quot;,
+           &quot;db&quot;: &quot;demo-db&quot;
+       }]
+     }
+)
+# 创建管理员，赋予root权限
+db.createUser({user:&quot;admin&quot;,pwd:&quot;xiiasdfiik34&quot;,roles:[{role: 'root', db: 'admin'}]})
+# 删除 user
+db.dropUser('username')
+
+# 登录认证新user
+db.auth(&quot;mutianwei&quot;, &quot;123568&quot;)
+
+# 查询当前 db 的集合
+db.getCollectionNames()
+
+# 创建 collections
+db.createCollection(&quot;logs&quot;)
+
+# create document
+db.logs.insert( { name: &quot;wangwenqiang&quot;, age: 3} )
+
+# 查询 所有 document
+db.logs.find()
+
+# 条件查询
+# age &gt; 25 的 user 的 status 设置为 c
+db.users.update(
+    { age: { $gt: 25 } },
+    { $set: { status: 'C' } },
+    { multi: true }
+)
+
+# 更新 document
+db.book.update(
+   {&quot;_id&quot; : ObjectId(&quot;5c61301c15338f68639e6802&quot;)},
+   {&quot;$inc&quot;: {&quot;viewCount&quot;: 3} }
+)
+
+# 删除 document
+db.book.remove({&quot;_id&quot;:
+     ObjectId(&quot;5c612b2f15338f68639e67d5&quot;)})
+
+# projection 
+db.book.find({&quot;author&quot;: &quot;James&quot;}, 
+    {&quot;_id&quot;: 1, &quot;title&quot;: 1, &quot;author&quot;: 1})
+
+# 分页
+db.book.find({})
+    .sort({&quot;viewCount&quot; : -1})
+    .skip(10).limit(5)
+
+
+</code></pre>
+<h1><a class="header" href="#索引" id="索引">索引</a></h1>
+<h2><a class="header" href="#索引介绍" id="索引介绍">索引介绍</a></h2>
+<p>使用 wiredTiger 作为默认的引擎。</p>
+<p>使用了 B树的结构 (mysql  用的是 b+ 树) - https://zhuanlan.zhihu.com/p/107228878 //todo</p>
+<p>============= 索引分类</p>
+<p>除了普通索引之外，MongoDB 支持的类型还包括：</p>
+<ul>
+<li>
+<p>哈希(HASH)索引，哈希是另一种快速检索的数据结构，MongoDB 的 HASH 类型分片键会使用哈希索引。</p>
+</li>
+<li>
+<p>地理空间索引，用于支持快速的地理空间查询，如寻找附近1公里的商家。</p>
+<p>其球面（Spherical）和平面（Flat）两种模式，</p>
+</li>
+<li>
+<p>文本索引，用于支持快速的全文检索</p>
+</li>
+<li>
+<p>模糊索引(Wildcard Index)，一种基于匹配规则的灵活式索引，在4.2版本开始引入。</p>
+</li>
+</ul>
+<p>唯一索引、</p>
+<p>二级索引、</p>
+<p>TTL索引(通过创建TTL索引，实现自动删除过期记录的功能, 比如保存日志)</p>
+<p>MongoDB集合在创建时默认就基于_id字段创建了唯一索引，数据插入时会检查_id字段的唯一性</p>
+<p>在内存足够的情况下，索引会被加载到Cache中，如果执行的查询是索引覆盖的（Query Optimization），其性能甚至可以媲美Redis等内存数据库等</p>
+<h2><a class="header" href="#在命令行中操作索引" id="在命令行中操作索引">在命令行中操作索引</a></h2>
+<pre><code class="language-sh"># 为集合声明一个普通的索引：
+# 数字 1 代表升序，如果是降序则是 -1
+db.book.ensureIndex({author: 1})
+
+# 复合式(compound)的索引 (对 type, published 添加联合索引)，如下：
+# 只有对于复合式索引时，索引键的顺序才变得有意义
+db.book.ensureIndex({type: 1, published: 1})
+
+# 如果索引的字段是数组类型，该索引就自动成为数组(multikey)索引：
+# MongoDB 可以在复合索引上包含数组的字段，但最多只能包含一个
+db.book.ensureIndex({tags: 1})
+
+</code></pre>
+<p>可以通过一些参数化选项来为索引赋予一定的特性，包括：</p>
+<ul>
+<li>
+<p>unique=true，表示一个唯一性索引</p>
+</li>
+<li>
+<p>expireAfterSeconds=3600，表示这是一个TTL索引，并且数据将在1小时后老化</p>
+</li>
+<li>
+<p>sparse=true，表示稀疏的索引，仅索引非空(non-null)字段的文档</p>
+</li>
+<li>
+<p>partialFilterExpression: { rating: { $gt: 5 }，条件式索引，即满足计算条件的文档才进行索引</p>
+</li>
+</ul>
+<h2><a class="header" href="#索引评估优化" id="索引评估优化">索引评估优化</a></h2>
+<p>https://docs.mongodb.com/manual/reference/explain-results/index.html</p>
+<p>使用 explain() 命令可以用于查询计划分析</p>
+<p>hint() 强制查询走某个索引</p>
+<pre><code class="language-sh">db.test.explain().find( { a : 5 } )
+
+{
+  &quot;queryPlanner&quot; : {
+    ...
+    # 通过 winningPlan 可以知道是否高效: 
+    # 未能命中索引的结果，会显示COLLSCAN
+    # 命中索引的结果，使用IXSCAN
+    #出现了内存排序，显示为 SORT
+    &quot;winningPlan&quot; : { 
+      &quot;stage&quot; : &quot;FETCH&quot;,
+      &quot;inputStage&quot; : {
+        &quot;stage&quot; : &quot;IXSCAN&quot;,
+        &quot;keyPattern&quot; : {
+            &quot;a&quot; : 5
+        },
+        &quot;indexName&quot; : &quot;a_1&quot;,
+        &quot;isMultiKey&quot; : false,
+        &quot;direction&quot; : &quot;forward&quot;,
+        &quot;indexBounds&quot; : {&quot;a&quot; : [&quot;[5.0, 5.0]&quot;]}
+        }
+    }},
+   ...
+}
+</code></pre>
+<h1><a class="header" href="#分片集群-shard-cluster" id="分片集群-shard-cluster">分片集群 Shard Cluster</a></h1>
+<h2><a class="header" href="#架构图" id="架构图">架构图</a></h2>
+<pre><code>                        +-------------------------------+
+                        |        application            |
+                        +--------+------+-------+-------+
+                                 |      |       |
+                                 v      v       v
++-----------------------------------------------------------------------------------------------------+
+|            +------------+   +------------+   +------------+                                         |
+|            |    mongos  |   |   mongos   |   |   mongos   |             +-------------------------+ |
+|            +------------+   +------------+   +------------+        &lt;--+ |                         | |
+|                                                                         | +---------------------+ | |
+|                        +       +      +       +      +                  | |   config primary    | | |
+|                        |       |      |       |      |                  | |                     | | |
+|                        v       v      v       v      v                  | |                     | | |
+|                                                                         | +---------------------+ | |
+|          +--------------------------+  +-----------------------------+  |                         | |
+|          |                          |  |                             |  |  +--------------------+ | |
+|          |                          |  |                             |  |  |                    | | |
+|          |   +------------------+   |  |      +-----------------+    |  |  |  config secondary  | | |
+|          |   |    primary       |   |  |      |  primary        |    |  |  |                    | | |
+|          |   |                  |   |  |      |                 |    |  |  +--------------------+ | |
+|          |   +------------------+   |  |      +-----------------+    |  |                         | |
+|          |                          |  |                             |  |  +--------------------+ | |
+|          |  +-----+      +-----+    |  |    +-----+     +-----+      |  |  |                    | | |
+|          |  |     |      |     |    |  |    |     |     |     |      +-&gt;+  |  config secondary  | | |
+|          |  | secondary  |     |    |  |    secondary   |     |      |  |  |                    | | |
+|          |  |     |      |     |    |  |    |     |     |     |      |  |  +--------------------+ | |
+|          |  |     |      secondary  |  |    |     |     |secondary   |  |                         | |
+|          |  |     |      |     |    |  |    |     |     |     |      |  |                         | |
+|          |  |     |      |     |    |  |    |     |     |     |      |  |                         | |
+|          |  |     |      |     |    |  |    |     |     |     |      |  |                         | |
+|          |  +-----+      +-----+    |  |    +-----+     +-----+      |  |                         | |
+|          |                          |  |                             |  |                         | |
+|          |                          |  |                             |  +-------------------------+ |
+|          +--------------------------+  +-----------------------------+        config server replSet |
+|               shard0                             shard1                                             |
+|                                                                                                     |
+|                                                                                                     |
+|                                                                                                     |
++-----------------------------------------------------------------------------------------------------+
+
+</code></pre>
+<ul>
+<li>
+<p>数据分片 shards </p>
+<p>存储真正的集群数据, 可以是一个单独的 Mongod实例，也可以是一个副本集</p>
+<p>生产环境下, Shard一般是一个 Replica Set，以防止该数据片的单点故障</p>
+<p>对于分片集合(sharded collection)来说，每个分片上都存储了集合的一部分数据(按照分片键切分)，如果集合没有分片，那么该集合的数据都存储在数据库的 Primary Shard中</p>
+</li>
+<li>
+<p>配置服务器 config server </p>
+<p>保存集群的元数据（metadata），包含各个Shard的路由规则，配置服务器由一个副本集(ReplicaSet)组成</p>
+</li>
+<li>
+<p>查询路由 mongos</p>
+<p>Mongos是 Sharded Cluster 的访问入口，其本身并不持久化数据 。</p>
+<p>Mongos启动后，会从 Config Server 加载元数据，开始提供服务，并将用户的请求正确路由到对应的Shard。</p>
+<p>Sharding 集群可以部署多个 Mongos 以分担客户端请求的压力</p>
+</li>
+</ul>
+<h2><a class="header" href="#分片机制" id="分片机制">分片机制</a></h2>
+<p>基于分片切分后的数据块称为 chunk，一个分片后的集合会包含多个 chunk，每个 chunk 位于哪个分片(Shard) 则记录在 Config Server(配置服务器)上。</p>
+<p>Mongos 在操作分片集合时，会自动根据分片键找到对应的 chunk，并向该 chunk 所在的分片发起操作请求。</p>
+<p>===============数据如何切分:</p>
+<ul>
+<li>
+<p>范围分片: 按照分片字段从小到大, 分成多个范围段, 每段就是一个 shard</p>
+<p>如: 集合根据x字段 (整型) 来分片，x的取值范围为[minKey, maxKey], 将整个取值范围划分为多个chunk，每个chunk（默认配置为64MB）包含其中一小段的数据</p>
+<p>能很好的满足范围查询的需求, 如 想查询x的值在[-30, 10]之间的所有文档，这时 Mongos 直接能将请求路由到 Chunk2</p>
+<p>范围分片的缺点在于，如果 ShardKey 有明显递增（或者递减）趋势，则新插入的文档多会分布到同一个chunk，无法扩展写的能力，比如使用_id作为 ShardKey，而MongoDB自动生成的id高位是时间戳，是持续递增的。</p>
+</li>
+<li>
+<p>哈希分片: 根据用户的 ShardKey 先计算出hash值（64bit整型），再根据hash值按照范围分片的策略将文档分布到不同的 chunk。</p>
+<p>由于 hash值的计算是随机的，因此 Hash 分片具有很好的离散性，可以将数据随机分发到不同的 chunk 上</p>
+<p>但不能高效的服务范围查询，所有的范围查询要查询多个 chunk 才能找出满足条件的文档。</p>
+</li>
+</ul>
+<p>================如何保证每个 shard 上,  chunk 都是均衡的呢</p>
+<ul>
+<li>
+<p>全预分配，chunk 的数量和 shard 都是预先定义好的，比如 10个shard，存储1000个chunk，那么每个shard 分别拥有100个chunk。</p>
+</li>
+<li>
+<p>非预分配</p>
+<p>这种情况则比较复杂，一般当一个 chunk 太大时会产生分裂(split)，不断分裂的结果会导致不均衡；</p>
+<p>或者动态扩容增加分片时，也会出现不均衡的状态。 这种不均衡的状态由集群均衡器进行检测，一旦发现了不均衡则执行 chunk数据的搬迁达到均衡。</p>
+<p>数据均衡器运行于 Primary Config Server(配置服务器的主节点)上</p>
+<p>MongoDB 的数据迁移对集群性能存在一定影响，这点无法避免，目前的规避手段只能是将均衡窗口对齐到业务闲时段。</p>
+</li>
+</ul>
+<p>============如何判断 chunk 是否均衡</p>
+<p>对于数据的不均衡是根据两个分片上的 Chunk 个数差异来判定的, 有规定的阈值表,(规定了对于多大规模的 shard, chunk 个数差异不得大于多少)</p>
+<h2><a class="header" href="#副本集" id="副本集">副本集</a></h2>
+<p>副本集可以作为 Shard Cluster 中的一个Shard(片)之外，对于规模较小的业务来说，也可以使用一个单副本集的方式进行部署, 之后随业务量变大缓慢过度到 shard cluster (https://docs.mongodb.com/manual/tutorial/convert-replica-set-to-replicated-shard-cluster/)</p>
+<p>MongoDB 的副本集采取了一主多从的结构，即一个Primary Node + N* Secondary Node的方式，数据从主节点写入，并复制到多个备节点。</p>
+<p>利用副本集，我们可以实现：：</p>
+<ul>
+<li>
+<p>数据库高可用，</p>
+<p>主节点宕机后，由备节点自动选举成为新的主节点；</p>
+</li>
+<li>
+<p>读写分离，</p>
+<p>读请求可以分流到备节点，减轻主节点的单点压力。</p>
+<p>读写分离只能增加集群&quot;读&quot;的能力，对于写负载非常高的情况却无能为力。对此需求，使用分片集群并增加分片，或者提升数据库节点的磁盘IO、CPU能力可以取得一定效果。</p>
+</li>
+</ul>
+<p>=====================选举</p>
+<p>通过 Raft 算法来完成主节点的选举，这个环节在初始化的时候会自动完成，如下面的命令：</p>
+<pre><code class="language-sh">config = {
+    _id : &quot;my_replica_set&quot;,
+    members : [
+        {_id : 0, host : &quot;rs1.example.net:27017&quot;},
+        {_id : 1, host : &quot;rs2.example.net:27017&quot;},
+        {_id : 2, host : &quot;rs3.example.net:27017&quot;},
+  ]
+}
+# initiate 命令用于实现副本集的初始化：
+rs.initiate(config)
+
+# 在选举完成后，通过 isMaster()命令就可以看到选举的结果
+db.isMaster()
+
+{
+    &quot;hosts&quot; : [
+    &quot;192.168.100.1:27030&quot;,
+    &quot;192.168.100.2:27030&quot;,
+    &quot;192.168.100.3:27030&quot;
+    ],
+    &quot;setName&quot; : &quot;myReplSet&quot;,
+    &quot;setVersion&quot; : 1,
+    &quot;ismaster&quot; : true,
+    &quot;secondary&quot; : false,
+    &quot;primary&quot; : &quot;192.168.100.1:27030&quot;,
+    &quot;me&quot; : &quot;192.168.100.1:27030&quot;,
+    &quot;electionId&quot; : ObjectId(&quot;7fffffff0000000000000001&quot;),
+    &quot;ok&quot; : 1
+}
+</code></pre>
+<p>主节点的选举需要满足&quot;大多数&quot;原则, 为了避免出现平票的情况，副本集的部署一般采用是基数个节点，比如3个</p>
+<p>=================心跳 failover</p>
+<p>副本集中的每个节点上都会定时向其他节点发送心跳，以此来感知其他节点的变化，比如是否失效、或者角色发生了变化。</p>
+<p>默认情况下，节点会每2秒向其他节点发出心跳，这其中包括了主节点。 如果备节点在10秒内没有收到主节点的响应就会主动发起选举</p>
+<p>利用心跳，MongoDB 副本集实现了自动故障转移的功能 failover (即 primary node 挂了, 自动选举某个 slave node 作为新的 primary node )</p>
+<p>=================主备节点的数据复制 oplog</p>
+<p>主节点和备节点的数据是通过日志(oplog)复制来实现的，这很类似于 mysql 的 binlog</p>
+<p>在每一个副本集的节点中，都会存在一个名为local.oplog.rs的特殊集合。 当 Primary 上的写操作完成后，会向该集合中写入一条oplog; 而 Secondary 则持续从 Primary 拉取新的 oplog 并在本地进行回放以达到同步的目的</p>
+<ul>
+<li>oplog 必须保证有序，通过 optime 来保证。</li>
+<li>oplog 必须包含能够进行数据回放的完整信息。</li>
+<li>oplog 必须是幂等的，即多次回放同一条日志产生的结果相同。</li>
+<li>oplog 集合是固定大小的，为了避免对空间占用太大，旧的 oplog 记录会被滚动式的清理</li>
+</ul>
+<pre><code class="language-sh">{
+&quot;ts&quot; : Timestamp(1446011584, 2),
+&quot;h&quot; : NumberLong(&quot;1687359108795812092&quot;),
+&quot;v&quot; : 2,
+&quot;op&quot; : &quot;i&quot;,
+&quot;ns&quot; : &quot;test.nosql&quot;,
+&quot;o&quot; : { &quot;_id&quot; : ObjectId(&quot;563062c0b085733f34ab4129&quot;), &quot;name&quot; : &quot;mongodb&quot;, &quot;score&quot; : &quot;100&quot; }
+}
+# ts 操作的 optime，该字段不仅仅包含了操作的时间戳(timestamp)，还包含一个自增的计数器值。
+# h 操作的全局唯一表示
+# v oplog 的版本信息
+# op 操作类型，比如 i=insert,u=update..
+# ns 操作集合，形式为 database.collection
+# o 指具体的操作内容，对于一个 insert 操作，则包含了整个文档的内容
+</code></pre>
+<h2><a class="header" href="#mongo-中的-cap-支持" id="mongo-中的-cap-支持">mongo 中的 cap 支持</a></h2>
+<p>参考 https://docs.mongodb.com/manual/applications/replication/</p>
+<p>mongo 的 shard cluster 需要 在 一致性 和 可用性 两者权衡, 所以允许客户端为其操作设定一定的级别或者偏好，包括这些配置项：</p>
+<ul>
+<li>
+<p>read preference</p>
+<p>读取偏好，可指定读主节点、读备节点，或者是优先读主、优先读备、取最近的节点</p>
+<p>设置为 primary，此时读写都在主节点上。 这保证了数据的一致性，但一旦主节点宕机会导致失败(可用性降低)</p>
+<p>设置为 secondaryPrefered，此时写主，优先读备，可用性提高了，但数据存在延迟(出现不一致)</p>
+</li>
+<li>
+<p>write concern</p>
+<p>写关注，指定写入结果达到什么状态时才返回，可以为无应答(none)、应答(ack)，或者是大多数节点完成了数据复制等等</p>
+<p>将读写关注都设置为 majority(意思是 大多数)，一致性提升了，但可用性也同时降低了(节点失效会导致大多数写失败)</p>
+</li>
+<li>
+<p>read concern</p>
+<p>读关注，指定读取的数据版本处于怎样的状态，可以为读本地、读大多数节点写入，或者是线性读(linearizable)等等。</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="money.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="mvc-mvvm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="money.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="mvc-mvvm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

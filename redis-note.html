@@ -1,0 +1,1256 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>redis-note - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html" class="active"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<p>title: Redis
+tags:</p>
+<ul>
+<li>redis</li>
+<li>nosql
+date: 2016-04-28 15:30:56
+categories: java web</li>
+</ul>
+<hr />
+<div align="center">
+redis 使用笔记; {% post_link 缓存概述 📚 缓存概述 %};
+reference: [redis基础](https://juejin.im/post/5ad6e4066fb9a028d82c4b66), [redis集群原理及搭建与使用](https://juejin.im/post/5ad54d76f265da23970759d3)
+《redis开发和运维》
+</div>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#redis%E4%BB%8B%E7%BB%8D">redis介绍</a>
+<ul>
+<li><a href="#redis-%E7%89%B9%E6%80%A7">redis 特性</a></li>
+<li><a href="#install">install</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">使用场景</a></li>
+</ul>
+</li>
+<li><a href="#redis%E5%91%BD%E4%BB%A4">redis命令</a>
+<ul>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4">系统管理命令</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4">数据操作命令</a></li>
+<li><a href="#%E9%94%AE%E7%AE%A1%E7%90%86">键管理</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a>
+<ul>
+<li><a href="#streaming-%E7%B1%BB%E5%9E%8B">streaming 类型</a></li>
+<li><a href="#string-%E5%AD%97%E7%AC%A6%E4%B8%B2">String-字符串</a></li>
+<li><a href="#list-%E5%88%97%E8%A1%A8">List-列表</a></li>
+<li><a href="#set-%E9%9B%86%E5%90%88">Set-集合</a></li>
+<li><a href="#hash-%E5%93%88%E5%B8%8C">Hash-哈希</a></li>
+<li><a href="#zset-%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88">ZSet-有序集合</a></li>
+</ul>
+</li>
+<li><a href="#lua%E8%84%9A%E6%9C%AC">lua脚本</a></li>
+<li><a href="#%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9E%B6%E6%9E%84">单线程架构</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E6%B7%98%E6%B1%B0%E6%9C%BA%E5%88%B6">内存淘汰机制</a>
+<ul>
+<li><a href="#%E4%B8%89%E9%81%93%E4%BF%9D%E9%99%A9%E4%BF%9D%E8%AF%81-key-%E8%BF%87%E6%9C%9F%E5%A4%84%E7%90%86">三道保险保证 key 过期处理</a></li>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E6%B7%98%E6%B1%B0%E6%9C%BA%E5%88%B6">有哪些淘汰机制</a></li>
+<li><a href="#%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95">内存回收算法</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5">如何配置淘汰策略</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">通过配置文件</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E8%BF%90%E8%A1%8C%E6%97%B6%E4%BF%AE%E6%94%B9">通过命令运行时修改</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%8C%81%E4%B9%85%E5%8C%96">持久化</a>
+<ul>
+<li><a href="#%E5%A4%87%E4%BB%BD%E9%80%89%E5%9E%8B">备份选型</a></li>
+<li><a href="#rdb-%E5%BF%AB%E7%85%A7%E6%8C%81%E4%B9%85%E5%8C%96">RDB-快照持久化</a>
+<ul>
+<li><a href="#rdb%E6%8C%81%E4%B9%85%E5%8C%96%E6%A6%82%E5%BF%B5">RDB持久化概念</a></li>
+<li><a href="#%E8%A7%A6%E5%8F%91%E6%9C%BA%E5%88%B6-%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF">触发机制-如何开启</a></li>
+<li><a href="#rdb%E6%96%87%E4%BB%B6">RDB文件</a></li>
+</ul>
+</li>
+<li><a href="#aof-%E6%97%A5%E5%BF%97%E6%8C%81%E4%B9%85%E5%8C%96">AOF-日志持久化</a>
+<ul>
+<li><a href="#aof%E6%A6%82%E5%BF%B5">aof概念</a></li>
+<li><a href="#%E5%86%99%E5%85%A5%E5%8E%9F%E7%90%86">写入原理</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5">文件同步</a></li>
+<li><a href="#%E9%87%8D%E5%86%99%E6%9C%BA%E5%88%B6">重写机制</a></li>
+<li><a href="#aof-%E6%8D%9F%E5%9D%8F">aof 损坏</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8F%91%E5%B8%83%E4%B8%8E%E8%AE%A2%E9%98%85">发布与订阅</a></li>
+<li><a href="#%E4%BA%8B%E5%8A%A1">事务</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6">事件</a>
+<ul>
+<li><a href="#%E6%96%87%E4%BB%B6%E4%BA%8B%E4%BB%B6">文件事件</a></li>
+<li><a href="#%E6%97%B6%E9%97%B4%E4%BA%8B%E4%BB%B6">时间事件</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%B0%83%E5%BA%A6%E6%89%A7%E8%A1%8C">事件的调度&amp;执行</a></li>
+</ul>
+</li>
+<li><a href="#redis%E9%9B%86%E7%BE%A4">redis集群</a>
+<ul>
+<li><a href="#%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B">连接过程</a></li>
+<li><a href="#%E4%B8%BB%E4%BB%8E%E9%93%BE">主从链</a></li>
+</ul>
+</li>
+<li><a href="#%E5%93%A8%E5%85%B5-sentinel">哨兵 Sentinel</a></li>
+<li><a href="#%E5%88%86%E7%89%87">分片</a></li>
+<li><a href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E8%AE%BA%E5%9D%9B%E7%B3%BB%E7%BB%9F">一个简单的论坛系统</a>
+<ul>
+<li><a href="#%E6%96%87%E7%AB%A0%E4%BF%A1%E6%81%AF">文章信息</a></li>
+<li><a href="#%E7%82%B9%E8%B5%9E%E5%8A%9F%E8%83%BD">点赞功能</a></li>
+<li><a href="#%E5%AF%B9%E6%96%87%E7%AB%A0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F">对文章进行排序</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E8%87%B4%E6%80%A7%E5%93%88%E5%B8%8C">一致性哈希</a></li>
+<li><a href="#%E6%95%B4%E5%90%88-spring-boot2">整合 spring boot2</a>
+<ul>
+<li><a href="#jedis">jedis</a></li>
+<li><a href="#lettuce">lettuce</a></li>
+<li><a href="#%E5%AE%9A%E4%B9%89%E5%BA%8F%E5%88%97%E5%8C%96%E5%99%A8">定义序列化器</a></li>
+</ul>
+</li>
+<li><a href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98">面试问题</a></li>
+<li><a href="#%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81">分布式锁</a>
+<ul>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">实现原理</a>
+<ul>
+<li><a href="#%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E9%9C%80%E8%A6%81%E6%BB%A1%E8%B6%B3%E7%9A%84%E8%A6%81%E6%B1%82">分布式锁需要满足的要求</a></li>
+<li><a href="#%E5%8A%A0%E9%94%81%E6%9C%BA%E5%88%B6">加锁机制</a></li>
+<li><a href="#watch-dog-%E8%87%AA%E5%8A%A8%E5%BB%B6%E6%97%B6%E6%9C%BA%E5%88%B6">watch dog 自动延时机制</a></li>
+<li><a href="#redisson-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%8F%AF%E9%87%8D%E5%85%A5%E9%94%81">redisson 如何实现可重入锁</a></li>
+</ul>
+</li>
+<li><a href="#redis-%E5%AE%9E%E7%8E%B0-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81">redis 实现 分布式锁</a></li>
+<li><a href="#redisson-%E5%AE%9E%E7%8E%B0">redisson 实现</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#redis介绍" id="redis介绍">redis介绍</a></h1>
+<h2><a class="header" href="#redis-特性" id="redis-特性">redis 特性</a></h2>
+<p>全称: remote dictionary server</p>
+<ul>
+<li>
+<p>速度快</p>
+<ul>
+<li>因为是在内存中运行</li>
+<li>c 实现</li>
+<li>单线程架构, 没有资源竞争. - 存储的键很多的redis, 不要执行 <code>keys*</code> 操作</li>
+</ul>
+</li>
+<li>
+<p>基本数据结构是键值对, 但是 值可以支持多种数据类型</p>
+<ul>
+<li>string, 在 string 基础上演变出 bitmaps(位图), HyperLogLog</li>
+<li>hash</li>
+<li>集合</li>
+<li>有序集合</li>
+<li>列表</li>
+</ul>
+</li>
+<li>
+<p>提供多种功能</p>
+<ul>
+<li>键可以设置过期时间 - 可以用来实现缓存</li>
+<li>发布订阅功能 - 可以实现消息队列</li>
+<li>支持 lua 脚本 - 可以利用 lua 创建新的 redis 命令</li>
+<li>简单的事务支持</li>
+<li>提供了 pipeline (流水线) 功能 - 这样客户端能够将一批命令一次性传到 redis, 减少了网络开销</li>
+</ul>
+</li>
+<li>
+<p>持久化支持</p>
+<ul>
+<li>
+<p>RDB</p>
+</li>
+<li>
+<p>AOF</p>
+</li>
+</ul>
+</li>
+<li>
+<p>主从复制 - 是分布式 redis 的基础</p>
+</li>
+<li>
+<p>高可用and分布式</p>
+</li>
+</ul>
+<h2><a class="header" href="#install" id="install">install</a></h2>
+<p>Windows</p>
+<p>cmd启动server端: <code>redis-server.exe redis.windows.conf </code>, redis.windows.conf不是必须, 如果省略则使用默认配置</p>
+<p>cmd启动client端: <code>redis-cli.exe -h 127.0.0.1 -p 6379 </code>, 然后即可在这个端口进行后续操作.</p>
+<p>ubuntu下卸载</p>
+<p>rm -rf var/lib/redis/</p>
+<p>rm -rf /var/log/redis</p>
+<p>rm -rf /etc/redis/</p>
+<p>rm -rf /usr/bin/redis-*</p>
+<pre><code class="language-sh">apt-get remove redis # 删除
+apt-get remove --purge redis # 同时删除配置文件
+find / -name redis # 找到残余文件 删除之
+
+
+</code></pre>
+<p>Ubuntu下安装</p>
+<pre><code class="language-sh">$sudo apt-get update
+$sudo apt-get install redis-server
+
+$ redis-server # 启动server
+
+$ redis-cli # 启动client(redis 127.0.0.1:6379)
+
+# 检测redis server是否启动
+127.0.0.1:6379&gt; ping
+PONG
+</code></pre>
+<p>通过源码安装</p>
+<pre><code class="language-sh">wget http://download.redis.io/releases/redis-5.0.2.tar.gz # 下载 redis 
+tar -zxv -f xxx.tar.gz # 解压
+ln -s redis-x.x.x &lt;link_name&gt; # 建立快捷软链接 # 最佳实践， 利于未来版本升级
+cd redis
+make # 编译
+make install # 安装 # 安装到了 /usr/local/bin, 这样就可以在任何目录下使用redis 命令了
+
+</code></pre>
+<h2><a class="header" href="#使用场景" id="使用场景">使用场景</a></h2>
+<ul>
+<li>
+<p>计数器</p>
+<ul>
+<li>
+<p>可以对 String 进行自增自减运算，从而实现计数器功能</p>
+</li>
+<li>
+<p>例如对于网站访问量，如果使用 MySQL 数据库进行存储，那么每访问一次网站就要对磁盘进行读写操作。而对 Redis 这种内存型数据库的读写性能非常高，很适合存储这种频繁读写的计数量。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>缓存</p>
+<p>将热点数据放到内存中，设置内存的最大使用量以及淘汰策略来保证缓存的命中率。</p>
+</li>
+<li>
+<p>分布式 session</p>
+<p>在分布式场景下具有多个应用服务器，可以使用 Redis 来统一存储这些应用服务器的会话信息，使得某个应用服务器宕机时不会丢失会话信息，从而保证高可用。</p>
+</li>
+<li>
+<p>分布式锁实现:  SETNX 命令, 还可以使用官方提供的 RedLock 分布式锁实现</p>
+<p>在分布式场景下，无法使用单机环境下的锁实现。当多个节点上的进程都需要获取同一个锁时，就需要使用分布式锁来进行同步。</p>
+<p>setnx key value，当key不存在时，将 key 的值设为 value ，返回1。若给定的 key 已经存在，则setnx不做任何动作，返回0。当setnx返回1时，表示获取锁，做完操作以后del key，表示释放锁，如果setnx返回0表示获取锁失败</p>
+</li>
+<li>
+<p>分布式id生成</p>
+<p>因为 redis 单线程的排他性, 保证的生成id 的唯一, 每次先+1再获取</p>
+<p>改进: 每次先+1000再获取, 拿到本地后, 0~1000 慢慢用, 用完了再获取 1001~2000, 一个用户服务宕机了，也顶多一小段userId没有用到</p>
+</li>
+<li>
+<p>消息队列</p>
+<p>List 是一个双向链表，可以通过 lpop 和 lpush 写入和读取消息。</p>
+<p>不过不规建使用, 最好使用 Kafka、RabbitMQ 等消息中间件。专业的人做专业的事</p>
+</li>
+<li>
+<p>feed 流</p>
+<p>使用的是 list 类型(有序性)</p>
+</li>
+<li>
+<p>点赞/like功能</p>
+<p>利用 zet 的去重</p>
+</li>
+<li>
+<p>共同好友/共同关注</p>
+<p>Set 可以实现交集、并集等操作</p>
+</li>
+<li>
+<p>排行榜</p>
+<p>ZSet 可以实现更具score 排名, 而且天然去重</p>
+</li>
+</ul>
+<h1><a class="header" href="#redis命令" id="redis命令">redis命令</a></h1>
+<h2><a class="header" href="#系统管理命令" id="系统管理命令">系统管理命令</a></h2>
+<p>位于<code>/usr/local/bin</code></p>
+<pre><code class="language-sh">#         启动
+
+redis-server # 默认方式启动
+redis-server --port 6379 [...] # 指定配置项启动
+redis-server &lt;path_to_redis.conf&gt; # 指定配置文件启动， 一般存到 /opt/redis/redis.conf
+
+#         连接 停止
+
+redis-cli -h &lt;host&gt; -p &lt;port&gt; # 默认 127.0.0.1：6379
+redis-cli shutdown [nosave|save] # 关闭， 是否持久化
+</code></pre>
+<p>配置文件类似如下：</p>
+<pre><code class="language-conf">bind 127.0.0.1
+port 6379
+logfile xxx # 日志文件
+dir xxx # redis 工作目录， 存放持久化文件
+daemonize xxx # 是否以守护进程方式启动
+
+</code></pre>
+<h2><a class="header" href="#数据操作命令" id="数据操作命令">数据操作命令</a></h2>
+<p>命令查询: http://redisdoc.com</p>
+<p>记忆方式: https://my.oschina.net/u/3025423/blog/793649</p>
+<pre><code class="language-sh">#        全局
+
+keys * # 所有键， 耗时
+dbsize # 键总数， 不耗时
+exist &lt;key&gt; # 是否存在
+del key [key ...] # 删除
+expire &lt;key&gt; &lt;seconds&gt; # 键过期删除
+ttl &lt;key&gt; # 剩余过期时间， 0， -1， -2
+type &lt;key&gt; # 值的类型
+
+</code></pre>
+<h2><a class="header" href="#键管理" id="键管理">键管理</a></h2>
+<pre><code class="language-sh"># 键重命名
+# rename key newKey 键重命名, 如果 newkey 已经存在, 会被覆盖
+# 为了防止被覆盖, renamenx 命令 : 表示如果 newKey 不存在才可rename 成功
+
+# 随机挑选一个 键 randomkey
+
+# 键的过期时间
+# 对于散列表这种容器，只能为整个键设置过期时间（整个散列表），而不能为键里面的单个元素设置过期时间。
+# 通过 set 在初始化时设置过期时间 or 通过 setex
+set key value [ex seconds] [px milliseconds] [nx|xx]
+# expire key seconds 秒级别过期; key 不存在, 返回0; 设置过期为负值, 等同于 del (立即删除)
+# expireat key timestamp 秒级别时间戳后过期
+# pexpire key milliseconds 毫秒级别过期
+# pexpireat key milliseconds-timestamp 毫秒时间戳 ----- 最终底层都是调用这个命令
+# ttl key 观察剩余时间; pttl 更精确(毫秒级别)
+# persist key 取消过期时间
+
+# 键的迁移 
+# 将部分数据从一个redis迁移到另一个 redis
+# 方法有三: move; dump+restore; migrate
+# `move key db` 
+# `dump key`在源redis上将数据序列化成 RDB格式 + `restore key ttl value`在目标redis上将数据复原, ttl 表示过期时间, tto=0表示没有过期时间
+# migrate host port key|&quot;&quot; target-db timeout [copy] [replace] [key key...]
+
+# 遍历键
+# `keys pattern` 支持glob通配符 - 耗时
+# 渐进式遍历 `scan cursor [match pattern] [count number]` 
+# 
+
+# 多数据库管理
+# `select dbIndex` 切换数据库, 从0开始
+# flushdb/flushall 清除/清除全部
+
+
+</code></pre>
+<h1><a class="header" href="#数据类型" id="数据类型">数据类型</a></h1>
+<p>https://www.cnblogs.com/javazhiyin/p/11063944.html</p>
+<p>键的类型只能为字符串，值支持的<code>五种数据类型</code>为：字符串(string)、列表(list)、集合(set)、有序集合(zset)、散列表(hash)。</p>
+<p><img src="Snipaste_2018-07-19_16-09-13.png" alt="alt" /></p>
+<p><img src="Snipaste_2018-12-08_16-01-44.png" alt="alt" /><img src="Snipaste_2018-12-08_16-03-03.png" alt="alt" /></p>
+<p>每种数据类型在redis 内部有自己的编码实现, 内部的编码实现有改进不会对外部有什么影响, 多种内部编码实现可以对应不同应用场景</p>
+<h2><a class="header" href="#streaming-类型" id="streaming-类型">streaming 类型</a></h2>
+<p>https://lolico.me/2020/06/28/Using-stream-to-implement-message-queue-in-springboot/
+TODO</p>
+<p>Redis5新增了一个Stream的数据类型，这个类型作为消息队列来使用时弥补了List和Pub/Sub的不足并且提供了更强大的功能，比如ack机制以及消费者组等概念</p>
+<h2><a class="header" href="#string-字符串" id="string-字符串">String-字符串</a></h2>
+<p>String数据结构是简单的key-value类型，value其实不仅可以是String，也可以是数字。 常规key-value缓存应用； 常规计数：微博数，粉丝数等。</p>
+<pre><code class="language-sh"># 常用命令: set,get,decr,incr,mget 等
+
+## 设置值 , 过期时间
+## `set key value [ex seconds] [px milliseconds] [nx|xx]`
+## 设置秒/毫秒级别过期时间, 
+## 键必须存在/不存在 才能设置成功, 用于添加/更新 (等价 setnx setxx)
+## setnx 实现 分布式锁 (原理: redis的单线程模型, setnx 只有一个client 会设置成功)
+
+&gt; set hello world
+OK
+
+## 获取值
+## getset key value 设置获取原值
+
+&gt; get hello
+&quot;world&quot;
+
+# 批量设置, 获取
+127.0.0.1:6379&gt; mset a 1 b 2 c 3
+OK
+127.0.0.1:6379&gt; mget a b c
+1) &quot;1&quot;
+2) &quot;2&quot;
+3) &quot;3&quot;
+
+## 计数 
+## 自增 `incr key`, 值不是整数, 返回错误, 值是整数则返回自增后的结果, 值不存在视作0,自增后返回1
+## 自减 `decr key`
+## incrby 和 decrby 自增自减指定数字
+
+# 删除
+
+&gt; del hello
+(integer) 1
+&gt; get hello
+(null)
+
+###########################################
+
+# 不常用的命令
+
+## 追加 `append key value` 向 string 尾部追加字符串
+## 长度 `strlen key` 每个英文字符 1 byte, 中文 3 byte
+## 设置 指定位置的 字符 `setrange key offset value` 偏移量从0开始
+## 获得 部分字符串 `getrange key start end`
+</code></pre>
+<p>命令的时间复杂度</p>
+<p>场景: </p>
+<ul>
+<li>缓存 - 业务对象(如: User) 需要序列化</li>
+<li>计数 - 统计播放量 (真实的计数系统需要考虑: 防作弊, 数据持久化)</li>
+<li>共享session - 分布式应用</li>
+<li>限流 - 例如每分钟不能访问超过10次, 同一个ip地址不能在1秒内访问超过n次</li>
+</ul>
+<h2><a class="header" href="#list-列表" id="list-列表">List-列表</a></h2>
+<p><img src="Snipaste_2018-07-19_16-13-36.png" alt="alt" /><img src="Snipaste_2018-12-09_13-37-01.png" alt="alt" /></p>
+<p>允许重复;</p>
+<p>Redis list的实现为一个双向链表，即可以支持反向查找和遍历; </p>
+<p>场景: </p>
+<ul>
+<li>
+<p>消息队列; lpush 和 brpop 结合可实现阻塞队列</p>
+</li>
+<li>
+<p>文章列表</p>
+<p>每篇文章使用 hash 类型存储; 用户文章列表使用 list 类型存储</p>
+</li>
+</ul>
+<pre><code class="language-sh"># 常用命令: lpush,rpush,lpop,rpop,lrange等
+
+######## 添加 lpush rpush linsert ##########
+
+# rpush r即right, 在List中从右向左插入元素 (一旦使用该命令，List就代表是一个列表而不是一个变量，对其使用get方法会报错)
+
+&gt; rpush list-key item
+(integer) 1
+&gt; rpush list-key item2
+(integer) 2
+&gt; rpush list-key item # 允许重复元素
+(integer) 3
+
+127.0.0.1:6379&gt; rpush list c b a
+(integer) 3
+127.0.0.1:6379&gt; lrange list 0 -1 # 遍历
+1) &quot;c&quot;
+2) &quot;b&quot;
+3) &quot;a&quot;
+
+# linsert key before|after pivot value 在 pivot 前/后 插入 value
+
+
+############# 查找 lrange lindex llen ###########################
+
+# lrange key start end 左右闭区间
+# 索引从左到右 0 ~ (N-1) ; 从右到左 -1 ~ -N
+&gt; lrange list-key 0 -1     # index从 0 开始, -1 表示直到末尾
+1) &quot;item&quot;
+2) &quot;item2&quot;
+3) &quot;item&quot;
+
+# lindex key index 获取 index 处的元素
+127.0.0.1:6379&gt; lindex list -1 # 最后一个元素
+&quot;a&quot;
+
+# llen key 列表长度
+
+
+########## 删除 lpop rpop lrem ltrim ################
+
+# lpop l表示left, 返回并删除keyList中的第一个value值 (删除左边第一个)
+# rpop key 从右边弹出一个
+
+&gt; lpop list-key
+&quot;item&quot;
+
+# lrem key count value 删除值为 value 的 元素
+# count &gt; 0, 从左到有删除最多 count个; count &lt; 0, 从右到左删除最多 |count| 个; count = 0, 删除所有.
+# ltrim key start end 取子列表
+
+
+###############修改 lset##################
+
+# lset key index value 修改index 处的元素
+
+################## 阻塞式弹出 blpop brpop ###################
+
+# blpop key [key...] timeout 等待直到有元素返回, 单位 s
+# 列表为 nil, 等待 timeout秒后返回, 如果timeout=0, 一直等待下去; 如果在此期间有新的元素添加, 立即返回这个新元素
+# 列表不为nil, 立即返回结果
+</code></pre>
+<h2><a class="header" href="#set-集合" id="set-集合">Set-集合</a></h2>
+<p><img src="Snipaste_2018-07-19_16-47-33.png" alt="alt" /></p>
+<p>无序不可重复</p>
+<p>set提供了判断某个成员是否在一个set集合内的重要接口，这个也是list所不能提供的</p>
+<p>取交集, 并集</p>
+<p><img src="Snipaste_2018-12-09_19-07-10.png" alt="alt" /></p>
+<pre><code class="language-sh">
+# 添加 sadd key element [element...]
+# sadd s即为Set，Set add value的意思, 给keySet插入value，Set集合是无序的，没有头部和尾部
+
+&gt; sadd set-key item
+(integer) 1
+&gt; sadd set-key item2
+(integer) 1
+&gt; sadd set-key item3
+(integer) 1
+&gt; sadd set-key item         # 重复, 不可插入
+(integer) 0
+
+# smembers key 集合中的所有元素
+# s=Set，members即在Set集合中的所有元素,  返回keyset中所有的value值
+
+&gt; smembers set-key
+1) &quot;item&quot;
+2) &quot;item2&quot;
+3) &quot;item3&quot;
+
+# 判断是否存在 sismember key element
+# s=Set，ismember即某个元素是否在Set集合的内存中
+
+&gt; sismember set-key item4
+(integer) 0     # 不存在
+&gt; sismember set-key item
+(integer) 1     # 存在
+
+# srandmember key [count] 随机返回count个数的元素, 默认返回1个
+
+# 移除 srem key element [element...]
+# srem 即Set remove, 删除keySet中指定的value值
+
+&gt; srem set-key item2
+(integer) 1
+&gt; srem set-key item2
+(integer) 0
+
+&gt; smembers set-key
+1) &quot;item&quot;
+2) &quot;item3&quot;
+
+# 元素个数 scard key
+
+# spop key [count] 随机弹出一个元素
+
+############ 集合间的操作 #############################
+
+# 交集 sinter key [key...]
+
+# 并集 sunion key [key...]
+
+# 差集 sdiff key [key...]
+
+
+</code></pre>
+<p>场景:</p>
+<ul>
+<li>
+<p>标签 - sadd</p>
+<p>给用户添加标签 ; 给标签添加用户</p>
+<p>添加过程应该在同个事务中完成, 至于如何实现, 可通过 redis 事务, or 通过 lua 脚本</p>
+</li>
+<li>
+<p>生成随机数, 如抽奖 - spop/srandmember</p>
+</li>
+<li>
+<p>社交需求 - sadd + sinter</p>
+</li>
+</ul>
+<h2><a class="header" href="#hash-哈希" id="hash-哈希">Hash-哈希</a></h2>
+<p><img src="Snipaste_2018-07-19_16-53-24.png" alt="alt" /></p>
+<p>适合用于存储对象; 举个例子🌰： 一个电商网站项目的首页就使用了redis的hash数据结构进行缓存</p>
+<pre><code class="language-sh"># 常用命令： hget,hset,hgetall 等。
+
+# HSET key field value 将哈希表 key 中的域 field 的值设为 value
+
+&gt; hset hash-key sub-key1 value1
+(integer) 1
+&gt; hset hash-key sub-key2 value2
+(integer) 1
+&gt; hset hash-key sub-key1 value1     # 如果域 field 已经存在于哈希表中，旧值将被覆盖
+(integer) 0
+
+# hgetall 即 hash get all, 根据hash的key, 获取 field和field_value, 返回list, 长度为hash的2倍
+
+&gt; hgetall hash-key
+1) &quot;sub-key1&quot;     # field
+2) &quot;value1&quot;       # filed value
+3) &quot;sub-key2&quot;
+4) &quot;value2&quot;
+
+# 删除
+
+&gt; hdel hash-key sub-key2
+(integer) 1 # 返回结果为 成功删除的 field 个数
+&gt; hdel hash-key sub-key2
+(integer) 0
+
+# hget 获取指定filed的值
+
+&gt; hget hash-key sub-key1
+&quot;value1&quot;
+
+&gt; hgetall hash-key
+1) &quot;sub-key1&quot;
+2) &quot;value1&quot;
+
+# hlen key 计算field 个数
+
+# 批量设置 批量获取 field value
+# hmget key field [field...]
+# hmset key field value [field value]
+
+# hexists key field 判断field是否存在
+
+# hkeys key 返回所有 field
+# hvals key 返回所有 value
+# hgetall key 返回 所有 field-value
+
+# hstrlen key field  计算 field 长度
+
+</code></pre>
+<p>hash 这种类型和结构化数据库的表最类似, key 记录为 id, value就是一行数据. 也有不同之处: hash 每个 key 可以有不同的 field. 而关系型数据库一旦添加新的 &quot;列&quot;, 每行数据都要赋值, 即使是 null; 关系型数据库方便进行关系查询, 而 redis 中的 hash 模拟 复杂查询就很麻烦</p>
+<p>场景: 缓存. 相对于直接使用String 类型使业务对象系列化构建缓存, 使用 hash 构造缓存更直观, 更新操作更便捷</p>
+<p>至此, 对于 缓存场景, 有 3种方案:</p>
+<ul>
+<li>
+<p>使用 string 类型, 每个 key-value 就是一个属性 eg: <code>set usre:1:name xy</code>, <code>set user:1:age 18</code> ...</p>
+<p>这种最简单, 内存占用最大, 因为 key 的冗余内容较多</p>
+</li>
+<li>
+<p>使用 string 类型, 将一个业务对象序列化然后用一个 键值对保存</p>
+<p>内存占用不多, 但是序列化反序列化有时间开销, 尤其 更新 操作的时候, 很麻烦</p>
+</li>
+<li>
+<p>使用 hash 类型, 每个 键值对保存一个业务对象,  属性 通过 field-value 对保存</p>
+</li>
+</ul>
+<h2><a class="header" href="#zset-有序集合" id="zset-有序集合">ZSet-有序集合</a></h2>
+<p><img src="Snipaste_2018-07-19_17-03-19.png" alt="alt" /></p>
+<p>类似 set , <code>元素不可重复</code> (分数可以重复); 此外, sorted set增加了一个权重参数score，使得集合中的元素能够按score进行<code>有序排列</code></p>
+<p>场景: 在直播系统中，实时排行信息包含直播间在线用户列表，各种礼物排行榜</p>
+<pre><code class="language-sh">
+# 添加 zadd key score member [score member ...]
+# 四个选项: nx: member必须不存在才可成功, 用于 添加; xx: member必须存在才可成功, 用于 修改; ch: 元素发生变化的个数 ; incr: 对 score 自增
+# 728 是分数, score 值可以是整数值或双精度浮点数(如果某个 member 已经是有序集的成员，那么更新这个 member 的 score 值)
+&gt; zadd zset-key 728 member1
+(integer) 1
+&gt; zadd zset-key 982 member0
+(integer) 1
+&gt; zadd zset-key 982 member0     # member一样, score也一样, 无法插入, 无法更新score
+(integer) 0
+
+# 元素个数 zcard key
+
+# 计算某个元素的分数 zscore key member 
+
+# 计算某个成员排名 zrank/zrevrank key member 正数/倒数
+
+# zrem key member [member...]
+
+# 增加分数 zincrby key increment member 分数增加increment
+
+# 获取指定排名范围的元素 zrange/zrevrange key start end [withscores] 从低到高/从高到低
+
+&gt; zrange zset-key 0 -1 withscores # 全范围
+1) &quot;member1&quot;
+2) &quot;728&quot;
+3) &quot;member0&quot;
+4) &quot;982&quot;
+
+# 获取指定分数范围的元素 zrangbyscore/zrevrangebyscore key min max [withscores] [limit offset count]
+# min max 支持 开闭区间 (小括号, 中括号), 正负无穷 (+-inf)
+&gt; zrangebyscore zset-key 0 800 withscores
+1) &quot;member1&quot;
+2) &quot;728&quot;
+
+# 删除 zrem key member
+# 删除指定排名范围内的所有元素 (升序) zremrangebyrank key start end
+# 删除指定分数范围内的元素 (升序) zremrangebyscore key min max
+
+&gt; zrem zset-key member1
+(integer) 1
+&gt; zrem zset-key member1
+(integer) 0
+
+# 返回指定分数范围元素个数 zcount key min max
+
+############## 集合间操作 ################################
+
+#交集 zinterstore
+#并集 zunionstore
+</code></pre>
+<h1><a class="header" href="#lua脚本" id="lua脚本">lua脚本</a></h1>
+<h1><a class="header" href="#单线程架构" id="单线程架构">单线程架构</a></h1>
+<p>不存在并发执行命令</p>
+<ul>
+<li>纯内存访问</li>
+<li>非阻塞io - epoll 实现io多路复用</li>
+<li>单线程没有上下文切换</li>
+</ul>
+<h1><a class="header" href="#内存淘汰机制" id="内存淘汰机制">内存淘汰机制</a></h1>
+<p>可以设置内存最大使用量，当内存使用量超过时施行淘汰策略，具体有 6 种淘汰策略。</p>
+<p><img src="Snipaste_2018-07-20_12-08-58.png" alt="alt" /></p>
+<h2><a class="header" href="#三道保险保证-key-过期处理" id="三道保险保证-key-过期处理">三道保险保证 key 过期处理</a></h2>
+<p>定期删除+惰性删除</p>
+<p>定期删除: redis是每隔100ms随机抽取一些key来检查和删除</p>
+<p>惰性删除: 获取某个key的时候，redis会检查一下 ，这个key如果设置了过期时间那么是否过期了？如果过期了此时就会删除</p>
+<p>通过上述两种手段结合起来，保证过期的key一定会被干掉</p>
+<p>但是实际上这还是有问题的，如果定期删除漏掉了很多过期key，然后你也没及时去查，也就没走惰性删除; 此时会走内存淘汰机制</p>
+<h2><a class="header" href="#有哪些淘汰机制" id="有哪些淘汰机制">有哪些淘汰机制</a></h2>
+<ul>
+<li>
+<p>noeviction(默认策略)：内存满了, 对于写请求不再提供服务，直接返回错误, 没人用</p>
+</li>
+<li>
+<p>allkeys-lru：从所有key中使用LRU算法进行淘汰 (常用)</p>
+</li>
+<li>
+<p>allkeys-random：从所有key中随机淘汰数据 (没人用)</p>
+</li>
+<li>
+<p>volatile-lru：从设置了过期时间的key中使用LRU算法进行淘汰 </p>
+</li>
+<li>
+<p>volatile-random：从设置了过期时间的key中随机淘汰</p>
+</li>
+<li>
+<p>volatile-ttl：在设置了过期时间的key中，根据key的过期时间进行淘汰，有更早过期时间的key优先移除</p>
+</li>
+</ul>
+<p>volatile-xx 的一般不用</p>
+<h2><a class="header" href="#内存回收算法" id="内存回收算法">内存回收算法</a></h2>
+<p>Redis中采用两种算法进行内存回收，引用计数算法以及LRU算法;</p>
+<p>如果使用 Redis 来缓存数据时，要保证所有数据都是热点数据，可以将内存最大使用量设置为热点数据占用的内存量，然后启用 allkeys-lru 淘汰策略，将最近最少使用的数据淘汰。</p>
+<p>作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法（LRU、TTL）实际实现上并非针对所有 key，而是抽样一小部分 key 从中选出被淘汰 key.</p>
+<p>LRU(Least Recently Used)，即最近最少使用, 根据key的最近被访问的频率进行淘汰，很少被访问的优先被淘汰，被访问的多的则被留下来。 <a href="https://www.cnblogs.com/lzrabbit/p/3734850.html">Java 提供的 LinkedHashMap 可以实现</a> //todo</p>
+<h2><a class="header" href="#如何配置淘汰策略" id="如何配置淘汰策略">如何配置淘汰策略</a></h2>
+<h3><a class="header" href="#通过配置文件" id="通过配置文件">通过配置文件</a></h3>
+<p>通过在Redis安装目录下面的redis.conf</p>
+<p>redis的配置文件不一定使用的是安装目录下面的redis.conf文件，启动redis服务的时候是可以传一个参数指定redis的配置文件的</p>
+<pre><code>//设置Redis最大占用内存大小为100M
+maxmemory 100mb
+// 淘汰策略
+maxmemory-policy allkeys-lru
+</code></pre>
+<p>Redis使用的是近似LRU算法，它跟常规的LRU算法还不太一样。近似LRU算法通过随机采样法淘汰数据，每次随机出5（默认）个key，从里面淘汰掉最近最少使用的key。</p>
+<pre><code>// 修改采样数量
+maxmemory-samples 10
+</code></pre>
+<h3><a class="header" href="#通过命令运行时修改" id="通过命令运行时修改">通过命令运行时修改</a></h3>
+<p>Redis支持运行时通过命令动态修改内存大小</p>
+<p>果不设置最大内存大小或者设置最大内存大小为0，在64位操作系统下不限制内存大小</p>
+<pre><code>//设置Redis最大占用内存大小为100M
+127.0.0.1:6379&gt; config set maxmemory 100mb
+//获取设置的Redis能使用的最大内存大小
+127.0.0.1:6379&gt; config get maxmemory
+
+config get maxmemory-policy
+config set maxmemory-policy allkeys-lru
+</code></pre>
+<h1><a class="header" href="#持久化" id="持久化">持久化</a></h1>
+<h2><a class="header" href="#备份选型" id="备份选型">备份选型</a></h2>
+<p>Redis 的持久化机制有两种，第一种是快照（RDB），第二种是 AOF 日志。</p>
+<p>快照是一次全量备份，AOF 日志是连续的增量备份。快照是内存数据的二进制序列化形式，在存储上非常紧凑，而 AOF 日志记录的是数据修改的指令文本, 有冗余。</p>
+<p>RDB是通过Redis主进程fork子进程，让子进程执行磁盘 IO 操作来进行 RDB 持久化，AOF 日志存储的是 Redis 服务器的顺序指令序列，AOF 日志只记录对内存进行修改的指令记录。即RDB记录的是数据，AOF记录的是指令</p>
+<p>不要仅仅使用 RDB，因为那样会导致你丢失很多数据，因为RDB是隔一段时间来备份数据</p>
+<p>也不要仅仅使用 AOF，因为那样有两个问题，第一，速度慢; 第二，aof日志文件出bug 的几率大于 rdb快照的二进制文件</p>
+<p>用RDB恢复内存状态会丢失很多数据，重放AOP日志又很慢。Redis4.0推出了混合持久化来解决这个问题。将 rdb 文件的内容和增量的 AOF 日志文件存在一起。这里的 AOF 日志不再是全量的日志，而是自持久化开始到持久化结束的这段时间发生的增量 AOF 日志，通常这部分 AOF 日志很小。于是在 Redis 重启的时候，可以先加载 rdb 的内容，然后再重放增量 AOF 日志就可以完全替代之前的 AOF 全量文件重放</p>
+<h2><a class="header" href="#rdb-快照持久化" id="rdb-快照持久化">RDB-快照持久化</a></h2>
+<h3><a class="header" href="#rdb持久化概念" id="rdb持久化概念">RDB持久化概念</a></h3>
+<p>写操作到达一定密度, 触发快照, 频率可配置</p>
+<p>优:</p>
+<ul>
+<li>
+<p>rdb文件是经过压缩的二进制文件, 体积小</p>
+</li>
+<li>
+<p>redis加载 rdb文件速度快于 aof 的方式</p>
+</li>
+</ul>
+<p>缺点:</p>
+<ul>
+<li>
+<p>rdb 持久化无法做到实时持久化</p>
+<p>利用快照进行备份。如果系统发生故障，将会丢失最后一次创建快照之后的数据</p>
+</li>
+<li>
+<p>rdb 文件格式在不同版本redis中有不同, 兼容性不好</p>
+</li>
+</ul>
+<h3><a class="header" href="#触发机制-如何开启" id="触发机制-如何开启">触发机制-如何开启</a></h3>
+<p>自动触发, 手动触发</p>
+<p>对于手动触发: <code>save</code> 阻塞 redis 直到 rdb 过程完成, 一般不用;  <code>bgsave</code> 使得redis进程创建新的进程执行 rdb过程, 基本没有阻塞</p>
+<p>对于自动触发: 📌 <code>save m n</code> 在 m 秒内, 数据集有了 n 次修改, 自动触发 bgsave; 📌 <code>debug reload</code> 重新加载 redis; 📌 <code>shutdown</code></p>
+<p>bgsave 流程示意图:</p>
+<p><img src="Snipaste_2018-12-10_18-31-17.png" alt="alt" /></p>
+<h3><a class="header" href="#rdb文件" id="rdb文件">RDB文件</a></h3>
+<p>rdb文件存储在 dir 配置指定的目录下,文件名通过 dbfilename 配置指定</p>
+<h2><a class="header" href="#aof-日志持久化" id="aof-日志持久化">AOF-日志持久化</a></h2>
+<h3><a class="header" href="#aof概念" id="aof概念">aof概念</a></h3>
+<p>redis的每个写操作都会被追加到一个日志文件中</p>
+<p>将写命令添加到 AOF 文件（Append Only File）的末尾。 --------- 以独立日志文件的方式记录每次写命令, 解决了 RDB方式不能实时持久化的问题</p>
+<p>rdb, aof同时存在时, redis重启时优先载入 aof 文件来恢复数据 (aof 比 rdb 记录的数据更全)</p>
+<p>通过 <code>appendonly yes</code> 配置 开启 aof, aof文件名通过 appendfilename 配置设置, 默认为 appendonly.aof, 保存路径同rdb中的dir配置</p>
+<p>编辑 /etc/redis/redis.conf, </p>
+<pre><code class="language-sh">appendonly yes
+</code></pre>
+<h3><a class="header" href="#写入原理" id="写入原理">写入原理</a></h3>
+<p>以<code>文本方式</code>写入<code>aof缓存区</code> , 然后由操作系统决定什么时候将该内容同步到硬盘，用户可以调用 file.flush() 方法请求操作系统尽快将缓冲区存储的数据同步到硬盘。可以看出<code>写入文件的数据不会立即同步到硬盘</code>上，在将写命令添加到 AOF 文件时，要根据需求来保证何时同步到硬盘上。</p>
+<ul>
+<li>
+<p>为什么使用文本格式? 📌 文本格式具有很好的兼容性; 📌 文本格式很容易处理追加操作; 📌 可读性, 直接修改处理;</p>
+</li>
+<li>
+<p>为什么命令写入需要先加入&quot;aof缓存区&quot;? 📌 redis是单线程执行命令, 如果不使用&quot;缓存区&quot;, 而是直接写入到硬盘, 则硬盘读写速度会成为瓶颈; 📌 redis 可使用多种不通过的 缓存区-硬盘 同步策略, 在性能和安全中做出平衡.</p>
+</li>
+</ul>
+<h3><a class="header" href="#文件同步" id="文件同步">文件同步</a></h3>
+<p>有三个同步选项:</p>
+<ul>
+<li>always 每个写命令都同步 (always 选项会严重减低服务器的性能)</li>
+<li>everysec 每秒同步一次 (everysec 选项比较合适，可以保证系统奔溃时只会丢失一秒左右的数据，并且 Redis 每秒执行一次同步对服务器性能几乎没有任何影响)</li>
+<li>no 让操作系统来决定何时同步 (no 选项并不能给服务器性能带来多大的提升，而且也会增加系统奔溃时数据丢失的数量)</li>
+</ul>
+<h3><a class="header" href="#重写机制" id="重写机制">重写机制</a></h3>
+<p>随着服务器写请求的增多，AOF 文件会越来越大。Redis 提供了一种将 AOF 重写的特性，能够去除 AOF 文件中的冗余写命令。压缩文件体积.</p>
+<p>重写的意义:</p>
+<ul>
+<li>进程内超时命令不会再写入</li>
+<li>无效命令不再写入, 只写入生成最终数据的命令</li>
+<li>多条写命令可以合并</li>
+</ul>
+<p>如何触发重写:</p>
+<ul>
+<li>手动触发: <code>bgrewriteaof</code></li>
+<li>自动触发: </li>
+</ul>
+<h3><a class="header" href="#aof-损坏" id="aof-损坏">aof 损坏</a></h3>
+<p>加载损坏的aof 文件会启动失败; 这是可以先备份这个文件然后尝试通过 <code>redis-check-aof-fix</code> 修复</p>
+<h1><a class="header" href="#发布与订阅" id="发布与订阅">发布与订阅</a></h1>
+<p>订阅者订阅了频道之后，发布者向频道发送字符串消息会被所有订阅者接收到 (某个客户端使用 SUBSCRIBE 订阅一个频道，其它客户端可以使用 PUBLISH 向这个频道发送消息。)</p>
+<p>发布与订阅模式和观察者模式有以下不同:</p>
+<ul>
+<li>
+<p>观察者模式中，观察者和主题都知道对方的存在；而在发布与订阅模式中，发布者与订阅者不知道对方的存在，它们之间通过频道进行通信。</p>
+</li>
+<li>
+<p>观察者模式是同步的，当事件触发时，主题会去调用观察者的方法，然后等待方法返回；而发布与订阅模式是异步的，发布者向频道发送一个消息之后，就不需要关心订阅者何时去订阅这个消息。</p>
+<p><img src="Snipaste_2018-07-20_12-21-29.png" alt="alt" /></p>
+</li>
+</ul>
+<h1><a class="header" href="#事务" id="事务">事务</a></h1>
+<p>Redis 最简单的事务实现方式是使用 MULTI 和 EXEC 命令将事务操作包围起来。</p>
+<p>redis事务在执行的中途遇到错误，不会回滚而是继续执行后续命令；（违反原子性） .那么redis为什么还要事务呢? - 事务中的多个命令被一次性发送给服务器，而不是一条一条发送，这种方式被称为流水线，它可以减少客户端与服务器之间的网络通信次数从而提升性能。</p>
+<p>redis事务中的命令在执行exec命令前会被放入队列, 并不会实际执行, 也就不存在隔离级别的概念</p>
+<p>watch key1 key2... : 类似于乐观锁, 如果某个事务提交时, 有其他client 改变了任意一个 key, 则使用 exec 执行事务时, 事务队列不会被执行;</p>
+<h1><a class="header" href="#事件" id="事件">事件</a></h1>
+<p>Redis 服务器是一个事件驱动程序。</p>
+<h2><a class="header" href="#文件事件" id="文件事件">文件事件</a></h2>
+<p>服务器通过套接字与客户端或者其它服务器进行通信，文件事件就是对套接字操作的抽象。</p>
+<p>Redis 基于 Reactor 模式开发了自己的网络事件处理器，使用 I/O 多路复用程序来同时监听多个套接字，并将到达的事件传送给文件事件分派器，分派器会根据套接字产生的事件类型调用相应的事件处理器。</p>
+<p><img src="Snipaste_2018-07-20_12-25-16.png" alt="alt" /></p>
+<h2><a class="header" href="#时间事件" id="时间事件">时间事件</a></h2>
+<p>服务器有一些操作需要在给定的时间点执行，时间事件是对这类定时操作的抽象。</p>
+<p>时间事件又分为：定时事件, 周期事件</p>
+<p>Redis 将所有时间事件都放在一个无序链表中，通过遍历整个链表查找出已到达的时间事件，并调用相应的事件处理器。</p>
+<h2><a class="header" href="#事件的调度执行" id="事件的调度执行">事件的调度&amp;执行</a></h2>
+<h1><a class="header" href="#redis集群" id="redis集群">redis集群</a></h1>
+<p>通过使用 slaveof host port 命令来让一个服务器成为另一个服务器的从服务器。</p>
+<p>一个从服务器只能有一个主服务器，并且不支持主主复制。</p>
+<h2><a class="header" href="#连接过程" id="连接过程">连接过程</a></h2>
+<ol>
+<li>
+<p>主服务器创建快照文件，发送给从服务器，并在发送期间使用缓冲区记录执行的写命令。快照文件发送完毕之后，开始向从服务器发送存储在缓冲区中的写命令；</p>
+</li>
+<li>
+<p>从服务器丢弃所有旧数据，载入主服务器发来的快照文件，之后从服务器开始接受主服务器发来的写命令；</p>
+</li>
+<li>
+<p>主服务器每执行一次写命令，就向从服务器发送相同的写命令。</p>
+</li>
+</ol>
+<h2><a class="header" href="#主从链" id="主从链">主从链</a></h2>
+<p>随着负载不断上升，主服务器可能无法很快地更新所有从服务器，或者重新连接和重新同步从服务器将导致系统超载。为了解决这个问题，可以创建一个中间层来分担主服务器的复制工作。中间层的服务器是最上层服务器的从服务器，又是最下层服务器的主服务器。</p>
+<p><img src="Snipaste_2018-07-20_12-29-01.png" alt="alt" /></p>
+<h1><a class="header" href="#哨兵-sentinel" id="哨兵-sentinel">哨兵 Sentinel</a></h1>
+<p>下线推举</p>
+<p>Sentinel（哨兵）可以监听主服务器，并在主服务器进入下线状态时，自动从从服务器中选举出新的主服务器。</p>
+<h1><a class="header" href="#分片" id="分片">分片</a></h1>
+<p>分片是将数据划分为多个部分的方法，可以将数据存储到多台机器里面，也可以从多台机器里面获取数据，</p>
+<blockquote>
+<p>假设有 4 个 Reids 实例 R0，R1，R2，R3，还有很多表示用户的键 user:1，user:2，... 等等，有不同的方式来选择一个指定的键存储在哪个实例中。最简单的方式是范围分片，例如用户 id 从 0~1000 的存储到实例 R0 中，用户 id 从 1001~2000 的存储到实例 R1 中，等等。但是这样需要维护一张映射范围表，维护操作代价很高。还有一种方式是哈希分片，使用 CRC32 哈希函数将键转换为一个数字，再对实例数量求模就能知道应该存储的实例。</p>
+</blockquote>
+<p>根据执行分片的位置，可以分为三种分片方式：</p>
+<ul>
+<li>客户端分片：客户端使用 <a href="#%E4%B8%80%E8%87%B4%E6%80%A7%E5%93%88%E5%B8%8C">#一致性哈希</a> 等算法决定键应当分布到哪个节点。</li>
+<li>代理分片：将客户端请求发送到代理上，由代理转发请求到正确的节点上。</li>
+<li>服务器分片：Redis Cluster。</li>
+</ul>
+<h1><a class="header" href="#一个简单的论坛系统" id="一个简单的论坛系统">一个简单的论坛系统</a></h1>
+<p>该论坛系统功能如下:</p>
+<ul>
+<li>可以发布文章；</li>
+<li>可以对文章进行点赞；</li>
+<li>在首页可以按文章的发布时间或者文章的点赞数进行排序显示。</li>
+</ul>
+<h2><a class="header" href="#文章信息" id="文章信息">文章信息</a></h2>
+<p>文章包括标题、作者、赞数等信息，在关系型数据库中很容易构建一张表来存储这些信息，在 Redis 中可以使用 HASH 来存储每种信息以及其对应的值的映射。</p>
+<p>Redis 没有关系型数据库中的表这一概念来将同种类型的数据存放在一起，而是使用命名空间的方式来实现这一功能。键名的前面部分存储命名空间，后面部分的内容存储 ID，通常使用 : 来进行分隔。例如下面的 HASH 的键名为 article:92617，其中 article 为命名空间，ID 为 92617。</p>
+<p><img src="Snipaste_2018-07-20_12-35-52.png" alt="alt" /></p>
+<h2><a class="header" href="#点赞功能" id="点赞功能">点赞功能</a></h2>
+<p><img src="Snipaste_2018-07-20_12-39-13.png" alt="alt" /></p>
+<p>点赞、取消点赞是高频次的操作，若每次都读写数据库，大量的操作会影响数据库性能，所以需要做缓存</p>
+<p>定时从 redis 中取出点赞数据持久化存入 db, 比如 2h</p>
+<h2><a class="header" href="#对文章进行排序" id="对文章进行排序">对文章进行排序</a></h2>
+<p><img src="Snipaste_2018-07-20_12-39-35.png" alt="alt" /></p>
+<h1><a class="header" href="#一致性哈希" id="一致性哈希">一致性哈希</a></h1>
+<p>//todo</p>
+<h1><a class="header" href="#整合-spring-boot2" id="整合-spring-boot2">整合 spring boot2</a></h1>
+<h2><a class="header" href="#jedis" id="jedis">jedis</a></h2>
+<p>项目地址: https://github.com/xetorthio/jedis</p>
+<p>Jedis 实例是线程不安全的, 为什么?</p>
+<ul>
+<li>Jedis类中有RedisInputStream和RedisOutputStream两个属性，而发送命令和获取返回值都是使用这两个成员变量，显然，这很容易引发多线程问题。</li>
+</ul>
+<p>可以通过JedisPool连接池去管理实例，在多线程情况下让每个线程有自己独立的jedis实例 来实现线程安全</p>
+<h2><a class="header" href="#lettuce" id="lettuce">lettuce</a></h2>
+<p>https://www.cnblogs.com/throwable/p/11601538.html - 使用</p>
+<p>spring boot2 默认使用</p>
+<p>Lettuce 基于 netty, 线程安全, 大吞吐量, </p>
+<p>需要添加依赖 <code>common-pool2</code>, 用于提供连接池, <a href="https://blog.csdn.net/qq447995687/article/details/80233621">自定义对象连接池</a> //todo</p>
+<pre><code class="language-yml">spring:
+  application:
+    name: redis-demo
+  cache:
+    type: redis
+    redis:
+        # 单独为不同的缓存可以配置不同的超时时间
+      time-to-live: 20000 #默认缓存超时时间, ms
+      cache-null-values: false #是否缓存空值
+  redis:
+    port: 6379
+    host: localhost
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 10000  #redis 连接超时时间ms
+    database: 0
+</code></pre>
+<p>但是有个bug, 导致在高并发下,  netty 产生堆外内存溢出 OutOfDirectMemoryError; 这个 bug 是: 若不指定 netty堆外内存用量, 默认会采用 -Xmx 的值, 这个值是一定的, 但是堆外内存不会及时释放, 所以不管 -Xmx 设置多大, 总是会用完, OutOfDirectMemoryError, 推荐 jedis 替代 (https://github.com/seata/seata/issues/2164)</p>
+<pre><code class="language-xml">
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+            &lt;groupId&gt;io.lettuce&lt;/groupId&gt;
+            &lt;artifactId&gt;lettuce-core&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;redis.clients&lt;/groupId&gt;
+    &lt;artifactId&gt;jedis&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h2><a class="header" href="#定义序列化器" id="定义序列化器">定义序列化器</a></h2>
+<p><a href="https://blog.csdn.net/bai_bug/article/details/81222519">GenericJackson2JsonRedisSerializer Jackson2JsonRedisSerializer 区别</a> - 前者可以直接从redis 反序列化成对象, 但是占用内存高 (使用GenericJackson2JsonRedisSerializer序列化时，会保存序列化的对象的包名和类名，反序列化时以这个作为标示就可以反序列化成指定的对象)</p>
+<h1><a class="header" href="#面试问题" id="面试问题">面试问题</a></h1>
+<p>https://blog.csdn.net/varyall/article/details/81205183 //todo</p>
+<h1><a class="header" href="#分布式锁" id="分布式锁">分布式锁</a></h1>
+<h2><a class="header" href="#实现原理" id="实现原理">实现原理</a></h2>
+<h3><a class="header" href="#分布式锁需要满足的要求" id="分布式锁需要满足的要求">分布式锁需要满足的要求</a></h3>
+<ul>
+<li>
+<p>互斥</p>
+<p>同一时刻只能有一个线程获得锁</p>
+</li>
+<li>
+<p>防止死锁 (即要能够设置锁有效时间)</p>
+<p>比如有个线程获得锁的同时，还没有来得及去释放锁，就因为系统故障或者其它原因使它无法执行释放锁的命令,导致其它线程都无法获得锁</p>
+</li>
+<li>
+<p>锁最好满足可重入</p>
+<p>同一个线程可以重复拿到同一个资源的锁。重入锁非常有利于资源的高效利用</p>
+</li>
+</ul>
+<h3><a class="header" href="#加锁机制" id="加锁机制">加锁机制</a></h3>
+<p>线程去获取锁，获取成功: 执行lua脚本，保存数据到redis数据库。保存成功则表示获取锁成功</p>
+<p>线程去获取锁，获取失败: 一直通过while循环尝试获取锁，获取成功后，执行lua脚本，保存数据到redis数据库。</p>
+<p>为什么使用 lua:
+如果你的业务逻辑复杂的话，通过封装在lua脚本中发送给redis，而且redis是单线程的，这样就保证这段复杂业务逻辑执行的原子性</p>
+<h3><a class="header" href="#watch-dog-自动延时机制" id="watch-dog-自动延时机制">watch dog 自动延时机制</a></h3>
+<p>&quot;看门狗&quot; 用于这样的场景: 线程1 获得锁, 过了段时间, 业务还没有执行完，锁的过期时间就到了，线程1 还想持有锁的话，就会启动一个watch dog后台线程，不断的延长锁key的生存时间</p>
+<p>默认这个看门狗线程是不启动的，还有就是这个看门狗启动后对整体性能也会有一定影响，所以不建议开启看门狗。</p>
+<h3><a class="header" href="#redisson-如何实现可重入锁" id="redisson-如何实现可重入锁">redisson 如何实现可重入锁</a></h3>
+<p>Redis存储锁的数据类型是 Hash类型, Hash数据类型的 item 值包含了当前线程信息</p>
+<p><code>key: {item1: value1, item2: value2}</code>, key 为固定值 &quot;redisson&quot;, item 构成为 uuid + &quot;:&quot; + current thread id, value1 为 当前锁获取次数</p>
+<h2><a class="header" href="#redis-实现-分布式锁" id="redis-实现-分布式锁">redis 实现 分布式锁</a></h2>
+<p>要求:</p>
+<ul>
+<li>set ex 300 nx ... 设置过期时间和占位要是原子操作</li>
+<li>执行完业务要删除锁</li>
+<li>要删除自己的锁, 而不要删除别人的锁 (值存为 uuid or thread id)</li>
+</ul>
+<p>伪代码</p>
+<pre><code class="language-java">Resp withRedisLock() {
+    uuid = new uuid().tostring()
+    sucess = redis.setNx(&quot;lock&quot;, uuid, 30s)
+    try {
+        if (success) {
+            return biz.exec()
+        } else {
+            return withRedisLock()// 自旋
+        } 
+    }
+    finally {
+        // 查找, 删除必须是原子操作, 一下不符合, 必须用 lua 脚本
+        // lockValue = redis.get(&quot;lock&quot;);
+        // if (lockValue == uuid) {
+        //     redis.delete(&quot;lock&quot;)
+        // }
+
+        deleteScript = &quot;if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end&quot;
+        redis.exec(deleteScript)
+    }
+    
+}
+
+</code></pre>
+<h2><a class="header" href="#redisson-实现" id="redisson-实现">redisson 实现</a></h2>
+<p>redis 分布式锁的官方推荐</p>
+<p>watch dog (key 自动续期, 防止业务超时锁被删除了)</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;!-- 推荐使用 redisson starter --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.redisson&lt;/groupId&gt;
+    &lt;artifactId&gt;redisson&lt;/artifactId&gt;
+    &lt;version&gt;3.8.2&lt;/version&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+&lt;/dependency&gt;   
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="redis-login-limitation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="regex-js.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="redis-login-limitation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="regex-js.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

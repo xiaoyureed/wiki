@@ -1,0 +1,472 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>from programming thinking - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html" class="active"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: 标注编程随想的文章
+date: 2017-09-23 20:02:09
+tags: [java]
+categories: java core</h2>
+<div align="center">
+来自: [编程随想](https://program-think.blogspot.com/2009/01/defect-of-java-beginner-0-overview.html); Java 程序猿的毛病
+</div>
+<!--more-->
+<h1><a class="header" href="#对算法和数据结构不熟悉" id="对算法和数据结构不熟悉">对算法和数据结构不熟悉</a></h1>
+<p>★什么时候该用数组型容器、什么时候该用链表型容器？<font color="green"> &gt; 前者适用于查询较多的场景增删特别慢因为涉及到数组创建复制, 后者适合增删多的场景</font>
+★什么是散列函数？HashMap 的实现原理是什么？<font color="green"> &gt; 散列函数 see <a href="https://www.zhihu.com/question/26762707">link</a>, hashmap通过哈希表实现, 博客内搜索 &quot;java core Note&quot; </font>
+★什么是递归？如果你以前从来没写过递归函数，尝试着写一个（比如用递归函数进行目录树遍历）。<font color="green"> &gt; 简单理解就是函数调用自身, 需要有结束条件, 不然就死循环了 </font>
+★什么是算法复杂度？
+★你是否理解空间换时间的思想？
+★写一个针对整数数组的冒泡排序函数，看看你要修改几次才能跑通。
+★写一个针对整数数组的二分查找函数，看看你要修改几次才能跑通。</p>
+<h1><a class="header" href="#离开开发框架活不了" id="离开开发框架活不了">离开开发框架活不了</a></h1>
+<p>对 Spring、Hibernate 等框架了如指掌；但如果给他一个简单需求，让他写一个脱离 Web 框架的独立 Application，他就不知所措了</p>
+<p>★基于接口的继承和基于实现的继承各有什么优缺点？
+★继承（包括 extend 和 implement）有什么【缺点】？
+★多态（polymorphism）有什么【缺点】？
+★为什么 Java 可以多继承 interface，而不可以多继承 class？<font color="green"> &gt; 多继承class中有相同方法时应该选用哪个版本呢? 另外, java8开始已经允许接口里面有 default method了, 发现继承多个默认方法实现并且没有override时报错, 避免了集成多个class选择哪个版本的问题 </font>
+★假如让你写一个小游戏（比如人机对战的五子棋），你会如何设计类结构？
+★类结构设计时，如何考虑可扩展性？</p>
+<h1><a class="header" href="#编程习惯" id="编程习惯">编程习惯</a></h1>
+<h2><a class="header" href="#随意地命名" id="随意地命名">随意地命名</a></h2>
+<p>反面: 使用单字母命名变量；使用一些没太大意义的变量名（例如 s1、s2、s3）；对同一个业务概念使用不同的术语/缩写（容易让读代码的人神经分裂）；使用拼音命名（如果你团队中有港台人士或者老外，就惨了）</p>
+<h2><a class="header" href="#习惯于代码的-copy--paste" id="习惯于代码的-copy--paste">习惯于代码的 copy &amp; paste</a></h2>
+<p>反面：如果发现要写的某个函数和前几天写的某个函数差不多，就把原来的那个函数贴过来，然后稍微改几下，心中还暗喜：“又快速搞定了一个功能”....... 这种做法是代码臭味（借用《重构 - 改善既有代码的设计》的提法）的主要来源，导致代码可维护性大大下降。当你将来需要增加功能或修改 bug 的时候，要同时改动多个地方，而那时你估计已经想不起来这砣代码有几个克隆了</p>
+<h2><a class="header" href="#magic-number-满天飞" id="magic-number-满天飞">Magic Number 满天飞</a></h2>
+<p>假设有个业务逻辑中需要进行10秒的超时等待，你会怎么写这个sleep语句？我估计大部分人不外乎下面三种写法:
+1、直接写上 sleep(10<em>1000); 了事 ----最差, 缺乏可读性, 代码臭味
+2、定义一个常量 TIMEOUT_XXX = 10</em>1000; 然后 sleep(TIMEOUT_XXX); ---- 比1稍好, 但是，将来一旦发生需求变更，要求在【运行时】调整超时间隔（甚至要求让用户来配制超时间隔），则写法2的缺点立马暴露无遗
+3、<code>在配制文件中加入一个超时项，然后程序读取配制文件获得超时值，然后调用 sleep</code>。------  正确方式.</p>
+<h2><a class="header" href="#代码耦合度太大" id="代码耦合度太大">代码耦合度太大</a></h2>
+<p>合理使用  MVC或者设计模式 (代码耦合分别由哪些情况引起？什么是正交的设计？)</p>
+<h2><a class="header" href="#不注意资源回收" id="不注意资源回收">不注意资源回收</a></h2>
+<p>Java 在语言层面提供了内存的垃圾回收机制，程序员只管申请内存，不需要再关心释放的问题. 此很多新手养成了坏习惯，对于其它资源（比如数据库连接）也只申请不释放（有些人甚至天真地以为 JVM 会帮你搞定资源回收）. 这个坏习惯会导致资源的泄露，而资源泄露往往比内存泄露更要命。如果你写的程序是长时间运行的（比如运行在 Web Server 上），时间长了会由于资源耗尽而导致整个进程出问题</p>
+<h1><a class="header" href="#异常处理使用不当" id="异常处理使用不当">异常处理使用不当</a></h1>
+<img src="Snipaste_2018-05-13_16-07-17.png">
+<p><a href="http://codebuild.blogspot.com/2012/01/15-best-practices-about-exception.html">异常的处理原则</a>, 此外还有一个关于异常处理的经验 <a href="https://www.ibm.com/developerworks/cn/java/j-lo-exception-misdirection/index.html">link1</a>, <a href="https://www.ibm.com/developerworks/cn/java/j-lo-exception/index.html">link2</a></p>
+<ul>
+<li>
+<p>异常的名字必须清晰而且有具体的意思，表示异常发生的问题，例如 FileNotFoundException 就很清晰直观</p>
+</li>
+<li>
+<p>定义你自己的异常类层次，例如 UserException 和 SystemException 分别代表用户级别的异常信息和系统级别的异常信息，而其他的异常在这两个基类上进行扩展</p>
+</li>
+<li>
+<p>受检异常和非受检异常: 前者用在[错误需要进一步处理和恢复, 如SQLException, 需要进一步关闭connection, transaction回滚], 后者用在 [程序不能继续执行, 也没必要进一步对异常处理, 如服务器连接不上、参数不正确]</p>
+</li>
+<li>
+<p>避免抛出异常对代码层次污染(设计隔离原则)</p>
+<ul>
+<li>例如dao层某个方法抛出sqlexception, 此时就不要继续向上抛了, 应该在catch之后处理成runtimeException抛出</li>
+</ul>
+</li>
+<li>
+<p>空的 catch 语句块</p>
+<ul>
+<li>即使有ex.printStacktrace()也算空的catch块, 因为该方法只是打印堆栈信息, 而且异常并没有使得程序终端执行, 导致更多的异常。</li>
+<li>可以catch后抛出非受检异常, finally里面处理其他后续操作如关闭资源等等</li>
+</ul>
+</li>
+<li>
+<p>没有使用 finally 可能会产生资源泄露</p>
+</li>
+<li>
+<p>不要使用函数返回值进行错误处理</p>
+<ul>
+<li>
+<p>放着 Java 的异常机制不用，而用函数返回值来表示成功/失败, 简直是“捧着金碗要饭”</p>
+<ol>
+<li>返回值一般用整数值或布尔值表示，传递的信息过于简陋；</li>
+<li>一旦调用者忽略了错误返回码，就会导致和“空 catch 语句块”类似的问题；</li>
+<li>对同一个函数的多处调用，都需要对返回值进行重复判断，导致代码冗余</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>循环块中不要有try...catch</p>
+<ul>
+<li>异常处理占用系统资源</li>
+<li>同样, 这样的例子也要避免: 类 A 中执行了一段循环，循环中调用了 B 类的方法，B 类中被调用的方法却又包含 try-catch 这样的语句块</li>
+</ul>
+</li>
+<li>
+<p>可以自定义一个runtimeException, 构造函数接受各类受检Exception, 并将有效的异常信息复制到自身属性, 这样可以在使用时统一捕捉Exception, 可以省不少力气(多时候没有必要每个不同类型的 Exception 写一段 catch 语句，对于开发来说，任何一种异常都足够说明了程序的具体问题。)</p>
+<pre><code class="language-java">/**
+* 自定义 RuntimeException
+* 添加错误代码属性
+*/
+public class RuntimeException extends java.lang.RuntimeException { 
+    //默认错误代码 
+    public static final Integer GENERIC = 1000000; 
+    //错误代码
+    private Integer errorCode; 
+
+    private String msg;
+
+    public RuntimeException(Integer errorCode, Throwable cause) {
+            this(errorCode, null, cause);
+    }
+    public RuntimeException(String message, Throwable cause) {
+            //利用通用错误代码
+            this(GENERIC, message, cause);
+    }
+    public RuntimeException(Integer errorCode, String message, Throwable cause) {
+            // 那么当 Exception 的类型已经是 RuntimeException 时，我们又做了一次封装。将 RuntimeException 又重新封装了一次，进而丢失了原有的 RuntimeException 携带的有效信息。
+            // 添加相关的检查，确认参数 Throwable 不是 RuntimeException 的实例。如果是，将拷贝相应的属性到新建的实例上
+            if (cause instanceof RuntimeException) {
+                this.msg = ...
+            }
+            this.errorCode = errorCode;
+            super(message, cause);
+    }
+    public Integer getErrorCode() {
+            return errorCode;
+    } 
+}
+</code></pre>
+<p>后面使用的时候就可以这样了</p>
+<pre><code class="language-java">try{
+//可能抛出 RuntimeException、IOExeption 或者其它；
+//注意这里和误区六的区别，这里是一段代码抛出多种异常。以上是多段代码，各自抛出不同的异常
+}catch(Exception e){
+    //一如既往的将 Exception 转换成 RuntimeException，但是这里的 e 其实是 RuntimeException 的实例，已经在前段代码中封装过
+    throw new RuntimeException(/**/code, /**/, e);
+}
+
+</code></pre>
+</li>
+<li>
+<p>避免打印多层次的重复的异常</p>
+<pre><code class="language-java">public class A {
+private static Logger logger = LoggerFactory.getLogger(A.class);
+public void process(){
+    try{
+    //实例化 B 类，可以换成其它注入等方式
+    B b = new B();
+    b.process(); // 解决办法是: 这里的部分应该拿出try...catch块
+
+    //other code might cause exception
+    
+    } catch(XXXException e){
+    //如果 B 类 process 方法抛出异常，异常会在 B 类中被打印，在这里也会被打印，从而会打印 2 次
+    // 如果层次再复杂一点，不去考虑打印日志消耗的系统性能，仅仅在异常日志中去定位异常具体的问题已经够头疼的了。
+    // 其实打印日志只需要在代码的最外层捕捉打印就可以了，异常打印也可以写成 AOP，织入到框架的最外层
+    logger.error(e);
+    throw new RuntimeException(/* 错误代码 */ errorCode, /*异常信息*/msg, e);
+    }
+    }
+}
+public class B{
+private static Logger logger = LoggerFactory.getLogger(B.class);
+    public void process(){
+        try{
+            //可能抛出异常的代码
+        }
+        catch(XXXException e){
+            logger.error(e);
+            throw new RuntimeException(/* 错误代码 */ errorCode, /*异常信息*/msg, e);
+        }
+}
+}
+</code></pre>
+</li>
+</ul>
+<h1><a class="header" href="#关于基本类型和引用类型" id="关于基本类型和引用类型">关于基本类型和引用类型</a></h1>
+<h2><a class="header" href="#这两种类型在内存存储上有什么区别" id="这两种类型在内存存储上有什么区别">这两种类型在内存存储上有什么区别？</a></h2>
+<pre><code class="language-java">StringBuffer str = new StringBuffer();
+int n = 123;
+// 该 StringBuffer 【对象】的内容是存储在堆（Heap）上的，需要申请堆内存。而变量 str 只不过是针对该 StringBuffer 对象的一个引用（或者叫地址）。变量 str 的【值】（也就是 StringBuffer 对象的地址）是存储在【栈】上的。
+// 变量 n 的【值】也是存储在栈（Stack）上的，但是这个语句不需要再从堆中申请内存了。
+</code></pre>
+<h2><a class="header" href="#这两种类型在性能上有什么区别" id="这两种类型在性能上有什么区别">这两种类型在性能上有什么区别？</a></h2>
+<p>Stack: 只能被本线程访问; 内存申请简单; 内存有限
+Heap: 能够被进程中的所有线程访问; 内存申请复杂(由于多线程共享, 需要加锁); 内存充足</p>
+<h2><a class="header" href="#这两种类型对于-gc-有什么区别" id="这两种类型对于-gc-有什么区别">这两种类型对于 GC 有什么区别</a></h2>
+<h1><a class="header" href="#关于垃圾回收garbage-collection" id="关于垃圾回收garbage-collection">关于垃圾回收（Garbage Collection）</a></h1>
+<h2><a class="header" href="#jvm-的内存空间" id="jvm-的内存空间">JVM 的内存空间</a></h2>
+<p>◇栈内存（Stack）：每个线程私有的。
+◇堆内存（Heap）：所有线程公用的。
+◇方法区（Method Area）：有点像以前常说的“进程代码段”，这里面存放了每个加载类的反射信息、类函数的代码、编译时常量等信息。
+◇原生方法栈（Native Method Stack）：主要用于 JNI 中的原生代码，平时很少涉及。</p>
+<h2><a class="header" href="#垃圾回收机制简介" id="垃圾回收机制简介">垃圾回收机制简介</a></h2>
+<p>垃圾回收机制取决于不同jvm, 这里以官方jvm介绍</p>
+<ul>
+<li>何时回收?
+<ul>
+<li>当 JVM 发现堆内存比较紧张、不太够用时，它就会着手进行垃圾回收工作。JVM 进行 GC 的时间点是无法准确预知的。因为 GC 启动的时刻会受到各种运行环境因素的影响，随机性太大</li>
+<li>通过 JVM 的命令行参数“-XX:+PrintGC”把相关回收信息打印出来</li>
+</ul>
+</li>
+<li>谁负责回收?
+<ul>
+<li>JVM 会有一个或多个专门的垃圾回收线程，由它们负责清理回收垃圾内存。</li>
+</ul>
+</li>
+<li>如何发现垃圾对象？
+<ul>
+<li>垃圾回收线程会从“根集（Root Set）”开始进行对象引用的遍历。所谓的“根集”，就是正在运行的线程中，可以访问的【引用变量】的集合（比如所有线程当前函数的参数和局部变量、当前类的成员变量等等）。垃圾回收线程先找出被根集直接引用的所有对象（不妨叫集合1），然后再找出被集合1直接引用的所有对象（不妨叫集合2），然后再找出被集合2直接引用的所有对象......如此循环往复，直到把能遍历到的对象都遍历完。如果能够遍历到, 则有效, 没有遍历到则回收</li>
+<li>把垃圾内存重新变为可用内存、进行内存的整理以消除内存碎片、等等。这个过程会涉及到若干算法</li>
+</ul>
+</li>
+<li>分代
+<ul>
+<li>早期的jvm没有分代技术, 所有被 GC 管理的对象都存放在同一个堆里面,每次进行GC都要遍历所有对象，开销很大,从 JDK 1.2 之后，JVM 开始使用分代的垃圾回收（Generational Garbage Collection）</li>
+<li>“年老代”（Tenured）和“年轻代”（Nursery）、“持久代”（Permanent，对应于 JVM 规范的“方法区”）</li>
+<li>【大部分】对象在刚创建时，都位于“年轻代”。如果某对象经历了几轮 GC 还活着（大龄对象），就把它移到“年老代”。另外，如果某个对象在创建时比较大，可能就直接被丢到年老代。经过这种策略，使得年轻代总是保存那些短命的小对象。在空间尺寸上，“年轻代”相对较小，而“年老代”相对较大。</li>
+<li>因为有了分代技术，JVM 的 GC 也相应分为两种——主要收集（Major Collection）和次要收集（Minor Collection）。“主要收集”同时清理年老代和年轻代，因此开销很大，不常进行；“次要收集”仅仅清理年轻代，开销很小，经常进行。</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#gc对性能会有啥影响" id="gc对性能会有啥影响">GC对性能会有啥影响</a></h2>
+<ul>
+<li>造成当前运行线程的停顿</li>
+<li>遍历对象引用的开销</li>
+<li>清理和回收垃圾的开销(部分开销可能包括复制内存块、更新对象引用等等。)</li>
+</ul>
+<h2><a class="header" href="#几种收集器" id="几种收集器">几种收集器</a></h2>
+<p>衡量 GC 性能的两个重要指标：吞吐量（Throughput）和停顿时间（Pause Time）。吞吐量这个词不是很直观，解释一下：就是 JVM【不用于】GC 的时间占总时间的比率。“吞吐量”是越大越好，“停顿时间”是越小越好。</p>
+<ul>
+<li>串行收集器（Serial Collector）</li>
+<li>并行收集器（Parallel Throughput Collector）</li>
+<li>并发收集器（Concurrent Low Pause Collector）</li>
+</ul>
+<h2><a class="header" href="#如何降低gc的影响" id="如何降低gc的影响">如何降低GC的影响？</a></h2>
+<ul>
+<li>尽量减少堆内存的使用</li>
+<li>设置合适的堆内存大小
+<ul>
+<li>JVM 的堆内存是有讲究的，不能太大也不能太小。如果堆内存太小，JVM 老是感觉内存不够用，可能会导致频繁进行垃圾回收，影响了性能；如果堆内存太大，以至于操作系统的大部分物理内存都被 JVM 自个儿霸占了，那可能会影响其它应用程序甚至操作系统本身的性能。另外，年轻代的大小（或者说“年轻代”与“年老代”的比值）对于 GC 的性能也有明显影响。如果年轻代太小，可能导致次要收集很频繁；如果年轻代太大，导致次要收集的停顿很明显。</li>
+</ul>
+</li>
+<li>吞吐量和停顿的取舍
+<ul>
+<li>(1)看重吞吐量，对停顿时间无所谓；(2)侧重于停顿时间。</li>
+<li>对于某些在后台的、单纯运算密集型的应用，属于第一种。比如某些科学计算的应用。这时候建议使用并行收集器。</li>
+<li>对于涉及用户 UI 交互的、实时性要求比较高、程序需要快速响应的，属于第二种。比如某些桌面游戏、某些电信交换系统。这时候建议使用并发收集器。</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#关于范型generic-programming" id="关于范型generic-programming">关于范型（Generic Programming）</a></h1>
+<p>◇GP 是在编译时实现的还是在运行时实现的？为什么要这么实现？
+◇GP 的类型擦除机制是咋回事？有啥优点/缺点？
+◇使用范型容器（相对于传统容器）在性能上有啥影响？为什么？</p>
+<h1><a class="header" href="#关于多线程" id="关于多线程">关于多线程</a></h1>
+<p>◇synchronized 关键字是怎么起作用滴？
+◇synchronized 的颗粒度（或者说作用域）如何？是针对某个类还是针对某个类对象实例？
+◇synchronized 对性能有没有影响？为什么？
+◇volatile 关键字又是派啥用滴？啥时候需要用这个关键字捏？</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="css-pre-processor.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="design-pattern-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="css-pre-processor.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="design-pattern-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

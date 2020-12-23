@@ -1,0 +1,1903 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>data structure and algorithm - Xiaoyu Wiki</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="pre.html">pre page</a></li><li class="chapter-item expanded "><a href="SpringBoot-note.html"><strong aria-hidden="true">1.</strong> Spring boot note</a></li><li class="chapter-item expanded "><a href="springcloud-note.html"><strong aria-hidden="true">2.</strong> springcloud-note</a></li><li class="chapter-item expanded "><a href="java-concurrent.html"><strong aria-hidden="true">3.</strong> java-concurrent</a></li><li class="chapter-item expanded "><a href="java-memory-model-jmm-jvm.html"><strong aria-hidden="true">4.</strong> java-memory-model-jmm-jvm</a></li><li class="chapter-item expanded "><a href="java-note.html"><strong aria-hidden="true">5.</strong> java-note</a></li><li class="chapter-item expanded "><a href="rust-note.html"><strong aria-hidden="true">6.</strong> rust-note</a></li><li class="chapter-item expanded "><a href="git-note.html"><strong aria-hidden="true">7.</strong> git note</a></li><li class="chapter-item expanded "><a href="linux-note.html"><strong aria-hidden="true">8.</strong> linux-note</a></li><li class="chapter-item expanded "><a href="cross-gfw.html"><strong aria-hidden="true">9.</strong> cross gfw</a></li><li class="chapter-item expanded "><a href="react-note.html"><strong aria-hidden="true">10.</strong> react-note</a></li><li class="chapter-item expanded "><a href="cs-note.html"><strong aria-hidden="true">11.</strong> cs note</a></li><li class="chapter-item expanded "><a href="distributed-system.html"><strong aria-hidden="true">12.</strong> distributed system</a></li><li class="chapter-item expanded "><a href="message-queue.html"><strong aria-hidden="true">13.</strong> message-queue</a></li><li class="chapter-item expanded "><a href="data-structure-and-algorithm.html" class="active"><strong aria-hidden="true">14.</strong> data structure and algorithm</a></li><li class="chapter-item expanded "><a href="effective-java-reading-note.html"><strong aria-hidden="true">15.</strong> effective java reading note</a></li><li class="chapter-item expanded "><a href="docker-note.html"><strong aria-hidden="true">16.</strong> docker note</a></li><li class="chapter-item expanded "><a href="how-to-test-java-app.html"><strong aria-hidden="true">17.</strong> how-to-test-java-app</a></li><li class="chapter-item expanded "><a href="maven-note.html"><strong aria-hidden="true">18.</strong> maven-note</a></li><li class="chapter-item expanded "><a href="mac.html"><strong aria-hidden="true">19.</strong> mac</a></li><li class="chapter-item expanded "><a href="autohotkey.html"><strong aria-hidden="true">20.</strong> AHK collection</a></li><li class="chapter-item expanded "><a href="class-conflict-check.html"><strong aria-hidden="true">21.</strong> class conflict check</a></li><li class="chapter-item expanded "><a href="cpp.html"><strong aria-hidden="true">22.</strong> cpp</a></li><li class="chapter-item expanded "><a href="create-blog-by-react.html"><strong aria-hidden="true">23.</strong> create blog by react</a></li><li class="chapter-item expanded "><a href="css-note.html"><strong aria-hidden="true">24.</strong> css-note</a></li><li class="chapter-item expanded "><a href="css-pre-processor.html"><strong aria-hidden="true">25.</strong> css pre processor</a></li><li class="chapter-item expanded "><a href="defect-about-java-programmer-from-programming-thinking.html"><strong aria-hidden="true">26.</strong> from programming thinking</a></li><li class="chapter-item expanded "><a href="design-pattern-note.html"><strong aria-hidden="true">27.</strong> design pattern note</a></li><li class="chapter-item expanded "><a href="dev-resources.html"><strong aria-hidden="true">28.</strong> dev resources</a></li><li class="chapter-item expanded "><a href="eclipse.html"><strong aria-hidden="true">29.</strong> eclipse</a></li><li class="chapter-item expanded "><a href="extjs-note.html"><strong aria-hidden="true">30.</strong> extjs-note</a></li><li class="chapter-item expanded "><a href="FreeMarker-note.html"><strong aria-hidden="true">31.</strong> FreeMarker-note</a></li><li class="chapter-item expanded "><a href="go-note.html"><strong aria-hidden="true">32.</strong> golang</a></li><li class="chapter-item expanded "><a href="hello-world.html"><strong aria-hidden="true">33.</strong> hexo</a></li><li class="chapter-item expanded "><a href="html-note.html"><strong aria-hidden="true">34.</strong> html-note</a></li><li class="chapter-item expanded "><a href="idea-note.html"><strong aria-hidden="true">35.</strong> idea-note</a></li><li class="chapter-item expanded "><a href="interview-system-design.html"><strong aria-hidden="true">36.</strong> interview-system-design</a></li><li class="chapter-item expanded "><a href="java-code-clean.html"><strong aria-hidden="true">37.</strong> java-code-clean</a></li><li class="chapter-item expanded "><a href="job-interview-cv.html"><strong aria-hidden="true">38.</strong> job-interview-cv</a></li><li class="chapter-item expanded "><a href="joke-collecting.html"><strong aria-hidden="true">39.</strong> joke-collecting</a></li><li class="chapter-item expanded "><a href="jquery-note.html"><strong aria-hidden="true">40.</strong> jquery-note</a></li><li class="chapter-item expanded "><a href="js-tutorial.html"><strong aria-hidden="true">41.</strong> js-tutorial</a></li><li class="chapter-item expanded "><a href="money.html"><strong aria-hidden="true">42.</strong> money</a></li><li class="chapter-item expanded "><a href="mongodb-note.html"><strong aria-hidden="true">43.</strong> mongodb-note</a></li><li class="chapter-item expanded "><a href="mvc-mvvm.html"><strong aria-hidden="true">44.</strong> mvc-mvvm</a></li><li class="chapter-item expanded "><a href="my-ioc.html"><strong aria-hidden="true">45.</strong> my-ioc</a></li><li class="chapter-item expanded "><a href="mybatis-note.html"><strong aria-hidden="true">46.</strong> mybatis-note</a></li><li class="chapter-item expanded "><a href="mysql-note.html"><strong aria-hidden="true">47.</strong> mysql-note</a></li><li class="chapter-item expanded "><a href="nodejs.html"><strong aria-hidden="true">48.</strong> nodejs</a></li><li class="chapter-item expanded "><a href="outline-about-cache.html"><strong aria-hidden="true">49.</strong> outline-about-cache</a></li><li class="chapter-item expanded "><a href="outline-about-db-design-note.html"><strong aria-hidden="true">50.</strong> outline-about-db-design-note</a></li><li class="chapter-item expanded "><a href="outline-about-http.html"><strong aria-hidden="true">51.</strong> outline-about-http</a></li><li class="chapter-item expanded "><a href="outline-about-rest-api.html"><strong aria-hidden="true">52.</strong> outline-about-rest-api</a></li><li class="chapter-item expanded "><a href="php-note.html"><strong aria-hidden="true">53.</strong> php-note</a></li><li class="chapter-item expanded "><a href="postgres-note.html"><strong aria-hidden="true">54.</strong> postgres-note</a></li><li class="chapter-item expanded "><a href="python-note.html"><strong aria-hidden="true">55.</strong> python-note</a></li><li class="chapter-item expanded "><a href="redis-login-limitation.html"><strong aria-hidden="true">56.</strong> redis-login-limitation</a></li><li class="chapter-item expanded "><a href="redis-note.html"><strong aria-hidden="true">57.</strong> redis-note</a></li><li class="chapter-item expanded "><a href="regex-js.html"><strong aria-hidden="true">58.</strong> regex-js</a></li><li class="chapter-item expanded "><a href="servlet.html"><strong aria-hidden="true">59.</strong> servlet</a></li><li class="chapter-item expanded "><a href="spring-note.html"><strong aria-hidden="true">60.</strong> spring-note</a></li><li class="chapter-item expanded "><a href="springboot-doc.html"><strong aria-hidden="true">61.</strong> springboot-doc</a></li><li class="chapter-item expanded "><a href="springmvc-note.html"><strong aria-hidden="true">62.</strong> springmvc-note</a></li><li class="chapter-item expanded "><a href="task-schedule-note.html"><strong aria-hidden="true">63.</strong> task-schedule-note</a></li><li class="chapter-item expanded "><a href="tcp-ip-note.html"><strong aria-hidden="true">64.</strong> tcp-ip-note</a></li><li class="chapter-item expanded "><a href="tomcat-jetty-nginx.html"><strong aria-hidden="true">65.</strong> tomcat-jetty-nginx</a></li><li class="chapter-item expanded "><a href="webpack-note.html"><strong aria-hidden="true">66.</strong> webpack-note</a></li><li class="chapter-item expanded "><a href="windows-sub-system-on-linux.html"><strong aria-hidden="true">67.</strong> windows-sub-system-on-linux</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Xiaoyu Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>title: Data Structure and Algorithm
+tags:
+- cs
+date: 2018-11-25 22:54:25
+categories: computer science</h2>
+<p>动图演示算法: https://visualgo.net/zh
+数据结构: https://www.cnblogs.com/skywang12345/p/3603935.html
+python 实现数据结构: https://github.com/xiaoyuside/algorithm-python
+java 实现数据结构算法: https://github.com/buptdavid/datastructure
+Suffix Trees - https://github.com/npgall/concurrent-trees
+Radix Trees</p>
+<p><a href="https://blog.csdn.net/u012414189/article/details/83832161?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase">面试</a></p>
+<p>https://github.com/kdn251/interviews/blob/master/README-zh-cn.md</p>
+<p>https://github.com/labuladong/fucking-algorithm
+https://github.com/liweiwei1419/LeetCode-Solutions-in-Good-Style
+https://github.com/greyireland/algorithm-pattern
+https://github.com/geekxh/hello-algorithm</p>
+<p>https://github.com/apachecn/apachecn-algo-zh</p>
+<p>https://github.com/facert/python-data-structure-cn
+https://github.com/keon/algorithms</p>
+<p>https://github.com/xtaci/algorithms cpp 中文</p>
+<!--more-->
+<!-- TOC -->
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93">数据结构总结</a>
+<ul>
+<li><a href="#%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F">存储方式</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">基本操作</a></li>
+<li><a href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6">时间复杂度</a>
+<ul>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95">计算方法</a></li>
+<li><a href="#%E5%B8%B8%E6%95%B0%E5%A4%8D%E6%9D%82%E5%BA%A6">常数复杂度</a></li>
+<li><a href="#%E7%BA%BF%E6%80%A7%E5%A4%8D%E6%9D%82%E5%BA%A6">线性复杂度</a></li>
+<li><a href="#%E5%AF%B9%E6%95%B0%E5%A4%8D%E6%9D%82%E5%BA%A6">对数复杂度</a></li>
+<li><a href="#%E5%B9%B3%E6%96%B9%E5%A4%8D%E6%9D%82%E5%BA%A6">平方复杂度</a></li>
+<li><a href="#%E6%8C%87%E6%95%B0%E5%A4%8D%E6%9D%82%E5%BA%A6">指数复杂度</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E7%BB%84">数组</a></li>
+<li><a href="#%E6%A0%88">栈</a></li>
+<li><a href="#%E9%98%9F%E5%88%97">队列</a></li>
+<li><a href="#%E9%93%BE%E8%A1%A8">链表</a></li>
+<li><a href="#%E6%A0%91">树</a>
+<ul>
+<li><a href="#%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5and%E4%B8%80%E8%88%AC%E7%BB%93%E6%9E%84">树的基本概念and一般结构</a></li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91">二叉查找树</a>
+<ul>
+<li><a href="#%E9%9D%9E%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91">非平衡二叉查找树</a>
+<ul>
+<li><a href="#bstbinary-search-tree-%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E4%B8%80%E8%88%AC%E7%BB%93%E6%9E%84">BST(Binary Search Tree)-查找树的一般结构</a></li>
+<li><a href="#splay-tree-%E4%BC%B8%E5%B1%95%E6%A0%91">Splay Tree 伸展树</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91">平衡二叉树</a>
+<ul>
+<li><a href="#avl%E6%A0%91">AVL树</a></li>
+<li><a href="#%E7%BA%A2%E9%BB%91%E6%A0%91">红黑树</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%A4%9A%E8%B7%AF%E5%B9%B3%E8%A1%A1%E6%9F%A5%E6%89%BE%E6%A0%91">多路平衡查找树</a>
+<ul>
+<li><a href="#2-3%E6%A0%91%E4%BA%8C%E4%B8%89%E6%A0%91">2-3树(二三树)</a></li>
+<li><a href="#b%E6%A0%91b-tree">B树(B-tree)</a>
+<ul>
+<li><a href="#b%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5">b树的概念</a></li>
+<li><a href="#b%E6%A0%91%E7%9A%84%E7%89%B9%E5%BE%81">b树的特征</a></li>
+</ul>
+</li>
+<li><a href="#btreeb%E5%8A%A0%E6%A0%91">B+tree(B加树)</a>
+<ul>
+<li><a href="#btree%E5%AE%9A%E4%B9%89">b+tree定义</a></li>
+<li><a href="#%E6%AF%94b-tree%E5%A5%BD%E7%9A%84%E7%82%B9">比b-tree好的点</a></li>
+</ul>
+</li>
+<li><a href="#b%E6%A0%91">B*树</a></li>
+<li><a href="#%E5%89%8D%E7%BC%80%E6%A0%91trie%E6%A0%91%E5%AD%97%E5%85%B8%E6%A0%91">前缀树(Trie树/字典树)</a></li>
+</ul>
+</li>
+<li><a href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91huffman-tree">哈夫曼树(Huffman Tree)</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A0%86">堆</a>
+<ul>
+<li><a href="#%E4%BA%8C%E5%8F%89%E5%A0%86">二叉堆</a></li>
+<li><a href="#%E5%A0%86%E6%8E%92%E5%BA%8F">堆排序</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9B%BE">图</a>
+<ul>
+<li><a href="#%E5%9B%BE%E7%9A%84%E6%A6%82%E5%BF%B5">图的概念</a></li>
+</ul>
+</li>
+<li><a href="#%E5%93%88%E5%B8%8C%E8%A1%A8hash-table">哈希表(hash-table)</a></li>
+<li><a href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">排序算法</a>
+<ul>
+<li><a href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8Fselect-sort">选择排序(select Sort)</a></li>
+<li><a href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8Fmerge-sort">归并排序(merge sort)</a></li>
+<li><a href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8Fbubble-sort">冒泡排序(bubble sort)</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95">查找算法</a>
+<ul>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE">顺序查找</a></li>
+<li><a href="#%E6%9C%89%E5%BA%8F%E8%A1%A8%E6%9F%A5%E6%89%BE">有序表查找</a></li>
+<li><a href="#%E7%BA%BF%E6%80%A7%E7%B4%A2%E5%BC%95%E6%9F%A5%E6%89%BE">线性索引查找</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B4%A2%E5%BC%95">索引</a>
+<ul>
+<li><a href="#%E7%BA%BF%E6%80%A7%E7%B4%A2%E5%BC%95">线性索引</a>
+<ul>
+<li><a href="#%E7%A8%A0%E5%AF%86%E7%B4%A2%E5%BC%95">稠密索引</a></li>
+<li><a href="#%E5%88%86%E5%9D%97%E7%B4%A2%E5%BC%95">分块索引</a></li>
+<li><a href="#%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95">倒排索引</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A0%91%E5%BD%A2%E7%B4%A2%E5%BC%95">树形索引</a></li>
+<li><a href="#%E5%A4%9A%E7%BA%A7%E7%B4%A2%E5%BC%95">多级索引</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1><a class="header" href="#数据结构总结" id="数据结构总结">数据结构总结</a></h1>
+<h2><a class="header" href="#存储方式" id="存储方式">存储方式</a></h2>
+<p>数据结构的存储方式只有两种：数组（顺序存储）和链表（链式存储）</p>
+<ul>
+<li>
+<p>数组由于是紧凑连续存储,可以随机访问，通过索引快速找到对应元素，而且相对节约存储空间。但正因为连续存储，内存空间必须一次性分配够，所以说数组如果要扩容，需要重新分配一块更大的空间，再把数据全部复制过去，时间复杂度 O(N)；而且你如果想在数组中间进行插入和删除，每次必须搬移后面的所有数据以保持连续，时间复杂度 O(N)。</p>
+</li>
+<li>
+<p>链表因为元素不连续，而是靠指针指向下一个元素的位置，所以不存在数组的扩容问题；如果知道某一元素的前驱和后驱，操作指针即可删除该元素或者插入新元素，时间复杂度 O(1)。但是正因为存储空间不连续，你无法根据一个索引算出对应元素的地址，所以不能随机访问；而且由于每个元素必须存储指向前后元素位置的指针，会消耗相对更多的储存空间。</p>
+</li>
+</ul>
+<p>比如说「队列」、「栈」这两种数据结构既可以使用链表也可以使用数组实现。用数组实现，就要处理扩容缩容的问题；用链表实现，没有这个问题，但需要更多的内存空间存储节点指针</p>
+<p>「图」的两种表示方法，邻接表就是链表，邻接矩阵就是二维数组。邻接矩阵判断连通性迅速，并可以进行矩阵运算解决一些问题，但是如果图比较稀疏的话很耗费空间。邻接表比较节省空间，但是很多操作的效率上肯定比不过邻接矩阵。</p>
+<p>「散列表」就是通过散列函数把键映射到一个大数组里。而且对于解决散列冲突的方法，拉链法需要链表特性，操作简单，但需要额外的空间存储指针；线性探查法就需要数组特性，以便连续寻址，不需要指针的存储空间，但操作稍微复杂些。</p>
+<p>「树」，用数组实现就是「堆」，因为「堆」是一个完全二叉树，用数组存储不需要节点指针，操作也比较简单；用链表实现就是很常见的那种「树」，因为不一定是完全二叉树，所以不适合用数组存储。为此，在这种链表「树」结构之上，又衍生出各种巧妙的设计，比如二叉搜索树、AVL 树、红黑树、区间树、B 树等等</p>
+<h2><a class="header" href="#基本操作" id="基本操作">基本操作</a></h2>
+<p>最主要的操作就是 遍历</p>
+<ul>
+<li>
+<p>线性遍历, 比如用 for 循环遍历一个数组; 比如链表, 既可以用 for 循环线性遍历, 也能用 递归遍历</p>
+</li>
+<li>
+<p>非线性(递归) 遍历, 比如 二叉树递归遍历</p>
+</li>
+</ul>
+<h2><a class="header" href="#时间复杂度" id="时间复杂度">时间复杂度</a></h2>
+<h3><a class="header" href="#计算方法" id="计算方法">计算方法</a></h3>
+<ul>
+<li>去掉常数项。</li>
+<li>只保留最高阶项。</li>
+<li>去掉最高结项的系数</li>
+</ul>
+<h3><a class="header" href="#常数复杂度" id="常数复杂度">常数复杂度</a></h3>
+<p>O(1) - 一般是顺序执行的代码</p>
+<pre><code class="language-cpp">/**
+ * 高斯算法, 常数复杂度
+ */
+void gaosi() {
+    const int begin = 1;
+    const int end = 4;
+
+    int sum = (begin + end) * end / 2;
+    cout &lt;&lt; &quot;arr sum = &quot; &lt;&lt; sum &lt;&lt; endl;
+}
+
+</code></pre>
+<h3><a class="header" href="#线性复杂度" id="线性复杂度">线性复杂度</a></h3>
+<p>O(n) - 一层循环</p>
+<pre><code class="language-cpp">/**
+ * 线性复杂度
+ */
+void changshu() {
+    for (int i = 0; i &lt;; ++i) {
+        printf(&quot;xxx&quot;);
+    }
+}
+</code></pre>
+<h3><a class="header" href="#对数复杂度" id="对数复杂度">对数复杂度</a></h3>
+<p>O(logn) </p>
+<pre><code class="language-cpp">/**
+ * 对数复杂度
+ *
+ * 假设会执行 x 次, 则 2^x = n, x = log n
+ *
+ */
+void duishu() {
+    const int n = 10;
+    for (int i = 1; i &lt; n; i = i * 2) {
+        printf(&quot;xxx&quot;);
+    }
+}
+
+</code></pre>
+<h3><a class="header" href="#平方复杂度" id="平方复杂度">平方复杂度</a></h3>
+<p>O(n^2)</p>
+<pre><code class="language-cpp">/**
+ * 平方复杂度
+ *
+ * 当 i = 0, 内循环执行 n 次
+ * 当 i = 1, 内循环执行 n - 1 次
+ * ...
+ *
+ * sum = n + (n-1) + (n-2) + ... + 1 = (n + 1) * n /2 约等于 n^2
+ *
+ */
+void pingfang() {
+    int n;
+    for (int i = 0; i &lt; n; ++i) {
+        // 注意这里 j = i, 不是 从 0 开始的, 但是最终计算出来复杂度还是 n^2, 
+        for (int j = i; j &lt; n; ++j) {
+            printf(&quot;xxx&quot;);
+        }
+    }
+}
+
+</code></pre>
+<h3><a class="header" href="#指数复杂度" id="指数复杂度">指数复杂度</a></h3>
+<p>O(2^n)</p>
+<h1><a class="header" href="#数组" id="数组">数组</a></h1>
+<p>数组有上界和下界，数组的元素在上下界内是连续的, 因此 随机访问速度快; 一旦定义, 容量就固定了, 再增删会涉及到数组的复制, 那将是耗时的操作</p>
+<p>多维数组(数组的元素为数组)</p>
+<p>动态数组: Java 提供了 ArrayList和Vector</p>
+<ul>
+<li>Insert - 在某个索引处插入元素</li>
+<li>Get - 读取某个索引处的元素</li>
+<li>Delete - 删除某个索引处的元素</li>
+<li>Size - 获取数组的长度</li>
+</ul>
+<h1><a class="header" href="#栈" id="栈">栈</a></h1>
+<p>栈中的元素采用LIFO (Last In First Out)，即后进先出。可以想象成一个桶 bucket</p>
+<p>典型应用: 实现 ctrl + z 撤销, 把之前的应用状态(限制个数)保存到内存中，最近的状态放到第一个</p>
+<pre><code class="language-java">- Push — 推入, 在栈的最上方插入元素
+- Pop — 弹出, 返回栈最上方的元素，并将其删除
+- isEmpty — 查询栈是否为空
+- Top/peek — 返回栈最上方的元素，并不删除
+/**
+ * ArrayStack - 模拟 Stack 类, 数组实现
+ */
+public class ArrayStack&lt;T&gt; {
+
+    private T[] bucket;
+    private int count; // 元素个数
+
+    public ArrayStack(Class&lt;T&gt; clazz, int size) {
+        Object newInstance = Array.newInstance(clazz, size);
+        bucket = (T[]) newInstance;
+        count = 0; // 初始化为 0 个 元素
+    }
+
+    public void push(T value) {
+        bucket[count] = value;
+        count = count + 1;
+    }
+
+    public T pop() {
+        int index = count -1;
+        T ret = bucket[index];
+        bucket[index] = null;
+        count = count -1;
+        return ret;
+    }
+
+    public T top() {
+        int index = count -1;
+        return bucket[index];
+    }
+}
+
+</code></pre>
+<h1><a class="header" href="#队列" id="队列">队列</a></h1>
+<p>队列(Queue)与栈类似，都是采用线性结构存储数据。它们的区别在于，栈采用LIFO方式，而队列采用先进先出，即FIFO(First in First Out), </p>
+<p>队列只允许在&quot;队首&quot;进行删除操作，而在&quot;队尾&quot;进行插入操作。可以想象成一条队伍</p>
+<pre><code class="language-java">Enqueue — 在队列末尾插入元素
+Dequeue — 将队列第一个元素删除
+isEmpty — 查询队列是否为空
+Top — 返回队列的第一个元素
+/**
+ * 数组实现的队列
+ *
+ * @author xiaoyu
+ * @since 1.0
+ */
+public class ArrayQueue&lt;T&gt; {
+
+    private T[] data;
+    private int count;
+
+    public ArrayQueue(Class&lt;T&gt; clazz, int size) {
+        Object newInstance = Array.newInstance(clazz, size);
+        data = (T[]) newInstance;
+        count = 0;
+    }
+
+    public T deQueue() {
+        T ret = data[0];
+        data[0] = null;
+        for (int i = 0; i &lt; count; i++) {// 顺次向前挪动
+            data[i] = data[i+1];
+        }
+        count = count -1;
+        return ret;
+    }
+
+    public void enQueue(T value) {
+        data[count] = value;
+        count = count + 1;
+    }
+
+    public T top() {
+        return data[0];
+    }
+
+    public boolean empty() {
+        if (count == 0) {
+            return true;
+        }
+        if (count &lt; 0) {
+            throw new RuntimeException(&quot;count &lt; 0&quot;);
+        }
+        return false;
+    }
+}
+
+</code></pre>
+<h1><a class="header" href="#链表" id="链表">链表</a></h1>
+<p>链表是一系列节点组成的链，每一个节点保存了数据以及指向下一个节点的指针。链表头指针指向第一个节点，如果链表为空，则头指针为空或者为null。</p>
+<p>场景: 实现文件系统, 哈希表</p>
+<ul>
+<li>单向链表  - 节点的链接方向是单向的；相对于数组来说，单链表的的随机访问速度较慢，但是单链表删除/添加数据的效率很高。</li>
+<li>双向链表 - 一般是双向循环链表, 每个数据结点中都有两个指针，分别指向直接后继和直接前驱</li>
+</ul>
+<p>双向循环链表图示:</p>
+<p><img src="Snipaste_2018-11-25_22-52-23.png" alt="alt" /></p>
+<pre><code class="language-java">InsertAtEnd — 在链表结尾插入元素
+InsertAtHead — 在链表开头插入元素
+Delete — 删除链表的指定元素
+DeleteAtHead — 删除链表第一个元素
+Search — 在链表中查询指定元素
+isEmpty — 查询链表是否为空
+/**
+ * DoubleLink 双向循环链表 - 模拟 单列的 LinkedHashMap
+ */
+public class DoubleLink&lt;T&gt; {
+
+    private int size;
+    private Node&lt;T&gt; head;// important
+                // 作为基本坐标
+
+    private class Node&lt;T&gt; {
+    
+        private Node&lt;T&gt; prev;
+        private Node&lt;T&gt; next;
+        private T value;
+
+        public Node(T value, Node&lt;T&gt; prev, Node&lt;T&gt; next) {
+            this.next = next;
+            this.prev = prev;
+            this.value = value;
+        }
+    }
+
+    public DoubleLink() {
+        head = new Node&lt;&gt;(null, null, null);
+        head = head.next = head.prev;
+        this.size = 0;
+    }
+
+    /**
+     * insert element to the end
+     */
+    public void insertAtEnd(T value) {
+        Node&lt;T&gt; prev = head.prev;// 前一个节点
+        Node&lt;T&gt; next = head; // 后一个节点
+        Node&lt;T&gt; node = new Node&lt;T&gt;(value, prev, next);
+        prev.next = node;
+        next.prev = node;
+
+        size++;
+    }
+
+    public void insertAtHead(T value) {
+        Node&lt;T&gt; prev = head;
+        Node&lt;T&gt; next = head.next;
+        Node&lt;T&gt; node = new Node&lt;T&gt;(value, prev, next);
+        prev.next = node;
+        next.prev = node;
+
+        size++;
+    }
+
+    public void insertAt(int index, T value) {
+        DoubleLink&lt;T&gt;.Node&lt;T&gt; findNode = this.findNode(index);
+        Node&lt;T&gt; prev = findNode.prev;
+        Node&lt;T&gt; next = findNode.next;
+        DoubleLink&lt;T&gt;.Node&lt;T&gt; node = new Node&lt;T&gt;(value, prev, next);
+        prev.next = node;
+        next.prev = node;
+
+        size++;
+    }
+
+    public void deleteAt(int index) {
+        DoubleLink&lt;T&gt;.Node&lt;T&gt; findNode = this.findNode(index);
+        Node&lt;T&gt; prev = findNode.prev;
+        Node&lt;T&gt; next = findNode.next;
+        prev.next = next;
+        next.prev = prev;
+
+        findNode = null;
+        size--;
+    }
+
+    /**
+     * find specific node
+     * @param index index, start with 0
+     * @return
+     */
+    public Node&lt;T&gt; findNode(int index) {
+        Node&lt;T&gt; ret = null;
+
+        if (index &lt; 0) {
+            throw new RuntimeException(&quot;index can not less than 0&quot;);
+        }
+
+        // 参考 LinkedHashmap 实现
+        if (index &lt;= size / 2) {// 正向
+            Node&lt;T&gt; first =  head.next;
+            for (int i = 0; i &lt; index; i++) {
+                ret = first.next;
+            }
+            return ret;
+        }
+
+        // 反向查找
+        Node&lt;T&gt; last = head.prev;
+        for (int i = size - 1; i &gt;= index; i--) {
+            ret = last.prev;
+        }
+        return ret;
+    }
+
+    public boolean empty() {
+        if (size == 0) {
+            return true;
+        }
+        return false;
+    }
+}
+
+</code></pre>
+<h1><a class="header" href="#树" id="树">树</a></h1>
+<h2><a class="header" href="#树的基本概念and一般结构" id="树的基本概念and一般结构">树的基本概念and一般结构</a></h2>
+<p>树(Tree)是一个分层的数据结构，由节点和连接节点的边组成。树是一种特殊的图，它与图最大的区别是没有循环。</p>
+<p>核心思想是使用 &quot;二分法&quot;, &quot;数据平衡策略&quot; 来提高查询效率</p>
+<p>几个概念:</p>
+<ul>
+<li>root - 根节点</li>
+<li>parent - 这个节点具有子节点</li>
+<li>child - 这个节点具有父节点</li>
+<li>leaf - 这个节点没有子节点</li>
+<li>sibling - 同等级(同辈)节点</li>
+<li>一颗树深度为h，最大层数为k，深度与最大层数相同，k=h, 叶子数为2h; 第k层的结点数最多是：2^(k-1); 总结点数是：2^(k-1)，且总节点数一定是奇数</li>
+<li>树的高度为最大层次。即空的二叉树的高度是0，非空树的高度等于它的最大层次(根的层次为1，根的子节点为第2层，依次类推)。</li>
+</ul>
+<p>N叉树(N-ary Tree)
+平衡树(Balanced Tree)
+二叉树(Binary Tree) - 常见
+二叉查找树(Binary Search Tree) - 常见
+平衡二叉树(AVL Tree)
+红黑树(Red Black Tree)
+2-3树(2–3 Tree)</p>
+<p>二叉树一般结构：二叉树的每个结点至多只有二棵子树，二叉树的子树有左右之分。二叉树的第i层至多有2^(i-1)个结点；</p>
+<p><img src="Snipaste_2018-08-26_16-44-57.png" alt="alt" /></p>
+<ul>
+<li>
+<p>满二叉树：除叶子结点外的所有结点均有两个子结点。节点数达到最大值，所有叶子结点必须在同一层上</p>
+</li>
+<li>
+<p>完全二叉树：若设二叉树的深度为h，除第 h 层外，其它各层 (1～(h-1)层) 的结点数都达到最大个数，第h层所有的结点都连续集中在最左边，这就是完全二叉树。</p>
+</li>
+</ul>
+<p>图示:</p>
+<p><img src="Snipaste_2018-11-26_17-50-50.png" alt="alt" /></p>
+<h2><a class="header" href="#二叉查找树" id="二叉查找树">二叉查找树</a></h2>
+<h3><a class="header" href="#非平衡二叉查找树" id="非平衡二叉查找树">非平衡二叉查找树</a></h3>
+<h4><a class="header" href="#bstbinary-search-tree-查找树的一般结构" id="bstbinary-search-tree-查找树的一般结构">BST(Binary Search Tree)-查找树的一般结构</a></h4>
+<ul>
+<li>
+<p>定义: 它是特殊的二叉树, 节点可比较：-- <code>任意节点, left subNode &lt; node &lt; right subNode</code></p>
+<p>对于二叉树，假设x为二叉树中的任意一个结点，x节点包含关键字key，节点x的key值记为key[x]。如果y是x的左子树中的一个结点，则key[y] &lt;= key[x]；如果y是x的右子树的一个结点，则key[y] &gt;= key[x]。那么，这棵树就是二叉查找树</p>
+</li>
+<li>
+<p>前驱和后继</p>
+<ul>
+<li>
+<p>节点的前驱：是该节点的左子树中的最大节点。即，&quot;二叉树中数据值小于该结点&quot;的&quot;最大结点&quot;</p>
+</li>
+<li>
+<p>节点的后继：是该节点的右子树中的最小节点。即，&quot;二叉树中数据值大于该结点&quot;的&quot;最小结点&quot;</p>
+</li>
+</ul>
+</li>
+<li>
+<p>特征:</p>
+<pre><code class="language-java">(01) 若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值；
+(02) 任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；
+(03) 任意节点的左、右子树也分别为二叉查找树。
+(04) 没有键值相等的节点（no duplicate nodes）。
+
+</code></pre>
+</li>
+<li>
+<p>时间复杂度  - 平衡状态下, B树的搜索性能逼近二分查找(插入和查找的时间复杂度均为<code>O(log n)</code>), 但是在最坏的情况下仍然会有<code>O(n)</code>的时间复杂度, n 可以看作 高度</p>
+<p>不平衡是怎么造成的? </p>
+<p>比如 插入的序列是有序的时; 可以通过随机化建立二叉搜索树来尽量的避免这种情况</p>
+<p>再比如 由于在删除时，我们总是选择将待删除节点的后继代替它本身，这样就会造成总是右边的节点数目减少，以至于树向左偏沉</p>
+</li>
+<li>
+<p>插入过程: (https://lufficc.com/blog/binary-search-tree https://www.cnblogs.com/MrListening/p/5782752.html)</p>
+<ul>
+<li>
+<p>若当前的二叉查找树为空，则插入的元素为根节点</p>
+</li>
+<li>
+<p>若插入的元素值小于根节点值，则将元素插入到左子树中</p>
+</li>
+<li>
+<p>若插入的元素值不小于根节点值，则将元素插入到右子树中</p>
+</li>
+</ul>
+</li>
+<li>
+<p>删除过程(希望删除节点 p)</p>
+<ul>
+<li>
+<p>p为叶子节点，直接删除该节点，再修改其父节点的指针（注意分是根节点和不是根节点）</p>
+</li>
+<li>
+<p>p为单支节点（即只有左子树或右子树）。让p的子树与p的父亲节点相连，删除p即可</p>
+</li>
+<li>
+<p>p的左子树和右子树均不空 - 找到 后继/前驱节点 y 移动过来代替 p, 然后连接 y parent 和 y 的 child (对于 后继: 让 y 的 parent 成为 y 的右子树 的 parent; 对于 前驱: 让 y 的 parent 成为 y 的左子树的 parent )</p>
+<p>为什么要找 后继/前驱? - 因为 他们一定是单支节点(后继没有左子树/前驱没有右子树), 这种节点容易移动, 并且满足节点的大小关系</p>
+</li>
+</ul>
+</li>
+<li>
+<p>搜索过程: 从根结点开始，如果查询的关键字与结点的关键字相等，那么就命中; 否则，如果查询关键字比结点关键字小，就进入左子树；如果比结点关键字大，就进入右子树；如果左子树或右子树的指针为空，则报告找不到相应的关键字；</p>
+<p>如果B树的所有非叶子结点的左右子树的结点数目均保持差不多（平衡），那么B树的搜索性能逼近二分查找(插入和查找的时间复杂度均为O(log n))；它比连续内存空间的二分查找的优点是，改变B树结构（插入与删除结点）不需要移动大段的内存数据 (比如 b tree在插入节点时候, 只需要将指针指向新增节点, 原有数据在内存中的位置不变)</p>
+<p>相反, 如果左右子树不平衡, 这时候的搜索性能已经是线性的了 (此时是最坏的情况, 会有O(n)的时间复杂度), 要避免这样的不平衡 b tree</p>
+<p>实际使用的B树都是在原B树的基础上加上平衡算法，即“<code>平衡二叉树</code>”（binary balanced tree，又称AVL树）；如何保持B树结点分布均匀的平衡算法是平衡二叉树的关键；平衡算法是一种在B树中插入和删除结点的策略；</p>
+</li>
+<li>
+<p>几种遍历方式 - 前序遍历、中序遍历、后序遍历3种方式。 - 对二叉查找树进行中序遍历，即可得到有序(从小到大)的数列</p>
+</li>
+</ul>
+<p>ref: https://blog.csdn.net/qq_33243189/article/details/80222629</p>
+<pre><code class="language-java">2.1 前序遍历 - parent节点排最先，然后同级先左后右
+若二叉树非空，则执行以下操作：
+(01) 访问根结点；
+(02) 先序遍历左子树；
+(03) 先序遍历右子树。
+
+private void preOrder(BSTNode&lt;T&gt; tree) {
+    if(tree != null) {
+        System.out.print(tree.key+&quot; &quot;);
+        preOrder(tree.left);
+        preOrder(tree.right);
+    }
+}
+
+public void preOrder() {
+    preOrder(mRoot);
+}
+ 
+////////////////////////////////////////
+
+2.2 中序遍历 -  先左后parent最后右
+
+若二叉树非空，则执行以下操作：
+(01) 中序遍历左子树；
+(02) 访问根结点；
+(03) 中序遍历右子树。
+
+private void inOrder(BSTNode&lt;T&gt; tree) {
+    if(tree != null) {
+        inOrder(tree.left);
+        System.out.print(tree.key+&quot; &quot;);
+        inOrder(tree.right);
+    }
+}
+
+public void inOrder() {
+    inOrder(mRoot);
+}
+ ////////////////////////////////////////////////////
+
+2.3 后序遍历 - 先左后右最后parent
+
+若二叉树非空，则执行以下操作：
+(01) 后序遍历左子树；
+(02) 后序遍历右子树；
+(03) 访问根结点。
+
+private void postOrder(BSTNode&lt;T&gt; tree) {
+    if(tree != null)
+    {
+        postOrder(tree.left);
+        postOrder(tree.right);
+        System.out.print(tree.key+&quot; &quot;);
+    }
+}
+
+public void postOrder() {
+    postOrder(mRoot);
+}
+
+</code></pre>
+<p>遍历结果图示:</p>
+<p><img src="Snipaste_2018-11-26_18-21-36.png" alt="alt" /></p>
+<p>Java实现</p>
+<pre><code class="language-java">遍历: 前序, 中序, 后序遍历
+find 查找
+max 最大值
+min 最小值
+predecessor 前驱节点
+successor 后继节点
+insert 插入
+remove 删除
+destroy 销毁二叉树
+
+/**
+ * @author xiaoyu
+ * @since 1.0
+ */
+public class BinarySearchTree&lt;T extends Comparable&lt;T&gt;&gt; {
+
+    private Node&lt;T&gt; root;// root node
+
+    public class Node&lt;T extends Comparable&lt;T&gt;&gt; {
+        private T       value;
+        private Node&lt;T&gt; parent;
+        private Node&lt;T&gt; left;
+        private Node&lt;T&gt; right;
+
+        public Node(T value, Node&lt;T&gt; parent, Node&lt;T&gt; left, Node&lt;T&gt; right) {
+            this.value = value;
+            this.parent = parent;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    public BinarySearchTree(T value) {
+        root = new Node&lt;&gt;(value, null, null, null);
+    }
+
+    // ------------------------------------------------
+
+    /**
+     * 前序遍历 - parent节点排最先，然后同级先左后右
+     *
+     * @param node
+     */
+    public void preOrderTraverse(Node&lt;T&gt; node) {
+        if (node == null) {
+            throw new RuntimeException(&quot;can not traverse null node&quot;);
+        }
+        System.out.print(node.value + &quot; &quot;);// print current node's value
+        preOrderTraverse(node.left);   //
+        preOrderTraverse(node.right);
+    }
+
+    /**
+     * 中序遍历 - 先左后parent最后右
+     *
+     * @param node
+     */
+    public void middleOrderTraverse(Node&lt;T&gt; node) {
+        if (node == null) {
+            throw new RuntimeException(&quot;cannot traverse null node&quot;);
+        }
+        middleOrderTraverse(node.left);
+        System.out.print(node.value + &quot; &quot;);
+        middleOrderTraverse(node.right);
+    }
+
+    /**
+     * 后序遍历 - 先左后右最后parent
+     *
+     * @param node
+     */
+    public void postOrderTraverse(Node&lt;T&gt; node) {
+        if (node == null) {
+            throw new RuntimeException(&quot;cannot traverse null node&quot;);
+        }
+        postOrderTraverse(node.left);
+        postOrderTraverse(node.right);
+        System.out.println(node.value + &quot; &quot;);
+    }
+
+    // ------------------------------------------------------
+
+    /**
+     * 使用递归查找
+     *
+     * @param enterNode
+     * @param value
+     * @return
+     */
+    public Node&lt;T&gt; find(Node&lt;T&gt; enterNode, T value) {
+        if (enterNode == null) {
+            throw new RuntimeException(&quot;cannot find with null enterNode&quot;);
+        }
+
+        int tmp = value.compareTo(enterNode.value);
+        if (tmp == 0) {
+            return enterNode;
+        } else if (tmp &lt; 0) {  // value &lt; enterNode.value
+            return find(enterNode.left, value);
+        } else {
+            return find(enterNode.right, value);
+        }
+    }
+
+    /**
+     * 没有递归的查找
+     *
+     * @param enterNode
+     * @param value
+     * @return
+     */
+    public Node&lt;T&gt; find_2(Node&lt;T&gt; enterNode, T value) {
+        if (enterNode == null) {
+            throw new RuntimeException(&quot;cannot find with null enterNode&quot;);
+        }
+        while (enterNode != null) {// 如果 enterNode == null 了， 证明循环
+            // 到叶子节点了， 跳出, 返回null
+            int tmp = value.compareTo(enterNode.value);
+            if (tmp == 0) {
+                return enterNode;
+            } else if (tmp &lt; 0) {
+                enterNode = enterNode.left;
+            } else {
+                enterNode = enterNode.right;
+            }
+        }
+        return null;
+    }
+
+    public Node&lt;T&gt; find(T value) {
+        return this.find(root, value);
+    }
+
+    // -------------------------------------------------------------
+
+    /**
+     * 最大值
+     *
+     * @param enterNode
+     * @return
+     */
+    public Node&lt;T&gt; maxNode(Node&lt;T&gt; enterNode) {
+        while (true) {
+            Node&lt;T&gt; right = enterNode.right;
+            if (right == null) { // 证明此时enterNode 是叶子节点了
+                return enterNode;
+            }
+            enterNode = right;
+        }
+    }
+
+    /**
+     * 最小值
+     *
+     * @param enterNode
+     * @return
+     */
+    public Node&lt;T&gt; minNode(Node&lt;T&gt; enterNode) {
+        while (true) {
+            Node&lt;T&gt; left = enterNode.left;
+            if (left == null) {
+                return enterNode;
+            }
+            enterNode = left;
+        }
+    }
+
+    // ------------------------------------
+
+    /**
+     * 节点的前驱：是该节点的左子树中的最大节点。即比当前节点小的最大节点
+     *
+     * @param enterNode
+     * @return
+     */
+    public Node&lt;T&gt; predecessor(Node&lt;T&gt; enterNode) {
+        Node&lt;T&gt; left = enterNode.left;
+        // enterNode 存在 left node
+        //        p
+        //      /  \
+        //     *    *
+        //      \
+        //      ...
+        //       \
+        //        o
+        //    - 那么只需要 以这个left node 为 根节点， 找到最大值即可, 即这里的 o
+        if (left != null) {
+            return this.maxNode(left);
+        }
+
+        // 如果 enterNode 没有 left node，分两种情况
+        // 1. enterNode 自身是一个 right node
+        //        o
+        //      /  \
+        //     *    p
+        //          \
+        //     - 找到 parent, 即这里的 o， 返回parent (这个 parent 就是比 enterNode 小的最大节点)
+        // 2. enterNode 自身是一个left node
+        //      o
+        //       \
+        //        *
+        //      /  \
+        //     p    *
+        //     \
+        //  - 则查找&quot;enterNode的最低的父结点，并且该父结点要具有右孩子&quot;, 即这里的 o，找
+        //        到的这个&quot;最低的父结点&quot;就是&quot;x的前驱结点&quot;
+        Node&lt;T&gt; parent = enterNode.parent;
+        if (parent == null) {// enterNode is root
+            return null;
+        }
+        if (enterNode == parent.right) {
+            return parent;
+        }
+        if (enterNode == parent.left) {
+            // 循环找 parent
+            while (true) {
+                enterNode = parent; // enterNode 指针移动到 parent
+                parent = enterNode.parent; // parent 指针移动到 新的 parent
+                if (enterNode == parent.right) {
+                    return parent;
+                }
+            }
+        }
+        throw new RuntimeException(MessageFormat.format(
+                &quot;子节点{0} 和 父节点 {1} 断开了&quot;, enterNode, parent));
+    }
+
+    /**
+     * 节点的后继：是该节点的右子树中的最小节点， 即比当前节点大的最小节点
+     *
+     * @param enterNode
+     * @return
+     */
+    public Node&lt;T&gt; successor(Node&lt;T&gt; enterNode) {
+        // 如果存在 right node，则返回 以这个 right node 为子树的最小节点
+        Node&lt;T&gt; right = enterNode.right;
+        if (right != null) {
+            return minNode(right);
+        }
+
+        Node&lt;T&gt; parent = enterNode.parent;
+        if (parent == null) {
+            return null;
+        }
+        if (enterNode == parent.left) {
+            return parent;
+        }
+        if (enterNode == parent.right) {
+            while (true) {
+                enterNode = parent;
+                parent = enterNode.parent;
+                if (enterNode == parent.left) {
+                    return parent;
+                }
+            }
+        }
+        throw new RuntimeException(MessageFormat.format(
+                &quot;子节点{0} 和 父节点 {1} 断开了&quot;, enterNode, parent));
+    }
+
+    // ----------------------------------------------
+
+    /**
+     * insert node into the tree
+     *
+     * @param node 待插入节点
+     */
+    public void insert(Node&lt;T&gt; node) {
+        Node&lt;T&gt; enterPoint = this.root;
+        while (true) {
+            Node&lt;T&gt; enterPointTmp = enterPoint;// 暂存指针移动前的 enterPoint
+
+            int tmp = node.value.compareTo(enterPoint.value);
+            if (tmp == 0) {
+                throw new RuntimeException(&quot;value already exist&quot;);
+            } else if (tmp &lt; 0) {
+                enterPoint = enterPoint.left;
+            } else {
+                enterPoint = enterPoint.right;
+            }
+
+            if (enterPoint == null) {
+                enterPoint = enterPointTmp;
+                break;
+            }
+        }
+
+        int tmp = node.value.compareTo(enterPoint.value);
+        if (tmp == 0) {
+            throw new RuntimeException(&quot;value already exist&quot;);
+        } else if (tmp &lt; 0) {
+            enterPoint.left = node;
+        } else {
+            enterPoint.right = node;
+        }
+
+    }
+
+    // ------------------------------------------
+
+    /**
+     * delete specific node
+     * @param node
+     */
+    public void delete(Node&lt;T&gt; node) {
+        // 若 node 为 leaf节点，直接删除
+        //       *           *
+        //      /             \
+        //     p               p
+        // 若 node 为 &quot;只有一个子节点&quot;, 这个子节点为 singleSon, 那么用 singleSon 代替 node 即可
+        //       p       p
+        //      /         \
+        //     *           *
+        // 若 node 为 &quot;有两个子节点&quot;,   需要找node的后继节点successor 或者 前驱 predecessor, 替换 node, 分 2 种情况
+        //      1. successor 为 node 的直接子节点(即右节点)
+        //         p
+        //        / \
+        //       *   su
+        //          - 直接用 successor 替代 node
+        //     2. successor 不为 node 的直接子节点(即不是右节点)
+        //         p
+        //        / \
+        //       *   *
+        //          /
+        //         su
+        //          - 用 successor 替换 node
+        // # 为什么要找 successor代替node? - 想要用 o 代替 node , o 需要 满足 node.left &lt; o (node) &lt; node.right
+        //      而 successor, predecessor的位置满足 node.left &lt; predecessor &lt; o (node) &lt; successor &lt; node.right
+        Node&lt;T&gt; left = node.left;
+        Node&lt;T&gt; right = node.right;
+        Node&lt;T&gt; parent = node.parent;
+
+        if (left ==null &amp;&amp; right == null) {// 没有子节点
+            if (parent.left == node) {
+                parent.left = null;
+            }
+            if (parent.right == null) {
+                parent.right = null;
+            }
+        }
+
+        if (left != null &amp;&amp; right != null) {// 有两个子节点
+            Node&lt;T&gt; successor = this.successor(node);
+            if (parent.left == node) {
+                parent.left = successor;
+            }
+            if (parent.right == node) {
+                parent.right = successor;
+            }
+            successor.parent = parent;
+
+            left.parent = successor;
+            successor.left = left;
+
+            if (right != successor) {
+                right.parent = successor;
+                successor.right = right;
+            }
+
+        }
+
+        // 只有一个子节点
+        Node&lt;T&gt; son = null;
+        if (left != null) {
+            son = left;
+        }
+        if (right != null) {
+            son = right;
+        }
+        if (parent.left == node) {
+            parent.left = son;
+        }
+        if (parent.right == node) {
+            parent.right = son;
+        }
+
+        node.parent = node.left = node.right = null;// 删除node
+    }
+
+    /**
+     * destroy tree
+     */
+    public void destroy(Node&lt;T&gt; enterNode) {
+        if (enterNode == null) {
+            return;
+        }
+        Node&lt;T&gt; left = enterNode.left;
+        if (left != null) {
+            destroy(left);
+        }
+        Node&lt;T&gt; right = enterNode.right;
+        if (right != null) {
+            destroy(right);
+        }
+        enterNode = null;
+    }
+
+    public void destroy() {
+        destroy(root);
+    }
+
+}
+
+
+</code></pre>
+<h4><a class="header" href="#splay-tree-伸展树" id="splay-tree-伸展树">Splay Tree 伸展树</a></h4>
+<p>伸展树(Splay Tree)是特殊的二叉查找树。它的特殊是指，它除了<code>本身是棵二叉查找树</code>之外，它还具备一个特点: <code>当某个节点被访问时，伸展树会通过旋转使该节点成为树根</code>。这样做的好处是，下次要访问该节点时，能够迅速的访问到该节点。</p>
+<h3><a class="header" href="#平衡二叉树" id="平衡二叉树">平衡二叉树</a></h3>
+<h4><a class="header" href="#avl树" id="avl树">AVL树</a></h4>
+<p>http://www.cnblogs.com/skywang12345/p/3577479.html</p>
+<p>相比于&quot;二叉查找树&quot;，它的特点是：AVL树中任何节点的<code>左右两个子树的高度最大差别为1</code>, 所以它也被称为高度平衡树; 没有值相等重复的节点</p>
+<p>这个方案很好的解决了二叉查找树退化成链表的问题，把插入，查找，删除的时间复杂度最好情况和最坏情况都维持在<code>O(logN)</code></p>
+<p>不平衡分四种情况</p>
+<ul>
+<li>LL - LeftLeft，也称为&quot;左左&quot;。插入或删除一个节点后，根节点的左子树的左子树还有非空子节点，导致&quot;根的左子树的高度&quot;比&quot;根的右子树的高度&quot;大2，导致AVL树失去了平衡。</li>
+<li>LR：LeftRight，也称为&quot;左右&quot;。插入或删除一个节点后，根节点的左子树的右子树还有非空子节点，导致&quot;根的左子树的高度&quot;比&quot;根的右子树的高度&quot;大2，导致AVL树失去了平衡</li>
+<li>RL：RightLeft，称为&quot;右左&quot;。插入或删除一个节点后，根节点的右子树的左子树还有非空子节点，导致&quot;根的右子树的高度&quot;比&quot;根的左子树的高度&quot;大2，导致AVL树失去了平衡。</li>
+<li>RR：RightRight，称为&quot;右右&quot;。插入或删除一个节点后，根节点的右子树的右子树还有非空子节点，导致&quot;根的右子树的高度&quot;比&quot;根的左子树的高度&quot;大2，导致AVL树失去了平衡</li>
+</ul>
+<p>图示:</p>
+<p><img src="Snipaste_2018-11-29_21-55-02.png" alt="alt" /><img src="Snipaste_2018-11-29_21-55-29.png" alt="alt" /></p>
+<p>对应的旋转操作</p>
+<p>LL失去平衡的情况，可以通过一次旋转让AVL树恢复平衡, LL旋转是围绕&quot;失去平衡的AVL根节点&quot;进行的 - 将旋转节点变为右子节点</p>
+<p><img src="Snipaste_2018-11-29_22-04-29.png" alt="alt" /></p>
+<p>旋转代码：</p>
+<pre><code class="language-java">private AVLTreeNode&lt;T&gt; leftLeftRotation(AVLTreeNode&lt;T&gt; k2) {
+    AVLTreeNode&lt;T&gt; k1;
+
+    k1 = k2.left;
+    k2.left = k1.right;
+    k1.right = k2;
+
+    k2.height = max( height(k2.left), height(k2.right)) + 1;
+    k1.height = max( height(k1.left), k2.height) + 1;
+
+    return k1;
+}
+
+</code></pre>
+<p>RR是与LL对称的情况 - 将旋转节点变为左子节点</p>
+<p><img src="Snipaste_2018-11-30_12-46-04.png" alt="alt" /></p>
+<pre><code class="language-java">private AVLTreeNode&lt;T&gt; rightRightRotation(AVLTreeNode&lt;T&gt; k1) {
+    AVLTreeNode&lt;T&gt; k2;
+
+    k2 = k1.right;
+    k1.right = k2.left;
+    k2.left = k1;
+
+    k1.height = max( height(k1.left), height(k1.right)) + 1;
+    k2.height = max( height(k2.right), k1.height) + 1;
+
+    return k2;
+}
+
+</code></pre>
+<p>LR失去平衡的情况，需要经过两次旋转才能让AVL树恢复平衡：先针对局部（root的左子树）进行一次 RR单旋转（将旋转节点变为左子节点）， 此时 整棵树转换为了 LL 的情况 ， 再进行 LL单旋转</p>
+<p><img src="Snipaste_2018-11-30_12-47-31.png" alt="alt" /></p>
+<pre><code class="language-java">private AVLTreeNode&lt;T&gt; leftRightRotation(AVLTreeNode&lt;T&gt; k3) {
+    k3.left = rightRightRotation(k3.left);
+
+    return leftLeftRotation(k3);
+}
+
+</code></pre>
+<p>RL是与LR的对称情况</p>
+<p><img src="Snipaste_2018-11-30_12-50-02.png" alt="alt" /></p>
+<pre><code class="language-java">private AVLTreeNode&lt;T&gt; rightLeftRotation(AVLTreeNode&lt;T&gt; k1) {
+    k1.right = leftLeftRotation(k1.right);
+
+    return rightRightRotation(k1);
+}
+
+</code></pre>
+<p>全部的代码如下：</p>
+<pre><code class="language-java">/**
+ * 自平衡二叉树
+ *
+ * @author xiaoyu
+ * @since 1.0
+ */
+public class AVLTree&lt;T extends Comparable&lt;T&gt;&gt; {
+
+    private Node&lt;T&gt; root;
+
+    private class Node&lt;T extends Comparable&gt; {// 没有 parent 成员
+        private T       value;
+        private Node&lt;T&gt; left;
+        private Node&lt;T&gt; right;
+        private int     height;
+
+        public Node(T value, Node&lt;T&gt; left, Node&lt;T&gt; right) {
+            this.value = value;
+            this.left = left;
+            this.right = right;
+            this.height = 0;
+        }
+    }
+
+    /**
+     * LL：
+     * 根节点的左子树的左子树还有非空子节点 ( x 有子节点, 造成左边偏重)
+     * &lt;pre&gt;
+     *         rn                    l
+     *       /  \                  /  \
+     *      l    r     --&gt;        x    rn
+     *    /  \                   /\   / \
+     *   x    y                      y   r
+     *  /\
+     * &lt;/pre&gt;
+     *
+     * @param rotationNode 围绕旋转的节点
+     * @return 旋转后的根节点
+     */
+    public Node&lt;T&gt; leftLeftRotation(Node&lt;T&gt; rotationNode) {
+        Node&lt;T&gt; leftToTop = rotationNode.left;
+        rotationNode.left = leftToTop.right;
+        leftToTop.right = rotationNode;
+
+        rotationNode.height = max(height(rotationNode.left), height(rotationNode.right)) + 1;
+        leftToTop.height = max(height(leftToTop.left), height(leftToTop.right)) + 1;
+
+        return leftToTop;
+    }
+
+    /**
+     * RR:
+     * 根节点的右子树的右子树还有非空子节点(y 有子节点, 造成右边偏重)
+     *
+     * &lt;pre&gt;
+     *         rn                     r
+     *        /  \                  /  \
+     *      l    r     --&gt;        rn    y
+     *          / \              / \   /\
+     *         x   y            l   x
+     *            /\
+     * &lt;/pre&gt;
+     *
+     * @param rotationNode
+     * @return
+     */
+    public Node&lt;T&gt; rightRightRotation(Node&lt;T&gt; rotationNode) {
+        Node&lt;T&gt; rightToTop = rotationNode.right;
+        rotationNode.right = rightToTop.left;
+        rightToTop.left = rotationNode;
+
+        rotationNode.height = max(height(rotationNode.left), height(rotationNode.right)) + 1;
+        rightToTop.height = max(height(rightToTop.left), height(rightToTop.right)) + 1;
+
+        return rightToTop;
+    }
+
+    /**
+     * LR:
+     * 根节点的左子树的右子树还有非空子节点
+     * 第一次旋转 - RR - 通过局部 RR旋转, 转化为完全的 左左类型
+     * 第二次旋转 - LL - LL 旋转
+     *
+     * &lt;pre&gt;
+     *         rn                        rn                          y
+     *       /  \                      /  \                        /  \
+     *      l    r     -- RR -&gt;       y    r   -- LL --&gt;          l    rn
+     *    /  \                      /  \                        / \   / \
+     *   x    y                    l    w                      x  z  w   r
+     *       / \                 /  \
+     *      z   w               x   z
+     * &lt;/pre&gt;
+     *
+     * @param rotationNode
+     * @return
+     */
+    public Node&lt;T&gt; leftRightRotation(Node&lt;T&gt; rotationNode) {
+        rotationNode.left = this.rightRightRotation(rotationNode.left);
+        return leftLeftRotation(rotationNode);
+    }
+
+    /**
+     * RL:
+     * 和 LR 相反
+     * @param rotationNode
+     * @return
+     */
+    public Node&lt;T&gt; rightLeftRotation(Node&lt;T&gt; rotationNode) {
+        rotationNode.right = this.leftLeftRotation(rotationNode.right);
+        return rightRightRotation(rotationNode);
+    }
+
+    // ----------------------------------------------------
+
+    /**
+     * 插入
+     * @param enterNode 根节点
+     * @param value 插入值
+     * @return
+     */
+    private Node&lt;T&gt; insert(Node&lt;T&gt; enterNode, T value) {
+        if (enterNode == null) {
+            enterNode = new Node&lt;&gt;(value, null, null);
+        } else {
+            int compareValue = value.compareTo(enterNode.value);
+            if (compareValue &lt; 0) { // 将 value 插入到 左子树
+                enterNode.left = insert(enterNode.left, value);
+                // 插入后， 如果失去平衡， 需要旋转
+                if (height(enterNode.left) - height(enterNode.right) &gt;= 2) {
+                    if (value.compareTo(enterNode.left.value) &lt; 0) {
+                        enterNode = leftLeftRotation(enterNode);
+                    } else {
+                        enterNode = leftRightRotation(enterNode);
+                    }
+                }
+            } else if (compareValue &gt; 0) {// 将value 插入到右子树
+                enterNode.right = insert(enterNode.right, value);
+                if (height(enterNode.right) - height(enterNode.left) &gt;= 2) {
+                    if (value.compareTo(enterNode.right.value) &gt; 0) {
+                        enterNode = rightRightRotation(enterNode);
+                    } else {
+                        enterNode = rightLeftRotation(enterNode);
+                    }
+                }
+            } else {
+                throw new RuntimeException(&quot;insert failed: cannot insert repeating value&quot;);
+            }
+
+            //while (true) {
+            //    int compareValue = value.compareTo(enterNode.value);
+            //    if (compareValue &lt; 0) {
+            //        enterNode = enterNode.left;
+            //    } else if (compareValue &gt; 0) {
+            //        enterNode = enterNode.right;
+            //    } else {
+            //        throw new RuntimeException(&quot;insert failed: cannot insert repeating value&quot;);
+            //    }
+            //    if (enterNode == null) {
+            //        break;
+            //    }
+            //}
+        }
+
+        enterNode.height = max(height(enterNode.left), height(enterNode.right)) + 1;
+        return enterNode;
+
+    }
+
+    public void insert(T value) {
+        root = insert(root, value);
+    }
+
+    // ---------------------------------------------------
+
+    /**
+     * 删除
+     * @param enterNode 根节点
+     * @param delete 待删除节点
+     * @return 删除操作完成后的根节点
+     */
+    public Node&lt;T&gt; remove(Node&lt;T&gt; enterNode, Node&lt;T&gt; delete) {
+        int compareValue = delete.value.compareTo(enterNode.value);
+        if (compareValue &lt; 0) {// 待删除的节点在&quot;tree的左子树&quot;中， 删除后， 右边偏重
+            // 进入点往左边移动
+            // 删除完后， 原始 enterNode的左指针指向删除完毕后的根节点
+            enterNode.left = remove(enterNode.left, delete);
+
+            if (height(enterNode.right) - height(enterNode.left) &gt;= 2) {
+                Node&lt;T&gt; r = enterNode.right;
+                if (height(r.left) &lt; height(r.right)) {
+                    enterNode = rightRightRotation(enterNode);
+                } else  {
+                    enterNode = rightLeftRotation(enterNode);
+                }
+            }
+        } else if (compareValue &gt; 0) {// 待删除的节点在&quot;tree的右子树&quot;中, 删除后， 左边偏重
+
+            enterNode.right = remove(enterNode.right, delete);
+
+            if (height(enterNode.left) - height(enterNode.right) &gt;= 2) {
+                Node&lt;T&gt; l = enterNode.left;
+                if (height(l.left) &gt; height(l.right)) {
+                    enterNode = leftLeftRotation(enterNode);
+                }
+                else {
+                    enterNode = leftRightRotation(enterNode);
+                }
+            }
+
+        } else {// enterNode 正是要删除的节点
+
+            if (enterNode.left != null &amp;&amp; enterNode.right != null) {// 左右子树都不为空
+                if (height(enterNode.left) &gt; height(enterNode.right)) {// 若左子树更高
+                    // 找到左子树的最大节点 (enterNode 的 前驱), 代替 enterNode
+                    // 此时, AVL树仍然是平衡的
+                    Node&lt;T&gt; leftMax = maxNode(enterNode.left);
+                    enterNode.value = leftMax.value;
+                    enterNode.left = remove(enterNode.left, leftMax);
+                } else {// 若右子树更高
+                    // 找得到右子树的最小节点(enterNode 的后继), 代替 enterNode
+                    Node&lt;T&gt; rightMin = minNode(enterNode.right);
+                    enterNode.value = rightMin.value;
+                    enterNode.right = remove(enterNode.right, rightMin);
+                }
+            } else if (enterNode.left == null &amp;&amp; enterNode.right == null) {// 没有子树
+                // 直接删除
+                enterNode = null;
+            } else {// 只有一个子树(有一个子树为空)
+                // 子节点代替enterNode
+                if (enterNode.right != null) {
+                    enterNode = enterNode.right;
+                } else {
+                    enterNode = enterNode.left;
+                }
+            }
+        }
+
+        return enterNode;
+    }
+
+    public void remove(T value) {
+        Node&lt;T&gt; find = find(root, value);
+        if (find == null) {
+            throw new RuntimeException(&quot;delete error: value [&quot;+value+&quot;] is not exist.&quot;);
+        }
+        root = remove(root, find);
+    }
+
+    // ----------------------------------------------------
+
+    /**
+     * find
+     * @param enterNode 根节点
+     * @param value 查找值
+     * @return 查找到的节点
+     */
+    public Node&lt;T&gt; find(Node&lt;T&gt; enterNode, T value) {
+        int compare = value.compareTo(enterNode.value);
+        if (compare &lt; 0) {
+            enterNode =  find(enterNode.left, value);
+        } else if (compare &gt; 0) {
+            enterNode = find(enterNode.right, value);
+        }
+        return enterNode;
+    }
+
+
+    private Node&lt;T&gt; maxNode(Node&lt;T&gt; enterNode) {
+        Node&lt;T&gt; right = enterNode.right;
+        if (right != null) {
+            enterNode = maxNode(right);
+        }
+        return enterNode;
+    }
+
+    private Node&lt;T&gt; minNode(Node&lt;T&gt; enterNode) {
+        Node&lt;T&gt; left = enterNode.left;
+        if (left != null) {
+            enterNode = minNode(left);
+        }
+        return enterNode;
+    }
+
+    private int max(int h1, int h2) {
+        if (h1 &gt; h2) {
+            return h1;
+        }
+        return h2;
+    }
+
+    private int height(Node&lt;T&gt; node) {
+        if (node != null) {
+            return node.height;
+        }
+        return 0;
+    }
+
+    private int height() {
+        return height(root);
+    }
+}
+</code></pre>
+<h4><a class="header" href="#红黑树" id="红黑树">红黑树</a></h4>
+<p>https://zhuanlan.zhihu.com/p/24367771</p>
+<p>R-B Tree，全称是<code>Red-Black Tree</code>，又称为“红黑树”，它一种自平衡的二叉查找树。红黑树的每个节点上都有存储位表示节点的颜色，可以是红(Red)或黑(Black)。</p>
+<p>AVL树由于实现比较复杂，而且插入和删除性能差，在实际环境下的应用不如红黑树</p>
+<p>基于 2-3树 实现, 红黑树中将节点之间的链接分为两种不同类型，<code>红色链接</code>，他用来链接两个2-nodes节点来表示一个3-nodes节点, 并且向左倾斜，即一个2-node是另一个2-node的左子节点。<code>黑色链接</code>用来链接普通的2-3节点</p>
+<p><img src="Snipaste_2019-03-17_21-39-40.png" alt="alt" /></p>
+<p>如果将红色连接水平绘制, 会更形象化:</p>
+<p><img src="Snipaste_2018-11-30_16-22-45.png" alt="alt" /></p>
+<p>有这么几条规则需要遵守: (如果被新插入的节点打破, 就需要变色, 旋转...)</p>
+<ul>
+<li>节点是红色或黑色。</li>
+<li>根是黑色</li>
+<li>所有叶子都是黑色（这里的叶子是指NIL节点, 即 null 节点）</li>
+<li>如果一个节点是红色的，则它的子节点必须是黑色的。(即：从每个叶子到根的所有路径上不能有两个连续的红色节点。)</li>
+<li>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。 - 这一条确保没有一条路径会比其他路径长出俩倍。因而，红黑树是相对是接近平衡的二叉树。</li>
+</ul>
+<p>这些约束确保了红黑树的关键特性: <code>从根到叶子的最长的可能路径不多于最短的可能路径的两倍长</code></p>
+<p>它的时间复杂度是<code>O(lgn)</code>，效率非常之高。</p>
+<p>红黑树的应用比较广泛，主要是用它来存储有序的数据，例如，Java集合中的TreeSet和TreeMap, jdk1.8 中的hashmap</p>
+<p><img src="Snipaste_2018-11-30_13-18-49.png" alt="alt" /></p>
+<p>相对于 avl，红黑树的插入/删除效率更高， 因为允许存在部分不平衡， 减少了旋转次数 - 最多只需要 3 次旋转</p>
+<p>相应的， 由于 avl 遵循严格的平衡， 查找效率要高一些， 但是差别不大</p>
+<p>所以简单说，如果你的应用中，搜索的次数远远大于插入和删除，那么选择AVL，如果搜索，插入删除次数几乎差不多，应该选择RB。</p>
+<p><code>左旋和右旋</code>：左旋 和 右旋 是相对的两个概念，对x进行左旋，意味着&quot;将x变成一个左节点&quot;; 通常左旋操作用于将一个向右倾斜的红色链接旋转为向左倾斜。对比操作前后，可以看出，该操作实际上是将红线链接的两个节点中的一个较大的节点移动到根节点上</p>
+<p><img src="Snipaste_2018-11-30_16-25-52.png" alt="alt" /></p>
+<p><code>颜色反转</code>:当出现一个临时的4-node的时候，即一个节点的两个子节点均为红色; 这其实是个A，E，S 4-node连接，我们需要将E提升至父节点，操作方法很简单，就是把E对子节点的连线设置为黑色，自己的颜色设置为红色</p>
+<p><img src="Snipaste_2018-11-30_16-29-02.png" alt="alt" /></p>
+<p>或者这么理解: 新插入的节点都当作是红色的，如果遇到父节点的颜色为黑则修复操作结束, 如果父节点为红色节点的时候是需要插入修复操作的。</p>
+<p>todo： http://www.cnblogs.com/skywang12345/p/3603935.html</p>
+<h2><a class="header" href="#多路平衡查找树" id="多路平衡查找树">多路平衡查找树</a></h2>
+<h3><a class="header" href="#2-3树二三树" id="2-3树二三树">2-3树(二三树)</a></h3>
+<p>每个节点允许保存一个值或者两个值, 对于普通的 2-node, 保存一个值和左右子节点的指针, 对于 3-node, 保存 2 个值和左中右 3 个指针, 两个值左小右大</p>
+<p><img src="Snipaste_2018-11-30_16-15-37.png" alt="alt" /></p>
+<p>2-3查找树实现起来比较复杂，在某些情况插入后的平衡操作可能会使得效率降低。在2-3查找树基础上改进的红黑树不仅具有较高的效率，并且实现起来较2-3查找树简单</p>
+<p>红黑树和B树都是基于它而来</p>
+<h3><a class="header" href="#b树b-tree" id="b树b-tree">B树(B-tree)</a></h3>
+<h4><a class="header" href="#b树的概念" id="b树的概念">b树的概念</a></h4>
+<p>B树也是一种用于查找的平衡树，但是它不是二叉树。<code>可以拥有多于2个子节点</code>, 能够用来存储排序后的数据, 为<code>优化大块数据的读和写操作</code>而生</p>
+<p>数据库索引技术里大量使用者B树和B+树的数据结构</p>
+<p>了解b-tree的生长/添加过程, 就能推导出这些特性: https://zhuanlan.zhihu.com/p/24309634</p>
+<p>B-tree和二叉树的一个显著的区别就是，<code>B-tree是从下往上生长，而二叉树是从上往下生长的</code>。</p>
+<h4><a class="header" href="#b树的特征" id="b树的特征">b树的特征</a></h4>
+<p>规则:</p>
+<pre><code class="language-java">- 子节点数量最少 2 个, 最多无穷个; 每个节点的值(关键字)数量可以有多个, 按递增次序排列，并遵循左小右大原则
+
+- 非根节点关键字数量大于等于ceil(m/2)-1且小于等于m-1个；（注：ceil()是个朝正无穷方向取整的函数 如ceil(1.1)结果为2, m表示节点的最大分支个数)
+
+- 非叶节点有N个子节点，则该节点的关键字数等于N-1;
+
+- 所有叶子节点均在同一层
+
+- 叶子节点也有指向下层的指针, , 只不过指向的是 null
+
+</code></pre>
+<p><img src="Snipaste_2018-11-29_16-36-24.png" alt="alt" /></p>
+<p>查询算法: 比如要查找的值为 v</p>
+<ul>
+<li>如果节点的关键字只有一个, 比如 根节点, 这时进入左右分支, 和二叉查找算法一样</li>
+<li>如果节点关键字有多个, 那么根据大小找到 v 在 这些值中的相对位置, 根据位置决定进入哪个子节点</li>
+</ul>
+<pre><code class="language-java">如上图我要从上图中找到E字母，查找流程如下
+
+（1）获取根节点的关键字进行比较，当前根节点关键字为M，E要小于M（26个字母顺序），所以往找到指向左边的子节点
+
+（2）拿到关键字D和G，D&lt;E&lt;G 所以直接找到D和G中间的节点；
+
+（3）拿到E和F，因为E=E 所以直接返回关键字和指针信息（如果树结构里面没有包含所要查找的节点则返回null）；
+
+</code></pre>
+<p>插入算法: 生长过程是从下往上的</p>
+<ul>
+<li>先确定是几阶树, 以确定每个节点关键字个数范围, 比如: 当前是要组成一个5路查找树，那么此时m=5,关键字数必须大于等于ceil（5/2） -1小于等于5-1（关键字数小于cei(5/2) -1就要进行节点合并，大于5-1就要进行节点拆分,非根节点关键字数&gt;=2）</li>
+<li>满足节点本身比左边节点大，比右边节点小, 同个节点内的关键字也是左边小 右边大</li>
+</ul>
+<p>要把3、8、31、11、23、29、50、28 这些数字构建出一个5阶树出来;</p>
+<ul>
+<li>
+<p>当前是要组成一个5路查找树，那么此时m=5,关键字数必须大于等于ceil（5/2） -1, 即 2, 小于等于5-1, 即 4;（关键字数小于cei(5/2) -1就要进行节点合并，大于5-1就要进行节点拆分)</p>
+</li>
+<li>
+<p>先插入 3、8、31、11, 此时达到节点最大关键字个数, 再插入需要拆分, 拆分规则是: 将靠近中间的关键字提取出来作为父节点, 左右两边的构成两个子节点, 继续插入到子节点中, 超过范围就提升到父节点中...</p>
+</li>
+</ul>
+<p>删除算法:</p>
+<ul>
+<li>依然是根据树的阶数计算出每个节点的关键字个数范围</li>
+<li>删除关键字, 删除后, 如果当前节点关键字个数小于 ceil（m/2） -1, 就从 父节点拉一个关键字下来, 相应的要从其他节点给父节点补一个关键字</li>
+</ul>
+<p><img src="Snipaste_2018-11-29_17-13-14.png" alt="alt" /></p>
+<h3><a class="header" href="#btreeb加树" id="btreeb加树">B+tree(B加树)</a></h3>
+<h4><a class="header" href="#btree定义" id="btree定义">b+tree定义</a></h4>
+<p>B+树是B树的一个升级版，也是一种多路搜索树, 相对于B树来说B+树更充分的利用了节点的空间，比b-tree 查询性能更好，其速度完全接近于二分法查找</p>
+<p>卫星数据：指的是节点元素指向的实际数据（比如数据库中的某一行记录， 在 b-tree 中所有节点都有卫星数据， 即都带有真实数据， b+tree 中只有 leaf node 有卫星数据）</p>
+<ul>
+<li>有k个子树的中间节点包含有k个元素（B树中是k-1个元素， 存疑？），每个元素不保存数据，只用来索引，<code>所有数据都保存在叶子节点</code></li>
+<li><code>叶子结点本身依关键字的大小自小而大顺序链接</code>, 形成有序链表</li>
+<li>所有的<code>中间节点元素都重复存在于子节点</code>，在子节点元素中都是最大（或都是最小）元素</li>
+<li>最大元素再根节点中</li>
+</ul>
+<p><img src="Snipaste_2019-01-13_12-40-04.png" alt="alt" /></p>
+<h4><a class="header" href="#比b-tree好的点" id="比b-tree好的点">比b-tree好的点</a></h4>
+<ul>
+<li>【树的层级更少， 磁盘io更少速度更快】 - 非叶子节点不保存关键字记录的指针，只进行数据索引，这样使得B+树<code>每个非叶子节点所能保存的关键字大大增加, 树的层级更少</code>所以查询数据更快</li>
+<li>【查询速度更稳定】 - 叶子节点保存了父节点的所有关键字记录的指针，所有<code>数据地址必须要到叶子节点才能获取到</code>，所以每次数据查询的次数都一样, <code>查询速度更稳定</code></li>
+<li>【具备排序功能， 范围查询更简单】 - 每个叶子节点的关键字从小到大构成有序链表, <code>左边结尾数据都会保存右边节点开始数据的指针</code>, 在查询大小区间的数据时候更方便</li>
+<li>【全节点遍历更快】 - <code>遍历整棵树只需要遍历所有的叶子节点即可</code>，而不需要像B树一样需要对每一层进行遍历。<code>有利于数据库做全表扫描</code></li>
+<li><code>不如 b树的地方: 如果经常访问的数据离根节点很近, b+树仍然需要在 叶子节点才能查到, 而 b 树 不必遍历到 叶子节点</code></li>
+</ul>
+<h3><a class="header" href="#b树" id="b树">B*树</a></h3>
+<p>B*树是B+树的变体, 不同之处:</p>
+<ul>
+<li>首先是关键字个数限制问题，B+树初始化的关键字初始化个数是cei(m/2)，b* 树的初始化个数为（cei(2/3*m)）</li>
+<li>B+树节点满时就会分裂，而B*树节点满时会检查兄弟节点是否满（因为每个节点都有指向兄弟的指针），如果兄弟节点未满则向兄弟节点转移关键字，如果兄弟节点已满，则从当前节点和兄弟节点各拿出1/3的数据创建一个新的节点出来</li>
+</ul>
+<h3><a class="header" href="#前缀树trie树字典树" id="前缀树trie树字典树">前缀树(Trie树/字典树)</a></h3>
+<p>Tire树称为字典树，又称单词查找树</p>
+<p>前缀树(Prefix Trees或者Trie)与树类似, 不同的是, 前缀树每个节点存储的是一个字符, 相同字符不重复存储，用于处理字符串相关的问题时非常高效。</p>
+<p>场景: 它可以实现快速检索，常用于字典中的单词查询，搜索引擎的自动补全甚至IP路由。保存大量字符串</p>
+<p>它的优点是：<code>利用字符串的公共前缀来减少查询时间</code>，最大限度地减少无谓的字符串比较，查询效率比哈希树高。　</p>
+<p>下图展示了“top”, “thus”和“their”三个单词在前缀树中如何存储的：</p>
+<p><img src="Snipaste_2018-11-25_11-21-09.png" alt="alt" /></p>
+<p>应用示例:</p>
+<ul>
+<li>
+<p>串的快速检索: 给出N个单词组成的熟词表，以及一篇全用小写英文书写的文章，请你按最早出现的顺序写出所有不在熟词表中的生词。</p>
+<p>我们可以用数组枚举，用哈希，用字典树，先把熟词建一棵树，然后读入文章进行比较，这种方法效率是比较高的。</p>
+</li>
+<li>
+<p>串的排序: 给定N个互不相同的仅由一个单词构成的英文名，让你将他们按字典序从小到大输出。</p>
+<p>用字典树进行排序，采用数组的方式创建字典树，这棵树的每个结点的所有儿子很显然地按照其字母大小排序。对这棵树进行先序遍历即可</p>
+</li>
+<li>
+<p>最长公共前缀</p>
+<p>对所有串建立字典树，对于两个串的最长公共前缀的长度即他们所在的结点的公共祖先个数，于是，问题就转化为求公共祖先的问题。</p>
+</li>
+</ul>
+<h2><a class="header" href="#哈夫曼树huffman-tree" id="哈夫曼树huffman-tree">哈夫曼树(Huffman Tree)</a></h2>
+<p>http://www.cnblogs.com/skywang12345/p/3706833.html</p>
+<h1><a class="header" href="#堆" id="堆">堆</a></h1>
+<h2><a class="header" href="#二叉堆" id="二叉堆">二叉堆</a></h2>
+<p>二叉堆就是完全二叉树, </p>
+<p>但是排序规则不同, 按照数据的排列方式可以分为两种：最大堆和最小堆</p>
+<ul>
+<li>大顶堆：父结点的键值总是大于或等于任何一个子节点的键值；</li>
+<li>小顶堆：父结点的键值总是小于或等于任何一个子节点的键值。</li>
+</ul>
+<p><img src="Snipaste_2018-11-30_15-59-32.png" alt="alt" /></p>
+<p>性质: 不保证节点间的有序, 只能保证最大堆的根节点为最大值, 最小堆得根节点是最小值</p>
+<p>使用场景:</p>
+<ul>
+<li>优先队列 - 优先队列中的元素都有一个优先级, 最高的元素最先被取出, 队列结构可以用堆实现</li>
+<li>堆排序 - 找最值得时候可以用堆结构</li>
+</ul>
+<p>为了节省空间, 所以二叉堆一般都通过&quot;数组&quot;来存储, 数组下标规律: (假设 其中某一个元素的index假设为n, 数组下标从 1 开始)</p>
+<p>1）它的父节点若存在，父节点的index为n//2(n//2指n除以2取整数)</p>
+<p>2）若是左子节点存在，index为2*n</p>
+<p>3）若是右子节点存在，index为2*n+1</p>
+<h2><a class="header" href="#堆排序" id="堆排序">堆排序</a></h2>
+<h1><a class="header" href="#图" id="图">图</a></h1>
+<h2><a class="header" href="#图的概念" id="图的概念">图的概念</a></h2>
+<p>图(graph)由多个节点(vertex)构成，节点之间可以互相连接组成一个网络。(x, y)表示一条边(edge)，它表示节点x与y相连。边可能会有权值(weight/cost)。</p>
+<p>根据边是否有方向，将图可以划分为：无向图和有向图。</p>
+<p>遍历算法: 广度优先搜索(Breadth First Search), 深度优先搜索(Depth First Search)</p>
+<h1><a class="header" href="#哈希表hash-table" id="哈希表hash-table">哈希表(hash-table)</a></h1>
+<ul>
+<li>
+<p>哈希(Hash): 将某个对象通过哈希函数变换为唯一标识符(hash)，该标识符通常用一个短的随机字母和数字组成的字符串来代表。哈希可以用来实现各种数据结构，其中最常用的就是哈希表(hash table)。</p>
+</li>
+<li>
+<p>哈希函数: 使用哈希函数将键映射成索引。这种映射函数就是哈希函数; </p>
+<ul>
+<li>
+<p>对于正整数作为键, 一般用这个整数, 除以数组的容量, 取余数, 结果作为保存到数组中的索引.</p>
+</li>
+<li>
+<p>字符串作为键的时候, 可以将组成字符串的每一个字符取值然后以一定规则进行哈希</p>
+</li>
+</ul>
+</li>
+<li>
+<p>哈希表就是一种以 键-值(key-indexed) 存储数据的结构，我们只要输入待查找的值即key，即可查找到其对应的值; 哈希表通常由数组实现。数组的下标即为哈希值，由哈希函数计算，作为哈希表的键(key)，而数组中保存的数据即为值(value)</p>
+<ul>
+<li>
+<p>原理: 如果所有的键都是整数，那么就可以使用一个简单的无序数组来实现：将键作为索引，值即为其对应的值，这样就可以快速访问任意键的值; 如果键是复杂类型, 使用哈希函数将被查找的键转换为数组的索引, 然后根据索引到数组中查找对应的值; </p>
+</li>
+<li>
+<p>碰撞冲突: 在理想的情况下，不同的键会被转换为不同的索引值，但是在有些情况下需要处理多个键被哈希到同一个索引值的情况, 怎么解决: 拉链法和线性探测法</p>
+<ul>
+<li>
+<p>拉链法: 使得数组的每一个元素指向一个条链表, 发生碰撞的值都存储到链表中; 原则: 选择容量足够大的数组，使得所有的链表都尽可能的短小，以保证查找的效率</p>
+</li>
+<li>
+<p>线性探测法: 使用大小为M的数组来保存N个键值对，其中M&gt;N，需要使用数组中的空位解决碰撞冲突; 如果发生碰撞, 就将索引+1, 值存放到相邻的下一个位置</p>
+</li>
+</ul>
+</li>
+<li>
+<p>影响hash table性能的指标:</p>
+<ul>
+<li>哈希函数</li>
+<li>哈希表的大小</li>
+<li>哈希冲突处理方式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#排序算法" id="排序算法">排序算法</a></h1>
+<h2><a class="header" href="#选择排序select-sort" id="选择排序select-sort">选择排序(select Sort)</a></h2>
+<pre><code class="language-java">Function selectionSort(arry)
+  For i = 0 To end of arry
+
+    smallestIndex = i
+    For j = i+1 To end of array
+      If array item j &lt; array item smallestIndex
+        smallestIndex = j
+      End If
+    Next
+
+    swap array item at i and smallestIndex
+
+  Next
+
+return arry
+</code></pre>
+<p>复杂度分析： for循环套for循环， N*N -&gt; O(N^2)</p>
+<h2><a class="header" href="#归并排序merge-sort" id="归并排序merge-sort">归并排序(merge sort)</a></h2>
+<pre><code>
+</code></pre>
+<p>复杂度: O(n*log n)</p>
+<h2><a class="header" href="#冒泡排序bubble-sort" id="冒泡排序bubble-sort">冒泡排序(bubble sort)</a></h2>
+<pre><code>Function bubbleSort(array)
+  For i = 0 To end of array
+
+    swappedFlag = false
+    For j = 0 To array size - i-1
+      If array item j &gt; array item j+1
+        swap array item at j and j+1
+        swappedFlag = true
+      End If
+    Next
+
+    // 如果 没有发生交换， 说明已经是有序的了， 可以直接跳出
+    If Not swappedFlag
+      Break
+    Eng If
+
+  Next
+
+return array
+
+</code></pre>
+<p>复杂度： O(N^2), 最好情况O(N)</p>
+<h1><a class="header" href="#查找算法" id="查找算法">查找算法</a></h1>
+<p>在表中执行查找动作, 分为</p>
+<ul>
+<li>
+<p>static search table (静态查找表), 在表中只是做查找操作</p>
+</li>
+<li>
+<p>dynamic search table(动态查找表), 在查找过程中, 同时插入新的数据记录 或者删除某些数据记录</p>
+</li>
+</ul>
+<h2><a class="header" href="#顺序查找" id="顺序查找">顺序查找</a></h2>
+<p>就是遍历查找, 不要求表有序</p>
+<p>时间复杂度: O(n)</p>
+<h2><a class="header" href="#有序表查找" id="有序表查找">有序表查找</a></h2>
+<p>二分查找</p>
+<p>要求表有序, 每次取中间坐标, 循环比较</p>
+<p>O(logn)</p>
+<h2><a class="header" href="#线性索引查找" id="线性索引查找">线性索引查找</a></h2>
+<h1><a class="header" href="#索引" id="索引">索引</a></h1>
+<p>索引是一种加快查找速度而设计的数据结构, </p>
+<p>一个索引包括多个索引项, 每个索引项包括关键字 and 数据在磁盘中的位置</p>
+<p>索引就是把一个关键字和对应的 record 关联的过程</p>
+<h2><a class="header" href="#线性索引" id="线性索引">线性索引</a></h2>
+<h3><a class="header" href="#稠密索引" id="稠密索引">稠密索引</a></h3>
+<h3><a class="header" href="#分块索引" id="分块索引">分块索引</a></h3>
+<h3><a class="header" href="#倒排索引" id="倒排索引">倒排索引</a></h3>
+<h2><a class="header" href="#树形索引" id="树形索引">树形索引</a></h2>
+<h2><a class="header" href="#多级索引" id="多级索引">多级索引</a></h2>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="message-queue.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="effective-java-reading-note.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="message-queue.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="effective-java-reading-note.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
