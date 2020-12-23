@@ -1,6 +1,6 @@
 ## Pre
 
-wiki git 地址: https://github.com/xiaoyureed/my-wiki
+wiki git 地址: https://github.com/xiaoyureed/wiki
 
 本站点采用 mdbook + github pages 
 
