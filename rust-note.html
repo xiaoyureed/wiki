@@ -214,7 +214,15 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E6%97%B6%E9%97%B4">时间</a></li>
 </ul>
 </li>
-<li><a href="#2015-%E5%AF%B9%E6%AF%94-2018">2015 对比 2018</a></li>
+<li><a href="#2015-%E5%AF%B9%E6%AF%94-2018">2015 对比 2018</a>
+<ul>
+<li><a href="#nll">nll</a></li>
+<li><a href="#raw-identifier">Raw identifier</a></li>
+<li><a href="#%E7%AE%80%E5%8C%96%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D">简化模式匹配</a></li>
+<li><a href="#main-%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E8%BF%94%E5%9B%9E-result">main 函数可以返回 Result</a></li>
+<li><a href="#impl-trait-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%9E%8B">impl trait 抽象类型</a></li>
+</ul>
+</li>
 <li><a href="#%E8%AF%AD%E6%B3%95">语法</a>
 <ul>
 <li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
@@ -228,6 +236,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </li>
 <li><a href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">基本数据类型</a>
 <ul>
+<li><a href="#%E5%80%BC%E7%B1%BB%E5%9E%8B-and-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B">值类型 and 引用类型</a></li>
 <li><a href="#%E5%B8%B8%E9%87%8F-%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F">常量 静态变量</a></li>
 <li><a href="#%E6%95%B0%E5%AD%97">数字</a></li>
 <li><a href="#%E5%B8%83%E5%B0%94%E5%80%BC-%E5%AD%97%E7%AC%A6-%E5%AD%97%E8%8A%82">布尔值 字符 字节</a></li>
@@ -275,6 +284,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </li>
 <li><a href="#%E6%89%80%E6%9C%89%E6%9D%83">所有权</a>
 <ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%89%80%E6%9C%89%E6%9D%83-raii%E6%9C%BA%E5%88%B6">为什么需要所有权 RAII机制</a></li>
 <li><a href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99">基本原则</a></li>
 <li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%B5%8B%E5%80%BC%E7%9A%84%E6%89%80%E6%9C%89%E6%9D%83">字符串赋值的所有权</a></li>
 <li><a href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E6%89%80%E6%9C%89%E6%9D%83">函数参数的所有权</a></li>
@@ -283,11 +293,14 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E5%A4%9A%E6%89%80%E6%9C%89%E6%9D%83">多所有权</a></li>
 </ul>
 </li>
-<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%B3%A8%E9%87%8A">生命周期注释</a>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%82%E6%95%B0">生命周期参数</a>
 <ul>
-<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8A%A0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%B3%A8%E9%87%8A">为什么加生命周期注释</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">什么是生命周期</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%98%E5%9C%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%B3%A8%E9%87%8A">为什么存在生命周期注释</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%82%E6%95%B0">函数中的生命周期参数</a></li>
 <li><a href="#%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%AD%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-%E7%9C%81%E7%95%A5%E7%9A%84%E8%A7%84%E5%88%99">结构体中生命周期 省略的规则</a></li>
 <li><a href="#%E9%9D%99%E6%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%B3%A8%E9%87%8A">静态生命周期注释</a></li>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%BA%A6%E6%9D%9F">生命周期约束</a></li>
 </ul>
 </li>
 <li><a href="#%E5%BC%95%E7%94%A8">引用</a>
@@ -301,12 +314,30 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E8%A3%B8%E6%8C%87%E9%92%88">裸指针</a></li>
 <li><a href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88">智能指针</a>
 <ul>
-<li><a href="#box">box</a></li>
-<li><a href="#rc-%E5%92%8C-%E5%BC%B1%E5%BC%95%E7%94%A8">Rc 和 弱引用</a></li>
-<li><a href="#refcell">refcell</a></li>
-<li><a href="#cell">cell</a></li>
-<li><a href="#deref">deref</a></li>
-<li><a href="#drop">drop</a></li>
+<li><a href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E4%BB%8B%E7%BB%8D">智能指针介绍</a></li>
+<li><a href="#raii%E6%9C%BA%E5%88%B6-%E5%AE%9E%E7%8E%B0%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6">RAII机制 实现内存回收</a></li>
+<li><a href="#box-%E6%97%A0%E7%97%9B%E4%BD%BF%E7%94%A8%E5%A0%86%E5%86%85%E5%AD%98">Box 无痛使用堆内存</a>
+<ul>
+<li><a href="#box%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">Box基本使用</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88">自定义智能指针</a></li>
+<li><a href="#%E5%8C%85%E8%A3%85%E5%8A%A8%E6%80%81%E5%A4%A7%E5%B0%8F%E7%B1%BB%E5%9E%8B">包装动态大小类型</a></li>
+</ul>
+</li>
+<li><a href="#rc-%E5%92%8C-weak-%E5%85%B1%E4%BA%AB%E5%A0%86%E5%86%85%E5%AD%98">Rc 和 Weak 共享堆内存</a>
+<ul>
+<li><a href="#rc-%E5%BC%BA%E5%BC%95%E7%94%A8">Rc 强引用</a></li>
+<li><a href="#%E5%AF%B9%E5%86%85%E9%83%A8%E5%80%BC%E8%BF%9B%E8%A1%8C%E4%BF%AE%E6%94%B9">对内部值进行修改</a></li>
+<li><a href="#weak-%E5%BC%B1%E5%BC%95%E7%94%A8">Weak 弱引用</a></li>
+</ul>
+</li>
+<li><a href="#refcell-%E5%92%8C-cell-%E6%8F%90%E4%BE%9B%E5%86%85%E9%83%A8%E5%8F%AF%E5%8F%98%E6%80%A7">RefCell 和 Cell 提供内部可变性</a>
+<ul>
+<li><a href="#cell">Cell</a></li>
+<li><a href="#refcell">RefCell</a></li>
+</ul>
+</li>
+<li><a href="#rc-box-refcell-cell-%E5%87%A0%E7%A7%8D%E6%8C%87%E9%92%88%E7%9A%84%E5%8C%BA%E5%88%AB%E5%AF%B9%E6%AF%94">Rc Box RefCell Cell 几种指针的区别对比</a></li>
+<li><a href="#cow-%E5%86%99%E6%97%B6%E5%A4%8D%E5%88%B6">Cow 写时复制</a></li>
 </ul>
 </li>
 <li><a href="#%E5%87%BD%E6%95%B0">函数</a>
@@ -479,9 +510,10 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E5%B9%B6%E5%8F%91-%E5%A4%9A%E7%BA%BF%E7%A8%8B">并发 多线程</a>
 <ul>
 <li><a href="#crossbeam-%E5%BC%80%E6%BA%90%E5%BA%93">CrossBeam 开源库</a></li>
-<li><a href="#arc-%E8%87%AA%E5%8A%A8%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0">Arc 自动引用计数</a></li>
-<li><a href="#rwlock">RwLock</a></li>
+<li><a href="#arc-%E5%92%8C-rc">Arc 和 Rc</a></li>
+<li><a href="#rwlock-%E5%92%8C-refcell">RwLock 和 RefCell</a></li>
 <li><a href="#mutex">Mutex</a></li>
+<li><a href="#atomicptr-%E5%92%8C-cell">AtomicPtr 和 Cell</a></li>
 <li><a href="#%E7%BA%BF%E7%A8%8B%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">线程基本使用</a></li>
 <li><a href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B0%8F%E4%BE%8B%E5%AD%90">多线程小例子</a>
 <ul>
@@ -759,6 +791,7 @@ fn path_demo() {
 <span class="boring">}
 </span></code></pre></pre>
 <h1><a class="header" href="#2015-对比-2018" id="2015-对比-2018">2015 对比 2018</a></h1>
+<h2><a class="header" href="#nll" id="nll">nll</a></h2>
 <pre><pre class="playpen"><code class="language-rust">// nll 特性
 // 2015 edition 的周期检查会认为 变量有效直到作用域结束
 // 2018 edition 会分析代码, 确认变量后面不会用到, 则提前销毁变量
@@ -770,6 +803,66 @@ fn path_demo() {
 }
 
 
+
+
+// 非词法作用域生命周期 (Non-Lexical Lifetime, NLL
+fn foo&lt;'a&gt;(x: &amp;'a str, y: &amp;'a str) -&gt; &amp;'a str {
+    if x.len() % 2 == 0 {
+        x
+    } else {
+        y
+    }
+}
+fn main(){
+    let x = String::from(&quot;hello&quot;);
+    //2015 中 error, 2018 引入了 nll, 不报错
+    let z;
+    let y = String::from(&quot;world&quot;);
+    z = foo(&amp;x, &amp;y); // 2015 认为到这里 y 已经失效了, 所以报错, 实际这不符合直觉
+    println!(&quot;{:?}&quot;, z);
+}
+
+// nll 无法解决的问题
+fn get_default&lt;'r,K:Hash+Eq+Copy,V:Default&gt;(map: &amp;'r mut HashMap&lt;K,V&gt;,
+                                            key: K)
+                                            -&gt; &amp;'r mut V {
+    match map.get_mut(&amp;key) { // -------------+ 'r
+        Some(value) =&gt; value,              // |
+        None =&gt; {                          // |
+            map.insert(key, V::default()); // |
+            //  ^~~~~~ ERROR               // |
+            map.get_mut(&amp;key).unwrap()     // |
+        }                                  // |
+    }                                      // |
+}  
+// 修正如下:
+fn get_default2&lt;'r,K:Hash+Eq+Copy,V:Default&gt;(map: &amp;'r mut HashMap&lt;K,V&gt;,
+                                             key: K)
+                                             -&gt; &amp;'r mut V {
+    if map.contains_key(&amp;key) {
+    // ^~~~~~~~~~~~~~~~~~ 'n
+        return match map.get_mut(&amp;key) { // + 'r
+            Some(value) =&gt; value,        // |
+            None =&gt; unreachable!()       // |
+        };                               // v
+    }
+
+    // At this point, `map.get_mut` was never
+    // called! (As opposed to having been called,
+    // but its result no longer being in use.)
+    map.insert(key, V::default()); // OK now.
+    map.get_mut(&amp;key).unwrap()
+}
+
+
+
+</code></pre></pre>
+<h2><a class="header" href="#raw-identifier" id="raw-identifier">Raw identifier</a></h2>
+<pre><code class="language-rs">// 利用 Raw identifier 将语言关键字用作函数名 (一般用于 FFI 中，用于避免 C 函数名和 Rust 的关键字或保留字重名)
+fn r#match(needle : &amp;str , haystack : &amp;str) - &gt; bool
+</code></pre>
+<h2><a class="header" href="#简化模式匹配" id="简化模式匹配">简化模式匹配</a></h2>
+<pre><code class="language-rs">
 // match 模式匹配
 
 fn main() {
@@ -790,18 +883,23 @@ fn main() {
     
 }
 
-
-
+</code></pre>
+<h2><a class="header" href="#main-函数可以返回-result" id="main-函数可以返回-result">main 函数可以返回 Result</a></h2>
+<pre><code class="language-rs">
 
 // 在 Rust 2015版本中， main 函数并不能返回 Result&lt;T E&gt;。但是在实际开发中， 二进制 可执行库也需要返回错误， 比如， 读取文件的时候发生了错误， 这时需要正常退出程序。于 是在 Rust 2018 版本中，允许 main 函数返回 Result&lt;T, E&gt;了
 
-
-
+</code></pre>
+<h2><a class="header" href="#impl-trait-抽象类型" id="impl-trait-抽象类型">impl trait 抽象类型</a></h2>
+<pre><code class="language-rs">
 
 // 可 以静态分发的抽象类型 impl Trait
 
 
-</code></pre></pre>
+
+
+
+</code></pre>
 <h1><a class="header" href="#语法" id="语法">语法</a></h1>
 <h2><a class="header" href="#注释" id="注释">注释</a></h2>
 <pre><pre class="playpen"><code class="language-rust">//! Hello Demo
@@ -1003,6 +1101,9 @@ fn demo() {
 <span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#基本数据类型" id="基本数据类型">基本数据类型</a></h2>
+<h3><a class="header" href="#值类型-and-引用类型" id="值类型-and-引用类型">值类型 and 引用类型</a></h3>
+<p>值类型是指数据直接存储在栈中的数据类型 ，一些原生类型，比如数值 、布尔值、结构体, 枚举等都是值类型。因此对值类型的操作效率一般比较高，使用完立即会被回收, 这些基本类型实现了 Copy trait, 赋值语句中会执行拷贝</p>
+<p>引用类型将数据存储在堆中，而栈中只存放指向堆中数据的地址, 如数组, 字符串; 因此对引用类型的操作效率一般比较低</p>
 <h3><a class="header" href="#常量-静态变量" id="常量-静态变量">常量 静态变量</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -1267,9 +1368,9 @@ fn foo() -&gt; i32 {
 <span class="boring">fn main() {
 </span>/// 字符串
 ///
-/// &amp;str 表示字符串常量, 长度固定, 不可修改, 保证 有效 UTF-8 ; 字符串切片就是 &amp;str, 分配在栈
+/// &amp;str 表示字符串常量, 长度固定, 不可修改, 保证 有效 UTF-8 ; 字符串切片就是 &amp;str, 和程序代码段存储在一起(在编译期间地址就知道了), 执行的是复制语义
 ///
-/// String 类型, 长度可变, 可修改, 存储为由字节组成的 vector（Vec&lt;u8&gt;），但保证了它一定是一个有效的 UTF-8 序列, 字符序列分配在堆
+/// String 类型, 长度可变, 可修改, 存储为由字节组成的 vector（Vec&lt;u8&gt;），但保证了它一定是一个有效的 UTF-8 序列, 字符序列分配在堆, 执行的是移动语义
 ///
 /// String 有一个字符开始位置属性 ptr, 和一个字符串长度属性 len, 和容量 capacity, 这些属性位于 栈, 实际字符存在 堆
 /// str    有  ptr 和 len, 属性, 内容都在 栈
@@ -2055,6 +2156,10 @@ println!(&quot;My number is {:?}&quot;, num);
 <span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#所有权" id="所有权">所有权</a></h2>
+<h3><a class="header" href="#为什么需要所有权-raii机制" id="为什么需要所有权-raii机制">为什么需要所有权 RAII机制</a></h3>
+<p>所有权是对堆内存上的数据来说的, 所有权为每个数据规定了主人, 避免了数据竞争, 同时也能减少bug. </p>
+<p>栈内存中变量的生命周期是短暂的, 随着方法调用的结束而清理, 堆内存的变量虽然可以长久存在, 但是非线程私有, 其内部的数据需要通过栈内存中的指针来使用</p>
+<p>指针在堆上开辟内存 空 间，并拥有其所有权，通过存储于stack中的指针来管理堆内存 , 智能指针的 RAII 机制利用stack的特点，在元素被自动清空时自动调用析构函数，来释放智 能指针所管理的堆内存 空间</p>
 <h3><a class="header" href="#基本原则" id="基本原则">基本原则</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -2080,7 +2185,12 @@ println!(&quot;My number is {:?}&quot;, num);
 ///rust编译器会在变量超出其作用域后, 自动添加调用释放资源函数的步骤, 清理对应的堆内存
 ///
 ///
-/// 所有者之间发生的互动包括数据的移动, 复制
+
+
+// 编写代码需要遵循的规则:
+// 
+// 在不可变借用期间，所有者不能修改资源，并且也不能再进行可变借用
+// 在可变借用期间，所有者不能访问资源，并且也不能再出借所有权
 
 
 <span class="boring">}
@@ -2238,9 +2348,20 @@ println!(&quot;My number is {:?}&quot;, num);
 
 <span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#生命周期注释" id="生命周期注释">生命周期注释</a></h2>
-<h3><a class="header" href="#为什么加生命周期注释" id="为什么加生命周期注释">为什么加生命周期注释</a></h3>
-<p>复合类型如果克隆的话, 会有性能问题, 这种情况, 只能传递引用了, 有引用就会有生命周期检查</p>
+<h2><a class="header" href="#生命周期参数" id="生命周期参数">生命周期参数</a></h2>
+<h3><a class="header" href="#什么是生命周期" id="什么是生命周期">什么是生命周期</a></h3>
+<pre><code class="language-rs">let a = &quot;hello&quot;;//let绑定了标识符 a和存 储字符串的那块内存，从而 a对那块内存拥有了所有权, a 也可称为一个绑定
+let b = a; // a 的所有权被转给b (a 为 &amp;str类型, 无法实现 copy trait); 其实也可以理解为对 a进行解绑，然后重新绑定给 b。
+
+// 绑定具有时效性，也就是指它的生存周期
+</code></pre>
+<h3><a class="header" href="#为什么存在生命周期注释" id="为什么存在生命周期注释">为什么存在生命周期注释</a></h3>
+<p>因为存在生命周期检查, 生命周期注释是用来方便编译器进行生命周期检查的 , 并不能改变任何引用的生命周期长短</p>
+<p>为什么要生命周期检查? 因为存在引用, 因为要保证引用的生命周期不能长于出借方的生命周期(防止垂悬引用), 有引用就会有生命周期检查 </p>
+<p>为什需要引用呢? 复合类型如果克隆的话, 会有性能问题, 这种情况, 只能传递引用了.</p>
+<blockquote>
+<p>总结一下就是: 函数参数可 以按值传递， 也可以按 引 用传递。当参数按值 传递肘 ， 会转移所有权或者执行复制( Copy)语义。当参数按引用传递 时， 所有权不会发生 变化 ，但是需要有生命周期参数 。当 符合生命周期参数省略规 则时， 编译器可 以通过自动准 断补齐函数参数的生命周期参数，否则，需要显式地为参数标明生命周期参数</p>
+</blockquote>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -2251,7 +2372,11 @@ println!(&quot;My number is {:?}&quot;, num);
 /// 生命周期注释并不改变任何引用的生命周期的长短
 /// 单个的生命周期注解本身没有多少意义，因为生命周期注解告诉 Rust 多个引用的泛型生命周期参数如何相互联系的
 /// 
-/// 大部分情况, 生命周期都是可以自动推断的, 就像类型推断 
+/// 大部分情况, 生命周期都是可以自动推断的, 就像类型推断 , 没法推断时, 就需要手动标注生命周期注释了
+// 
+// 语法: 
+// &amp;’a i32
+// &amp;'a mut i32 
 /// 
 /// 
 fn life_cycle() {
@@ -2326,6 +2451,12 @@ fn life_cycle() {
 
 <span class="boring">}
 </span></code></pre></pre>
+<h3><a class="header" href="#函数中的生命周期参数" id="函数中的生命周期参数">函数中的生命周期参数</a></h3>
+<pre><code class="language-rs">fn foo&lt;’a&gt;(s: &amp;’a str, t: &amp;’a str) -&gt; &amp;’a str
+// 输出(借用方)的生命周期长度必须 短于/等于 输入(出借方)的生命周期长度
+// -》返回的引用必须和输入参数有点关系才行
+
+</code></pre>
 <h3><a class="header" href="#结构体中生命周期-省略的规则" id="结构体中生命周期-省略的规则">结构体中生命周期 省略的规则</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -2353,6 +2484,7 @@ fn life_cycle() {
         }
 
         //指定: 结构体方法的“引用参数”的生命周期 &gt;= 结构体的生命周期, 保证结构体周期的安全
+        // 若没有 ‘a, 会报错
         fn replate(&amp;mut self, new: &amp;'a str) {...}
     }
     let s = Str {
@@ -2393,6 +2525,11 @@ fn life_cycle() {
     }
 <span class="boring">}
 </span></code></pre></pre>
+<h3><a class="header" href="#生命周期约束" id="生命周期约束">生命周期约束</a></h3>
+<pre><code class="language-rs">// T:’a， 表示T类型中的任何引用都要“活得” 和 ’a 一样长。
+// T: Trait + ‘a，表示 T类型必须实现 Trait这个 trait，并且 T类型中任何引用都要“活得”和 ’a 一样长。
+
+</code></pre>
 <h2><a class="header" href="#引用" id="引用">引用</a></h2>
 <h3><a class="header" href="#引用基本介绍" id="引用基本介绍">引用基本介绍</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
@@ -2404,14 +2541,13 @@ fn life_cycle() {
 /// &quot;&amp;&quot;符号用于从变量借用所有权, 生成一个变量的引用
 /// ref 声明某个变量为引用类型, 用来更改赋值行为, 使得普通的变量赋值行为变为给引用赋值 ; 可用于先声明某个引用类型, 后赋值
 /// 
-/// 分为可变, 不可变引用
 ///
 ///
 /// 引用本身也是一个类型并具有一个值，这个值记录的是别的值所在的位置
 ///
 /// 引用不会获得值的所有权, 引用只能租借（Borrow）值的所有权, 所以 变量 a 的值被借用为 b 时，a 本身仍然有效。
 /// 
-/// 解引用 使用 * ---- 在等号右边
+/// 解引用 使用 * ---- 在等号右边 (会获得原始值的所有权)
 /// 取地址 使用 &amp; ---- 在等右边
 /// 解构 使用 &amp; --- 在等号左边
 /// 
@@ -2421,6 +2557,12 @@ fn life_cycle() {
 /// 一个引用的作用域从声明的地方开始一直持续到最后一次使用为止
 /// 
 /// 在任意给定时间，要么 只能有一个可变引用，要么 只能有多个不可变引用
+
+// 
+/// 分为可变, 不可变引用
+// 
+// 一个原始值, 存在可变借用, 就无法存在其他借用了, 无论是可变借用还是不可变借用 (可变借用具有独占性)
+// 存在不可变借用, 还能存在其他不可变借用 (相当于内存的读写锁 ，同一时刻，只能 拥有一个写锁，或者多个读锁，不能同时拥有)
 /// 
 let a = 20;  
 let b = &amp;a;  // 取地址
@@ -2648,10 +2790,21 @@ println!(&quot;they are not equal&quot;);
 // 原生指针可 以在 unsafe 块下任意使用，不受 Rust 的安全检查规则的限制，而引用则必须受到编译器安 全检查规 则的限制 。
 </code></pre>
 <h2><a class="header" href="#智能指针" id="智能指针">智能指针</a></h2>
-<p>智能指针是一种数据结构，其行为类似于指针, 指向一块内存的地址</p>
-<p>引用也是一种指针，但除了引用数据之外，它没有其他功能</p>
-<p>智能指针区别于常规结 构体的特性在于，它实现了 Deref 和 Drop 这两个 trait, Deref 提供了解引用能力 ， Drop 提 供了自动析构的能力 ; String 和 Vee 类型 也是一种智能指针, 它们也都实现了 Deref和Drop</p>
-<h3><a class="header" href="#box" id="box">box</a></h3>
+<h3><a class="header" href="#智能指针介绍" id="智能指针介绍">智能指针介绍</a></h3>
+<p>智能指针就是一个结构体，其行为类似于引用, 指向一块内存的地址, 智能指针拥有资源的所有权，而普通引用 只 是对所有权 的借用 。</p>
+<p>智能指针区别于常规结 构体的特性在于，它实现了 Deref 和 Drop 这两个 trait, Deref 提供了解引用能力 ， Drop 提 供了自动析构的能力 ;</p>
+<p>比如: String 和 Vee 类型 也是一种智能指针, 它们也都实现了 Deref和Drop</p>
+<pre><code class="language-rs">let x =Box::new(”hello”);
+let y = x;
+// error, 因为智能指针拥有原始值的所有权, x已经被转移了
+// 对于box&lt;T&gt;, 若包含的 T是移动语义, 则box 也是, 若T是复制语义, 则box 也是复制语义
+println1(”(:?}”, x);
+</code></pre>
+<h3><a class="header" href="#raii机制-实现内存回收" id="raii机制-实现内存回收">RAII机制 实现内存回收</a></h3>
+<p>RAII: 智能指针在堆内存上开辟空间存储数据, 自身存储在栈上, 在函数调用结束时, 指针变量被清理, 指针执行自身的drop方法, 来释放智 能指针所管理的堆内存 空间</p>
+<p>RAII , 智能指针, 均起源于现代 C++</p>
+<h3><a class="header" href="#box-无痛使用堆内存" id="box-无痛使用堆内存">Box 无痛使用堆内存</a></h3>
+<h4><a class="header" href="#box基本使用" id="box基本使用">Box基本使用</a></h4>
 <p>通过 Box，开发者可以方便无痛地使用堆内存， 并且无须手工释放堆内存， 可以确 保内存安全</p>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -2659,7 +2812,9 @@ println!(&quot;they are not equal&quot;);
 </span>/// 智能指针
 // Rust 中的值默认被分配到stack内存。 可以通过 Box &lt;T&gt;将值装箱(在堆内存中分配)
 /// 当箱子实例离开作用域时，它的析构函数会被调用，内部的对象会被 销毁，堆上分配的内存也会被释放
+// 
 //  Box&lt;T&gt;指针对所管理的堆内存有唯一拥有权， 所以并不共享
+
 /// 
 /// 使用 * 运算符进行解引用；这会移除掉一层装箱
 ///
@@ -2697,8 +2852,10 @@ fn box_demo() {
     );
     println!(&quot;{:?}&quot;, l);//Cons(1, Cons(2, Cons(3, Nil)))
 
-    
-    
+<span class="boring">}
+</span></code></pre></pre>
+<h4><a class="header" href="#自定义智能指针" id="自定义智能指针">自定义智能指针</a></h4>
+<pre><code class="language-rs">    
 
     // 自定义智能指针
     //
@@ -2735,8 +2892,9 @@ fn box_demo() {
     //Rust 再次调用 deref 将 &amp;String 变为 &amp;str，这就符合 hello 函数的定义了。
 
 
-
-    // 动态大小类型
+</code></pre>
+<h4><a class="header" href="#包装动态大小类型" id="包装动态大小类型">包装动态大小类型</a></h4>
+<pre><code class="language-rs">    // 动态大小类型
     // 编译期间无法知道大小, 只有到运行时才知道
     //
     // 动态大小类型的值必须通过指针访问 , 如 Box&lt;str&gt;, Rc&lt;str&gt;
@@ -2759,14 +2917,35 @@ fn box_demo() {
 
 
 
-<span class="boring">}
-</span></code></pre></pre>
-<h3><a class="header" href="#rc-和-弱引用" id="rc-和-弱引用">Rc 和 弱引用</a></h3>
-<p>用于记录存储在堆上的值的引用数, 可 以共享同 一块堆内存, 内部包含的数据是不可变的</p>
+</code></pre>
+<h3><a class="header" href="#rc-和-weak-共享堆内存" id="rc-和-weak-共享堆内存">Rc 和 Weak 共享堆内存</a></h3>
+<p>提供多个所有权给多个对象</p>
+<h4><a class="header" href="#rc-强引用" id="rc-强引用">Rc 强引用</a></h4>
+<p>都是引用计数指针, 用于记录存储在堆上的值的引用数, 可 以共享同 一块堆内存, 内部包含的数据是不可变的</p>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
-</span>// 
+</span>/// Rc&lt;T&gt; 的类型。其名称为 引用计数（reference counting）
+/// 允许 &quot;不可变数据&quot; 有多个所有者, 数据本身无法修改 (将多个所有权共享给多个变量)
+// 
+// 内部维护着一个引用计数器，每clone一次(共享一次)， 计数器加1， 当它们都离开作用域肘， 计 数器会被清零，对应的堆内存也会被自动释放。
+// 
+// 常用方法:
+// 
+// 
+// 
+// 
+// 
+///
+let x =Rc::new(45)
+let yl = x .clone() ; //+强引用计数, 并非 克隆, 只是增加计数
+let y2 = x.clone(); //增加强引用计数
+priηtln!(”{:?}”, Rc::strong_count(&amp;x));//3
+letw= Rc::downgrade(&amp;x); //增加弱引用计数
+println!(” {:?) ”, Rc : :weak_count(&amp;x));
+let y3 = &amp;*x; //不增加计数
+
+// 
 // 构造链表
 // 通过 box 构造链表存在问题: 链表只能被使用一次, 演示:
 enum List {
@@ -2780,35 +2959,6 @@ let a = Cons(5,
 let b = Cons(3, Box::new(a)); //a 被移动到了 b 内部
 let c = Cons(4, Box::new(a));//  error 错误, value used here after move
 
-
-
-/// Rc&lt;T&gt; 的类型。其名称为 引用计数（reference counting）
-/// 允许 &quot;不可变数据&quot; 有多个所有者, 数据本身无法修改
-///通过记录一个值引用的数量来知晓这个值是否仍在被使用, 如果某个值有零个引用，就代表没有任何有效引用并可以被清理。
-// 内部维护着一个引用计数器，每clone一次， 计数器加l， 当它们离开main函数作用域肘， 计 数器会被清零，对应的堆内存也会被自动释放。
-///
-/// Rc&lt;T&gt; 只能用于单线程场景   (多线程使用 Arc&lt;T&gt;)
-///因为当 Rc&lt;T&gt; 管理引用计数时，它必须在每一个 clone 调用时增加计数，并在每一个克隆被丢弃时减少计数。Rc&lt;T&gt; 并没有使用任何并发原语，来确保改变计数的操作不会被其他线程打断
-///
-///如果你要修改 Rc 里的值，Rust 会给你两个方法，一个是 get_mut()，一个是 make_mut() ，这两个方法都有副作用或是限制
-/// - get_mut() 需要做一个“唯一引用”的检查，也就是没有任何的共享才能修改
-///- make_mut() 则是会把当前的引用给clone出来，再也不共享了， 是一份全新的
-// 更好的修改方法:
-/// RefCell&lt;T&gt; 能够在外部值被认为是不可变的情况下修改内部值;refCell 中的变量有唯一所有权, 类似 box
-/// Cell&lt;T&gt;，它类似 RefCell&lt;T&gt; 但有一点除外：它并非提供内部值的引用，而是把值拷贝进和拷贝出 Cell&lt;T&gt;。
-///
-/// 
-///
-
-/// 区别:
-/// - Rc&lt;T&gt; 允许相同数据有多个所有者；Box&lt;T&gt; 和 RefCell&lt;T&gt; 有单一所有者。
-/// - Box&lt;T&gt; 在编译时执行借用检查(可变/不可变)；Rc&lt;T&gt;仅允许在编译时执行借用检查(不可变)；RefCell&lt;T&gt; 允许在运行时执行借用检查(不可变或可变)。
-/// -  box 借用规则检查在编译期, refCell 借用规则检查在运行期
-///
-/// 需要注意的是 Cell 和 RefCell 不是线程安全的。在多线程下，需要使用Mutex进行互斥。
-///
-
-
 // 使用 Rc 解决
 enum List {
     Cons(i32, Rc&lt;List&gt;),
@@ -2817,7 +2967,6 @@ enum List {
 use List::{Cons, Nil};
 use std::rc::Rc;
 let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
-
 //每次调用 Rc::clone，Rc&lt;List&gt; 中数据的引用计数都会增加，Rc::strong_count(&amp;a) 获取 a 的被引用个数
 // 直到有零个引用之前其数据都不会被清理
 //
@@ -2828,8 +2977,20 @@ let b = Cons(3, Rc::clone(&amp;a));
 let c = Cons(4, Rc::clone(&amp;a));
 
 
+<span class="boring">}
+</span></code></pre></pre>
+<h4><a class="header" href="#对内部值进行修改" id="对内部值进行修改">对内部值进行修改</a></h4>
+<pre><code class="language-rs">
 
-//
+///
+///如果你要修改 Rc 里的值，Rust 会给你两个方法，一个是 get_mut()，一个是 make_mut() ，这两个方法都有副作用或是限制
+/// - get_mut() 需要做一个“唯一引用”的检查，也就是没有任何的共享才能修改
+///- make_mut() 则是会把当前的引用给clone出来，再也不共享了， 是一份全新的
+// 更好的修改方法:
+/// RefCell&lt;T&gt; 能够在对象被认为是不可变的情况下修改内部字段;
+/// Cell&lt;T&gt;，它类似 RefCell&lt;T&gt; 但有一点除外：它并非提供内部值的引用，而是把值拷贝进和拷贝出 Cell&lt;T&gt;。
+///
+/// 
 //
 //修改引用的变量 - get_mut 会返回一个Option对象
 //但是需要注意，仅当（只有一个强引用 &amp;&amp; 没有弱引用）为真才能修改
@@ -2841,28 +3002,23 @@ if let Some(val) = Rc::get_mut(&amp;mut strong) {
 *Rc::make_mut(&amp;mut strong) = 555;
 
 
-
-
+</code></pre>
+<h4><a class="header" href="#weak-弱引用" id="weak-弱引用">Weak 弱引用</a></h4>
+<pre><code class="language-rs">
 
 
 // 弱引用
 
 /// 弱引用: Weak&lt;T&gt;
+// Weak 共享的指针没有所有权, 称为弱引用
 /// - 通过 Rc::downgrade 传递 Rc 实例的 reference, 得到 Weak 类型的指针, 同时将 weak_count +1, 不是 strong_count +1
-/// - 即使 weak_count 不为零, 也可能使得 Rc 实例被清理, 只要 strong_count == 0 就行了
-/// - 可以通过 Rc::upgrade 返回 Option&lt;Rc&lt;T&gt;&gt;
+/// - 即使 weak_count 不为零, 也可能使得 Rc 实例被清理, 只要 strong_count == 0 就行了 (解决循环链表造成的内存泄漏)
+/// - 可以通过 Rc::upgrade 返回 Option&lt;Rc&lt;T&gt;&gt; 升级成强引用
 ///
 /// 这么麻烦，我们为什么还要 Weak ? 这是因为强引用的 Rc 会有循环引用的问题……
-///
 
-
-    
-
-//
-//
-// 弱引用
-//
-    use std::rc::Rc;
+// 基本使用
+use std::rc::Rc;
 use std::rc::Weak;
 
 let weak: Weak&lt;i32&gt;;
@@ -2884,27 +3040,83 @@ match  weak_five.upgrade() {
     None =&gt; println!(&quot;None&quot;),
 
 }
-<span class="boring">}
-</span></code></pre></pre>
-<h3><a class="header" href="#refcell" id="refcell">refcell</a></h3>
-<p>它提供了一种内部可变性, 对编译器来说是不可变 的 ，但在运行过程中， 包含在其中的内部数据是可变的</p>
-<p>允许借用可变数据，即使 内部包装的数据是不可变的。这个过程被称为内部可变性。</p>
+
+// 解决循环引用的内存泄漏问题
+use std::{
+    cell::RefCell,
+    rc::{Rc, Weak},
+};
+fn main() {
+    struct Node {
+        head: Option&lt;Weak&lt;RefCell&lt;Node&gt;&gt;&gt;,
+        next: Option&lt;Rc&lt;RefCell&lt;Node&gt;&gt;&gt;,
+    }
+    impl Drop for Node {
+        fn drop(&amp;mut self) {
+            println!(&quot;dropping&quot;)
+        }
+    }
+
+    let one = Rc::new(RefCell::new(Node {
+        head: None,
+        next: None,
+    }));
+    let two = Rc::new(RefCell::new(Node {
+        head: None,
+        next: None,
+    }));
+    let three = Rc::new(RefCell::new(Node {
+        head: None,
+        next: None,
+    }));
+    one.borrow_mut().next = Some(two.clone());
+    two.borrow_mut().next = Some(three.clone());
+    three.borrow_mut().head = Some(Rc::downgrade(&amp;one));// 弱引用, 即使计数没有归零, 仍然可回收内存
+}
+
+
+
+    
+
+</code></pre>
+<h3><a class="header" href="#refcell-和-cell-提供内部可变性" id="refcell-和-cell-提供内部可变性">RefCell 和 Cell 提供内部可变性</a></h3>
+<p>变量有唯一所有权, 类似 box</p>
+<p>/// 需要注意的是 Cell 和 RefCell 不是线程安全的。在多线程下，需要使用Mutex进行互斥。</p>
+<h4><a class="header" href="#cell" id="cell">Cell</a></h4>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
-</span>
-<span class="boring">fn main() {
-</span>/// RefCell&lt;T&gt; 能够在外部值被认为是不可变的情况下修改内部值;refCell 中的变量有唯一所有权, 类似 box
-/// Cell&lt;T&gt;，它类似 RefCell&lt;T&gt; 但有一点除外：它并非提供内部值的引用，而是把值拷贝进和拷贝出 Cell&lt;T&gt;。
-///
-/// 
-/// 场景: 用于规避编译器检查, 比如下面的编写测试 mock 对象, 在 Rc 和数据中间嵌套一层 Refcell
-///
+</span><span class="boring">fn main() {
+</span>// Cell&lt;T&gt;
+// 
+// 
+// 提供了一种内部可变性, 如, 某个 struct 是不可变的, 但是 内部某个字段需要可变
 
+    #[derive(Debug)]
+    struct P {
+        x: i32,
+        y: Cell&lt;i32&gt;,// 这里定义的是 Cell的不可变类型, 但是 内部的数组确实可以修改的, 合法的避开的借用检查
+    }
+    let p = P { x: 0, y: Cell::new(11)};
+    println!(&quot;{:?}&quot;, p);
+    p.y.set(1); // set() 对内部数据的类型没有要求
+    println!(&quot;{}&quot;, p.y.get());// 内部的数据必须是 copy trait 才能使用 get(), 这里实际是获取拷贝, 若是非 copy类型, 提供 get_mut() 获取内部数据的可变引用
+    println!(&quot;{:?}&quot;, p);
+
+<span class="boring">}
+</span></code></pre></pre>
+<h4><a class="header" href="#refcell" id="refcell">RefCell</a></h4>
+<pre><code class="language-rs">
+/// RefCell&lt;T&gt;
+/// 它类似 Cell&lt;T&gt;,  但有一点除外：提供内部值的引用, 而不是拷贝了, 因此对于内部数据的类型没有 copy trait 要求
+// 虽然没有分配空间， 但它是有运行时开销的，因为它自己维护着一个运行 时借用检查器, 比如获取多个可变引用, 会Panic
+///
 // 主要两个方法:
 // borrow_mut() 获取可变引用
 // borrow(), 获取不可变引用
-
-
+let v = RefCell::new(vec![1]);
+println!(&quot;{:?}&quot;, v.borrow());//1
+v.borrow_mut().push(1);
+println!(&quot;{:?}&quot;, v.borrow());//1, 1
 
 
 let x = RefCell::new(vec![1, 2, 3, 4]);
@@ -2913,13 +3125,9 @@ println!(&quot;{:?}&quot;, *x.borrow()); //[1, 2, 3, 4]
     let mut my_ref = x.borrow_mut();
     my_ref.push(1);
 }
-
 // 若上面的可变借用不另开一个 作用域, 这里报错: 可变借用后, 不允许再次不可变借用了
 // 另开一个作用域的效果: my_ref 这个可变借用到这里的时候已经被释放了
 println!(&quot;{:?}&quot;, *x.borrow()); //[1, 2, 3, 4, 1]
-
-
-
 
 
 
@@ -3009,87 +3217,123 @@ println!(&quot;c after = {:?}&quot;, c);
     let mut tracker = LimitTracker::new(&amp;mock_sender, 10);
     tracker.set_value(8);
     println!(&quot;{}&quot;, mock_sender.msg_send.borrow()[0]); // 获取不可变引用
-<span class="boring">}
-</span></code></pre></pre>
-<h3><a class="header" href="#cell" id="cell">cell</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>// set, get 可以方便的修改内部的值, 所有指向这个 cell 的 变量都会跟着改变
+</code></pre>
+<h3><a class="header" href="#rc-box-refcell-cell-几种指针的区别对比" id="rc-box-refcell-cell-几种指针的区别对比">Rc Box RefCell Cell 几种指针的区别对比</a></h3>
+<pre><code class="language-rs">
+/// 区别:
+/// - Rc&lt;T&gt; 允许相同数据有多个所有者；Box&lt;T&gt; 和 RefCell&lt;T&gt; 只能允许有单一所有者。
+/// - Box&lt;T&gt; 在编译时执行借用检查(检查 可变/不可变)；Rc&lt;T&gt;也允许在编译时执行借用检查(但是仅仅检查 不可变)；RefCell&lt;T&gt; 允许在运行时执行借用检查(不可变或可变)。
+/// -  box 借用规则检查在编译期, refCell 借用规则检查在运行期
+///
 
-use std::cell::Cell;
-use std::cell::RefCell;
-
-let x = Cell::new(1);
-let y = &amp;x; //引用（借用）
-let z = &amp;x; //引用（借用）
-x.set(2); // 可以进行修改，x，y，z全都改了
-println!(&quot;x={} y={} z={}&quot;, x.get(), y.get(), z.get()); // 都是 2
-y.set(3);
-println!(&quot;x={} y={} z={}&quot;, x.get(), y.get(), z.get()); // 都是 3
-z.set(4);
-println!(&quot;x={} y={} z={}&quot;, x.get(), y.get(), z.get()); // 都是 4
+// - Cell&lt;T&gt;使用 set/get 方法直接操作包裹的值 (底层是将内部值拷贝出, 修改后在拷贝进去, 适合于实现Copy的类型即复制语义类型)， 
+//      RefCell&lt;T&gt;通过 borrow/borrow_mut 返回 包装过的引用 Ref&lt;T&gt;和 RefMut&lt;T&gt;来操作包裹的值 (适合没有实现Copy的类型, 即移动语义类型。)
+// - Cel&lt;T&gt;无运行 时开销，并且永远不 会在运行 时引发 panic 错 误。 
+//       RefCell&lt;T&gt;需要在运行时执行借用检查，所以有运行时开销，一旦发现违反借用规则的情况，则会引发线程 panic 
+///
 
 
 
-<span class="boring">}
-</span></code></pre></pre>
-<h3><a class="header" href="#deref" id="deref">deref</a></h3>
-<p>用于自定义解除引用运算符(*)的行为</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>  let a = 11;  
-  let b = Box::new(a);  
-  print!(&quot;Value of *b is {}&quot;,*b); //11, box 可以像普通引用一样解引用
-
-// 构造自己的 box
-#[derive(Debug)]
-struct MyBox&lt;T&gt;(T);
-impl&lt;T&gt; MyBox&lt;T&gt; {
-    pub fn new(v: T) -&gt; Self {
-        return MyBox(v);
-    }
-}
-use std::ops::Deref;
-impl&lt;T&gt; Deref for MyBox&lt;T&gt; {
-    type Target = T;
-
-    fn deref(&amp;self) -&gt; &amp;Self::Target {
-        &amp;self.0
-    }
-}
-
-let b = MyBox::new(32);
-println!(&quot;{:?}&quot;, b);
-println!(&quot;b inner = {}&quot;, *b); //32
-println!(&quot;b inner2 = {}&quot;, *b.deref());// 32, deref() 返回内部数据的引用
-
-//自动解包 , deref 的强制效果
-fn prin(v: &amp;i32) {
-    println!(&quot;{}&quot;, v);
-}
-prin(&amp;b) // 自动将 &amp;MyBox 包装解除, 成为 &amp;i32
-
-
-<span class="boring">}
-</span></code></pre></pre>
-<h3><a class="header" href="#drop" id="drop">drop</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>// 用于在变量超出范围时从堆内存中释放空间 (rust 会隐式调用 drop()), 如释放 Box &lt;T&gt;指向的堆上的空间, 
-// 如 释放文件或网络连接等资源
+</code></pre>
+<h3><a class="header" href="#cow-写时复制" id="cow-写时复制">Cow 写时复制</a></h3>
+<p>写时复制( Copy on Write)技术是一种程序中的优化策略, 翻译成人话就是 拖延到需要对数据进行写操作时才复制一份拷贝, 比如 Linux 中父进程创建于进程时 ， 并不是立刻让子进程复制一份进程空间，而是先让子进程共享父进 程的进程空间 ， 只有等到子进程真正需要写入的时候才复制进程空间。</p>
+<pre><code class="language-rs">// 是一个枚举体的智能指针
+// Borrowed， 用于包裹引用。表示是对数据的借用
+// Owned， 用于包裹所有者。表示是对数据的拥有
 // 
-// 有时，有必要在范围结束之前删除该值。如果想提前删除该值，那么使用std::mem::drop函数来删除
-<span class="boring">}
-</span></code></pre></pre>
+// 以不可变的方式访问借用内容，以及在需要可变借用或所有权 的时候再克隆一份数据
+//旨在减少复制操作，提高性能， 一般用于读多写少的场景
+// 
+// - Cow&lt;T&gt;实现了 Deref， 这意味着可以直接调用其包含数据的不可变 方法。
+// - to_mut 方法来获取可变借用. 
+//      若 T 是 借用, 该方法会产生克隆，但仅克隆一次 ， 如果多次调用，则只会使用第一次的克隆对象
+//      如果 T 本身拥有所有权，则此时调用 to_mut不会发生克隆. 所有权转移
+// into_owned方法来获取一个拥有所有权的对象
+//      若 T 是借用, 发生克隆，井创建新的所有权对 象
+//      如果 T 是所有权对象， 则会将所有权转移到新的克隆对象。
+
+
+use std::borrow::Cow;
+// 求元素绝对值
+fn abs_all(input: &amp;mut Cow&lt;[i32]&gt;) {
+    for i in 0..input.len() {
+        let v = input[i];
+        if v &lt; 0 {
+            // 获取可变引用
+            //to_mut 方法会在第一次调用时克隆一个新的对象，在后续的 for 循环中 继续用新的克隆对象
+            input.to_mut()[i] = -v;
+        }
+    }
+}
+// 求和
+fn abs_sum(ns: &amp;[i32]) -&gt; i32 {
+    let mut lst = Cow::from(ns);
+    abs_all(&amp;mut lst);
+    lst.iter().fold(0, |acc, &amp;n| acc + n)
+}
+fn main() {
+    let s1 = [1,2,3];
+    let mut i1 = Cow::from(&amp;s1[..]);
+    // i1 中的元素都为正, 不会进入if逻辑, 不涉及到可变需求，所以不会克隆
+    abs_all(&amp;mut i1);
+    println!(&quot;IN: {:?}&quot;, s1);//1,2,3
+    println!(&quot;OUT: {:?}&quot;, i1);//1,2,3
+    
+    
+    let s2 = [1,2,3, -45, 5];
+    let mut i2 = Cow::from(&amp;s2[..]);
+    // 这里有可变需求，且穿进cow 的数据是个引用, 没有所有权, 所以会克隆, i2 实际是克隆出的新对象
+    abs_all(&amp;mut i2);
+    println!(&quot;IN: {:?}&quot;, s2);//[1, 2, 3, -45, 5]
+    println!(&quot;OUT: {:?}&quot;, i2);//[1, 2, 3, 45, 5]
+    
+    // 这里不会克隆，因为数据本身拥有所有权
+    let mut v1 = Cow::from(vec![1,2,-3,4]);//v1是本身就是可变的
+    abs_all(&amp;mut v1);
+    println!(&quot;IN/OUT: {:?}&quot;, v1);//[1, 2, 3, 4]
+}
+
+
+// 另一个用处是统一实现规范
+use std::borrow::Cow;
+use std::thread;
+#[derive(Debug)]
+struct Token&lt;'a&gt; {
+    raw: Cow&lt;'a, str&gt;,//该用&amp;str类型还是 String类型呢?为了寻求统一，这里使用了 Cow&lt;T&gt;
+}
+impl&lt;'a&gt; Token&lt;'a&gt; {
+    pub fn new&lt;S&gt;(raw: S) -&gt; Token&lt;'a&gt;
+    where
+        S: Into&lt;Cow&lt;'a, str&gt;&gt;,
+   {
+        Token { raw: raw.into() }
+   }
+}
+fn main() {
+   let token = Token::new(&quot;abc123&quot;);
+   let token = Token::new(&quot;api.example.io&quot;.to_string());
+// 还可以跨线程安全传递
+   thread::spawn(move || {
+       println!(&quot;token: {:?}&quot;, token);
+   }).join().unwrap();
+
+//    使用动态字符串切片，则会因为生命周期的问题而无法跨线程安全传递
+    //error
+    let raw = String::from(&quot;abc&quot;);
+    let s = &amp;raw[..];
+    let token = Token::new(s);
+    thread::spawn(move || {
+        println!(&quot;token: {:?}&quot;, token);
+    }).join().unwrap();
+}
+</code></pre>
 <h2><a class="header" href="#函数" id="函数">函数</a></h2>
 <h3><a class="header" href="#函数基本语法" id="函数基本语法">函数基本语法</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
 </span>/// 如果不指定返回值类型, 默认 返回类型为 () 空元组
+// 同名函数在存在于多个作用域(比如 main 外, main 内, main 内的新作用域 分别有三个同名函数), 会发生屏蔽
 
 fn sum(aa: i8, bb: i8) -&gt; i8 {
     // 返回值明确指定类型
@@ -3101,6 +3345,10 @@ fn sum(aa: i8, bb: i8) -&gt; i8 {
 }
 let sum = sum(3, 9);
 println!(&quot;sum = {}&quot;, sum);
+
+// 函数参数支持模式匹配
+fn a(mut b: [i32; 2]) { // 参数为数组可变类型, 不是引用类型 (mut 无法放在冒号后面)
+}
 
 <span class="boring">}
 </span></code></pre></pre>
@@ -3122,10 +3370,7 @@ println!(&quot;b = {}&quot;, b); //3
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#函数作为参数" id="函数作为参数">函数作为参数</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>//
+<pre><pre class="playpen"><code class="language-rust">//
     // 函数作为参数传递
     //
     fn inc1(num: i32) -&gt; i32 { num + 1}
@@ -3134,9 +3379,29 @@ println!(&quot;b = {}&quot;, b); //3
     }
     print_num(1, inc1);
 
+// mut 参数
+// 这里形式参数类型并非引用, 所以传入实际参数时, 会转移所有权, 实际参数是不是 mut 都可以
+fn modify (mut v: Vec&lt;u32&gt; ) - &gt; Vec&lt;u32&gt;
+// 这里形参为引用, 所以实际参数必须为 &amp; mut
+fn modify(v: &amp;mut [u32]) ;
 
-<span class="boring">}
-</span></code></pre></pre>
+
+// 函数参数支持模式匹配
+// (函数中的参数等价于一个隐式的 let绑定，而 let绑定本身是一个模式匹配的行为)
+#[derive(Debug)]
+struct S { i: i32 }
+//表示 参数为不可变引用, 相对的, ref mut 表示参数为可变引用
+fn f(ref _s: S) {
+    println!(&quot;{:p}&quot;, _s); //0x7ffdd1364b80
+}
+fn main() {
+    let s = S { i: 42 };
+    f(s);
+    // println!(&quot;{:?}&quot;, s);
+}
+
+
+</code></pre></pre>
 <h3><a class="header" href="#result-返回值" id="result-返回值">Result 返回值</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -4109,9 +4374,48 @@ let b:String = a.into();//String 类型实现了 From&lt;&amp;str&gt;，所以�
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#derefmut和-deref" id="derefmut和-deref">DerefMut和 Deref</a></h3>
+<p>用于自定义解除引用运算符(*)的行为</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>  let a = 11;  
+  let b = Box::new(a);  
+  print!(&quot;Value of *b is {}&quot;,*b); //11, box 可以像普通引用一样解引用
+
+// 构造自己的 box
+#[derive(Debug)]
+struct MyBox&lt;T&gt;(T);
+impl&lt;T&gt; MyBox&lt;T&gt; {
+    pub fn new(v: T) -&gt; Self {
+        return MyBox(v);
+    }
+}
+use std::ops::Deref;
+impl&lt;T&gt; Deref for MyBox&lt;T&gt; {
+    type Target = T;
+
+    fn deref(&amp;self) -&gt; &amp;Self::Target {
+        &amp;self.0
+    }
+}
+
+let b = MyBox::new(32);
+println!(&quot;{:?}&quot;, b);
+println!(&quot;b inner = {}&quot;, *b); //32
+println!(&quot;b inner2 = {}&quot;, *b.deref());// 32, deref() 返回内部数据的引用
+
+//自动解包 , deref 的强制效果
+fn prin(v: &amp;i32) {
+    println!(&quot;{}&quot;, v);
+}
+prin(&amp;b) // 自动将 &amp;MyBox 包装解除, 成为 &amp;i32
+
+
+<span class="boring">}
+</span></code></pre></pre>
 <pre><code class="language-rs">// 如果一个类型 T 实现了 Deref&lt;Target=U&gt;， 则该类型 T 的引用 (或智能指针)在应用的时候会被 自动转换为类型 U
 // String类型实现了 Deref
-let a = &quot;hello&quot;.to str工口g();
+let a = &quot;hello&quot;.to string();
 let b = &quot; world&quot;.to string();
 let c = a÷ &amp;b;//&amp;b，它应该是一个&amp;Sting类型，而 String类型实现的 add方法的右值参数必须是&amp;str类型, 但现在它是可 以正常运行的。原因就是 String 类型实 现了 Deref&lt;Target=str&gt;
 println!(”{:?)’”, c); // &quot;hello world&quot;
@@ -4171,10 +4475,13 @@ impl Debug for A {
 <h3><a class="header" href="#drop-trait-资源释放" id="drop-trait-资源释放">Drop trait 资源释放</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
-</span>
+</span><span class="boring">fn main() {
+</span>// 用于在变量超出范围时从堆内存中释放空间 (rust 会隐式调用 drop()), 如释放 Box &lt;T&gt;指向的堆上的空间, 
+// 如 释放文件或网络连接等资源
+// 
+// 有时，有必要在范围结束之前删除该值。如果想提前删除该值，那么使用std::mem::drop函数来删除
 
-<span class="boring">fn main() {
-</span>    //
+    //
     //
     // 释放资源 Drop trait
     /*
@@ -4184,6 +4491,7 @@ impl Debug for A {
 
     Box，Vec，String，File，以及 Process 是一些实现了 Drop trait 来释放 资源的类型。
     */
+
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#clone-trait" id="clone-trait">Clone trait</a></h3>
@@ -4215,8 +4523,11 @@ thread::spawn( move || x[1]);
 // 对于自定义的数据类型，如果其成员类型全部实现 Send 和 Sync，此类型才会被自 动实现 Send 和 Sync
 </code></pre>
 <h4><a class="header" href="#copy-trait" id="copy-trait">Copy trait</a></h4>
+<p>区分值语义和引用语义</p>
 <pre><code class="language-rs">// Copy trait，用来标识 可 以按位 复制其值 的类型
 // Copy 告诉编译器这个类型默认采用 copy 语义，而不是 move 语义; 在执行变量绑定、函数参数传递、函数返回等场景下, 执行的是内存拷贝操作
+
+// 引用类型无法实现 copy trait, 虽然引用语义类型不能实现 Copy， 但可以实现 Clone 的 clone 方法， 以 实现深复制
 
 // Copy trait继承自 Clone trait, 要实现 Copy trait 的类型，必须实现 Clone trait 中定义的方法
 //  Rust 提供了更方便的 derive 属性供我们完成这项重复的工作
@@ -6544,9 +6855,24 @@ impl TimerFuture {
 <h1><a class="header" href="#并发-多线程" id="并发-多线程">并发 多线程</a></h1>
 <h2><a class="header" href="#crossbeam-开源库" id="crossbeam-开源库">CrossBeam 开源库</a></h2>
 <p>无锁的数据结构</p>
-<h2><a class="header" href="#arc-自动引用计数" id="arc-自动引用计数">Arc 自动引用计数</a></h2>
-<h2><a class="header" href="#rwlock" id="rwlock">RwLock</a></h2>
+<h2><a class="header" href="#arc-和-rc" id="arc-和-rc">Arc 和 Rc</a></h2>
+<pre><code class="language-rs">
+/// Rc&lt;T&gt; 只能用于单线程场景   
+// Arc&lt;T&gt;是线程安全版本的 Rc&lt;T&gt;。
+</code></pre>
+<h2><a class="header" href="#rwlock-和-refcell" id="rwlock-和-refcell">RwLock 和 RefCell</a></h2>
+<pre><code class="language-rs">// RwLock&lt;T&gt;相当于线程安全版本的 RefCell&lt;T&gt;，同时运行多个 reader或者一个 writer
+</code></pre>
 <h2><a class="header" href="#mutex" id="mutex">Mutex</a></h2>
+<pre><code class="language-rs">// Mutex&lt;T&gt;是锁，同一时间仅允许有-个线程进行操作。
+// 本质是一个 struct
+
+</code></pre>
+<h2><a class="header" href="#atomicptr-和-cell" id="atomicptr-和-cell">AtomicPtr 和 Cell</a></h2>
+<pre><code class="language-rs">// Atomic 系列类型: AtomicBool、 Atomiclsize、 AtomicUsize和AtomicPtr
+// 可以用 AtomicPtr 来模拟其他想要的类型
+// AtomicPtr 相当于线程安全版本 的 Cell&lt;T&gt;
+</code></pre>
 <h2><a class="header" href="#线程基本使用" id="线程基本使用">线程基本使用</a></h2>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
