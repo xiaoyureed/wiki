@@ -62,6 +62,7 @@ https://github.com/Louiszhai/tool
     - [htop 替代 top](#htop-替代-top)
     - [安装 visualvm](#安装-visualvm)
 - [空格预览插件](#空格预览插件)
+- [拼音输入法](#拼音输入法)
 - [视频](#视频)
 
 <!-- /TOC -->
@@ -904,6 +905,15 @@ https://github.com/oracle/visualvm
 # 空格预览插件
 
 https://github.com/sindresorhus/quick-look-plugins
+
+
+
+# 拼音输入法
+
+- tab 筛选声调
+- 「shift+option+B」和「shift+6」激活标点和颜文字符号面板
+- control+shift+space打开手写板
+- 拆字输入, 先键入“mamama”，然后按下shift+space就会有驫
 
 
 
