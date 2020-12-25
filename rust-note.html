@@ -226,8 +226,6 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E8%AF%AD%E6%B3%95">语法</a>
 <ul>
 <li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
-<li><a href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95">单元测试</a></li>
-<li><a href="#%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89-crate">导入自定义 crate</a></li>
 <li><a href="#%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC">变量赋值</a>
 <ul>
 <li><a href="#%E9%BB%98%E8%AE%A4%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%9A%84">默认是不可变的</a></li>
@@ -250,8 +248,9 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </li>
 <li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串</a>
 <ul>
-<li><a href="#%E4%B8%A4%E7%A7%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%BA%E5%88%AB">两种字符串区别</a></li>
+<li><a href="#%E5%87%A0%E7%A7%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%BA%E5%88%AB">几种字符串区别</a></li>
 <li><a href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">常用方法</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2">字符串转换</a></li>
 <li><a href="#%E6%A0%BC%E5%BC%8F%E5%8C%96">格式化</a></li>
 <li><a href="#%E8%B0%83%E8%AF%95%E6%89%93%E5%8D%B0%E7%AC%A6%E5%90%88%E7%B1%BB%E5%9E%8B--debug-trait-display-trait">调试打印符合类型  Debug trait Display trait</a></li>
 <li><a href="#%E9%97%AE%E5%8F%B7%E6%93%8D%E4%BD%9C%E7%AC%A6-%E5%A4%9A%E6%AC%A1%E5%86%99">问号操作符 多次写</a></li>
@@ -259,16 +258,17 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </li>
 <li><a href="#%E9%9B%86%E5%90%88">集合</a>
 <ul>
-<li><a href="#vec">Vec</a></li>
+<li><a href="#vec-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84">Vec 动态数组</a></li>
 <li><a href="#%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97-vecdeque">双端队列 VecDeque</a></li>
 <li><a href="#%E9%93%BE%E8%A1%A8-linkedlist">链表 Linkedlist</a></li>
 <li><a href="#hashmap--%E6%97%A0%E5%BA%8F%E5%93%88%E5%B8%8C%E8%A1%A8">hashmap  无序哈希表</a>
 <ul>
 <li><a href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">哈希表基本使用</a></li>
 <li><a href="#%E5%A4%8D%E5%90%88%E7%B1%BB%E5%9E%8B%E4%BD%9C%E4%B8%BA-key">复合类型作为 key</a></li>
+<li><a href="#%E5%93%88%E5%B8%8C%E7%A2%B0%E6%92%9E%E6%94%BB%E5%87%BB">哈希碰撞攻击</a></li>
 </ul>
 </li>
-<li><a href="#btreemap-%E6%9C%89%E5%BA%8F">BTreeMap 有序</a></li>
+<li><a href="#btreemap-%E6%9C%89%E5%BA%8F%E5%93%88%E5%B8%8C%E8%A1%A8">BTreeMap 有序哈希表</a></li>
 <li><a href="#hashset-%E6%97%A0%E5%BA%8F%E9%9B%86%E5%90%88">hashset 无序集合</a></li>
 <li><a href="#btreeset-%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88">BTreeSet 有序集合</a></li>
 <li><a href="#%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-binaryheap">优先队列 BinaryHeap</a></li>
@@ -277,7 +277,6 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">类型转换</a>
 <ul>
 <li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">基本的类型转换</a></li>
-<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2">字符串转换</a></li>
 <li><a href="#%E8%BD%AC%E6%8D%A2%E7%9B%B8%E5%85%B3%E7%9A%84-trait">转换相关的 trait</a></li>
 </ul>
 </li>
@@ -424,6 +423,8 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </li>
 <li><a href="#default-trait">Default trait</a></li>
 <li><a href="#extend-trait">Extend trait</a></li>
+<li><a href="#any-trait">Any trait</a></li>
+<li><a href="#%E5%92%8C%E6%AF%94%E8%BE%83%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3%E7%9A%84trait">和比较排序相关的trait</a></li>
 </ul>
 </li>
 <li><a href="#%E5%85%83%E7%BB%84">元组</a></li>
@@ -439,12 +440,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E6%9E%9A%E4%B8%BE">枚举</a>
 <ul>
 <li><a href="#%E6%9E%9A%E4%B8%BE%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">枚举基本使用</a></li>
-<li><a href="#option">Option</a>
-<ul>
-<li><a href="#match-%E8%A7%A3%E5%BC%80">match 解开</a></li>
-<li><a href="#option-enum-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95">option enum 常用方法</a></li>
-</ul>
-</li>
+<li><a href="#option">Option</a></li>
 <li><a href="#c-%E9%A3%8E%E6%A0%BC%E7%9A%84%E6%9E%9A%E4%B8%BE">c 风格的枚举</a></li>
 <li><a href="#%E6%A1%88%E4%BE%8B-%E5%BD%A9%E8%89%B2%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96">案例 彩色命令行输出优化</a></li>
 <li><a href="#%E5%AE%9E%E4%BE%8B-%E5%88%9B%E5%BB%BA%E9%93%BE%E8%A1%A8">实例 创建链表</a></li>
@@ -458,10 +454,13 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </li>
 <li><a href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86">错误处理</a>
 <ul>
-<li><a href="#panic-%E5%AE%8F">panic 宏</a></li>
-<li><a href="#result-%E9%97%AE%E5%8F%B7%E6%93%8D%E4%BD%9C%E7%AC%A6">Result 问号操作符</a></li>
+<li><a href="#%E6%96%AD%E8%A8%80">断言</a></li>
+<li><a href="#panic-%E5%92%8C-abort">panic 和 Abort</a></li>
+<li><a href="#result--%E5%92%8C-%E9%97%AE%E5%8F%B7%E6%93%8D%E4%BD%9C%E7%AC%A6">Result  和 问号操作符</a></li>
+<li><a href="#%E9%94%99%E8%AF%AF%E8%A3%85%E7%AE%B1-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8">错误装箱 自定义异常</a></li>
+<li><a href="#%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8">捕获异常</a></li>
 <li><a href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E8%BF%9B%E5%8C%96%E8%BF%87%E7%A8%8B">错误处理进化过程</a></li>
-<li><a href="#%E9%94%99%E8%AF%AF%E8%A3%85%E7%AE%B1">错误装箱</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8">第三方库处理异常</a></li>
 </ul>
 </li>
 <li><a href="#io">io</a>
@@ -512,17 +511,21 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#cargotoml">Cargo.toml</a></li>
 <li><a href="#cargolock">cargo.lock</a></li>
 <li><a href="#workspace">workspace</a></li>
+<li><a href="#%E4%BE%9D%E8%B5%96%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7%E8%A7%84%E5%88%99">依赖的版本号规则</a></li>
 </ul>
 </li>
 <li><a href="#buildrs">build.rs</a></li>
 <li><a href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E6%A1%88%E4%BE%8B">项目管理案例</a>
 <ul>
-<li><a href="#%E5%9C%A8-bin-%E9%A1%B9%E7%9B%AE%E5%86%85%E6%96%B0%E5%BB%BA-lib">在 bin 项目内新建 lib</a></li>
+<li><a href="#%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89-crate">导入自定义 crate</a></li>
 <li><a href="#%E6%89%A7%E8%A1%8C%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84-module">执行子目录中的 module</a></li>
+<li><a href="#%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89-module">导入自定义 module</a></li>
+<li><a href="#%E5%AF%BC%E5%85%A5%E7%AC%AC%E4%B8%89%E6%96%B9-crate">导入第三方 crate</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a href="#%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95">单元测试</a></li>
 <li><a href="#%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91-and-%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91">交叉编译 and 条件编译</a></li>
 <li><a href="#%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B">异步编程</a>
 <ul>
@@ -598,7 +601,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#http-client">http client</a></li>
 </ul>
 </li>
-<li><a href="#%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">读取配置文件</a>
+<li><a href="#%E5%BA%8F%E5%88%97%E5%8C%96%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">序列化反序列化</a>
 <ul>
 <li><a href="#toml">toml</a></li>
 <li><a href="#json">json</a></li>
@@ -611,7 +614,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </ul>
 </li>
 <li><a href="#%E6%96%87%E6%9C%AC%E8%A7%A3%E6%9E%90%E5%99%A8">文本解析器</a></li>
-<li><a href="#lazy-static">lazy static</a></li>
+<li><a href="#lazy-static-%E5%BB%B6%E8%BF%9F%E5%88%9D%E5%A7%8B%E5%8C%96">lazy static 延迟初始化</a></li>
 <li><a href="#%E7%94%B5%E5%AD%90%E4%B9%A6">电子书</a></li>
 <li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%A8%8B%E5%BA%8F">命令行程序</a>
 <ul>
@@ -628,6 +631,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B">并发编程</a></li>
 <li><a href="#gui-%E5%9B%BE%E5%BD%A2%E5%BA%93">gui 图形库</a></li>
 <li><a href="#%E5%BA%95%E5%B1%82%E7%BD%91%E7%BB%9C-api">底层网络 api</a></li>
+<li><a href="#%E6%AD%A3%E5%88%99">正则</a></li>
 <li><a href="#%E9%9A%8F%E6%9C%BA">随机</a>
 <ul>
 <li><a href="#rand-%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%AD%97">rand 随机数字</a></li>
@@ -959,130 +963,11 @@ use std::fs::File;
 fn main() {
     println!(&quot;Hello, world!&quot;);
 
-    demo();
-
-    variables();
-
-    basic_types();
-
-    function();
-
-    condition_loop();
-
-    str_string();
-
-    slice_vec();
-
-    hash_table();
-
-    struct_demo();
-
-    enum_demo();
-
-    match_demo();
-
-    ownership();
-
-    borrow();
-
-    life_cycle();
-
-    box_demo();
-
-    mod_package_crate();
-
-    error_handling();
-
-    generic();
-
-    trait_demo();
-
-    path_demo();
-
-    io_demo();
-
-    // copy_file();
-
-    oop_demo();
-
-    closure_demo();
-
-    concurrent();
-
-    channel_demo();
-
-    sub_process_command();
-
-    iter_demo();
-
-    condition_compile();
-
-    macro_demo();
 }
 
 
 
 </code></pre></pre>
-<h2><a class="header" href="#单元测试" id="单元测试">单元测试</a></h2>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>/// 单元测试
-/// 
-/// 使用 cargo test 运行
-/// 
-/// 运行某个特定的测试方法 cargo test test_any_panic
-/// 
-/// cargo test panic 方法名中含有 panic 的测试方法会运行
-/// 
-#[cfg(test)]
-mod tests {
-    // 注意这个惯用法：在 tests 模块中，从外部作用域导入所有名字。
-    use super::*;
-
-    #[test]
-    fn test_xx() {
-        println!(&quot;hello unit test&quot;);
-    }
-
-    // 测试 panic
-    // #[test]
-    // #[ignore] // 忽略测试, 或者使用 cargo test -- --ignored 命令来运行它们。
-    // #[should_panic]
-    // fn test_any_panic() {
-    //     divide_non_zero_result(1, 0);
-    // }
-
-    // 测试 带有输出文本的panic
-    // #[test]
-    // #[should_panic(expected = &quot;Divide result is zero&quot;)]
-    // fn test_specific_panic() {
-    //     divide_non_zero_result(1, 10);
-    // 
-}
-
-
-
-<span class="boring">}
-</span></code></pre></pre>
-<h2><a class="header" href="#导入自定义-crate" id="导入自定义-crate">导入自定义 crate</a></h2>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span>
-<span class="boring">fn main() {
-</span>use ferris_says::say;// 导入模块 // 支持 as , 如 use xxx as yyy
-use std::io::{stdout, BufWriter}; 
-
-fn demo() {
-    let stdout = stdout();
-    let message = String::from(&quot;Hello fellow Rustaceans!&quot;);
-    let width = message.chars().count();
-
-    let mut writer = BufWriter::new(stdout.lock());
-    say(message.as_bytes(), width, &amp;mut writer).unwrap();
-}
-<span class="boring">}
-</span></code></pre></pre>
 <h2><a class="header" href="#变量赋值" id="变量赋值">变量赋值</a></h2>
 <h3><a class="header" href="#默认是不可变的" id="默认是不可变的">默认是不可变的</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
@@ -1145,11 +1030,16 @@ fn demo() {
 <span class="boring">#![allow(unused_variables)]
 </span>
 <span class="boring">fn main() {
-</span>// 常量, 静态变量, 一般在全局声明, 不在函数里声明
+</span>// 常量, 静态变量, 在全局声明常量 or 变量
     // 需要手动指定类型
-    // 区别:
-    // - 静态变量有固定的内存地址 (分配在静态存储区); 常量在被用到时会被复制过去, 用不到内存地址
-    // - 静态变量可以是可变的 (用 mut 修饰), 修改需要在 unsafe 中
+    // 区别/异同:
+    // - 都是在编译期求值的，所以不能用于存储需要动态分配内存的类型，比如 HashMap, vec
+    // 
+    // - 静态变量有固定的内存地址 (分配在静态存储区), 可以是可变的 (用 mut 修饰), 修改需要在 unsafe 中; 
+    // - 常量没有固定的内存地址, 不可变 (可以被内联, 在被用到的地方会被复制过去, 用不到内存地址)
+
+    // 普通常量 不能引用 静态变量
+    // 在存储的数据比较大、需要引用地址或具有可变性的情况下使用静态变量;否则，应该 优先使用普通常量
     const MAX_POINTS: u32 = 100_000;
     static LANGUAGE: &amp;'static str = &quot;Rust&quot;;//&quot;string&quot; 字面量默认生命周期就是 static 的
 <span class="boring">}
@@ -1223,10 +1113,7 @@ fn basic_types() {
 </span></code></pre></pre>
 <h3><a class="header" href="#数组" id="数组">数组</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span>
-<span class="boring">fn main() {
-</span>// 对于原始固定长度数组，只有实现 Copy trait 的类型才能作为其元素 ，也就是说，只有 可以在栈上存放的元素才可以存放在该类型的数组中
+// 对于原始固定长度数组，只有实现 Copy trait 的类型才能作为其元素 ，也就是说，只有 可以在栈上存放的元素才可以存放在该类型的数组中
     // 可以自动推断类型
 
     let a = [1, 2, 3, 4, 5];
@@ -1260,16 +1147,72 @@ fn basic_types() {
         println!(&quot;{}&quot;, ele);
     }
 
+    // 
+    // 连接两个 array 可以使用 join
 
-    // 编译时函数执行 cfe
+
+    // 编译时函数执行, 简称 cfe
     //函数会在编译期被执行, 计算出常量结果
     const fn const_fn() -&gt; u8 {2};
     let arr = [0u8, const_fn()];
 
 
+    // match 语法
+    // 通过匹配数组的不同元 可以实现指定的功能 。
+    // 挑选出以 3 结尾和第 二个元素为 2 的数组。
+    fn pick(arr: [i32; 3])  {// 这个有限制, 参数数组的元素个数不可变, 必须为 3
+        match arr {
+            [_, _, 3] =&gt; println!(&quot;ends with 3&quot;),
+            [a, 2, c] =&gt; println!(&quot;{:?}, 2, {:?}&quot;, a,  c),
+        //  match匹配的最后一个分支，必须使用通配符或其他变量来穷尽枚举
+            [_, _, _] =&gt; println!(&quot;pass!&quot;),
+        }
+    }
+    // 变长参数
+    // 利用数组切 片就可以模拟变长参数的函数
+    fn sum(num: &amp;[i32]) { // 原素个数可变
+        match num {
+            [one] =&gt; println!(&quot; at least two&quot;),
+            [first, second] =&gt; println!(&quot;{:?} + {:?} = {:?} &quot;, first, second, first+second),
+            _ =&gt; println!(&quot;sum is {:?}&quot;, num.iter().fold(0, |sum, i| sum + i) ),
+        }
+    }
+    fn main() {
+        sum(&amp;[1]);
+        sum(&amp;[1, 2]);
+        sum(&amp;[1, 2, 3]);
+        sum(&amp;[1, 2, 3, 5]);
+    }
 
-<span class="boring">}
-</span></code></pre></pre>
+
+    // 二分查找
+    // 根据元素查找索引
+    if let Ok(9) = arr.binary_search(&amp;13) {}
+    // 等价
+    arr.binary_search_by(|x| x.cmp(&amp;13))
+    // binary search by_key
+
+
+    let s = [0, 1, 1, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+    assert_eq!(s.binary_search(&amp;13),  Ok(9));
+    assert_eq!(s.binary_search(&amp;4),   Err(7));
+    let r = s.binary_search(&amp;1);
+    assert!(match r { Ok(1...4) =&gt; true, _ =&gt; false, });
+    let seek = 13;
+    assert_eq!(
+        s.binary_search_by(|probe| probe.cmp(&amp;seek)),
+       Ok(9)
+   );
+   let s = [(0, 0), (2, 1), (4, 1), (5, 1), (3, 1),
+              (1, 2), (2, 3), (4, 5), (5, 8), (3, 13),
+              (1, 21), (2, 34), (4, 55)];
+   assert_eq!(
+       s.binary_search_by_key(&amp;13, |&amp;(a,b)| b),
+       Ok(9)
+   );
+    
+
+</code></pre></pre>
 <h3><a class="header" href="#range-范围" id="range-范围">Range 范围</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -1397,19 +1340,28 @@ fn foo() -&gt; i32 {
 }
 </code></pre>
 <h2><a class="header" href="#字符串" id="字符串">字符串</a></h2>
-<h3><a class="header" href="#两种字符串区别" id="两种字符串区别">两种字符串区别</a></h3>
+<h3><a class="header" href="#几种字符串区别" id="几种字符串区别">几种字符串区别</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span>
 <span class="boring">fn main() {
 </span>/// 字符串
 ///
-/// &amp;str 表示字符串常量, 长度固定, 不可修改, 保证 有效 UTF-8 ; 字符串切片就是 &amp;str, 和程序代码段存储在一起(在编译期间地址就知道了), 执行的是复制语义
+/// - str 表示固定长度的字符串, 属 于动态大 小 类型 (DST)，保证 有效 UTF-8 , 在编译期并不能确定其大小，所以在程序中最常见到的是 str 的切片 (Slice)类型 &amp;str。  
+//      &amp;str 表示字符串字面量, 是引用类型; 字符串切片就是 &amp;str, 和程序代码段存储在一起(在编译期间地址就知道了), 执行的是复制语义
 ///
-/// String 类型, 长度可变, 可修改, 存储为由字节组成的 vector（Vec&lt;u8&gt;），但保证了它一定是一个有效的 UTF-8 序列, 字符序列分配在堆, 执行的是移动语义
+/// - String 类型, 长度可变, 可修改, 存储为由字节组成的 vector（Vec&lt;u8&gt;），但保证了它一定是一个有效的 UTF-8 序列, 字符序列分配在堆, 执行的是移动语义
 ///
-/// String 有一个字符开始位置属性 ptr, 和一个字符串长度属性 len, 和容量 capacity, 这些属性位于 栈, 实际字符存在 堆
-/// str    有  ptr 和 len, 属性, 内容都在 栈
+///     String 有一个字符开始位置属性 ptr, 和一个字符串长度属性 len, 和堆分配的容量 capacity, 这些属性位于 栈, 实际字符序列存在 堆
+///     str    有  ptr 和 len, 属性, 内容都在 栈
+// 
+// - CStr， 表示由C分配而被Rust借用的字符串， 一般用于和C语言交互。
+// - CString， 表示由 Rust 分配且可以传递给 C 函数使用的 C 字符串 ，同样用 于和 C 语言交互。
+// 
+// - OsStr， 表示和操作系统相关的字符串。这是为了兼容 Windows系统。
+// - OsString，表示 OsStr 的可变版本 。与 Rust 字符串可以相互转换
+// - Path，表示路径，定义于 std::path模块中。 Path包装了 OsS衍
+// - PathBuf. ft~ Path 配对， 是 Path 的可变版本 。 PathBuf包装了 OsString。
 ///
 <span class="boring">}
 </span></code></pre></pre>
@@ -1433,15 +1385,20 @@ fn foo() -&gt; i32 {
     //简单写法为
     let str_value = &quot;1234&quot;;
 
+    let s = string::new() // 此时还并未在堆上分配空间
     let str1 = String::from(&quot;hello&quot;);
+    // 指定堆容量
+    let s =  String : :with_capacity (20)
+    // 再次分配容量
+    s.reserve(lO)
     
     let one = 1.to_string();         // 整数到字符串
     let float = 1.3.to_string();     // 浮点数到字符串
     let slice = &quot;slice&quot;.to_string(); // 字符串切片到字符串
     
+    
 
-
-    // 修改
+    // 新增 添加
     //定义一个可变字符串，并对其进行修改
     let mut string_value: String = &quot;1111&quot;.to_string();
     // 或者
@@ -1449,7 +1406,47 @@ fn foo() -&gt; i32 {
     string_value.push_str(&quot;333&quot;);// 添加字符串切片
     string_value.push('!'); // 添加字符
 
+    // 插入
+    s.insert(0, 'f’)
+    s. insert_str(O,”bar”)
+
+    // 连接
+    // String 类型的字符串也实现了 Add&lt;&amp;str&gt; 和 AddAssign&lt;&amp;str&gt;两个 trait，这意味着可以使用“+”和“+=”操作符来连接字符串
+    // 操作符 右边的字符串必须为切片类型 (&amp;str)
+
+
+
+    // 替换
+    //
+    string.replace(&quot;old_str&quot;, &quot;new str&quot;);
+
     
+    // 删除
+    s .remove (3) //指定位置
+    s.pop()//最后一个字符, 并且返回
+    s. truncate (3)//指定位置到末尾删除
+    s .clear( );//清空
+    s .drain (..beta_offset) .collect()// 截取源的指定范围并返回, 源会改变, 只留下剩下的部分
+    s.drain(..)// 等价 clear, 截取源的全部, 源变空
+
+
+    // 查找
+    // 标准库中并没有提供正则表达式支持，这是因为正则表达式算是外部DSL， 如果 直接将其引入标准库中，则会破坏 Rust的一致性
+    // 第三方包 regex
+    // Rust 中这里使用 的字符匹配算 法并非 KMP，而是它的变种双向( Two-Way)字符串匹配算法 ，该算法的优势在于拥有常量级的空间复杂度。它和 KMP 的共同点在于其时间复杂度也是 O(n)
+    // 
+    // 存在性判断。 相关方法包括contains (支持 字符/字符串/谓词)、 starts_with (支持字符/字符串)、 ends_with
+    // 位置匹配 。相关方法包括 find、 rfind (从右边开始搜索, 支持谓词)。
+    // 分割字符串 。相关方法包括 split、rsplit、split_terminator(去掉数组last元素的多余)、rsplit_terminator、splitn (指定分割后的数组长度)、rsplitn。 
+    // 捕获匹配, 返回数组。 相关方法包括 matchs、 rmatches、 match_indices (返回的是元组数组, 包含了索引)、 rmatch_indices。 
+    // 删除匹配。 相关方法包括 trim(删除两头空格, 不能指定 pattern 参数), trim_left, trim_right , trim_matches(可指定 pattern 参数)、trim_left_matches、trim_right_matches。 
+    // 替代匹配。 相关方法包括 replace、 replacen(指定替换字符的个数)
+    
+
+
+
+
+
     // 统计长度
     // 字符 字节
     //
@@ -1459,14 +1456,20 @@ fn foo() -&gt; i32 {
     let s = &quot;你好&quot;;
     let len = s.len();//6, 因为中文是 UTF-8 编码的，每个字符长 3 字节
     let s = &quot;hello你好&quot;;
+    let len = s.bytes().count();//提供了 bytes 和 chars 两个方法来分别返回按字节 和按字符迭代的法代器
     //字符
     let len = s.chars().count();// 7, 统计字符数 (统计字符的速度比统计数据长度的速度慢得多)
     //遍历字符
     for c in s.chars() {
         print!(&quot;{} &quot;, c);
     }
+    // or
+    let s: String = s.chars() .enumerate() .map(| (i, c) | {}).collect()
 
-
+    // 按索引访问字符
+    let mut result = s.into_bytes();//通过 into_bytes方法将字符串转换为 Vec&lt;u8&gt;序列
+    (0..result.len()).for_each ...
+    let new_s = String: :from_utf8(result).unwrap()
     
 
     // 获取单个字符
@@ -1474,6 +1477,24 @@ fn foo() -&gt; i32 {
     let a = s.chars().nth(2); //nth 函数是从迭代器中取出某值的方法，不要在遍历中这样使用！因为 UTF-8 每个字符的长度不一定相等
     println!(&quot;{:?}&quot;, a);//Some('中')
 
+    
+    // 指定索引范围来获取字符串切片
+    let v =  String::from(&quot;hello&quot;);
+    let s: Some&lt;&amp;str&gt; = v.get(0..1);
+    v.get_mut((xxx))
+    assert ! (!v .is_char boundary(4)) ;//验证某个索引位置是否为合法的边界, 因为可能某个字符占据了多个索引位置(string的方法默认都是按照字节来处理的, 也就是一个索引位置对应一个字节, 某些字符英文字符外的字符可能不止一个字节)
+
+
+
+
+
+
+
+
+
+    // 分割
+    let bool_s = s.is_char_boundary(12)
+    s.split_at(12)// 需要先检查索引是否是合法字符边界
 
 
     // 空格分割, 逆序
@@ -1499,9 +1520,6 @@ fn foo() -&gt; i32 {
 
 
 
-    // 替换
-    //
-    string.replace(&quot;old_str&quot;, &quot;new str&quot;);
 
 
 
@@ -1523,6 +1541,43 @@ fn foo() -&gt; i32 {
 
 <span class="boring">}
 </span></code></pre></pre>
+<h3><a class="header" href="#字符串转换" id="字符串转换">字符串转换</a></h3>
+<pre><code class="language-rs"> //
+    //
+    // 复杂类型的类型转换 相互转换 互转
+    //
+    // String =&gt; &amp;str
+    let s1 = String::from(&quot;hello&quot;);
+    // 方法1
+    let s2 = &amp;s1[..]; 
+    let ssss = &amp;s1[..2];// 截取子串
+    // 方法2
+    let sss: &amp;str = &amp;s1.as_str();
+    //
+    // 方法3
+    let new_str = &amp;*s1;
+    //
+    //
+    // &amp;str -&gt; String
+    let new_string = new_str.to_string();//to_string底层调用的String::from
+    let new_string1 = s2.to_string();
+    println!(&quot;new_string = {}, new_string1 = {}&quot;, new_string, new_string1);
+    // &amp;str -&gt; String
+    let string = &quot;hello&quot;.to_owned(); //最常用, 吧 &quot;hello&quot;从栈转移到堆, to_owned 方法利用 &amp;str 切片字节序列生成新的 String字符串 ， to_string方法是对 String::from 的包装, 两者性能相当
+
+    // &amp;str -&gt; String
+    let _s: String = &quot;hello&quot;.into();
+
+
+
+    // string -&gt; T
+    // std::str模块中提供的 parse泛型方法来将字符串转换为指定的类型
+    // 底层是 FromStr::from_str
+
+    //T -&gt; string
+    // format!()
+    let s = format!(&quot;{}&quot;, xxx); 
+</code></pre>
 <h3><a class="header" href="#格式化" id="格式化">格式化</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -1670,7 +1725,7 @@ fn foo() -&gt; i32 {
 <li>集合: hashset(无序集合), btreeset(有序集合)</li>
 <li>优先队列: binaryHeap (二叉堆)</li>
 </ul>
-<h3><a class="header" href="#vec" id="vec">Vec</a></h3>
+<h3><a class="header" href="#vec-动态数组" id="vec-动态数组">Vec 动态数组</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span>
@@ -1678,14 +1733,19 @@ fn foo() -&gt; i32 {
 </span>/// 向量 Vec
 /// 动态数组, 类似 java中的 ArrayList
 /// 
-///
+///Vector数组天生就可以作 为先进后出(FILO)的栈结构使用
 /// 
 //
     println!(&quot;Vector -------------------------------&quot;);
     //一个 vector 使用 3 个词来表示：一个指向数据的指针，vector 的长度，还有它的容量。此容量指明了要为这个 vector 保留多少内存。
     //vector 的长度 只要小于该容量，就可以随意增长；当需要超过这个阈值时，会给 vector 重新分配一段 更大的容量。
+    // 
+    // 扩容: 自动按照 2 倍扩容
     //
     let vec: Vec&lt;i32&gt; = Vec::new(); // 创建类型为 i32 的空向量
+    // 预分配 10 个单位
+    // 真正分配 的堆内存 大 小 等于数组中元素类型所占字节与给定容量值 之积
+    Vee::with capacity(1O)
     let vector = vec![1, 2, 4, 8];     // 通过数组和宏创建向量 // v: Vec&lt;i32&gt;
     let v = vec![0; 10]; // ten zeroes
     let mut vec_fixed: Vec&lt;_&gt;= (0..10).collect();
@@ -1709,6 +1769,19 @@ fn foo() -&gt; i32 {
     }
     println!(&quot;after pop: {:?}&quot;, vec); // [6]
 
+    // 从 0 位置开始清除到末尾, 等同清空数据, 但是内存没有释放, 只是擦除了数据
+    vec . truncate (0);
+    // 清空
+    vec.clear()
+    // 释放空闲容量
+    vec.shrink_to_fit() //方法，预分配的堆内存被释放了
+
+    // 交换
+    v.swap(1, 3);
+
+    // 全部替换
+    // copy_from_slice 方法可以使用一个数组切片将原 vec 数 组 中的元素全部替换, 数组切片必须和原数组等长, 只支持实现 Copy 语义的元素
+    //  clone_from slice方法的效果和 copy_仕om slice是等价的， 但它们的区别是， clone from slice 方法支持实现 Clone 的类型元素。
 
     // 添加另外的 vector
     let mut v2 = vec![100, 101];
@@ -1722,6 +1795,7 @@ fn foo() -&gt; i32 {
         None =&gt; println!(&quot;Sorry, this vector is too short.&quot;)
     }
 
+    //  contains、 starts with和 ends with
     
 
     // 迭代
@@ -1757,12 +1831,17 @@ fn foo() -&gt; i32 {
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#双端队列-vecdeque" id="双端队列-vecdeque">双端队列 VecDeque</a></h3>
-<p>是一种 同时具有 队列(先进先出)和战 (后进先出)性质的数据 结构 。 双端队列中的元素可 以从两端弹出，插入和删除操作被限定 在队列的两端进行 。</p>
-<pre><code class="language-rs">
+<pre><code class="language-rs">// 是一种 同时具有 队列(先进先出)和栈 (后进先出)性质的数据 结构 。 双端队列中的元素可 以从两端弹出，插入和删除操作被限定 在队列的两端进行
+// 内部主要维护一个环形缓冲区 (RingBuffer), 由两个指针和 一 个可增长数组组成 。 这两个指针分别为 头指针( Head Pointer)和尾指针( Tail Pointer)。 其中头指针永远指向应该写入数据 的位置，而尾指针永 远指 向可以读取的第一个元素
+
+// 缓冲区溢出
+// 假设缓冲区数组初始大小为8, 环形 缓冲区为空 时，两个指针都指向位置 0。当有新元素 插入时，如果 直接插入位置 0，则将用于写入数据 的 Head 指针指向位置 1， 而用于读取数据的 Tail 指针依 旧指向位置 0
+// 当插入第 8 个元素时， Head 和 Tail 指针将再次重叠, 
+// 如果这时继续给缓冲区添加新元素 ， 那么位置 。 处的数据将被 其他数据覆盖，这就会造成缓冲区溢出攻击; 为了避免这种情况，需要空出一个位置， 不能插入元素 ， 这样才可以区分头和尾
+// 要判断环形缓冲区是否为满状态，就必须看容量和大小的差是否为 l
 </code></pre>
 <h3><a class="header" href="#链表-linkedlist" id="链表-linkedlist">链表 Linkedlist</a></h3>
-<p>因为是双向列表， 所以提供了 push back 和 push front 两类方法，方便操作 此链表。也提供了 append 方法 ， 可
-以用来连接两个链表</p>
+<p>因为是双向列表， 所以提供了 push back 和 push front 两类方法，方便操作 此链表。也提供了 append 方法 ， 可以用来连接两个链表</p>
 <h3><a class="header" href="#hashmap--无序哈希表" id="hashmap--无序哈希表">hashmap  无序哈希表</a></h3>
 <p>Key必须是可哈希的类型， Value必须是在编译期已知大小的类型</p>
 <h4><a class="header" href="#哈希表基本使用" id="哈希表基本使用">哈希表基本使用</a></h4>
@@ -1779,7 +1858,7 @@ fn foo() -&gt; i32 {
 fn hash_table() {
     use std::collections::HashMap;
     
-    let mut map = HashMap::new();//获得一个带有默认初始容量的 HashMap
+    let mut map = HashMap::new();//不会预分配内 存。若始终不添加元素, 会编译报错, 编译器认为 map 没有初始化
 
     HashMap::with_capacity(unit) //创建具有一定初始容量的 HashMap
     
@@ -1793,27 +1872,35 @@ fn hash_table() {
     // 否则返回 `Some(被覆盖的 value)`
     map.insert(&quot;color&quot;, &quot;red&quot;);// 没有声明散列表的泛型，是因为 Rust 的自动判断类型机制。
     map.insert(&quot;size&quot;, &quot;10 m^2&quot;);
-    //不存在才插入, 设定值为 red, 否则将跳过, 一般的插入则是有则覆盖旧的值
-    map.entry(&quot;color&quot;).or_insert(&quot;red&quot;);// , 返回 entry 的 value 的 reference
+
+    //不存在才插入值 red, 并且返回该值的可变借用, (一般的插入则是有则覆盖旧的值)
+    // or_insert_with(FnOnce) 传递一个可计算的闭包作为要插入的值, 闭包没有参数
+    // key()
+    map.entry(&quot;color&quot;).or_insert(&quot;red&quot;);// , 返回 &quot;red&quot; 的 &amp;mut T 
 
     //删除
     map.remove(&amp;(&quot;Ashley&quot;)); 
-
-    println!(&quot;{}&quot;, map.get(&quot;color&quot;).unwrap());
 
 
     // 获取
     //
     // 接受一个引用并返回 Option&lt;&amp;V&gt;
     let one = map.get(&amp;&quot;color&quot;);
+    // or
+    let one = map[&quot;color&quot;]
     println!(&quot;one is a Option&lt;&amp;V&gt; ,  {}&quot;, *(one.unwrap()));
-
     // 可变获取(修改) 
     let mut map = HashMap::new();
     map.insert(1, &quot;a&quot;);
     if let Some(x) = map.get_mut(&amp;1) {
         *x = &quot;b&quot;;
     }
+
+    // 是否包含
+    if !book_reviews.contains_key(&quot;rust book&quot;) {
+        println!(&quot;find {} times &quot;, book_reviews.len());// 长度
+    }
+    
 
     // 迭代
     for p in map.iter() {//迭代元素是表示键值对的元组
@@ -1823,6 +1910,13 @@ fn hash_table() {
         println!(&quot;{}, {}&quot;, k, v);
     }
 
+    // 通过keys和values方法可以分别单独获取HashMap中的键/值的迭代器
+    for key in book_reviews.keys() {
+        println!(&quot;{}&quot;, key);
+    }
+   for val in book_reviews.values() {
+       println!(&quot;{}&quot;, val);
+   }
 
     // 统计句子中的单词个数
     let text = &quot;aa bb cc bb&quot;;
@@ -1835,15 +1929,30 @@ fn hash_table() {
         println!(&quot;{}, {}&quot;, word, count);
     }
 
+
+
+    // 合并多个 HashMap
+    // 合并两个或多个 HashMap, 尽量使用 extend或其他迭代器适配器方式， 而不要用 for循环来插入 ,否则会带来性能 问题
+    map1.extend(map2);//本质上， 在 extend方法内部也将 HashMap转换为法代器进行操作
+    map1.into_iter().chain(map2).collect()//同样是通过 into_iter得到 Chain迭代器 然后操作
+    // 被添加的 map_ref 是个引用, 原始 map 不会丢失所有权
+    map1.extend(
+        map_ref.into_iter()
+            .map(|(k, v)| (k.clone(), v.clone()))
+   );
+
+
+
+
 <span class="boring">}
 </span></code></pre></pre>
 <h4><a class="header" href="#复合类型作为-key" id="复合类型作为-key">复合类型作为 key</a></h4>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
-</span>    
+</span><span class="boring">fn main() {
+</span>    // 基础类型的 浮点数, 无法作为 key
 
-<span class="boring">fn main() {
-</span>    // 复杂类型作为键 key
+    // 复杂类型作为键 key, 必须实现 Hash和Eq trait
     //
     //f32 和 f64 没有实现 Hash，这很大程度上是由于若使用浮点数作为 散列表的键，浮点精度误差会很容易导致错误
     //
@@ -1892,7 +2001,22 @@ fn hash_table() {
 
 <span class="boring">}
 </span></code></pre></pre>
-<h3><a class="header" href="#btreemap-有序" id="btreemap-有序">BTreeMap 有序</a></h3>
+<h4><a class="header" href="#哈希碰撞攻击" id="哈希碰撞攻击">哈希碰撞攻击</a></h4>
+<p>map 底层使用数组存储数据, 需要一个高效的 hash 函数均匀的将元素分散存储在 数组中 </p>
+<p>负载因子: 当前的默认扩容策略 为负载因子达到 0.9 时则进行扩容</p>
+<p>Rust标准库实现的 HashMap， 默认的 Hash 函数算法是 SipHashl3o 另外，标准库还实现 了 SipHash24, SipHash算法可以防止 Hash碰撞拒绝服务攻击(Hash Collision DoS)，这种
+攻击是一种基于各语言 Hash 算法的随机性而精心构造出来的增强 Hash碰撞的手段，被攻击 的服务器 CPU 占用率会轻松地制升到 100%</p>
+<p>如何解决哈希碰撞?</p>
+<ul>
+<li>外部拉链法: 在数组的每个元素位置, 遇到碰撞后, 生长出一个链表, 但是有退化到单链表的风险</li>
+<li>开放定址法: 在发生冲突时直接去寻找下一个空的地址, 开放定址法的优点在于计算简单、快捷，处理方便:缺点是它会 产生聚集 现象，并且删除元 素也会变得十分复杂(因为并不能真的删除， 否则会破坏寻址的正确性)
+寻找下一个空地址的行为，叫作探测 (Probe)。依次 一 个个地 寻找 叫作 续性探测( Linear Probing), rust 采用这种</li>
+</ul>
+<blockquote>
+<p>在线性探测时，如果遇到空桶， 则正常插入; 如果遇到桶己 经被占用 ，那么 就要看占用这个桶的键值对是经历 过几次 探测才被插入该位置 的， 如果该键值对的探测次数比当前待插入的键值对的探测次数少，则它属于“富翁”， 就把当前的键值对插入该位置，再接着找下一个位置来安置被替换的“富翁”键值对。 正是因 为这种“劫 富济贫 ”的思路，这种 算法才被称 为罗 宾汉算法。</p>
+</blockquote>
+<h3><a class="header" href="#btreemap-有序哈希表" id="btreemap-有序哈希表">BTreeMap 有序哈希表</a></h3>
+<p>基于 B 树的有序映射集实现，按 Key 排序</p>
 <h3><a class="header" href="#hashset-无序集合" id="hashset-无序集合">hashset 无序集合</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -1944,38 +2068,6 @@ fn hash_table() {
 
 
 
-<span class="boring">}
-</span></code></pre></pre>
-<h3><a class="header" href="#字符串转换" id="字符串转换">字符串转换</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>    //
-    //
-    // 复杂类型的类型转换 相互转换 互转
-    //
-    // String =&gt; &amp;str
-    let s1 = String::from(&quot;hello&quot;);
-    // 方法1
-    let s2 = &amp;s1[..]; 
-    let ssss = &amp;s1[..2];// 截取子串
-    // 方法2
-    let sss: &amp;str = &amp;s1.as_str();
-    //
-    // 方法3
-    let new_str = &amp;*s1;
-    //
-    //
-    // &amp;str -&gt; String
-    let new_string = new_str.to_string();//to_string底层调用的String::from
-    let new_string1 = s2.to_string();
-    println!(&quot;new_string = {}, new_string1 = {}&quot;, new_string, new_string1);
-    // &amp;str -&gt; String
-    let string = &quot;hello&quot;.to_owned(); //最常用, 吧 &quot;hello&quot;从栈转移到堆
-
-    // &amp;str -&gt; String
-    let _s: String = &quot;hello&quot;.into();
-    
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#转换相关的-trait" id="转换相关的-trait">转换相关的 trait</a></h3>
@@ -5283,6 +5375,45 @@ println!(&quot;{}&quot;, s);//Hello Rust
 
 
 </code></pre>
+<h3><a class="header" href="#any-trait" id="any-trait">Any trait</a></h3>
+<pre><code class="language-rs">// use std::any::Any;
+
+</code></pre>
+<h3><a class="header" href="#和比较排序相关的trait" id="和比较排序相关的trait">和比较排序相关的trait</a></h3>
+<pre><code class="language-rs">// PartialEq、 Eq、 PartialOrd 和 Ord
+// - PartialEq代表部分等价关系，其中定义了 eq和 ne (不等, 有默认实现)两个方法
+// - Eq 代表等价关系，该 trait 继承自 PartialEq， 但是其中没有定义任何方法 。 它实际上 相当于标记实现了 Eq 的类型拥有等价关系
+// - PartialOrd对应于偏序，其中定义了 partial_cmp (必须实现)、 lt、 le(小于等于)、 gt和 ge五个方法
+// - Ord对应于全序，其中定义了 cmp、 max和 min三个方法
+// 
+// 枚举体为 Ordering， 用于表示 比较结果，其中定义了 小于、等于和大于三种状态。
+
+
+   let mut v = [-5i32, 4, 1, -3, 2];
+//    默认升序
+    v.sort();
+    assert!(v == [-5, -3, 1, 2, 4]);
+    // 而 sort_by 是按 a 和 b 的比较结果是否等于 Less 的规则进行排序 的， 若等于 less, 则 a 小于 b，为升序排列
+    v.sort_by(|a, b| a.cmp(b));
+    assert!(v == [-5, -3, 1, 2, 4]);
+    v.sort_by(|a, b| b.cmp(a));
+    assert!(v == [4, 2, 1, -3, -5]);
+    v.sort_by_key(|k| k.abs());
+   assert!(v == [1, 2, -3, 4, -5]);
+
+
+   let result = 1.0.partial_cmp(&amp;2.0);//浮点数，只能用偏序比较
+    assert_eq!(result, Some(Ordering::Less));
+    let result = 1.cmp(&amp;1);
+    assert_eq!(result, Ordering::Equal);
+    let result = &quot;abc&quot;.partial_cmp(&amp;&quot;Abc&quot;);
+    assert_eq!(result, Some(Ordering::Greater));
+    let mut v: [f32; 5] = [5.0, 4.1, 1.2, 3.4, 2.5];
+    v.sort_by(|a, b| a.partial_cmp(b).unwrap());
+    assert!(v == [1.2, 2.5, 3.4, 4.1, 5.0]);
+    v.sort_by(|a, b| b.partial_cmp(a).unwrap());
+    assert!(v == [5.0, 4.1, 3.4, 2.5, 1.2]);
+</code></pre>
 <h2><a class="header" href="#元组" id="元组">元组</a></h2>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -5692,18 +5823,28 @@ fn enum_demo() {
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#option" id="option">Option</a></h3>
-<h4><a class="header" href="#match-解开" id="match-解开">match 解开</a></h4>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span>
 <span class="boring">fn main() {
-</span>    // Option 枚举类
+</span>// Option 枚举类
     //是 Rust 标准库中的枚举类，这个类用于填补 Rust 不支持 null 引用的空白
     //
     // enum Option&lt;T&gt; {
     //    Some(T),
     //    None,
     // }
+    // 
+
+    // 解开可以通过 match 模式匹配, 
+    // or:
+    // 通过 unwrap 系列方法
+    // - expect(&quot;error message&quot;) 解开 Some, 若 None, 则 panic!(&quot;error message&quot;)
+    // -  unwrap()    解开 Some, 若碰到 None, 则 panic
+    // - unwrap_or(T)  解开 Some, 若碰到 None, 则 返回指定的默认值
+    // - unwrap_or_else(FnOnce()-&gt;T) 解开 Some, 碰到 None, 则执行一段闭包 
+
+
     let opt = Option::Some(&quot;Hello&quot;); // opt 允许为空
     match opt {
         Option::Some(something) =&gt; {
@@ -5725,22 +5866,22 @@ fn enum_demo() {
         }
     }
 
-<span class="boring">}
-</span></code></pre></pre>
-<h4><a class="header" href="#option-enum-常用方法" id="option-enum-常用方法">option enum 常用方法</a></h4>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span>
-<span class="boring">fn main() {
-</span>    // map()
-    // 组合算子 combinator
-    // 简化 match 处理
-    //
-    // 要求处理的option中元素可以是不同类型
+
+    // 
+    // 流式处理
+    // 组合算子 combinator: 简化 match 处理
+    // 
+    // map()
+    // map_or() 可以为 None 指定默认值
+    // map_or_else()
     //
     // 接受一个函数f, 返回一个option, 这个函数f:
     //  - 参数为option包含的元素, 返回值为处理后的元素
     //
+    // 
+    // 要求处理的option中元素可以是不同类型
+    // 
+    // 
     #[derive(Debug)] enum Food { Apple, Potato, Banana}
     #[derive(Debug)] struct Peeled(Food);//削皮的食物
     #[derive(Debug)] struct Chopped(Food);//切块的食物
@@ -5758,10 +5899,11 @@ fn enum_demo() {
     //
     // and_then() 
     //
-    // 要求处理的option中元素是相同类型, 比如都属于某个枚举类
-    //
     //接受一个函数f作为参数, 返回option, 函数f满足: 
     //- 参数为 option 包含的元素, 返回为option
+    // 
+    // 要求处理的option中元素是相同类型, 比如都属于某个枚举类
+    // 
     //
     fn to_potato(food: Food) -&gt; Option&lt;Food&gt; {
         Some(Food::Potato)
@@ -6109,6 +6251,12 @@ fn match_demo() {
     println!(&quot;arg = 1, v = {}&quot;, ca.value(1));
     println!(&quot;arg = 1, v = {}&quot;, ca.value(1));
 
+    // 和 if 合用的匹配
+    match value.log2() {
+       x if x.is_normal() =&gt; Some(x),
+       _                      =&gt; None
+   }
+
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#if-lef-while-let-语法糖" id="if-lef-while-let-语法糖">if lef while let 语法糖</a></h3>
@@ -6147,14 +6295,33 @@ fn match_demo() {
 <span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#错误处理" id="错误处理">错误处理</a></h2>
-<h3><a class="header" href="#panic-宏" id="panic-宏">panic 宏</a></h3>
+<h3><a class="header" href="#断言" id="断言">断言</a></h3>
+<pre><code class="language-rs">// assert 系列宏在调试( Debug)和发布( Release)模式下均可用， 并且不能被禁用。 debug_assert系列宏只在调试模式下起作用
+// 尽量使用 debug_assert 系列宏较小性能开销
+// 底层实际也是使用 panic! 宏引发线程恐慌
+
+// • assert!， 用于断言布尔表达式在运行时一定返回 true。
+// • assert_eq!， 用于断 言两个表达式是否相等(使用 PartialEq)。
+// • assert_ne!， 用于断言两个表达式是否不相等(使用 PartialEq)。
+// • debug_assert!， 等价于 asse此!，只能用于调试模式。
+// • debug assert_eq!， 等价于 asse此一eq!，只能用于调试模式。
+// • debug_assert_ne!， 等价于 assert ne!，只能用于调试模式 。
+
+// 均会引发线程恐慌, 同时输出错误信息
+assert! (x,&quot;x wasn’t true&quot;);
+debug_assert!(a + b == 30,&quot;a={), b = {}&quot;, a, b);
+</code></pre>
+<h3><a class="header" href="#panic-和-abort" id="panic-和-abort">panic 和 Abort</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
-</span>
-<span class="boring">fn main() {
-</span>/// RUST_BACKTRACE=1 cargo run 这种方式运行带有回溯, 碰到 panic!(&quot;xxx&quot;) 会显示 backtrace
+</span><span class="boring">fn main() {
+</span>// panic 为线程恐慌, 会造成应用程 序以非零退出码退出进程， 也就是发生崩溃
+// Abort 为线程终止, 将进程 正常中止 
+// 
+/// RUST_BACKTRACE=1 cargo run 这种方式运行带有回溯, 碰到 panic!(&quot;xxx&quot;) 会显示 backtrace
 /// 
-/// 如果想使一个可恢复错误按不可恢复错误处理，Result 类提供了两个办法：unwrap() 和 expect(message: &amp;str) 
+/// 如果想使一个可恢复错误按不可恢复错误处理(类比java 中 将 exceptin 转为 runtime exception)，Result 类提供了两个办法：unwrap() 和 expect(message: &amp;str) 
+//  
 /// 
 /// https://rust-cli.github.io/book/tutorial/errors.html
 /// 
@@ -6197,12 +6364,12 @@ fn error_handling() {
 
 <span class="boring">}
 </span></code></pre></pre>
-<h3><a class="header" href="#result-问号操作符" id="result-问号操作符">Result 问号操作符</a></h3>
+<h3><a class="header" href="#result--和-问号操作符" id="result--和-问号操作符">Result  和 问号操作符</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span>
 <span class="boring">fn main() {
-</span>/// 对于可恢复错误用 Result&lt;T, E&gt; 类来处理，
+</span>/// 可恢复错误, 用 Result&lt;T, E&gt; 类来处理，,类比 java 中 的 exception
 /// //在 Rust 标准库中可能产生异常的函数的返回值都是 Result 类型的
 /// enum Result&lt;T, E&gt; { 
 ///   Ok(T),
@@ -6225,7 +6392,7 @@ fn error_handling() {
     }
     // 更好的写法: 
     //? 符的实际作用是将 Result 类非异常的值直接取出，如果有异常就将异常 Result 返回出去。所以，? 符仅用于返回值类型为 Result&lt;T, E&gt; 的函数
-    //?号 是 “要么 unwrap 要么 return Err(From::from(err))”。From::from 是 不同类型间的转换工具，
+    //?号 是 “要么 unwrap 要么 return Err(From::from(err))”。
     //
     // 会为函数产生返回值
     //
@@ -6286,6 +6453,98 @@ fn error_handling() {
     //
 <span class="boring">}
 </span></code></pre></pre>
+<h3><a class="header" href="#错误装箱-自定义异常" id="错误装箱-自定义异常">错误装箱 自定义异常</a></h3>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span>    
+
+<span class="boring">fn main() {
+</span>    //
+    //
+    // 
+    //装箱可以保存原始错误信息, 坏处就是，被包装的错误类型只能在运行时了解，而不能被静态地 判别。
+    //
+    //对任何实现了 Error trait 的类型，标准库的 Box 通过 From 为它们提供了 到 Box&lt;Error&gt; 的转换, 只要调用 XxxError.into() 即装箱
+    //
+    use std::error;
+    use std::fmt;
+    // 为 `Box&lt;error::Error&gt;` 取别名。
+    type Result&lt;T&gt; = std::result::Result&lt;T, Box&lt;error::Error&gt;&gt;;
+    // 自定义异常 /////////////////////////////
+    // 还必须同时实现 Debug 和 Display
+    #[derive(Debug, Clone)]
+    struct EmptyVec;
+    impl fmt::Display for EmptyVec {
+        fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+            write!(f, &quot;invalid first item to double&quot;)
+        }
+    }
+    impl error::Error for EmptyVec {
+        fn description(&amp;self) -&gt; &amp;str {
+            &quot;invalid first item to double&quot;
+        }
+        fn cause(&amp;self) -&gt; Option&lt;&amp;error::Error&gt; {
+            // 泛型错误。没有记录其内部原因。
+            None
+        }
+    }
+    // 将第一个数字乘以2
+    fn double_first(vec: Vec&lt;&amp;str&gt;) -&gt; Result&lt;i32&gt; {
+        vec.first()
+        .ok_or_else(|| EmptyVec.into())  // 装箱
+        .and_then(|s| {
+                s.parse::&lt;i32&gt;()
+                    .map_err(|e| e.into())  // 装箱
+                    .map(|i| 2 * i)
+            })
+    }
+    
+    // 更好的写法: 使用 ? 号
+    // ?号 是 “要么 unwrap 要么 return Err(From::from(err))”。From::from 是 不同类型间的转换工具，
+    fn double_first(vec: Vec&lt;&amp;str&gt;) -&gt; Result&lt;i32&gt; {
+        let first = vec.first().ok_or(EmptyVec)?;
+        let parsed = first.parse::&lt;i32&gt;()?;
+        Ok(2 * parsed)
+    }
+
+
+
+}
+
+
+<span class="boring">}
+</span></code></pre></pre>
+<h3><a class="header" href="#捕获异常" id="捕获异常">捕获异常</a></h3>
+<pre><code class="language-rs">// 恐慌安全: 发生 panic后, 代码终止执行, 后续的资源回收相关的代码不会执行, 可能引发问题, 防止这样的问题就是保证恐慌安全
+
+// rust 通过 raii机制, 保证了基本的恐慌安全, 即使在 safe rust 中发生 panic, 也能保证资源回收
+// 但是若 panic 发生在 unsafe rust 里面, 就无法保证恐慌安全了
+
+// catch_unwind 方法来让开发者捕获恐慌，恢复当前线程。
+// 
+// 接收的是一个正常的闭包，在该闭包中 并未发生恐慌，所 以正常执行
+let result = panic::catch_unwind(|| { println!(&quot;hello!&quot;); });
+assert!(result.is_ok());
+// 捕获此恐慌，并恢复当前线程
+let result = panic::catch_unwind(|| { panic!(&quot;oh no!&quot;); });// 输 出 结果 中打印 了恐慌信息，但是并没有影 响 到后续代码 的执行
+assert!(result.is_err());
+println!(&quot;{}&quot;, sum(1, 2));
+
+// 使用 set_hook 自定义panic 消息消息
+// set_hook 是全局性设置， 并不是只针对单个代码模块的, 可以和 take_hook 配合使用
+// 
+panic::set_hook(Box::new(|panic_info| {
+    if let Some(location) = panic_info.location() {
+        println!(&quot;panic occurred '{}' at {}&quot;,
+            location.file(), location.line()
+        );
+    } else {
+        println!(&quot;can't get location information...&quot;);
+    }
+}));
+let result = panic::catch_unwind(|| { panic!(&quot;oh no!&quot;); });
+assert!(result.is_err());
+</code></pre>
 <h3><a class="header" href="#错误处理进化过程" id="错误处理进化过程">错误处理进化过程</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -6328,68 +6587,10 @@ fn error_handling() {
 
 <span class="boring">}
 </span></code></pre></pre>
-<h3><a class="header" href="#错误装箱" id="错误装箱">错误装箱</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span>    
-
-<span class="boring">fn main() {
-</span>    //
-    //
-    // 
-    //装箱可以保存原始错误信息, 坏处就是，被包装的错误类型只能在运行时了解，而不能被静态地 判别。
-    //
-    //对任何实现了 Error trait 的类型，标准库的 Box 通过 From 为它们提供了 到 Box&lt;Error&gt; 的转换, 只要调用 XxxError.into() 即装箱
-    //
-    use std::error;
-    use std::fmt;
-    // 为 `Box&lt;error::Error&gt;` 取别名。
-    type Result&lt;T&gt; = std::result::Result&lt;T, Box&lt;error::Error&gt;&gt;;
-    // 自定义异常 /////////////////////////////
-    #[derive(Debug, Clone)]
-    struct EmptyVec;
-    impl fmt::Display for EmptyVec {
-        fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
-            write!(f, &quot;invalid first item to double&quot;)
-        }
-    }
-    impl error::Error for EmptyVec {
-        fn description(&amp;self) -&gt; &amp;str {
-            &quot;invalid first item to double&quot;
-        }
-        fn cause(&amp;self) -&gt; Option&lt;&amp;error::Error&gt; {
-            // 泛型错误。没有记录其内部原因。
-            None
-        }
-    }
-    // 将第一个数字乘以2
-    fn double_first(vec: Vec&lt;&amp;str&gt;) -&gt; Result&lt;i32&gt; {
-        vec.first()
-        .ok_or_else(|| EmptyVec.into())  // 装箱
-        .and_then(|s| {
-                s.parse::&lt;i32&gt;()
-                    .map_err(|e| e.into())  // 装箱
-                    .map(|i| 2 * i)
-            })
-    }
-    
-    // 更好的写法: 使用 ? 号
-    // ?号 是 “要么 unwrap 要么 return Err(From::from(err))”。From::from 是 不同类型间的转换工具，
-    // 也就是说，如果在错误能够转换成返回类型的地方使用 ?，它就 会自动转换成返回类型。
-    
-    fn double_first(vec: Vec&lt;&amp;str&gt;) -&gt; Result&lt;i32&gt; {
-        let first = vec.first().ok_or(EmptyVec)?;
-        let parsed = first.parse::&lt;i32&gt;()?;
-        Ok(2 * parsed)
-    }
-
-
-
-}
-
-
-<span class="boring">}
-</span></code></pre></pre>
+<h3><a class="header" href="#第三方库处理异常" id="第三方库处理异常">第三方库处理异常</a></h3>
+<p>error-chain和 failure(更推荐)</p>
+<p>error chain 的特色是使用自定义的宏来方便开发者统一管理错误， </p>
+<p>而 failure的错误管理思维则是对标准库中 En-or的进一步增强，更加贴近 Rust的错误处理思 想 </p>
 <h2><a class="header" href="#io" id="io">io</a></h2>
 <h3><a class="header" href="#命令行参数" id="命令行参数">命令行参数</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
@@ -6712,10 +6913,267 @@ fn copy_file() {
 </span></code></pre></pre>
 <h3><a class="header" href="#设计模式" id="设计模式">设计模式</a></h3>
 <h4><a class="header" href="#建造者模式" id="建造者模式">建造者模式</a></h4>
-<pre><code class="language-rs">
+<pre><code class="language-rs">// std::process::Command 就使用了 建造者模式
+
+
+struct Circle {
+    x: f64,
+    y: f64,
+    radius: f64,
+}
+struct CircleBuilder {
+    x: f64,
+    y: f64,
+    radius: f64,
+}
+impl Circle {
+    fn area(&amp;self) -&gt; f64 {
+        std::f64::consts::PI * (self.radius * self.radius)
+    }
+    fn new() -&gt; CircleBuilder {
+        CircleBuilder {
+            x: 0.0, y: 0.0, radius: 1.0,
+        }
+   }
+}
+impl CircleBuilder {
+   fn x(&amp;mut self, coordinate: f64) -&gt; &amp;mut CircleBuilder {
+       self.x = coordinate;
+       self
+   }
+   fn y(&amp;mut self, coordinate: f64) -&gt; &amp;mut CircleBuilder {
+       self.y = coordinate;
+       self
+   }
+   fn radius(&amp;mut self, radius: f64) -&gt; &amp;mut CircleBuilder {
+       self.radius = radius;
+      self
+   }
+   fn build(&amp;self) -&gt; Circle {
+       Circle {
+           x: self.x, y: self.y, radius: self.radius,
+       }
+   }
+}
 </code></pre>
 <h4><a class="header" href="#访问者模式" id="访问者模式">访问者模式</a></h4>
+<pre><code class="language-rs">// 用于将数据结构和作用于结构上的操作解祸。
+// 访问者模式一般包含两个层 次:
+// - 定义需要操作的元素。
+// - 定义相关的操作. 一般将操作封装到一个 trait 中, 针对不同的元素, 有不同的方法实现
+// Serde的架构是访问者模式
+
+
+use std::any::Any;
+trait HouseElement {
+    fn accept(&amp;self, visitor: &amp;HouseElementVisitor);
+    fn as_any(&amp;self) -&gt; &amp;Any;
+}
+trait HouseElementVisitor {
+    fn visit(&amp;self, element: &amp;HouseElement);
+}
+struct House {
+    components: Vec&lt;Box&lt;HouseElement&gt;&gt;,
+}
+impl House {
+    fn new() -&gt; Self {
+        House {
+            components: vec![Box::new(Livingroom::new())],
+        }
+    }
+}
+impl HouseElement for House {
+    fn accept(&amp;self, visitor: &amp;HouseElementVisitor) {
+        for component in self.components.iter() {
+            component.accept(visitor);
+        }
+        visitor.visit(self);
+    }
+    fn as_any(&amp;self) -&gt; &amp;Any { self }
+}
+
+struct Livingroom;
+impl Livingroom {
+    fn new() -&gt; Self { Livingroom }
+}
+impl HouseElement for Livingroom {
+    fn accept(&amp;self, visitor: &amp;HouseElementVisitor) {
+        visitor.visit(self);
+    }
+    fn as_any(&amp;self) -&gt; &amp;Any { self }
+}
+
+struct HouseElementListVisitor;
+impl HouseElementListVisitor {
+    fn new() -&gt; Self { HouseElementListVisitor }
+}
+
+impl HouseElementVisitor for  HouseElementListVisitor {
+    fn visit(&amp;self, element: &amp;HouseElement) {
+        match element.as_any() {
+            house if house.is::&lt;House&gt;() =&gt; println!(&quot;Visiting the house...&quot;),
+            living if living.is::&lt;Livingroom&gt;() =&gt; println!(&quot;Visiting the Living room...&quot;),
+            _ =&gt; {}
+        }
+    }
+}
+struct HouseElementDemolishVisitor;
+impl HouseElementDemolishVisitor {
+    pub fn new() -&gt; Self {
+        HouseElementDemolishVisitor
+    }
+}
+impl HouseElementVisitor for HouseElementDemolishVisitor {
+    fn visit(&amp;self, element: &amp;HouseElement) {
+        match element.as_any() {
+            house if house.is::&lt;House&gt;() =&gt; println!(&quot;Annihilating the house...!!!&quot;),
+            living if living.is::&lt;Livingroom&gt;() =&gt; println!(&quot;Bombing the Living room...!!!&quot;),
+            _ =&gt; {}
+        }
+    }
+}
+
+fn main() {
+    let house = House::new();
+    // simply print out the house elements
+    house.accept(&amp;HouseElementListVisitor::new());
+    println!();
+    // do something with the elements of a house
+    house.accept(&amp;HouseElementDemolishVisitor::new());
+}
+</code></pre>
 <h4><a class="header" href="#raii模式" id="raii模式">raii模式</a></h4>
+<p>重构后的代码:</p>
+<pre><code class="language-rs">/*
+利用Rust的ownership（linear/affine type）来设计接口
+
+Refact
+
+1. 去掉letter的Clone，使用所有权保证其唯一性；并且信封的wrap方法只接受获得所有权的信封，而非引用
+2. 使用类型系统来保证信封的唯一性
+3. 使用RAII机制来管理收尾逻辑，比如实现Drop
+
+其他示例：
+
+1. http response
+2. steaming engine
+
+*/
+
+// #[derive(Clone)]
+pub struct Letter {
+    text: String,
+}
+pub struct EmptyEnvelope {}
+pub struct ClosedEnvelope {
+    letter: Letter,
+}
+pub struct PickupLorryHandle {
+    done: bool,
+}
+impl Letter {
+    pub fn new(text: String) -&gt; Self {
+        Letter {text: text}
+    }
+}
+impl EmptyEnvelope {
+    pub fn wrap(self, letter: Letter) -&gt; ClosedEnvelope {
+        ClosedEnvelope {letter: letter}
+    }
+}
+pub fn buy_prestamped_envelope() -&gt; EmptyEnvelope {
+    EmptyEnvelope {}
+}
+impl PickupLorryHandle {
+    pub fn pickup(&amp;mut self, envelope: ClosedEnvelope) {
+        /*give letter*/
+    }
+    pub fn done(self) {}
+}
+impl Drop for PickupLorryHandle {
+    fn drop(&amp;mut self) {
+        println!(&quot;sent&quot;);
+    }
+}
+pub fn order_pickup() -&gt; PickupLorryHandle {
+    PickupLorryHandle {done: false , /* other handles */}
+}
+fn main(){
+    let letter = Letter::new(String::from(&quot;Dear RustFest&quot;));
+    let envelope = buy_prestamped_envelope();
+    let closed_envelope = envelope.wrap(letter);
+    let mut lorry = order_pickup();
+    lorry.pickup(closed_envelope);
+}
+
+</code></pre>
+<p>有问题的代码:</p>
+<pre><code class="language-rs">/*
+利用Rust的ownership（linear/affine type）来设计接口
+
+存在的问题：
+
+1. Letter有可能复制多份到多个信封（envelope）里，不安全
+2. 信封里有可能有信，也有可能没有信, 可能寄出的是空信封；或者同一个信封装多次不同的信件, 造成信件的覆盖，不安全
+3. 有没有把信交给邮车也是无法保证，不安全
+
+*/
+// 信纸
+#[derive(Clone)]
+pub struct Letter {
+    text: String,
+}
+// 信封
+pub struct Envelope {
+    letter: Option&lt;Letter&gt;,
+}
+// 信件处理器
+pub struct PickupLorryHandle {
+    done: bool,//是否寄出
+}
+impl Letter {
+    pub fn new(text: String) -&gt; Self {
+        Letter {text: text}
+    }
+}
+impl Envelope {
+    // 装信纸进去
+    pub fn wrap(&amp;mut self, letter: &amp;Letter){
+        self.letter = Some(letter.clone());
+    }
+}
+// 创建空的信封
+pub fn buy_prestamped_envelope() -&gt; Envelope {
+    Envelope {letter: None}
+}
+impl PickupLorryHandle {
+    // 装车
+    pub fn pickup(&amp;mut self, envelope: &amp;Envelope) {
+        /*give letter*/
+    }
+    // 寄出
+    pub fn done(&amp;mut self) {
+        self.done = true;
+        println!(&quot;sent&quot;);
+    }
+}
+// 创建处理器
+pub fn order_pickup() -&gt; PickupLorryHandle {
+    PickupLorryHandle {done: false , /* other handles */}
+}
+fn main(){
+    let letter = Letter::new(String::from(&quot;Dear RustFest&quot;));
+    let mut envelope = buy_prestamped_envelope();
+    envelope.wrap(&amp;letter);
+    let mut lorry = order_pickup();
+    lorry.pickup(&amp;envelope);
+    lorry.done();
+}
+
+pub fn builder_pattern(){
+    unimplemented!();
+}
+</code></pre>
 <h2><a class="header" href="#子进程" id="子进程">子进程</a></h2>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -7309,12 +7767,13 @@ cargo init --lib
 
 
 # 构建, 更新依赖, 依赖在这里找 https://crates.io/
-# 默认是以 debug 方式编译
+# 默认是以 debug 方式编译, 编译速度快, 但是生成的可执行文件未优化
 # build 后会生成 Cargo.lock
 #  ./target/debug/project_name 中找到编译后的 可执行文件(exe) 运行
 cargo build 
 
-# 使用 --release 参数编译最终版本。
+# 使用 --release 参数编译最终发布版本。
+# 编译器会对代码进行优化， 使得编译时间变慢， 但是代码运行速度会变快。
 cargo build --release
 
 cargo check # 迅速检查错误, 时间短
@@ -7401,6 +7860,18 @@ rev = &quot;bd7f058efe78d7626a1cc6fbc0c1d3702fb6d2e7&quot;
 [dependencies]
 hello_utils = { path = &quot;../hello_utils&quot;, version = &quot;0.1.0&quot; }
 
+#  [dependencies] 专门用于设置第三方包的依赖，这些依赖会在执行 cargo build命令编译 时使用。 
+# [dev-dependencies]表的作用用来设置测试( tests)、示例 (examples)和基准测试( benchmarks)时使用的依赖, 在执行 cargo test 或 cargo bench 命 令 时使用 。
+[dev-dependencies]
+
+
+# 条件编译功能 (选择性地编 译 代 码)
+[features]
+default=[&quot;use_std&quot;]
+use_std=[]
+unstable= [&quot;pattern&quot;]
+patter=[]
+
 
 
 # 使用本地仓库中的代码build
@@ -7425,7 +7896,7 @@ opt-level = 3
 <p>锁定依赖版本</p>
 <h3><a class="header" href="#workspace" id="workspace">workspace</a></h3>
 <p>工作空间可以管理多个 proj 和 lib</p>
-<p>新建 Cargo.toml</p>
+<p>新建 Cargo.toml 作为根包的元数据 (工作空间中的子包 也都有自己的 Cargo.toml 配置，各自独立， 互不影响)</p>
 <pre><code class="language-t">[workspace]
 members = [
     &quot;main&quot;, # 可执行 主程序
@@ -7433,18 +7904,34 @@ members = [
     &quot;util&quot;, # 工具库
 ]
 </code></pre>
+<p>不管是编译根包还是子包，最终的编译结 果永远都会输出到根包的 target 目录下，并且整个工作空间只允许有一个 Cargo.lock 文件。</p>
 <p><code>cargo new [--bin] main</code>, <code>cargo new --lib core</code>, <code>cargo new --lib util</code>; 由于每次创建时, cargo 都会检查 顶层 Cargo 配置文件中的 member 是否都存在, 所以中间可能检查出现错误, 不必担心, 全部创建完错误就消失了</p>
 <p>lib 类型类型需要将新建的 module (即rs文件) 在 lib.rs 中声明 <code>pub mod xxx</code>, pub 可选</p>
+<h3><a class="header" href="#依赖的版本号规则" id="依赖的版本号规则">依赖的版本号规则</a></h3>
+<pre><code class="language-rs">// Rust 包使用的是语义化版本号 (SemVer)。基本格式为“X卫Z”
+
+// • x，主版本号 当做了不兼容或颠覆性的更新时 ， 修改此版本号。
+// • y， ;欠版本号 (minor)。当做了向下兼容的功能性修改时，修改此版本号 。 
+// • z，修订版本号 (patch)。当做了向下兼容的问题修正时，修改此版本号。
+
+// 符号:
+// ^: 版本号必须大于指定版本, 新的版本必须满足不修改[major, minor, patch]中最左边非零数字。如指定 ^1.0.0, 等价于 &gt;=1.0.0 &lt;2.0.0
+// *: 通配符, 可以用在[major, minor,patch]的任何一个上面。 
+// ~: 允许修改[major, minor, patch]中没有明确指定的版本号
+// 手动指定， 通过 &gt;, &lt;, =, &gt;=, &lt;= 来指定版本号 。
+
+</code></pre>
 <h2><a class="header" href="#buildrs" id="buildrs">build.rs</a></h2>
 <p>build.rs可实现本项目编译前的额外操作，比如代码生成、调用cmake/clang/gcc/ndk-build等编译所依赖的C/C++库、读取C/C++头文件生成FFI文件给Rust项目使用等等，相当于Rust写的shell脚本</p>
 <h2><a class="header" href="#项目管理案例" id="项目管理案例">项目管理案例</a></h2>
-<h3><a class="header" href="#在-bin-项目内新建-lib" id="在-bin-项目内新建-lib">在 bin 项目内新建 lib</a></h3>
+<h3><a class="header" href="#导入自定义-crate" id="导入自定义-crate">导入自定义 crate</a></h3>
 <p><code>cargo new web-server</code></p>
 <p><code>cd web-server</code></p>
 <p><code>cargo new --lib thread-pool</code></p>
 <p>修改 web-server 的 cargo.toml:</p>
 <pre><code class="language-t">[dependencies]
 thread-pool = {path = &quot;./thread-pool&quot; } # 必须为 thread-pool, 和库名一致; thread_pool 错误, threadpool错误
+                                    # 使用: use thread_pool::xxxx (变为下划线)
 </code></pre>
 <h3><a class="header" href="#执行子目录中的-module" id="执行子目录中的-module">执行子目录中的 module</a></h3>
 <pre><code class="language-t">
@@ -7466,6 +7953,76 @@ path = &quot;examples/tcp_client.rs&quot;
 
 </code></pre>
 <p>然后在 /examples 下新建 rs 文件, 写 main 方法即可</p>
+<h3><a class="header" href="#导入自定义-module" id="导入自定义-module">导入自定义 module</a></h3>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>//ferris_says  为自定义 module
+
+mod ferris_says; // 方法 1: 通过声明导入 module
+use ferris_says::say;// 方法 2: 导入模块的方法  // 支持 as , 如 use xxx as yyy
+use std::io::{stdout, BufWriter}; 
+
+fn demo() {
+    let stdout = stdout();
+    let message = String::from(&quot;Hello fellow Rustaceans!&quot;);
+    let width = message.chars().count();
+
+    let mut writer = BufWriter::new(stdout.lock());
+    say(message.as_bytes(), width, &amp;mut writer).unwrap();
+}
+<span class="boring">}
+</span></code></pre></pre>
+<h3><a class="header" href="#导入第三方-crate" id="导入第三方-crate">导入第三方 crate</a></h3>
+<pre><code class="language-rs">// Rust 2015 版本的写法
+// 在 Rust2018 版本中，可以省略掉 extern erate, 因为在 Cargo.toml 中已经添加了依赖 
+// extern crate 声明包的名称 是 linked_list， 用的是下画线“_”， 而在 Cargo.tom! 中用的是连字符&quot;-&quot;。这是怎么回事呢?其实 Cargo 默认会把连字符转换成 下画线 
+extern crate linked_list，
+</code></pre>
+<h1><a class="header" href="#单元测试" id="单元测试">单元测试</a></h1>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>/// 单元测试
+/// 
+/// 使用 cargo test 运行
+/// 
+/// 运行某个特定的测试方法 cargo test test_any_panic
+/// 
+/// cargo test panic 方法名中含有 panic 的测试方法会运行
+/// 
+
+
+#[cfg(test)]// 条件编译 ， 告诉编译器只在运行测试( cargo test 命令)时才编译执行
+mod tests {
+    // 注意这个惯用法：在 tests 模块中，从外部作用域导入所有名字。
+    use super::*;
+
+    #[test]
+    fn test_xx() {
+        println!(&quot;hello unit test&quot;);
+    }
+
+    // 测试 panic
+    #[test]
+    #[ignore] // 忽略测试, 或者使用 cargo test -- --ignored 命令来运行它们。
+    #[should_panic]
+    fn test_any_panic() {
+        divide_non_zero_result(1, 0);
+    }
+
+    // 测试 带有输出文本的panic
+    #[test]
+    #[should_panic(expected = &quot;Divide result is zero&quot;)]
+    fn test_specific_panic() {
+        divide_non_zero_result(1, 10);
+    
+}
+
+
+
+<span class="boring">}
+</span></code></pre></pre>
 <h1><a class="header" href="#交叉编译-and-条件编译" id="交叉编译-and-条件编译">交叉编译 and 条件编译</a></h1>
 <p>https://github.com/japaric/rust-cross#tldr-ubuntu-example
 https://zhuanlan.zhihu.com/p/76611800
@@ -7834,9 +8391,11 @@ impl TimerFuture {
 </code></pre>
 <h2><a class="header" href="#rwlock-和-refcell" id="rwlock-和-refcell">RwLock 和 RefCell</a></h2>
 <pre><code class="language-rs">// RwLock&lt;T&gt;相当于线程安全版本的 RefCell&lt;T&gt;，同时运行多个 reader或者一个 writer
+// RwLock 读写锁，是多读单写锁，也 叫共享独占锁 。 它允许多个线程读，单个线程写 。 但是在写的时候 ， 只能有一个线程占有写锁 ; 而在读的时候， 允许任意线程获取读锁 。 读锁和写锁不能被同时获取
+// 所以在度多写少的场景, 使用 读写锁可以有更高的并发支持
 </code></pre>
 <h2><a class="header" href="#mutex" id="mutex">Mutex</a></h2>
-<pre><code class="language-rs">// Mutex&lt;T&gt;是锁，同一时间仅允许有-个线程进行操作。
+<pre><code class="language-rs">// Mutex&lt;T&gt;是锁，同一时间仅允许有-个线程进行操作, 不管是读还是写。
 // 本质是一个 struct
 
 </code></pre>
@@ -8577,7 +9136,8 @@ https://s0docs0rs.icopy.site/</p>
 <h3><a class="header" href="#http-client" id="http-client">http client</a></h3>
 <p>http - HTTP标准相关的基础类型，如Request<T> 、Response<T>以及StatusCode和常用的Header</p>
 <p>hyper -  HTTP底层库，它封装了HTTP的报文解析、报文编码处理、连接控制</p>
-<h2><a class="header" href="#读取配置文件" id="读取配置文件">读取配置文件</a></h2>
+<h2><a class="header" href="#序列化反序列化" id="序列化反序列化">序列化反序列化</a></h2>
+<p>serde 库</p>
 <h3><a class="header" href="#toml" id="toml">toml</a></h3>
 <pre><code class="language-rs">use std::env::args;
 
@@ -8598,7 +9158,7 @@ fn main() {
 
 </code></pre>
 <h3><a class="header" href="#json" id="json">json</a></h3>
-<p>serde_json</p>
+<p>serde_json 是基于 serde 实现的</p>
 <h2><a class="header" href="#日志系统" id="日志系统">日志系统</a></h2>
 <p>日志 https://segmentfault.com/a/1190000021681959</p>
 <p>log 提供 api, 如果只是开发一个 lib , 无需导入实现, 如果是在一个可执行程序里, 必须有实现才能打印</p>
@@ -8624,9 +9184,10 @@ fn main() {
 <h2><a class="header" href="#文本解析器" id="文本解析器">文本解析器</a></h2>
 <p>https://github.com/Geal/nom
 https://zhuanlan.zhihu.com/p/115017849</p>
-<h2><a class="header" href="#lazy-static" id="lazy-static">lazy static</a></h2>
+<h2><a class="header" href="#lazy-static-延迟初始化" id="lazy-static-延迟初始化">lazy static 延迟初始化</a></h2>
+<p>可以把定义全局静态变量延迟到运行时，而非编译时</p>
 <p>在运行时初始化静态变量, 即静态变量延迟初始化</p>
-<p>例如, 某些静态变量由命令行参数决定</p>
+<p>例如, 某些静态变量由命令行参数决定, 得等到运行时才能确定静态变量</p>
 <pre><code class="language-rs">use std::collections::HashMap;
 
 use lazy_static::lazy_static;
@@ -8719,6 +9280,11 @@ apt install -y pkg-config
 <p>https://github.com/PistonDevelopers/conrod 2d</p>
 <h2><a class="header" href="#底层网络-api" id="底层网络-api">底层网络 api</a></h2>
 <p>libpnet, 如 <code>pnet = &quot;0.25.0&quot;</code></p>
+<h2><a class="header" href="#正则" id="正则">正则</a></h2>
+<ul>
+<li>regex 官方实现, 不支持环视 ( look-around ) 和 反向引用 ( backreference)</li>
+<li>fancy-regex , 支持 支持环视 ( look-around ) 和 反向引用 ( backreference)</li>
+</ul>
 <h2><a class="header" href="#随机" id="随机">随机</a></h2>
 <h3><a class="header" href="#rand-随机数字" id="rand-随机数字">rand 随机数字</a></h3>
 <pre><code class="language-rs">
