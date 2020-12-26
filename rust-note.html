@@ -471,6 +471,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </li>
 <li><a href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-oop">面向对象 oop</a>
 <ul>
+<li><a href="#%E5%8F%AF%E8%A7%81%E6%80%A7">可见性</a></li>
 <li><a href="#%E5%A4%9A%E6%80%81">多态</a></li>
 <li><a href="#%E5%90%91%E4%B8%8B%E8%BD%AC%E5%9E%8B">向下转型</a></li>
 <li><a href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a>
@@ -484,6 +485,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 </li>
 <li><a href="#%E5%AD%90%E8%BF%9B%E7%A8%8B">子进程</a></li>
 <li><a href="#ffi-%E5%A4%96%E9%83%A8%E8%AF%AD%E8%A8%80%E5%87%BD%E6%95%B0%E6%8E%A5%E5%8F%A3">ffi 外部语言函数接口</a></li>
+<li><a href="#%E5%8F%8D%E5%B0%84">反射</a></li>
 <li><a href="#%E5%AE%8F">宏</a>
 <ul>
 <li><a href="#%E5%86%85%E7%BD%AE%E5%AE%8F">内置宏</a></li>
@@ -505,6 +507,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <ul>
 <li><a href="#%E6%A6%82%E5%BF%B5%E7%AE%80%E5%8D%95%E8%A7%A3%E9%87%8A">概念简单解释</a></li>
 <li><a href="#%E7%BC%96%E8%AF%91%E5%99%A8%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86">编译器版本管理</a></li>
+<li><a href="#%E4%B8%BA%E9%A1%B9%E7%9B%AE%E5%8D%95%E7%8B%AC%E6%8C%87%E5%AE%9Aconfig-%E9%85%8D%E7%BD%AE">为项目单独指定config 配置</a></li>
 <li><a href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86-cargo">依赖管理 cargo</a>
 <ul>
 <li><a href="#cargo-%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4">cargo 基本命令</a></li>
@@ -569,11 +572,6 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#udp">udp</a></li>
 </ul>
 </li>
-<li><a href="#%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86">日志处理</a>
-<ul>
-<li><a href="#log4rs-and-log">log4rs and log</a></li>
-</ul>
-</li>
 <li><a href="#%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6">消息中间件</a></li>
 <li><a href="#%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91">游戏开发</a></li>
 <li><a href="#%E7%88%AC%E8%99%AB">爬虫</a></li>
@@ -610,7 +608,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F">日志系统</a>
 <ul>
 <li><a href="#env_logger">env_logger</a></li>
-<li><a href="#log4rs">log4rs</a></li>
+<li><a href="#log4rs-and-log">log4rs and log</a></li>
 </ul>
 </li>
 <li><a href="#%E6%96%87%E6%9C%AC%E8%A7%A3%E6%9E%90%E5%99%A8">文本解析器</a></li>
@@ -619,6 +617,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%A8%8B%E5%BA%8F">命令行程序</a>
 <ul>
 <li><a href="#structopt">structopt</a></li>
+<li><a href="#clap">clap</a></li>
 </ul>
 </li>
 <li><a href="#%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B-1">异步编程</a></li>
@@ -741,7 +740,9 @@ rustup component add clippy
 </code></pre>
 <h2><a class="header" href="#配置国内镜像" id="配置国内镜像">配置国内镜像</a></h2>
 <p>https://www.cnblogs.com/dhcn/p/12100675.html</p>
-<pre><code># 放到 `$HOME/.cargo/config` 文件中
+<pre><code class="language-t">[registry]
+token = &quot;xxx crate.io token&quot; # 注册账号后由网站颁发, 用于发布包
+# 放到 `$HOME/.cargo/config` 文件中
 [source.crates-io]
 registry = &quot;https://github.com/rust-lang/crates.io-index&quot;
 
@@ -765,7 +766,14 @@ registry = &quot;https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index&quot;
 [source.rustcc]
 registry = &quot;git://crates.rustcc.cn/crates.io-index&quot;
 
-
+# 命令别名
+[alias]
+b = &quot;build&quot;
+t = &quot;test&quot;
+r = &quot;run&quot;
+rr = &quot;run --release&quot;
+ben = &quot;bench&quot;
+space_example = [&quot;run&quot;, &quot;--release&quot;, &quot;--&quot;, &quot;\&quot;command list\&quot;&quot;]
 </code></pre>
 <h1><a class="header" href="#标准库" id="标准库">标准库</a></h1>
 <h2><a class="header" href="#path-路径" id="path-路径">path 路径</a></h2>
@@ -6806,6 +6814,113 @@ fn copy_file() {
 <span class="boring">}
 </span></code></pre></pre>
 <h2><a class="header" href="#面向对象-oop" id="面向对象-oop">面向对象 oop</a></h2>
+<h3><a class="header" href="#可见性" id="可见性">可见性</a></h3>
+<pre><code class="language-rs">// rust 下所有元素都是默认私有的, 无法在外部使用, 通过 pub 声明为 公开, 才能在外部使用
+// 
+// - pub， 可以对外 暴露 公共接口，隐藏内部实现细节 (可用于任何对象)
+// - pub(crate)，对整个 crate 可见 。
+// - pub(in Path)，其中 Path是模块路径(以 crate 开头), 表示只能在 Path 指定的模块中访问
+// - pub(self)， 等价于 pub(in self)，表示只限当前模块可见/使用
+// - pub(super)， 等价于 pub(in super)，表示在当前模块和父模块中可见
+// 
+// 
+// 结构体中的字段, 需要单独使用 pub 关键字来 改变其 可见性 
+
+// 2015 
+pub mod outer_mod {
+    pub(self) fn outer_mod_fn() {}
+    pub mod inner_mod {
+        // use outer_mod::outer_mod_fn;
+        // 对外层模块 `outer_mod` 可见
+        pub(in outer_mod) fn outer_mod_visible_fn() {}
+        // 对整个crate可见
+        pub(crate) fn crate_visible_fn() {}
+        // `outer_mod` 内部可见
+        pub(super) fn super_mod_visible_fn() {
+            // 访问同一模块的函数
+            inner_mod_visible_fn();
+            // 访问父模块的函数需要使用“::”前缀
+            ::outer_mod::outer_mod_fn();
+        }
+        // 仅在`inner_mod`可见
+        pub(self) fn inner_mod_visible_fn() {}
+    }
+     
+    pub fn foo() {
+        inner_mod::outer_mod_visible_fn();
+        inner_mod::crate_visible_fn();
+        inner_mod::super_mod_visible_fn();
+     
+        // 不能使用inner_mod 的私有函数
+        // inner_mod::inner_mod_visible_fn();
+    }
+}
+fn bar() {
+    // 该函数对整个crate可见
+    outer_mod::inner_mod::crate_visible_fn();
+ 
+    // 该函数只对outer_mod可见
+    // outer_mod::inner_mod::super_mod_visible_fn();
+ 
+    // 该函数只对outer_mod可见
+    // outer_mod::inner_mod::outer_mod_visible_fn();
+     
+    // 通过foo函数调用内部细节
+    outer_mod::foo();
+}
+fn main() { bar() }
+
+
+
+
+
+
+// 2018
+pub mod outer_mod {
+    pub(self) fn outer_mod_fn() {}
+     
+    pub mod inner_mod {
+        // 在Rust 2018 edtion 模块系统必须使用use导入
+        use crate::outer_mod::outer_mod_fn;
+        // 对外层模块 `outer_mod` 可见
+        pub(in crate::outer_mod)  fn outer_mod_visible_fn() {}
+        // 对整个crate可见
+        pub(crate) fn crate_visible_fn() {}
+        // `outer_mod` 内部可见
+        pub(super) fn super_mod_visible_fn() {
+            // 访问同一模块的函数
+            inner_mod_visible_fn();
+            // 使用use导入了outer_mod
+            outer_mod_fn();
+        }
+        // 仅在`inner_mod`可见
+        pub(self) fn inner_mod_visible_fn() {}
+    }
+     
+    pub fn foo() {
+        inner_mod::outer_mod_visible_fn();
+        inner_mod::crate_visible_fn();
+        inner_mod::super_mod_visible_fn();
+     
+        // 不能使用inner_mod 的私有函数
+        // inner_mod::inner_mod_visible_fn();
+    }
+}
+fn bar() {
+    // 该函数对整个crate可见
+    outer_mod::inner_mod::crate_visible_fn();
+ 
+    // 该函数只对outer_mod可见
+    // outer_mod::inner_mod::super_mod_visible_fn();
+ 
+    // 该函数只对outer_mod可见
+    // outer_mod::inner_mod::outer_mod_visible_fn();
+     
+    // 通过foo函数调用内部细节
+    outer_mod::foo();
+}
+fn main() { bar() }
+</code></pre>
 <h3><a class="header" href="#多态" id="多态">多态</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
@@ -7309,6 +7424,82 @@ fn ffi() {
 
 <span class="boring">}
 </span></code></pre></pre>
+<h2><a class="header" href="#反射" id="反射">反射</a></h2>
+<pre><code class="language-rs">// 标准库提供了 std::any::Any 来支持运行时反射。
+// 可以接收任何静态生命周期类型 即 'static 类型, 不能接收非静态生命周期的类型
+
+   let v1 = 0xc0ffee_u32;
+    let v2 = E::He;
+    let v3 = S { x: 0xde, y: 0xad, z: 0xbeef };
+    let v4 = &quot;rust&quot;;
+    let mut a: &amp;Any; // trait object
+    a = &amp;v1;
+    // 判断是否属于某种类型
+    assert!(a.is::&lt;u32&gt;());
+    // 全局唯一类型标识符
+    // 等价 get_type_id()
+    // TypeId { t: 12849923012446332737 }
+    println!(&quot;{:?}&quot;, TypeId::of::&lt;u32&gt;());   
+    a = &amp;v2;
+    assert!(a.is::&lt;E&gt;());
+    // TypeId { t: 15527215023668350898 }
+    println!(&quot;{:?}&quot;, TypeId::of::&lt;E&gt;());   
+    a = &amp;v3;
+    assert!(a.is::&lt;S&gt;());
+    // TypeId { t: 17868507538031848664 }
+    println!(&quot;{:?}&quot;, TypeId::of::&lt;S&gt;());   
+    a = &amp;v4;
+    assert!(a.is::&lt;&amp;str&gt;());
+    // TypeId { t: 1229646359891580772 }
+    println!(&quot;{:?}&quot;, TypeId::of::&lt;&amp;str&gt;());
+
+
+    // 向下转型为具体类型
+    use std::any::Any;
+    #[derive(Debug)]
+    enum E { H, He, Li}
+    struct S { x: u8, y: u8, z: u16 }
+    // 参数除使用&amp;Any外，也可以使用 Box&lt;Any&gt;
+    fn print_any(a: &amp;Any) {
+        if let Some(v) = a.downcast_ref::&lt;u32&gt;() {
+            println!(&quot;u32 {:x}&quot;, v);
+        } else if let Some(v) = a.downcast_ref::&lt;E&gt;() {
+            println!(&quot;enum E {:?}&quot;, v);
+    } else if let Some(v) = a.downcast_ref::&lt;S&gt;() {
+        println!(&quot;struct S {:x} {:x} {:x}&quot;, v.x, v.y, v.z);
+    } else {
+        println!(&quot;else!&quot;);
+    }
+    }
+    fn main() {
+        print_any(&amp; 0xc0ffee_u32);                       
+        print_any(&amp; E::He);                             
+        print_any(&amp; S{ x: 0xde, y: 0xad, z: 0xbeef }); 
+        print_any(&amp; &quot;rust&quot;);                           
+        print_any(&amp; &quot;hoge&quot;);                           
+    }
+
+
+
+    // 非静态生命周期的类型未实现Any, 无法被 Any 类型接收
+    use std::any::Any;
+    struct UnStatic&lt;'a&gt; { x: &amp;'a i32 }
+    fn main() {
+        let a = 42;
+        let v = UnStatic { x: &amp;a };
+        let mut any: &amp;Any;
+        any = &amp;v;  // Compile Error!
+    }
+    //ok
+    // 因为 使用了 静态生命周期类型来创建 UnStatic, 使得 UnStatic 也变为 了静态生命周期类型
+    static ANSWER: i32 = 42;
+    fn main() {
+        let v = UnStatic { x: &amp;ANSWER };
+        let mut a: &amp;Any;
+        a = &amp;v;
+        assert!(a.is::&lt;UnStatic&gt;());
+    }
+</code></pre>
 <h2><a class="header" href="#宏" id="宏">宏</a></h2>
 <h3><a class="header" href="#内置宏" id="内置宏">内置宏</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
@@ -7659,7 +7850,9 @@ https://privaterookie.github.io/2019-07-14-Rust%E6%A8%A1%E5%9D%97%E4%B8%8E%E6%96
 ///
 ///    当使用 cargo new 命令创建完包之后，src 目录下会生成一个 main.rs 源文件，Cargo 默认这个文件为二进制箱的根，编译之后的二进制箱将与包名相同。
 ///
-/// - 模块（Module）: 类似 Java 中的 类
+/// - 模块（Module）: 使用 mod 声明一个模块, 一个文件默认就是一个 module, 文件名就是 module name
+// 
+//      每个包都拥有一个顶级 (top level) 模块 src/lib.rs 或 src/main.rs。
 /// 
 ///     每个 rust 文件都是一个 module, 比如: 
 //      (若想在同个文件定义多个 module , 只需 mod xx_module {...} mod yy_module {...})
@@ -7670,12 +7863,19 @@ https://privaterookie.github.io/2019-07-14-Rust%E6%A8%A1%E5%9D%97%E4%B8%8E%E6%96
 ///         println!(&quot;This is the main module.&quot;);
 ///         println!(&quot;{}&quot;, second_module::message());
 ///     }
-///     
 ///     // second_module.rs, 模块名就是文件名
 ///     pub fn message() -&gt; String {
 ///         String::from(&quot;This is the 2nd module.&quot;)
 ///     }
 ///     ```
+// 
+//      若希望多个 文件, 组成一个 module,
+//      需要:
+//      合并到一个文件夹, 新建一个 mod.rs (2018 中可以省略了), 然后在其中导出即可 (pub use sub1; pub use sub2;), 新 module name = 文件夹名
+// 
+//      若文件夹 和某个文件 aa.rs 同名, 则文件夹下定义的 module 都是 aa.rs 的子模块 (2015 中则不允许文件与目录同名)
+// 
+// 
 fn mod_package_crate() {
 
     // 路径:
@@ -7686,11 +7886,11 @@ fn mod_package_crate() {
 
     // 如: 导入外部依赖
     use super::{deserial, serial}; //导入 parent 指定资源
-    use crate::codec::{serial, deserial}; // 绝对路径, codec 为依赖 (不论是自定义模块还是第三方依赖), codec 也能是 同个项目的其他 module (rust 文件)
     use super::*; // 导入 parent 的所有
+    use crate::codec::{serial, deserial}; // 绝对路径, codec 为依赖 (不论是自定义模块还是第三方依赖, 若为第三方模块, 则 crate 关键字可选), codec 也能是 同个项目的其他 module (rust 文件)
 
-//  标准库 默认导入了, 一下两句可选
-    extern crate std; // 导入 标准库 std crate
+//  标准库 默认导入了, 所以以下两句可选
+    extern crate std; // 导入 标准库 std crate, 这是 2015 中的语法, 2018 中可选了, 只需要 cargo.toml 中导入即可, 无需再代码中显式指定
     use std : :prelude: :vl: :* ; // 标准库的 prelude module
 
     // 在 module 开头声明不需要 标准库, 使用 核心库(嵌入式开发必须)
@@ -7745,6 +7945,12 @@ fn mod_package_crate() {
 </code></pre></pre>
 <h2><a class="header" href="#编译器版本管理" id="编译器版本管理">编译器版本管理</a></h2>
 <p>在项目根目录下, 放 rust-toolchain 文件, 指定编译器版本</p>
+<h2><a class="header" href="#为项目单独指定config-配置" id="为项目单独指定config-配置">为项目单独指定config 配置</a></h2>
+<pre><code>cargo 全局配置 : /.cargo/confg
+当前用户全局配置: $HOME/.cargo/config
+项目单独配置:     $proj/.cargo/config (子模块亦可继续指定)
+
+</code></pre>
 <h2><a class="header" href="#依赖管理-cargo" id="依赖管理-cargo">依赖管理 cargo</a></h2>
 <h3><a class="header" href="#cargo-基本命令" id="cargo-基本命令">cargo 基本命令</a></h3>
 <pre><code class="language-sh"># 新建可执行程序, 默认是 --bin
@@ -7775,6 +7981,20 @@ cargo build
 # 使用 --release 参数编译最终发布版本。
 # 编译器会对代码进行优化， 使得编译时间变慢， 但是代码运行速度会变快。
 cargo build --release
+
+# 指定条件编译属性 (可以在 Cargo.toml 中指定)
+# 会给 rustc 传递 --cfg features=&quot;xxx&quot;, 表示 会编译 aa_module 模块, 不指定 xxx feature 则不会编译 该模块
+cargo build --features &quot;xxx&quot;
+# 在代码中这么使用
+#   # 表示若没有指定 xxx feature, 则编译报错
+#   #[cfg(not(feature = &quot;xxx&quot;))]
+#   compile_error!(&quot;xxx feature is required to build this crate&quot;)
+#   
+#   # 表示 只有指定 了 xxx feature, 编译时才会包含 aa_module 进去
+#   #[cfg(feature = &quot;xxx&quot;)]
+#   mod aa_module
+
+
 
 cargo check # 迅速检查错误, 时间短
 
@@ -7826,14 +8046,42 @@ cargo --version
 cargo update           # updates all dependencies
 cargo update -p rand   # updates just “rand”
 
+# 第三方插件扩展:
 
-cargo fmt # 格式化项目代码
-cargo fix # 修复代码警告
+# 需要 rustup component add rustfmt [一toolchain nightly]
+cargo fmt # 格式化项目代码, 在项目根目录下执行, 会生成备份文件, .bk结尾, 跳过格式化 #[rustfmt_skip]
+cargo fix # 自动修复代码警告
 cargo clippy #捕捉常见错误，改善代码 (需要安装 clippy)
+</code></pre>
+<p>自定义格式化:  在项目根目录 rustfmt.tomI</p>
+<pre><code class="language-t">max_width = 90 # 最大宽度
+fn_call_width = 90 # 函数宽度
+chain_one_line_max = 80 # 链式调用最大宽度
+condense_wildcard_suffixes = true # 压缩通配符前缀
 </code></pre>
 <h3><a class="header" href="#cargotoml" id="cargotoml">Cargo.toml</a></h3>
 <p>Cargo.toml 项目元信息, 包括版本, 依赖</p>
-<pre><code class="language-t"># 依赖
+<pre><code class="language-t">[package]
+...
+build = &quot;build.rs&quot; # 构建脚本, 相对于根目录
+workspace = &quot;..&quot; # 这是 sub crate 中的配置
+member = [&quot;&quot;, &quot;&quot;] # 这是 parent crate 中的配置
+
+[[bin]]
+name = &quot;run-main&quot; # 生成的可执行文件的名字
+path = &quot;src/main.rs&quot; # 当想在一个作为库的包里同时包含 main.rs , 需要配置这个, 文件名必须为 main.rs, 若放在 src/bin 下则可以自定义文件名
+bench = false # 生成 可执行文件时不执行性能测试
+
+
+[[bench]]
+name = &quot;bench&quot;
+path = &quot;src/bench.rs&quot; # 性能测试代码
+test = false
+bench = true
+
+
+# 依赖
+#  [dependencies] 专门用于设置第三方包的依赖，这些依赖会在执行 cargo build命令编译 时使用。
 [dependencies]
 uuid = &quot;0.0.1&quot; # 会从中心仓库下载
 ferris-says = &quot;0.1&quot;
@@ -7843,15 +8091,8 @@ ferris-says = &quot;0.1&quot;
 
 [dependencies]
 gfx-hal = { version = &quot;0.1.0&quot;, git = &quot;https://github.com/gfx-rs/gfx&quot;, rev = &quot;bd7f058efe78d7626a1cc6fbc0c1d3702fb6d2e7&quot; }
-#  或者写成多行
+#  或者写成多行 (使用点 &quot;.&quot; 表示json 中的嵌套)
 [dependencies.gfx-hal]
-git = &quot;https://github.com/gfx-rs/gfx&quot;
-version = &quot;0.1.0&quot; 
-rev = &quot;bd7f058efe78d7626a1cc6fbc0c1d3702fb6d2e7&quot;
-# or
-// 或者写成多行
-[dependencies]
-name = &quot;gfx-hal&quot;
 git = &quot;https://github.com/gfx-rs/gfx&quot;
 version = &quot;0.1.0&quot; 
 rev = &quot;bd7f058efe78d7626a1cc6fbc0c1d3702fb6d2e7&quot;
@@ -7860,17 +8101,36 @@ rev = &quot;bd7f058efe78d7626a1cc6fbc0c1d3702fb6d2e7&quot;
 [dependencies]
 hello_utils = { path = &quot;../hello_utils&quot;, version = &quot;0.1.0&quot; }
 
-#  [dependencies] 专门用于设置第三方包的依赖，这些依赖会在执行 cargo build命令编译 时使用。 
+ 
 # [dev-dependencies]表的作用用来设置测试( tests)、示例 (examples)和基准测试( benchmarks)时使用的依赖, 在执行 cargo test 或 cargo bench 命 令 时使用 。
 [dev-dependencies]
 
 
 # 条件编译功能 (选择性地编 译 代 码)
 [features]
-default=[&quot;use_std&quot;]
+default=[&quot;use_std&quot;] # 这里的
 use_std=[]
 unstable= [&quot;pattern&quot;]
 patter=[]
+
+
+# 最终编译目标库的信息
+[lib]
+name = foo # 表示将来编译的库名字为“libfooa” 或 “libfoo.so&quot;等。
+crate-type = dylib # 比如 crate-type = [”dylib”, ”staticlib”]，表示可 以同时编译生成动态库和静态库。
+path = &quot;src/lib.rs&quot; # 表示库文件入口 ， 如果不指定， 则默认是 src/lib.rs。
+test=true # 表示可以使用单元测试
+bench = true # 表示可以使用性能基准测试, 若代码中没有提供性能基准测试, 则可设置为  false
+
+
+# 双中括号 -&gt; 数组
+[[test]]
+path = &quot;tests/test_default.rs&quot; 
+name = &quot;default&quot;
+[[test]]
+name = &quot;aa&quot;
+path = &quot;tests/aa.rs&quot;
+
 
 
 
@@ -7880,14 +8140,24 @@ uuid = { path = &quot;../path/to/uuid&quot; }
 # 默认 master 分支, # 手动指定 commit id, 不过有了 lock 文件, 就不必这么干了
 uuid = {git = &quot;https://github.com/uuid-rs/uuid.git&quot;,  rev = &quot;9f35b8e&quot;} 
 
+# rustc 相关的编译配置
+# 分别代表对 Release、 Bench 和 Test, debug 四种 编译模式进行配置
+[profile.release]
+debug=true # 编译时, 包含 debug 信息
+# 优化级别
+opt-level = 3 # 编译优化, 耗时更长
 
+[profile.bench]
+debug=true
+
+[profile.test]
+debug=true
 
 [profile.dev]
-opt-level = 0
+opt-level = 0 # 优先级
+lto= # 连接时间优化
 
-[profile.release]
-# 编译优化, 耗时更长
-opt-level = 3
+
 
 
 
@@ -7923,6 +8193,9 @@ members = [
 </code></pre>
 <h2><a class="header" href="#buildrs" id="buildrs">build.rs</a></h2>
 <p>build.rs可实现本项目编译前的额外操作，比如代码生成、调用cmake/clang/gcc/ndk-build等编译所依赖的C/C++库、读取C/C++头文件生成FFI文件给Rust项目使用等等，相当于Rust写的shell脚本</p>
+<p>先于 cargo build 被编 译</p>
+<pre><code class="language-rs">
+</code></pre>
 <h2><a class="header" href="#项目管理案例" id="项目管理案例">项目管理案例</a></h2>
 <h3><a class="header" href="#导入自定义-crate" id="导入自定义-crate">导入自定义 crate</a></h3>
 <p><code>cargo new web-server</code></p>
@@ -9019,49 +9292,6 @@ fn main() -&gt; std::io::Result&lt;()&gt; {
     Ok(())
 }
 </code></pre>
-<h1><a class="header" href="#日志处理" id="日志处理">日志处理</a></h1>
-<h2><a class="header" href="#log4rs-and-log" id="log4rs-and-log">log4rs and log</a></h2>
-<pre><code class="language-t">[dependencies]
-log = &quot;0.4.11&quot;
-log4rs = &quot;0.13.0&quot;
-</code></pre>
-<p>log4rs.yml</p>
-<pre><code class="language-yml">refresh_rate: 30 seconds
-appenders:
-  stdout:
-    kind: console
-  requests:
-    kind: file
-    path: &quot;log/requests.log&quot; # 相对于项目根目录
-    encoder:
-      pattern: &quot;{d} - {m}{n}&quot;
-root:
-  level: debug
-  appenders:
-    - stdout
-    - requests
-
-#loggers:
-#  app::backend::db:
-#    level: info
-#  app::requests:
-#    level: info
-#    appenders:
-#      - requests
-#    additive: false
-
-</code></pre>
-<pre><code class="language-rs">
-fn main() {
-    let log_file = &quot;config/log4rs.yml&quot;; // 相对于 项目根目录
-    log4rs::init_file(log_file, Default::default()).unwrap();
-    debug!(&quot;&gt;&gt;&gt; load log config file: {}&quot;, log_file);
-
-    let listener = TcpListener::bind(&quot;127.0.0.1:8090&quot;).unwrap();
-    info!(&quot;visit ==&gt; http://127.0.0.1:8090&quot;);
-}
-
-</code></pre>
 <h1><a class="header" href="#消息中间件" id="消息中间件">消息中间件</a></h1>
 <p>https://github.com/nkbai/learnrustbynats</p>
 <p>TODO</p>
@@ -9180,7 +9410,48 @@ fn main() {
 
 
 </code></pre>
-<h3><a class="header" href="#log4rs" id="log4rs">log4rs</a></h3>
+<h3><a class="header" href="#log4rs-and-log" id="log4rs-and-log">log4rs and log</a></h3>
+<pre><code class="language-t">[dependencies]
+log = &quot;0.4.11&quot;
+log4rs = &quot;0.13.0&quot;
+</code></pre>
+<p>log4rs.yml</p>
+<pre><code class="language-yml">refresh_rate: 30 seconds
+appenders:
+  stdout:
+    kind: console
+  requests:
+    kind: file
+    path: &quot;log/requests.log&quot; # 相对于项目根目录
+    encoder:
+      pattern: &quot;{d} - {m}{n}&quot;
+root:
+  level: debug
+  appenders:
+    - stdout
+    - requests
+
+#loggers:
+#  app::backend::db:
+#    level: info
+#  app::requests:
+#    level: info
+#    appenders:
+#      - requests
+#    additive: false
+
+</code></pre>
+<pre><code class="language-rs">
+fn main() {
+    let log_file = &quot;config/log4rs.yml&quot;; // 相对于 项目根目录
+    log4rs::init_file(log_file, Default::default()).unwrap();
+    debug!(&quot;&gt;&gt;&gt; load log config file: {}&quot;, log_file);
+
+    let listener = TcpListener::bind(&quot;127.0.0.1:8090&quot;).unwrap();
+    info!(&quot;visit ==&gt; http://127.0.0.1:8090&quot;);
+}
+
+</code></pre>
 <h2><a class="header" href="#文本解析器" id="文本解析器">文本解析器</a></h2>
 <p>https://github.com/Geal/nom
 https://zhuanlan.zhihu.com/p/115017849</p>
@@ -9225,7 +9496,7 @@ http://llever.com/cli-wg-zh/tutorial/cli-args.zh.html</p>
 <p>https://github.com/fdehau/tui-rs</p>
 <p>https://github.com/cjbassi/ytop 命令行系统监控程序</p>
 <h3><a class="header" href="#structopt" id="structopt">structopt</a></h3>
-<p>整合 clap, 将参数直接解析为 struct</p>
+<p>整合 clap, 将参数直接解析为 struct, 更加方便</p>
 <pre><code class="language-rs">use std::path::PathBuf;
 use structopt::StructOpt;
 
@@ -9253,6 +9524,8 @@ fn main() {
 }
 
 </code></pre>
+<h3><a class="header" href="#clap" id="clap">clap</a></h3>
+<p>功能强大, 使用不够简单</p>
 <h2><a class="header" href="#异步编程-1" id="异步编程-1">异步编程</a></h2>
 <p>tokio</p>
 <h2><a class="header" href="#websocket" id="websocket">websocket</a></h2>
