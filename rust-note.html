@@ -488,9 +488,14 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E5%8F%8D%E5%B0%84">反射</a></li>
 <li><a href="#%E5%AE%8F">宏</a>
 <ul>
-<li><a href="#%E5%86%85%E7%BD%AE%E5%AE%8F">内置宏</a></li>
+<li><a href="#%E5%AE%8F%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D">宏基本介绍</a></li>
+<li><a href="#%E5%A3%B0%E6%98%8E%E5%AE%8F">声明宏</a>
+<ul>
 <li><a href="#%E5%88%9B%E5%BB%BA%E5%AE%8F">创建宏</a></li>
+<li><a href="#%E9%87%8D%E5%A4%8D%E5%8C%B9%E9%85%8D">重复匹配</a></li>
 <li><a href="#%E5%AE%8F%E9%87%8D%E8%BD%BD">宏重载</a></li>
+</ul>
+</li>
 <li><a href="#%E8%BF%87%E7%A8%8B%E5%AE%8F">过程宏</a></li>
 </ul>
 </li>
@@ -7501,7 +7506,34 @@ fn ffi() {
     }
 </code></pre>
 <h2><a class="header" href="#宏" id="宏">宏</a></h2>
-<h3><a class="header" href="#内置宏" id="内置宏">内置宏</a></h3>
+<h3><a class="header" href="#宏基本介绍" id="宏基本介绍">宏基本介绍</a></h3>
+<pre><code class="language-rs">
+
+/// 可进行元编程（metaprogramming）
+/// 宏并不产 生函数调用，而是展开成源码，并和程序的其余部分一起被编译
+/// 
+/// 使用场景:
+/// - 避免重复代码 (https://doc.rust-lang.org/stable/rust-by-example/macros/dry.html)
+/// - 领域专用语言（DSL，domain-specific language）。宏允许你为特定的目的创造特定的 语法
+/// - 可变接口（variadic interface）。有时你需要能够接受不定数目参数的接口，比如 println!
+/// 
+</code></pre>
+<p>按照定义方式分类:</p>
+<ul>
+<li>声明宏, 通过 macro_rules! 定义</li>
+<li>过程宏</li>
+</ul>
+<p>根据使用的语法形式又分为以下两种:</p>
+<ul>
+<li>调用宏， 形如 println!、 assert_eq! 、 thread_local!等可以当作函数调用的宏, </li>
+<li>属性宏， 也就是形如 <code>#[derive(Debug))或#[cfg]</code>这种形式的语法</li>
+</ul>
+<p>按宏的来源，可以分为以下两类</p>
+<ul>
+<li>内置宏</li>
+<li>自定义宏</li>
+</ul>
+<p>有哪些内置宏?</p>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -7529,85 +7561,143 @@ panic!
 
 <span class="boring">}
 </span></code></pre></pre>
-<h3><a class="header" href="#创建宏" id="创建宏">创建宏</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span>
-
-<span class="boring">fn main() {
-</span>/// 创建宏
-/// 可进行元编程（metaprogramming）
-/// 宏并不产 生函数调用，而是展开成源码，并和程序的其余部分一起被编译
-/// 
-/// 使用场景:
-/// - 避免重复代码 (https://doc.rust-lang.org/stable/rust-by-example/macros/dry.html)
-/// - 领域专用语言（DSL，domain-specific language）。宏允许你为特定的目的创造特定的 语法
-/// - 可变接口（variadic interface）。有时你需要能够接受不定数目参数的接口，比如 println!
-/// 
-fn macro_demo() {
-    // 这是一个简单的宏，名为 `say_hello`。
-    macro_rules! say_hello {
-        // `()` 表示此宏不接受任何参数。
-        () =&gt; (
-            // 此宏将会展开成这个代码块里面的内容。
-            println!(&quot;Hello cacro!&quot;);
-        )
-    }
-
-    // 这个调用将会展开成 `println(&quot;Hello&quot;);`!
-    say_hello!();
+<h3><a class="header" href="#声明宏" id="声明宏">声明宏</a></h3>
+<h4><a class="header" href="#创建宏" id="创建宏">创建宏</a></h4>
+<pre><pre class="playpen"><code class="language-rust">// 宏展开:
+// 假如是单独的文件则执行此命令展开
+//  rustc -Z unstable-options --pretty=expanded main.rs
+// 假如是 cargo 生成的二进和l包则执行此命令
+// cargo rustc -- -Z unstable-options --pretty=expanded
 
 
+// macro rules!本身 也 是一种声明宏 ， 只不过它由编译器 内部所定义
+// 宏的原理和正则表达式匹配的原理类似 
+// 
+// 语法:
+// macro_rule! $macro_name { 
+//      // 展开代码没有返回值时, 使用小括号
+//      // 若展开代码带有返回值, 使用中括号
+//      ($arg1:expr, $arg2:expr) =&gt; {code...},
+//      () =&gt; {},
+//      ... 
+// }
+// 未来会支持 macro 关键字
+// #![feature(decl_macro)]
+// macro unless($arg:expr, $branch:expr) {
+//     ( if !$arg { $branch }); 
+// } 
+// 
+// 匹配表达式中类型支持: (各个类型能够匹配的范围有重叠覆盖)
+// • item， 代表语言项，就是组成一个 Rust包的基本单位，比如模块、声明、函数定义 、 类型定义、结构体定义、 impl 实现等。
+// • block， 代表代码块，由花括号限定的代码。
+// • stmt，代表语句 ， 一般是 指以分号结尾的代码 。
+// • expr，指代表达式，会生成具体的值 。
+// • pat，指代模式。
+// • ty， 表示类型。
+// • ident， 指代标识符。如 变量名或函数名
+// • path，指代路径， 比如foo、 std::iter等。
+// • meta， 元信息，表示包含在# [...]或#![...]属性 内的信 息。
+// • tt , TokenTree 的 缩写，指代词条树。比 expr 能匹配的范围要广
+// • vis，指代可见性，比如 pub。
+// • lifetime， 指代生命周期参数 。
 
-    // 指示符
-    /*
-    block
-    expr 用于表达式
-    ident 用于变量名或函数名
-    item
-    pat (模式 pattern)
-    path
-    stmt (语句 statement)
-    tt (标记树 token tree)
-    ty (类型 type)
-    
-    */
-    //宏的参数使用一个美元符号 $ 作为前缀，并使用一个指示符（designator）来 注明类型
-    macro_rules! create_function {
-        // `ident` 指示符, 标识 func_name 是变量名或函数名
-        ($func_name:ident) =&gt; (
-            fn $func_name() {
-                // `stringify!` 宏把 `ident` 转换成字符串。
-                println!(&quot;You called {:?}()&quot;, stringify!($func_name))
-            }
-        )
-    }
-    // 借助上述宏来创建名为 `foo` 和 `bar` 的函数。
-    create_function!(foo);
-    create_function!(bar);
-    
-    macro_rules! print_result {
-        // `expr` 指示符表示输入参数为一个表达式。
-        ($expression:expr) =&gt; (
-            println!(&quot;{:?} = {:?}&quot;,
-                     stringify!($expression),// `stringify!` 把表达式*原样*转换成一个字符串。
-                     $expression)// 执行表达式
-        )
-    }
-    foo();
-    bar();
-    print_result!(1u32 + 1);
-    //代码块也是表达式！
-    print_result!({
-        let x = 1u32;
+// 
+// 这是一个简单的宏，名为 `say_hello`。
+macro_rules! say_hello {
+    // `()` 表示此宏不接受任何参数。
+    () =&gt; (// 这里使用 大括号亦可
+        // 此宏将会展开成这个代码块里面的内容。
+        println!(&quot;Hello cacro!&quot;);
+    )
+}
+// 这个调用将会展开成 `println(&quot;xxx&quot;);`!
+say_hello!();// 这里使用大括号亦可
 
-        x * x + 2 * x - 1
+// 带参数
+macro_rules! hello {
+    ($name:expr) =&gt; {// 使用 大小括号均可
+        println!(&quot;Hello, {}&quot;, $name);
+    };
+}
+fn main() {
+    hello!(&quot;xy&quot;)// 使用大小括号均可
+}
+
+// 带代码段
+macro_rules! unless {
+    ($arg: expr, $logic:expr) =&gt; (
+        if !$arg {
+            $logic
+        }
+    );
+}
+fn main() {
+    let (a, b) = (1, 2);
+    unless!(a &gt; b, {// 大括号可省略
+        println!(&quot;a &lt; b&quot;);
     });
+}
 
 
-<span class="boring">}
-</span></code></pre></pre>
-<h3><a class="header" href="#宏重载" id="宏重载">宏重载</a></h3>
+// 参数类型为 标识符
+macro_rules! create_function {
+    // `ident` 指示符, 标识 func_name 是变量名或函数名
+    ($func_name:ident) =&gt; (
+        fn $func_name() {
+            // `stringify!` 宏把 `ident` 转换成字符串。
+            println!(&quot;You called {:?}()&quot;, stringify!($func_name))
+        }
+    )
+}
+// 借助上述宏来创建名为 `foo` 和 `bar` 的函数。
+create_function!(foo);
+create_function!(bar);
+
+macro_rules! print_result {
+    // `expr` 指示符表示输入参数为一个表达式。
+    ($expression:expr) =&gt; (
+        println!(&quot;{:?} = {:?}&quot;,
+                    stringify!($expression),// `stringify!` 把表达式*原样*转换成一个字符串。
+                    $expression)// 执行表达式
+    )
+}
+foo();
+bar();
+print_result!(1u32 + 1);
+//代码块也是表达式！
+print_result!({
+    let x = 1u32;
+    x * x + 2 * x - 1
+});
+
+
+</code></pre></pre>
+<h4><a class="header" href="#重复匹配" id="重复匹配">重复匹配</a></h4>
+<pre><code class="language-rs">macro_rules! map {
+    ($($key:expr =&gt; $value:expr),*) =&gt; {
+        {
+            // 使用绝对路径, 避免冲突
+            let mut map = std::collections::HashMap::new();
+            // 循环读取
+            $(
+                map.insert($key, $value);
+            )*
+            map
+        }
+    };
+}
+
+fn main() {
+    // 调用时, 大小括号都可
+    //但还是存在问题, 末尾元素不能有逗号
+    let map = map!(&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 3);
+    println!(&quot;map: {:?}&quot;, map);
+    let mat1 = map!{1 =&gt; &quot;a&quot;, 2 =&gt; &quot;b&quot;, 3 =&gt; &quot;c&quot;};
+    println!(&quot;mat1: {:?}&quot;, mat1);
+}
+
+</code></pre>
+<h4><a class="header" href="#宏重载" id="宏重载">宏重载</a></h4>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span>
@@ -7709,13 +7799,13 @@ fn macro_demo() {
 
 
 <span class="boring">fn main() {
-</span>    // 过程宏
-    //
-    // 接受 rust 代码作为输入,  修改后, 输出;
-    // 前面的声明宏: 输入代码, 通过 match 匹配, 以另外的代码替换输出
+</span>// 过程宏
+//
+// 接受 rust 代码作为输入,  修改后, 输出;
+// 前面的声明宏: 输入代码, 通过 match 匹配, 以另外的代码替换输出
 
-    // 自定义 derive 宏
-    //
+// 自定义 derive 宏
+//
 }
 
 <span class="boring">}
