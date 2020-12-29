@@ -492,14 +492,29 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E5%A3%B0%E6%98%8E%E5%AE%8F">声明宏</a>
 <ul>
 <li><a href="#%E5%88%9B%E5%BB%BA%E5%AE%8F">创建宏</a></li>
-<li><a href="#%E9%87%8D%E5%A4%8D%E5%8C%B9%E9%85%8D">重复匹配</a></li>
-<li><a href="#%E5%AE%8F%E9%87%8D%E8%BD%BD">宏重载</a></li>
+<li><a href="#%E9%87%8D%E5%A4%8D%E5%BE%AA%E7%8E%AF%E5%8C%B9%E9%85%8D">重复循环匹配</a></li>
+<li><a href="#%E5%AE%9E%E9%99%85%E6%A1%88%E4%BE%8B">实际案例</a></li>
 </ul>
 </li>
-<li><a href="#%E8%BF%87%E7%A8%8B%E5%AE%8F">过程宏</a></li>
+<li><a href="#%E5%AE%8F%E8%B0%83%E8%AF%95">宏调试</a></li>
+<li><a href="#%E8%BF%87%E7%A8%8B%E5%AE%8F">过程宏</a>
+<ul>
+<li><a href="#%E8%BF%87%E7%A8%8B%E5%AE%8F%E4%BB%8B%E7%BB%8D">过程宏介绍</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%AE%8F">自定义属性宏</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%AE%8F">函数调用宏</a></li>
+<li><a href="#derive-%E5%AE%8F">derive 宏</a></li>
 </ul>
 </li>
-<li><a href="#unsafe-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AD%98%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5">unsafe 屏蔽内存安全检查</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85">使用第三方包</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%99%A8%E6%8F%92%E4%BB%B6">编译器插件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#unsafe-%E5%B1%8F%E8%94%BD%E5%86%85%E5%AD%98%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5">unsafe 屏蔽内存安全检查</a>
+<ul>
+<li><a href="#unsafe-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D">unsafe 基本介绍</a></li>
+<li><a href="#%E5%92%8C-unsafe-%E6%9C%89%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95">和 unsafe 有关的方法</a></li>
 </ul>
 </li>
 <li><a href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86">内存管理</a>
@@ -525,6 +540,7 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#buildrs">build.rs</a></li>
 <li><a href="#%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E6%A1%88%E4%BE%8B">项目管理案例</a>
 <ul>
+<li><a href="#%E5%AF%BC%E5%87%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%8F">导出自定义宏</a></li>
 <li><a href="#%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89-crate">导入自定义 crate</a></li>
 <li><a href="#%E6%89%A7%E8%A1%8C%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%AD%E7%9A%84-module">执行子目录中的 module</a></li>
 <li><a href="#%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89-module">导入自定义 module</a></li>
@@ -551,8 +567,15 @@ https://www.zhihu.com/question/352420716/answer/973279231</p>
 <li><a href="#%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-%E5%BC%82%E6%AD%A5-sleep">动手实现 异步 sleep</a></li>
 </ul>
 </li>
-<li><a href="#%E5%B9%B6%E5%8F%91-%E5%A4%9A%E7%BA%BF%E7%A8%8B">并发 多线程</a>
+<li><a href="#%E5%B9%B6%E5%8F%91">并发</a>
 <ul>
+<li><a href="#%E9%80%9A%E7%94%A8%E6%A6%82%E5%BF%B5">通用概念</a>
+<ul>
+<li><a href="#%E8%BF%9B%E7%A8%8B-and-%E7%BA%BF%E7%A8%8B">进程 and 线程</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8">事件驱动</a></li>
+<li><a href="#%E5%8D%8F%E7%A8%8B">协程</a></li>
+</ul>
+</li>
 <li><a href="#crossbeam-%E5%BC%80%E6%BA%90%E5%BA%93">CrossBeam 开源库</a></li>
 <li><a href="#arc-%E5%92%8C-rc">Arc 和 Rc</a></li>
 <li><a href="#rwlock-%E5%92%8C-refcell">RwLock 和 RefCell</a></li>
@@ -7575,11 +7598,9 @@ panic!
 // 
 // 语法:
 // macro_rule! $macro_name { 
-//      // 展开代码没有返回值时, 使用小括号
-//      // 若展开代码带有返回值, 使用中括号
-//      ($arg1:expr, $arg2:expr) =&gt; {code...},
-//      () =&gt; {},
-//      ... 
+//      // 扩展部分, 大小括号均可
+//      ($arg1:expr, $arg2:expr) =&gt; {code...}; // 分支以分号结尾
+//      () =&gt; ()                                // 最后一个分支可省略分号
 // }
 // 未来会支持 macro 关键字
 // #![feature(decl_macro)]
@@ -7672,11 +7693,17 @@ print_result!({
 
 
 </code></pre></pre>
-<h4><a class="header" href="#重复匹配" id="重复匹配">重复匹配</a></h4>
-<pre><code class="language-rs">macro_rules! map {
+<h4><a class="header" href="#重复循环匹配" id="重复循环匹配">重复循环匹配</a></h4>
+<pre><code class="language-rs">// 不定参数 可变接口
+//宏在参数列表中可以使用 + 来表示一个参数可能出现一次或多次，
+// 使用 * 来表示该 参数可能出现零次或多次
+//
+macro_rules! map {
     ($($key:expr =&gt; $value:expr),*) =&gt; {
+        // 包裹一层大括号, 表示返回一个值
         {
             // 使用绝对路径, 避免冲突
+            // 若使用到自定义函数, 需要在路径中使用 $crate , 避免导出时出 bug
             let mut map = std::collections::HashMap::new();
             // 循环读取
             $(
@@ -7686,53 +7713,89 @@ print_result!({
         }
     };
 }
-
 fn main() {
     // 调用时, 大小括号都可
-    //但还是存在问题, 末尾元素不能有逗号
     let map = map!(&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 3);
     println!(&quot;map: {:?}&quot;, map);
     let mat1 = map!{1 =&gt; &quot;a&quot;, 2 =&gt; &quot;b&quot;, 3 =&gt; &quot;c&quot;};
     println!(&quot;mat1: {:?}&quot;, mat1);
+    //但还是存在问题, 末尾元素不能有逗号 , 可以通过添加多个匹配规则解决
+    // error
+    let map2 = map!(&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2,);
 }
 
+
+// 解决:
+macro_rules! map {
+    ($($key:expr =&gt; $value:expr),*) =&gt; {
+        {
+            let mut map = std::collections::HashMap::new();
+            $(
+                map.insert($key, $value);
+            )*
+            map
+        }
+    };
+    // 新增一条匹配规则
+    ($($key:expr =&gt; $value:expr,)*) =&gt; {
+        map!($($key =&gt; $value),*) // 递归调用前面的 匹配
+    };
+
+}
+
+// 或者最简单的方法, 将原来的匹配略加修改:
+// 添加的 $(,)* 表示匹配任意次数的逗号
+($($key:expr =&gt; $value:expr),* $(,)*) =&gt; {}
+// or
+($($key:expr =&gt; $value:expr,)* $(,)*) =&gt; {}
+
+
+fn main() {
+    let map = map!(
+        1 =&gt; &quot;a&quot;,
+        2 =&gt; &quot;b&quot;, // 可以使用 逗号结尾了
+    );
+    println!(&quot;{:?}&quot;, map);
+}
+
+
 </code></pre>
-<h4><a class="header" href="#宏重载" id="宏重载">宏重载</a></h4>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span>
+<h4><a class="header" href="#实际案例" id="实际案例">实际案例</a></h4>
+<pre><code class="language-rs">//  创建 map 宏
+macro_rules! map {
+    // @unit 是约定俗成的在宏内部定义宏的命名规则
+    // 必须定义在开头, 否则就按照普通匹配分支处理了
+    (@unit $($x:tt)*) =&gt; {()};    // 统计 item 个数时使用的单位, 这里使用 空元组, 不占空间
+    (@count $($key:expr),* ) =&gt; {
+        (&lt;[()]&gt;::len(&amp;[$(map!(@unit $key)),*]));
+    };
 
-<span class="boring">fn main() {
-</span>    // 宏重载
-    //宏可以重载，从而接受不同的参数组合。在这方面，macro_rules! 的作用类似于 匹配（match）代码块
-    //
-    // 根据你调用它的方式，`test!` 将以不同的方式来比较 `$left` 和 `$right`。
-    macro_rules! test {
-        // 参数不需要使用逗号隔开。
-        // 参数可以任意组合！
-        ($left:expr; and $right:expr) =&gt; (
-            println!(&quot;{:?} and {:?} is {:?}&quot;,
-                    stringify!($left),
-                    stringify!($right),
-                    $left &amp;&amp; $right)
-        );
-        // ^ 每个分支都必须以分号结束。
-        ($left:expr; or $right:expr) =&gt; (
-            println!(&quot;{:?} or {:?} is {:?}&quot;,
-                    stringify!($left),
-                    stringify!($right),
-                    $left || $right)
-        )// 最后一个分支可以省略分号
-    }
-    test!(1i32 + 1 == 2i32; and 2i32 * 2 == 4i32);
-    test!(true; or false);
-
+    ($($key:expr =&gt; $value:expr),* $(,)*) =&gt; (
+        {
+            let _cap = map!(@count $($key),*);
+            let mut _map = std::collections::HashMap::with_capacity(_cap);
+           $(
+               _map.insert($key, $value);
+            )*
+           _map
+       }
+    )
+}
+fn main() {
+    let map = map!(
+        1 =&gt; &quot;a&quot;,
+        2 =&gt; &quot;b&quot;,
+    );
+    println!(&quot;{:?}&quot;, map);
+}
 
 
 
-    // 不定参数 可变接口
-    //宏在参数列表中可以使用 + 来表示一个参数可能出现一次或多次，使用 * 来表示该 参数可能出现零次或多次
-    //
+
+
+
+
+//  实例:
     // `min!` 将求出任意数量的参数的最小值。
     macro_rules! find_min {
         // 基本情形：
@@ -7747,18 +7810,22 @@ fn main() {
     println!(&quot;{}&quot;, find_min!(1u32 + 2 , 2u32));
     println!(&quot;{}&quot;, find_min!(5u32, 2u32 * 3, 4u32));
 
+
+
+
+
+
     // 创造 dsl
+    // 这里创造关键字 eval
     //
     macro_rules! calculate {
-        (eval $e:expr) =&gt; {{
-            {
-                let val: usize = $e; // 强制类型为整型
-                println!(&quot;{} = {}&quot;, stringify!{$e}, val);
-            }
-        }};
+        (eval $e:expr) =&gt; {
+            let val: usize = $e; // 强制类型为整型
+            println!(&quot;{} = {}&quot;, stringify!{$e}, val);
+        };
     }
     calculate! {
-        eval 1 + 2 // `eval` 可并不是 Rust 的关键字！
+        eval 1 + 2 
     }
     calculate! {
         eval (1 + 2) * (3 / 4)
@@ -7782,7 +7849,7 @@ fn main() {
             calculate! { $(eval $es),+ }
         }};
     }
-    calculate! { // 妈妈快看，可变参数的 `calculate!`！
+    calculate! { 
         eval 1 + 2,
         eval 3 + 4,
         eval (2 * 3) + 1
@@ -7790,71 +7857,250 @@ fn main() {
 
 
 
-<span class="boring">}
-</span></code></pre></pre>
+
+
+</code></pre>
+<h3><a class="header" href="#宏调试" id="宏调试">宏调试</a></h3>
+<pre><code class="language-rs">// 必须 nightly rust 才行
+// #![feature(trace_macros) 标注宏定义, 然后在main 开头 trace_macros!(true);
+
+#![feature(trace_macros)]
+macro_rules! hashmap {
+    (@unit $($x:tt)*) =&gt; (());
+    (@count $($rest:expr),*) =&gt; 
+        (&lt;[()]&gt;::len(&amp;[$(hashmap!(@unit $rest)),*]));
+    ($($key:expr =&gt; $value:expr),* $(,)*) =&gt; {
+        {
+            let _cap = hashmap!(@count $($key),*);
+            let mut _map = 
+                ::std::collections::HashMap::with_capacity(_cap);
+           $(
+               _map.insert($key, $value);
+           )*
+           _map
+       }
+   };
+}
+fn main(){
+   trace_macros!(true);
+   let map = hashmap!{
+       &quot;a&quot; =&gt; 1,
+       &quot;b&quot; =&gt; 2,
+       &quot;c&quot; =&gt; 3, 
+   };
+   assert_eq!(map[&quot;a&quot;], 1);
+}
+
+
+</code></pre>
 <h3><a class="header" href="#过程宏" id="过程宏">过程宏</a></h3>
+<h4><a class="header" href="#过程宏介绍" id="过程宏介绍">过程宏介绍</a></h4>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span>
-
-
 <span class="boring">fn main() {
-</span>// 过程宏
-//
-// 接受 rust 代码作为输入,  修改后, 输出;
-// 前面的声明宏: 输入代码, 通过 match 匹配, 以另外的代码替换输出
+</span>// 过程宏: 接受 rust 代码作为输入,  在此基础上修改后, 输出;
+// 声明宏: 输入代码, 通过 match 匹配, 以另外的代码替换输出
+// 
+// 可以用来:
+// - 自定义派生属性, 类似于 #[derive(Debug)]这样的 derive 属性，可以自动为 结构体或枚举类型进行语法扩展, 增加新的方法实现
+// - 自定义属性， 可以自定义类似于#[cfg()]这种属性
+// - 类似函数调用的宏, 和 macro_rules!定义的宏类似，以 Bang 符号(就是叹号 &quot;!&quot; )结尾的宏 。可以像函数一样被调用 , custom!(...)。
 
-// 自定义 derive 宏
-//
-}
 
 <span class="boring">}
 </span></code></pre></pre>
-<h2><a class="header" href="#unsafe-屏蔽内存安全检查" id="unsafe-屏蔽内存安全检查">unsafe 屏蔽内存安全检查</a></h2>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span>
-<span class="boring">fn main() {
-</span>/// 屏蔽内存安全检查
-/// - 解引用裸指针 (创建裸指针无需在 unsafe 中)
-/// - 调用不安全的函数
+<p>过程宏，必须写在单独的lib类型的crate中, <code>cargo new --lib proc_macro_me</code>, 需要 为当前项目声明使用 proc_macro,  proc_macro crate为 rust 自带, 默认不引入, 需要显式声明为 true</p>
+<pre><code class="language-t">
+[lib]
+# 设置为 proc_macro 类型
+proc_macro = true
+
+
+</code></pre>
+<h4><a class="header" href="#自定义属性宏" id="自定义属性宏">自定义属性宏</a></h4>
+<p>Rust 自身有很多内置的属性 ， 比如条件编译属性 <code>#[cfgOJ和测试属性#[test]</code></p>
+<p>过程宏实现自定义属性的功能还未稳定。在 该版本稳定之前，必须在 Nightly 版本下使用 <code>#![feature(custom_attribute)]</code>特性, 当前版本不需要了</p>
+<p>定义宏:</p>
+<pre><code class="language-rs">use proc_macro::TokenStream;
+
+#[proc_macro_attribute]
+pub fn attr_with_args(args: TokenStream, _input: TokenStream) -&gt; TokenStream {
+    // args 是 #[attr_with_args(&quot;Hello attr macro.&quot;)] 中的字符串
+    // _input 是输入, 即 fn boo() {}, 这里直接忽略了
+    format!(&quot;fn foo() -&gt; &amp;'static str {{{}}}&quot;, args.to_string()).parse().unwrap()
+}
+</code></pre>
+<p>使用:</p>
+<pre><code class="language-rs">#[macro_use] extern crate proc_macro_me;
+
+#[test]
+fn tt() {
+    #[attr_with_args(&quot;Hello attr macro.&quot;)]
+    fn foo() {}
+    println!(&quot;{:?}&quot;, foo());//&quot;Hello attr macro.&quot;
+}
+</code></pre>
+<h4><a class="header" href="#函数调用宏" id="函数调用宏">函数调用宏</a></h4>
+<p>定义函数调用宏:</p>
+<pre><code class="language-rs">use proc_macro::TokenStream;
+
+#[proc_macro]
+pub fn make_fn_answer(_item: TokenStream) -&gt; TokenStream {
+    &quot;fn answer() -&gt; u32 { 11 }&quot;.parse().unwrap()
+}
+</code></pre>
+<p>使用:</p>
+<pre><code class="language-rs">#[macro_use] extern crate proc_macro_me;
+
+#[test]
+fn tt() {
+    make_fn_answer!();
+    println!(&quot;{:?}&quot;, answer());// 11
+}
+</code></pre>
+<h4><a class="header" href="#derive-宏" id="derive-宏">derive 宏</a></h4>
+<p>定义宏</p>
+<pre><code class="language-rs">// 自定义 derive 宏
+//
+// extern crate proc_macro;
+// use proc_macro::TokenStream;
+//or
+// use self::proc_macro::TokenStream;
+// or
+use proc_macro::TokenStream;
+
+
+// AnswerFn 相当于标识符, 使用时, 这样使用 #[derive(Hello, AnswerFn)]
+#[proc_macro_derive(AnswerFn)]
+pub fn derive_answer_fn(_input: TokenStream) -&gt; TokenStream {
+    &quot;fn answer() -&gt; u32 { 11 }&quot;.parse().unwrap()
+}
+
+#[proc_macro_derive(Hello)]//表示其下方的函数专门处理自定义派生属性
+pub fn derive_a_hello(input: TokenStream) -&gt; TokenStream {
+    let input = input.to_string();
+    // 保证 代码中存在 struct A
+    assert!(input.contains(&quot;struct A&quot;));
+    //方法最终会返回一个 Result&lt;TokenSteam, Err〉类型， 
+    // 所以还需要再次用 unwrap 方法才能返回。
+    r#&quot;
+        impl A {
+            fn a(&amp;self) -&gt; String {
+                format!(&quot;hello from a impl&quot;)
+            }
+        }
+    &quot;#.parse().unwrap() 
+}
+
+
+</code></pre>
+<p>使用:</p>
+<pre><code class="language-rs">// #[macro_use] extern crate proc_macro_me;
+//or
+use proc_macro_me::{AnswerFn, Hello};
+
+#[derive(Hello, AnswerFn)]
+pub struct A;
+
+#[test]
+fn test_derive_a() {
+    let aa = A;
+    assert_eq!(&quot;hello from a impl&quot;.to_string(), aa.a());
+    println!(&quot;{}&quot;, answer());
+}
+</code></pre>
+<h3><a class="header" href="#使用第三方包" id="使用第三方包">使用第三方包</a></h3>
+<p>官方的过程宏库为proc_macro, 还没稳定，不推荐直接使用</p>
+<p>推荐更友好的syn、quote和proc_macro2这3个库, 其中, syn 完整实现了 Rust 源码 的语 法树结构。而 quote 可以将 syn 的语法树结构转为 proc macro::TokenStrem 类型</p>
+<h3><a class="header" href="#编译器插件" id="编译器插件">编译器插件</a></h3>
+<p>Rust 中最强大的元编程工具非编译器插件莫属, 但是编译器插件目前还不稳定。在 Nightly 版本的 Rust 之下，配合   <code># ![feature(plugin_registrar)]</code>特性才行</p>
+<h1><a class="header" href="#unsafe-屏蔽内存安全检查" id="unsafe-屏蔽内存安全检查">unsafe 屏蔽内存安全检查</a></h1>
+<h2><a class="header" href="#unsafe-基本介绍" id="unsafe-基本介绍">unsafe 基本介绍</a></h2>
+<pre><code class="language-rs">// 使用 unsafe 定义 不安全的 函数/方法/trait, 以及为 trait 实现方法
+// 
+// 如: String::from_utf8_unchecked 就是不安全的, 对于输入参数, 没有检查是否是有效的 utf-8字节序列; String::from_utf8_lossy 则是安全的
+// 如: Send trait, Sync trait 都是 unsafe 的, 使 用 unsafe对 Send和 Sync进行标记，就意味着开发者手动实现它会有安全风险, 所以编译器会自动对我们自定义的类型实现这两个接口
+// 如: Searcher trait, 没有检查截取的字符位置在字符串中是否是有效字符边界, 需要开发者自己保证
+
+
+// 在 unsafe 块中执行不安全的操作 (对于不安全的操作, 会屏蔽内存安全检查, 但是对于安全的操作, 依然有安全检查)
+// 
+/// - 解引用裸指针 (但是创建裸指针无需在 unsafe 中)
+/// - 调用 unsafe 的函数/方法
 /// - 访问修改可变静态变量
-/// - 实现不安全的 trait
-fn unsafe_demo() {
+/// - 实现 unsafe 的 trait
+// - 读写 union 联合体中的  字段
 
-    // 裸指针 (raw pointer)
-    //
-    // 分为:
-    // 不可变裸指针   *const T
-    // 可变裸指针     *mut T
-    //
-    // - 裸指针允许忽略借用规则: 某个对象可以同时拥有可变不可变裸指针, 或者多个同时指向相同位置的可变裸指针
-    // - 不保证指向的内存是有效的
-    // - 允许为空
-    // - 没有任何自动清理的功能
-    // 
-    let mut a = 1;
-    let rp1 = &amp; a as *const i32;
-    let rp2 = &amp;mut a as *mut i32;
+
+</code></pre>
+<pre><pre class="playpen"><code class="language-rust">// 访问修改可变静态变量 (一般用不到, 只是用于和 c 交互)
+// 
+// 
+// 静态变量是全局可访 问 的 。对于不可变静态变量来说，访问它不存在任何安全 问题
+// 如果多个线程同时访 问可变静态变量, 会有安全问题, 所以要在 unsafe 中修改
+static mut COUNTER: u32 = 0;
+fn main() {
+    let inc = 3;
     unsafe {
-        println!(&quot;rp1 = {}&quot;, *rp1);
-        println!(&quot;rp2 = {}&quot;, *rp2);
+        COUNTER += inc;
+        println!(&quot;COUNTER: {}&quot;, COUNTER);
     }
-
-    // 
-    //
-    unsafe fn danger() {
-        println!(&quot;dangerous&quot;);
-    }
-    unsafe {
-        danger();
-    }
-
 }
 
 
-<span class="boring">}
-</span></code></pre></pre>
+
+
+
+// 访问 union 联合体 (只要还是为了方便 和 c 交互)
+// 
+// 
+// 
+
+
+
+
+
+// 解引用裸/原生指针 (raw pointer), 裸指针常用于 和 c 交互
+//
+// 分为:
+// 不可变裸指针   *const T
+// 可变裸指针     *mut T
+//
+// - 允许忽略借用规则: 某个对象可以同时拥有可变不可变裸指针, 或者多个同时指向相同位置的可变裸指针
+// - 不保证指向的内存是有效的, 允许指向空地址
+// - 不保证线程安全
+// - 没有自动清理的功能, 需要手动清理内存
+// 
+let mut a = 1;
+let rp1 = &amp; a as *const i32; // 创建时无需在 unsafe
+// 同时出现了 可变, 不可变借用, 编译器不报错
+let rp2 = &amp;mut a as *mut i32;
+unsafe {
+    println!(&quot;rp1 = {}&quot;, *rp1);
+    println!(&quot;rp2 = {}&quot;, *rp2);
+}
+
+
+// 访问 unsafe 方法
+// 
+//
+unsafe fn danger() {
+    println!(&quot;dangerous&quot;);
+}
+unsafe {
+    danger();
+}
+
+
+
+
+// 
+
+
+
+</code></pre></pre>
+<h2><a class="header" href="#和-unsafe-有关的方法" id="和-unsafe-有关的方法">和 unsafe 有关的方法</a></h2>
 <h1><a class="header" href="#内存管理" id="内存管理">内存管理</a></h1>
 <h2><a class="header" href="#堆-和-栈" id="堆-和-栈">堆 和 栈</a></h2>
 <p>手动管理内存 -&gt; bug (内存泄漏, 垂悬指针)</p>
@@ -8287,6 +8533,61 @@ members = [
 <pre><code class="language-rs">
 </code></pre>
 <h2><a class="header" href="#项目管理案例" id="项目管理案例">项目管理案例</a></h2>
+<h3><a class="header" href="#导出自定义宏" id="导出自定义宏">导出自定义宏</a></h3>
+<p><code>cargo new --bin hello_macro</code>, 新建 lib.rs (名字任意), 定义 macro, 导出</p>
+<pre><code class="language-rs">#[macro_export]
+macro_rules! map {
+    // 统计 item 个数时使用的单位, 这里使用 空元组, 不占空间
+    // @unit 是约定俗成的在宏内部定义宏的命名规则
+    // 必须定义在开头条, 否则就按照普通匹配分支处理了
+    (@unit $($x:tt)*) =&gt; {()};
+    (@count $($key:expr),* ) =&gt; {
+        (&lt;[()]&gt;::len(&amp;[$(map!(@unit $key)),*]));
+    };
+
+    ($($key:expr =&gt; $value:expr),* $(,)*) =&gt; (
+        {
+            let _cap = map!(@count $($key),*);
+            let mut _map = std::collections::HashMap::with_capacity(_cap);
+           $(
+               _map.insert($key, $value);
+           )*
+           _map
+       }
+    )
+}
+
+</code></pre>
+<p>在 main.rs 中导入使用</p>
+<pre><code class="language-rs">// #[macro_use] extern crate hello_async; 
+// or
+use hello_macro::map;
+
+fn main() {
+    let map = map!(
+        1 =&gt; &quot;a&quot;,
+        2 =&gt; &quot;b&quot;,
+    );
+    println!(&quot;{:?}&quot;, map);
+}
+
+
+
+
+
+
+// 导出同个包下, 其他 mod 内的宏
+#[macro_use]
+mod macros {
+     macro_rules! xxx {...}
+     macro_rules! yy {..}
+}
+fn main() {
+    // 直接使用
+    xxx!(...);
+}
+
+</code></pre>
 <h3><a class="header" href="#导入自定义-crate" id="导入自定义-crate">导入自定义 crate</a></h3>
 <p><code>cargo new web-server</code></p>
 <p><code>cd web-server</code></p>
@@ -8744,7 +9045,21 @@ impl TimerFuture {
 
 
 </code></pre></pre>
-<h1><a class="header" href="#并发-多线程" id="并发-多线程">并发 多线程</a></h1>
+<h1><a class="header" href="#并发" id="并发">并发</a></h1>
+<h2><a class="header" href="#通用概念" id="通用概念">通用概念</a></h2>
+<h3><a class="header" href="#进程-and-线程" id="进程-and-线程">进程 and 线程</a></h3>
+<p>进程是资源分配的最小单元，线程是程序执行时的最小单元 </p>
+<p>可以使用多进程来提供并发，比如 Master-Worker 模式，由 Master 进程来管理 Worker 子进程， Worker 子进程执行任务 。 Master 和 Worker 之间通常使用 Socket 来进行进程间通信好处是程序健壮, 缺点是耗费资源</p>
+<p>使用线程提供并发, 占用资源少, 但是编程调试相当复杂</p>
+<h3><a class="header" href="#事件驱动" id="事件驱动">事件驱动</a></h3>
+<p>多进程/线程 实现的并发, 还是无法支撑万级别的并发访问, 因为就算一个线程处理一个连接, 上万线程服务器也崩了</p>
+<p>事件驱动实现并发: 只有一个线程, 不断从事件队列中查询是否有事件发生, 若有, 则调用关联的回调函数, 整个过程是非阻塞的</p>
+<p>为了解决回调地狱的问题, 新的方案出现了 --&gt; Promise, Future, promise 站在任务处理者的角度，将异步任务完成或失败的 状态标记到 Promise 对象中 。 Future 则站在任务调用者的角度，来检测任务是否完成，如果 完成则直接获取结果，如果未完成则阻塞直到获取到结果 ， 或者编写回调函数避免阻塞</p>
+<h3><a class="header" href="#协程" id="协程">协程</a></h3>
+<p>描述了一种任务协同执行的方式, 只有一个线程, 同时处理多个任务, 一个时间片在执行任务 1, 某个时间片又切到执行任务 2, 看起来就好像任务 1,2 同时在执行 (整个概念类似 CPU 对线程的调度方式)</p>
+<p>总的来说，协程可以让开发者用写同步(顺序)代码的方 式编写可异步执行的代码 </p>
+<p>协程是以线程为容器的， 协程的特点是内存占用比线程更小、上下文切换的开销更小, 也被称为用户 态线程，所以可大量使用</p>
+<p>虽然充分挖掘了单线程的利用率，在 单线程下可以处理高并发io，但却无法利用多核, 因为始终只有一个线程。</p>
 <h2><a class="header" href="#crossbeam-开源库" id="crossbeam-开源库">CrossBeam 开源库</a></h2>
 <p>无锁的数据结构</p>
 <h2><a class="header" href="#arc-和-rc" id="arc-和-rc">Arc 和 Rc</a></h2>
@@ -9412,6 +9727,10 @@ https://www.mojidong.com/post/2015-03-07-socket5-1/
 https://www.zhihu.com/search?type=content&amp;q=rust%20socket</p>
 <p>TODO</p>
 <p>https://lowlvl.org/ 使用 rust 学习 tcp</p>
+<p>https://github.com/shadowsocks/shadowsocks-rust
+https://github.com/trojan-gfw/trojan
+https://github.com/p4gefau1t/trojan-r
+https://github.com/importcjj/rust-miniproxy</p>
 <h2><a class="header" href="#http-代理" id="http-代理">http 代理</a></h2>
 <p>http 代理: 基于 HTTP 协议. 属于应用层协议，一般只会代理转发 HTTP 请求，当然也可以使用 CONNECT 方法来实现一般 TCP 的代理转发
 https://github.com/linmx0130/rust-http-proxy</p>
