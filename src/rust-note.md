@@ -322,18 +322,25 @@ https://www.zhihu.com/question/30511494/answer/649921526 值得关注
         - [进程 and 线程](#进程-and-线程)
         - [事件驱动](#事件驱动)
         - [协程](#协程)
+    - [线程基本使用](#线程基本使用)
+        - [创建线程](#创建线程)
+        - [自定义配置线程](#自定义配置线程)
+        - [线程本地变量](#线程本地变量)
+        - [手动阻塞唤醒](#手动阻塞唤醒)
+    - [线程同步](#线程同步)
+        - [错误示例](#错误示例)
+        - [锁](#锁)
+        - [原子类型](#原子类型)
+        - [channel](#channel)
+    - [多线程小例子](#多线程小例子)
+        - [实现 map-reduce 算法](#实现-map-reduce-算法)
+        - [多线程统计和](#多线程统计和)
+        - [多线程 线程池 webserver](#多线程-线程池-webserver)
     - [CrossBeam 开源库](#crossbeam-开源库)
     - [Arc 和 Rc](#arc-和-rc)
     - [RwLock 和 RefCell](#rwlock-和-refcell)
     - [Mutex](#mutex)
     - [AtomicPtr 和 Cell](#atomicptr-和-cell)
-    - [线程基本使用](#线程基本使用)
-    - [多线程小例子](#多线程小例子)
-        - [实现 map-reduce 算法](#实现-map-reduce-算法)
-        - [多线程统计和](#多线程统计和)
-        - [多线程 线程池 webserver](#多线程-线程池-webserver)
-    - [channel](#channel)
-    - [互斥 锁](#互斥-锁)
 - [简单文件系统](#简单文件系统)
 - [网络编程](#网络编程)
     - [tcp](#tcp)
@@ -2820,7 +2827,9 @@ fn box_demo() {
 #### Rc 强引用
 
 
-都是引用计数指针, 用于记录存储在堆上的值的引用数, 可 以共享同 一块堆内存, 内部包含的数据是不可变的
+都是引用计数指针, 用于记录存储在堆上的值的引用数, 可 以共享同 一块堆内存, 内部包含的数据是不可变的, 只能用于单线程中, 因为内部操作不是原子性的, rust 也为 其实现了 !send trait , 表示无法在线程间移动
+
+可以使用多线程版本: Arc
 
 
 ```rust
@@ -2837,7 +2846,7 @@ fn box_demo() {
 // 
 ///
 let x =Rc::new(45)
-let yl = x .clone() ; //+强引用计数, 并非 克隆, 只是增加计数
+let yl = x .clone() ; //增加强引用计数, 并非 克隆, 只是增加计数, 然后返回一个引用 (即共享所有权)
 let y2 = x.clone(); //增加强引用计数
 priηtln!(”{:?}”, Rc::strong_count(&x));//3
 letw= Rc::downgrade(&x); //增加弱引用计数
@@ -5373,14 +5382,11 @@ let tup2 = (PrintDrop("x"), PrintDrop("y"), panic!());//线程的崩愤触发了
 
 
 ```rs
-// 很多其他语言通过各种成熟的并发解决 方案来支持并发编程, 解决数据竞争， 比如 Erlang提供轻量级进程和 Actor并发模型: Golang提供了协程和 CSP并发模型。而 Rust则从正面解决了这个问题，它的“秘密武器” 是类型系统和所有权机 制。
+// 可以安全地跨线程传递和访 问 的类型用 Send 和 Sync 标记，否则用! Send 和!Sync 标记 , 这样编译器在编译时就能检出数据竞争的隐患， 而不需要等到运行时再排查
 
-// 可以安全地跨线程传递和访 问 的类型用 Send 和 Sync 标记，否则用! Send 和!Sync 标记 
-
-// 实现了 Send 的类型 ，可以安全地在线程间传递值 ，也就是说可 以跨线程传递所有权
-// 实现了 Sync 的类型 ，可以跨线程安全地传递共享( 不可变)引用 。
+// 实现了 Send 的类型 ，可以安全地在线程间传递所有权, 即可以跨线程移动
+// 实现了 Sync 的类型 ，可以跨线程安全地传递不可变引用 , 即可以跨线程共享。
 // 
-// 有了这两个标签 trait，就可 以把 Rust 中所有的类型归为两类:可以安全跨线程传递的值 和引用 ， 以及 不可以跨线程传递的值和引用 。 再配合所有权机制，带来的效果就是， Rust 能 够在编译期就检查出数据竞争的隐患， 而不需要等到运行时再排查
 
 // 之所以可以正常地move变量，也是因为数组x中的元素均为原生数据类型， 默认都实现了 Send 和 Sync 标签 trait，所以它们跨线程传递和访问都很安全
 let mut x=vec![1, 2, 3, 4] ;
@@ -9464,57 +9470,24 @@ impl TimerFuture {
 
 虽然充分挖掘了单线程的利用率，在 单线程下可以处理高并发io，但却无法利用多核, 因为始终只有一个线程。
 
-## CrossBeam 开源库 
-
-无锁的数据结构
-
-## Arc 和 Rc
-
-```rs
-
-/// Rc<T> 只能用于单线程场景   
-// Arc<T>是线程安全版本的 Rc<T>。
-```
-
-## RwLock 和 RefCell
-
-
-```rs
-// RwLock<T>相当于线程安全版本的 RefCell<T>，同时运行多个 reader或者一个 writer
-// RwLock 读写锁，是多读单写锁，也 叫共享独占锁 。 它允许多个线程读，单个线程写 。 但是在写的时候 ， 只能有一个线程占有写锁 ; 而在读的时候， 允许任意线程获取读锁 。 读锁和写锁不能被同时获取
-// 所以在度多写少的场景, 使用 读写锁可以有更高的并发支持
-```
-
-
-## Mutex
-
-```rs
-// Mutex<T>是锁，同一时间仅允许有-个线程进行操作, 不管是读还是写。
-// 本质是一个 struct
-
-```
-
-## AtomicPtr 和 Cell
-
-```rs
-// Atomic 系列类型: AtomicBool、 Atomiclsize、 AtomicUsize和AtomicPtr
-// 可以用 AtomicPtr 来模拟其他想要的类型
-// AtomicPtr 相当于线程安全版本 的 Cell<T>
-```
-
 ## 线程基本使用
 
+### 创建线程
 
 ```rust
 /// 并发 闭包
 /// Rust 中通过 std::thread::spawn 函数创建本地操作系统（native OS）线程
 /// 
 /// spawn() 返回新线程的句柄（handle），我们必须拥有句柄，才能获取线程的返回值, 通过 handle.join().unwrap();
+// 
+// 
 /// 
 fn concurrent() {
     use std::thread;
     use std::time::Duration;
 
+    // 创建
+    // 
     // 普通函数的写法, 不推荐写法
     //
     fn spawn_function() {
@@ -9534,18 +9507,18 @@ fn concurrent() {
         }
     });
 
-    t.join().unwrap();// 等待线程结束
+    t.join().unwrap();// 等待线程结束 or 获取返回值
 
 
 
     //move 强制所有权迁移
     //
-    //在子线程中尝试使用当前函数的资源, 这一定是错误的！因为所有权机制禁止这种危险情况的产生
-    // 这是需要使用 move, 将资源所有权移动到子线程内部使得外部资源失效
+    //在子线程中尝试使用当前函数的资源, 这一定是错误的
+    // 需要使用 move, 将资源所有权移动到子线程内部使得外部资源失效
     //
     
     // let s = "hello"; // 若是 &str 类型, 则 move 执行的是 copy, 闭包外层 s 还是有效的
-    let s = "hello".to_owned();
+    let s = "hello".to_owned();// 若为 String, 则 move 执行 移动语义, s 失效
    
     let handle = thread::spawn(move || {// 一定要加 move
         println!("sub thread, s = {}", s);
@@ -9554,9 +9527,489 @@ fn concurrent() {
     println!("main thread, s= {}", s);
     handle.join().unwrap();
 
+
 }
 
 ```
+
+### 自定义配置线程
+
+
+```rs
+
+// 设置线程栈, 线程名
+// 
+ // 直接使用 thread::spawn生成的线程， 默认没有名称， 并且其栈大小默认为 2MB (其实底层还是通过 builder 创建的)
+    // 使用 thread::Builder 结构体来创建可配置的线 程, 主线程无法配置, 和 rust 无关, 因为主线程默认使用 进程的栈, 由操作系统决定
+    // 也可以通过指定环境变 量 RUST_MIN_STACK  设置新创建的线程的线程栈, 会被 builder 覆盖
+    // 
+    // 
+use std::{panic::catch_unwind, thread::{Builder, current}};
+fn main() {
+    let mut ths = vec![];
+    for id in 0..3 {
+        let thread_builder = Builder::new()
+            .name(format!("child-{}", id))
+            // unit: byte
+            .stack_size(3 * 1024);
+        let child = thread_builder.spawn(move || {
+            println!("child id = {}", id);
+            if id == 2 {
+                // panic!("panic.");
+                catch_unwind(|| {
+                    panic!("panic.");
+                }).unwrap();
+                println!("catch panic in {}", current().name().unwrap());
+                
+            }
+        }).unwrap();
+        ths.push(child);
+    }
+    for t in ths {
+        t.join().unwrap();
+    }
+}
+
+```
+
+### 线程本地变量
+
+
+```rs
+// 线程本地变量
+use std::cell::RefCell;
+use std::thread;
+fn main() {
+    thread_local!(static FOO: RefCell<u32> = RefCell::new(1));
+    FOO.with(|f| {
+        assert_eq!(*f.borrow(), 1);
+        *f.borrow_mut() = 2;
+    });
+    thread::spawn(|| {
+       FOO.with(|f| {
+           assert_eq!(*f.borrow(), 1);
+           *f.borrow_mut() = 3;
+       });
+   });
+   FOO.with(|f| {
+       assert_eq!(*f.borrow(), 2);
+   });
+}
+
+
+```
+
+### 手动阻塞唤醒
+
+```rs
+use std::thread;
+use std::time::Duration;
+fn main() {
+    let parked_thread = thread::Builder::new()
+        .spawn(|| {
+            println!("Parking thread");
+            // 阻塞
+            // 也可以 通过 std::thread: :park_timeout 来显 式指定阻塞超时时间 
+            thread::park();
+            println!("Thread unparked");
+        }).unwrap();
+   thread::sleep(Duration::from_millis(10));
+   println!("Unpark the thread");
+//    唤醒
+   parked_thread.thread().unpark();
+   parked_thread.join().unwrap();
+}
+
+// 此外, 还有 yield_now() 谦让, 让出 cpu 控制权
+```
+
+## 线程同步
+
+### 错误示例
+
+```rs
+// 在线程间传递可变字符串
+// 
+
+
+
+// 直接使用 String
+use std::thread::spawn;
+fn main() {
+    let s = String::from("hello");
+    for _i in 0..3 {
+        // error
+        spawn(move || {
+            s.push_str("xxx");
+        });
+    }
+}
+
+
+// 使用 Rc
+use std::{rc::Rc, thread::spawn};
+fn main() {
+    // 想在多个线程中共享s，则需要使用。 
+    // Rc实现了!Send, 不可在线程间传递所有权
+    let mut s = Rc::new(String::from("hello"));
+    for _i in 0..3 {
+        let mut s_clone = s.clone();
+        // error
+        // spawn 函数传入的 闭包没有实现 Send，这是因为捕获变量没
+        // 有实现 Send。捕获变量是 Rc<String>类型， 实现的是!Send，正好和 Send相反
+        spawn(move || {
+            s_clone.push_str("xxx");
+        });
+    }
+}
+
+
+// 使用可以在多线程间被移动和共享的 Arc<T>
+use std::{sync::Arc, thread::spawn};
+fn main() {
+    let s = Arc::new(String::from("hello"));
+    for _i in 0..3 {
+        let s_clone = s.clone();
+        // error
+        // 这是因为 Arc<T>默认是不可变的, 考虑使用具有内部可变性的类型, 如 Cell/RefCell
+        spawn(move || {
+            s_clone.push_str("xxx");
+        });
+    }
+}
+
+
+// 使用 RefCell 提供内部可变性
+use std::{cell::RefCell, sync::Arc, thread::spawn};
+fn main() {
+    let s = Arc::new(RefCell::new(String::from("hello")));
+    for _i in 0..3 {
+        let s_clone = s.clone();
+        // error
+        // `RefCell<String>` cannot be shared between threads safely
+        spawn(move || {
+            let s_clone = s_clone.borrow_mut();
+            s_clone.push_str("xxx");
+        });
+    }
+}
+
+
+// 正确方式: 使用 Mutex
+// 
+use std::{sync::{Arc, Mutex}, thread::spawn};
+fn main() {
+    // Arc 用于支持安全的多引用
+    // Mutex 用于安全的提供内部可变性
+    let s = Arc::new(Mutex::new(String::from("hello")));
+    let mut ths = vec![];
+    for _i in 0..3 {
+        let s_ref = s.clone();
+        let child = spawn(move || {
+            let mut s_ref_mut = s_ref.lock().unwrap();
+            s_ref_mut.push_str(" xxx");
+        });
+        ths.push(child);
+    }
+    for t in ths {
+        t.join().unwrap();
+    }
+}
+
+
+```
+
+
+### 锁 
+
+```rs
+// Mutex<T> 互斥锁: 支持跨线程安全共享可变变量的容器, 同时只允许一个线程访问内部 可变数据, 类似 线程安全版本的 RefCell
+/// - lock() 返回内部数据的可变引用(阻塞当前线程, 直到拿到锁)
+//      返回值 LockResult<MutexGuard<T>>, 超出作用域会自动释放锁
+// - try_lock() 获取 锁的时候不会阻塞当前线程, 如果得到锁 ， 就返回 MutexGuard<T>; 如果得不到锁，就返回 Err。
+// 
+/// RefCell<T>: 使得内部数据可变
+//  Rc<T>: 原子引用计数 , 允许多引用
+// 
+//  Arc<T> : 线程安全的 Rc<T>, 允许多线程下的多引用
+/// Mutex<T> : 线程安全的 RefCell, 提供多线程下内部数据的可变引用
+///
+
+///
+/// 通道都类似于单所有权，因为一旦将一个值传送到通道中，将无法再使用这个值。
+/// 锁类似于多所有权: 多个线程可以访问相同的内存位置 , 只是不能同一时候访问
+///
+///
+///
+///
+fn lock_demo() {
+
+    // 
+    // 计数器示例
+    // 
+    use std::sync::{Mutex, Arc};
+    use std::thread;
+    // 不能仅仅使用 Mutex::new(0), 因为有多个 Thread需要它, counter移动进入某个Thread后其他Thread就没法拥有counter了
+    // 也不能用Rc::new(Mutex::new(0)), 因为Rc<T>的引用计数, 在多线程下不安全
+    let counter = Arc::new(Mutex::new(0));
+    let mut handles = vec![];
+
+    for _ in 0..10 {
+        let counter = Arc::clone(&counter);
+        // or
+        let counter = counter.clone();
+        
+        let handle = thread::spawn(move || {
+            // lock() 这个调用会阻塞当前线程, 直到获取锁为止
+            //
+            //如果另一个线程拥有锁，并且那个线程 panic 了，
+            // 则本线程 lock 调用会失败。在这种情况下，没人能够再获取锁，
+            // 所以这里选择 unwrap 在遇到这种情况时使线程直接 panic
+            //
+            //返回 result, 拆包后是 MutexGuard<T>, 是个智能指针, 实现了 Deref所以可以解引用
+            // 实现了 Drop ,当 MutexGuard 离开作用域时自动释放锁
+            //
+            let mut num = counter.lock().unwrap();
+            // 解引用后, 数据是可变的
+            *num += 1;
+        });
+        handles.push(handle);
+    }
+    for handle in handles {
+        handle.join().unwrap();
+    }
+    println!("Result: {}", *counter.lock().unwrap());
+
+
+
+    // 中毒: 线程在获得锁之后发生恐慌
+    // 
+    let mutex = Arc::new(Mutex::new(1));
+    let c_mutex = mutex.clone();
+    let _ = thread::spawn(move || {
+        let mut data = c_mutex.lock().unwrap();
+        *data = 2;
+        // 子线程 panic, 中毒了
+        panic!("oh no");
+   }).join();
+//    是否中毒, 即查看获取锁的子线程是否 panic
+   assert_eq!(mutex.is_poisoned(), true);
+//    主线程获取锁, 当然获取不到
+   match mutex.lock() {
+    //    不可达
+       Ok(_) => unreachable!(),
+       Err(p_err) => {
+        //    提供了 get_ref或 get_mut方法, 获取锁内部的数据
+           let data = p_err.get_ref();
+           println!("recovered: {}", data);//2
+       }
+   };
+
+
+    // 读写锁
+    // RwLock<T> 支持多个读线程和一个写线程同时访问 (不像 Mutex<T>只能线程独占访问)
+    // 
+    // 只要线程没有拿到写锁 ， RwLock<T>就 允许任意数量 的读线程获得读锁
+    // 
+    let lock = RwLock::new(5);
+    // 读锁和 写锁要使用显式作用域块隔离开 ，这样的话 ， 读锁或写锁才能在离开作用 域之后自 动释放 ; 否则会引起死锁，因为读锁和写锁不能同时存在 
+    {
+        // 获取多个读锁
+        let r1 = lock.read().unwrap();
+        let r2 = lock.read().unwrap();
+        assert_eq!(*r1, 5);
+        assert_eq!(*r2, 5);
+    } 
+   {
+    //    获取写锁
+       let mut w = lock.write().unwrap();
+       *w += 1;
+       assert_eq!(*w, 6);
+   }
+
+}
+
+
+
+// 屏障 (类似 java 的 CountDownLatch)
+// 
+use std::sync::{Arc, Barrier};
+use std::thread;
+fn main() {
+    let mut handles = Vec::with_capacity(5);
+    let barrier = Arc::new(Barrier::new(5));
+    for _ in 0..5 {
+        let c = barrier.clone();
+        handles.push(thread::spawn(move|| {
+            println!("before wait");
+            // 使得当前子线程阻塞, 知道 clone 5 次后 barrie 归零后, 线程恢复执行
+           c.wait();
+           println!("after wait");
+       }));
+   }
+   for handle in handles {
+       handle.join().unwrap();
+   }
+}
+
+// 条件变量
+// 满足指定条件之前阻塞某一个得到互斥锁的线程 
+// 
+// - 每个条件变量每次只能和一个互斥体一起使用
+// - 使用场景: 当状态成立时通知互斥体
+use std::sync::{Arc, Condvar, Mutex};
+use std::thread;
+fn main() {
+    let pair = Arc::new((Mutex::new(false), Condvar::new()));
+    let pair_clone = pair.clone();
+    thread::spawn(move || {
+        let &(ref lock, ref cvar) = &*pair_clone;
+        let mut started = lock.lock().unwrap();
+        // 修改锁内部数据
+        *started = true;
+        // 通知主线程
+       cvar.notify_one();
+   });
+   let &(ref lock, ref cvar) = &*pair;
+   let mut started = lock.lock().unwrap();
+   while !*started {
+       println!("{}", started); // false
+        //阻塞当前线程(主线程), 直到收到条件变量的通知
+       started = cvar.wait(started).unwrap();
+       println!("{}", started); // true
+   }
+}
+```
+
+
+### 原子类型
+
+```rs
+// AtomicBool、 AtomicIsize、 AtomicPtr 和 AtomicUsize
+
+// 实现自旋锁
+use std::sync::Arc;
+use std::sync::atomic::{AtomicUsize, Ordering};
+use std::thread;
+fn main() {
+    // 初始值设置为 1
+    let spinlock = Arc::new(AtomicUsize::new(1));
+    let spinlock_clone = spinlock.clone();
+    let thread = thread::spawn(move|| {
+        // 修改为 0;
+        // 同时指定内存顺序
+        spinlock_clone.store(0, Ordering::SeqCst);
+    });
+    // 若不为 0, 则自旋
+   while spinlock.load(Ordering::SeqCst) != 0 {}
+//    阻塞主线程, 等待子线程完成
+   if let Err(panic) = thread.join() {
+       println!("Thread had an error: {:?}", panic);
+   }
+}
+```
+
+
+
+
+### channel
+
+
+
+```rust
+
+
+/// channel 消息传递
+/// 
+/// 具体实现实际上是一个 多生产者单消费者 (Multi-Producer-Single-Consumer, MPSC) 的先进先出(FIFO〕 队列, 底层基于链表实现
+// 
+// 三种类型的csp 进程:
+// - Sender 用于发送异步消息
+// - SyncSender 发送同步消息
+// - Receiver接收消息
+// 
+// 两种类型的 channel
+// - 异步无界 Channel -  let (sender, receiver):  (Sender, Receiver) = channel(); 发送消息是异步无阻塞的, 缓冲区无限大
+// - 同步有界 Channel -  let (sender, receiver):  (SyncSender, Receiver) = sync_channel(size);可以预分配具有固定大小的缓冲区 , 满了就阻塞消息发送, 若缓冲区 == 0, sender和 receiver 间变为原子操作
+// 
+fn channel_demo() {
+    
+    //一个发送者（transmitter）和一个接收者（receiver）
+
+    use std::sync::mpsc;// mpsc 是 多个生产者，单个消费者（multiple producer, single consumer）的缩写
+    use std::thread;
+    // tx: 发送者
+    // rx : 接收者
+    // 此时还无法编译, 因为 Rust 不知道我们想要在通道中发送什么类型, 后续编译器能够自动推断类型
+    let (tx, rx) = mpsc::channel();
+
+    //创建一个新线程作为发送者
+    // 
+    // //使用 move 将 tx 移动到闭包中这样新建线程就拥有 tx 了, 当
+    // 发送者执行完逻辑, 退出作用域, tx 也就自动析构了, 接收端也就收到关闭的信号
+    // (若没有 使用 move, tx 始终存活, 无法自动析构, 会造成 接收者始终阻塞)
+    thread::spawn(move || {
+        let val = String::from("hi");
+        tx.send(val).unwrap();
+    });
+
+    // 接收
+    // 
+    //这个方法会阻塞主线程执行直到从通道中接收一个值, 
+    //当通道发送端关闭，recv 会返回一个错误表明不会再有新的值到来了
+    //
+    //try_recv 不会阻塞，相反它立刻返回一个 Result<T, E>：Ok 值包含可用的信息，而 Err 值代表此时没有任何消息
+    //可以编写一个循环来频繁调用 try_recv，在有可用消息时进行处理，其余时候则处理一会其他工作直到再次检查
+    //
+    let received = rx.recv().unwrap();
+    println!("Got: {}", received);
+
+    //也可以迭代接收器, 当通道被关闭时，迭代器也将结束
+    //
+    for received in rx {// 或者 rx.iter()
+        println!("Got: {}", received);
+    }
+
+
+
+
+
+
+    //通过克隆发送者来创建多个生产者
+    //
+    // 
+    use std::sync::mpsc::{Sender, Receiver};
+    static NTHREADS: i32 = 3;
+
+    let (tx, rx): (Sender<i32>, Receiver<i32>) = mpsc::channel();// 手动指定传输数据的类型
+
+    for id in 0..NTHREADS {
+        // sender 端可被复制
+        let thread_tx = tx.clone();
+        // 或者
+        let tx1 = mpsc::Sender::clone(&tx);
+
+
+        thread::spawn(move || {
+            // 被创建的线程取得 `thread_tx` 的所有权
+            thread_tx.send(id).unwrap();
+            println!("thread {} finished", id);
+        });
+    }
+
+    let mut ids = Vec::with_capacity(NTHREADS as usize);
+    for _ in 0..NTHREADS {
+        // 若无可用消息的话，`recv` 将阻止当前线程
+        ids.push(rx.recv());
+    }
+
+    // 显示消息被发送的次序
+    println!("{:?}", ids);
+}
+
+
+```
+
 
 ## 多线程小例子
 
@@ -9885,170 +10338,44 @@ impl Worker {
 ```
 
 
-## channel
+
+## CrossBeam 开源库 
+
+无锁的数据结构
+
+## Arc 和 Rc
+
+```rs
+
+/// Rc<T> 只能用于单线程场景   
+// Arc<T>是线程安全版本的 Rc<T>。
+```
+
+## RwLock 和 RefCell
 
 
-
-```rust
-
-
-/// channel 消息传递
-/// 
-/// Rust 为线程之间的通信提供了异步的通道（channel）。通道允许两个端点之间信息的 单向流动：Sender（发送端） 和 Receiver（接收端）
-/// 
-fn channel_demo() {
-    println!("-------------channel_demo -----------------");
-    use std::sync::mpsc;// mpsc 是 多个生产者，单个消费者（multiple producer, single consumer）的缩写
-    use std::thread;
-
-    //一个发送者（transmitter）和一个接收者（receiver）
-    //
-    let (tx, rx) = mpsc::channel();// 此时还无法编译, 因为 Rust 不知道我们想要在通道中发送什么类型
-
-    //创建一个新线程
-    thread::spawn(move || {//使用 move 将 tx 移动到闭包中这样新建线程就拥有 tx 了
-        let val = String::from("hi");
-        tx.send(val).unwrap();
-    });
-
-    //这个方法会阻塞主线程执行直到从通道中接收一个值, 
-    //当通道发送端关闭，recv 会返回一个错误表明不会再有新的值到来了
-    //
-    //try_recv 不会阻塞，相反它立刻返回一个 Result<T, E>：Ok 值包含可用的信息，而 Err 值代表此时没有任何消息
-    //可以编写一个循环来频繁调用 try_recv，在有可用消息时进行处理，其余时候则处理一会其他工作直到再次检查
-    //
-    let received = rx.recv().unwrap();
-    println!("Got: {}", received);
-
-    //也可以迭代接收器, 当通道被关闭时，迭代器也将结束
-    //
-    // for received in rx {
-    //     println!("Got: {}", received);
-    // }
+```rs
+// RwLock<T>相当于线程安全版本的 RefCell<T>，同时运行多个 reader或者一个 writer
+// RwLock 读写锁，是多读单写锁，也 叫共享独占锁 。 它允许多个线程读，单个线程写 。 但是在写的时候 ， 只能有一个线程占有写锁 ; 而在读的时候， 允许任意线程获取读锁 。 读锁和写锁不能被同时获取
+// 所以在度多写少的场景, 使用 读写锁可以有更高的并发支持
+```
 
 
-    //通过克隆发送者来创建多个生产者
-    //
-    // 
-    use std::sync::mpsc::{Sender, Receiver};
-    static NTHREADS: i32 = 3;
+## Mutex
 
-    let (tx, rx): (Sender<i32>, Receiver<i32>) = mpsc::channel();// 手动指定传输数据的类型
-
-    for id in 0..NTHREADS {
-        // sender 端可被复制
-        let thread_tx = tx.clone();
-        // 或者
-        // let tx1 = mpsc::Sender::clone(&tx);
-
-
-        // 每个线程都将通过通道来发送它的 id
-        thread::spawn(move || {
-            // 被创建的线程取得 `thread_tx` 的所有权
-            thread_tx.send(id).unwrap();
-
-            println!("thread {} finished", id);
-        });
-    }
-
-    let mut ids = Vec::with_capacity(NTHREADS as usize);
-
-    for _ in 0..NTHREADS {
-        // 若无可用消息的话，`recv` 将阻止当前线程
-        ids.push(rx.recv());
-    }
-
-    // 显示消息被发送的次序
-    println!("{:?}", ids);
-}
-
+```rs
+// Mutex<T>是锁，同一时间仅允许有-个线程进行操作, 不管是读还是写。
+// 本质是一个 struct
 
 ```
 
-## 互斥 锁
+## AtomicPtr 和 Cell
 
-
-```rust
-
-
-///
-/// 通道都类似于单所有权，因为一旦将一个值传送到通道中，将无法再使用这个值。
-/// 共享内存类似于多所有权: 多个线程可以同时访问相同的内存位置 (可通过智能指针实现, 现在通过互斥锁实现状态共享)
-///
-///
-///
-///Mutex<T> 互斥器, 同一时间只允许一个线程访问内部数据
-/// 通过 lock() 返回内部数据的可变引用
-///
-///  Arc<T> 原子引用计数, 线程安全的 Rc<T>
-///
-/// RefCell<T> and Rc<T>: 前者可使得内部数据可变, 后者允许多引用
-///
-/// Mutex<T> and Arc<T>: 类似的, 前者提供内部数据可变引用, 后者允许多线程下的多引用
-///
-fn lock_demo() {
-    use std::sync::{Mutex, Arc};
-    use std::thread;
-
-    // 不能使用 Mutex::new(0), 因为有多个 Thread需要它, counter移动进入某个Thread后其他Thread就没法拥有counter了
-    //
-    // 也不能用Rc::new(Mutex::new(0)), 因为Rc<T>的引用计数, 在多线程下不安全
-    //
-    let counter = Arc::new(Mutex::new(0));
-    let mut handles = vec![];
-
-    for _ in 0..10 {
-        let counter = Arc::clone(&counter);
-        let handle = thread::spawn(move || {
-            // lock() 这个调用会阻塞当前线程, 直到获取锁为止
-            //
-            //如果另一个线程拥有锁，并且那个线程 panic 了，
-            // 则本线程 lock 调用会失败。在这种情况下，没人能够再获取锁，
-            // 所以这里选择 unwrap 并在遇到这种情况时使本线程 panic
-            //
-            //返回 result, 拆包后是 MutexGuard<T>, 是个智能指针, 实现了 Deref所以可以解引用
-            // 实现了 Drop ,当 MutexGuard 离开作用域时自动释放锁
-            //
-            let mut num = counter.lock().unwrap();
-            // 解引用后, 数据是可变的
-            *num += 1;
-        });
-        handles.push(handle);
-    }
-
-    for handle in handles {
-        handle.join().unwrap();
-    }
-
-    println!("Result: {}", *counter.lock().unwrap());
-
-
-    // 可拓展的并发
-    //并不需要手动实现 Send 和 Sync trait，因为由 Send 和 Sync 的类型组成的类型，自动就是 Send 和 Sync 的。
-    // 他们是标记 trait，甚至都不需要实现任何方法。他们只是用来加强并发相关的不可变性的。
-    //
-    //rust 语言本身对并发没什么限制, 还提供trait支持自定义并发实现 (std::marker 中的 Sync 和 Send trait)
-    //并发方案不受标准库或语言所限：我们可以编写自己的或使用别人编写的并发功能。
-    //
-    //
-    //Send 标记 trait 表明该类型的所有权可以在线程间传递。
-    //
-    // 几乎所有的 Rust 类型都是Send 的，不过有一些例外，
-    // - 包括 Rc<T>：这是不能 Send 的，因为如果克隆了 Rc<T> 的值并尝试将克隆的所有权转移到另一个线程，
-    // 这两个线程都可能同时更新引用计数。为此，Rc<T> 被实现为用于单线程场景;
-    // - 裸指针（raw pointer）也不可被多线程传递
-    //
-    //Sync 标记 trait 表明一个实现了 Sync 的类型可以安全的在多个线程中拥有其值的引用 "可以安全的被多线程访问"
-    //or 对于任意类型 T，如果 &T（T 的引用）是 Send 的话 T 就是 Sync 的
-    //
-    // Rc<T> 也不是 Sync 的, RefCell<T>和 Cell<T> 系列类型不是 Sync 的
-    //Mutex<T> 是 Sync 的
-}
-
-
-
+```rs
+// Atomic 系列类型: AtomicBool、 Atomiclsize、 AtomicUsize和AtomicPtr
+// 可以用 AtomicPtr 来模拟其他想要的类型
+// AtomicPtr 相当于线程安全版本 的 Cell<T>
 ```
-
 
 
 
