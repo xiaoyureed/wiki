@@ -167,6 +167,7 @@ https://www.zhihu.com/question/30511494/answer/649921526 值得关注
             - [Cell](#cell)
             - [RefCell](#refcell)
         - [Rc Box RefCell Cell 几种指针的区别对比](#rc-box-refcell-cell-几种指针的区别对比)
+        - [Pin 和 Unpin](#pin-和-unpin)
         - [Cow 写时复制](#cow-写时复制)
     - [函数](#函数)
         - [函数基本语法](#函数基本语法)
@@ -266,7 +267,6 @@ https://www.zhihu.com/question/30511494/answer/649921526 值得关注
             - [访问者模式](#访问者模式)
             - [raii模式](#raii模式)
     - [子进程](#子进程)
-    - [ffi 外部语言函数接口](#ffi-外部语言函数接口)
     - [反射](#反射)
     - [宏](#宏)
         - [宏基本介绍](#宏基本介绍)
@@ -283,11 +283,12 @@ https://www.zhihu.com/question/30511494/answer/649921526 值得关注
         - [使用第三方包](#使用第三方包)
         - [编译器插件](#编译器插件)
 - [unsafe 屏蔽内存安全检查](#unsafe-屏蔽内存安全检查)
-    - [unsafe 基本介绍](#unsafe-基本介绍)
-    - [和 unsafe 有关的方法](#和-unsafe-有关的方法)
+    - [unsafe 基本场景](#unsafe-基本场景)
+    - [ffi 外部函数接口](#ffi-外部函数接口)
 - [内存管理](#内存管理)
     - [堆 和 栈](#堆-和-栈)
     - [内存对齐](#内存对齐)
+    - [手动堆内存分配](#手动堆内存分配)
 - [工程管理 模块](#工程管理-模块)
     - [概念简单解释](#概念简单解释)
     - [编译器版本管理](#编译器版本管理)
@@ -307,21 +308,10 @@ https://www.zhihu.com/question/30511494/answer/649921526 值得关注
         - [导入第三方 crate](#导入第三方-crate)
 - [单元测试](#单元测试)
 - [交叉编译 and 条件编译](#交叉编译-and-条件编译)
-- [异步编程](#异步编程)
-    - [为什么使用异步 单线程 webserver](#为什么使用异步-单线程-webserver)
-    - [基本使用](#基本使用)
-        - [block_on](#block_on)
-        - [await](#await)
-        - [join](#join)
-    - [async-std](#async-std)
-    - [Future trait](#future-trait)
-    - [动手实现 Future 类型](#动手实现-future-类型)
-    - [动手实现 异步 sleep](#动手实现-异步-sleep)
 - [并发](#并发)
     - [通用概念](#通用概念)
         - [进程 and 线程](#进程-and-线程)
-        - [事件驱动](#事件驱动)
-        - [协程](#协程)
+        - [事件回调实现的异步并发](#事件回调实现的异步并发)
     - [线程基本使用](#线程基本使用)
         - [创建线程](#创建线程)
         - [自定义配置线程](#自定义配置线程)
@@ -333,14 +323,32 @@ https://www.zhihu.com/question/30511494/answer/649921526 值得关注
         - [原子类型](#原子类型)
         - [channel](#channel)
     - [多线程小例子](#多线程小例子)
+        - [实现线程池](#实现线程池)
         - [实现 map-reduce 算法](#实现-map-reduce-算法)
         - [多线程统计和](#多线程统计和)
-        - [多线程 线程池 webserver](#多线程-线程池-webserver)
-    - [CrossBeam 开源库](#crossbeam-开源库)
+        - [带线程池的 webserver](#带线程池的-webserver)
+    - [rayon 并行执行任务](#rayon-并行执行任务)
+    - [CrossBeam 无锁的数据结构](#crossbeam-无锁的数据结构)
     - [Arc 和 Rc](#arc-和-rc)
     - [RwLock 和 RefCell](#rwlock-和-refcell)
     - [Mutex](#mutex)
     - [AtomicPtr 和 Cell](#atomicptr-和-cell)
+- [异步并发](#异步并发)
+    - [异步概念](#异步概念)
+        - [为什么使用异步](#为什么使用异步)
+        - [普通多线程 webserver](#普通多线程-webserver)
+        - [改进后的异步版本](#改进后的异步版本)
+    - [基本使用](#基本使用)
+        - [block_on](#block_on)
+        - [await](#await)
+        - [join](#join)
+    - [future并发模式](#future并发模式)
+        - [future底层是生成器](#future底层是生成器)
+        - [future基本使用](#future基本使用)
+        - [动手实现 Future 类型](#动手实现-future-类型)
+        - [动手实现 异步 sleep](#动手实现-异步-sleep)
+    - [async-std](#async-std)
+    - [tokio](#tokio)
 - [简单文件系统](#简单文件系统)
 - [网络编程](#网络编程)
     - [tcp](#tcp)
@@ -374,7 +382,7 @@ https://www.zhihu.com/question/30511494/answer/649921526 值得关注
     - [命令行程序](#命令行程序)
         - [structopt](#structopt)
         - [clap](#clap)
-    - [异步编程](#异步编程-1)
+    - [异步编程](#异步编程)
     - [websocket](#websocket)
     - [缩小体积](#缩小体积)
     - [http client](#http-client-1)
@@ -2664,8 +2672,147 @@ fn borrow() {
 
 ```rs
 // 原生 指针是指形如* const T 和*mut T 这样的类型 。
-// 可以通过 as操作符随意转换，例如&Tas *constT和&mutT as *mutT。
-// 原生指针可 以在 unsafe 块下任意使用，不受 Rust 的安全检查规则的限制，而引用则必须受到编译器安 全检查规 则的限制 。
+// 可以通过 as操作符随意转换为原生指针，例如 &T as *constT 和 &mut T as *mutT。
+
+
+// 场景:
+// - 在需要的时候跳过 Rust 安全检查
+// - 与 C 语言“打交道"
+
+
+// 内置函数
+// • std::ptr::null 函数和 is_null 方法 
+// • offset方法
+// • read/write方法
+// • replace/swap 方法
+
+
+
+// 解引用
+// 
+fn main() {
+    let mut s = "hello".to_string();
+    // 转换
+    let r1 = &s as *const String;
+    let r2 = &mut s as *mut String;
+    assert_eq!(r1, r2);
+    
+    let address = 0x7fff1d72307d;// 随便指定的地址
+    let r3 = address as *const String;
+    unsafe {
+        println!("r1 is: {}", *r1);
+       println!("r2 is: {}", *r2);
+    //    error
+       // Segmentation fault  
+       assert_eq!(*r1, *r3)
+   }
+}
+
+
+// 创建
+fn main() {
+    // 创建空指针
+    let p: *const u8 = std::ptr::null();
+    // 判断是否为空指针
+    assert!(p.is_null());
+
+    let s: &str = "hello";
+    // 获得不可变原生指针 (指向具体数据/数据内部的元素)
+    // 指针 ptr 的类型为*const u8， 这 是因为字符串是以字节为单位存储的
+    let ptr: *const u8 = s.as_ptr();
+    assert!(!ptr.is_null());
+
+    //对比 通过 as_ptr()获取指针:
+    // - 通过 as_ptr 得到的指针是指向存放数据堆/栈 内存的指针，而引用则是对字符串或数组本身的引用(比前者单纯的指针包含更多数据)。
+    let mut x = "";
+   let y = &mut x as *mut &str;
+   unsafe {
+       assert_eq!(y.read(), "hello");
+   }
+    
+    let mut s = [1, 2, 3];
+    // 获得可变原生指针
+    let ptr: *mut u32 = s.as_mut_ptr();
+    assert!(!ptr.is_null());
+}
+
+
+
+// offset() 可以指定相对于指针地址的偏移字节数，
+// 
+// 
+fn main() {
+    let s: &str = "Rust";
+    let ptr: *const u8 = s.as_ptr();
+    // offset方法不能保证传入的偏移量合法，故为unsafe
+    unsafe {
+        println!("{:?}", *ptr.offset(1) as char); // u
+        println!("{:?}", *ptr.offset(3) as char); // t
+        println!("{:?}", *ptr.offset(255) as char); // ÿ 有UB风险
+    }
+}
+
+
+
+// read/write  可以读取或写入指针相应 内存中的 内容
+// 
+fn main() {
+    let x = "hello".to_string();
+    let y: *const u8 = x.as_ptr();
+    unsafe {
+        assert_eq!(y.read() as char, 'h');
+    }
+    let x = [0, 1, 2, 3];
+    // 这里的原生指针类 型是带长度的，
+    // 如果将类型改为* const [u32;3] ，则通过 read 方法只能读取到前三个元素
+    let y = x[0..].as_ptr() as *const [u32; 4];
+    unsafe {
+       assert_eq!(y.read(), [0,1,2,3]);
+   }
+   let x = vec![0, 1, 2, 3];
+   let y = &x as *const Vec<i32>;
+   unsafe {
+        assert_eq!(y.read(), [0,1,2,3]);
+   }
+   let mut x = "";
+   let y = &mut x as *mut &str;
+   let z = "hello";
+   unsafe {
+       y.write(z);
+       assert_eq!(y.read(), "hello");
+   }
+}
+
+
+
+
+// replace/swap   替换指定位置 的内存 数据
+// 
+fn main() {
+   let mut v: Vec<i32> = vec![1, 2];
+   let v_ptr : *mut i32 = v.as_mut_ptr();
+   unsafe{
+       let old_v = v_ptr.replace(5);
+       assert_eq!(1, old_v);
+       assert_eq!([5, 2], &v[..]);    
+   }
+   let mut v: Vec<i32> = vec![1, 2];
+  let v_ptr  = &mut v as *mut Vec<i32>;
+  unsafe{
+      let old_v = v_ptr.replace(vec![3,4,5]);
+      assert_eq!([1, 2], &old_v[..]);
+      assert_eq!([3, 4, 5], &v[..]);   
+  }
+  let mut array = [0, 1, 2, 3];
+  let x = array[0..].as_mut_ptr() as *mut [u32; 2];
+  let y = array[1..].as_mut_ptr() as *mut [u32; 2];
+  unsafe {
+      assert_eq!([0, 1], x.read());
+      assert_eq!([1, 2], y.read());
+      x.swap(y);
+      assert_eq!([1, 0, 1, 3], array);
+  }
+}
 ```
 
 ## 智能指针
@@ -3165,6 +3312,14 @@ println!("c after = {:?}", c);
 ///
 
 
+
+```
+
+### Pin 和 Unpin
+
+```rs
+// 使用 Pin<T> 则代表将数据的内存位置牢牢地“钉”在原地，不让它移动 。 
+// Unpin 则正好和 Pin 相对应， 代表被“钉”住的数据，可以安全地移动。大多数类型都自动实现了 Unpin。
 
 ```
 
@@ -7577,65 +7732,7 @@ fn sub_process_command() {
 ```
 
 
-## ffi 外部语言函数接口
 
-
-https://www.cnblogs.com/Jackeyzhe/p/12623689.html
-
-https://rustcc.cn/article?id=3b8241d0-c4ca-4f49-8e07-0a5142b00f59
-
-
-
-```rust
-
-
-
-///外部语言函数接口
-/// 
-/// Rust 提供了到 C 语言库的外部语言函数接口（Foreign Function Interface，FFI）。
-/// 外 部语言函数必须在一个 extern 代码块中声明，且该代码块要带有一个包含库名称 的 #[link] 属性
-/// 
-fn ffi() {
-    // 单精度复数的最简实现
-    #[repr(C)]
-    #[derive(Clone, Copy)]
-    struct Complex {
-        re: f32,
-        im: f32,
-    }
-    impl fmt::Debug for Complex {
-        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-            if self.im < 0. {
-                write!(f, "{}-{}i", self.re, -self.im)
-            } else {
-                write!(f, "{}+{}i", self.re, self.im)
-            }
-        }
-    }
-    // 这个 extern 代码块链接到 libm 库
-    #[link(name = "m")]
-    extern {
-        // 这个外部函数用于计算单精度复数的平方根
-        fn csqrtf(z: Complex) -> Complex;
-
-        // 这个用来计算单精度复数的复变余弦
-        fn ccosf(z: Complex) -> Complex;
-    }
-    // 由于调用其他语言的函数被认为是不安全的，我们通常会给它们写一层安全的封装
-    fn cos(z: Complex) -> Complex {
-        unsafe { ccosf(z) }
-    }
-
-    // z = -1 + 0i
-    let z = Complex { re: -1., im: 0. };
-    // 调用外部语言函数是不安全操作
-    let z_sqrt = unsafe { csqrtf(z) };
-    println!("the square root of {:?} is {:?}", z, z_sqrt);
-    // 调用不安全操作的安全的 API 封装
-    println!("cos({:?}) = {:?}", z, cos(z));
-}
-
-```
 
 ## 反射
 
@@ -8268,7 +8365,7 @@ Rust 中最强大的元编程工具非编译器插件莫属, 但是编译器插�
 # unsafe 屏蔽内存安全检查
 
 
-## unsafe 基本介绍
+## unsafe 基本场景
 
 ```rs
 // 使用 unsafe 定义 不安全的 函数/方法/trait, 以及为 trait 实现方法
@@ -8359,7 +8456,66 @@ unsafe {
 ```
 
 
-## 和 unsafe 有关的方法
+
+
+## ffi 外部函数接口
+
+Java语言则将FFI称为JNI CJavaNativeInterface)
+
+
+https://www.cnblogs.com/Jackeyzhe/p/12623689.html
+
+https://rustcc.cn/article?id=3b8241d0-c4ca-4f49-8e07-0a5142b00f59
+
+
+
+```rust
+///外部语言函数接口
+/// 
+/// Rust 提供了到 C 语言库的外部语言函数接口（Foreign Function Interface，FFI）。
+/// 外 部语言函数必须在一个 extern 代码块中声明，且该代码块要带有一个包含库名称 的 #[link] 属性
+/// 
+fn ffi() {
+    // 单精度复数的最简实现
+    #[repr(C)]
+    #[derive(Clone, Copy)]
+    struct Complex {
+        re: f32,
+        im: f32,
+    }
+    impl fmt::Debug for Complex {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            if self.im < 0. {
+                write!(f, "{}-{}i", self.re, -self.im)
+            } else {
+                write!(f, "{}+{}i", self.re, self.im)
+            }
+        }
+    }
+    // 这个 extern 代码块链接到 libm 库
+    #[link(name = "m")]
+    extern {
+        // 这个外部函数用于计算单精度复数的平方根
+        fn csqrtf(z: Complex) -> Complex;
+
+        // 这个用来计算单精度复数的复变余弦
+        fn ccosf(z: Complex) -> Complex;
+    }
+    // 由于调用其他语言的函数被认为是不安全的，我们通常会给它们写一层安全的封装
+    fn cos(z: Complex) -> Complex {
+        unsafe { ccosf(z) }
+    }
+
+    // z = -1 + 0i
+    let z = Complex { re: -1., im: 0. };
+    // 调用外部语言函数是不安全操作
+    let z_sqrt = unsafe { csqrtf(z) };
+    println!("the square root of {:?} is {:?}", z, z_sqrt);
+    // 调用不安全操作的安全的 API 封装
+    println!("cos({:?}) = {:?}", z, cos(z));
+}
+
+```
 
 
 
@@ -8435,6 +8591,19 @@ println!("{:?}", std :: mem::size o f : : < A > ( );// 8 , 单位 字节
 // 
 // 内存对齐包括基本数据对齐和结构体(或联合体)数据对齐
 // 对于基本数据类型，默认 对齐方式是按其大小进行对齐，也被称作自然对齐。 比如Rust中u32类型占4字节，则它默 认对齐方式为 4 字节对齐
+```
+
+## 手动堆内存分配
+
+在编写 Unsafe Rust的过程中，也需要手动进行堆内存分配，所以 Rust标准库 std::alloc 模块中也提供 了堆内存 分配的 相 关 API
+
+
+```rs
+// Rust 1.28之前默认内存分配器：jemalloc
+// Rust 1.28内存分配器 : System，提供全局分配器，可自定义
+
+
+
 ```
 
 
@@ -9084,362 +9253,6 @@ fn condition_compile() {
 
 
 
-# 异步编程
-
-https://rust-lang.github.io/async-book/
-https://learnku.com/docs/async-book/2018
-https://www.rectcircle.cn/posts/rust%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/
-https://cloud.tencent.com/developer/article/1589757
-https://zhuanlan.zhihu.com/p/244047486
-
-
-## 为什么使用异步 单线程 webserver
-
-想要同时运行多个任务, 可以使用多线程, 但是在不同线程之间的切换和线程之间的数据共享过程中，涉及到很多开销。即使是一个只是坐着什么都不做的线程，也会消耗宝贵的系统资源
-
-异步可以在不创建多个线程的情况下同时运行多个任务
-
-例子: 从两个 server下载, 第一个资源 耗时 3s, 第二个资源耗时 1s , 总共耗时 4s, 改为 多线程可以缩短为 3s, 但是有线程切换的开销, 最好的是 改为异步
-
-```rust
-
-// client
-fn start_client() -> Result<()> {
-    // 顺序执行, 耗时长, 4s
-    // connect_to_server("localhost", 8080, "send to server0: 8080")?;
-    // connect_to_server("localhost", 8081, "send to server1: 8081")?;
-
-
-
-
-    // 多线程, 进一步, 可以考虑 使用线程池
-    let mut handles = Vec::new();
-    let handle_server0 = spawn(move || {
-        connect_to_server("localhost", 8080, "send to server0: 8080");
-    });
-    handles.push(handle_server0);
-    let handle_server1 = spawn(move || {
-        connect_to_server("localhost", 8081, "send to server0: 8081");
-    });
-    handles.push(handle_server1);
-    for handle in handles {
-        handle.join();
-    }
-
-
-
-
-
-    Ok(())
-}
-
-fn connect_to_server(host: &str, port: u16, content: &str) -> Result<()> {
-    let mut s = TcpStream::connect((host, port))?;
-    s.write(content.as_bytes())?;
-
-    let mut buf_reader = BufReader::new(&s);
-    let mut buf = Vec::new();
-    buf_reader.read_until(b'\n', &mut buf)?;
-
-    println!(">>> recv from server : {}", std::str::from_utf8(&buf).unwrap());
-    Ok(())
-}
-
-
-
-// server1
-fn start_server1() -> Result<()> {
-    let tcp_listener = TcpListener::bind("localhost:8080")?;
-    for stream in tcp_listener.incoming() {
-        handle_conn(&mut stream?, 3)?
-    }
-    Ok(())
-}
-
-//server2
-fn start_server2() -> Result<()> {
-    let tcp_listener = TcpListener::bind("localhost:8081")?;
-    for stream in tcp_listener.incoming() {
-        handle_conn(&mut stream?, 1)?
-    }
-    Ok(())
-}
-
-fn handle_conn(s: &mut TcpStream, wait_seconds: u64) -> Result<()> {
-    let mut buf = [0; 512];
-    loop {
-        let len = s.read(&mut buf)?;
-        if len == 0 {
-            return Ok(());
-        }
-
-        sleep(Duration::from_secs(wait_seconds));
-        s.write(&buf[..len])?;
-        s.write("\n".as_bytes())?;
-    }
-}
-
-
-```
-
-改进后的异步版本
-
-
-```rs
-use std::{
-    io::{BufRead, BufReader, Read, Result, Write},
-    net::{TcpListener, TcpStream},
-    str::from_utf8,
-};
-
-use futures::{executor::block_on, join};
-
-fn main() {
-    block_on(conn_all_async())
-}
-
-async fn conn_all_async() {
-    let f0 = conn_server_async("localhost", 8080, "send to server0: 8080");
-    let f1 = conn_server_async("localhost", 8081, "send to server0: 8081");
-    join!(f0, f1);// 等待 f0, f1 完成
-}
-
-async fn conn_server_async(host: &str, port: u16, content: &str) -> Result<()> {
-    conn_serve(host, port, content)
-}
-
-fn conn_serve(host: &str, port: u16, content: &str) -> Result<()> {
-    let mut s = TcpStream::connect((host, port))?;
-    s.write(content.as_bytes())?;
-
-    let mut buf = Vec::new();
-    let mut buf_reader = BufReader::new(&s);
-    buf_reader.read_until(b'\n', &mut buf)?;
-
-    println!("recv from server: {}", from_utf8(&buf).unwrap());
-
-    Ok(())
-}
-
-```
-
-
-## 基本使用
-
-
-### block_on
-
-
-定义异步函数, 使用 block_on 阻塞主线程:
-
-```rust
-// futures = "0.3"
-
-use futures::executor::block_on;
-
-fn main() {
-    let hello_future = hello();// 异步执行 (不会等待执行完), hello_future 代表结果的代理
-    println!("main finish");
-
-    // 阻塞 main thread,
-    // 接受一个 future, 返回真实结果
-    block_on(hello_future);
-}
-
-// 异步函数
-async fn hello() {
-    println!("hello async");
-}
-
-```
-
-
-### await
-
-
-使用 .await 等待异步函数执行完
-
-```rust
-use futures::executor::block_on;
-
-fn main() {
-    block_on(hello2());// 阻塞等待 hello2 执行完
-}
-
-async fn hello() {
-    println!("hello async");
-}
-
-async fn hello1() {
-    hello().await;// 等待 hello() 执行完
-    println!("hello 1");
-}
-
-async fn hello2() {
-    hello1().await; //等待 hello1 执行完
-    println!("hello 2");
-}
-
-
-
-```
-
-
-###  join
-
-
-并行执行异步函数
-
-```rust
-use futures::executor::block_on;
-use std::time::Duration;
-
-fn main() {
-    let main = async_main();
-    block_on(main);//阻塞
-}
-
-#[derive(Debug)]
-struct Song;
-
-async fn learn_song() -> Song {
-    // 不能使用 thread::sleep
-    async_std::task::sleep(Duration::from_secs(1)).await; //async-std = "1.5"
-    println!("learn song");
-    Song
-}
-
-async fn sing_song(song: Song) {
-    async_std::task::sleep(Duration::from_secs(1)).await;
-    println!("sing song: {:?}", song);
-}
-
-async fn dance() {
-    println!("dance");
-}
-
-async fn learn_and_sing() {
-    let song = learn_song().await;// 等待执行完
-    sing_song(song).await;// 也要加 await, 否则主线程不会等待 sing_song() 执行完就继续前进了
-}
-
-async fn async_main() {
-    let f1 = learn_and_sing();
-    let f2 = dance();
-
-    // `join!` 类似于 `.await` ，但是可以等待多个 future 并发完成
-    futures::join!(f1, f2); //  f1, f2 并行完成, 返回 (f1, f2)
-    
-    //dance
-    //learn song
-    //sing song: Song
-
-}
-
-
-
-```
-
-
-## async-std
-
-## Future trait
-
-```
-观察 Future 特质，包含一个核心函数，poll。该函数传递一个 &mut Context<'_> 类型参数， 返回一个 Poll 类型参数
-
-Context 主要包含一个 Waker 对象，由执行器提供，用于告诉执行器，重新执行当前 poll 函数
-Poll 是一个枚举类型包含两个枚举
-Ready<Output> 当任务已经就绪，返回该对象
-Pending 任务没有就绪时返回该对象，此Future将让出CPU，直到在其他线程或者任务执行调用Waker为止
-实现者需要保证 poll 是非阻塞，如果是阻塞的话会导致循环进行不下去
-
-实现一个 Future 类型的方式
-
-方式1：使用 async fn，编译器会自动生成实现 Future 特质的类型
-方式2：自定义 结构体，并实现 Future 特质
-
-```
-
-## 动手实现 Future 类型
-
-
-
-
-
-## 动手实现 异步 sleep
-
-
-通过自定义类型的方式实现一个异步的sleep, 类似于async_std::task:sleep
-
-```rust
-use futures::executor::block_on;
-use std::time::Duration;
-use async_std::sync::Arc;
-use std::sync::Mutex;
-use futures::task::{Waker, Context, Poll};
-use futures::Future;
-use std::pin::Pin;
-use std::thread::{spawn, sleep};
-
-fn main() {
-    block_on(async { // 异步代码块
-        println!("start");
-        TimerFuture::new(Duration::from_secs(2)).await;
-        println!("end");
-    });
-}
-
-struct TimerFuture {
-    shared_state: Arc<Mutex<SharedState>>,
-}
-
-struct SharedState {
-    completed: bool,
-    waker: Option<Waker>,
-}
-
-impl Future for TimerFuture {
-    type Output = ();
-
-    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
-        let mut shared_state = self.shared_state.lock().unwrap();
-        if shared_state.completed {
-            Poll::Ready(())
-        } else {
-            shared_state.waker = Some(cx.waker().clone());
-            Poll::Pending
-        }
-    }
-}
-
-impl TimerFuture {
-    fn new(du: Duration) -> Self {
-        let shared_state = Arc::new(Mutex::new(SharedState {
-            completed: false,
-            waker: None,
-        }));
-
-        let thread_shared_state = shared_state.clone();
-        spawn(move || {
-            sleep(du);
-            let mut state = thread_shared_state.lock().unwrap();
-            state.completed = true;
-            if let Some(waker) = state.waker.take() {
-                waker.wake();
-            }
-        });
-
-        TimerFuture {
-            shared_state,
-        }
-    }
-}
-
-
-
-```
-
 # 并发
 
 ## 通用概念
@@ -9452,23 +9265,21 @@ impl TimerFuture {
 
 使用线程提供并发, 占用资源少, 但是编程调试相当复杂
 
-### 事件驱动
+### 事件回调实现的异步并发
 
-多进程/线程 实现的并发, 还是无法支撑万级别的并发访问, 因为就算一个线程处理一个连接, 上万线程服务器也崩了
+>多进程/线程 实现的并发, 还是无法支撑万级别的并发访问, 因为就算一个线程处理一个连接, 也要上万线程, 这时候服务器也崩了
 
 事件驱动实现并发: 只有一个线程, 不断从事件队列中查询是否有事件发生, 若有, 则调用关联的回调函数, 整个过程是非阻塞的
 
-为了解决回调地狱的问题, 新的方案出现了 --> Promise, Future, promise 站在任务处理者的角度，将异步任务完成或失败的 状态标记到 Promise 对象中 。 Future 则站在任务调用者的角度，来检测任务是否完成，如果 完成则直接获取结果，如果未完成则阻塞直到获取到结果 ， 或者编写回调函数避免阻塞
+1. 为了解决回调地狱的问题, 新的方案出现了 --> Promise, Future, promise 站在任务处理者的角度，将异步任务完成或失败的 状态标记到 Promise 对象中 。 Future 则站在任务调用者的角度，来检测任务是否完成，如果 完成则直接获取结果，如果未完成则阻塞直到获取到结果 ， 或者编写回调函数避免阻塞
 
-### 协程
+1. 为了进一步解决代码冗余 ---> 协程: 描述了一种任务协同执行的方式, 只有一个线程, 同时处理多个任务, 一个时间片在执行任务 1, 某个时间片又切到执行任务 2, 看起来就好像任务 1,2 同时在执行 (整个概念类似 CPU 对线程的调度方式)
 
-描述了一种任务协同执行的方式, 只有一个线程, 同时处理多个任务, 一个时间片在执行任务 1, 某个时间片又切到执行任务 2, 看起来就好像任务 1,2 同时在执行 (整个概念类似 CPU 对线程的调度方式)
+    总的来说，协程可以让开发者用写同步(顺序)代码的方 式编写可异步执行的代码 
 
-总的来说，协程可以让开发者用写同步(顺序)代码的方 式编写可异步执行的代码 
+    协程是以线程为容器的， 协程的特点是内存占用比线程更小、上下文切换的开销更小, 也被称为用户 态线程，所以可大量使用
 
-协程是以线程为容器的， 协程的特点是内存占用比线程更小、上下文切换的开销更小, 也被称为用户 态线程，所以可大量使用
-
-虽然充分挖掘了单线程的利用率，在 单线程下可以处理高并发io，但却无法利用多核, 因为始终只有一个线程。
+    虽然充分挖掘了单线程的利用率，在 单线程下可以处理高并发io，但却无法利用多核, 因为始终只有一个线程。
 
 ## 线程基本使用
 
@@ -9854,6 +9665,7 @@ fn main() {
 
 // 条件变量
 // 满足指定条件之前阻塞某一个得到互斥锁的线程 
+// 条件变量需要配合互斥锁才能使用
 // 
 // - 每个条件变量每次只能和一个互斥体一起使用
 // - 使用场景: 当状态成立时通知互斥体
@@ -10013,6 +9825,15 @@ fn channel_demo() {
 
 ## 多线程小例子
 
+### 实现线程池
+
+第三方包: threadpool
+
+这里手动实现
+
+```rs
+
+```
 
 ### 实现 map-reduce 算法
 
@@ -10117,7 +9938,7 @@ fn channel_demo() {
 ```
 
 
-### 多线程 线程池 webserver
+### 带线程池的 webserver
 
 
 main.rs 是项目启动入口
@@ -10338,10 +10159,65 @@ impl Worker {
 ```
 
 
+## rayon 并行执行任务
 
-## CrossBeam 开源库 
+轻松地将顺序计算转换为安全的并行计算，并且保证无数据竞争
 
-无锁的数据结构
+底层使用 线程池执行任务, 若工作线程都被占用, 则新加的任务会顺序执行
+
+```rs
+// 并行迭代器
+// 
+extern crate rayon;
+use rayon::prelude::*;
+fn sum_of_squares(input: &[i32]) -> i32 {
+    input.par_iter()// 返回一个不可变的并行迭代器类型, 通过 map 构造了新的 集合迭代器
+        .map(|&i| i * i).sum()
+}
+fn increment_all(input: &mut [i32]) {
+   
+    input.par_iter_mut() // 回一个可变的并行迭代器类型。
+        .for_each(|p| *p += 1);// 直接在原有基础上修改
+}
+fn main(){
+   let v = [1,2,3,4,5,6,7,8,9,10];
+   let r = sum_of_squares(&v);
+   println!("{}", r);
+   let mut v = [1,2,3,4,5,6,7,8,9,10];
+   increment_all(&mut v);
+   println!("{:?}", v);
+}
+
+
+// join()
+// 并不保证接收的两个闭包一定并行执行, 因为 若 线程池中没有空闲的线程了, 新任务还是只能顺序执行
+// 
+extern crate rayon;
+fn fib(n: u32) -> u32 {
+    if n < 2 { return n; }
+    let (a, b) = rayon::join(
+        // 接收两个闭包 , 并行执行
+        || fib(n - 1), || fib(n - 2)
+    );
+    a + b
+}
+fn main() {
+    let r = fib(32);
+    assert_eq!(r, 2178309);
+}
+```
+
+
+## CrossBeam 无锁的数据结构
+
+是对 标准库的扩展和包装，
+
+```rs
+// - 扩展原子类型, 为基础库中的原子类型实现了 AtomicConsume trait
+// - Scoped 线程: 允许子线程可以安全地使用父线程中的引用
+// - 使用缓存行填充提升井发性能
+// - MPMC Channel: 多生产者多消 费者通道
+```
 
 ## Arc 和 Rc
 
@@ -10377,6 +10253,515 @@ impl Worker {
 // AtomicPtr 相当于线程安全版本 的 Cell<T>
 ```
 
+
+# 异步并发
+
+
+## 异步概念
+
+
+### 为什么使用异步 
+
+想要同时运行多个任务, 可以使用多线程, 但是在不同线程之间的切换和线程之间的数据共享过程中，涉及到很多开销。即使是一个只是坐着什么都不做的线程，也会消耗宝贵的系统资源
+
+异步可以在不创建多个线程的情况下同时运行多个任务, 具体来说就是使用协程 coroutine
+
+
+### 普通多线程 webserver 
+
+
+例子: 从两个 server下载, 第一个资源 耗时 3s, 第二个资源耗时 1s , 总共耗时 4s, 改为 多线程可以缩短为 3s, 但是有线程切换的开销, 最好的是 改为异步
+
+```rust
+
+// client
+fn start_client() -> Result<()> {
+    // 顺序执行, 耗时长, 4s
+    // connect_to_server("localhost", 8080, "send to server0: 8080")?;
+    // connect_to_server("localhost", 8081, "send to server1: 8081")?;
+
+
+
+
+    // 多线程, 进一步, 可以考虑 使用线程池
+    let mut handles = Vec::new();
+    let handle_server0 = spawn(move || {
+        connect_to_server("localhost", 8080, "send to server0: 8080");
+    });
+    handles.push(handle_server0);
+    let handle_server1 = spawn(move || {
+        connect_to_server("localhost", 8081, "send to server0: 8081");
+    });
+    handles.push(handle_server1);
+    for handle in handles {
+        handle.join();
+    }
+
+
+    Ok(())
+}
+
+fn connect_to_server(host: &str, port: u16, content: &str) -> Result<()> {
+    let mut s = TcpStream::connect((host, port))?;
+    s.write(content.as_bytes())?;
+
+    let mut buf_reader = BufReader::new(&s);
+    let mut buf = Vec::new();
+    buf_reader.read_until(b'\n', &mut buf)?;
+
+    println!(">>> recv from server : {}", std::str::from_utf8(&buf).unwrap());
+    Ok(())
+}
+
+
+
+// server1
+fn start_server1() -> Result<()> {
+    let tcp_listener = TcpListener::bind("localhost:8080")?;
+    for stream in tcp_listener.incoming() {
+        handle_conn(&mut stream?, 3)?
+    }
+    Ok(())
+}
+
+//server2
+fn start_server2() -> Result<()> {
+    let tcp_listener = TcpListener::bind("localhost:8081")?;
+    for stream in tcp_listener.incoming() {
+        handle_conn(&mut stream?, 1)?
+    }
+    Ok(())
+}
+
+fn handle_conn(s: &mut TcpStream, wait_seconds: u64) -> Result<()> {
+    let mut buf = [0; 512];
+    loop {
+        let len = s.read(&mut buf)?;
+        if len == 0 {
+            return Ok(());
+        }
+
+        sleep(Duration::from_secs(wait_seconds));
+        s.write(&buf[..len])?;
+        s.write("\n".as_bytes())?;
+    }
+}
+
+
+```
+
+### 改进后的异步版本
+
+
+```rs
+use std::{
+    io::{BufRead, BufReader, Read, Result, Write},
+    net::{TcpListener, TcpStream},
+    str::from_utf8,
+};
+
+use futures::{executor::block_on, join};
+
+fn main() {
+    block_on(conn_all_async())
+}
+
+async fn conn_all_async() {
+    let f0 = conn_server_async("localhost", 8080, "send to server0: 8080");
+    let f1 = conn_server_async("localhost", 8081, "send to server0: 8081");
+    join!(f0, f1);// 等待 f0, f1 完成
+}
+
+async fn conn_server_async(host: &str, port: u16, content: &str) -> Result<()> {
+    conn_serve(host, port, content)
+}
+
+fn conn_serve(host: &str, port: u16, content: &str) -> Result<()> {
+    let mut s = TcpStream::connect((host, port))?;
+    s.write(content.as_bytes())?;
+
+    let mut buf = Vec::new();
+    let mut buf_reader = BufReader::new(&s);
+    buf_reader.read_until(b'\n', &mut buf)?;
+
+    println!("recv from server: {}", from_utf8(&buf).unwrap());
+
+    Ok(())
+}
+
+```
+
+
+## 基本使用
+
+
+### block_on
+
+
+定义异步函数, 然后使用 block_on 阻塞主线程:
+
+```rust
+// futures = "0.3"
+
+use futures::executor::block_on;
+
+fn main() {
+    let hello_future = hello();// 异步执行 (不会等待执行完), hello_future 代表异步函数的 handle 句柄
+    println!("main finish");
+
+    // 阻塞 main thread,
+    // 接受一个 future, 返回真实结果
+    block_on(hello_future);
+}
+
+// 异步函数
+async fn hello() {
+    println!("hello async");
+}
+
+```
+
+
+### await
+
+
+使用 .await 等待异步函数执行完, 用于多个异步函数有依赖关系
+
+```rust
+// futures = "0.3"
+
+use futures::executor::block_on;
+
+fn main() {
+    block_on(hello2());// 阻塞等待 hello2 执行完
+}
+
+async fn hello() {
+    println!("hello async");
+}
+
+async fn hello1() {
+    hello().await;// 等待 hello() 执行完
+    println!("hello 1");
+}
+
+async fn hello2() {
+    hello1().await; //等待 hello1 执行完
+    println!("hello 2");
+}
+
+
+
+```
+
+
+###  join
+
+
+并行执行异步函数
+
+```rust
+use futures::executor::block_on;
+use std::time::Duration;
+
+fn main() {
+    let main = async_main();
+    block_on(main);//阻塞
+}
+
+#[derive(Debug)]
+struct Song;
+
+async fn learn_song() -> Song {
+    // 不能使用 thread::sleep
+    async_std::task::sleep(Duration::from_secs(1)).await; //async-std = "1.5"
+    println!("learn song");
+    Song
+}
+
+async fn sing_song(song: Song) {
+    async_std::task::sleep(Duration::from_secs(1)).await;
+    println!("sing song: {:?}", song);
+}
+
+async fn dance() {
+    println!("dance");
+}
+
+async fn learn_and_sing() {
+    let song = learn_song().await;// 等待执行完
+    sing_song(song).await;// 也要加 await, 否则主线程不会等待 sing_song() 执行完就继续前进了
+}
+
+async fn async_main() {
+    let f1 = learn_and_sing();
+    let f2 = dance();
+
+    // `join!` 类似于 `.await` ，但是可以等待多个 future 并发完成
+    futures::join!(f1, f2); //  f1, f2 并行完成, 返回 (handle1, handle2)
+    
+    //dance
+    //learn song
+    //sing song: Song
+
+}
+
+
+
+```
+
+
+
+
+## future并发模式
+
+### future底层是生成器
+
+要支持async/await异步开发， 最好是能有协程的支持, 
+
+一种是有栈协程(Stackful); 另一种是无栈协程(Stackless)。对于有栈协程的实现， 一般每个协程都自带独立的栈，功能强大， 但是比较耗 内存， 性能不如无栈协程。 而无栈协程一般是基于状态机(StateMachine) 来实现的， 不使 用独立 的栈，具体的应用形式 叫生成器( Generator), rust 使用后者
+
+```rs
+// 基本使用
+#![feature(generators, generator_trait)]
+use std::{ops::{Generator, GeneratorState}, pin::Pin};
+fn main() {
+    // 生成器无法接受参数
+    // 和闭包一样可以捕获外部环境的变量，也可以使用move关键字
+    // 生成器自动实现了Send和Sync,但不会自动实现Copy或Clone之类的trait
+    let mut gen = || {
+        yield 1;// 每个 yield 对应一个不同的状态, 每次调用 resume(), 则返回对应值, 生成器暂时被挂起, 直到再次 调用 resume(), 
+        yield 2;
+        return 3; // 调用 resume 返回 3, 则 生成器结束
+    };
+    match Pin::new(&mut gen).resume(()) {
+        GeneratorState::Yielded(1) => {},
+        _ => panic!("error 1"),
+    }
+    match Generator::resume(Pin::new(&mut gen), ()) {
+        GeneratorState::Yielded(2) => {},
+        _ => panic!("error 2"),
+    }
+    match Generator::resume(Pin::new(&mut gen), ()) {
+        // error
+        // GeneratorState::Yielded(3) => {},
+
+        GeneratorState::Complete(3) => {},
+        _ => panic!("error 3"),
+    }
+    // error
+    // let state = Generator::resume(Pin::new(&mut gen), ());
+    // println!("{:?}", state);
+}
+
+
+
+
+// 作为函数返回值
+// 
+// 
+#![feature(generators, generator_trait)]
+use std::ops::Generator;
+pub fn up_to(limit: u64) -> impl Generator<Yield = u64, Return = u64> {
+    move || {
+    for x in 0..limit {
+         yield x;
+    }
+    return limit;
+    }
+}
+fn main(){
+    let a = 10;
+    let mut b = up_to(a);
+    unsafe {
+      for _ in 0..=10{
+         let c = b.resume();   
+         println!("{:?}", c);
+      }
+    }
+}
+
+
+
+
+//  和迭代器 的关系
+// 
+// 
+// Generator<Yield=T, Return=()> - 如果只关注计算 的过程，而不关 心计 算的结果， 则可以 将 Return 设置为单元类型，只保留 Yield 的类型， 那 么生成器就可以化身为法代器
+// 
+// 生成器的性能比迭代器更高。因为生成器是一种延迟计算或惰性计算， 它避免了不必 要的计算，只有在每次需要时才通过 yield来产生相关的值
+// 
+#![feature(generators, generator_trait)]
+
+use std::{ops::{Generator, GeneratorState}, pin::Pin};
+
+fn main() {
+    let mut gen = gen();
+    let mut state = Pin::new(&mut gen);
+    for _ in 0..3 {
+        match state.as_mut().resume(()) {
+            GeneratorState::Yielded(i) => println!("{:?}", i),
+            _ => println!("complete"),
+        }
+    }
+}
+
+fn gen() -> impl Generator<Yield = u64, Return = ()> {
+    || {
+        let mut i = 0;
+        loop {
+            i += 1;
+            yield i;
+        }
+    }
+}
+
+
+
+
+
+// 和 future关系
+// 
+// Generator<Yield = (), Return = Result<T, E>> - 不关 心过 程 ， 只关注结果, 生成器就可以化身为 Future
+pub fn up_to(limit: u64) -> impl Generator<Yield = (), Return = Result<u64, ()>> {
+    move || {
+        for x in 0..limit {
+            yield ();
+        }
+        return Ok(limit);
+    }
+}
+fn main(){
+    let limit = 2;
+    let mut gen = up_to(limit);
+    unsafe {
+      for i in 0..=limit{
+         match gen.resume() {
+             GeneratorState::Yielded(v) => println!("resume {:?} : Pending", i),// 表示还没处理完
+             GeneratorState::Complete(v) => println!("resume {:?} : Ready", i), // 处理完成, 拿到结果
+         }
+      }
+    }
+}
+
+```
+
+
+
+###  future基本使用
+
+
+第三方库 futures-rs 提供
+
+
+```rs
+// 基本组件
+// 
+// - Future  真实结果的包装
+//      核心函数 poll(), 返回 计算结果是否准备好
+// - Executor 调度器
+// - Task 具体的异步任务
+
+
+
+// 实现一个 Future trait的方式
+// 
+// 方式1：使用 async fn，async fu 会自动为开发者生成返回值是 impl Future 类 型的函数
+// 方式2：自定义 结构体，并实现 Future trait
+
+
+// async/await 原理: 
+// async 关键字定义异步函数/异步块，底层都会先转为 async 块的形式, 再将 async 块生成一个 Generator<Yield=()>类型的生成器来使用
+
+```
+
+### 动手实现 Future 类型
+
+
+
+https://www.rectcircle.cn/posts/rust%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/
+
+### 动手实现 异步 sleep
+
+
+通过自定义类型的方式实现一个异步的sleep, 类似于async_std::task:sleep
+
+```rust
+use futures::executor::block_on;
+use std::time::Duration;
+use async_std::sync::Arc;
+use std::sync::Mutex;
+use futures::task::{Waker, Context, Poll};
+use futures::Future;
+use std::pin::Pin;
+use std::thread::{spawn, sleep};
+
+fn main() {
+    block_on(async { // 异步代码块
+        println!("start");
+        TimerFuture::new(Duration::from_secs(2)).await;
+        println!("end");
+    });
+}
+
+struct TimerFuture {
+    shared_state: Arc<Mutex<SharedState>>,
+}
+
+struct SharedState {
+    completed: bool,
+    waker: Option<Waker>,
+}
+
+impl Future for TimerFuture {
+    type Output = ();
+
+    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
+        let mut shared_state = self.shared_state.lock().unwrap();
+        if shared_state.completed {
+            Poll::Ready(())
+        } else {
+            shared_state.waker = Some(cx.waker().clone());
+            Poll::Pending
+        }
+    }
+}
+
+impl TimerFuture {
+    fn new(du: Duration) -> Self {
+        let shared_state = Arc::new(Mutex::new(SharedState {
+            completed: false,
+            waker: None,
+        }));
+
+        let thread_shared_state = shared_state.clone();
+        spawn(move || {
+            sleep(du);
+            let mut state = thread_shared_state.lock().unwrap();
+            state.completed = true;
+            if let Some(waker) = state.waker.take() {
+                waker.wake();
+            }
+        });
+
+        TimerFuture {
+            shared_state,
+        }
+    }
+}
+
+
+
+```
+
+
+
+## async-std
+
+相较于 tokio, 年轻, 没有历史包袱, 兼容标准库, 更加小巧
+
+
+## tokio
 
 
 
