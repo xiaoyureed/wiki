@@ -21,6 +21,8 @@ https://github.com/code4craft java 爬虫国产作者
 https://juejin.im/post/6844903697047257101 总结
 
 https://github.com/facert/awesome-spider
+
+https://github.com/microsoft/playwright-python
 </div>
 
 <!--more-->
@@ -30,13 +32,13 @@ https://github.com/facert/awesome-spider
 - [主要步骤](#主要步骤)
 - [技术选型](#技术选型)
 - [Puppeteer](#puppeteer)
-  - [和 selenium 区别](#和-selenium-区别)
-  - [使用](#使用)
+    - [和 selenium 区别](#和-selenium-区别)
+    - [使用](#使用)
 - [phantomjs](#phantomjs)
 - [抓包工具](#抓包工具)
-  - [fiddler](#fiddler)
-  - [Charles](#charles)
-  - [wireshark](#wireshark)
+    - [fiddler](#fiddler)
+    - [Charles](#charles)
+    - [wireshark](#wireshark)
 
 <!-- /TOC -->
 

@@ -284,7 +284,12 @@ https://www.zhihu.com/question/30511494/answer/649921526 值得关注
         - [编译器插件](#编译器插件)
 - [unsafe 屏蔽内存安全检查](#unsafe-屏蔽内存安全检查)
     - [unsafe 基本场景](#unsafe-基本场景)
+    - [交叉编译](#交叉编译)
     - [ffi 外部函数接口](#ffi-外部函数接口)
+        - [ffi 基本介绍](#ffi-基本介绍)
+        - [在 rust 中调用 C 函数](#在-rust-中调用-c-函数)
+        - [在 rust调用 cpp](#在-rust调用-cpp)
+        - [在 c 中调用 rust](#在-c-中调用-rust)
 - [内存管理](#内存管理)
     - [堆 和 栈](#堆-和-栈)
     - [内存对齐](#内存对齐)
@@ -5520,6 +5525,74 @@ let tup1 = (PrintDrop("a"), PrintDrop("b"), PrintDrop("c"));
 let tup2 = (PrintDrop("x"), PrintDrop("y"), panic!());//线程的崩愤触发了 tup2 的提前析构, 这 种提前析构的顺序正好和局部变量的析构顺序一致: 先声明的元素后析构。
 
 
+
+
+
+// 屏蔽 规避 drop 检查(跳过 内存自动释放)
+// 
+// 
+struct A;
+struct B;
+struct Foo {
+    a: A,
+    b: B
+}
+impl Foo {
+    fn take(self) -> (A, B) {
+        // error[E0509]: cannot move out of type `Foo`, which implements the `Drop` trait
+        // 因为 drop 方法中可能还需要用到这两个字段, 所以不能将他们的所有权移动到外部
+        (self.a, self.b)
+   }
+
+    // 正确:
+   // 重新实现take
+    fn take(mut self) -> (A, B) {
+        // 通过std::mem::uninitialized()进行伪初始化
+        // 用于跳过Rust的内存初始化检查
+        // 如果此时对a或b进行读写，则有UB(引发未定义行为)风险，一般只用于 FFI和 C语言交五
+        let a = std::mem::replace(
+             &mut self.a, unsafe { std::mem::uninitialized() }
+        );
+        let b = std::mem::replace(
+            &mut self.b, unsafe { std::mem::uninitialized() }
+       );
+       // 通过forget避免调用结构体实例的drop
+    //    这样, 析构函数就不会被自动调用, 需要我们在某个地方手动释放内存
+       std::mem::forget(self);
+       (a, b)
+   }
+}
+// 若不实现 Drop 则上面代码不会报错
+impl Drop for Foo {
+    fn drop(&mut self) {
+        // do something
+    }
+}
+
+
+
+// 另外的手动释放内存的方式 
+// ManuallyDrop<T>是一个联合体，Rust不会为联合体自动实现Drop。 因为联合体是所有字段共用内存，不能随便被析构，否则会引起未定义行为
+// (std::mem::forget<T>函数的实现就是用了ManuallyDrop::new方法)
+// 
+use std::mem::ManuallyDrop;
+struct Peach;
+struct Banana;
+struct Melon;
+struct FruitBox {
+    peach: ManuallyDrop<Peach>,
+    melon: Melon,
+    banana: ManuallyDrop<Banana>,
+}
+impl Drop for FruitBox {
+   fn drop(&mut self) {
+       unsafe {
+           ManuallyDrop::drop(&mut self.peach);// 手动释放
+           ManuallyDrop::drop(&mut self.banana);
+       }
+   }
+}
+
 ```
 
 ### Clone trait
@@ -8456,9 +8529,29 @@ unsafe {
 ```
 
 
+## 交叉编译
 
+```sh
+# 如果是针对 ARM 嵌入式开发平台, 不能使 用std标准库 (#![no_std))
+rustc --target=arm-unknown-linux-gnueabihf hello .rs
+
+cargo build --target=arm - unknown - linux - gnueabihf
+
+# 第三方交叉编译工具 xargo
+```
+
+通过配置文件指定链接器: vim ~/ . cargo/config
+
+```t
+[target . arm- unknown-linux-gnueabihf]
+linker = ”arm-linux-gnueabihf-gcc-4.8”
+```
 
 ## ffi 外部函数接口
+
+
+### ffi 基本介绍
+
 
 Java语言则将FFI称为JNI CJavaNativeInterface)
 
@@ -8475,7 +8568,63 @@ https://rustcc.cn/article?id=3b8241d0-c4ca-4f49-8e07-0a5142b00f59
 /// Rust 提供了到 C 语言库的外部语言函数接口（Foreign Function Interface，FFI）。
 /// 外 部语言函数必须在一个 extern 代码块中声明，且该代码块要带有一个包含库名称 的 #[link] 属性
 /// 
-fn ffi() {
+// 支持四种库:
+// - dylib , rust动态库
+// - rlib, rust 静态库
+// - cdylib, 其他语言写的动态库
+// - staticlib , 其他语言静态库
+// 
+// 
+
+// 如何编译为库
+// 
+// flag 参数
+// (crate type 可以指定多个, #[crate_type = "bin"] 这种使用形式需要标注在 lib.rs or main.rs 开头)
+// 
+// --crate-type=bin or #[crate_type = "bin"] 表示将生成-个可执行文件 。要求程序中必 须包含一个 main 函数
+// --crate-type=lib or #[crate_type = "lib"] 表示将生成一个 Rust库。 具体生成什么类型库，由编译器自行决定。默认会产生 rlib静态 库
+//--crate-type=rlib or #[crate_type = "rlib"] 静态 Rust库，由Rust编译器来使 用。
+//--crate-type=dylib or #[crate_type = "dylib"] 动态 Rust库,由 Rust 编译器来使用(在 Linux上会创建*.so文件，在 MacOSX上会创建.dylib文件， 在 Windows上会创建.dll文件)
+// --crate-type=staticlib or #[crate_type = "staticlib"] 生成静态系统库 。 Rust 编译器 永远不会链接该类型库，主要用于和 C 语言进行链接 ，达成和其他语 言交互 的目的 。 静态系统库在 Linux和 MacOSX上会创建.a文件，在 Windows上会创建*.lib文件
+//--crate-type=cdylib or #[crate_type = "cdylib"] 生成动态系统库。同样 用 于生成 C 接口， 和其他语言交互。该类型在 Linux上会创建.so文件 ，在 MacOSX上会创建.dylib , 在 Windows上会创建.dll文件
+
+
+```
+
+### 在 rust 中调用 C 函数
+
+
+```rs
+// 在 Rust 中调用 C 函数
+// 
+// 这里指定使用 C-ABI，等价于 “extern fn foo () ”这样的函数声明; 此外还有 extern "Rust”， 这是默认的 ABI，任何普通 的函数都将使 用 该 ABI
+extern "C" {//也可以 直接使用 extern 块，而省略掉ABI字符串°C” 。因为默认的extern块就是按C-ABI处理的
+    // 定义了 C 标准库内置的 isalnum 函数签名, 可以直接使用了
+    fn isalnum(input: i32) -> i32;
+}
+fn main() {
+    unsafe {
+        println!("Is 3 a number ?  the answer is : {}", isalnum(3));
+        // error, 参数类型错误
+        println!("Is 'a' a number ? ", isalnum('a'));
+    }
+}
+
+
+```
+
+### 在 rust调用 cpp
+
+
+```rs
+
+// 调用 cpp c++
+// 
+// 
+
+
+
+
     // 单精度复数的最简实现
     #[repr(C)]
     #[derive(Clone, Copy)]
@@ -8513,10 +8662,11 @@ fn ffi() {
     println!("the square root of {:?} is {:?}", z, z_sqrt);
     // 调用不安全操作的安全的 API 封装
     println!("cos({:?}) = {:?}", z, cos(z));
-}
 
 ```
 
+
+### 在 c 中调用 rust
 
 
 
@@ -8599,10 +8749,35 @@ println!("{:?}", std :: mem::size o f : : < A > ( );// 8 , 单位 字节
 
 
 ```rs
-// Rust 1.28之前默认内存分配器：jemalloc
-// Rust 1.28内存分配器 : System，提供全局分配器，可自定义
+// Rust 1.28之前默认全局内存分配器：jemalloc
+// Rust 1.28内存分配器 : System，同时会提供其他全局分配器，可自定义
+// 
+use std::alloc::{GlobalAlloc, System, Layout};
+struct MyAllocator;// 可以直接使用GlobalAlloc, 这里是做了一个包装
+unsafe impl GlobalAlloc for MyAllocator {
+    unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
+        System.alloc(layout)
+    }
+    unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
+        System.dealloc(ptr, layout)
+    }
+}
+// 声明为全局分配器
+#[global_allocator]
+static GLOBAL: MyAllocator = MyAllocator;
+fn main() {
+   // 此处Vec的内存会由GLOBAL全局分配器来分配
+   let mut v = Vec::new();
+   v.push(1);
+}
 
 
+// 指定全局分配器为jemalloc
+// 
+extern crate jemallocator;
+use jemallacator::Jemalloc;
+#[global_allocator]
+static GLOBAL: Jemalloc = Jemalloc;
 
 ```
 
@@ -8900,6 +9075,11 @@ hello_utils = { path = "../hello_utils", version = "0.1.0" }
 # [dev-dependencies]表的作用用来设置测试( tests)、示例 (examples)和基准测试( benchmarks)时使用的依赖, 在执行 cargo test 或 cargo bench 命 令 时使用 。
 [dev-dependencies]
 
+
+
+# build 依赖库
+[build-dependencies]
+cc = "1.0"
 
 # 条件编译功能 (选择性地编 译 代 码)
 [features]
