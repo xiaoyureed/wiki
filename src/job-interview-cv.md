@@ -177,3 +177,7 @@ https://www.zhihu.com/question/62351184 upwork 上体验
 
 https://github.com/1c7/chinese-independent-developer 独立开发者在做什么
 https://github.com/easychen/howto-make-more-money/ 独立开发者挣钱方式
+
+https://github.com/greatghoul/remote-working
+https://github.com/bufpay/remote-working
+https://github.com/greatghoul/profile 独立开发者

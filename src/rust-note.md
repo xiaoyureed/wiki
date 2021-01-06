@@ -5,12 +5,17 @@ date: 2020-08-31 22:15:27
 ---
 
 
+https://github.com/warycat/rustgym 算法
+https://github.com/EbTech/rust-algorithms
+
 https://github.com/rust-unofficial/awesome-rust
+https://github.com/rustcc/awesome-rust 中文版
 https://github.com/rust-lang-nursery/rust-cookbook
 
 https://play.integer32.com/
 https://play.rust-lang.org/
 
+https://rust-unofficial.github.io/patterns/ 设计模式
 
 servo 新一代浏览器引擎
 
@@ -70,6 +75,8 @@ https://www.zhihu.com/question/34665842?sort=created 练手
 https://www.zhihu.com/question/352420716/answer/973279231
 
 https://www.zhihu.com/question/30511494/answer/649921526 值得关注
+
+https://github.com/rajasekarv/vega spark 替代
 <!--more-->
 
 
@@ -6230,6 +6237,14 @@ fn enum_demo() {
     //    None,
     // }
     // 
+
+    // 使用场景:
+    // - 初始化值
+    // - 作为函数的返回值, 表示空, or 出现的简单错误
+    // - 作为函数可选参数
+    // - 作为结构体的可选字段
+    // - 作为结构体中可借出/载入的字段
+    // - 代表空指针
 
     // 解开可以通过 match 模式匹配, 
     // or:
