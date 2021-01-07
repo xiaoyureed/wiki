@@ -63,6 +63,8 @@ TODO
 
 ## 秒杀解决方案
 
+https://github.com/qiurunze123/miaosha
+
 -   分布式 session , 为了抗并发, app 可能水平拓展, 各个 node 的 session 需要统一
 
     使用 Redis 存储 session

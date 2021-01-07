@@ -5,6 +5,8 @@ tags: [python]
 categories: computer science
 ---
 
+https://github.com/jackzhenguo/python-small-examples 小例子
+
 python 学习笔记;
 references: [1](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000), [2](https://github.com/yidao620c/python3-cookbook)
 算法实现: https://github.com/yidao620c/core-algorithm， https://github.com/billryan/algorithm-exercise

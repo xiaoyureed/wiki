@@ -13,6 +13,8 @@ categories: distributed system
 https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf
 
 http://www.royans.net/wp/2010/02/14/brewers-cap-theorem-on-distributed-systems/
+
+https://github.com/qiurunze123 淘宝分布式大牛
 </div>
 
 <!--more-->

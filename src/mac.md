@@ -57,7 +57,7 @@ https://github.com/Louiszhai/tool
         - [完全卸载](#完全卸载)
         - [插件无法搜索](#插件无法搜索)
         - [ideavim](#ideavim)
-        - [滚动卡顿解决](#滚动卡顿解决)
+        - [自定义堆内存](#自定义堆内存)
     - [tmux 多会话管理](#tmux-多会话管理)
     - [htop 替代 top](#htop-替代-top)
     - [安装 visualvm](#安装-visualvm)
@@ -788,7 +788,7 @@ set timeoutlen=300
 
 ```
 
-### 滚动卡顿解决
+### 自定义堆内存
 
 https://www.jianshu.com/p/2fa801238a1d
 https://www.jianshu.com/p/c858e6a988b9

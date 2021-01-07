@@ -86,7 +86,8 @@ vm 库 ckb-vm cita-vm
 1. 矿工节点收到数据, 求解难题, 打包成区块, 发出区块广播
 1. 各个节点将区块加入本地链条末尾
 
-
+https://book.8btc.com/books/6/masterbitcoin2cn/_book/
+https://github.com/tianmingyun/MasterBitcoin2CN/blob/master/SUMMARY.md
 
 
 # 密码学
