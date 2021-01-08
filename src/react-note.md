@@ -8,6 +8,9 @@ categories: frontend
 ---
 
 <div align="center">
+
+https://www.zhihu.com/question/59073695/answer/1071631250 类库推荐
+
 https://reactjs.org/
 若以 MVC 框架来看，React 属于view
 
@@ -46,162 +49,162 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
 - [面试题](#面试题)
 - [why react](#why-react)
 - [jsx](#jsx)
-  - [基本语法](#基本语法)
-  - [使用 jsx 需要的环境配置](#使用-jsx-需要的环境配置)
+    - [基本语法](#基本语法)
+    - [使用 jsx 需要的环境配置](#使用-jsx-需要的环境配置)
 - [开发环境搭建](#开发环境搭建)
-  - [老项目接入](#老项目接入)
-  - [create-react-app 使用](#create-react-app-使用)
-  - [vscode 环境](#vscode-环境)
-  - [webpack 环境搭建](#webpack-环境搭建)
+    - [老项目接入](#老项目接入)
+    - [create-react-app 使用](#create-react-app-使用)
+    - [vscode 环境](#vscode-环境)
+    - [webpack 环境搭建](#webpack-环境搭建)
 - [组件化](#组件化)
-  - [社区开源组件](#社区开源组件)
-  - [Web Components](#web-components)
-  - [组件设计原则](#组件设计原则)
-  - [带状态组件 纯函数组件](#带状态组件-纯函数组件)
-  - [函数绑定方式](#函数绑定方式)
-  - [hooks](#hooks)
-    - [最佳实践](#最佳实践)
-    - [为什么需要 hooks](#为什么需要-hooks)
-    - [useRef](#useref)
-    - [useMemo and memo and useCallback](#usememo-and-memo-and-usecallback)
-    - [useState](#usestate)
-      - [state 特性](#state-特性)
-      - [传统写法](#传统写法)
-      - [使用 functional 组件的写法](#使用-functional-组件的写法)
-      - [延迟初始化](#延迟初始化)
-      - [新旧 state 有关联](#新旧-state-有关联)
-    - [useContext](#usecontext)
-    - [useReducer](#usereducer)
-    - [useEffect](#useeffect)
-      - [effect 理解](#effect-理解)
-      - [effect 基本使用](#effect-基本使用)
-      - [缓存上次值](#缓存上次值)
-      - [设置销毁回调函数例子](#设置销毁回调函数例子)
-      - [发送异步请求](#发送异步请求)
-      - [使用 fetch api](#使用-fetch-api)
-    - [自定义 hook](#自定义-hook)
-      - [带有自增效果的 state hook](#带有自增效果的-state-hook)
-      - [从 usehooks 改造 responseComponent](#从-usehooks-改造-responsecomponent)
-      - [定时器 and 自动销毁](#定时器-and-自动销毁)
-    - [综合例子](#综合例子)
-      - [点赞按钮](#点赞按钮)
-  - [高阶组件 and 函数作为子组件](#高阶组件-and-函数作为子组件)
-  - [Fragment](#fragment)
-  - [StrictMode](#strictmode)
-  - [示例](#示例)
-    - [使用 props](#使用-props)
-    - [遍历子元素](#遍历子元素)
-    - [找到真实的 dom(this.ref.xxx)](#找到真实的-domthisrefxxx)
-    - [使用 state(this.state)](#使用-statethisstate)
-    - [一个表单示例](#一个表单示例)
-    - [登录界面](#登录界面)
-    - [todo list app](#todo-list-app)
+    - [社区开源组件](#社区开源组件)
+    - [Web Components](#web-components)
+    - [组件设计原则](#组件设计原则)
+    - [带状态组件 纯函数组件](#带状态组件-纯函数组件)
+    - [函数绑定方式](#函数绑定方式)
+    - [hooks](#hooks)
+        - [最佳实践](#最佳实践)
+        - [为什么需要 hooks](#为什么需要-hooks)
+        - [useRef](#useref)
+        - [useMemo and memo and useCallback](#usememo-and-memo-and-usecallback)
+        - [useState](#usestate)
+            - [state 特性](#state-特性)
+            - [传统写法](#传统写法)
+            - [使用 functional 组件的写法](#使用-functional-组件的写法)
+            - [延迟初始化](#延迟初始化)
+            - [新旧 state 有关联](#新旧-state-有关联)
+        - [useContext](#usecontext)
+        - [useReducer](#usereducer)
+        - [useEffect](#useeffect)
+            - [effect 理解](#effect-理解)
+            - [effect 基本使用](#effect-基本使用)
+            - [缓存上次值](#缓存上次值)
+            - [设置销毁回调函数例子](#设置销毁回调函数例子)
+            - [发送异步请求](#发送异步请求)
+            - [使用 fetch api](#使用-fetch-api)
+        - [自定义 hook](#自定义-hook)
+            - [带有自增效果的 state hook](#带有自增效果的-state-hook)
+            - [从 usehooks 改造 responseComponent](#从-usehooks-改造-responsecomponent)
+            - [定时器 and 自动销毁](#定时器-and-自动销毁)
+        - [综合例子](#综合例子)
+            - [点赞按钮](#点赞按钮)
+    - [高阶组件 and 函数作为子组件](#高阶组件-and-函数作为子组件)
+    - [Fragment](#fragment)
+    - [StrictMode](#strictmode)
+    - [示例](#示例)
+        - [使用 props](#使用-props)
+        - [遍历子元素](#遍历子元素)
+        - [找到真实的 dom(this.ref.xxx)](#找到真实的-domthisrefxxx)
+        - [使用 state(this.state)](#使用-statethisstate)
+        - [一个表单示例](#一个表单示例)
+        - [登录界面](#登录界面)
+        - [todo list app](#todo-list-app)
 - [组件的生命周期](#组件的生命周期)
-  - [生命周期介绍](#生命周期介绍)
-  - [组件被挂载](#组件被挂载)
-  - [组件被卸载](#组件被卸载)
-  - [组件被更新](#组件被更新)
-  - [生命周期函数 demo](#生命周期函数-demo)
+    - [生命周期介绍](#生命周期介绍)
+    - [组件被挂载](#组件被挂载)
+    - [组件被卸载](#组件被卸载)
+    - [组件被更新](#组件被更新)
+    - [生命周期函数 demo](#生命周期函数-demo)
 - [virtual dom 和 diff 算法](#virtual-dom-和-diff-算法)
-  - [virtual dom](#virtual-dom)
-  - [key 属性有什么作用](#key-属性有什么作用)
-  - [设置组件时怎么提高性能](#设置组件时怎么提高性能)
+    - [virtual dom](#virtual-dom)
+    - [key 属性有什么作用](#key-属性有什么作用)
+    - [设置组件时怎么提高性能](#设置组件时怎么提高性能)
 - [context-api 使用](#context-api-使用)
 - [state 状态](#state-状态)
-  - [state 介绍](#state-介绍)
-  - [state 和组件的普通属性区别](#state-和组件的普通属性区别)
-  - [如何更新 state](#如何更新-state)
-  - [setState 是不是异步的](#setstate-是不是异步的)
-  - [setState 更新是一个合并过程](#setstate-更新是一个合并过程)
-  - [replaceState 更新是一个替换过程](#replacestate-更新是一个替换过程)
+    - [state 介绍](#state-介绍)
+    - [state 和组件的普通属性区别](#state-和组件的普通属性区别)
+    - [如何更新 state](#如何更新-state)
+    - [setState 是不是异步的](#setstate-是不是异步的)
+    - [setState 更新是一个合并过程](#setstate-更新是一个合并过程)
+    - [replaceState 更新是一个替换过程](#replacestate-更新是一个替换过程)
 - [props 属性](#props-属性)
-  - [在 jsx 中遍历 props](#在-jsx-中遍历-props)
-  - [PropTypes 类型检查](#proptypes-类型检查)
-  - [引入类型检查的其他方法](#引入类型检查的其他方法)
-    - [引入 TypeScript](#引入-typescript)
-    - [flow 类型检查](#flow-类型检查)
-  - [设定 props 的默认值](#设定-props-的默认值)
-  - [有哪些属性](#有哪些属性)
+    - [在 jsx 中遍历 props](#在-jsx-中遍历-props)
+    - [PropTypes 类型检查](#proptypes-类型检查)
+    - [引入类型检查的其他方法](#引入类型检查的其他方法)
+        - [引入 TypeScript](#引入-typescript)
+        - [flow 类型检查](#flow-类型检查)
+    - [设定 props 的默认值](#设定-props-的默认值)
+    - [有哪些属性](#有哪些属性)
 - [refs](#refs)
 - [合成事件](#合成事件)
 - [状态管理](#状态管理)
-  - [flux 架构的思想](#flux-架构的思想)
-  - [Flux 官方实现](#flux-官方实现)
-  - [Redux](#redux)
-    - [为什么要使用 redux](#为什么要使用-redux)
-    - [基本概念](#基本概念)
-    - [基本 api](#基本-api)
-      - [store](#store)
-      - [reducer](#reducer)
-      - [applyMiddleware](#applymiddleware)
-      - [bindActionCreators](#bindactioncreators)
-    - [纯 redux 的 api 示例(同步版本的 api)](#纯-redux-的-api-示例同步版本的-api)
-    - [react-redux](#react-redux)
-    - [异步 Action](#异步-action)
-    - [thunk, saga](#thunk-saga)
-    - [调试工具](#调试工具)
-    - [demo(一个 todo-app)](#demo一个-todo-app)
-  - [Redux 和 Flux 的一些差异](#redux-和-flux-的一些差异)
-  - [ImmutableJS](#immutablejs)
+    - [flux 架构的思想](#flux-架构的思想)
+    - [Flux 官方实现](#flux-官方实现)
+    - [Redux](#redux)
+        - [为什么要使用 redux](#为什么要使用-redux)
+        - [基本概念](#基本概念)
+        - [基本 api](#基本-api)
+            - [store](#store)
+            - [reducer](#reducer)
+            - [applyMiddleware](#applymiddleware)
+            - [bindActionCreators](#bindactioncreators)
+        - [纯 redux 的 api 示例(同步版本的 api)](#纯-redux-的-api-示例同步版本的-api)
+        - [react-redux](#react-redux)
+        - [异步 Action](#异步-action)
+        - [thunk, saga](#thunk-saga)
+        - [调试工具](#调试工具)
+        - [demo(一个 todo-app)](#demo一个-todo-app)
+    - [Redux 和 Flux 的一些差异](#redux-和-flux-的一些差异)
+    - [ImmutableJS](#immutablejs)
 - [路由 react-router](#路由-react-router)
-  - [路由标签的使用](#路由标签的使用)
-    - [Router-路由容器](#router-路由容器)
-    - [Route-路由组件映射](#route-路由组件映射)
-      - [属性](#属性)
-      - [通过 url 传递参数给 Route](#通过-url-传递参数给-route)
-      - [嵌套路由](#嵌套路由)
-      - [Route 三种渲染方式](#route-三种渲染方式)
-    - [Switch-解决多匹配问题](#switch-解决多匹配问题)
-    - [Redirect-重定向当前页面](#redirect-重定向当前页面)
-    - [Link-超链接](#link-超链接)
-    - [NavLink: 带样式的 Link](#navlink-带样式的-link)
-    - [Prompt-提示](#prompt-提示)
-  - [history](#history)
-  - [location](#location)
-  - [match](#match)
+    - [路由标签的使用](#路由标签的使用)
+        - [Router-路由容器](#router-路由容器)
+        - [Route-路由组件映射](#route-路由组件映射)
+            - [属性](#属性)
+            - [通过 url 传递参数给 Route](#通过-url-传递参数给-route)
+            - [嵌套路由](#嵌套路由)
+            - [Route 三种渲染方式](#route-三种渲染方式)
+        - [Switch-解决多匹配问题](#switch-解决多匹配问题)
+        - [Redirect-重定向当前页面](#redirect-重定向当前页面)
+        - [Link-超链接](#link-超链接)
+        - [NavLink: 带样式的 Link](#navlink-带样式的-link)
+        - [Prompt-提示](#prompt-提示)
+    - [history](#history)
+    - [location](#location)
+    - [match](#match)
 - [调试和测试](#调试和测试)
 - [GraphQL 和 Relay](#graphql-和-relay)
 - [CSS-Module 模块化](#css-module-模块化)
 - [css-in-js](#css-in-js)
 - [最佳实践 best practice](#最佳实践-best-practice)
 - [服务端渲染](#服务端渲染)
-  - [什么是 ssr](#什么是-ssr)
-  - [ssr 的好处](#ssr-的好处)
-  - [解决方案](#解决方案)
-    - [配合 koa2 实现 ssr](#配合-koa2-实现-ssr)
-    - [egg 实现 ssr](#egg-实现-ssr)
+    - [什么是 ssr](#什么是-ssr)
+    - [ssr 的好处](#ssr-的好处)
+    - [解决方案](#解决方案)
+        - [配合 koa2 实现 ssr](#配合-koa2-实现-ssr)
+        - [egg 实现 ssr](#egg-实现-ssr)
 - [性能优化](#性能优化)
-  - [常见的性能问题场景](#常见的性能问题场景)
-  - [使用工具定位性能问题](#使用工具定位性能问题)
-  - [网络性能优化-自动按需加载](#网络性能优化-自动按需加载)
-  - [使用 Reselect 避免重复计算](#使用-reselect-避免重复计算)
+    - [常见的性能问题场景](#常见的性能问题场景)
+    - [使用工具定位性能问题](#使用工具定位性能问题)
+    - [网络性能优化-自动按需加载](#网络性能优化-自动按需加载)
+    - [使用 Reselect 避免重复计算](#使用-reselect-避免重复计算)
 - [react 动画](#react-动画)
 - [react native](#react-native)
 - [开发小程序](#开发小程序)
 - [小项目](#小项目)
-  - [实现 route](#实现-route)
-  - [表单设计器](#表单设计器)
-  - [cms 系统](#cms-系统)
+    - [实现 route](#实现-route)
+    - [表单设计器](#表单设计器)
+    - [cms 系统](#cms-系统)
 - [部署到 github 上](#部署到-github-上)
 - [和 springboot 打包单体应用](#和-springboot-打包单体应用)
 - [和 typescript 一起使用](#和-typescript-一起使用)
-  - [ts 基本使用](#ts-基本使用)
-    - [枚举](#枚举)
-    - [使用 interface 定义对象类型](#使用-interface-定义对象类型)
-    - [interface 定义函数类型](#interface-定义函数类型)
-    - [interface 定义可索引类型](#interface-定义可索引类型)
-    - [interface 定义 class 类](#interface-定义-class-类)
-    - [interface 继承](#interface-继承)
-    - [class 使用](#class-使用)
-    - [泛型使用](#泛型使用)
-    - [交叉类型](#交叉类型)
-    - [联合类型](#联合类型)
-    - [类型保护](#类型保护)
-    - [类型别名](#类型别名)
-    - [空类型](#空类型)
-  - [集成 ts 环境](#集成-ts-环境)
-  - [为样式文件编写 types](#为样式文件编写-types)
-  - [配置 css 跳转](#配置-css-跳转)
+    - [ts 基本使用](#ts-基本使用)
+        - [枚举](#枚举)
+        - [使用 interface 定义对象类型](#使用-interface-定义对象类型)
+        - [interface 定义函数类型](#interface-定义函数类型)
+        - [interface 定义可索引类型](#interface-定义可索引类型)
+        - [interface 定义 class 类](#interface-定义-class-类)
+        - [interface 继承](#interface-继承)
+        - [class 使用](#class-使用)
+        - [泛型使用](#泛型使用)
+        - [交叉类型](#交叉类型)
+        - [联合类型](#联合类型)
+        - [类型保护](#类型保护)
+        - [类型别名](#类型别名)
+        - [空类型](#空类型)
+    - [集成 ts 环境](#集成-ts-环境)
+    - [为样式文件编写 types](#为样式文件编写-types)
+    - [配置 css 跳转](#配置-css-跳转)
 - [使用 debugger for  Chrome](#使用-debugger-for--chrome)
 
 <!-- /TOC -->
@@ -2470,6 +2473,10 @@ ReactDOM.render(<Timer />, document.getElementById("app"));
 
 - setState((preState, props) => newState)
 
+  可以同时传递一个 callback 回调函数, setState((preState, props) => newState, callback)
+
+
+
 
 当State中的某个状态发生变化，我们应该重新创建这个状态对象，而不是直接修改原来的状态. 为什么呢
 
@@ -2587,9 +2594,6 @@ this.setState(preState => ({
 
 ## setState 是不是异步的
 
-调用setState，组件的state并不会立即改变，setState只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且 React 会将多次setState的状态修改合并成一次状态修改. 
-
-所以不要依赖当前的State，计算下个State; 前后两个 state 应该没有任何联系; 同样不能依赖当前的Props计算下个 state，因为Props一般也是从父组件的State中获取，依然无法确定获取的当前 props 就是最新的
 
 经典例子:
 
@@ -2599,31 +2603,31 @@ class Demo extends PureComponent {
   state={
     count: 0,
   }
-  // 钩子函数
+  // 钩子函数 (在这里是异步的)
   componentDidMount() {
     console.log('pre state', this.state.count);
     this.setState({
       count: this.state.count + 1
     });
-    console.log('next state', this.state.count);
+    console.log('next state', this.state.count);//前后没变化
 
-    //测试setTimeout
+    //测试setTimeout (这里是同步的)
     setTimeout(() => {
       console.log('setTimeout pre state', this.state.count);
       this.setState({
         count: this.state.count + 1
       });
-      console.log('setTimeout next state', this.state.count);
+      console.log('setTimeout next state', this.state.count);// 前后有变化
     }, 0);
   }
 
   onClick = (event) => {
-    // 测试合成函数 (合成事件触发的函数) 中setState
+    // 测试合成函数 (合成事件触发的函数) 中setState (这里是异步的)
     console.log(`${event.type} pre state`, this.state.count);
     this.setState({
       count: this.state.count + 1
     });
-    console.log(`${event.type} next state`, this.state.count);
+    console.log(`${event.type} next state`, this.state.count);// 前后没变化
   }
 
   render() {
@@ -2632,11 +2636,15 @@ class Demo extends PureComponent {
 }
 ```
 
+调用setState，组件的state并不会立即改变，setState只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且 React 会将多次setState的状态修改合并成一次状态修改. 
+
+>所以不要依赖当前的State，计算下个State; 前后两个 state 应该没有任何联系; 同样不能依赖当前的Props计算下个 state，因为Props一般也是从父组件的State中获取，依然无法确定获取的当前 props 就是最新的
+
 ==================真的是异步的吗
 
 setState本身的执行过程是同步的
 
-但是在react的`合成函数 (合成事件触发的函数)`与`钩子函数 (生命周期函数)`中的 setState() 不会立马更新 state，所以不能立即拿到更新后的 state，形成了所谓的异步；
+但是在react的`合成函数 (自定义函数)`与`钩子函数 (生命周期函数)`中的 setState() 不会立马更新 state，所以不能立即拿到更新后的 state，形成了所谓的异步；
 
 
 ==================为什么需要有异步呢 //todo
@@ -4098,6 +4106,8 @@ https://www.jianshu.com/p/56ca46c90ee2 使用类库
 
 - https://github.com/rendora/rendora 使用 headless Chrome
 
+- https://github.com/jaredpalmer/razzle
+
 ### 配合 koa2 实现 ssr
 
 https://github.com/yangfan0095/react-koa2-ssr
@@ -4733,6 +4743,8 @@ https://create-react-app.dev/docs/adding-typescript/
 ```sh
 npx create-react-app my-app --template typescript
 
+# default use yarn to manage package, specify use npm
+npx create-react-app my-app --use-npm
 
 
 ```
