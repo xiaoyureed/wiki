@@ -155,8 +155,9 @@ tags:
 date: 2018-06-28 20:26:11
 categories: frontend</h2>
 <div align="center">
-https://reactjs.org/
-若以 MVC 框架来看，React 属于view
+<p>https://www.zhihu.com/question/59073695/answer/1071631250 类库推荐</p>
+<p>https://reactjs.org/
+若以 MVC 框架来看，React 属于view</p>
 <p>https://github.com/dypsilon/frontend-dev-bookmarks 前端集合</p>
 <p>https://www.zhihu.com/question/39943474/answer/156412178,</p>
 <p>https://www.zhihu.com/question/29848048/answer/45793588,</p>
@@ -2466,6 +2467,7 @@ ReactDOM.render(&lt;Timer /&gt;, document.getElementById(&quot;app&quot;));
 </li>
 <li>
 <p>setState((preState, props) =&gt; newState)</p>
+<p>可以同时传递一个 callback 回调函数, setState((preState, props) =&gt; newState, callback)</p>
 </li>
 </ul>
 <p>当State中的某个状态发生变化，我们应该重新创建这个状态对象，而不是直接修改原来的状态. 为什么呢</p>
@@ -2579,39 +2581,37 @@ this.setState(preState =&gt; ({
 
 </code></pre>
 <h2><a class="header" href="#setstate-是不是异步的" id="setstate-是不是异步的">setState 是不是异步的</a></h2>
-<p>调用setState，组件的state并不会立即改变，setState只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且 React 会将多次setState的状态修改合并成一次状态修改. </p>
-<p>所以不要依赖当前的State，计算下个State; 前后两个 state 应该没有任何联系; 同样不能依赖当前的Props计算下个 state，因为Props一般也是从父组件的State中获取，依然无法确定获取的当前 props 就是最新的</p>
 <p>经典例子:</p>
 <pre><code class="language-js">// demo.js
 class Demo extends PureComponent {
   state={
     count: 0,
   }
-  // 钩子函数
+  // 钩子函数 (在这里是异步的)
   componentDidMount() {
     console.log('pre state', this.state.count);
     this.setState({
       count: this.state.count + 1
     });
-    console.log('next state', this.state.count);
+    console.log('next state', this.state.count);//前后没变化
 
-    //测试setTimeout
+    //测试setTimeout (这里是同步的)
     setTimeout(() =&gt; {
       console.log('setTimeout pre state', this.state.count);
       this.setState({
         count: this.state.count + 1
       });
-      console.log('setTimeout next state', this.state.count);
+      console.log('setTimeout next state', this.state.count);// 前后有变化
     }, 0);
   }
 
   onClick = (event) =&gt; {
-    // 测试合成函数 (合成事件触发的函数) 中setState
+    // 测试合成函数 (合成事件触发的函数) 中setState (这里是异步的)
     console.log(`${event.type} pre state`, this.state.count);
     this.setState({
       count: this.state.count + 1
     });
-    console.log(`${event.type} next state`, this.state.count);
+    console.log(`${event.type} next state`, this.state.count);// 前后没变化
   }
 
   render() {
@@ -2619,9 +2619,13 @@ class Demo extends PureComponent {
   }
 }
 </code></pre>
+<p>调用setState，组件的state并不会立即改变，setState只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且 React 会将多次setState的状态修改合并成一次状态修改. </p>
+<blockquote>
+<p>所以不要依赖当前的State，计算下个State; 前后两个 state 应该没有任何联系; 同样不能依赖当前的Props计算下个 state，因为Props一般也是从父组件的State中获取，依然无法确定获取的当前 props 就是最新的</p>
+</blockquote>
 <p>==================真的是异步的吗</p>
 <p>setState本身的执行过程是同步的</p>
-<p>但是在react的<code>合成函数 (合成事件触发的函数)</code>与<code>钩子函数 (生命周期函数)</code>中的 setState() 不会立马更新 state，所以不能立即拿到更新后的 state，形成了所谓的异步；</p>
+<p>但是在react的<code>合成函数 (自定义函数)</code>与<code>钩子函数 (生命周期函数)</code>中的 setState() 不会立马更新 state，所以不能立即拿到更新后的 state，形成了所谓的异步；</p>
 <p>==================为什么需要有异步呢 //todo</p>
 <ul>
 <li>
@@ -3962,6 +3966,9 @@ https://www.jianshu.com/p/56ca46c90ee2 使用类库</p>
 <li>
 <p>https://github.com/rendora/rendora 使用 headless Chrome</p>
 </li>
+<li>
+<p>https://github.com/jaredpalmer/razzle</p>
+</li>
 </ul>
 <h3><a class="header" href="#配合-koa2-实现-ssr" id="配合-koa2-实现-ssr">配合 koa2 实现 ssr</a></h3>
 <p>https://github.com/yangfan0095/react-koa2-ssr</p>
@@ -4494,6 +4501,8 @@ f(1, null); // error, 'null' is not assignable to 'number | undefined'
 <p>https://create-react-app.dev/docs/adding-typescript/</p>
 <pre><code class="language-sh">npx create-react-app my-app --template typescript
 
+# default use yarn to manage package, specify use npm
+npx create-react-app my-app --use-npm
 
 
 </code></pre>
