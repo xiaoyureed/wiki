@@ -880,7 +880,7 @@ export default () =&gt; {
 </ul>
 </li>
 <li>
-<p>useMemo  一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，在后续 render 时，将依赖数组中的值取出来和上一次记录的值进行比较，如果不相等才会重新执行回调函数</p>
+<p>useMemo  一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，每次 rerender, 依赖是否变化决定了函数逻辑是否重复执行, 若为空数组则仅仅执行一次</p>
 <ul>
 <li>
 <p>useMemo 类似 useEffect, 区别是 effect 是 render 后执行， useMemo 是 render 前执行, 之后是否重复执行, 看依赖是否变化</p>
@@ -1189,7 +1189,8 @@ const btnReducer = (state, action) =&gt; {
 
 const ActionDemo = () =&gt; {
     // 参数 1: reducer
-    // 参数 2: state 初始化
+    // 参数 2: initState 
+    // 参数 3: init?
     // 返回值: [当前状态, dispatch 函数]
   const [state, dispatch] = useReducer(btnReducer, {
     count: 0
@@ -1224,7 +1225,7 @@ export default ActionDemo;
 <h4><a class="header" href="#effect-理解" id="effect-理解">effect 理解</a></h4>
 <p>effect（副作用）：指那些没有发生在数据向视图转换过程中的逻辑，如 ajax 请求、访问原生dom 元素、本地持久化缓存、绑定/解绑事件、添加订阅、设置定时器、记录日志等。</p>
 <p>副作用操作可以分两类：需要清除的和不需要清除的</p>
-<p>useEffect 接收一个函数，该函数会在组件渲染到屏幕之后才执行，该函数有要求：要么返回一个能清除副作用的函数，要么就不返回任何内容; 它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途，只不过被合并成了一个 API</p>
+<p>useEffect 接收一个函数，该函数会在组件渲染到屏幕之后才执行，该函数有要求：要么返回一个能清除副作用的函数，要么就不返回任何内容; 它跟 class 组件中的 componentDidMount、  componentDidUpdate 和 componentWillUnmount 具有相同的用途，只不过被合并成了一个 API</p>
 <p>与 componentDidMount 或 componentDidUpdate 不同，使用 useEffect 调度的 effect 不会阻塞浏览器更新屏幕，这让你的应用看起来响应更快。大多数情况下，effect 不需要同步地执行。在个别情况下（例如测量布局），有单独的 useLayoutEffect Hook 供你使用，其 API 与 useEffect 相同</p>
 <h4><a class="header" href="#effect-基本使用" id="effect-基本使用">effect 基本使用</a></h4>
 <pre><code class="language-js">export default function App() {
@@ -4068,7 +4069,8 @@ frontend-maven-plugin</p>
 <p>https://blog.csdn.net/andy_zhang2007/article/details/89393005 和 webjars</p>
 <h1><a class="header" href="#和-typescript-一起使用" id="和-typescript-一起使用">和 typescript 一起使用</a></h1>
 <h2><a class="header" href="#ts-基本使用" id="ts-基本使用">ts 基本使用</a></h2>
-<p>https://github.com/xcatliu/typescript-tutorial</p>
+<p>https://github.com/xcatliu/typescript-tutorial
+https://typescript.bootcss.com/</p>
 <p><code>npm install -g typescript</code> , https://www.typescriptlang.org/play/</p>
 <h3><a class="header" href="#枚举" id="枚举">枚举</a></h3>
 <pre><code class="language-ts">const enum Color {Red = 1, Green, Blue}
