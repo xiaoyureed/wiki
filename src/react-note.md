@@ -9,6 +9,8 @@ categories: frontend
 
 <div align="center">
 
+https://github.com/alibaba/hooks 自定义 hooks 库
+
 https://www.zhihu.com/question/59073695/answer/1071631250 类库推荐
 
 https://reactjs.org/
@@ -63,6 +65,7 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
   - [带状态组件 纯函数组件](#带状态组件-纯函数组件)
   - [函数绑定方式](#函数绑定方式)
   - [hooks](#hooks)
+    - [hooks 原理](#hooks-原理)
     - [最佳实践](#最佳实践)
     - [为什么需要 hooks](#为什么需要-hooks)
     - [useRef](#useref)
@@ -649,6 +652,10 @@ class App extends Component {
 
 https://reactjs.org/docs/hooks-reference.html
 
+### hooks 原理
+
+https://github.com/brickspert/blog/issues/26
+
 ### 最佳实践
 
 https://zhuanlan.zhihu.com/p/98554943
@@ -765,7 +772,7 @@ export default () => {
 
   - 常用来包装一个组件; euqals to 函数式组件中的  PureComponent
 
-  - PureComponent: 通过浅层比较 state, props, 决定是否重新渲染; 也就是说, 优化只对于 浅层属性变化有效; 也可以自定义 shouldComponentUpdate()
+    PureComponent: 通过浅层比较 state, props, 决定是否重新渲染; 也就是说, 优化只对于 浅层属性变化有效; 也可以自定义 shouldComponentUpdate()
 
 - useMemo  一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，每次 rerender, 依赖是否变化决定了函数逻辑是否重复执行, 若为空数组则仅仅执行一次
 
@@ -4264,6 +4271,7 @@ https://blog.csdn.net/andy_zhang2007/article/details/89393005 和 webjars
 ## ts 基本使用
 
 https://github.com/xcatliu/typescript-tutorial
+https://rmolinamir.github.io/typescript-cheatsheet/
 https://typescript.bootcss.com/
 
 `npm install -g typescript` , https://www.typescriptlang.org/play/
