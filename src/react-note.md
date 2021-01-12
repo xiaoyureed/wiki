@@ -191,6 +191,7 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
 - [部署到 github 上](#部署到-github-上)
 - [和 springboot 打包单体应用](#和-springboot-打包单体应用)
 - [和 typescript 一起使用](#和-typescript-一起使用)
+  - [集成 ts 环境](#集成-ts-环境)
   - [ts 基本使用](#ts-基本使用)
     - [枚举](#枚举)
     - [使用 interface 定义对象类型](#使用-interface-定义对象类型)
@@ -205,7 +206,6 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
     - [类型保护](#类型保护)
     - [类型别名](#类型别名)
     - [空类型](#空类型)
-  - [集成 ts 环境](#集成-ts-环境)
   - [为样式文件编写 types](#为样式文件编写-types)
   - [配置 css 跳转](#配置-css-跳转)
 - [使用 debugger for  Chrome](#使用-debugger-for--chrome)
@@ -770,13 +770,15 @@ export default () => {
 
 - memo() 决定一个组件的渲染是否重复执行
 
-  - 常用来包装一个组件; euqals to 函数式组件中的  PureComponent
+  - 用来包装一个组件; euqals to 函数式组件中的  , PureComponent第二个参数可选传递一个比较函数 `(prevProps, nextProps) => {...return false/true}` (如果第二个参数不传递，则默认只会进行 props 的浅比较。)
 
-    PureComponent: 通过浅层比较 state, props, 决定是否重新渲染; 也就是说, 优化只对于 浅层属性变化有效; 也可以自定义 shouldComponentUpdate()
+    PureComponent: 通过浅层比较 props, 决定是否重新渲染; 也就是说, 优化只对于 浅层属性变化有效; 也可以自定义 shouldComponentUpdate() 进行深层比较
 
-- useMemo  一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，每次 rerender, 依赖是否变化决定了函数逻辑是否重复执行, 若为空数组则仅仅执行一次
+- useMemo  控制一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，每次 rerender, 依赖是否变化决定了函数逻辑是否重复执行, 若为空数组则仅仅执行一次
 
-  - useMemo 类似 useEffect, 区别是 effect 是 render 后执行， useMemo 是 render 前执行, 之后是否重复执行, 看依赖是否变化
+  - 函数仍然可以返回 html 元素, 就是说相比 memo() 优化粒度更细 (memo 只能包装整个组件, useMemo 可以只包装组件中的某段函数逻辑)
+
+  - useMemo 类似 useEffect, 区别是 effect 是 render 后执行， useMemo 是 render 前/期间执行, 之后是否重复执行, 看依赖是否变化
 
   - usememo 本身也有开销, 所以使用 useMemo 考虑: 传递给 useMemo 的函数开销大不大? 如果大才用, 
 
@@ -4268,6 +4270,21 @@ https://blog.csdn.net/andy_zhang2007/article/details/89393005 和 webjars
 # 和 typescript 一起使用
 
 
+## 集成 ts 环境
+
+https://create-react-app.dev/docs/adding-typescript/
+
+```sh
+npx create-react-app my-app --template typescript
+
+# default use yarn to manage package, specify use npm
+npx create-react-app my-app --use-npm
+
+
+```
+
+全局声明文件  `react-app-env.d.ts`, ts 配置 `tsconfig.js` 见 https://blog.csdn.net/qq_41831345/article/details/106843875
+
 ## ts 基本使用
 
 https://github.com/xcatliu/typescript-tutorial
@@ -4745,21 +4762,6 @@ f(1);
 f(1, undefined);
 f(1, null); // error, 'null' is not assignable to 'number | undefined'
 ```
-
-## 集成 ts 环境
-
-https://create-react-app.dev/docs/adding-typescript/
-
-```sh
-npx create-react-app my-app --template typescript
-
-# default use yarn to manage package, specify use npm
-npx create-react-app my-app --use-npm
-
-
-```
-
-全局声明文件  `react-app-env.d.ts`, ts 配置 `tsconfig.js` 见 https://blog.csdn.net/qq_41831345/article/details/106843875
 
 ## 为样式文件编写 types
 
