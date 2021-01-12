@@ -393,6 +393,7 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
 <li><a href="#%E5%92%8C-springboot-%E6%89%93%E5%8C%85%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8">和 springboot 打包单体应用</a></li>
 <li><a href="#%E5%92%8C-typescript-%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8">和 typescript 一起使用</a>
 <ul>
+<li><a href="#%E9%9B%86%E6%88%90-ts-%E7%8E%AF%E5%A2%83">集成 ts 环境</a></li>
 <li><a href="#ts-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">ts 基本使用</a>
 <ul>
 <li><a href="#%E6%9E%9A%E4%B8%BE">枚举</a></li>
@@ -410,7 +411,6 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
 <li><a href="#%E7%A9%BA%E7%B1%BB%E5%9E%8B">空类型</a></li>
 </ul>
 </li>
-<li><a href="#%E9%9B%86%E6%88%90-ts-%E7%8E%AF%E5%A2%83">集成 ts 环境</a></li>
 <li><a href="#%E4%B8%BA%E6%A0%B7%E5%BC%8F%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99-types">为样式文件编写 types</a></li>
 <li><a href="#%E9%85%8D%E7%BD%AE-css-%E8%B7%B3%E8%BD%AC">配置 css 跳转</a></li>
 </ul>
@@ -876,16 +876,19 @@ export default () =&gt; {
 <p>memo() 决定一个组件的渲染是否重复执行</p>
 <ul>
 <li>
-<p>常用来包装一个组件; euqals to 函数式组件中的  PureComponent</p>
-<p>PureComponent: 通过浅层比较 state, props, 决定是否重新渲染; 也就是说, 优化只对于 浅层属性变化有效; 也可以自定义 shouldComponentUpdate()</p>
+<p>用来包装一个组件; euqals to 函数式组件中的  , PureComponent第二个参数可选传递一个比较函数 <code>(prevProps, nextProps) =&gt; {...return false/true}</code> (如果第二个参数不传递，则默认只会进行 props 的浅比较。)</p>
+<p>PureComponent: 通过浅层比较 props, 决定是否重新渲染; 也就是说, 优化只对于 浅层属性变化有效; 也可以自定义 shouldComponentUpdate() 进行深层比较</p>
 </li>
 </ul>
 </li>
 <li>
-<p>useMemo  一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，每次 rerender, 依赖是否变化决定了函数逻辑是否重复执行, 若为空数组则仅仅执行一次</p>
+<p>useMemo  控制一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，每次 rerender, 依赖是否变化决定了函数逻辑是否重复执行, 若为空数组则仅仅执行一次</p>
 <ul>
 <li>
-<p>useMemo 类似 useEffect, 区别是 effect 是 render 后执行， useMemo 是 render 前执行, 之后是否重复执行, 看依赖是否变化</p>
+<p>函数仍然可以返回 html 元素, 就是说相比 memo() 优化粒度更细 (memo 只能包装整个组件, useMemo 可以只包装组件中的某段函数逻辑)</p>
+</li>
+<li>
+<p>useMemo 类似 useEffect, 区别是 effect 是 render 后执行， useMemo 是 render 前/期间执行, 之后是否重复执行, 看依赖是否变化</p>
 </li>
 <li>
 <p>usememo 本身也有开销, 所以使用 useMemo 考虑: 传递给 useMemo 的函数开销大不大? 如果大才用, </p>
@@ -4070,6 +4073,16 @@ git subtree push --prefix=build origin gh-pages
 frontend-maven-plugin</p>
 <p>https://blog.csdn.net/andy_zhang2007/article/details/89393005 和 webjars</p>
 <h1><a class="header" href="#和-typescript-一起使用" id="和-typescript-一起使用">和 typescript 一起使用</a></h1>
+<h2><a class="header" href="#集成-ts-环境" id="集成-ts-环境">集成 ts 环境</a></h2>
+<p>https://create-react-app.dev/docs/adding-typescript/</p>
+<pre><code class="language-sh">npx create-react-app my-app --template typescript
+
+# default use yarn to manage package, specify use npm
+npx create-react-app my-app --use-npm
+
+
+</code></pre>
+<p>全局声明文件  <code>react-app-env.d.ts</code>, ts 配置 <code>tsconfig.js</code> 见 https://blog.csdn.net/qq_41831345/article/details/106843875</p>
 <h2><a class="header" href="#ts-基本使用" id="ts-基本使用">ts 基本使用</a></h2>
 <p>https://github.com/xcatliu/typescript-tutorial
 https://rmolinamir.github.io/typescript-cheatsheet/
@@ -4502,16 +4515,6 @@ f(1);
 f(1, undefined);
 f(1, null); // error, 'null' is not assignable to 'number | undefined'
 </code></pre>
-<h2><a class="header" href="#集成-ts-环境" id="集成-ts-环境">集成 ts 环境</a></h2>
-<p>https://create-react-app.dev/docs/adding-typescript/</p>
-<pre><code class="language-sh">npx create-react-app my-app --template typescript
-
-# default use yarn to manage package, specify use npm
-npx create-react-app my-app --use-npm
-
-
-</code></pre>
-<p>全局声明文件  <code>react-app-env.d.ts</code>, ts 配置 <code>tsconfig.js</code> 见 https://blog.csdn.net/qq_41831345/article/details/106843875</p>
 <h2><a class="header" href="#为样式文件编写-types" id="为样式文件编写-types">为样式文件编写 types</a></h2>
 <p>https://blog.csdn.net/Dilomen/article/details/100837293
 https://segmentfault.com/q/1010000017979602/a-1020000017980147</p>
