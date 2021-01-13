@@ -53,6 +53,8 @@ https://github.com/Louiszhai/tool
   - [vscode 安装配置](#vscode-安装配置)
     - [vscode插件](#vscode插件)
     - [创建文件文件夹 快捷键](#创建文件文件夹-快捷键)
+    - [使用 debugger for Chrome](#使用-debugger-for-chrome)
+    - [snippets](#snippets)
   - [修改 hosts 文件](#修改-hosts-文件)
   - [idea](#idea)
     - [完全卸载](#完全卸载)
@@ -743,6 +745,58 @@ https://blog.csdn.net/qq_43827595/article/details/104277051 vim 插件按键映�
 https://blog.csdn.net/u011511756/article/details/85058990
 
 new file, new folder -> explorerResourceIsFolder && !inputFocus
+
+
+### 使用 debugger for Chrome
+
+.vscode 配置文件中的专有变量:
+
+```
+${workspaceFolder} :表示当前workspace文件夹路径，就是根目录, .vscode 所在目录
+
+${workspaceRootFolderName}:表示workspace的文件夹名，也即Test
+
+${file}:文件自身的绝对路径，也即/home/Coding/Test/.vscode/tasks.json
+
+${relativeFile}:文件在workspace中的路径，也即.vscode/tasks.json
+
+${fileBasenameNoExtension}:当前文件的文件名，不带后缀，也即tasks
+
+${fileBasename}:当前文件的文件名，tasks.json
+
+${fileDirname}:文件所在的文件夹路径，也即/home/Coding/Test/.vscode
+
+${fileExtname}:当前文件的后缀，也即.json
+
+${lineNumber}:当前文件光标所在的行号
+
+${env:PATH}:系统中的环境变量
+```
+
+### snippets
+
+https://github.com/microsoft/vscode/issues/89700 当前文件夹名字
+
+```json
+"ts react funcitonal component": {
+		"prefix": "fc",
+		"body": [
+			"import React from \"react\";",
+			"",
+			"const ${TM_DIRECTORY/^.+\\/(.*)$/$1/}$1: React.FC = ($2) => {",
+			"  return (",
+			"    <>",
+			"      $0",
+			"    </>",
+			"  );",
+			"};",
+			"",
+			"export default ${TM_DIRECTORY/^.+\\/(.*)$/$1/}$1;",
+			""
+		],
+		"description": "create ts react funcitonal component"
+	},
+```
 
 ## 修改 hosts 文件
 

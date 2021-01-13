@@ -51,6 +51,7 @@ https://github.com/wangdoc/javascript-tutorial/tree/master/docs
   - [基本使用](#基本使用)
   - [yarn比npm好在哪里](#yarn比npm好在哪里)
 - [web 后台技术栈](#web-后台技术栈)
+- [配合 rust](#配合-rust)
 
 <!-- /TOC -->
 
@@ -722,3 +723,7 @@ https://zhuanlan.zhihu.com/p/27449990
 - axios + jsonp + Promise/async/await 前后台交互
 - commonjs(后台模块化, 前台模块化用 es6) 
 - draftjs(富文本编辑器) +echarts图表
+
+# 配合 rust
+
+https://blog.logrocket.com/rust-and-node-js-a-match-made-in-heaven/

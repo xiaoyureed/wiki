@@ -9,6 +9,8 @@ categories: frontend
 
 <div align="center">
 
+https://zhuanlan.zhihu.com/p/78051039 资源
+
 https://github.com/alibaba/hooks 自定义 hooks 库
 
 https://www.zhihu.com/question/59073695/answer/1071631250 类库推荐
@@ -65,6 +67,7 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
   - [带状态组件 纯函数组件](#带状态组件-纯函数组件)
   - [函数绑定方式](#函数绑定方式)
   - [hooks](#hooks)
+    - [create react app 配合 eslint-plugin-react-hooks](#create-react-app-配合-eslint-plugin-react-hooks)
     - [hooks 原理](#hooks-原理)
     - [最佳实践](#最佳实践)
     - [为什么需要 hooks](#为什么需要-hooks)
@@ -194,11 +197,13 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
   - [集成 ts 环境](#集成-ts-环境)
   - [ts 基本使用](#ts-基本使用)
     - [枚举](#枚举)
-    - [使用 interface 定义对象类型](#使用-interface-定义对象类型)
-    - [interface 定义函数类型](#interface-定义函数类型)
-    - [interface 定义可索引类型](#interface-定义可索引类型)
-    - [interface 定义 class 类](#interface-定义-class-类)
-    - [interface 继承](#interface-继承)
+    - [interface](#interface)
+      - [使用 interface 定义对象类型](#使用-interface-定义对象类型)
+      - [interface 定义函数类型](#interface-定义函数类型)
+      - [interface 定义可索引类型](#interface-定义可索引类型)
+      - [interface 定义 class 类](#interface-定义-class-类)
+      - [interface 继承](#interface-继承)
+    - [interface 和 type 区别](#interface-和-type-区别)
     - [class 使用](#class-使用)
     - [泛型使用](#泛型使用)
     - [交叉类型](#交叉类型)
@@ -208,7 +213,6 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
     - [空类型](#空类型)
   - [为样式文件编写 types](#为样式文件编写-types)
   - [配置 css 跳转](#配置-css-跳转)
-- [使用 debugger for  Chrome](#使用-debugger-for--chrome)
 
 <!-- /TOC -->
 
@@ -651,6 +655,13 @@ class App extends Component {
 ## hooks
 
 https://reactjs.org/docs/hooks-reference.html
+
+https://juejin.cn/post/6844903854174109703 循序渐进介绍 hooks, 解决什么问题
+
+### create react app 配合 eslint-plugin-react-hooks
+
+https://blog.csdn.net/zqd666/article/details/102961701
+https://www.npmjs.com/package/eslint-plugin-react-hooks?ref=hackernoon.com
 
 ### hooks 原理
 
@@ -1301,6 +1312,8 @@ function App() {
 ```
 
 ### 自定义 hook
+
+自定义 Hook，只要函数名遵循以 use 开头，且返回非 JSX 元素，就是自定义 Hooks 
 
 #### 带有自增效果的 state hook
 
@@ -4324,7 +4337,9 @@ let c: Circle = {
 
 ```
 
-### 使用 interface 定义对象类型
+### interface
+
+#### 使用 interface 定义对象类型
 
 ```js
 
@@ -4369,7 +4384,7 @@ let mySquare = createSquare(squareOptions);
 
 ```
 
-### interface 定义函数类型
+#### interface 定义函数类型
 
 ```js
 interface SearchFunc {
@@ -4403,7 +4418,7 @@ c.reset();
 c.interval = 5.0;
 ```
 
-### interface 定义可索引类型
+#### interface 定义可索引类型
 
 类似数组, map...
 
@@ -4443,7 +4458,7 @@ let myArray: ReadonlyStringArray = ["Alice", "Bob"];
 myArray[2] = "Mallory"; // error! 不能设置myArray[2]，因为索引签名是只读的
 ```
 
-### interface 定义 class 类
+#### interface 定义 class 类
 
 ```js
 interface ClockInterface {
@@ -4460,7 +4475,7 @@ class Clock implements ClockInterface {
 }
 ```
 
-### interface 继承
+#### interface 继承
 
 interface 可以继承 多个其他 interface, 逗号分离
 
@@ -4491,6 +4506,10 @@ class Image implements SelectableControl {
 
 
 ```
+
+### interface 和 type 区别
+
+https://www.jb51.net/article/163299.htm
 
 ### class 使用
 
@@ -4772,29 +4791,3 @@ https://segmentfault.com/q/1010000017979602/a-1020000017980147
 ## 配置 css 跳转
 
 https://www.jianshu.com/p/641bcac7754b
-
-# 使用 debugger for  Chrome
-
-.vscode 配置文件中的专有变量:
-
-```
-${workspaceFolder} :表示当前workspace文件夹路径，就是根目录, .vscode 所在目录
-
-${workspaceRootFolderName}:表示workspace的文件夹名，也即Test
-
-${file}:文件自身的绝对路径，也即/home/Coding/Test/.vscode/tasks.json
-
-${relativeFile}:文件在workspace中的路径，也即.vscode/tasks.json
-
-${fileBasenameNoExtension}:当前文件的文件名，不带后缀，也即tasks
-
-${fileBasename}:当前文件的文件名，tasks.json
-
-${fileDirname}:文件所在的文件夹路径，也即/home/Coding/Test/.vscode
-
-${fileExtname}:当前文件的后缀，也即.json
-
-${lineNumber}:当前文件光标所在的行号
-
-${env:PATH}:系统中的环境变量
-```
