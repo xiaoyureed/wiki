@@ -213,6 +213,8 @@ https://github.com/Louiszhai/tool</p>
 <ul>
 <li><a href="#vscode%E6%8F%92%E4%BB%B6">vscode插件</a></li>
 <li><a href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9-%E5%BF%AB%E6%8D%B7%E9%94%AE">创建文件文件夹 快捷键</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-debugger-for-chrome">使用 debugger for Chrome</a></li>
+<li><a href="#snippets">snippets</a></li>
 </ul>
 </li>
 <li><a href="#%E4%BF%AE%E6%94%B9-hosts-%E6%96%87%E4%BB%B6">修改 hosts 文件</a></li>
@@ -763,6 +765,49 @@ https://www.cnblogs.com/huaxiaoyao/p/12088948.html</p>
 <h3><a class="header" href="#创建文件文件夹-快捷键" id="创建文件文件夹-快捷键">创建文件文件夹 快捷键</a></h3>
 <p>https://blog.csdn.net/u011511756/article/details/85058990</p>
 <p>new file, new folder -&gt; explorerResourceIsFolder &amp;&amp; !inputFocus</p>
+<h3><a class="header" href="#使用-debugger-for-chrome" id="使用-debugger-for-chrome">使用 debugger for Chrome</a></h3>
+<p>.vscode 配置文件中的专有变量:</p>
+<pre><code>${workspaceFolder} :表示当前workspace文件夹路径，就是根目录, .vscode 所在目录
+
+${workspaceRootFolderName}:表示workspace的文件夹名，也即Test
+
+${file}:文件自身的绝对路径，也即/home/Coding/Test/.vscode/tasks.json
+
+${relativeFile}:文件在workspace中的路径，也即.vscode/tasks.json
+
+${fileBasenameNoExtension}:当前文件的文件名，不带后缀，也即tasks
+
+${fileBasename}:当前文件的文件名，tasks.json
+
+${fileDirname}:文件所在的文件夹路径，也即/home/Coding/Test/.vscode
+
+${fileExtname}:当前文件的后缀，也即.json
+
+${lineNumber}:当前文件光标所在的行号
+
+${env:PATH}:系统中的环境变量
+</code></pre>
+<h3><a class="header" href="#snippets" id="snippets">snippets</a></h3>
+<p>https://github.com/microsoft/vscode/issues/89700 当前文件夹名字</p>
+<pre><code class="language-json">&quot;ts react funcitonal component&quot;: {
+		&quot;prefix&quot;: &quot;fc&quot;,
+		&quot;body&quot;: [
+			&quot;import React from \&quot;react\&quot;;&quot;,
+			&quot;&quot;,
+			&quot;const ${TM_DIRECTORY/^.+\\/(.*)$/$1/}$1: React.FC = ($2) =&gt; {&quot;,
+			&quot;  return (&quot;,
+			&quot;    &lt;&gt;&quot;,
+			&quot;      $0&quot;,
+			&quot;    &lt;/&gt;&quot;,
+			&quot;  );&quot;,
+			&quot;};&quot;,
+			&quot;&quot;,
+			&quot;export default ${TM_DIRECTORY/^.+\\/(.*)$/$1/}$1;&quot;,
+			&quot;&quot;
+		],
+		&quot;description&quot;: &quot;create ts react funcitonal component&quot;
+	},
+</code></pre>
 <h2><a class="header" href="#修改-hosts-文件" id="修改-hosts-文件">修改 hosts 文件</a></h2>
 <pre><code class="language-sh">sodu vim /etc/hosts
 </code></pre>
