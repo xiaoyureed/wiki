@@ -9,6 +9,8 @@ categories: frontend
 
 <div align="center">
 
+https://github.com/react-icons/react-icons 图标库 (综合各种框架的图标)
+
 https://zhuanlan.zhihu.com/p/78051039 资源
 
 https://github.com/alibaba/hooks 自定义 hooks 库
@@ -779,15 +781,15 @@ export default () => {
 
 
 
-- memo() 决定一个组件的渲染是否重复执行
+- memo() 决定一个组件的渲染是否重复执行 `memo(XxxComponent [, isPropsUpdate()])`
 
   - 用来包装一个组件; euqals to 函数式组件中的  , PureComponent第二个参数可选传递一个比较函数 `(prevProps, nextProps) => {...return false/true}` (如果第二个参数不传递，则默认只会进行 props 的浅比较。)
 
     PureComponent: 通过浅层比较 props, 决定是否重新渲染; 也就是说, 优化只对于 浅层属性变化有效; 也可以自定义 shouldComponentUpdate() 进行深层比较
 
-- useMemo  控制一段函数逻辑是否重复执行; 接受一个函数, 和一个数组(依赖)，每次 rerender, 依赖是否变化决定了函数逻辑是否重复执行, 若为空数组则仅仅执行一次
+- useMemo  控制一段函数逻辑是否重复执行;`usememo(func, [deps])` 接受一个函数, 和一个数组(依赖)，每次 rerender, 依赖是否变化决定了函数逻辑是否重复执行, 若为空数组则仅仅执行一次
 
-  - 函数仍然可以返回 html 元素, 就是说相比 memo() 优化粒度更细 (memo 只能包装整个组件, useMemo 可以只包装组件中的某段函数逻辑)
+  - 函数仍然可以返回 组件, 就是说相比 memo() 优化粒度更细 (memo 只能包装整个组件, useMemo 可以只包装组件中的某段函数逻辑)
 
   - useMemo 类似 useEffect, 区别是 effect 是 render 后执行， useMemo 是 render 前/期间执行, 之后是否重复执行, 看依赖是否变化
 
@@ -799,7 +801,7 @@ export default () => {
 
   - 若 useMemo 内的函数返回一个函数， 那么可以使用 useCallback直接传入这个函数 即 useMemo(() => fn) 等价 useCallback(fn)
 
-  - 所有 Function Component 内函数必须用 React.useCallback 包裹，以保证准确性与性能
+  - 所有 Function Component 内函数必须用 React.useCallback 包裹，以保证准确性与性能 (常用来 将 函数从 useEffect 中抽离到外部, 便于人眼维护, 若希望进一步将函数抽到组件外部, 需要灵活运用自定义 Hooks 实现)
 
 ```js
 const Demo = memo((props) => {
@@ -1092,7 +1094,7 @@ const ThemedButton = () => {
 
 ### useReducer
 
-用于管理复杂的 state 变化
+用于管理复杂的 state 变化, 当 state 多到 useState 难以应付, 就可以使用 useReducer
 
 局部状态不推荐使用 useReducer ，会导致函数内部状态过于复杂，难以阅读。 useReducer 建议在多组件间通信时，结合 useContext 一起使用
 
@@ -1122,8 +1124,8 @@ const btnReducer = (state, action) => {
 const ActionDemo = () => {
     // 参数 1: reducer
     // 参数 2: initState 
-    // 参数 3: init?
-    // 返回值: [当前状态, dispatch 函数]
+    // 参数 3: init, 可选, 对 initState 做加工后传入 useReducer
+    // 返回值: [当前状态, dispatch 函数], 后者是函数,保证不可变
   const [state, dispatch] = useReducer(btnReducer, {
     count: 0
   });

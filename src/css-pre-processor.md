@@ -19,38 +19,43 @@ css 模块化
 <!-- TOC -->
 
 - [css 预处理器介绍](#css-预处理器介绍)
-    - [why css preprocessor](#why-css-preprocessor)
-    - [会带来的新问题](#会带来的新问题)
+  - [why css preprocessor](#why-css-preprocessor)
+  - [会带来的新问题](#会带来的新问题)
 - [选型和对比](#选型和对比)
 - [PostCSS](#postcss)
+  - [简单介绍 postcss](#简单介绍-postcss)
+  - [怎么使用](#怎么使用)
+  - [自定义postcss插件](#自定义postcss插件)
 - [SASS](#sass)
 - [LESS](#less)
-    - [环境配置](#环境配置)
-    - [浏览器端用法](#浏览器端用法)
-    - [语法](#语法)
-        - [变量](#变量)
-        - [混合](#混合)
-            - [不带参数](#不带参数)
-            - [带参数](#带参数)
-            - [参数有默认值](#参数有默认值)
-        - [暂时隐藏css属性](#暂时隐藏css属性)
-        - [@arguments变量](#arguments变量)
-        - [模式匹配(混合中的参数匹配)](#模式匹配混合中的参数匹配)
-        - [导引表达式(类似@media query)](#导引表达式类似media-query)
-            - [单表达式](#单表达式)
-            - [多表达式](#多表达式)
-        - [参数值类型判断(isXXX内置函数)](#参数值类型判断isxxx内置函数)
-        - [嵌套](#嵌套)
-        - [运算](#运算)
-        - [color函数](#color函数)
-        - [Math函数](#math函数)
-        - [命名空间](#命名空间)
-        - [作用域](#作用域)
-        - [importing引入](#importing引入)
-        - [字符串插值](#字符串插值)
-        - [避免编译](#避免编译)
-        - [JavaScript 表达式](#javascript-表达式)
+  - [环境配置](#环境配置)
+  - [浏览器端用法](#浏览器端用法)
+  - [语法](#语法)
+    - [变量](#变量)
+    - [混合](#混合)
+      - [不带参数](#不带参数)
+      - [带参数](#带参数)
+      - [参数有默认值](#参数有默认值)
+    - [暂时隐藏css属性](#暂时隐藏css属性)
+    - [@arguments变量](#arguments变量)
+    - [模式匹配(混合中的参数匹配)](#模式匹配混合中的参数匹配)
+    - [导引表达式(类似@media query)](#导引表达式类似media-query)
+      - [单表达式](#单表达式)
+      - [多表达式](#多表达式)
+    - [参数值类型判断(isXXX内置函数)](#参数值类型判断isxxx内置函数)
+    - [嵌套](#嵌套)
+    - [运算](#运算)
+    - [color函数](#color函数)
+    - [Math函数](#math函数)
+    - [命名空间](#命名空间)
+    - [作用域](#作用域)
+    - [importing引入](#importing引入)
+    - [字符串插值](#字符串插值)
+    - [避免编译](#避免编译)
+    - [JavaScript 表达式](#javascript-表达式)
 - [css 模块化](#css-模块化)
+- [css 框架](#css-框架)
+- [响应式页面](#响应式页面)
 
 <!-- /TOC -->
 
@@ -108,11 +113,29 @@ bootstrap最新版就抛弃 less, 转向 sass了
 
 # PostCSS
 
-不是 css preprocessor, 是一个使用JS插件来转换样式的工具
 
-丰富的插件, 借助插件实现更强大的 css 预处理功能 (如, 只要某个 selector 有某个样式, 就自动添加另外的某个样式; 添加 css 前缀)
+## 简单介绍 postcss
 
-TailwindCSS 框架
+https://github.com/postcss/postcss git 仓库
+
+不是 css preprocessor, 是一个使用JS插件来转换样式的工具 (检查（lint）你的 CSS，支持 CSS Variables 和 Mixins， 编译尚未被浏览器广泛支持的先进的 CSS 语法，内联图片)
+
+
+作为一个平台, 可以编写各种插件实现对 css 的处理, Autoprefixer 是最火的插件 (底层原理实际是 PostCSS 提供了一个解析器，它能够将 CSS 解析成抽象语法树（AST）。)
+
+TailwindCSS 可以作为 postcss 的一个插件来使用
+
+可以搜索插件 在这里 https://www.postcss.parts/ , 所有插件同时列在这里了 https://github.com/postcss/postcss/blob/main/docs/plugins.md
+
+
+## 怎么使用
+
+
+
+
+## 自定义postcss插件
+
+https://github.com/postcss/postcss/blob/main/docs/writing-a-plugin.md
 
 # SASS
 
@@ -610,3 +633,24 @@ background-image: url("@{base-url}/images/bg.png");
 
 
 
+# css 框架
+
+https://github.com/nostalgic-css/NES.css 像素风
+
+https://github.com/papercss/papercss 手写风格
+
+bootstrap 响应式布局框架 (bootstrap-react 库)
+
+https://github.com/jgthms/bulma 响应式, 基于 Flexbox, 类似 Bootstrap
+
+https://github.com/tailwindlabs/tailwindcss 高度自定义
+
+https://github.com/palantir/blueprint react 组件库, 类似 antd
+
+# 响应式页面
+
+- 通过 @media 媒体查询 + flex
+
+- 通过 bootstrap 框架
+
+- 和 react 使用, 可以根据 `window.innerWidth` 渲染不同的组件 (https://juejin.cn/post/6844904089164185607)
