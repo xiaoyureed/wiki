@@ -623,6 +623,8 @@ vm/vh
 /*
 使用百分比宽度来布局，然后在浏览器变窄到无法容纳侧边栏中的菜单时，把布局显示成一列
 */
+
+/* 大于 600px 时 */
 @media screen and (min-width:600px) {
   nav {
     float: left;
@@ -632,14 +634,13 @@ vm/vh
     margin-left: 25%;
   }
 }
+/* 小于 599px 时 */
 @media screen and (max-width:599px) {
   nav li {
     display: inline;
   }
 }
 ```
-
-<img src="Snipaste_2018-05-23_23-40-45.png"><img src="Snipaste_2018-05-23_23-41-43.png" width="50%">
 
 
 # 盒子模型

@@ -31,6 +31,7 @@ https://git-scm.com/book/zh/v2
 - [LF 和 CRLF](#lf-和-crlf)
 - [git hooks](#git-hooks)
 - [git subtree 子仓库](#git-subtree-子仓库)
+- [husky](#husky)
 
 <!-- /TOC -->
 
@@ -633,3 +634,7 @@ git subtree push  --prefix=<prefix> <repository> <ref>
 git subtree merge --prefix=<prefix> <commit>
 git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 ```
+
+# husky
+
+https://github.com/typicode/husky git 钩子, 在 commit 前做点什么
