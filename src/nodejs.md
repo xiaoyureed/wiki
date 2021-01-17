@@ -34,6 +34,7 @@ https://github.com/wangdoc/javascript-tutorial/tree/master/docs
 - [deno](#deno)
 - [npm](#npm)
   - [常用命令](#常用命令)
+  - [开发自定义库发布到npm](#开发自定义库发布到npm)
   - [使用场景](#使用场景)
     - [使用第三方包](#使用第三方包)
     - [使用别人的命令行程序](#使用别人的命令行程序)
@@ -344,7 +345,11 @@ npm uninstall -g vue-cli    # 卸载全局
 
 ```
 
+## 开发自定义库发布到npm
 
+https://www.bilibili.com/video/BV187411n7Hh, 
+
+使用 rollup.js, 用于打包类库的 webpack, (webpack 是用于应用打包的)
 
 ## 使用场景
 
