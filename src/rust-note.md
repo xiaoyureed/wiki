@@ -4,6 +4,7 @@ categories: language
 date: 2020-08-31 22:15:27
 ---
 
+https://learnku.com/rust/wikis
 
 https://github.com/warycat/rustgym 算法
 https://github.com/EbTech/rust-algorithms
