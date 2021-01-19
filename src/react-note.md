@@ -4183,6 +4183,9 @@ reselect 库用来创建自动缓存的数据的处理函数
 
 https://mp.weixin.qq.com/s/Ey24FrWN2SiLK2LAmPv7hA
 
+https://github.com/pmndrs/react-spring
+https://github.com/chenglou/react-motion
+
 TODO
 
 # react native
@@ -4284,7 +4287,6 @@ frontend-maven-plugin
 https://blog.csdn.net/andy_zhang2007/article/details/89393005 和 webjars
 
 # 和 typescript 一起使用
-
 
 ## 集成 ts 环境
 
@@ -4789,6 +4791,12 @@ f(1, null); // error, 'null' is not assignable to 'number | undefined'
 
 https://blog.csdn.net/Dilomen/article/details/100837293
 https://segmentfault.com/q/1010000017979602/a-1020000017980147
+
+https://www.typescriptlang.org/dt/search?search= 搜索类型声明文件
+
+typeRoots 是 tsconfig 中 compilerOptions 的一个配置项，typeRoots 下面的包会被 ts 编译器自动包含进来，typeRoots 默认指向 node_modules/@types
+
+types 和 typeRoots 一样也是 compilerOptions 的配置，指定 types 后，typeRoots 下只有被指定的包才会被引入
 
 
 ## 配置 css 跳转

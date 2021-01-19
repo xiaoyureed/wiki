@@ -379,6 +379,7 @@ https://github.com/rajasekarv/vega spark 替代
   - [java 调用 rust](#java-调用-rust)
 - [开发微信小程序-web 游戏](#开发微信小程序-web-游戏)
 - [第三方 crates](#第三方-crates)
+  - [游戏开发](#游戏开发-1)
   - [web 开发](#web-开发)
     - [web框架](#web框架)
     - [orm](#orm)
@@ -11083,7 +11084,6 @@ https://zhuanlan.zhihu.com/p/36528189
 # 编写代理
 
 https://github.com/gwuhaolin/blog/issues/12
-https://cloud.tencent.com/developer/article/1484318
 https://github.com/importcjj/rust-miniproxy
 https://github.com/zhxie/pcap2socks
 
@@ -11167,9 +11167,17 @@ https://s0docs0rs.icopy.site/
 
 https://rust-lang-nursery.github.io/rust-cookbook/
 
+
+## 游戏开发
+
+https://github.com/rust-gamedev/arewegameyet
+
+
 ##  web 开发
 
 ### web框架
+
+https://www.arewewebyet.org/
 
 rocket https://rocket.rs/
 
@@ -11178,6 +11186,8 @@ https://github.com/actix/actix-web
 https://github.com/iron/iron
 
 tiny_http
+
+https://github.com/yewstack/yew 使用 jsx 语法写 wasm
 
 对比选型 http://jiagoushi.pro/book/export/html/334
 
