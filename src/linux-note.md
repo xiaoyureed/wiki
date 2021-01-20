@@ -555,10 +555,28 @@ find /home -name a.txt
 
 ### vim 快捷键
 
-https://vimjc.com/
-
+https://vimjc.com/ blog
+https://github.com/wsdjeg/vim-galore-zh_cn 中文教程
 
 ```
+
+比如想删除一行再进行编辑, 之前习惯 dd 再 insert, 其实有更简便的 S; 
+
+再比如 a = "xyz" 想更换双引号为单引号, 使用 r 来一个一个替代, 其实有更简便的: 光标在 xyz 中, cs"'(change surrounding " to ').
+
+ ZZ 替代 :wq
+ :x 保存退出
+
+( 向上跳转到空行和空行附近的一行
+) 向下跳转到空行和空行附近的一行
+{ } 和 ( ) 类似但不跳转空行的附近行
+]] 跳转到下一个 {
+[[ 跳转到上一个 {
+][ 跳转下一个 }
+[] 跳转到上一个 }
+% 跳转到另一个花括号或圆括号
+
+
 
 >> 浏览:
 

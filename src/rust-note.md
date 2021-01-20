@@ -4,6 +4,9 @@ categories: language
 date: 2020-08-31 22:15:27
 ---
 
+
+https://www.youtube.com/watch?v=DnT-LUQgc7s 为什么考虑rust
+
 https://learnku.com/rust/wikis
 
 https://github.com/warycat/rustgym 算法
@@ -11085,11 +11088,8 @@ https://zhuanlan.zhihu.com/p/36528189
 
 https://github.com/gwuhaolin/blog/issues/12
 https://github.com/importcjj/rust-miniproxy
-https://github.com/zhxie/pcap2socks
-
-
+https://github.com/wangyuntao/socks5-rs
 https://github.com/importcjj/gkd-rs
-https://github.com/wangyuntao/pinfo-rs
 
 
 https://zhuanlan.zhihu.com/p/28645724

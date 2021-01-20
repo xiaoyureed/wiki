@@ -16,6 +16,7 @@ https://github.com/didi/DoraemonKit 移动端 app 测试工具包
   - [flutter](#flutter)
   - [h5 hybird 混合开发](#h5-hybird-混合开发)
   - [web app](#web-app)
+  - [jetpack](#jetpack)
 
 <!-- /TOC -->
 
@@ -58,6 +59,9 @@ https://www.zhihu.com/question/359468918 为什么要创造 dart 不直接用 ja
 
 即混合开发,由Native通过JSBridge等方法提供统一的API,然后用Html5+JS来写实际的逻辑,调用API
 
+框架: Ionic
+
+
 优点: 
 
 - 调试适配简单, 直接在网页上调试和修改，几乎不用考虑用户机型和适配的问题
@@ -87,3 +91,5 @@ cons (disadvantage/weakness):
 - 性能低,用户体验差, 功能受限,大量功能无法实现
 - 依赖于网络,页面访问速度慢,耗费流量
 - 临时性入口,用户留存率低这既是它的优点,也是缺点,优点是无需安装,确定是用完后有时候很难再找到,或者说很难专门为某个web app留存一个入口
+
+## jetpack

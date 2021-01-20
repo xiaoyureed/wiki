@@ -4798,6 +4798,7 @@ typeRoots 是 tsconfig 中 compilerOptions 的一个配置项，typeRoots 下面
 
 types 和 typeRoots 一样也是 compilerOptions 的配置，指定 types 后，typeRoots 下只有被指定的包才会被引入
 
+https://www.zhihu.com/question/350961609 声明全局类型 无需导入
 
 ## 配置 css 跳转
 
