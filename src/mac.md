@@ -25,6 +25,7 @@ https://github.com/Louiszhai/tool
 - [icloud](#icloud)
 - [虚拟机](#虚拟机)
 - [telegram](#telegram)
+- [自启动管理](#自启动管理)
 - [开发环境配置](#开发环境配置)
   - [rsync 使用](#rsync-使用)
   - [sshpass 免密码登录](#sshpass-免密码登录)
@@ -238,6 +239,41 @@ brew cask install vagrant
 https://zhuanlan.zhihu.com/p/64595764 中文用户解禁
 
 设置 socket5 代理后需要重启才能连接
+
+# 自启动管理
+
+```sh
+launchctl list # 当前在运行的服务清单
+# 结果:
+# PID	Status	Label
+# -	0	com.apple.SafariHistoryServiceAgent
+# 1248	0	com.apple.progressd
+# -	0	com.google.keystone.user.xpcservice
+
+launchctl list <Label> # 查看这个服务的一些配置信息，可以里面有这个服务启动的程序所在的目录，启动参数等
+
+locate <Label> # 查找 plist 文件路径
+
+# 把一个服务注销掉, 取消开机启动
+#  , plist 的格式（满足 XML 规范）
+launchctl unload <plist_path>
+launchctl unload -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
+
+
+
+# 把一个服务注册到系统服务里
+launchctl load <plist_path>
+
+
+
+# 目录规范
+# 
+# ~/Library/LaunchAgents 用户的进程 (个人编写的守护进程)
+# /Library/LaunchAgents 管理员设置的用户进程
+# /Library/LaunchDaemons 管理员提供的系统守护进程
+# /System/Library/LaunchAgents Mac操作系统提供的用户进程
+# /System/Library/LaunchDaemons Mac操作系统提供的系统守护进程
+```
 
 # 开发环境配置
 

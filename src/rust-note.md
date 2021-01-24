@@ -4,6 +4,9 @@ categories: language
 date: 2020-08-31 22:15:27
 ---
 
+https://github.com/ajmwagar rust 小项目
+https://github.com/kilerd
+https://github.com/ramsayleung
 
 https://www.youtube.com/watch?v=DnT-LUQgc7s 为什么考虑rust
 
@@ -382,7 +385,8 @@ https://github.com/rajasekarv/vega spark 替代
   - [java 调用 rust](#java-调用-rust)
 - [开发微信小程序-web 游戏](#开发微信小程序-web-游戏)
 - [第三方 crates](#第三方-crates)
-  - [游戏开发](#游戏开发-1)
+  - [图片处理](#图片处理)
+  - [游戏开发三方库](#游戏开发三方库)
   - [web 开发](#web-开发)
     - [web框架](#web框架)
     - [orm](#orm)
@@ -887,15 +891,17 @@ fn variables() {
 
 ```rust
 
-// 常量, 静态变量, 在全局声明常量 or 变量
+// 常量, 静态变量: 在全局声明常量 or 变量
     // 需要手动指定类型
     // 区别/异同:
     // - 都是在编译期求值的，所以不能用于存储需要动态分配内存的类型，比如 HashMap, vec
     // 
-    // - 静态变量有固定的内存地址 (分配在静态存储区), 可以是可变的 (用 mut 修饰), 修改需要在 unsafe 中; 
-    // - 常量没有固定的内存地址, 不可变 (可以被内联, 在被用到的地方会被复制过去, 用不到内存地址)
+    // - 静态变量有固定的内存地址 (分配在静态存储区), 可以是可变的 (用 mut 修饰), 可能有内存安全问题, 所以修改需要在 unsafe 中; 
+    // - 常量没有固定的内存地址, 不可变 (会被内联, 在被用到的地方会被复制过去, 用不到内存地址)
 
     // 普通常量 不能引用 静态变量
+
+    // 使用场景:
     // 在存储的数据比较大、需要引用地址或具有可变性的情况下使用静态变量;否则，应该 优先使用普通常量
     const MAX_POINTS: u32 = 100_000;
     static LANGUAGE: &'static str = "Rust";//"string" 字面量默认生命周期就是 static 的
@@ -11168,7 +11174,12 @@ https://s0docs0rs.icopy.site/
 https://rust-lang-nursery.github.io/rust-cookbook/
 
 
-## 游戏开发
+## 图片处理
+
+https://github.com/Aloxaf/silicon
+
+
+## 游戏开发三方库
 
 https://github.com/rust-gamedev/arewegameyet
 
@@ -11391,7 +11402,7 @@ https://github.com/cjbassi/ytop 命令行系统监控程序
 
 ### structopt
 
-整合 clap, 将参数直接解析为 struct, 更加方便
+整合 clap, 将参数直接解析为 struct, 更加方便 
 
 ```rs
 use std::path::PathBuf;
