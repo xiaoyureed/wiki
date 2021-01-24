@@ -174,6 +174,7 @@ https://github.com/Louiszhai/tool</p>
 <li><a href="#icloud">icloud</a></li>
 <li><a href="#%E8%99%9A%E6%8B%9F%E6%9C%BA">虚拟机</a></li>
 <li><a href="#telegram">telegram</a></li>
+<li><a href="#%E8%87%AA%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86">自启动管理</a></li>
 <li><a href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">开发环境配置</a>
 <ul>
 <li><a href="#rsync-%E4%BD%BF%E7%94%A8">rsync 使用</a></li>
@@ -369,6 +370,38 @@ brew cask install vagrant
 <h1><a class="header" href="#telegram" id="telegram">telegram</a></h1>
 <p>https://zhuanlan.zhihu.com/p/64595764 中文用户解禁</p>
 <p>设置 socket5 代理后需要重启才能连接</p>
+<h1><a class="header" href="#自启动管理" id="自启动管理">自启动管理</a></h1>
+<pre><code class="language-sh">launchctl list # 当前在运行的服务清单
+# 结果:
+# PID	Status	Label
+# -	0	com.apple.SafariHistoryServiceAgent
+# 1248	0	com.apple.progressd
+# -	0	com.google.keystone.user.xpcservice
+
+launchctl list &lt;Label&gt; # 查看这个服务的一些配置信息，可以里面有这个服务启动的程序所在的目录，启动参数等
+
+locate &lt;Label&gt; # 查找 plist 文件路径
+
+# 把一个服务注销掉, 取消开机启动
+#  , plist 的格式（满足 XML 规范）
+launchctl unload &lt;plist_path&gt;
+launchctl unload -w /Library/LaunchAgents/com.adobe.AdobeCreativeCloud.plist
+
+
+
+# 把一个服务注册到系统服务里
+launchctl load &lt;plist_path&gt;
+
+
+
+# 目录规范
+# 
+# ~/Library/LaunchAgents 用户的进程 (个人编写的守护进程)
+# /Library/LaunchAgents 管理员设置的用户进程
+# /Library/LaunchDaemons 管理员提供的系统守护进程
+# /System/Library/LaunchAgents Mac操作系统提供的用户进程
+# /System/Library/LaunchDaemons Mac操作系统提供的系统守护进程
+</code></pre>
 <h1><a class="header" href="#开发环境配置" id="开发环境配置">开发环境配置</a></h1>
 <h2><a class="header" href="#rsync-使用" id="rsync-使用">rsync 使用</a></h2>
 <p>http://www.ruanyifeng.com/blog/2020/08/rsync.html
