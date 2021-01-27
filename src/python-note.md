@@ -25,6 +25,11 @@ https://github.com/lalor 运维大牛
 
 https://github.com/jobbole/awesome-python-cn
 
+https://python-web-guide.readthedocs.io/zh/latest/index.html 工程实践 经验分享
+
+https://learnku.com/docs/python-guide/2018 技术栈
+
+https://bramblexu.com/posts/b1c0cc4f/#toc-heading-5 vscode 配置 
 
 <!--more-->
 
@@ -32,80 +37,82 @@ https://github.com/jobbole/awesome-python-cn
 
 - [实用脚本](#实用脚本)
 - [介绍](#介绍)
-    - [python 特点](#python-特点)
-    - [python 安装](#python-安装)
-    - [vscode 环境配置](#vscode-环境配置)
-    - [解释器](#解释器)
+  - [python 特点](#python-特点)
+  - [python 安装](#python-安装)
+  - [vscode 环境配置](#vscode-环境配置)
+  - [设置国内pip源](#设置国内pip源)
+  - [解释器](#解释器)
 - [语法](#语法)
-    - [输入输出 打印](#输入输出-打印)
-    - [基本数据类型](#基本数据类型)
-        - [字符串](#字符串)
-            - [多行 不可变 比较](#多行-不可变-比较)
-            - [编码 字符处理](#编码-字符处理)
-            - [格式化](#格式化)
-            - [字符串方法](#字符串方法)
-        - [数字](#数字)
-        - [布尔值 空值](#布尔值-空值)
-        - [集合](#集合)
-            - [有序可变 list](#有序可变-list)
-            - [切片 slices](#切片-slices)
-            - [有序不可变列表 tuple](#有序不可变列表-tuple)
-            - [无需不可重复 set](#无需不可重复-set)
-        - [键值存储 字典 dict](#键值存储-字典-dict)
-        - [生成器 generator](#生成器-generator)
-    - [条件循环](#条件循环)
-    - [比较判断](#比较判断)
-    - [函数](#函数)
-        - [参数检查](#参数检查)
-        - [多种参数](#多种参数)
-        - [递归](#递归)
-        - [高阶函数](#高阶函数)
-    - [文件处理](#文件处理)
-        - [创建文件](#创建文件)
-        - [读写文件数据](#读写文件数据)
-    - [装饰器](#装饰器)
-    - [模块 作用域](#模块-作用域)
-    - [面向对象](#面向对象)
-        - [类](#类)
-        - [继承 鸭子类型](#继承-鸭子类型)
-        - [判断类型信息](#判断类型信息)
-        - [动态操作](#动态操作)
-        - [特殊方法](#特殊方法)
-        - [枚举](#枚举)
-    - [错误异常处理](#错误异常处理)
+  - [输入输出 打印 main魔法变量](#输入输出-打印-main魔法变量)
+  - [基本数据类型](#基本数据类型)
+    - [字符串](#字符串)
+      - [多行 不可变 比较](#多行-不可变-比较)
+      - [编码 字符处理](#编码-字符处理)
+      - [格式化](#格式化)
+      - [字符串方法](#字符串方法)
+    - [数字](#数字)
+    - [布尔值 空值](#布尔值-空值)
+    - [集合](#集合)
+      - [有序可变 list](#有序可变-list)
+      - [切片 slices](#切片-slices)
+      - [有序不可变列表 tuple](#有序不可变列表-tuple)
+      - [无序不可重复 set](#无序不可重复-set)
+    - [键值存储 字典 dict](#键值存储-字典-dict)
+    - [生成器 generator](#生成器-generator)
+  - [条件循环](#条件循环)
+  - [比较判断](#比较判断)
+  - [函数](#函数)
+    - [参数检查](#参数检查)
+    - [多种参数](#多种参数)
+    - [递归](#递归)
+    - [高阶函数](#高阶函数)
+  - [文件处理](#文件处理)
+    - [创建文件](#创建文件)
+    - [读写文件数据](#读写文件数据)
+  - [装饰器](#装饰器)
+  - [模块 作用域](#模块-作用域)
+  - [面向对象](#面向对象)
+    - [类](#类)
+    - [继承 鸭子类型](#继承-鸭子类型)
+    - [判断类型信息](#判断类型信息)
+    - [动态操作](#动态操作)
+    - [特殊方法](#特殊方法)
+    - [枚举](#枚举)
+  - [错误异常处理](#错误异常处理)
 - [日志](#日志)
 - [单元测试](#单元测试)
 - [多进程](#多进程)
 - [异步](#异步)
 - [内建模块](#内建模块)
-    - [日期处理](#日期处理)
-    - [集合](#集合-1)
+  - [日期处理](#日期处理)
+  - [集合](#集合-1)
 - [编写命令行程序](#编写命令行程序)
-    - [命令行自动补全](#命令行自动补全)
+  - [命令行自动补全](#命令行自动补全)
 - [类型系统](#类型系统)
 - [调试](#调试)
-    - [断言](#断言)
-    - [设置断点 pdb](#设置断点-pdb)
+  - [断言](#断言)
+  - [设置断点 pdb](#设置断点-pdb)
 - [jinja2 模板](#jinja2-模板)
 - [路径问题](#路径问题)
-    - [文件路径 and 终端路径](#文件路径-and-终端路径)
-    - [获取脚本位置](#获取脚本位置)
+  - [文件路径 and 终端路径](#文件路径-and-终端路径)
+  - [获取脚本位置](#获取脚本位置)
 - [shutil 使用](#shutil-使用)
 - [venv 虚拟环境](#venv-虚拟环境)
 - [web 开发](#web-开发)
+  - [Django](#django)
 - [db 驱动 问题](#db-驱动-问题)
 - [代替 shell 运维](#代替-shell-运维)
-    - [传递参数](#传递参数)
-    - [shell 调用 Python](#shell-调用-python)
-        - [统计出现次数](#统计出现次数)
-        - [读取 csv 文件](#读取-csv-文件)
-    - [Python 调用 shell](#python-调用-shell)
-        - [subprocess](#subprocess)
-        - [os.system](#ossystem)
-        - [system](#system)
-        - [commands](#commands)
-        - [paramiko](#paramiko)
-    - [部署 springboot](#部署-springboot)
+  - [传递参数](#传递参数)
+  - [shell 调用 Python](#shell-调用-python)
+    - [统计出现次数](#统计出现次数)
+    - [读取 csv 文件](#读取-csv-文件)
+  - [Python 调用 shell](#python-调用-shell)
+    - [subprocess](#subprocess)
+    - [os.system](#ossystem)
+    - [system](#system)
+    - [commands](#commands)
+    - [paramiko](#paramiko)
+  - [部署 springboot](#部署-springboot)
 
 <!-- /TOC -->
 
@@ -175,7 +182,21 @@ autopep8 格式化代码库, vscode 会自动提示 (同类是 black, yapf)
 
 Coverage 有多种向你报告测试覆盖率的方式，包括将结果输出到控制台或 HTML 页面，并提示哪些行号没有覆盖到。你可以设置配置文件以自定义 Coverage 检查的内容并使其更便于运行
 
+## 设置国内pip源
 
+```
+sudo vim ~/.pip/pip.conf
+
+[global] 
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+[install]
+trusted-host = https://pypi.tuna.tsinghua.edu.cn  # trusted-host 此参数是为了避免麻烦，否则使用的时候可能会提示不受信任
+
+```
+
+or
+
+https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
 
 ## 解释器
 
@@ -192,7 +213,7 @@ IronPython, 把 Python 代码编译成.Net 的字节码。
 
 # 语法
 
-## 输入输出 打印
+## 输入输出 打印 main魔法变量
 
 ```py
 #!/usr/bin/env python3
@@ -282,6 +303,12 @@ if 'ab' == 'ab':
     #'文'
     #>>> 'u4e2du6587'
     #'中文'
+
+    # s1=u’哈’
+    # type(u’哈’)，则会得到<type ‘unicode’>，也就是在字符前面加u就表明这是一个unicode对象，这个字会以unicode格式存在于内存中
+    # 如果不加u，表明这仅仅是一个使用某种编码的字符串，编码格式取决于python对源码文件编码的识别，如 # -*- coding: utf-8 -*-
+    # https://www.cnblogs.com/yyxayz/p/4044528.html
+
 
     # 字节
     # 如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。
@@ -643,7 +670,7 @@ sdfs
     # ('a', 'b', ['X', 'Y'])
 ```
 
-#### 无需不可重复 set
+#### 无序不可重复 set
 
 ```py
   # Set 无序不可重复
@@ -2458,19 +2485,16 @@ shutil.move('原文件夹/原文件名','目标文件夹/目标文件名')
 
 
 
-how to use: https://www.cnblogs.com/technologylife/p/6635631.html
-why to use: https://blog.csdn.net/godot06/article/details/81079064
-
-
 
 ```sh
  pip3 install virtualenv
 # 虚拟环境
 # --no-site-packages，已经安装到系统Python环境中的所有第三方包都不会复制过来，这样，我们就得到了一个不带任何第三方包的“干净”的Python运行环境。
+#               更新 , 版本 >=20 后, 默认就加上了这个选项, 不必手动指定
 # -p 指定解释器
-virtualenv -p python3.6 venv  --no-site-packages
+virtualenv -p python3.6 venv  
 # 使用默认解释器
-virtualenv --no-site-packages venv
+virtualenv  venv
 # 有了venv这个Python环境，可以用source进入该环境
 source ./venv/bin/activate
 # 安装库依赖 到 venv
@@ -2481,6 +2505,18 @@ pip freeze > requirements.txt
 pip freeze
 # 退出 venv
 deactivate
+
+
+# virtualenvwrapper,是对 virtualenv 的一个封装，目的是使后者更好用。
+
+
+# venv , Python 从3.3 版本开始，自带了一个虚拟环境 venv
+# 仅仅支持 python 3.3 和以后版本。所以，要在 python2 上使用虚拟环境，依然要利用 virtualenv 
+python3 -m venv <venv_name> # 一般命名为 .venv
+
+.venv\Scripts\activate.bat
+# or
+source .venv/bin/activate
 
 
 
@@ -2510,6 +2546,41 @@ https://www.zhihu.com/question/41564604/answer/660256963 对比
     websockets 长连接;
 
     内嵌了HTTP服务器
+
+
+## Django
+
+```sh
+# 升级 pip 到 v21
+python -m pip install --upgrade pip
+
+pip install Django
+
+# 创建模板代码
+# 末尾 . 表示当前目录, 可选
+# django_demo 为项目名, 一般和当前文件夹名保持一致
+django-admin startproject django_demo .
+
+# 启动开发服务器
+python manage.py runserver [[0:]8080]
+
+# 创建 demo app: polls 的模板代码
+python manage.py startapp polls
+
+# 检查 INSTALLED_APPS 设置，为其中的每个应用创建需要的数据表/更新表结构
+python manage.py migrate
+
+# 为指定 app 创建 迁移文件(模型数据, 用于生成 SQL), polls 是自定义 app name
+python manage.py makemigrations polls
+
+#  查看 SQL
+python manage.py sqlmigrate polls 0001
+
+
+# 通过模型 api 操作数据库
+python manage.py shell
+```
+
 
 # db 驱动 问题
 

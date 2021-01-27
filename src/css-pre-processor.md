@@ -139,11 +139,21 @@ https://github.com/postcss/postcss/blob/main/docs/writing-a-plugin.md
 
 # SASS
 
-使用 dart-sass 替代 node-sass
 
 
 https://www.bilibili.com/video/BV1Wb411Y7Ms?p=1 开发简历页面
 
+```
+//过时
+// 解决 node-sass 无法下载问题
+npm config set sass_binary_site=https://npm.taobao.org/mirrors/node-sass
+
+//推荐
+//使用 dart-sass 替代 node-sass, 后者过时了
+yarn add sass -D
+
+
+```
 # LESS
 
 Less 是一门 CSS 预处理语言，它扩展了 CSS 语言，增加了变量、Mixin、函数等特性，使 CSS 更易维护和扩展。

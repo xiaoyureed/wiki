@@ -25,6 +25,7 @@ w3shcool国内镜像: https://www.quanzhanketang.com/default.html
   - [视频](#视频)
   - [音频](#音频)
   - [拖放](#拖放)
+- [兼容 ie](#兼容-ie)
 - [demo](#demo)
   - [w3c经典页面](#w3c经典页面)
   - [简历典型页面](#简历典型页面)
@@ -901,6 +902,35 @@ ev.target.appendChild(document.getElementById(data));
 </html>
 
 ```
+
+
+# 兼容 ie
+
+```html
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <script src="" async defer></script>
+  </body>
+</html>
+```
+
 
 # demo
 
