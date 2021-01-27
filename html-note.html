@@ -177,6 +177,7 @@ w3shcool国内镜像: https://www.quanzhanketang.com/default.html
 <li><a href="#%E6%8B%96%E6%94%BE">拖放</a></li>
 </ul>
 </li>
+<li><a href="#%E5%85%BC%E5%AE%B9-ie">兼容 ie</a></li>
 <li><a href="#demo">demo</a>
 <ul>
 <li><a href="#w3c%E7%BB%8F%E5%85%B8%E9%A1%B5%E9%9D%A2">w3c经典页面</a></li>
@@ -1025,6 +1026,30 @@ ev.target.appendChild(document.getElementById(data));
 &lt;/body&gt;
 &lt;/html&gt;
 
+</code></pre>
+<h1><a class="header" href="#兼容-ie" id="兼容-ie">兼容 ie</a></h1>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7]&gt;      &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;         &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;         &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;      &lt;html class=&quot;no-js&quot;&gt; &lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!--[if lt IE 7]&gt;
+      &lt;p class=&quot;browsehappy&quot;&gt;You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href=&quot;#&quot;&gt;upgrade your browser&lt;/a&gt; to improve your experience.&lt;/p&gt;
+    &lt;![endif]--&gt;
+    
+    &lt;script src=&quot;&quot; async defer&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 <h1><a class="header" href="#demo" id="demo">demo</a></h1>
 <h2><a class="header" href="#w3c经典页面" id="w3c经典页面">w3c经典页面</a></h2>

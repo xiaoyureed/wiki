@@ -164,6 +164,9 @@ https://github.com/iswbm</p>
 <p>https://zhuanlan.zhihu.com/p/24132781 经验简历</p>
 <p>https://github.com/lalor 运维大牛</p>
 <p>https://github.com/jobbole/awesome-python-cn</p>
+<p>https://python-web-guide.readthedocs.io/zh/latest/index.html 工程实践 经验分享</p>
+<p>https://learnku.com/docs/python-guide/2018 技术栈</p>
+<p>https://bramblexu.com/posts/b1c0cc4f/#toc-heading-5 vscode 配置 </p>
 <!--more-->
 <!-- TOC -->
 <ul>
@@ -173,12 +176,13 @@ https://github.com/iswbm</p>
 <li><a href="#python-%E7%89%B9%E7%82%B9">python 特点</a></li>
 <li><a href="#python-%E5%AE%89%E8%A3%85">python 安装</a></li>
 <li><a href="#vscode-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">vscode 环境配置</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E5%9B%BD%E5%86%85pip%E6%BA%90">设置国内pip源</a></li>
 <li><a href="#%E8%A7%A3%E9%87%8A%E5%99%A8">解释器</a></li>
 </ul>
 </li>
 <li><a href="#%E8%AF%AD%E6%B3%95">语法</a>
 <ul>
-<li><a href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA-%E6%89%93%E5%8D%B0">输入输出 打印</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA-%E6%89%93%E5%8D%B0-main%E9%AD%94%E6%B3%95%E5%8F%98%E9%87%8F">输入输出 打印 main魔法变量</a></li>
 <li><a href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">基本数据类型</a>
 <ul>
 <li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串</a>
@@ -196,7 +200,7 @@ https://github.com/iswbm</p>
 <li><a href="#%E6%9C%89%E5%BA%8F%E5%8F%AF%E5%8F%98-list">有序可变 list</a></li>
 <li><a href="#%E5%88%87%E7%89%87-slices">切片 slices</a></li>
 <li><a href="#%E6%9C%89%E5%BA%8F%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%88%97%E8%A1%A8-tuple">有序不可变列表 tuple</a></li>
-<li><a href="#%E6%97%A0%E9%9C%80%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D-set">无需不可重复 set</a></li>
+<li><a href="#%E6%97%A0%E5%BA%8F%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D-set">无序不可重复 set</a></li>
 </ul>
 </li>
 <li><a href="#%E9%94%AE%E5%80%BC%E5%AD%98%E5%82%A8-%E5%AD%97%E5%85%B8-dict">键值存储 字典 dict</a></li>
@@ -265,7 +269,11 @@ https://github.com/iswbm</p>
 </li>
 <li><a href="#shutil-%E4%BD%BF%E7%94%A8">shutil 使用</a></li>
 <li><a href="#venv-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83">venv 虚拟环境</a></li>
-<li><a href="#web-%E5%BC%80%E5%8F%91">web 开发</a></li>
+<li><a href="#web-%E5%BC%80%E5%8F%91">web 开发</a>
+<ul>
+<li><a href="#django">Django</a></li>
+</ul>
+</li>
 <li><a href="#db-%E9%A9%B1%E5%8A%A8-%E9%97%AE%E9%A2%98">db 驱动 问题</a></li>
 <li><a href="#%E4%BB%A3%E6%9B%BF-shell-%E8%BF%90%E7%BB%B4">代替 shell 运维</a>
 <ul>
@@ -330,6 +338,17 @@ pip3 --version
 </code></pre>
 <p>autopep8 格式化代码库, vscode 会自动提示 (同类是 black, yapf)</p>
 <p>Coverage 有多种向你报告测试覆盖率的方式，包括将结果输出到控制台或 HTML 页面，并提示哪些行号没有覆盖到。你可以设置配置文件以自定义 Coverage 检查的内容并使其更便于运行</p>
+<h2><a class="header" href="#设置国内pip源" id="设置国内pip源">设置国内pip源</a></h2>
+<pre><code>sudo vim ~/.pip/pip.conf
+
+[global] 
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+[install]
+trusted-host = https://pypi.tuna.tsinghua.edu.cn  # trusted-host 此参数是为了避免麻烦，否则使用的时候可能会提示不受信任
+
+</code></pre>
+<p>or</p>
+<p>https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</p>
 <h2><a class="header" href="#解释器" id="解释器">解释器</a></h2>
 <p>CPython (默认)</p>
 <p>PyPy, 采用 JIT 技术，对 Python 代码进行动态编译, PyPy 和 CPython 有一些是不同的，这就导致相同的 Python 代码在两种解释器下执行可能会有不同的结果</p>
@@ -337,7 +356,7 @@ pip3 --version
 <p>IronPython, 把 Python 代码编译成.Net 的字节码。</p>
 <p>如果要和 Java 或.Net 平台交互，最好的办法不是用 Jython 或 IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p>
 <h1><a class="header" href="#语法" id="语法">语法</a></h1>
-<h2><a class="header" href="#输入输出-打印" id="输入输出-打印">输入输出 打印</a></h2>
+<h2><a class="header" href="#输入输出-打印-main魔法变量" id="输入输出-打印-main魔法变量">输入输出 打印 main魔法变量</a></h2>
 <pre><code class="language-py">#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # 以上两行表示python 解释器版本；以utf-8编码
@@ -416,6 +435,12 @@ if 'ab' == 'ab':
     #'文'
     #&gt;&gt;&gt; 'u4e2du6587'
     #'中文'
+
+    # s1=u’哈’
+    # type(u’哈’)，则会得到&lt;type ‘unicode’&gt;，也就是在字符前面加u就表明这是一个unicode对象，这个字会以unicode格式存在于内存中
+    # 如果不加u，表明这仅仅是一个使用某种编码的字符串，编码格式取决于python对源码文件编码的识别，如 # -*- coding: utf-8 -*-
+    # https://www.cnblogs.com/yyxayz/p/4044528.html
+
 
     # 字节
     # 如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。
@@ -751,7 +776,7 @@ sdfs
     # &gt;&gt;&gt; t
     # ('a', 'b', ['X', 'Y'])
 </code></pre>
-<h4><a class="header" href="#无需不可重复-set" id="无需不可重复-set">无需不可重复 set</a></h4>
+<h4><a class="header" href="#无序不可重复-set" id="无序不可重复-set">无序不可重复 set</a></h4>
 <pre><code class="language-py">  # Set 无序不可重复
     #
     #一组 key 的集合，但不存储 value，没有重复的 key，无序
@@ -2412,15 +2437,14 @@ shutil.move('原文件夹/原文件名','目标文件夹/目标文件名')
 
 </code></pre>
 <h1><a class="header" href="#venv-虚拟环境" id="venv-虚拟环境">venv 虚拟环境</a></h1>
-<p>how to use: https://www.cnblogs.com/technologylife/p/6635631.html
-why to use: https://blog.csdn.net/godot06/article/details/81079064</p>
 <pre><code class="language-sh"> pip3 install virtualenv
 # 虚拟环境
 # --no-site-packages，已经安装到系统Python环境中的所有第三方包都不会复制过来，这样，我们就得到了一个不带任何第三方包的“干净”的Python运行环境。
+#               更新 , 版本 &gt;=20 后, 默认就加上了这个选项, 不必手动指定
 # -p 指定解释器
-virtualenv -p python3.6 venv  --no-site-packages
+virtualenv -p python3.6 venv  
 # 使用默认解释器
-virtualenv --no-site-packages venv
+virtualenv  venv
 # 有了venv这个Python环境，可以用source进入该环境
 source ./venv/bin/activate
 # 安装库依赖 到 venv
@@ -2431,6 +2455,18 @@ pip freeze &gt; requirements.txt
 pip freeze
 # 退出 venv
 deactivate
+
+
+# virtualenvwrapper,是对 virtualenv 的一个封装，目的是使后者更好用。
+
+
+# venv , Python 从3.3 版本开始，自带了一个虚拟环境 venv
+# 仅仅支持 python 3.3 和以后版本。所以，要在 python2 上使用虚拟环境，依然要利用 virtualenv 
+python3 -m venv &lt;venv_name&gt; # 一般命名为 .venv
+
+.venv\Scripts\activate.bat
+# or
+source .venv/bin/activate
 
 
 
@@ -2455,6 +2491,36 @@ https://www.zhihu.com/question/41564604/answer/660256963 对比</p>
 <p>内嵌了HTTP服务器</p>
 </li>
 </ul>
+<h2><a class="header" href="#django" id="django">Django</a></h2>
+<pre><code class="language-sh"># 升级 pip 到 v21
+python -m pip install --upgrade pip
+
+pip install Django
+
+# 创建模板代码
+# 末尾 . 表示当前目录, 可选
+# django_demo 为项目名, 一般和当前文件夹名保持一致
+django-admin startproject django_demo .
+
+# 启动开发服务器
+python manage.py runserver [[0:]8080]
+
+# 创建 demo app: polls 的模板代码
+python manage.py startapp polls
+
+# 检查 INSTALLED_APPS 设置，为其中的每个应用创建需要的数据表/更新表结构
+python manage.py migrate
+
+# 为指定 app 创建 迁移文件(模型数据, 用于生成 SQL), polls 是自定义 app name
+python manage.py makemigrations polls
+
+#  查看 SQL
+python manage.py sqlmigrate polls 0001
+
+
+# 通过模型 api 操作数据库
+python manage.py shell
+</code></pre>
 <h1><a class="header" href="#db-驱动-问题" id="db-驱动-问题">db 驱动 问题</a></h1>
 <p>mac 无法安装 postgres 驱动</p>
 <p>驱动在这: https://pypi.org/project/psycopg2/, 需要首先安装 postgres  <code>brew install postgres</code>, 设置 path, 然后安装 (<a href="https://www.psycopg.org/docs/install.html#install-from-source">参考</a>)</p>
