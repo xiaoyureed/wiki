@@ -36,7 +36,8 @@ categories: java web
   - [ab](#ab)
 - [Junit](#junit)
 - [ab test](#ab-test)
-- [继承测试 Testcontainers](#继承测试-testcontainers)
+- [集成测试 Testcontainers](#集成测试-testcontainers)
+- [优化测试编写体验](#优化测试编写体验)
 
 <!-- /TOC -->
 
@@ -340,7 +341,11 @@ TODO
 
 
 
-## 继承测试 Testcontainers
+## 集成测试 Testcontainers
 
 https://blog.csdn.net/mail_liuxing/article/details/99075606
 https://github.com/testcontainers/testcontainers-java
+
+## 优化测试编写体验
+
+groovy + spock

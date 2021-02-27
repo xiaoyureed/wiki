@@ -11,6 +11,8 @@ https://www.zhihu.com/question/43557507
 https://www.jianshu.com/p/79ca08116d57
 消息队列（Message Queue）是一种应用间的通信方式, 是一种应用间的异步协作机制
 rabbitmq：https://www.rabbitmq.com
+
+https://blog.csdn.net/jiaowo_ccc/article/details/93893715 usage scenario
 </div>
 
 <!--more-->

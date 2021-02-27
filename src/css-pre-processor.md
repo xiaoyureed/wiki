@@ -12,6 +12,7 @@ css的预处理器主流的大概有: SASS, LESS, Stylus;
 https://tympanus.net/codrops/ 灵感
 
 css 模块化
+
 </div>
 
 <!--more-->
@@ -77,10 +78,9 @@ CSS的好处在于简便、随时随地被使用和调试。
 
 语法区别: https://zhuanlan.zhihu.com/p/38715068, https://efe.baidu.com/blog/revisiting-css-preprocessors/
 
-
 ============ sass 优点
 
-sass 比 less 更像完整的编程语言, 有 变量 (全局, 局部区分), 函数, 作用域, 流程控制, 数据结构..., 
+sass 比 less 更像完整的编程语言, 有 变量 (全局, 局部区分), 函数, 作用域, 流程控制, 数据结构...,
 
 有成熟的框架, 如 Compass, Foundation
 
@@ -92,15 +92,11 @@ bootstrap最新版就抛弃 less, 转向 sass了
 
 丰富的 ruby api 支持, 适合开发 css 框架
 
-
 =============== sass 缺点
 
 但是 sass 安装需要 ruby 环境支持, less 只需要 引入 'less.js' 即可
 
 开发工具也没有相应的sass编码提示
-
-
-
 
 =================Stylus
 
@@ -110,9 +106,7 @@ bootstrap最新版就抛弃 less, 转向 sass了
 
 语法更简洁, 比如用缩进代替大括号
 
-
 # PostCSS
-
 
 ## 简单介绍 postcss
 
@@ -120,26 +114,19 @@ https://github.com/postcss/postcss git 仓库
 
 不是 css preprocessor, 是一个使用JS插件来转换样式的工具 (检查（lint）你的 CSS，支持 CSS Variables 和 Mixins， 编译尚未被浏览器广泛支持的先进的 CSS 语法，内联图片)
 
-
 作为一个平台, 可以编写各种插件实现对 css 的处理, Autoprefixer 是最火的插件 (底层原理实际是 PostCSS 提供了一个解析器，它能够将 CSS 解析成抽象语法树（AST）。)
 
 TailwindCSS 可以作为 postcss 的一个插件来使用
 
 可以搜索插件 在这里 https://www.postcss.parts/ , 所有插件同时列在这里了 https://github.com/postcss/postcss/blob/main/docs/plugins.md
 
-
 ## 怎么使用
-
-
-
 
 ## 自定义postcss插件
 
 https://github.com/postcss/postcss/blob/main/docs/writing-a-plugin.md
 
 # SASS
-
-
 
 https://www.bilibili.com/video/BV1Wb411Y7Ms?p=1 开发简历页面
 
@@ -154,15 +141,14 @@ yarn add sass -D
 
 
 ```
+
 # LESS
 
 Less 是一门 CSS 预处理语言，它扩展了 CSS 语言，增加了变量、Mixin、函数等特性，使 CSS 更易维护和扩展。
 Less 可以运行在 Node 或浏览器端。
 LESS 做为 CSS 的一种形式的扩展，它并没有阉割 CSS 的功能，而是在现有的 CSS 语法上，添加了很多额外的功能
 
-
 ## 环境配置
-
 
 ```sh
 npm install -g less
@@ -171,7 +157,6 @@ npm install -g less
 命令行使用:
 
 * 不压缩 `lessc myStyle.less myStyle.css`
-
 * 压缩后输出 `lessc --clean-css styles.less styles.min.css`
 
 代码用法:
@@ -237,11 +222,9 @@ less.render('.class { width: (1 + 1) }',
 
 要使用它，只要在URL后面加上'`#!watch`'，然后刷新页面就可以了。另外，你也可以通过在终端运行`less.watch()`来启动监视模式。
 
-
 ## 语法
 
 ### 变量
-
 
 ```less
 @nice-blue: #5B83AD;
@@ -394,7 +377,6 @@ pre { .wrap }
   display: block;
 }
 ```
-
 
 ### 导引表达式(类似@media query)
 
@@ -637,11 +619,7 @@ background-image: url("@{base-url}/images/bg.png");
 @var: "HELLO!";
 ```
 
-
-
 # css 模块化
-
-
 
 # css 框架
 
@@ -660,7 +638,5 @@ https://github.com/palantir/blueprint react 组件库, 类似 antd
 # 响应式页面
 
 - 通过 @media 媒体查询 + flex
-
 - 通过 bootstrap 框架
-
 - 和 react 使用, 可以根据 `window.innerWidth` 渲染不同的组件 (https://juejin.cn/post/6844904089164185607)

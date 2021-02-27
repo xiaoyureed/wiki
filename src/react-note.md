@@ -9,6 +9,13 @@ categories: frontend
 
 <div align="center">
 
+https://github.com/react-hook-form/react-hook-form
+
+https://github.com/brick-design/react-visual-editor 表单设计 https://brick-design.github.io/react-visual-editor/
+https://react-hook-form.com/zh/form-builder/
+
+react-dnd, react-draggable, react-resizable, react-drag-select, react-rnd, react-grid-layout, react-resizable-box 开源拖拽组件
+
 https://github.com/react-icons/react-icons 图标库 (综合各种框架的图标)
 
 https://zhuanlan.zhihu.com/p/78051039 资源
