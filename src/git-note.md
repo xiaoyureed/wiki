@@ -32,6 +32,7 @@ https://git-scm.com/book/zh/v2
 - [git hooks](#git-hooks)
 - [git subtree 子仓库](#git-subtree-子仓库)
 - [husky](#husky)
+- [svn](#svn)
 
 <!-- /TOC -->
 
@@ -638,3 +639,27 @@ git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
 # husky
 
 https://github.com/typicode/husky git 钩子, 在 commit 前做点什么
+
+
+# svn
+
+```sh
+brew install svn
+
+svn --version
+
+
+1、svn delete 目录 删除svn版本里的相关目录
+
+2、svn add 目录 将本地的目录添加到svn版本信息里
+
+3、svn commit 目录 提交svn版本信息里变化的目录
+
+4、svn revert 文件 svn将本地文件恢复到版本控制的某一个版本号下的代码，默认是最新的
+
+5、svn revert --depth=infinity 目录 将本地的这个目录下的所有文件全部恢复到最新的版本，深度恢复，会遍历子目录
+
+https://www.cnblogs.com/136asdxxl/p/7410947.html
+todo
+
+```
