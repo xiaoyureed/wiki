@@ -320,6 +320,12 @@ categories: java web</li>
 <li><a href="#%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95">碰到的问题记录</a></li>
 </ul>
 </li>
+<li><a href="#oracle">oracle</a>
+<ul>
+<li><a href="#%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B">字段类型</a></li>
+<li><a href="#oracle--sql">Oracle  sql</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 <h1><a class="header" href="#命令行" id="命令行">命令行</a></h1>
@@ -2041,6 +2047,20 @@ select ROW_NUMBER() over (order by avg(score)) '序号',  s#, avg(score) '均分
 第二个办法:使用Identity+临时表,例如:---------select语句必须有into
 select Identity(int,1,1),t.*  Into #temptable from  表 t;
 select * from #temptable;
+
+
+</code></pre>
+<h1><a class="header" href="#oracle" id="oracle">oracle</a></h1>
+<h2><a class="header" href="#字段类型" id="字段类型">字段类型</a></h2>
+<pre><code>varchar  -- 存放定長的字符数据，最长2000個字符；
+
+varchar2 -- 存放可变长字符数据，最大长度为4000字符。 推荐
+
+</code></pre>
+<p>https://blog.csdn.net/superit401/article/details/51565119 mysql 对比 , 数据类型转换</p>
+<h2><a class="header" href="#oracle--sql" id="oracle--sql">Oracle  sql</a></h2>
+<pre><code class="language-sql">-- 删除/彻底删除
+drop table tb_maintence [purge];
 
 
 </code></pre>

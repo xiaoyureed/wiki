@@ -321,6 +321,9 @@ Maven Note | [替换pom.xml为其他格式的文件](https://github.com/takari/p
 <!-- /TOC -->
 <h1><a class="header" href="#命令行" id="命令行">命令行</a></h1>
 <p><a href="https://blog.csdn.net/fangzg811107320/article/details/72763704">手动安装jar到本地仓库</a>: <code>mvn install:install-file -Dfile=D:/soft/ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.3 -Dpackaging=jar -DgeneratePom=true</code></p>
+<pre><code class="language-sh">mvn install:install-file -Dfile=/Users/xiaoyu/repo/sanxia_gaoke/resources/ojdbc8/19.3.0.0/ojdbc8-19.3.0.0.jar -DgoupId=com.oracle -DartifactId=ojdbc8 -Dversion=19.3.0.0 -Dpackaging=jar -DgeneratePom=true
+
+</code></pre>
 <h1><a class="header" href="#spring-io-platform" id="spring-io-platform">spring-io-platform</a></h1>
 <p>Spring IO Platform框架简单来说就是一个版本号兼容系统，是一个依赖维护平台</p>
 <p>它将常用第三方类库的兼容的版本组织起来。只要我们在项目中引用了Spring IO Platform，就不需要为这些第三方类库设置版本号了，Spring IO Platform会自动帮我们设置所有兼容的版本号</p>
