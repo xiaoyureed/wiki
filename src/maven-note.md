@@ -133,7 +133,14 @@ jetbrains package search : https://pkg.biuaxia.cn/
 
 [手动安装jar到本地仓库](https://blog.csdn.net/fangzg811107320/article/details/72763704): `mvn install:install-file -Dfile=D:/soft/ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.3 -Dpackaging=jar -DgeneratePom=true`
 
+```sh
+mvn install:install-file -Dfile=/Users/xiaoyu/repo/sanxia_gaoke/resources/ojdbc8/19.3.0.0/ojdbc8-19.3.0.0.jar -DgoupId=com.oracle -DartifactId=ojdbc8 -Dversion=19.3.0.0 -Dpackaging=jar -DgeneratePom=true
+
+```
+
+
 # spring-io-platform
+
 
 Spring IO Platform框架简单来说就是一个版本号兼容系统，是一个依赖维护平台
 

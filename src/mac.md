@@ -19,7 +19,7 @@ https://github.com/Louiszhai/tool
   - [Chrome](#chrome)
   - [vscode](#vscode)
   - [fcp](#fcp)
-- [无法打开xxx因为无法验证开发者](#无法打开xxx因为无法验证开发者)
+- [允许安装任何来源的 app](#允许安装任何来源的-app)
 - [karabiner 按键映射](#karabiner-按键映射)
   - [自定义 rule 配置](#自定义-rule-配置)
 - [icloud](#icloud)
@@ -193,9 +193,11 @@ command+shift+v则是粘贴片段的属性
 cmd + z 撤销
 ```
 
-# 无法打开xxx因为无法验证开发者
+# 允许安装任何来源的 app
 
-`sudo spctl --master-disable`
+无法打开xxx因为无法验证开发者
+
+`sudo spctl --master-disable`, 在隐私中会出现 "允许任何来源"
 
 
 # karabiner 按键映射

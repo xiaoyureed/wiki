@@ -112,6 +112,7 @@ https://github.com/wsargent/docker-cheat-sheet 速查表
 - [docker实践](#docker实践)
   - [搭建持续集成系统](#搭建持续集成系统)
   - [docker和springboot](#docker和springboot)
+  - [oracle11g](#oracle11g)
   - [使用 mysql 镜像](#使用-mysql-镜像)
   - [使用postgres镜像](#使用postgres镜像)
   - [使用 rabbitmq镜像](#使用-rabbitmq镜像)
@@ -2287,6 +2288,12 @@ networks:
 老外的一篇博文: https://www.callicoder.com/spring-boot-docker-example/, 先没有使用maven工具, 然后引入maven插件, 两种实现
 
 使用了 maven 插件: http://www.ityouknow.com/springboot/2018/03/19/spring-boot-docker.html
+
+
+## oracle11g
+
+https://blog.csdn.net/qq_33982232/article/details/83133870
+https://www.35youth.cn/685.html (https://registry.hub.docker.com/r/jaspeen/oracle-11g)
 
 ## 使用 mysql 镜像
 
