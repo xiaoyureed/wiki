@@ -12,7 +12,6 @@ mybatis就是一个封装了jdbc的持久层框架，同类是 hibernate，但�
 Mybatis让我们只关注sql本身，而不需要去关注创建连接、创建statement、关闭连接等操作; Mybatis会对输入参数、输出结果进行映射
 MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs映射成数据库中的记录
 
-jdbc:mysql://122.191.199.51:60000/js_phaseii_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
 </div>
 <!--more-->
 

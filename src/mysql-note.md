@@ -105,8 +105,9 @@ categories: java web
       - [参数是局部变量](#参数是局部变量)
   - [碰到的问题记录](#碰到的问题记录)
 - [oracle](#oracle)
+  - [java驱动](#java驱动)
   - [字段类型](#字段类型)
-  - [Oracle  sql](#oracle--sql)
+  - [Oracle sql](#oracle-sql)
 
 <!-- /TOC -->
 
@@ -2131,6 +2132,23 @@ select * from #temptable;
 
 # oracle
 
+## java驱动
+
+```xml
+<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.nls/orai18n -->
+		<dependency>
+			<groupId>com.oracle.database.nls</groupId>
+			<artifactId>orai18n</artifactId>
+			<version>21.1.0.0</version>
+		</dependency>
+
+```
+
 ## 字段类型
 
 ```
@@ -2144,7 +2162,9 @@ https://blog.csdn.net/superit401/article/details/51565119 mysql 对比 , 数据�
 
 
 
-## Oracle  sql
+## Oracle sql
+
+https://www.yiibai.com/oracle/oracle-create-table.html
 
 ```sql
 -- 删除/彻底删除

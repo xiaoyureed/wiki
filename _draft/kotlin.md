@@ -51,6 +51,11 @@ Kotlin可以编译成Java字节码，也可以编译成JavaScript
 
 - 其他的一些bug: https://blog.csdn.net/csdnnews/article/details/80746096
 
+    - 名称遮蔽: 呈现包含关系的的多个作用域中, 可以存在同名变量, 小作用域内的变量会遮蔽大作用域内的变量, java 中会直接报错
+    - 和 java 互操作是, 可能空异常
+    - 类名称字面常量: LocalDate::class 表示 kotlinClass, LocalDate::class.java 表示javaClass, 其实这个不算 bug , 只是过于繁琐
+    - 伴生对象 (companion object): 静态变量/方法需要使用 伴生对象, 繁琐
+    
 
 # 作为脚本使用
 

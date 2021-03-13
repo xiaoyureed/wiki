@@ -131,7 +131,6 @@ springboot reference doc 翻译
     - [themeleaf](#themeleaf)
     - [freemarker](#freemarker)
     - [velocity](#velocity)
-  - [集成swagger2](#集成swagger2)
   - [统一异常处理](#统一异常处理)
   - [使用JdbcTemplate](#使用jdbctemplate)
   - [使用Spring-data-jpa](#使用spring-data-jpa)
@@ -2465,14 +2464,6 @@ jsp实例：https://github.com/spring-projects/spring-boot/blob/v2.0.2.RELEASE/s
 ### velocity
 
 * 依赖：spring-boot-starter-velocity
-
-## 集成swagger2 
-
-* 引入依赖 springfox-swagger2 https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
-* 各个操作接口上：@ApiOperation，@ApiImplicitParam
-* swagger2配置类，和APP启动类同级，@Configuration，@EnableSwagger2
-* 访问：http://localhost:8080/swagger-ui.html
-* 配置mvc时候， 如果继承了WebMvcConfigurationSupport， 需要重新注入资源文件， 否则访问不到swagger-ui.html;([ref](https://blog.csdn.net/zjcjava/article/details/78064264))
 
 ## 统一异常处理
 

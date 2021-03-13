@@ -3373,6 +3373,7 @@ ${prefix}-maven-plugin，这个方式是第三方插件（包括我们自己写�
 
 ```xml
 <build>  
+<!-- 可选 -->
     <resources>  
         <resource>  
             <!-- ${project.basedir}可以省略 -->
