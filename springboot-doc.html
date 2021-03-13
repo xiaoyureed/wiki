@@ -347,7 +347,6 @@ springboot reference doc 翻译
 <li><a href="#velocity">velocity</a></li>
 </ul>
 </li>
-<li><a href="#%E9%9B%86%E6%88%90swagger2">集成swagger2</a></li>
 <li><a href="#%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">统一异常处理</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8jdbctemplate">使用JdbcTemplate</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8spring-data-jpa">使用Spring-data-jpa</a></li>
@@ -2210,14 +2209,6 @@ public class MyConfiguration {
 <h3><a class="header" href="#velocity" id="velocity">velocity</a></h3>
 <ul>
 <li>依赖：spring-boot-starter-velocity</li>
-</ul>
-<h2><a class="header" href="#集成swagger2" id="集成swagger2">集成swagger2</a></h2>
-<ul>
-<li>引入依赖 springfox-swagger2 https://mvnrepository.com/artifact/io.springfox/springfox-swagger2</li>
-<li>各个操作接口上：@ApiOperation，@ApiImplicitParam</li>
-<li>swagger2配置类，和APP启动类同级，@Configuration，@EnableSwagger2</li>
-<li>访问：http://localhost:8080/swagger-ui.html</li>
-<li>配置mvc时候， 如果继承了WebMvcConfigurationSupport， 需要重新注入资源文件， 否则访问不到swagger-ui.html;(<a href="https://blog.csdn.net/zjcjava/article/details/78064264">ref</a>)</li>
 </ul>
 <h2><a class="header" href="#统一异常处理" id="统一异常处理">统一异常处理</a></h2>
 <ul>

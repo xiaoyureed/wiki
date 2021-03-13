@@ -322,8 +322,9 @@ categories: java web</li>
 </li>
 <li><a href="#oracle">oracle</a>
 <ul>
+<li><a href="#java%E9%A9%B1%E5%8A%A8">java驱动</a></li>
 <li><a href="#%E5%AD%97%E6%AE%B5%E7%B1%BB%E5%9E%8B">字段类型</a></li>
-<li><a href="#oracle--sql">Oracle  sql</a></li>
+<li><a href="#oracle-sql">Oracle sql</a></li>
 </ul>
 </li>
 </ul>
@@ -2051,6 +2052,20 @@ select * from #temptable;
 
 </code></pre>
 <h1><a class="header" href="#oracle" id="oracle">oracle</a></h1>
+<h2><a class="header" href="#java驱动" id="java驱动">java驱动</a></h2>
+<pre><code class="language-xml">&lt;dependency&gt;
+			&lt;groupId&gt;com.oracle.database.jdbc&lt;/groupId&gt;
+			&lt;artifactId&gt;ojdbc8&lt;/artifactId&gt;
+			&lt;scope&gt;runtime&lt;/scope&gt;
+		&lt;/dependency&gt;
+		&lt;!-- https://mvnrepository.com/artifact/com.oracle.database.nls/orai18n --&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;com.oracle.database.nls&lt;/groupId&gt;
+			&lt;artifactId&gt;orai18n&lt;/artifactId&gt;
+			&lt;version&gt;21.1.0.0&lt;/version&gt;
+		&lt;/dependency&gt;
+
+</code></pre>
 <h2><a class="header" href="#字段类型" id="字段类型">字段类型</a></h2>
 <pre><code>varchar  -- 存放定長的字符数据，最长2000個字符；
 
@@ -2058,7 +2073,8 @@ varchar2 -- 存放可变长字符数据，最大长度为4000字符。 推荐
 
 </code></pre>
 <p>https://blog.csdn.net/superit401/article/details/51565119 mysql 对比 , 数据类型转换</p>
-<h2><a class="header" href="#oracle--sql" id="oracle--sql">Oracle  sql</a></h2>
+<h2><a class="header" href="#oracle-sql" id="oracle-sql">Oracle sql</a></h2>
+<p>https://www.yiibai.com/oracle/oracle-create-table.html</p>
 <pre><code class="language-sql">-- 删除/彻底删除
 drop table tb_maintence [purge];
 

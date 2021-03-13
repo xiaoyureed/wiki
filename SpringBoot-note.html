@@ -163,6 +163,7 @@ https://github.com/dreamhead/moco mock 框架
 <p>https://github.com/yinjihuan/monkey-api-encrypt api 加解密 
 TODO</p>
 <p>https://github.com/cloudfavorites/favorites-web 单体应用实例 hibernate jpa</p>
+<p>jdbc:mysql://122.191.199.51:60000/js_phaseii_db?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai</p>
 </div>
 <!--more-->
 <!-- TOC -->
@@ -243,6 +244,7 @@ TODO</p>
 <li><a href="#%E6%95%B4%E5%90%88-spring-jdbc">整合 spring jdbc</a></li>
 <li><a href="#%E6%95%B4%E5%90%88-hibernate">整合 hibernate</a>
 <ul>
+<li><a href="#jpa%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93">jpa注解总结</a></li>
 <li><a href="#%E5%AE%A1%E8%AE%A1-createddate">审计 createdDate</a></li>
 <li><a href="#%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%94%9F-sql">执行原生 SQL</a></li>
 <li><a href="#%E5%8A%A8%E6%80%81-sql">动态 SQL</a></li>
@@ -307,7 +309,14 @@ TODO</p>
 </li>
 <li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B">自定义接收参数类型</a></li>
 <li><a href="#%E8%BF%94%E5%9B%9E%E5%9B%BE%E7%89%87">返回图片</a></li>
-<li><a href="#rest-api-%E6%96%87%E6%A1%A3">rest api 文档</a></li>
+<li><a href="#rest-api-%E6%96%87%E6%A1%A3">rest api 文档</a>
+<ul>
+<li><a href="#knife4j">knife4j</a></li>
+<li><a href="#springdoc-openapi">springdoc-openapi</a></li>
+<li><a href="#swagger3">swagger3</a></li>
+<li><a href="#%E9%9B%86%E6%88%90swagger2">集成swagger2</a></li>
+</ul>
+</li>
 <li><a href="#%E8%BF%87%E6%BB%A4%E5%99%A8-%E5%92%8C-%E6%8B%A6%E6%88%AA%E5%99%A8">过滤器 和 拦截器</a>
 <ul>
 <li><a href="#%E5%8C%BA%E5%88%AB">区别</a></li>
@@ -1073,6 +1082,23 @@ public class CustomizeDataSourceInitializer {
 <h2><a class="header" href="#整合-spring-jdbc" id="整合-spring-jdbc">整合 spring jdbc</a></h2>
 <p>https://www.cnblogs.com/liyihua/p/12333967.html</p>
 <h2><a class="header" href="#整合-hibernate" id="整合-hibernate">整合 hibernate</a></h2>
+<p>即 spring data jpa</p>
+<h3><a class="header" href="#jpa注解总结" id="jpa注解总结">jpa注解总结</a></h3>
+<pre><code class="language-java">// anno on class
+@DynamicInsert
+@DynamicUpdate
+@EntityListeners(AuditingEntityListener.class)
+
+
+
+
+//anno on field
+// uuid as primary key
+    @Id
+    @GenericGenerator(name = &quot;generator&quot;, strategy = &quot;uuid&quot;)
+    @GeneratedValue(generator = &quot;generator&quot;, strategy = GenerationType.TABLE)
+    @Column(name = &quot;id&quot;, length = 32)
+</code></pre>
 <h3><a class="header" href="#审计-createddate" id="审计-createddate">审计 createdDate</a></h3>
 <p>https://blog.csdn.net/a972669015/article/details/104778172
 TODO</p>
@@ -1090,6 +1116,7 @@ TODO</p>
 <p>动态查询则需要用 Criteria API</p>
 <h3><a class="header" href="#spring-data-rest-配合-spring-data-jpa" id="spring-data-rest-配合-spring-data-jpa">spring-data-rest 配合 spring-data-jpa</a></h3>
 <p>spring data rest 可以直接将 repository 发布为 rest service, 和 spring data jpa (自动生成 crud api) 配合</p>
+<p>目前支持Spring Data JPA、Spring Data MongoDB、Spring Data Neo4j、Spring Data GemFire、Spring Data Cassandra的 repository 自动转换成REST服务</p>
 <pre><code class="language-xml">&lt;dependency&gt;
             &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
             &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
@@ -2168,8 +2195,208 @@ public class ImageController {
 }
 </code></pre>
 <h2><a class="header" href="#rest-api-文档" id="rest-api-文档">rest api 文档</a></h2>
-<p>knife4j
-swagger2</p>
+<h3><a class="header" href="#knife4j" id="knife4j">knife4j</a></h3>
+<h3><a class="header" href="#springdoc-openapi" id="springdoc-openapi">springdoc-openapi</a></h3>
+<p>https://springdoc.org/</p>
+<p>https://www.baeldung.com/spring-rest-openapi-documentation</p>
+<h3><a class="header" href="#swagger3" id="swagger3">swagger3</a></h3>
+<p>访问 /swagger-ui.html or /swagger-ui/index.html</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+     &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+      &lt;artifactId&gt;springfox-boot-starter&lt;/artifactId&gt;
+      &lt;version&gt;3.0.0&lt;/version&gt;
+&lt;/dependency&gt;
+
+</code></pre>
+<pre><code class="language-java">@EnableOpenApi
+@SpringBootApplication
+@MapperScan(basePackages = {&quot;cn.ruiyeclub.dao&quot;})
+public class Swagger3Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Swagger3Application.class, args);
+    }
+}
+
+
+@Configuration
+public class Swagger3Config {
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.OAS_30)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title(&quot;Swagger3接口文档&quot;)
+                .version(&quot;1.0&quot;)
+                .build();
+    }
+}
+
+</code></pre>
+<h3><a class="header" href="#集成swagger2" id="集成swagger2">集成swagger2</a></h3>
+<p>http://springfox.github.io/springfox/docs/snapshot/#springfox-spring-mvc-and-spring-boot</p>
+<ul>
+<li>swagger2配置类，和APP启动类同级，@Configuration，@EnableSwagger2</li>
+<li>访问：http://localhost:8080/swagger-ui.html</li>
+<li>配置mvc时候， 如果继承了WebMvcConfigurationSupport， 需要重新注入资源文件， 否则访问不到swagger-ui.html;(<a href="https://blog.csdn.net/zjcjava/article/details/78064264">ref</a>)</li>
+<li>分环境开启 
+<ul>
+<li>在配置类上标注 @Profile({&quot;dev&quot;,&quot;test&quot;})</li>
+<li>或者 在new Docket里添加.Enable(true/false)方法</li>
+</ul>
+</li>
+<li>springfox.documentation.swagger-ui.enabled=false 生产 env 下 close</li>
+</ul>
+<pre><code class="language-xml">&lt;!-- 会引入 谷歌的 guava --&gt;
+&lt;!-- 版本可省略 --&gt;
+&lt;dependency&gt;
+            &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+            &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;
+            &lt;version&gt;2.6.1&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;io.springfox&lt;/groupId&gt;
+            &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;
+            &lt;version&gt;2.6.1&lt;/version&gt;
+        &lt;/dependency&gt;
+
+</code></pre>
+<pre><code class="language-java">
+@Configuration
+@EnableSwagger2
+public class Swagger2Config {
+    // 添加 swagger 静态资源处理
+    // 一般我们会设置 mvc 中, spring.resources.add-mappings=false, 对静态资源默认不处理, 这是需要为 swagger 添加例外 (还会设置 spring.mvc.throw-exception-if-no-handler-found=true 没找到 Handler时直接抛出异常)
+//    @Bean
+//    public WebMvcConfigurer swaggerPassConfigure() {
+//        return new WebMvcConfigurer() {
+//            @Override
+//            public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//                registry.addResourceHandler(&quot;swagger-ui.html&quot;)
+//                        .addResourceLocations(&quot;classpath:/META-INF/resources/&quot;, &quot;/static&quot;, &quot;/public&quot;);
+//
+//                registry.addResourceHandler(&quot;/webjars/**&quot;)
+//                        .addResourceLocations(&quot;classpath:/META-INF/resources/webjars/&quot;);
+//            }
+//        };
+//    }
+
+    @Bean
+    public Docket api() {
+
+        ParameterBuilder ticketPar = new ParameterBuilder();
+        List&lt;Parameter&gt; pars = new ArrayList&lt;&gt;();
+        ticketPar.name(&quot;Access-Token&quot;).description(&quot;Rest接口权限认证token,无需鉴权可为空&quot;)
+                .modelRef(new ModelRef(&quot;string&quot;)).parameterType(&quot;header&quot;)
+                //header中的ticket参数非必填，传空也可以
+                .required(false).build();
+        //根据每个方法名也知道当前方法在设置什么参数
+        pars.add(ticketPar.build());
+
+
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                // 根据包名扫描controller
+                // 自行修改为自己的包路径
+                .apis(RequestHandlerSelectors.basePackage(&quot;com.tgpms&quot;)) // 多包配置: https://www.jianshu.com/p/78309feb5d5a
+                // 扫描所有controller
+                // .apis(RequestHandlerSelectors.any()) 
+                // 指定扫描部分注解标注的 controller
+                // .apis(RequestHandlerSelectors.withMethodAnnotation(Api.class/ApiOperation.class))
+
+                .paths(PathSelectors.any()) // .paths() 这个是包路径下的路径,PathSelectors.any()是包下所有路径                
+                .build()
+                // 全局设置请求参数
+                .globalOperationParameters(pars);
+        
+
+        //生成全局通用参数
+    // private List&lt;RequestParameter&gt; getGlobalRequestParameters() {
+    //     List&lt;RequestParameter&gt; parameters = new ArrayList&lt;&gt;();
+    //     parameters.add(new RequestParameterBuilder()
+    //             .name(&quot;appid&quot;)
+    //             .description(&quot;平台id&quot;)
+    //             .required(true)
+    //             .in(ParameterType.QUERY)
+    //             .query(q -&gt; q.model(m -&gt; m.scalarModel(ScalarType.STRING)))
+    //             .required(false)
+    //             .build());
+    //     parameters.add(new RequestParameterBuilder()
+    //             .name(&quot;udid&quot;)
+    //             .description(&quot;设备的唯一id&quot;)
+    //             .required(true)
+    //             .in(ParameterType.QUERY)
+    //             .query(q -&gt; q.model(m -&gt; m.scalarModel(ScalarType.STRING)))
+    //             .required(false)
+    //             .build());
+    //     parameters.add(new RequestParameterBuilder()
+    //             .name(&quot;version&quot;)
+    //             .description(&quot;客户端的版本号&quot;)
+    //             .required(true)
+    //             .in(ParameterType.QUERY)
+    //             .query(q -&gt; q.model(m -&gt; m.scalarModel(ScalarType.STRING)))
+    //             .required(false)
+    //             .build());
+    //      return parameters;
+    // }
+
+    // //生成通用响应信息
+    // private List&lt;Response&gt; getGlobalResonseMessage() {
+    //     List&lt;Response&gt; responseList = new ArrayList&lt;&gt;();
+    //     responseList.add(new ResponseBuilder().code(&quot;404&quot;).description(&quot;找不到资源&quot;).build());
+    //      return responseList;
+    // }
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title(&quot;online exam by springboot&quot;)
+                .description(&quot;在线考试系统 by 梁山广 at 2020&quot;)
+                .termsOfServiceUrl(&quot;https://github.com/19920625lsg/spring-boot-online-exam&quot;)
+                .version(&quot;1.0&quot;)
+                .contact(new Contact(&quot;liangshanguang&quot;, &quot;https://github.com/19920625lsg/spring-boot-online-exam&quot;, &quot;liangshanguang2@gmail.com&quot;))
+                .build();
+    }
+}
+
+
+
+
+
+@Api(&quot;测试用例1&quot;) on controller class, 
+
+    @ApiOperation(value = &quot;apiOperationSwaggerTest&quot;, notes = &quot;apiOperationSwagger测试&quot;) on controller class method
+
+@ApiParam(name = &quot;id&quot;, value = &quot;id入参&quot;, required = true) on method params
+
+@ApiModel(description = &quot;测试实体类&quot;, value = &quot;测试实体类&quot;) on data model class
+
+    @ApiModelProperty(name = &quot;userName&quot;, value = &quot;用户名&quot;, required = false, exmaple = &quot;小明&quot;) on data module class field
+
+@ApiImplicitParams({@ApiImplicitParam(name = &quot;id&quot;, value = &quot;id入参&quot;, required = true, dataType = &quot;Integer&quot;, paramType = &quot;query&quot;),
+                        @ApiImplicitParam(name = &quot;brand&quot;, value = &quot;brand&quot;, required = true, dataType = &quot;BRAND&quot;, paramType = &quot;body&quot;)
+    }) on controller class method
+@ApiImplicitParams：用在请求的方法上，表示一组参数说明
+    @ApiImplicitParam：用在@ApiImplicitParams注解中，指定一个请求参数的各个方面
+        name：参数名
+        value：参数的汉字说明、解释
+        required：参数是否必须传
+        paramType：参数放在哪个地方
+            · header --&gt; 请求参数的获取：@RequestHeader
+            · query --&gt; 请求参数的获取：@RequestParam
+            · path（用于restful接口）--&gt; 请求参数的获取：@PathVariable
+            · body（不常用）
+            · form（不常用）    
+        dataType：参数类型，默认String，其它值dataType=&quot;Integer&quot;       
+        defaultValue：参数的默认值
+</code></pre>
 <h2><a class="header" href="#过滤器-和-拦截器" id="过滤器-和-拦截器">过滤器 和 拦截器</a></h2>
 <h3><a class="header" href="#区别" id="区别">区别</a></h3>
 <p>servlet filter和spring mvc Interceptor区别：</p>
@@ -2549,17 +2776,7 @@ protected void addResourceHandlers(ResourceHandlerRegistry registry) {
     super.addResourceHandlers(registry);
 }
 </code></pre>
-<p>添加 swagger 静态资源处理</p>
-<p>一般我们会设置 mvc 中, spring.resources.add-mappings=false, 对静态资源默认不处理, 这是需要为 swagger 添加例外 (还会设置 spring.mvc.throw-exception-if-no-handler-found=true 没找到 Handler时直接抛出异常)</p>
-<pre><code class="language-java">@Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(&quot;/swagger-ui.html&quot;)
-                .addResourceLocations(&quot;classpath:/META-INF/resources/&quot;, &quot;/static&quot;, &quot;/public&quot;);
- 
-        registry.addResourceHandler(&quot;/webjars/**&quot;)
-                .addResourceLocations(&quot;classpath:/META-INF/resources/webjars/&quot;);
-    }
-</code></pre>
+<p>还有个例子, --&gt; swagger 静态资源处理 (放行 相关的静态页面)</p>
 <h3><a class="header" href="#添加-view-controller" id="添加-view-controller">添加 view controller</a></h3>
 <pre><code class="language-java">@Configuration
 class MvcConfig implements WebMvcConfigurer {

@@ -3233,6 +3233,7 @@ ${line.separator}
 <p>默认情况下，Maven属性只有在POM中才会被解析。资源过滤就是指让Maven属性在资源文件(src/main/resources、src/test/resources)中也能被解析。</p>
 <img src="Screenshot_66.png" width=50%/>
 <pre><code class="language-xml">&lt;build&gt;  
+&lt;!-- 可选 --&gt;
     &lt;resources&gt;  
         &lt;resource&gt;  
             &lt;!-- ${project.basedir}可以省略 --&gt;
