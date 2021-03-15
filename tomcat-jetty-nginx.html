@@ -178,6 +178,8 @@ references: [1](https://www.zhihu.com/question/32212996), [2](https://blog.csdn.
 <li><a href="#nginxconf-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">nginx.conf 配置文件</a>
 <ul>
 <li><a href="#%E6%9C%80%E7%AE%80%E9%85%8D%E7%BD%AE">最简配置</a></li>
+<li><a href="#%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE">反向代理配置</a></li>
+<li><a href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E9%85%8D%E7%BD%AE">负载均衡配置</a></li>
 <li><a href="#%E7%BB%84%E6%88%90%E5%85%83%E7%B4%A0">组成元素</a></li>
 </ul>
 </li>
@@ -352,6 +354,29 @@ nginx -v            # 显示 nginx 的版本。
 }
 
 </code></pre>
+<h3><a class="header" href="#反向代理配置" id="反向代理配置">反向代理配置</a></h3>
+<p>nginx的反向代理是依赖于ngx_http_proxy_module这个module来实现的</p>
+<pre><code class="language-conf"># 场景: 我要把这个https协议的图片请求反向代理到http协议的真实图片上。https协议 的这张图片是不存在，而它有一个地址实际指向的内容是http协议中的图片
+
+# https
+server {
+  server_name www.example.com;
+  listen       443;
+  location /newchart/hollow/small/nsh000001.gif {
+    proxy_pass http://image.sinajs.cn/newchart/hollow/small/nsh000001.gif;
+  }
+  location /newchart/hollow/small/nsz399001.gif {
+    proxy_pass http://image.sinajs.cn/newchart/hollow/small/nsz399001.gif;
+  }
+
+
+# 再看一个例子
+
+
+</code></pre>
+<h3><a class="header" href="#负载均衡配置" id="负载均衡配置">负载均衡配置</a></h3>
+<pre><code class="language-conf">
+</code></pre>
 <h3><a class="header" href="#组成元素" id="组成元素">组成元素</a></h3>
 <p>分号结尾</p>
 <p>分为几个部分:</p>
@@ -361,6 +386,8 @@ nginx -v            # 显示 nginx 的版本。
 <li>http module: 日志 , 代理 ,缓存...超时..., 
 <ul>
 <li>http global module, 如 upstream, 超时, error page</li>
+<li>include /etc/nginx/conf.d/<em>.conf 包含其他配置文件 (即 http 块儿下的配置可以放置到其他配置文件)
+所以 nginx.conf 基本不用动, 添加新的路由配置, 只需要到 /etc/nginx/conf.d/</em>.conf 新建配置文件重启 nginx即可</li>
 <li>server module 1 配置虚拟主机
 <ul>
 <li>location 1 配置 route</li>
@@ -370,6 +397,7 @@ nginx -v            # 显示 nginx 的版本。
 <li>server module 2;</li>
 </ul>
 </li>
+<li>mail</li>
 </ul>
 <pre><code class="language-conf">
 # 定义Nginx运行的用户和用户组
@@ -409,7 +437,7 @@ events {
 
 http {
     #文件扩展名与文件类型映射表 (支持的 mine 类型)
-    include       mime.types;
+    include       /etc/nginx/mime.types;
     #默认文件类型
     default_type  application/octet-stream;
     #默认编码
@@ -472,25 +500,25 @@ http {
     }
 
     # 虚拟主机的配置
-    # 可以放到其他配置文件, 通过 include 引入, 如 (常用)
-    #include /etc/nginx/conf.d/*.conf , 每个 .conf 是一个 server
+    # 可以放到其他配置文件, 通过 http.include 引入, 如 (常用) -&gt; include /etc/nginx/conf.d/*.conf , 每个 .conf 是一个 server
     server {
         # 监听端口
         listen       8080;
 
         # #域名, 当前 server 为这个域名服务
-        # nginx 比较 请求头里的 Host 请头, 和这里比较
+        # nginx会 比较 请求头里的 Host 请头, 和这里比较
         #可以有多个，用空格隔开
         server_name  localhost aa.cn;
 
-        # index index.html index.htm index.php;  # 设置访问主页
+        #index index.html index.htm index.php;  # 设置访问主页 (也可以在 location.index 设置)
+        #root /home/wwwroot/aa.cn/web$subdomain;# 访问域名跟目录  
 
      # 绑定目录为二级域名 bbb.aa.com  根目录 /bbb  文件夹
         set $subdomain ''; # 定义变量
         if ( $host ~* &quot;(?:(\w+\.){0,})(\b(?!www\b)\w+)\.\b(?!(com|org|gov|net|cn)\b)\w+\.[a-zA-Z]+&quot; ) { 
             set $subdomain &quot;/$2&quot;; 
         }
-        root /home/wwwroot/aa.cn/web$subdomain;# 访问域名跟目录  
+        
 
         include rewrite/dedecms.conf; #rewrite end   #载入其他配置文件
 
@@ -500,8 +528,8 @@ http {
 
 
 
-        location / { # 为 / 配置 路径映射
-            root   html; # 项目根目录为 html
+        location / { # 为 / (根路径) 配置 路径映射, 若为 /articles, 则是为 /articles 配置路径映射
+            root   html; # 项目根目录为 html (即 /usr/share/nginx/html)
             index  index.html index.htm; # 欢迎页
             proxy_pass http://baidu.com ;# 代理给百度
             proxy_set_header Host $host; # nginx 转发给 gateway, 会丢失 Host , 这里给补上
@@ -535,6 +563,9 @@ http {
             root   html;
         }
 
+
+
+
         # proxy the PHP scripts to Apache listening on 127.0.0.1:80
         #
         #location ~ \.php$ {
@@ -558,6 +589,35 @@ http {
         #    deny  all;
         #}
     }
+
+
+
+
+    #动态路由配置
+    #当用户访问 http://example.org 时就会去读取 /data/www/index.html, 若没有, 则 index.php, 就会就会转发到 &quot;location ~ \.php$ {...}&quot; 里面的逻辑
+    server {
+
+        listen 80;
+        server_name xxx.org www.xxx.org;
+        root   /data/www;
+        
+        location / {
+            index index.html index.php;
+        }
+
+        location ~* \.(gif|jpg|png)$ {
+            expires 30d;
+        }
+
+        location ~ \.php$ {
+            fastcgi_pass  localhost:9000;
+            fastcgi_param SCRIPT_FILENAME
+                $document_root$fastcgi_script_name;
+            include       fastcgi_params;
+        }
+
+
+
 
     #对 &quot;/&quot; 启用反向代理
     location / {
@@ -600,10 +660,15 @@ http {
 
     }
     #所有静态文件由nginx直接读取不经过tomcat或resin
-    location ~ .*.(htm|html|gif|jpg|jpeg|png|bmp|swf|ioc|rar|zip|txt|flv|mid|doc|ppt|pdf|xls|mp3|wma)$
-    {　　 expires 15d;　　 }
-    location ~ .*.(js|css)?$
-    { 　　expires 1h;　　 }
+    location ~ .*.(htm|html|gif|jpg|jpeg|png|bmp|swf|ioc|rar|zip|txt|flv|mid|doc|ppt|pdf|xls|mp3|wma)$ {　　 
+        expires 15d;　　 
+    }
+    location ~ .*.(js|css)?$ { 　　
+        expires 1h;　　
+    }
+
+
+
 
 
     # another virtual host using mix of IP-, name-, and port-based configuration
@@ -643,6 +708,9 @@ http {
 
 }
 
+mail {
+    
+}
 </code></pre>
 <h2><a class="header" href="#搭配-docker-使用" id="搭配-docker-使用">搭配 docker 使用</a></h2>
 <p>http://www.ruanyifeng.com/blog/2018/02/nginx-docker.html</p>
