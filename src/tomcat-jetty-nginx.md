@@ -29,6 +29,7 @@ references: [1](https://www.zhihu.com/question/32212996), [2](https://blog.csdn.
     - [最简配置](#最简配置)
     - [反向代理配置](#反向代理配置)
     - [负载均衡配置](#负载均衡配置)
+    - [websocket 配置](#websocket-配置)
     - [组成元素](#组成元素)
   - [搭配 docker 使用](#搭配-docker-使用)
   - [负载均衡配置demo](#负载均衡配置demo)
@@ -186,14 +187,53 @@ server {
   }
 
 
-# 再看一个例子
 
+
+
+# 再看一个例子
+upstream rails365 {
+    #指定了一个服务器，这个服务器和nginx 是同一台机器的，用的是unix socket来连接，连接的是一个unicorn进程
+    server unix:///home/yinsigan/rails365/shared/tmp/sockets/unicorn.sock fail_timeout=0;
+}
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server ipv6only=on;
+        server_name www.rails365.net;
+        root         /home/yinsigan/rails365/current/public;
+        #这里表示若访问 www.rails365.net, 先找 root目录 下的 index.html
+        #若访问的是 www.rails365.net/about.html或者其他的非 index 页面 , 找 root 下的 about.html或者其他对应的非 index 页面, 若没找到, 会执行 @rails365 即 location @rails365 {...}
+        try_files $uri/index.html $uri @rails365; 
+        location @rails365 {
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_redirect off;
+            #反向代理(转发)到 upstream rails365 指定的内容
+            proxy_pass http://rails365;
+        } }
 
 ```
 
 ### 负载均衡配置
 
 ```conf
+
+```
+
+### websocket 配置
+
+```conf
+; 可以在 浏览器 console 中测试 new WebSocket('ws://www.example.com/wx');
+
+upstream ws {
+  server unix:///home/eason/tt_deploy/shared/tmp/sockets/puma.sock fail_timeout=0;
+}
+server {
+  location /ws/ {
+    proxy_pass http://ws;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+} }
 
 ```
 
