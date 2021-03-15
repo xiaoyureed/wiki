@@ -66,6 +66,7 @@ jdbc:mysql://122.191.199.51:60000/js_phaseii_db?useUnicode=true&characterEncodin
 - [日志](#日志)
   - [Log4j2-Marker 写入到指定日志文件](#log4j2-marker-写入到指定日志文件)
 - [数据层](#数据层)
+  - [graphql集成](#graphql集成)
   - [启动执行 SQL](#启动执行-sql)
     - [SQL 分隔符的坑](#sql-分隔符的坑)
     - [spring datasource 自带](#spring-datasource-自带)
@@ -856,6 +857,10 @@ https://www.jianshu.com/p/1ff824bc997a?utm_campaign
 
 # 数据层
 
+## graphql集成
+
+https://www.awaimai.com/2876.html
+
 ## 启动执行 SQL
 
 ### SQL 分隔符的坑
@@ -1076,6 +1081,11 @@ https://www.cnblogs.com/kongxianghai/p/7575988.html
 动态查询则需要用 Criteria API
 
 ### spring-data-rest 配合 spring-data-jpa
+
+http://docs.jcohy.com/docs/spring-data-rest/3.2.8.RELEASE/html5/zh-cn/
+https://docs.spring.io/spring-data/rest/docs/3.4.5/reference/html/#Project
+
+https://docs.spring.io/spring-data/jpa/docs/2.4.5/reference/html/#repositories
 
 spring data rest 可以直接将 repository 发布为 rest service, 和 spring data jpa (自动生成 crud api) 配合
 
@@ -2326,7 +2336,7 @@ https://www.baeldung.com/spring-rest-openapi-documentation
 
 ### swagger3
 
-访问 /swagger-ui.html or /swagger-ui/index.html
+访问 /swagger-ui.html or /swagger-ui/index.html (springdoc.swagger-ui.path=/swagger-ui.html)
 
 ```xml
 <dependency>
@@ -2382,7 +2392,6 @@ http://springfox.github.io/springfox/docs/snapshot/#springfox-spring-mvc-and-spr
     - 在配置类上标注 @Profile({"dev","test"})
     - 或者 在new Docket里添加.Enable(true/false)方法
 * springfox.documentation.swagger-ui.enabled=false 生产 env 下 close
-
 
 ```xml
 <!-- 会引入 谷歌的 guava -->
@@ -2549,8 +2558,6 @@ servlet filter和spring mvc Interceptor区别：
 - Filter 对几乎 所有的请求 起作用，而 Interceptor 只对 Controller 请求起作用。
 
 - 拦截器可以获取IOC容器中的各个bean，而过滤器就不行，这点很重要，在拦截器里注入一个service，可以调用业务逻辑。
-
-
 
 
 
@@ -3338,7 +3345,7 @@ https://github.com/tywo45
 
 - 代替@AutoWired注解: @RequiredArgsConstructor(onConstructor =@__(@Autowired))标注在类上
 
-
+- 替代@tostring注解 可以使用 lang3 的 `ToStringBuilder.reflectionToString(this)`
 
 
 ## devtools

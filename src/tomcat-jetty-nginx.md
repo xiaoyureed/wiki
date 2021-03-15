@@ -20,41 +20,43 @@ references: [1](https://www.zhihu.com/question/32212996), [2](https://blog.csdn.
 <!-- TOC -->
 
 - [比较](#比较)
-    - [Tomcat和jetty](#tomcat和jetty)
-    - [Apache http server和Nginx](#apache-http-server和nginx)
+  - [Tomcat和jetty](#tomcat和jetty)
+  - [Apache http server和Nginx](#apache-http-server和nginx)
 - [nginx](#nginx)
-    - [使用场景](#使用场景)
-    - [常用命令](#常用命令)
-    - [nginx.conf 配置文件](#nginxconf-配置文件)
-        - [最简配置](#最简配置)
-        - [组成元素](#组成元素)
-    - [搭配 docker 使用](#搭配-docker-使用)
-    - [负载均衡配置demo](#负载均衡配置demo)
-    - [nginx和lua脚本](#nginx和lua脚本)
-    - [tengine](#tengine)
-    - [nginx 模块开发](#nginx-模块开发)
-    - [nginx面试题](#nginx面试题)
-        - [nginx是如何实现高并发的](#nginx是如何实现高并发的)
-        - [nginx 和 apache 区别](#nginx-和-apache-区别)
-        - [fastcgi 与 cgi 的区别](#fastcgi-与-cgi-的区别)
+  - [使用场景](#使用场景)
+  - [常用命令](#常用命令)
+  - [nginx.conf 配置文件](#nginxconf-配置文件)
+    - [最简配置](#最简配置)
+    - [反向代理配置](#反向代理配置)
+    - [负载均衡配置](#负载均衡配置)
+    - [组成元素](#组成元素)
+  - [搭配 docker 使用](#搭配-docker-使用)
+  - [负载均衡配置demo](#负载均衡配置demo)
+  - [nginx和lua脚本](#nginx和lua脚本)
+  - [tengine](#tengine)
+  - [nginx 模块开发](#nginx-模块开发)
+  - [nginx面试题](#nginx面试题)
+    - [nginx是如何实现高并发的](#nginx是如何实现高并发的)
+    - [nginx 和 apache 区别](#nginx-和-apache-区别)
+    - [fastcgi 与 cgi 的区别](#fastcgi-与-cgi-的区别)
 - [jetty](#jetty)
-    - [部署 app 到 jetty 内部](#部署-app-到-jetty-内部)
-    - [jetty支持servlet3.0注解](#jetty支持servlet30注解)
-    - [jetty的整个结构](#jetty的整个结构)
-    - [Jetty的工作过程](#jetty的工作过程)
-        - [启动](#启动)
-        - [接受请求](#接受请求)
-        - [处理请求](#处理请求)
+  - [部署 app 到 jetty 内部](#部署-app-到-jetty-内部)
+  - [jetty支持servlet3.0注解](#jetty支持servlet30注解)
+  - [jetty的整个结构](#jetty的整个结构)
+  - [Jetty的工作过程](#jetty的工作过程)
+    - [启动](#启动)
+    - [接受请求](#接受请求)
+    - [处理请求](#处理请求)
 - [Tomcat](#tomcat)
-    - [Tomcat 总体结构](#tomcat-总体结构)
-        - [Connector](#connector)
-        - [Container](#container)
-    - [用到了哪些设计模式](#用到了哪些设计模式)
-        - [Facade](#facade)
-        - [Observer](#observer)
-        - [Command](#command)
-        - [Chain of responsibility](#chain-of-responsibility)
-    - [Tomcat 优化](#tomcat-优化)
+  - [Tomcat 总体结构](#tomcat-总体结构)
+    - [Connector](#connector)
+    - [Container](#container)
+  - [用到了哪些设计模式](#用到了哪些设计模式)
+    - [Facade](#facade)
+    - [Observer](#observer)
+    - [Command](#command)
+    - [Chain of responsibility](#chain-of-responsibility)
+  - [Tomcat 优化](#tomcat-优化)
 
 <!-- /TOC -->
 
@@ -165,6 +167,36 @@ server {
 
 ```
 
+### 反向代理配置
+
+nginx的反向代理是依赖于ngx_http_proxy_module这个module来实现的
+
+```conf
+# 场景: 我要把这个https协议的图片请求反向代理到http协议的真实图片上。https协议 的这张图片是不存在，而它有一个地址实际指向的内容是http协议中的图片
+
+# https
+server {
+  server_name www.example.com;
+  listen       443;
+  location /newchart/hollow/small/nsh000001.gif {
+    proxy_pass http://image.sinajs.cn/newchart/hollow/small/nsh000001.gif;
+  }
+  location /newchart/hollow/small/nsz399001.gif {
+    proxy_pass http://image.sinajs.cn/newchart/hollow/small/nsz399001.gif;
+  }
+
+
+# 再看一个例子
+
+
+```
+
+### 负载均衡配置
+
+```conf
+
+```
+
 ### 组成元素
 
 分号结尾
@@ -175,10 +207,13 @@ server {
 - events: config the network connections, such as worker max connection num, even driven model...
 - http module: 日志 , 代理 ,缓存...超时..., 
     - http global module, 如 upstream, 超时, error page
+    - include /etc/nginx/conf.d/*.conf 包含其他配置文件 (即 http 块儿下的配置可以放置到其他配置文件)
+        所以 nginx.conf 基本不用动, 添加新的路由配置, 只需要到 /etc/nginx/conf.d/*.conf 新建配置文件重启 nginx即可
     - server module 1 配置虚拟主机
         - location 1 配置 route
         - location 2
     - server module 2;
+- mail
 
 ```conf
 
@@ -219,7 +254,7 @@ events {
 
 http {
     #文件扩展名与文件类型映射表 (支持的 mine 类型)
-    include       mime.types;
+    include       /etc/nginx/mime.types;
     #默认文件类型
     default_type  application/octet-stream;
     #默认编码
@@ -282,25 +317,25 @@ http {
     }
 
     # 虚拟主机的配置
-    # 可以放到其他配置文件, 通过 include 引入, 如 (常用)
-    #include /etc/nginx/conf.d/*.conf , 每个 .conf 是一个 server
+    # 可以放到其他配置文件, 通过 http.include 引入, 如 (常用) -> include /etc/nginx/conf.d/*.conf , 每个 .conf 是一个 server
     server {
         # 监听端口
         listen       8080;
 
         # #域名, 当前 server 为这个域名服务
-        # nginx 比较 请求头里的 Host 请头, 和这里比较
+        # nginx会 比较 请求头里的 Host 请头, 和这里比较
         #可以有多个，用空格隔开
         server_name  localhost aa.cn;
 
-        # index index.html index.htm index.php;  # 设置访问主页
+        #index index.html index.htm index.php;  # 设置访问主页 (也可以在 location.index 设置)
+        #root /home/wwwroot/aa.cn/web$subdomain;# 访问域名跟目录  
 
      # 绑定目录为二级域名 bbb.aa.com  根目录 /bbb  文件夹
         set $subdomain ''; # 定义变量
         if ( $host ~* "(?:(\w+\.){0,})(\b(?!www\b)\w+)\.\b(?!(com|org|gov|net|cn)\b)\w+\.[a-zA-Z]+" ) { 
             set $subdomain "/$2"; 
         }
-        root /home/wwwroot/aa.cn/web$subdomain;# 访问域名跟目录  
+        
 
         include rewrite/dedecms.conf; #rewrite end   #载入其他配置文件
 
@@ -310,8 +345,8 @@ http {
 
 
 
-        location / { # 为 / 配置 路径映射
-            root   html; # 项目根目录为 html
+        location / { # 为 / (根路径) 配置 路径映射, 若为 /articles, 则是为 /articles 配置路径映射
+            root   html; # 项目根目录为 html (即 /usr/share/nginx/html)
             index  index.html index.htm; # 欢迎页
             proxy_pass http://baidu.com ;# 代理给百度
             proxy_set_header Host $host; # nginx 转发给 gateway, 会丢失 Host , 这里给补上
@@ -345,6 +380,9 @@ http {
             root   html;
         }
 
+
+
+
         # proxy the PHP scripts to Apache listening on 127.0.0.1:80
         #
         #location ~ \.php$ {
@@ -368,6 +406,35 @@ http {
         #    deny  all;
         #}
     }
+
+
+
+
+    #动态路由配置
+    #当用户访问 http://example.org 时就会去读取 /data/www/index.html, 若没有, 则 index.php, 就会就会转发到 "location ~ \.php$ {...}" 里面的逻辑
+    server {
+
+        listen 80;
+        server_name xxx.org www.xxx.org;
+        root   /data/www;
+        
+        location / {
+            index index.html index.php;
+        }
+
+        location ~* \.(gif|jpg|png)$ {
+            expires 30d;
+        }
+
+        location ~ \.php$ {
+            fastcgi_pass  localhost:9000;
+            fastcgi_param SCRIPT_FILENAME
+                $document_root$fastcgi_script_name;
+            include       fastcgi_params;
+        }
+
+
+
 
     #对 "/" 启用反向代理
     location / {
@@ -410,10 +477,15 @@ http {
 
     }
     #所有静态文件由nginx直接读取不经过tomcat或resin
-    location ~ .*.(htm|html|gif|jpg|jpeg|png|bmp|swf|ioc|rar|zip|txt|flv|mid|doc|ppt|pdf|xls|mp3|wma)$
-    {　　 expires 15d;　　 }
-    location ~ .*.(js|css)?$
-    { 　　expires 1h;　　 }
+    location ~ .*.(htm|html|gif|jpg|jpeg|png|bmp|swf|ioc|rar|zip|txt|flv|mid|doc|ppt|pdf|xls|mp3|wma)$ {　　 
+        expires 15d;　　 
+    }
+    location ~ .*.(js|css)?$ { 　　
+        expires 1h;　　
+    }
+
+
+
 
 
     # another virtual host using mix of IP-, name-, and port-based configuration
@@ -453,6 +525,9 @@ http {
 
 }
 
+mail {
+    
+}
 ```
 
 ## 搭配 docker 使用
