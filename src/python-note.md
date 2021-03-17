@@ -113,6 +113,8 @@ https://bramblexu.com/posts/b1c0cc4f/#toc-heading-5 vscode 配置
     - [commands](#commands)
     - [paramiko](#paramiko)
   - [部署 springboot](#部署-springboot)
+- [开源库](#开源库)
+  - [图像](#图像)
 
 <!-- /TOC -->
 
@@ -2483,7 +2485,11 @@ shutil.move('原文件夹/原文件名','目标文件夹/目标文件名')
 
 # venv 虚拟环境
 
+使用 pycharm: https://blog.csdn.net/pfm685757/article/details/108590680
 
+inherit global site-packages:勾选上的话代表创建的新项目需要copy一份全局包到虚拟环境。
+
+Make available to all projects:勾选上，表示，当在虚拟环境下安装包的时候，copy一份到全局。
 
 
 ```sh
@@ -3048,5 +3054,14 @@ else:
     print "☻☻☻请别害怕,这只是个简单的脚本,对应用和系统都是无损的☻☻☻\n%s,温馨提示用法:%s {start|stop|restart|status}" % (times,argv[0])
 ```
 
+
+
+# 开源库
+
+## 图像
+
+- Matplotlib 可视化库，可以用来绘制高质量的 2D 折线图、散点图、柱状图，或者用来显示图像
+- pil 图像处理库, 适用于 Python2, py3 则安装 pillow
+- opencv-python
 
 

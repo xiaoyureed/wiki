@@ -29,7 +29,10 @@ references: [1](https://www.zhihu.com/question/32212996), [2](https://blog.csdn.
     - [最简配置](#最简配置)
     - [反向代理配置](#反向代理配置)
     - [负载均衡配置](#负载均衡配置)
+    - [gzip 压缩](#gzip-压缩)
     - [websocket 配置](#websocket-配置)
+    - [搭建谷歌镜像站](#搭建谷歌镜像站)
+    - [上 https](#上-https)
     - [组成元素](#组成元素)
   - [搭配 docker 使用](#搭配-docker-使用)
   - [负载均衡配置demo](#负载均衡配置demo)
@@ -192,8 +195,10 @@ server {
 
 # 再看一个例子
 upstream rails365 {
-    #指定了一个服务器，这个服务器和nginx 是同一台机器的，用的是unix socket来连接，连接的是一个unicorn进程
+    #指定了一个服务器，这个服务器和nginx 是同一台机器的，用的是unix socket来连接，连接的是一个unicorn进程 (进程内跑的是 ruby on rails 代码)
     server unix:///home/yinsigan/rails365/shared/tmp/sockets/unicorn.sock fail_timeout=0;
+    ; 若希望负载均衡, 部署多一个unicorn进程，监听在另外的unix socket上，就等于多了一台服务器
+    #server unix:///home/yinsigan/rails365_cap/shared/tmp/sockets/unicorn.sock;
 }
 server {
         listen 80 default_server;
@@ -215,7 +220,84 @@ server {
 
 ### 负载均衡配置
 
+在版本1.9之前，它只能作为http 的负载均衡，也就是在网络模型的第七层发挥作用，1.9之后，它可以对tcp进行负 载均衡，比如redis，mysql等
+
 ```conf
+# load balance config 负载均衡
+# 位于 server 下
+; 就是在 反向代理基础上, 在 upstream 下多加几个 server节点
+
+# upstream的负载均衡配置
+upstream aaa {
+    #默认情况下，如果不指定方式，就是随机轮循(round-robin)
+    #还有中方式 least_conn;, (优先发送给那些接受请求少的节点)
+    least_conn;
+
+    #ip_hash 可以记录请求来源的ip，如果是同一个ip，下次访问的时候还是会到相同 的主机，这个可以略微解决那种带cookie，session的请求的一致性问题
+    ip_hash;
+
+    #hash方式, 控制粒度更小, 可根据任意变量来控制
+    hash $request_uri consistent;   # 通过请求地址($request_uri)来控制, 相同的请求地址路由到相同的节点
+
+    #weight是权重，可以根据机器配置定义权重。weigth参数表示权值，权值越高被分配到的几率越大。default to 1
+    server 192.168.80.121:80 weight=3;
+    server 192.168.80.122:80 weight=2;
+    server 192.168.80.123:80 weight=3;
+
+    #down 暂时移出某个节点
+    server xxx.xxx.xxx.xx down;
+
+    #backup 备用节点, 相对于备份的机器来说，其他的机器就相当于主要服务器，只要当主要服务器不可用的时候，才会用到备用服务器
+    server xxx.xxx.xxx.xx backup;
+
+    #max_fails和fail_timeout
+    #默认情况下，max_fails的值为1，表示的是请求失败的次数，请求1次失败就换到下台主机
+    #fail_timeout，表示的是请求失败的超时时间，在设定的时间内 没有成功，那作为失败处理
+    server xxxxx max_fails=2;
+
+
+}
+location / {
+    proxy_pass http://aaa;
+    proxy_set_header Host $host; # nginx 转发时会丢失 Host header, 这里加上
+}
+```
+
+### gzip 压缩
+
+需要nginx已经有编译过 ngx_http_gzip_module 这个模块, 能对需要的静态文件压缩大小，比如图片，css，javascript，html等, 压缩是 需要消耗CPU，但能提高传缩的速度，因为传缩量少了许多，从而节省带宽;
+
+浏览器也要支 持解压功能，只要浏览器的请求头带上 Accept-Encoding: gzip 即可
+
+别对二进制文件，比如图片做gz压缩，因为没有任何意义
+
+https://blog.csdn.net/qq_36431213/article/details/78221189
+
+```conf
+; http 全局开启 gzip 压缩
+http {
+    ; 必须
+    gzip on;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+
+; 可选
+    gzip_disable "msie6";
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_comp_level 6;
+    gzip_buffers 16 8k;
+    gzip_http_version 1.1;
+}
+server {
+    ; 在需要压缩的资源这里配置三行
+    #assets 目录下有很多静态资源，比如js，css等
+    location ~ ^/assets/ {
+        gzip_static on;
+        expires max;
+        add_header Cache-Control public;
+    } 
+}
+
 
 ```
 
@@ -236,6 +318,31 @@ server {
 } }
 
 ```
+
+### 搭建谷歌镜像站
+
+ngx_http_google_filter_module 是一个nginx的插件，用 的原理是nginx的反向代理, (依赖于 ngx_http_substitutions_filter_module 这个库)
+
+要有一台能访问google.com的vps或云主机
+
+```conf
+server {
+  # ... part of server configuration
+  resolver 8.8.8.8;
+  location / {
+    google on; 
+# ... 
+  }
+}
+
+```
+
+
+### 上 https
+
+https://ruby-china.org/topics/31983
+
+
 
 ### 组成元素
 
@@ -347,14 +454,7 @@ http {
 
     #limit_zone crawler $binary_remote_addr 10m; #开启限制IP连接数的时候需要使用
 
-    # upstream的负载均衡配置
-    upstream blog.ha97.com {
-        #weight是权重，可以根据机器配置定义权重。weigth参数表示权值，权值越高被分配到的几率越大。
-        server 192.168.80.121:80 weight=3;
-        server 192.168.80.122:80 weight=2;
-        server 192.168.80.123:80 weight=3;
-
-    }
+    
 
     # 虚拟主机的配置
     # 可以放到其他配置文件, 通过 http.include 引入, 如 (常用) -> include /etc/nginx/conf.d/*.conf , 每个 .conf 是一个 server
@@ -392,14 +492,7 @@ http {
             proxy_set_header Host $host; # nginx 转发给 gateway, 会丢失 Host , 这里给补上
         }
 
-        # load balance config 负载均衡
-        upstream aaa {
-            serverxxx 192.168.1.101:88;
-        }
-        location / {
-            proxy_pass http://aaa;
-            proxy_set_header Host $host; # nginx 转发时会丢失 Host header, 这里加上
-        }
+        
 
         #图片缓存时间设置
         location ~ .*.(gif|jpg|jpeg|png|bmp|swf)$ {
