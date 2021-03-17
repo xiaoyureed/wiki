@@ -296,6 +296,11 @@ https://github.com/iswbm</p>
 <li><a href="#%E9%83%A8%E7%BD%B2-springboot">部署 springboot</a></li>
 </ul>
 </li>
+<li><a href="#%E5%BC%80%E6%BA%90%E5%BA%93">开源库</a>
+<ul>
+<li><a href="#%E5%9B%BE%E5%83%8F">图像</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 <h1><a class="header" href="#实用脚本" id="实用脚本">实用脚本</a></h1>
@@ -2437,6 +2442,9 @@ shutil.move('原文件夹/原文件名','目标文件夹/目标文件名')
 
 </code></pre>
 <h1><a class="header" href="#venv-虚拟环境" id="venv-虚拟环境">venv 虚拟环境</a></h1>
+<p>使用 pycharm: https://blog.csdn.net/pfm685757/article/details/108590680</p>
+<p>inherit global site-packages:勾选上的话代表创建的新项目需要copy一份全局包到虚拟环境。</p>
+<p>Make available to all projects:勾选上，表示，当在虚拟环境下安装包的时候，copy一份到全局。</p>
 <pre><code class="language-sh"> pip3 install virtualenv
 # 虚拟环境
 # --no-site-packages，已经安装到系统Python环境中的所有第三方包都不会复制过来，这样，我们就得到了一个不带任何第三方包的“干净”的Python运行环境。
@@ -2932,6 +2940,13 @@ elif argv[1] == 'status':
 else: 
     print &quot;☻☻☻请别害怕,这只是个简单的脚本,对应用和系统都是无损的☻☻☻\n%s,温馨提示用法:%s {start|stop|restart|status}&quot; % (times,argv[0])
 </code></pre>
+<h1><a class="header" href="#开源库" id="开源库">开源库</a></h1>
+<h2><a class="header" href="#图像" id="图像">图像</a></h2>
+<ul>
+<li>Matplotlib 可视化库，可以用来绘制高质量的 2D 折线图、散点图、柱状图，或者用来显示图像</li>
+<li>pil 图像处理库, 适用于 Python2, py3 则安装 pillow</li>
+<li>opencv-python</li>
+</ul>
 
                     </main>
 
