@@ -272,6 +272,7 @@ https://github.com/iswbm</p>
 <li><a href="#web-%E5%BC%80%E5%8F%91">web 开发</a>
 <ul>
 <li><a href="#django">Django</a></li>
+<li><a href="#flask">flask</a></li>
 </ul>
 </li>
 <li><a href="#db-%E9%A9%B1%E5%8A%A8-%E9%97%AE%E9%A2%98">db 驱动 问题</a></li>
@@ -301,6 +302,7 @@ https://github.com/iswbm</p>
 <li><a href="#%E5%9B%BE%E5%83%8F">图像</a></li>
 </ul>
 </li>
+<li><a href="#jython">jython</a></li>
 </ul>
 <!-- /TOC -->
 <h1><a class="header" href="#实用脚本" id="实用脚本">实用脚本</a></h1>
@@ -2529,6 +2531,17 @@ python manage.py sqlmigrate polls 0001
 # 通过模型 api 操作数据库
 python manage.py shell
 </code></pre>
+<h2><a class="header" href="#flask" id="flask">flask</a></h2>
+<pre><code class="language-sh">export FLASK_APP=hello.py
+
+# optional, enable debug mode
+export FLASK_ENV=development
+
+# default port -&gt; 5000
+flask run [--host=0.0.0.0]
+
+
+</code></pre>
 <h1><a class="header" href="#db-驱动-问题" id="db-驱动-问题">db 驱动 问题</a></h1>
 <p>mac 无法安装 postgres 驱动</p>
 <p>驱动在这: https://pypi.org/project/psycopg2/, 需要首先安装 postgres  <code>brew install postgres</code>, 设置 path, 然后安装 (<a href="https://www.psycopg.org/docs/install.html#install-from-source">参考</a>)</p>
@@ -2945,8 +2958,62 @@ else:
 <ul>
 <li>Matplotlib 可视化库，可以用来绘制高质量的 2D 折线图、散点图、柱状图，或者用来显示图像</li>
 <li>pil 图像处理库, 适用于 Python2, py3 则安装 pillow</li>
-<li>opencv-python</li>
+<li>opencv-python <code>import cv2</code></li>
 </ul>
+<h1><a class="header" href="#jython" id="jython">jython</a></h1>
+<p>相互调用</p>
+<p>https://www.py4j.org/getting_started.html run java lib in py</p>
+<p>run py script in java</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+            &lt;groupId&gt;org.python&lt;/groupId&gt;
+            &lt;artifactId&gt;jython&lt;/artifactId&gt;
+            &lt;version&gt;2.7.2&lt;/version&gt;
+        &lt;/dependency&gt;
+
+</code></pre>
+<pre><code class="language-java">public class App {
+
+    /**
+     * 初始化
+     */
+    static void initInterpreter() {
+        Properties props = new Properties();
+        props.put(&quot;python.home&quot;, pyPath() + &quot;py_lib&quot;);
+        props.put(&quot;python.console.encoding&quot;, &quot;UTF-8&quot;);
+        props.put(&quot;python.security.respectJavaAccessibility&quot;, &quot;false&quot;);
+        props.put(&quot;python.import.site&quot;, &quot;false&quot;);
+
+        Properties preprops = System.getProperties();
+        PythonInterpreter.initialize(preprops, props, new String[0]);
+
+    }
+
+    static String pyPath() {
+        return Thread.currentThread().getContextClassLoader().getResource(&quot;.&quot;).getPath();
+    }
+
+
+
+    public static void main(String[] args) throws FileNotFoundException {
+        initInterpreter();
+        final PythonInterpreter interpreter = new PythonInterpreter();
+
+        interpreter.execfile(new FileInputStream(pyPath() + &quot;test.py&quot;));
+        final PyFunction addFunc = interpreter.get(&quot;add&quot;, PyFunction.class);
+        int a = 1;
+        int b = 2;
+        final PyObject result = addFunc.__call__(new PyInteger(a), new PyInteger(b));
+        System.out.println(result);
+
+
+//        interpreter.execfile(new FileInputStream(pyPath() + &quot;face_recog.py&quot;));
+//        final PyFunction face_verification = interpreter.get(&quot;face_verification&quot;, PyFunction.class);
+//        final PyObject pyObject = face_verification.__call__();
+//        System.out.println(pyObject);
+    }
+}
+
+</code></pre>
 
                     </main>
 
