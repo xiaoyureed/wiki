@@ -100,6 +100,7 @@ https://bramblexu.com/posts/b1c0cc4f/#toc-heading-5 vscode 配置
 - [venv 虚拟环境](#venv-虚拟环境)
 - [web 开发](#web-开发)
   - [Django](#django)
+  - [flask](#flask)
 - [db 驱动 问题](#db-驱动-问题)
 - [代替 shell 运维](#代替-shell-运维)
   - [传递参数](#传递参数)
@@ -115,6 +116,7 @@ https://bramblexu.com/posts/b1c0cc4f/#toc-heading-5 vscode 配置
   - [部署 springboot](#部署-springboot)
 - [开源库](#开源库)
   - [图像](#图像)
+- [jython](#jython)
 
 <!-- /TOC -->
 
@@ -2588,6 +2590,23 @@ python manage.py shell
 ```
 
 
+## flask
+
+
+
+```sh
+export FLASK_APP=hello.py
+
+# optional, enable debug mode
+export FLASK_ENV=development
+
+# default port -> 5000
+flask run [--host=0.0.0.0]
+
+
+```
+
+
 # db 驱动 问题
 
 mac 无法安装 postgres 驱动
@@ -3062,6 +3081,69 @@ else:
 
 - Matplotlib 可视化库，可以用来绘制高质量的 2D 折线图、散点图、柱状图，或者用来显示图像
 - pil 图像处理库, 适用于 Python2, py3 则安装 pillow
-- opencv-python
+- opencv-python `import cv2`
 
 
+
+# jython
+
+相互调用
+
+https://www.py4j.org/getting_started.html run java lib in py
+
+
+run py script in java
+
+```xml
+<dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+
+```
+
+```java
+public class App {
+
+    /**
+     * 初始化
+     */
+    static void initInterpreter() {
+        Properties props = new Properties();
+        props.put("python.home", pyPath() + "py_lib");
+        props.put("python.console.encoding", "UTF-8");
+        props.put("python.security.respectJavaAccessibility", "false");
+        props.put("python.import.site", "false");
+
+        Properties preprops = System.getProperties();
+        PythonInterpreter.initialize(preprops, props, new String[0]);
+
+    }
+
+    static String pyPath() {
+        return Thread.currentThread().getContextClassLoader().getResource(".").getPath();
+    }
+
+
+
+    public static void main(String[] args) throws FileNotFoundException {
+        initInterpreter();
+        final PythonInterpreter interpreter = new PythonInterpreter();
+
+        interpreter.execfile(new FileInputStream(pyPath() + "test.py"));
+        final PyFunction addFunc = interpreter.get("add", PyFunction.class);
+        int a = 1;
+        int b = 2;
+        final PyObject result = addFunc.__call__(new PyInteger(a), new PyInteger(b));
+        System.out.println(result);
+
+
+//        interpreter.execfile(new FileInputStream(pyPath() + "face_recog.py"));
+//        final PyFunction face_verification = interpreter.get("face_verification", PyFunction.class);
+//        final PyObject pyObject = face_verification.__call__();
+//        System.out.println(pyObject);
+    }
+}
+
+```

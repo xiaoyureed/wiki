@@ -30,16 +30,24 @@
   对进行人脸检测、人脸校正后的图像（人脸）进行分类(face grouping)
 
 
+## 活体检测
+
+一般有 眨眼检测, 嘴巴张/闭检测
+
+- 眨眼检测方法
+
+  抓取摄像头传来的连续帧, 人脸特征点定位,某个时刻为睁眼, 下一帧为闭眼, 接着为睁眼, 视为一次眨眼
+
+  或者可以考虑将这个问题当做图像分类问题，类别为：睁眼和闭眼。先通过人脸检测模型，比如dlib、face_recognition，从人脸照片中裁剪出眼部图片，再对眼部图片进行分类。
 
 
 ## 开源方案
 
 - https://github.com/ageitgey/face_recognition  基于 dlib
-  - dlib,face_recognition,opencv (https://zhuanlan.zhihu.com/p/79784400) dlib 19.7.0 和face_recognition 1.2.1 ; https://zhuanlan.zhihu.com/p/45827914
+  - dlib,opencv (https://zhuanlan.zhihu.com/p/79784400) dlib 19.7.0 和face_recognition 1.2.1 ; https://zhuanlan.zhihu.com/p/45827914
+- https://github.com/deepinsight/insightface MXNet and PyTorch
 - https://github.com/davidsandberg/facenet Tensorflow
-- https://github.com/seasonSH/DocFace tensorflow
 - https://github.com/cmusatyalab/openface Torch
-- https://github.com/seetaface/SeetaFaceEngine c++, opencv
 
 ## ref
 
@@ -53,8 +61,6 @@ https://github.com/opencv/opencv
 https://github.com/opencv/opencv_contrib
 http://dlib.net/
 
-
-https://github.com/seetaface/SeetaFaceEngine 适合学习, 含Detection、Alignment、Identification，代码齐全
 
 https://ai.arcsoft.com.cn/course/index.html 公开课
 
