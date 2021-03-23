@@ -38,6 +38,7 @@ categories: java web
 - [ab test](#ab-test)
 - [集成测试 Testcontainers](#集成测试-testcontainers)
 - [优化测试编写体验](#优化测试编写体验)
+- [talend api tester 浏览器插件](#talend-api-tester-浏览器插件)
 
 <!-- /TOC -->
 
@@ -349,3 +350,10 @@ https://github.com/testcontainers/testcontainers-java
 ## 优化测试编写体验
 
 groovy + spock
+
+
+## talend api tester 浏览器插件
+
+类似 postman, 更轻量
+
+https://www.bilibili.com/video/av90263035/ 

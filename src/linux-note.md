@@ -161,6 +161,7 @@ https://linuxtools-rst.readthedocs.io/zh_CN/latest/base/01_use_man.html 学会�
   - [怎么启动](#怎么启动)
   - [设定开机启动](#设定开机启动)
   - [service 和 systemctl 和 chkconfig 区别](#service-和-systemctl-和-chkconfig-区别)
+  - [supervisor 进程管理](#supervisor-进程管理)
 - [操作记录](#操作记录)
   - [安装c编译环境gcc](#安装c编译环境gcc)
   - [安装nodejs](#安装nodejs)
@@ -2657,6 +2658,11 @@ chkconfig --list [name]
 
 
 ```
+
+## supervisor 进程管理
+
+http://www.ttlsa.com/linux/using-supervisor-control-program/
+https://www.jianshu.com/p/0b9054b33db3
 
 # 操作记录
 

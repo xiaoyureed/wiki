@@ -11,15 +11,16 @@ categories: distributed system
 - [rpc是什么](#rpc是什么)
 - [为什么需要rpc](#为什么需要rpc)
 - [RPC 和 REST对比](#rpc-和-rest对比)
-    - [区别](#区别)
-    - [rpc分类](#rpc分类)
-    - [webservice关注点](#webservice关注点)
+  - [区别](#区别)
+  - [rpc分类](#rpc分类)
+  - [webservice关注点](#webservice关注点)
 - [实现一个简单的rpc框架](#实现一个简单的rpc框架)
 - [有哪些开源方案可供选择](#有哪些开源方案可供选择)
-    - [thrift](#thrift)
-    - [protocol buffers](#protocol-buffers)
-    - [grpc](#grpc)
-    - [dubbo](#dubbo)
+  - [thrift](#thrift)
+  - [protocol buffers](#protocol-buffers)
+  - [grpc](#grpc)
+  - [dubbo](#dubbo)
+  - [hessian](#hessian)
 
 <!-- /TOC -->
 
@@ -124,5 +125,12 @@ grpc, thrift
 ## grpc
 
 ## dubbo
+
+
+## hessian
+
+采用的是二进制RPC协议，因为采用的是二进制协议，所以它很适合于发送二进制数据
+
+https://blog.csdn.net/qiaziliping/article/details/81069265
 
 

@@ -106,12 +106,15 @@ jdbc:mysql://122.191.199.51:60000/js_phaseii_db?useUnicode=true&characterEncodin
     - [AbstractRoutingDataSource 动态数据源切换](#abstractroutingdatasource-动态数据源切换)
   - [多数据库类型 databaseIdProvider](#多数据库类型-databaseidprovider)
 - [web 相关](#web-相关)
-  - [springboot 发送 https 客户端 client](#springboot-发送-https-客户端-client)
+  - [springboot 发送 https 或者 http 客户端 client](#springboot-发送-https-或者-http-客户端-client)
+    - [发送 http client](#发送-http-client)
+    - [发送 https client](#发送-https-client)
   - [RequestContextHolder](#requestcontextholder)
   - [解决 api 版本共存](#解决-api-版本共存)
     - [RequestMappingHandlerMapping](#requestmappinghandlermapping)
     - [request matcher](#request-matcher)
     - [request condition](#request-condition)
+  - [接收参数相关的注解](#接收参数相关的注解)
   - [自定义接收参数类型](#自定义接收参数类型)
   - [返回图片](#返回图片)
   - [rest api 文档](#rest-api-文档)
@@ -2055,12 +2058,23 @@ spring:
 
 # web 相关
 
-## springboot 发送 https 客户端 client
+## springboot 发送 https 或者 http 客户端 client
 
 https://blog.csdn.net/defonds/article/details/86594441 (https://prasans.info/making-https-call-using-apache-httpclient/)
 https://www.cnblogs.com/lfstudy/p/13793625.html
 https://www.cnblogs.com/dbei/articles/12746191.html
 https://segmentfault.com/a/1190000014456939 使用 resttemplate
+
+
+### 发送 http client
+
+
+
+
+### 发送 https client
+
+okhttp
+
 
 ## RequestContextHolder
 
@@ -2129,6 +2143,54 @@ AbstractRequestCondition 实现了equals,hashCode和toString 通用方法, 还�
 - HeadersRequestCondition	头部信息匹配条件
 - ConsumesRequestCondition	可消费MIME匹配条件
 - ProducesRequestCondition	可生成MIME匹配条件
+
+
+## 接收参数相关的注解
+
+```java
+
+// 前三种支持 application/x-www-form-urlencoded;charset=UTF-8’ 格式 (表单提交), 是浏览器默认的编码格式。
+// 
+// multipart/form-data 格式 区别: 不会对参数编码，使用的boundary(分割线)，相当于&，boundary的值是----Web**AJv3。 文件上传必须要这种格式, 也可用于键值对参数，最后连接成一串字符传输 (ref: https://www.jianshu.com/p/53b5bd0f1d44)
+// 
+// @requestParam 注解方法参数, 可省略, 可以有多个
+@ApiOperation("查询用户")
+    @PostMapping("/detailByParam")
+    public void detailByParam(@RequestParam (value = "id") Integer id,@RequestParam(value = "roleName") String roleName,@RequestParam(value = "roleDes") String roleDes) {
+    	System.out.println(">>>id="+id+",roleName="+roleName+",roleDes="+roleDes);
+        // >>>id=1,roleName=admin,roleDes=拥有admin权限
+	}
+
+
+@ApiOperation("查询用户")
+    @PostMapping("/detailByParam")
+    public void detailByParam(@RequestParam Map<String, String> params) {
+        System.out.println(">>>id="+params.get("id")+",roleName="+params.get("roleName")+",roleDes="+params.get("roleDes"));
+        // >>>id=1,roleName=admin,roleDes=拥有admin权限
+    }
+
+
+
+@ApiOperation("查询用户")
+    @PostMapping("/detailByParam")
+    public void detailByParam(@RequestBody String params) {
+        System.out.println(">>>"+params);
+        // >>>id=1&roleName=admin&roleDes=%E6%8B%A5%E6%9C%89admin%E6%9D%83%E9%99%90
+        // 
+        // 参数用 & 隔离开, 对于Get请求，是将参数转换?key=value&key=value格式，连接到url后
+        // 如果参数值中需要&，则必须对其进行编码。编码格式就是application/x-www-form-urlencoded（将键值对的参数用&连接起来，如果有空格，将空格转换为+加号；有特殊符号，将特殊符号转换为ASCII HEX值）
+    }
+
+
+
+
+// 仅支持 application/json  格式, 不支持 application/x-www-form-urlencoded;charset=UTF-8’
+@ApiOperation("查询用户")
+    @PostMapping("/detailByParam")
+    public void detailByParam(@RequestBody GetRoleParam getRoleParam) {// @RequestBody 注解参数, 不可省略, 最多只能一个
+        System.out.println(">>>"+getRoleParam); 
+    }
+```
 
 ## 自定义接收参数类型
 
@@ -2367,7 +2429,9 @@ public class Swagger3Config {
                 .select()
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                // 协议使用 http; 默认是 https
+                .protocols(Stream.of("http").collect(Collectors.toSet()));
     }
 
     private ApiInfo apiInfo() {
