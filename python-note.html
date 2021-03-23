@@ -167,6 +167,7 @@ https://github.com/iswbm</p>
 <p>https://python-web-guide.readthedocs.io/zh/latest/index.html 工程实践 经验分享</p>
 <p>https://learnku.com/docs/python-guide/2018 技术栈</p>
 <p>https://bramblexu.com/posts/b1c0cc4f/#toc-heading-5 vscode 配置 </p>
+<p>https://www.zhihu.com/question/19827960 指的关注的社区</p>
 <!--more-->
 <!-- TOC -->
 <ul>
@@ -303,6 +304,12 @@ https://github.com/iswbm</p>
 </ul>
 </li>
 <li><a href="#jython">jython</a></li>
+<li><a href="#python-%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2">python 应用部署</a>
+<ul>
+<li><a href="#%E7%94%9F%E6%88%90%E4%BE%9D%E8%B5%96%E6%B8%85%E5%8D%95">生成依赖清单</a></li>
+<li><a href="#gunicorn">gunicorn</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 <h1><a class="header" href="#实用脚本" id="实用脚本">实用脚本</a></h1>
@@ -375,6 +382,9 @@ __author__ = 'xiaoyu'
 
 
 def hello_print():
+    '''方法注释
+    可以通过 hello_print.__doc__ 获取, 或者 help(hello_print) 获取文档字符串
+    '''
     print(&quot;Hello world!&quot;)
     print(&quot;aa&quot;, &quot;bb&quot;, &quot;ccc&quot;)  # 类似
 
@@ -1898,6 +1908,7 @@ def doc_test():
 
 </code></pre>
 <h1><a class="header" href="#多进程" id="多进程">多进程</a></h1>
+<p>gevent</p>
 <pre><code class="language-py">def multi_processing():
     &quot;&quot;&quot;
     在Unix/Linux下，可以使用fork()调用实现多进程。
@@ -2954,6 +2965,8 @@ else:
     print &quot;☻☻☻请别害怕,这只是个简单的脚本,对应用和系统都是无损的☻☻☻\n%s,温馨提示用法:%s {start|stop|restart|status}&quot; % (times,argv[0])
 </code></pre>
 <h1><a class="header" href="#开源库" id="开源库">开源库</a></h1>
+<p>https://www.zhihu.com/question/24590883
+TODO</p>
 <h2><a class="header" href="#图像" id="图像">图像</a></h2>
 <ul>
 <li>Matplotlib 可视化库，可以用来绘制高质量的 2D 折线图、散点图、柱状图，或者用来显示图像</li>
@@ -3013,6 +3026,71 @@ else:
     }
 }
 
+</code></pre>
+<h1><a class="header" href="#python-应用部署" id="python-应用部署">python 应用部署</a></h1>
+<h2><a class="header" href="#生成依赖清单" id="生成依赖清单">生成依赖清单</a></h2>
+<pre><code class="language-sh"># 生成依赖文件
+# https://blog.csdn.net/guolindonggld/article/details/87786032
+pip3 freeze &gt; requirements.txt
+
+pip install -r requirements.txt
+
+</code></pre>
+<h2><a class="header" href="#gunicorn" id="gunicorn">gunicorn</a></h2>
+<p>gunicorn是一个wsgi http server</p>
+<p>不过在production环境，起停和状态的监控最好用supervisior之类的监控工具，然后在gunicorn的前端放置一个http proxy server, 譬如nginx</p>
+<p>https://www.jianshu.com/p/69e75fc3e08e</p>
+<p>flask_app.py</p>
+<pre><code class="language-py">from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/demo', methods=['GET'])
+def demo():
+    return &quot;gunicorn and flask demo.&quot;
+</code></pre>
+<p>gunicorn.conf.py </p>
+<pre><code class="language-py"># coding:utf-8
+import multiprocessing
+
+bind = &quot;0.0.0.0:5000&quot;   #绑定的ip与端口
+workers = multiprocessing.cpu_count() * 2 + 1    #进程数
+errorlog = './log/gunicorn.error.log' #发生错误时log的路径
+accesslog = './log/gunicorn.access.log' #正常时的log路径
+backlog = 512                #监听队列
+proc_name = 'gunicorn_pre_project'   #进程名
+timeout = 30      # 设置超时时间120s，默认为30s。按自己的需求进行设置timeout = 120
+worker_class = 'gevent' #使用gevent模式，还可以使用sync 模式，默认的是sync模式
+
+threads = 3  #指定每个进程开启的线程数
+loglevel = 'info' #日志级别，这个日志级别指的是错误日志的级别，而访问日志的级别无法设置
+
+#设置gunicorn访问日志格式，错误日志无法设置
+access_log_format = '%(t)s %(p)s %(h)s &quot;%(r)s&quot; %(s)s %(L)s %(b)s %(f)s&quot; &quot;%(a)s&quot;'
+
+</code></pre>
+<pre><code class="language-sh"># 启动命令
+# 
+# flask_app 来自flask_app.py
+# app 来自 app = Flask(__name__)
+# -c 指定 配置文件
+gunicorn flask_app:app -c gunicorn.conf.py 
+
+# 不使用配置文件
+gunicorn -w 4 -b 0.0.0.0:5000 -D  flask_app:app
+
+
+# 找到 父进程的 pid (masterpid)
+pstree -ap | grep gunicorn 
+
+# 或者 找到所有进程 pid, 然后 kill -9 所有相关进程
+pgrep gunicorn
+
+# 停止
+kill -9 &lt;父进程pid&gt;
+# 重启
+kill -HUP &lt;parent pid&gt;
 </code></pre>
 
                     </main>

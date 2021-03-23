@@ -165,6 +165,7 @@ https://github.com/Louiszhai/tool</p>
 <li><a href="#fcp">fcp</a></li>
 </ul>
 </li>
+<li><a href="#%E5%88%A0%E9%99%A4%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8">删除开机自启动</a></li>
 <li><a href="#%E5%85%81%E8%AE%B8%E5%AE%89%E8%A3%85%E4%BB%BB%E4%BD%95%E6%9D%A5%E6%BA%90%E7%9A%84-app">允许安装任何来源的 app</a></li>
 <li><a href="#karabiner-%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84">karabiner 按键映射</a>
 <ul>
@@ -177,6 +178,7 @@ https://github.com/Louiszhai/tool</p>
 <li><a href="#%E8%87%AA%E5%90%AF%E5%8A%A8%E7%AE%A1%E7%90%86">自启动管理</a></li>
 <li><a href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">开发环境配置</a>
 <ul>
+<li><a href="#ssh-%E5%AE%A2%E6%88%B7%E7%AB%AF">ssh 客户端</a></li>
 <li><a href="#rsync-%E4%BD%BF%E7%94%A8">rsync 使用</a></li>
 <li><a href="#sshpass-%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95">sshpass 免密码登录</a></li>
 <li><a href="#%E9%85%8D%E7%BD%AE-tree-%E5%91%BD%E4%BB%A4">配置 tree 命令</a></li>
@@ -345,7 +347,11 @@ command+c复制，
 command+shift+v则是粘贴片段的属性
 cmd + z 撤销
 </code></pre>
+<h1><a class="header" href="#删除开机自启动" id="删除开机自启动">删除开机自启动</a></h1>
+<p>打开“系统偏好设置”窗口，选择“用户与群组”，进入用户与群组窗口（图1）。选择登录项选项卡，再解锁，最后删除开机启动的应用
+https://www.jianshu.com/p/dcf6de92a2b5</p>
 <h1><a class="header" href="#允许安装任何来源的-app" id="允许安装任何来源的-app">允许安装任何来源的 app</a></h1>
+<p>允许安装 appstore app store 外的应用程序</p>
 <p>无法打开xxx因为无法验证开发者</p>
 <p><code>sudo spctl --master-disable</code>, 在隐私中会出现 &quot;允许任何来源&quot;</p>
 <h1><a class="header" href="#karabiner-按键映射" id="karabiner-按键映射">karabiner 按键映射</a></h1>
@@ -404,6 +410,8 @@ launchctl load &lt;plist_path&gt;
 # /System/Library/LaunchDaemons Mac操作系统提供的系统守护进程
 </code></pre>
 <h1><a class="header" href="#开发环境配置" id="开发环境配置">开发环境配置</a></h1>
+<h2><a class="header" href="#ssh-客户端" id="ssh-客户端">ssh 客户端</a></h2>
+<p>https://github.com/electerm/electerm</p>
 <h2><a class="header" href="#rsync-使用" id="rsync-使用">rsync 使用</a></h2>
 <p>http://www.ruanyifeng.com/blog/2020/08/rsync.html
 TODO</p>
