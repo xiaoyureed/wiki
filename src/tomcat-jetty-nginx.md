@@ -180,6 +180,7 @@ nginx的反向代理是依赖于ngx_http_proxy_module这个module来实现的
 
 # https
 server {
+    ; 没域名则填 IP地址
   server_name www.example.com;
   listen       443;
   location /newchart/hollow/small/nsh000001.gif {

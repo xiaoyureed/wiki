@@ -19,6 +19,7 @@ https://github.com/Louiszhai/tool
   - [Chrome](#chrome)
   - [vscode](#vscode)
   - [fcp](#fcp)
+- [删除开机自启动](#删除开机自启动)
 - [允许安装任何来源的 app](#允许安装任何来源的-app)
 - [karabiner 按键映射](#karabiner-按键映射)
   - [自定义 rule 配置](#自定义-rule-配置)
@@ -27,6 +28,7 @@ https://github.com/Louiszhai/tool
 - [telegram](#telegram)
 - [自启动管理](#自启动管理)
 - [开发环境配置](#开发环境配置)
+  - [ssh 客户端](#ssh-客户端)
   - [rsync 使用](#rsync-使用)
   - [sshpass 免密码登录](#sshpass-免密码登录)
   - [配置 tree 命令](#配置-tree-命令)
@@ -193,7 +195,15 @@ command+shift+v则是粘贴片段的属性
 cmd + z 撤销
 ```
 
+# 删除开机自启动
+
+
+打开“系统偏好设置”窗口，选择“用户与群组”，进入用户与群组窗口（图1）。选择登录项选项卡，再解锁，最后删除开机启动的应用
+https://www.jianshu.com/p/dcf6de92a2b5
+
 # 允许安装任何来源的 app
+
+允许安装 appstore app store 外的应用程序
 
 无法打开xxx因为无法验证开发者
 
@@ -278,6 +288,10 @@ launchctl load <plist_path>
 ```
 
 # 开发环境配置
+
+## ssh 客户端
+
+https://github.com/electerm/electerm
 
 ## rsync 使用
 

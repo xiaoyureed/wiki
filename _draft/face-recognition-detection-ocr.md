@@ -65,3 +65,12 @@ http://dlib.net/
 https://ai.arcsoft.com.cn/course/index.html 公开课
 
 https://github.com/ChanChiChoi/awesome-Face_Recognition#face-application 论文集
+
+
+## 代码实现
+
+https://blog.csdn.net/libo1004/article/details/110874855 base64 图片 api
+
+https://blog.csdn.net/weixin_43796192/article/details/90111437 图片传输 协议选择 
+https://blog.csdn.net/ymaini/article/details/80645917
+https://blog.csdn.net/sinat_29552923/article/details/70833455

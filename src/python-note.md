@@ -31,6 +31,9 @@ https://learnku.com/docs/python-guide/2018 技术栈
 
 https://bramblexu.com/posts/b1c0cc4f/#toc-heading-5 vscode 配置 
 
+
+https://www.zhihu.com/question/19827960 指的关注的社区
+
 <!--more-->
 
 <!-- TOC -->
@@ -117,6 +120,9 @@ https://bramblexu.com/posts/b1c0cc4f/#toc-heading-5 vscode 配置
 - [开源库](#开源库)
   - [图像](#图像)
 - [jython](#jython)
+- [python 应用部署](#python-应用部署)
+  - [生成依赖清单](#生成依赖清单)
+  - [gunicorn](#gunicorn)
 
 <!-- /TOC -->
 
@@ -231,6 +237,9 @@ __author__ = 'xiaoyu'
 
 
 def hello_print():
+    '''方法注释
+    可以通过 hello_print.__doc__ 获取, 或者 help(hello_print) 获取文档字符串
+    '''
     print("Hello world!")
     print("aa", "bb", "ccc")  # 类似
 
@@ -1876,6 +1885,8 @@ def doc_test():
 
 # 多进程
 
+gevent
+
 ```py
 def multi_processing():
     """
@@ -3077,6 +3088,9 @@ else:
 
 # 开源库
 
+https://www.zhihu.com/question/24590883
+TODO
+
 ## 图像
 
 - Matplotlib 可视化库，可以用来绘制高质量的 2D 折线图、散点图、柱状图，或者用来显示图像
@@ -3147,3 +3161,91 @@ public class App {
 }
 
 ```
+
+
+
+# python 应用部署
+
+## 生成依赖清单
+
+```sh
+# 生成依赖文件
+# https://blog.csdn.net/guolindonggld/article/details/87786032
+pip3 freeze > requirements.txt
+
+pip install -r requirements.txt
+
+```
+
+## gunicorn
+
+gunicorn是一个wsgi http server
+
+不过在production环境，起停和状态的监控最好用supervisior之类的监控工具，然后在gunicorn的前端放置一个http proxy server, 譬如nginx
+
+https://www.jianshu.com/p/69e75fc3e08e
+
+flask_app.py
+
+```py
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route('/demo', methods=['GET'])
+def demo():
+    return "gunicorn and flask demo."
+```
+
+gunicorn.conf.py 
+
+```py
+# coding:utf-8
+import multiprocessing
+
+bind = "0.0.0.0:5000"   #绑定的ip与端口
+workers = multiprocessing.cpu_count() * 2 + 1    #进程数
+errorlog = './log/gunicorn.error.log' #发生错误时log的路径
+accesslog = './log/gunicorn.access.log' #正常时的log路径
+backlog = 512                #监听队列
+proc_name = 'gunicorn_pre_project'   #进程名
+timeout = 30      # 设置超时时间120s，默认为30s。按自己的需求进行设置timeout = 120
+worker_class = 'gevent' #使用gevent模式，还可以使用sync 模式，默认的是sync模式
+
+threads = 3  #指定每个进程开启的线程数
+loglevel = 'info' #日志级别，这个日志级别指的是错误日志的级别，而访问日志的级别无法设置
+
+#设置gunicorn访问日志格式，错误日志无法设置
+access_log_format = '%(t)s %(p)s %(h)s "%(r)s" %(s)s %(L)s %(b)s %(f)s" "%(a)s"'
+
+```
+
+
+```sh
+# 启动命令
+# 
+# flask_app 来自flask_app.py
+# app 来自 app = Flask(__name__)
+# -c 指定 配置文件
+gunicorn flask_app:app -c gunicorn.conf.py 
+
+# 不使用配置文件
+gunicorn -w 4 -b 0.0.0.0:5000 -D  flask_app:app
+
+
+# 找到 父进程的 pid (masterpid)
+pstree -ap | grep gunicorn 
+
+# 或者 找到所有进程 pid, 然后 kill -9 所有相关进程
+pgrep gunicorn
+
+# 停止
+kill -9 <父进程pid>
+# 重启
+kill -HUP <parent pid>
+```
+
+
+
+

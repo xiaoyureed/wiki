@@ -1208,6 +1208,9 @@ xiaoyureed/ubuntu
 
 ## 私有仓库
 
+
+https://github.com/goharbor/harbor Harbor
+
 ```sh
 # 可以通过获取官方 registry 镜像来运行
 # 默认情况下，仓库会被创建在容器的 /var/lib/registry 目录
