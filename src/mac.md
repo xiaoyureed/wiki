@@ -493,7 +493,7 @@ ref: https://swiftcafe.io/post/home-brew
 
 > 通常安装软件， 只需将下载包放到 finder 的  application 文件夹下即可安装（有的时候在网站下载的软件格式是 .dmg 格式，其实是把软件打包成磁盘影像。只要双击打开，通常会出现快捷界面，只要把小窗口的 .app 拖到 Applications 文件夹）， 删除即为卸载
 
-手动安装 需要 git ， ruby 环境, 需要 xcode cli `xcode-select --install`, shell 环境
+手动安装 需要 git ， ruby 环境, 需要 xcode cli `sudo xcode-select --install`, shell 环境 (更新系统后, git异常无法使用, 也使用这条命令 )
 
 
 

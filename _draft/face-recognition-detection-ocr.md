@@ -49,6 +49,11 @@
 - https://github.com/davidsandberg/facenet Tensorflow
 - https://github.com/cmusatyalab/openface Torch
 
+
+## 如何存储
+
+
+
 ## ref
 
 https://www.cnblogs.com/GarfieldEr007/p/5372345.html
