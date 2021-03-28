@@ -16,19 +16,20 @@ https://github.com/hoochanlon
 <!-- TOC -->
 
 - [GFW封锁手段](#gfw封锁手段)
-    - [DNS相关](#dns相关)
-        - [DNS劫持](#dns劫持)
-        - [DNS污染（DNS欺骗）](#dns污染dns欺骗)
-    - [IP封锁（IP黑名单）](#ip封锁ip黑名单)
-    - [敏感字过滤](#敏感字过滤)
-    - [CNNIC的CA证书造成中间人攻击](#cnnic的ca证书造成中间人攻击)
+  - [DNS相关](#dns相关)
+    - [DNS劫持](#dns劫持)
+    - [DNS污染（DNS欺骗）](#dns污染dns欺骗)
+  - [IP封锁（IP黑名单）](#ip封锁ip黑名单)
+  - [敏感字过滤](#敏感字过滤)
+  - [CNNIC的CA证书造成中间人攻击](#cnnic的ca证书造成中间人攻击)
 - [应对手段](#应对手段)
-    - [修改DNS服务器](#修改dns服务器)
-    - [修改本机hosts文件](#修改本机hosts文件)
-    - [HTTPS 的加密 web 代理](#https-的加密-web-代理)
-    - [vpn 代理软件](#vpn-代理软件)
-    - [其他方法](#其他方法)
-    - [移动端](#移动端)
+  - [修改DNS服务器](#修改dns服务器)
+  - [修改本机hosts文件](#修改本机hosts文件)
+  - [HTTPS 的加密 web 代理](#https-的加密-web-代理)
+  - [vpn 代理软件](#vpn-代理软件)
+  - [其他方法](#其他方法)
+  - [移动端](#移动端)
+- [vps](#vps)
 
 <!-- /TOC -->
 
@@ -618,3 +619,24 @@ V2Ray：V2Ray 是 Project V 下的一个工具。Project V 是一个包含一系
 ios: shadowrocket, Surge
 
 Android:  shadowsocks , Postern, 
+
+
+# vps 
+
+国内: 阿里云, 腾讯云    , 华为云/京东云/七牛云/ucloud
+
+香港: GigsGigsCloud,枫叶vps.        Raksmart/HostKVM/搬瓦工/阿里云香港
+
+国外: Vultr, 搬瓦工         , HostDare/CloudCone/VirMach/Raksmart/BudgetVM/Linode/DigitalOcean/Godaddy
+
+域名注册: Namesilo, Godaddy(老牌/中文)      Name.com/NameCheap 
+
+
+
+宝塔面板
+百度云加速：CDN/安全加速
+ThemeForest 全球最大网站主题库
+
+FRP  内网穿透
+
+SeaFile、ownCloud、BTSync 云网盘

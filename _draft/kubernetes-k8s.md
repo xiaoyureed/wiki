@@ -70,6 +70,7 @@ https://github.com/helm/helm 包管理器
 - [可视化界面](#可视化界面)
 - [vagrant 搭建 k8s 环境](#vagrant-搭建-k8s-环境)
 - [cka 证书](#cka-证书)
+- [k3s](#k3s)
 
 <!-- /TOC -->
 
@@ -1474,3 +1475,16 @@ https://zhuanlan.zhihu.com/p/138796893
 https://www.jianshu.com/p/629525af31c4
 https://www.kubernetes.org.cn/peixun 考试要点
 https://zhuanlan.zhihu.com/p/138796893 , https://www.zhihu.com/zvideo/1302356091591372800 真题
+
+
+## k3s
+
+轻量级的 k8s, 内核机制还是和 K8s 一样，但是剔除了很多外部依赖以及 K8s 的 alpha、beta 特性
+
+将其应用于 IoT 设备（比如树莓派）
+
+https://rancher.com/docs/k3s/latest/en/ 官网
+
+https://www.rancher.cn/k3s/ 中文官网
+
+https://zhuanlan.zhihu.com/p/269556628 简介

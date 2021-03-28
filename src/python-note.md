@@ -7,6 +7,12 @@ categories: computer science
 
 https://github.com/jackzhenguo/python-small-examples 小例子
 
+https://github.com/jackfrued/Python-100-Days 教程
+
+https://github.com/521xueweihan Python
+
+https://github.com/jackfrued
+
 python 学习笔记;
 references: [1](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000), [2](https://github.com/yidao620c/python3-cookbook)
 算法实现: https://github.com/yidao620c/core-algorithm， https://github.com/billryan/algorithm-exercise
@@ -120,7 +126,10 @@ https://www.zhihu.com/question/19827960 指的关注的社区
   - [部署 springboot](#部署-springboot)
 - [开源库](#开源库)
   - [图像](#图像)
+  - [数据模型定义](#数据模型定义)
+  - [序列化反序列化](#序列化反序列化)
 - [jython](#jython)
+- [调用 rust](#调用-rust)
 - [python 应用部署](#python-应用部署)
   - [生成依赖清单](#生成依赖清单)
   - [gunicorn](#gunicorn)
@@ -3327,12 +3336,25 @@ else:
 https://www.zhihu.com/question/24590883
 TODO
 
+https://pypi.org/
+
 ## 图像
 
 - Matplotlib 可视化库，可以用来绘制高质量的 2D 折线图、散点图、柱状图，或者用来显示图像
 - pil 图像处理库, 适用于 Python2, py3 则安装 pillow
 - opencv-python `import cv2`
+- Removebg 抠图
 
+## 数据模型定义
+
+https://github.com/samuelcolvin/pydantic/ 是的实例化数据 model 对象更方便
+
+https://blog.csdn.net/codename_cys/article/details/107675748
+
+
+## 序列化反序列化
+
+pickle
 
 
 # jython
@@ -3398,6 +3420,14 @@ public class App {
 
 ```
 
+
+# 调用 rust 
+
+https://www.v2ex.com/t/757216
+
+https://blog.csdn.net/m0_37696990/article/details/96876692
+
+https://blog.csdn.net/muzico425/article/details/103331676
 
 
 # python 应用部署

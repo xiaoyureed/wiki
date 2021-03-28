@@ -19,6 +19,7 @@ https://github.com/utmapp/UTM ios 平台, mac 平台
 - [docker](#docker)
 - [kali](#kali)
 - [虚拟网卡 macvlan](#虚拟网卡-macvlan)
+- [Multipass](#multipass)
 
 <!-- /TOC -->
 
@@ -158,3 +159,10 @@ kali/kali
 # 虚拟网卡 macvlan
 
 https://fuckcloudnative.io/posts/netwnetwork-virtualization-macvlan/
+
+
+# Multipass
+
+类似 vagrant, 快速获取 Linux 环境
+
+https://www.chenmo.com.cn/402492

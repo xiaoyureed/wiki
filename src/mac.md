@@ -787,9 +787,9 @@ https://blog.csdn.net/qq_43827595/article/details/104277051 vim 插件按键映�
 
 智能提示插件:
 
-- tabnine
-- kite (庞大的后台, 需要单独下载) https://www.kite.com/
-- cododa (适用于 idea, 收购了 tabnine)
+- tabnine (vscode)
+- cododa (适用于idea, 主要 java 专业, 收购了 tabnine)
+- kite (需要单独下载插件外的引擎 app , 对 Python 更专业, 节省内存 ) https://www.kite.com/,
 
 
 ### 创建文件文件夹 快捷键

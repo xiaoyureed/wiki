@@ -5,9 +5,13 @@ tags: [git]
 categories: tool
 ---
 
-references: ， [2](http://ndpsoftware.com/git-cheatsheet.html)， [3](https://github.com/k88hudson/git-flight-rules)
+references: ， [2](http://ndpsoftware.com/git-cheatsheet.html)， [3](https://github.com/k88hudson/git-flight-rules) [git recipes](https://github.com/geeeeeeeeek/git-recipes)
+
 https://gogs.io/
+
 https://git-scm.com/book/zh/v2
+
+https://github.com/521xueweihan/git-tips
 
 <!-- TOC -->
 

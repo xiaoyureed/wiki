@@ -48,7 +48,7 @@
 - https://github.com/deepinsight/insightface MXNet and PyTorch
 - https://github.com/davidsandberg/facenet Tensorflow
 - https://github.com/cmusatyalab/openface Torch
-
+- https://github.com/justadudewhohacks js 库
 
 ## 如何存储
 
