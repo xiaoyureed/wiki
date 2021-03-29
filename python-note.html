@@ -317,6 +317,7 @@ https://github.com/iswbm</p>
 <li><a href="#gunicorn">gunicorn</a></li>
 </ul>
 </li>
+<li><a href="#setuppy">setup.py</a></li>
 </ul>
 <!-- /TOC -->
 <h1><a class="header" href="#实用脚本" id="实用脚本">实用脚本</a></h1>
@@ -2783,6 +2784,7 @@ python manage.py sqlmigrate polls 0001
 python manage.py shell
 </code></pre>
 <h2><a class="header" href="#flask" id="flask">flask</a></h2>
+<p>https://github.com/humiaozuzu/awesome-flask</p>
 <pre><code class="language-sh">export FLASK_APP=hello.py
 
 # optional, enable debug mode
@@ -2793,6 +2795,11 @@ flask run [--host=0.0.0.0]
 
 
 </code></pre>
+<p>https://www.jianshu.com/p/a25357f2d930 jsonify 相比直接返回 dict/json.dump({}) 的好处</p>
+<p>https://www.jianshu.com/p/f7ba338016b8 orm 框架 SQLAlchemy</p>
+<p>https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate 数据迁移, 根据 model 创建 table</p>
+<p>https://www.jianshu.com/p/a681f6490c3c Flask-script
+https://zhuanlan.zhihu.com/p/269820011</p>
 <h1><a class="header" href="#db-驱动-问题" id="db-驱动-问题">db 驱动 问题</a></h1>
 <p>mac 无法安装 postgres 驱动</p>
 <p>驱动在这: https://pypi.org/project/psycopg2/, 需要首先安装 postgres  <code>brew install postgres</code>, 设置 path, 然后安装 (<a href="https://www.psycopg.org/docs/install.html#install-from-source">参考</a>)</p>
@@ -3216,8 +3223,15 @@ TODO</p>
 <li>Removebg 抠图</li>
 </ul>
 <h2><a class="header" href="#数据模型定义" id="数据模型定义">数据模型定义</a></h2>
-<p>https://github.com/samuelcolvin/pydantic/ 是的实例化数据 model 对象更方便</p>
-<p>https://blog.csdn.net/codename_cys/article/details/107675748</p>
+<p>https://github.com/samuelcolvin/pydantic/ 使得实例化数据 model 对象更方便</p>
+<p>https://blog.csdn.net/codename_cys/article/details/107675748
+https://blog.csdn.net/swinfans/article/details/89629641</p>
+<blockquote>
+<p>valideer库、marshmallow库、trafaret库以及cerberus库等都可以完成相似的功能，但是相较之下，pydantic库的执行效率会更加优秀一些</p>
+</blockquote>
+<p>https://www.kevin7.net/post_detail/pydantic-with-flask
+https://github.com/bauerji/flask_pydantic 校验请求参数
+https://medium.com/swlh/parsing-rest-api-payload-and-query-parameters-with-flask-better-than-marshmallow-aa79c889e3ca</p>
 <h2><a class="header" href="#序列化反序列化" id="序列化反序列化">序列化反序列化</a></h2>
 <p>pickle</p>
 <h1><a class="header" href="#jython" id="jython">jython</a></h1>
@@ -3344,6 +3358,7 @@ kill -9 &lt;父进程pid&gt;
 # 重启
 kill -HUP &lt;parent pid&gt;
 </code></pre>
+<h1><a class="header" href="#setuppy" id="setuppy">setup.py</a></h1>
 
                     </main>
 
