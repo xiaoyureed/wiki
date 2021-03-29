@@ -133,6 +133,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
 - [python 应用部署](#python-应用部署)
   - [生成依赖清单](#生成依赖清单)
   - [gunicorn](#gunicorn)
+- [setup.py](#setuppy)
 
 <!-- /TOC -->
 
@@ -2849,6 +2850,9 @@ python manage.py shell
 ## flask
 
 
+https://github.com/humiaozuzu/awesome-flask
+
+
 
 ```sh
 export FLASK_APP=hello.py
@@ -2861,6 +2865,20 @@ flask run [--host=0.0.0.0]
 
 
 ```
+
+
+https://www.jianshu.com/p/a25357f2d930 jsonify 相比直接返回 dict/json.dump({}) 的好处
+
+
+https://www.jianshu.com/p/f7ba338016b8 orm 框架 SQLAlchemy
+
+
+https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate 数据迁移, 根据 model 创建 table
+
+
+https://www.jianshu.com/p/a681f6490c3c Flask-script
+https://zhuanlan.zhihu.com/p/269820011
+
 
 
 # db 驱动 问题
@@ -3347,9 +3365,17 @@ https://pypi.org/
 
 ## 数据模型定义
 
-https://github.com/samuelcolvin/pydantic/ 是的实例化数据 model 对象更方便
+https://github.com/samuelcolvin/pydantic/ 使得实例化数据 model 对象更方便
 
 https://blog.csdn.net/codename_cys/article/details/107675748
+https://blog.csdn.net/swinfans/article/details/89629641
+
+> valideer库、marshmallow库、trafaret库以及cerberus库等都可以完成相似的功能，但是相较之下，pydantic库的执行效率会更加优秀一些
+
+
+https://www.kevin7.net/post_detail/pydantic-with-flask
+https://github.com/bauerji/flask_pydantic 校验请求参数
+https://medium.com/swlh/parsing-rest-api-payload-and-query-parameters-with-flask-better-than-marshmallow-aa79c889e3ca
 
 
 ## 序列化反序列化
@@ -3515,5 +3541,5 @@ kill -HUP <parent pid>
 ```
 
 
-
+# setup.py
 

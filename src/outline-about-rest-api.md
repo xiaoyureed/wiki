@@ -306,12 +306,8 @@ https://blog.csdn.net/angryjiji/article/details/99476028
     这样, 当同一个请求第二次访问时会先检测redis是否存在该sign，如果存在则证明重复提交了，接口就不再继续调用了。如果sign在缓存服务器中因过期时间到了，而被删除了，此时当这个url再次请求服务器时，因token的过期时间和sign的过期时间一直，sign过期也意味着token过期，那样同样的url再访问服务器会因token错误会被拦截掉
 
 
-最终的使用流程:
 
-1. server 给 client 提供 appId, key
-1. client 携带 appId、timestamp、sign, 去获取 server 的 api token, sign = 加密(appId + timestamp + key)
-1. 接着, client 就可以携带 api token 访问无需登录的 api.当访问用户需要登录的接口时，客户端跳转到登录页面，通过用户名和密码调用登录接口，登录接口会返回一个usertoken, 客户端拿着usertoken 去访问需要登录才能访问的接口
-
+API KEY跟API SECRET KEY: secert key是不向外公开的，用其加入各个请求参数和api key，组合成一个字符串，然后做摘要运算，生成的摘要一起发送给请求服务器，这样服务器端验证当前摘要是否合法，可以得知当前api key对应的secert key是否合法了 (https://blog.csdn.net/weixin_41964962/article/details/105383504)
 
 
 # 实践
