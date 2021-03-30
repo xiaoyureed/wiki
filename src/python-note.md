@@ -88,6 +88,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
     - [动态操作](#动态操作)
     - [特殊方法](#特殊方法)
     - [枚举](#枚举)
+    - [实例方法 类方法 静态方法](#实例方法-类方法-静态方法)
   - [错误异常处理](#错误异常处理)
 - [日志](#日志)
 - [单元测试](#单元测试)
@@ -1878,6 +1879,10 @@ print("------------------------------")
 
 ```
 
+### 实例方法 类方法 静态方法
+
+https://zhuanlan.zhihu.com/p/21101992
+
 ## 错误异常处理
 
 
@@ -2874,11 +2879,43 @@ https://www.jianshu.com/p/f7ba338016b8 orm 框架 SQLAlchemy
 
 
 https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate 数据迁移, 根据 model 创建 table
+https://blog.csdn.net/feit2417/article/details/86592319
+
+```sh
+python3 manage.py db init
+python3 manage.py db migrate
+python3 manage.py db upgrade
+
+
+```
 
 
 https://www.jianshu.com/p/a681f6490c3c Flask-script
 https://zhuanlan.zhihu.com/p/269820011
 
+
+解析请求参数
+```python
+def request_parse(req_data):
+	'''解析请求数据并以json形式返回'''
+    if req_data.method == 'POST':
+        data = req_data.json
+    elif req_data.method == 'GET':
+        data = req_data.args
+    return data
+   
+@app.route('/', methods = ["GET","POST"])   # GET 和 POST 都可以
+def get_data():
+	data = request_parse(request)
+	# 假设有如下 URL
+    # http://10.8.54.48:5000/index?name=john&age=20
+    name = data.get("name")
+    age = data.get("age")
+
+```
+
+
+https://blog.csdn.net/pineapple_C/article/details/113339718 拦截器
 
 
 # db 驱动 问题

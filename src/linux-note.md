@@ -239,7 +239,9 @@ fg 1
 ```sh
 
 # 压缩/解压
-zip
+zip <zip name> <file1 file2...>
+# zip name 可以和 folder name 不同
+zip -r <zip_file_name> <folder1> [foder2...] 
 unzip -d <dest_dir> xxx.zip
 # 使用 gzip (-z) 或 biz2 (-j) 解压缩 (-x) 压缩(-c)
 tar [-C output_dir] -zxvf xxx

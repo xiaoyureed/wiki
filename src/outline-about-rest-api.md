@@ -287,10 +287,6 @@ https://blog.csdn.net/angryjiji/article/details/99476028
     -   接口令牌 (api token) - 访问无需登录的接口, 如 登录, 注册 需要拿appId、timestamp和sign来换，sign=加密(appId + timestamp + key)
     -   用户令牌 (user token) - 用于访问需要登录后调用的接口 需要拿用户名和密码来换
 
--   timestamp - 是客户端调用接口时对应的当前时间戳，用于防止DoS攻击
-
-    每次调用接口时接口都会判断服务器当前系统时间和接口中传的的timestamp的差值，如果这个差值超过某个设置的时间(假如5分钟)，那么这个请求将被拦截掉，如果在设置的超时时间范围内，是不能阻止DoS攻击的
-
 -   sign - 用于参数签名，防止参数被非法篡改, 比如涉及到转账的接口
 
     sign的值一般是将所有非空参数按照升续排序然后+token+key+timestamp+nonce拼接在一起，然后使用某种加密算法进行加密，作为接口中的一个参数sign来传递，也可以将sign放到请求头中 (nonce 为随机数, 客户端随机生成, 目的是增加sign签名的多变性, 一般是数字和字母的组合，6位长度)
@@ -301,13 +297,16 @@ https://blog.csdn.net/angryjiji/article/details/99476028
 
 - 防重复提交(幂等)
 
-    当请求第一次提交时将sign作为key保存到redis，并设置超时时间，超时时间和Timestamp中设置的差值相同
+    当请求第一次提交时将sign作为key保存到redis，并设置超时时间，超时时间和Timestamp中设置的差值相同; 这样, 当同一个请求第二次访问时会先检测redis是否存在该sign，如果存在则证明重复提交了，接口就不再继续调用了。如果sign在缓存服务器中因过期时间到了，而被删除了，此时当这个url再次请求服务器时，因token的过期时间和sign的过期时间一直，sign过期也意味着token过期，那样同样的url再访问服务器会因token错误会被拦截掉
 
-    这样, 当同一个请求第二次访问时会先检测redis是否存在该sign，如果存在则证明重复提交了，接口就不再继续调用了。如果sign在缓存服务器中因过期时间到了，而被删除了，此时当这个url再次请求服务器时，因token的过期时间和sign的过期时间一直，sign过期也意味着token过期，那样同样的url再访问服务器会因token错误会被拦截掉
+    timestamp - 是客户端调用接口时对应的当前时间戳，用于防止DoS攻击; 每次调用接口时接口都会判断服务器当前系统时间和接口中传的的timestamp的差值，如果这个差值超过某个设置的时间(假如5分钟)，那么这个请求将被拦截掉，防止 ddos 攻击
 
 
 
-API KEY跟API SECRET KEY: secert key是不向外公开的，用其加入各个请求参数和api key，组合成一个字符串，然后做摘要运算，生成的摘要一起发送给请求服务器，这样服务器端验证当前摘要是否合法，可以得知当前api key对应的secert key是否合法了 (https://blog.csdn.net/weixin_41964962/article/details/105383504)
+
+
+
+API KEY跟API SECRET KEY: secert key是不向外公开的，用其加入各个请求参数和api key，组合成一个字符串，然后做摘要运算，生成的摘要一起发送给请求服务器，这样服务器端验证当前摘要是否合法，可以得知当前api key对应的secert key是否合法了 (https://blog.csdn.net/weixin_41964962/article/details/105383504), http://www.hello1010.com/api-sign
 
 
 # 实践
