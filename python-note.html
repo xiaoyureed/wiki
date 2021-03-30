@@ -238,6 +238,7 @@ https://github.com/iswbm</p>
 <li><a href="#%E5%8A%A8%E6%80%81%E6%93%8D%E4%BD%9C">动态操作</a></li>
 <li><a href="#%E7%89%B9%E6%AE%8A%E6%96%B9%E6%B3%95">特殊方法</a></li>
 <li><a href="#%E6%9E%9A%E4%B8%BE">枚举</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95-%E7%B1%BB%E6%96%B9%E6%B3%95-%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95">实例方法 类方法 静态方法</a></li>
 </ul>
 </li>
 <li><a href="#%E9%94%99%E8%AF%AF%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">错误异常处理</a></li>
@@ -1908,6 +1909,8 @@ print(&quot;------------------------------&quot;)
         print(name, value)
 
 </code></pre>
+<h3><a class="header" href="#实例方法-类方法-静态方法" id="实例方法-类方法-静态方法">实例方法 类方法 静态方法</a></h3>
+<p>https://zhuanlan.zhihu.com/p/21101992</p>
 <h2><a class="header" href="#错误异常处理" id="错误异常处理">错误异常处理</a></h2>
 <pre><code class="language-py">def error_handling():
     &quot;&quot;&quot;
@@ -2797,9 +2800,35 @@ flask run [--host=0.0.0.0]
 </code></pre>
 <p>https://www.jianshu.com/p/a25357f2d930 jsonify 相比直接返回 dict/json.dump({}) 的好处</p>
 <p>https://www.jianshu.com/p/f7ba338016b8 orm 框架 SQLAlchemy</p>
-<p>https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate 数据迁移, 根据 model 创建 table</p>
+<p>https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate 数据迁移, 根据 model 创建 table
+https://blog.csdn.net/feit2417/article/details/86592319</p>
+<pre><code class="language-sh">python3 manage.py db init
+python3 manage.py db migrate
+python3 manage.py db upgrade
+
+
+</code></pre>
 <p>https://www.jianshu.com/p/a681f6490c3c Flask-script
 https://zhuanlan.zhihu.com/p/269820011</p>
+<p>解析请求参数</p>
+<pre><code class="language-python">def request_parse(req_data):
+	'''解析请求数据并以json形式返回'''
+    if req_data.method == 'POST':
+        data = req_data.json
+    elif req_data.method == 'GET':
+        data = req_data.args
+    return data
+   
+@app.route('/', methods = [&quot;GET&quot;,&quot;POST&quot;])   # GET 和 POST 都可以
+def get_data():
+	data = request_parse(request)
+	# 假设有如下 URL
+    # http://10.8.54.48:5000/index?name=john&amp;age=20
+    name = data.get(&quot;name&quot;)
+    age = data.get(&quot;age&quot;)
+
+</code></pre>
+<p>https://blog.csdn.net/pineapple_C/article/details/113339718 拦截器</p>
 <h1><a class="header" href="#db-驱动-问题" id="db-驱动-问题">db 驱动 问题</a></h1>
 <p>mac 无法安装 postgres 驱动</p>
 <p>驱动在这: https://pypi.org/project/psycopg2/, 需要首先安装 postgres  <code>brew install postgres</code>, 设置 path, 然后安装 (<a href="https://www.psycopg.org/docs/install.html#install-from-source">参考</a>)</p>

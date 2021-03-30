@@ -459,7 +459,9 @@ fg 1
 <h3><a class="header" href="#压缩解压" id="压缩解压">压缩解压</a></h3>
 <pre><code class="language-sh">
 # 压缩/解压
-zip
+zip &lt;zip name&gt; &lt;file1 file2...&gt;
+# zip name 可以和 folder name 不同
+zip -r &lt;zip_file_name&gt; &lt;folder1&gt; [foder2...] 
 unzip -d &lt;dest_dir&gt; xxx.zip
 # 使用 gzip (-z) 或 biz2 (-j) 解压缩 (-x) 压缩(-c)
 tar [-C output_dir] -zxvf xxx
