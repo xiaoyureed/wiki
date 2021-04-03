@@ -3409,7 +3409,7 @@ https://github.com/tywo45
 
 - 和 Java8 配合良好, jdk升级很麻烦, 需要 delombok
 
-- @builder 构造对象时底层用的是全参数构造器, 需要 @AllArgsConstructor一起用, 无法单独使用, 若果一定要用, 好的组合是 @NoArgsConstructor @AllArgsConstructor @Builder @Data, 但是这太复杂
+- @builder 构造对象时底层用的是全参数构造器, 需要 @AllArgsConstructor一起用, 无法单独使用, 若果一定要用, 好的组合是 @NoArgsConstructor @AllArgsConstructor @Builder @Data
 
 - 代替@AutoWired注解: @RequiredArgsConstructor(onConstructor =@__(@Autowired))标注在类上
 

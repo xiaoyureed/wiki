@@ -588,6 +588,8 @@ https://www.gitignore.io
 
 git 对于 .ignore 配置文件是按行从上到下进行规则匹配的，意味着如果前面的规则匹配的范围更大，则后面的规则将不会生效
 
+
+
 如果文件已经被加入了 git 版本库, 则无法忽略. 此时需要使用命令 `git rm --cached <file>` 在 History 中删除， 这时【删除操作】会显示在 Index 中, 然后 `git commit` 将删除操作归档到 History 中， 则 指定的 file 就完全脱离 version control 了
 
 -   `git rm --cached readme1.txt` 删除 readme1.txt 在版本库中，并保留在 work dir 和 index

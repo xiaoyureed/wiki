@@ -148,6 +148,7 @@ codepen, codesandbox 只用于前端
 - alefragnani.bookmarks: 代码书签
 - markdown all in one
 - gruntfuggly.todo-tree: 添加 todo 树到面板, 显示 todo, (TODO 必须大写, 在行的开头才有效)
+- instant markdown 双屏展示 Markdown
 
 
 前端通用

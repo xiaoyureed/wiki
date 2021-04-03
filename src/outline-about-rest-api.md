@@ -307,6 +307,10 @@ https://blog.csdn.net/angryjiji/article/details/99476028
 
 
 API KEY跟API SECRET KEY: secert key是不向外公开的，用其加入各个请求参数和api key，组合成一个字符串，然后做摘要运算，生成的摘要一起发送给请求服务器，这样服务器端验证当前摘要是否合法，可以得知当前api key对应的secert key是否合法了 (https://blog.csdn.net/weixin_41964962/article/details/105383504), http://www.hello1010.com/api-sign
+http://qtdebug.com/java-sign/
+
+http://qtdebug.com/java-sign/
+https://my.oschina.net/chenmou/blog/4933872
 
 
 # 实践

@@ -112,6 +112,14 @@ https://www.zhihu.com/question/19827960 指的关注的社区
 - [web 开发](#web-开发)
   - [Django](#django)
   - [flask](#flask)
+    - [保护 flask api](#保护-flask-api)
+    - [命令行or idea 启动](#命令行or-idea-启动)
+    - [rest api](#rest-api)
+    - [数据库交互](#数据库交互)
+    - [flask 中的日志](#flask-中的日志)
+    - [blueprint蓝图 模块化开发](#blueprint蓝图-模块化开发)
+    - [上下文对象](#上下文对象)
+  - [fastapi](#fastapi)
 - [db 驱动 问题](#db-驱动-问题)
 - [代替 shell 运维](#代替-shell-运维)
   - [传递参数](#传递参数)
@@ -135,6 +143,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
   - [生成依赖清单](#生成依赖清单)
   - [gunicorn](#gunicorn)
 - [setup.py](#setuppy)
+- [运维工具](#运维工具)
 
 <!-- /TOC -->
 
@@ -1486,6 +1495,19 @@ def wrapper_decorator():
     def yyy():
         print('zzz')
     yyy()
+
+
+
+
+
+def cost_count(func):
+    @wraps(func)
+    def wraper(*args, **kwargs):
+        start = time.time()
+        t = func(*args, **kwargs)
+        logging.info("%s tooks time: %f", func.__name__, time.time()-start)
+        return t
+    return wraper
 ```
 
 
@@ -2137,6 +2159,9 @@ def doc_test():
 # 多进程
 
 gevent
+
+
+https://stackoverflow.com/questions/42680357/increment-counter-for-every-access-to-a-flask-view 通过全局变量加锁, 统计 api 调用次数
 
 ```py
 def multi_processing():
@@ -2857,6 +2882,16 @@ python manage.py shell
 
 https://github.com/humiaozuzu/awesome-flask
 
+https://github.com/yangyuexiong/Flask_BestPractices 中文
+
+
+### 保护 flask api
+
+https://blog.miguelgrinberg.com/post/restful-authentication-with-flask
+https://geekflare.com/securing-flask-api-with-jwt/
+
+
+### 命令行or idea 启动
 
 
 ```sh
@@ -2871,27 +2906,13 @@ flask run [--host=0.0.0.0]
 
 ```
 
+通过  idea 启动, 默认是基于 flask 框架启动 (即右键运行默认是Flask执行项目), 不会走 main 方法
+
+若希望走 main 方法, 需要手动配置 启动 configuration
+
+### rest api
 
 https://www.jianshu.com/p/a25357f2d930 jsonify 相比直接返回 dict/json.dump({}) 的好处
-
-
-https://www.jianshu.com/p/f7ba338016b8 orm 框架 SQLAlchemy
-
-
-https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate 数据迁移, 根据 model 创建 table
-https://blog.csdn.net/feit2417/article/details/86592319
-
-```sh
-python3 manage.py db init
-python3 manage.py db migrate
-python3 manage.py db upgrade
-
-
-```
-
-
-https://www.jianshu.com/p/a681f6490c3c Flask-script
-https://zhuanlan.zhihu.com/p/269820011
 
 
 解析请求参数
@@ -2916,6 +2937,214 @@ def get_data():
 
 
 https://blog.csdn.net/pineapple_C/article/details/113339718 拦截器
+
+### 数据库交互
+
+
+
+https://www.jianshu.com/p/f7ba338016b8 orm 框架 SQLAlchemy
+
+
+https://xieyugui.wordpress.com/2015/04/17/sqlalchemy-%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81model%E5%92%8C%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E8%A1%A8/ 使用动态model和动态创建表
+
+```py
+# 原生sql语句操作
+sql = 'select * from user'
+result = db.session.execute(sql)
+
+# 查询全部
+User.query.all()
+# 主键查询
+User.query.get(1)
+
+# 条件查询
+User.query.filter_by(username='name').all() # or first()
+#                                 ><（大于和小于）查询    and_和or_查询, in_
+# filter_by()	直接用属性名，比较用=	不支持	不支持
+# filter()	用类名.属性名，比较用==	    支持	支持
+
+# 多条件查询
+from sqlalchemy import and_
+User.query.filter_by(and_(User.username =='name',User.password=='passwd'))
+# 比较查询
+User.query.filter(User.id.__lt__(5)) # 小于5
+User.query.filter(User.id.__le__(5)) # 小于等于5
+User.query.filter(User.id.__gt__(5)) # 大于5
+User.query.filter(User.id.__ge__(5)) # 大于等于5
+# in查询
+User.query.filter(User.username.in_('A','B','C','D'))
+# 排序
+User.query.order_by('age') # 按年龄排序，默认升序，在前面加-号为降序'-age'
+# 限制查询
+User.query.filter(age=18).offset(2).limit(3)  # 跳过二条开始查询，限制输出3条
+
+https://blog.csdn.net/qq_41856814/article/details/101226416 分页查询
+
+# 增加
+use = User(id,username,password)
+db.session.add(use)
+db.session.commit() 
+
+# 删除
+User.query.filter_by(User.username='name').delete()
+
+# 修改
+User.query.filter_by(User.username='name').update({'password':'newdata'})
+
+
+```
+
+
+https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate 数据迁移, 根据 model 创建 table
+https://blog.csdn.net/feit2417/article/details/86592319
+
+```sh
+# db 是代码中的 migration command name
+python3 manage.py db init
+python3 manage.py db migrate
+python3 manage.py db upgrade
+
+
+```
+
+
+https://www.jianshu.com/p/a681f6490c3c Flask-script
+https://zhuanlan.zhihu.com/p/269820011
+
+
+
+https://stackoverflow.com/questions/17972020/how-to-execute-raw-sql-in-flask-sqlalchemy-app?rq=1 执行原生 SQL
+
+
+
+### flask 中的日志
+
+https://www.jianshu.com/p/daf5c9e57c65
+
+```py
+app.logger.info('')
+# 打印堆栈
+app.logger.exception('')
+app.logger.debug('A value for debugging')
+app.logger.warning('A warning occurred (%d apples)', 42)
+app.logger.error('An error occurred')
+
+```
+
+
+日志切分:
+
+- 按照大小
+
+
+```py
+from logging.handlers import RotatingFileHandler 
+# backupCount 就是保留的日志个数。 比如flask.log 写满了， 就会被重命名成flask.log.1, 程序继续向flask.log写入。
+handler = RotatingFileHandler("flask.log", maxBytes=1024000, backupCount=10)
+```
+
+
+
+- 按照日期
+
+
+```py
+from logging.handlers import TimedRotatingFileHandler
+handler = TimedRotatingFileHandler(
+        "flask.log", when="D", # when=D： 表示按天进行切分
+        interval=1,  # 每天都切分。 比如interval=2就表示两天切分一下
+         backupCount=15 , # 保留15天的日志
+        encoding="UTF-8", # 使用UTC+0的时间来记录 （一般docker镜像默认也是UTC+0)
+        delay=False, utc=True)
+```
+
+
+`# [%(asctime)s][%(filename)s:%(lineno)d][%(levelname)s][%(thread)d] - %(message)s` 格式配置
+
+```py
+
+if __name__ == '__main__':
+    formatter = logging.Formatter(
+        "[%(asctime)s][%(filename)s:%(lineno)d][%(levelname)s][%(thread)d] - %(message)s")
+        # (%(hostname)s)[%(asctime)s][%(filename)s:%(lineno)d][%(levelname)s][%(thread)d] - %(message)s 增加了 hostname
+    handler = TimedRotatingFileHandler(
+        "flask.log", when="D", interval=1, backupCount=15,
+        encoding="UTF-8", delay=False, utc=True)
+    handler.setFormatter(formatter)
+    app.logger.addHandler(handler)
+    app.run(host='0.0.0.0', port=5001, debug=True)
+
+
+
+# 也可通过 自定义 log filter 定制 日志
+# 首先自定义一个LogFilter
+class ContextFilter(logging.Filter):
+    '''Enhances log messages with contextual information'''
+    def filter(self, record):
+        record.hostname = "my-windows-10"
+        return True
+
+# 在main函数之中， 增加加载这个filter即可
+handler.addFilter(ContextFilter())
+
+```
+
+
+
+SMTPHandler跟HTTPHandler 发送邮件 或者 http
+
+
+```py
+
+if __name__ == '__main__':
+    app.debug = True
+
+    # File and Console handler &amp; formtter
+    formatter = logging.Formatter(
+        "[%(asctime)s][%(module)s:%(lineno)d][%(levelname)s][%(thread)d] - %(message)s")
+    handler = TimedRotatingFileHandler(
+        "flask.log", when="D", interval=1, backupCount=15,
+        encoding="UTF-8", delay=False, utc=True)
+    app.logger.addHandler(handler)
+    handler.setFormatter(formatter)
+
+    # Email Handler
+    mail_handler = SMTPHandler(
+        mailhost='10.64.1.85',
+        fromaddr='flask-admin@trendmicro.com',
+        toaddrs=['wenjun_yang@trendmicro.com'],
+        subject='Flask Application Error'
+    )
+    mail_handler.setLevel(logging.ERROR)
+    mail_handler.setFormatter(logging.Formatter(
+        "[%(asctime)s][%(module)s:%(lineno)d][%(levelname)s][%(thread)d] - %(message)s"
+    ))
+    app.logger.addHandler(mail_handler)
+
+    app.run()
+```
+
+### blueprint蓝图 模块化开发
+
+https://realpython.com/flask-blueprint/
+
+### 上下文对象
+
+https://sentry.io/answers/working-outside-of-application-context/ current_app 使用 (`RuntimeError: working outside of application context`报错)
+
+https://github.com/tiangolo/fastapi/issues/81 使用 app 上下文存储数据
+
+
+g 每次 请求都是新的(蕾西 java 的 threadlocal), app 是真个应用全局生命周期的
+
+https://zhuanlan.zhihu.com/p/26097310
+https://www.zhihu.com/question/33970027
+
+
+## fastapi
+
+
+https://github.com/tiangolo/fastapi
 
 
 # db 驱动 问题
@@ -3579,4 +3808,48 @@ kill -HUP <parent pid>
 
 
 # setup.py
+
+
+# 运维工具
+
+```
+1. psutil 可以获取系统运行的进程和系统利用率（CPU 内存…）信息
+
+import psutil
+
+2. IPy 是python 第三方处理IP地址模块
+
+from IPy import IP
+
+3. dnspython 是Python 实现的一个dns工具包，支持所有的记录类型，可用于查询、传输并动态更新zone信息，可以代替nslookup dig等工具
+
+import dns.resolver
+
+A记录、MX记录、NS记录、CNAME记录
+
+4. difflib模块 实现文件内容差异对比  如nginx 配置文件对比
+
+5. filecmp模块 实现文件、目录、遍历子目录的差异对比功能
+
+6. smtplib模块 实现发送电子邮件
+
+7. pycurl模块
+
+8. scapy 生成动态路由轨迹图
+
+能够对数据包进行伪造或解包，包括发送数据包、包嗅探、应答和反馈匹配，可以用在处理网络扫描、路由跟踪、服务探测、单元测试。通过traceroute生成路由轨迹图，可以看到探测点到目标节点的路由走向，运营商做路由节点分流，可以 通过这个该路由线路是不是最优的
+
+9. pyClamad     ClamAV 是一款免费的开源的防毒软件，主要提供Linux、Unix 系统提供病毒扫描、查杀服务
+
+10. 高效端口扫描器 python-nmap
+
+11. pexpect 可以实现对ssh、ftp、passwd、telnet 等命令进行自动交互
+
+12. paramiko 是基于python 实现的SSH2远程安全链接，支持认证及密钥方式.
+
+13. Fabric 基于python 实现的SSH命令行工具，简化了SSH的应用程序部署及系统管理任务，可以命令执行，文件上床，下载以及完成的日志输出。
+
+14. saltstack 集群化管理工具  正在学
+
+```
 

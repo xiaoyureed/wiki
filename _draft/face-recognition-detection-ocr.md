@@ -73,6 +73,10 @@ https://ai.arcsoft.com.cn/course/index.html 公开课
 
 https://github.com/ChanChiChoi/awesome-Face_Recognition#face-application 论文集
 
+https://github.com/weslynn/AlphaTree-graphic-deep-neural-network 材料
+
+https://viusuangio.github.io/2018/10/08/face_datasets_table/ 公开数据集
+
 
 ## 代码实现
 

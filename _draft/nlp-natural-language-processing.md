@@ -4,6 +4,7 @@ tags:
 ---
 
 https://github.com/NLPchina
+https://github.com/hankcs/HanLP
 
 <!-- more -->
 

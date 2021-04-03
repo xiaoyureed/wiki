@@ -209,6 +209,7 @@ https://www.jianshu.com/p/dcf6de92a2b5
 
 `sudo spctl --master-disable`, 在隐私中会出现 "允许任何来源"
 
+`sudo xattr -r -d com.apple.quarantine <path/to/graalvm/folder/>`
 
 # karabiner 按键映射
 
