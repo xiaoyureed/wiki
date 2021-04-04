@@ -199,7 +199,10 @@ du -sh *.jar # jar size
 # -cp 指定类运行所依赖其他类的路径，通常是类库和jar包, 
 # 等价 -classpath
 # 多个jar包之间连接符：window上分号“;”.Linux下使用“:”
+# 
+# win
 java -cp .;d:\work\other.jar;d:\work\my.jar packname.mainclassname 
+# linux
 java -cp .:/hone/myuser/work/other.jar:/hone/myuser/work/my.jar packname.mainclassname 
 # 表达式支持通配符
 java -cp .;c:\work\my.jar;c:\work\*.jar packname.mainclassname 
@@ -377,8 +380,9 @@ myProps: #自定义的属性和值
 
 创建一个bean来接受信息：(这里不推荐这么用, 应该使用 @value 老老实实属性写全)
 ```java
-@Component    
-@ConfigurationProperties(prefix="myProps") //接收application.yml中的myProps下面的属性   
+// @Component    // 这个注解可选
+@data
+@ConfigurationProperties(prefix="myProps") //接收application.yml中的myProps下面的属性   (prefix 必须, 不可为"", 需要在配置类中 enable config props class)
 // 此时 idea 提示 spring boot config annotation processor not configured, 是因为他以为你要为配置文件指定自定义属性, 需要生成提示 
 // 可以https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/html/appendix-configuration-metadata.html#configuration-metadata-annotation-processor
 public class MyProps {    
