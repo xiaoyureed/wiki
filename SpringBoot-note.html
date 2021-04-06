@@ -299,6 +299,7 @@ TODO</p>
 </li>
 <li><a href="#web-%E7%9B%B8%E5%85%B3">web 相关</a>
 <ul>
+<li><a href="#%E5%8A%A0%E8%A7%A3%E5%AF%86">加解密</a></li>
 <li><a href="#springboot-%E5%8F%91%E9%80%81-https-%E6%88%96%E8%80%85-http-%E5%AE%A2%E6%88%B7%E7%AB%AF-client">springboot 发送 https 或者 http 客户端 client</a>
 <ul>
 <li><a href="#%E5%8F%91%E9%80%81-http-client">发送 http client</a></li>
@@ -1972,6 +1973,12 @@ spring:
 &lt;/dependency&gt;
 </code></pre>
 <h1><a class="header" href="#web-相关" id="web-相关">web 相关</a></h1>
+<h2><a class="header" href="#加解密" id="加解密">加解密</a></h2>
+<p>https://www.baeldung.com/java-aes-encryption-decryption 加密科普</p>
+<p>https://www.cnblogs.com/loong-hon/p/11225407.html</p>
+<p>https://www.javatt.com/p/22814
+https://blog.csdn.net/github_36086968/article/details/103424945
+https://jueee.github.io/2021/01/2021-01-06-SpringBoot%E5%AE%9E%E7%8E%B0API%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AEAES%E5%8A%A0%E5%AF%86/</p>
 <h2><a class="header" href="#springboot-发送-https-或者-http-客户端-client" id="springboot-发送-https-或者-http-客户端-client">springboot 发送 https 或者 http 客户端 client</a></h2>
 <p>https://blog.csdn.net/defonds/article/details/86594441 (https://prasans.info/making-https-call-using-apache-httpclient/)
 https://www.cnblogs.com/lfstudy/p/13793625.html
@@ -2627,7 +2634,7 @@ public class DruidConfig {
 <pre><code class="language-java">// 只需要spring-boot-starter-aop
 //@EnableAspectJAutoProxy// 无需, 自动开启,引入依赖后
 
-@Component
+@Component //必须
 @Aspect
 public class ReqCheckAop {
 
