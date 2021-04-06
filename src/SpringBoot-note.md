@@ -106,6 +106,7 @@ jdbc:mysql://122.191.199.51:60000/js_phaseii_db?useUnicode=true&characterEncodin
     - [AbstractRoutingDataSource 动态数据源切换](#abstractroutingdatasource-动态数据源切换)
   - [多数据库类型 databaseIdProvider](#多数据库类型-databaseidprovider)
 - [web 相关](#web-相关)
+  - [加解密](#加解密)
   - [springboot 发送 https 或者 http 客户端 client](#springboot-发送-https-或者-http-客户端-client)
     - [发送 http client](#发送-http-client)
     - [发送 https client](#发送-https-client)
@@ -2062,6 +2063,16 @@ spring:
 
 # web 相关
 
+## 加解密
+
+https://www.baeldung.com/java-aes-encryption-decryption 加密科普
+
+https://www.cnblogs.com/loong-hon/p/11225407.html
+
+https://www.javatt.com/p/22814
+https://blog.csdn.net/github_36086968/article/details/103424945
+https://jueee.github.io/2021/01/2021-01-06-SpringBoot%E5%AE%9E%E7%8E%B0API%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AEAES%E5%8A%A0%E5%AF%86/
+
 ## springboot 发送 https 或者 http 客户端 client
 
 https://blog.csdn.net/defonds/article/details/86594441 (https://prasans.info/making-https-call-using-apache-httpclient/)
@@ -2805,7 +2816,7 @@ public class DruidConfig {
 // 只需要spring-boot-starter-aop
 //@EnableAspectJAutoProxy// 无需, 自动开启,引入依赖后
 
-@Component
+@Component //必须
 @Aspect
 public class ReqCheckAop {
 

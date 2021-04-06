@@ -39,6 +39,7 @@ TODO
   - [创业](#创业)
   - [处世](#处世)
 - [story](#story)
+- [freelancer 兼职](#freelancer-兼职)
 
 <!-- /TOC -->
 
@@ -383,3 +384,15 @@ https://kalasearch.cn/blog
 # story
 
 https://us.v2ex.com/t/701124#reply101
+
+
+# freelancer 兼职
+
+- 卖课
+  小鹅通, 荔枝微课, 千聊
+- 写稿
+  公众号-投稿约稿指南, 豆瓣小组-豆瓣稿费银行
+- 视频
+- 线上家教
+  掌门 1v1, 优思教育, 儒林教育,悟空中文, 哈兔中文
+

@@ -112,6 +112,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
 - [web 开发](#web-开发)
   - [Django](#django)
   - [flask](#flask)
+    - [flask解决跨域问题](#flask解决跨域问题)
     - [保护 flask api](#保护-flask-api)
     - [命令行or idea 启动](#命令行or-idea-启动)
     - [rest api](#rest-api)
@@ -2884,6 +2885,9 @@ https://github.com/humiaozuzu/awesome-flask
 
 https://github.com/yangyuexiong/Flask_BestPractices 中文
 
+### flask解决跨域问题
+
+https://blog.csdn.net/h18208975507/article/details/102551339
 
 ### 保护 flask api
 
