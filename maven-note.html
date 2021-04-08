@@ -716,6 +716,7 @@ mvn dependency:purge-local-repository -DmanualInclude=&quot;groupId:artifactId, 
 <li><code>classifier</code>: 帮助定义构建输出的一些附属构件; 比如定义了主构件'xxx.jar', 有时可能还会使用一些插件生成'xxx-javadoc.jar', 'xxx-source.jar'这样的附属构件, 这时, 'javadoc', 'source'就是这两个附属构件的classifier ;(classifier不能直接定义)</li>
 </ul>
 <h1><a class="header" href="#快照版本和发布版本" id="快照版本和发布版本">快照版本和发布版本</a></h1>
+<p>Snapchat版本作用</p>
 <p>为什么需要区分快照版本和发布版本? </p>
 <p>考虑这个场景: 小a在开发模块A(v: 2.1), 同时, 小m在开发模块B, B -&gt; A, 开发中, 小a经常需要将模块最新版构建输出, 交给小m, 怎么方便的做这个工作呢?</p>
 <p>Maven的快照机制可以解决这个问题. </p>

@@ -179,6 +179,7 @@ https://github.com/iswbm</p>
 <ul>
 <li><a href="#python-%E7%89%B9%E7%82%B9">python 特点</a></li>
 <li><a href="#python-%E5%AE%89%E8%A3%85">python 安装</a></li>
+<li><a href="#python%E5%8D%87%E7%BA%A7">python升级</a></li>
 <li><a href="#vscode-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">vscode 环境配置</a></li>
 <li><a href="#%E8%AE%BE%E7%BD%AE%E5%9B%BD%E5%86%85pip%E6%BA%90">设置国内pip源</a></li>
 <li><a href="#%E8%A7%A3%E9%87%8A%E5%99%A8">解释器</a></li>
@@ -351,6 +352,23 @@ apt-get update
 apt-get install python3
 # 验证
 python3 --version
+
+</code></pre>
+<h2><a class="header" href="#python升级" id="python升级">python升级</a></h2>
+<p>https://www.cnblogs.com/dotnetcrazy/p/9360831.html</p>
+<p>http://npm.taobao.org/mirrors Python 压缩包镜像下载</p>
+<pre><code class="language-sh">wget http://npm.taobao.org/mirrors/python/3.9.4/Python-3.9.4.tgz
+tar -xzvf Python-3.9.4.tgz
+# 设置一下配置文件
+cd Pythonxxx
+./configure prefix=/usr/local/python3.7
+# centos
+# （yum安装没有apt安装方便）
+make &amp;&amp; make install
+# 设置软链接：
+ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+
+
 
 </code></pre>
 <h2><a class="header" href="#vscode-环境配置" id="vscode-环境配置">vscode 环境配置</a></h2>
@@ -2739,14 +2757,21 @@ virtualenv -p python3.6 venv
 virtualenv  venv
 # 有了venv这个Python环境，可以用source进入该环境
 source ./venv/bin/activate
+# 退出 venv
+deactivate
+
+#对当前已经创建的虚拟环境更改为可迁移, 生成压缩包解压后直接使用
+virtualenv --relocatable ./
+
 # 安装库依赖 到 venv
 pip install -r requirements.txt
 # 生成依赖文件
 pip freeze &gt; requirements.txt 
 # 当前安装版本
 pip freeze
-# 退出 venv
-deactivate
+
+
+
 
 
 # virtualenvwrapper,是对 virtualenv 的一个封装，目的是使后者更好用。
