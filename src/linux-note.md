@@ -154,6 +154,7 @@ https://linuxtools-rst.readthedocs.io/zh_CN/latest/base/01_use_man.html 学会�
         - [rpm软件卸载和重建数据库](#rpm软件卸载和重建数据库)
       - [srpm](#srpm)
     - [apt和apt-get](#apt和apt-get)
+    - [yum 使用](#yum-使用)
 - [SELinux](#selinux)
 - [系统服务 daemons](#系统服务-daemons)
   - [daemons是什么](#daemons是什么)
@@ -242,7 +243,7 @@ fg 1
 zip <zip name> <file1 file2...>
 # zip name 可以和 folder name 不同
 zip -r <zip_file_name> <folder1> [foder2...] 
-unzip -d <dest_dir> xxx.zip
+unzip [-d <dest_dir>]  xxx.zip
 # 使用 gzip (-z) 或 biz2 (-j) 解压缩 (-x) 压缩(-c)
 tar [-C output_dir] -zxvf xxx
 
@@ -297,6 +298,9 @@ uname -r
 
 # 发行版本 distribution version
 lsb_release -a
+
+# centos release version 发行版本
+cat /etc/redhat-release
 
 # 中文乱码
 echo $LANG 显示当前语系. `LANG=en_US` 设置语系(暂时的, 再次登录会失效)
@@ -2128,7 +2132,7 @@ tarball: 打包后压缩的文件
 
 `-C <dir_path>` 指定目的地, 如解压到指定目录
 
-* `tar -jcv -f <自定义压缩文件名.tar.bz2> <需要压缩的文件/目录(可以有多个)>` 打包后, bzip2压缩; 推荐自定义压缩名: xxx.tar.bz2
+* `tar -jcv -f <自定义压缩文件名.tar.bz2> <需要压缩的文件/目录(可以有多个)>` 打包后, bzip2压缩; 推荐自定义压缩名: xxx.tar.bz2 (或者 xxx.tar.xz)
 
 * `tar -jcv -f <自定义压缩文件名.tar.bz2> --exclude=<排除文件> <需要压缩的文件/目录(可以有多个)>` 排除指定目录下某几个文件, 然后压缩
 
@@ -2483,6 +2487,45 @@ apt list --all -versions：列出系统中所有能找到的包及版本
 apt edit-sources，新的apt命令，编辑源列表
 
 apt-get clean # 删除无用的安装文件
+
+```
+
+### yum 使用
+
+Yellow dog Updater, Modified
+
+https://www.cnblogs.com/zhichaoma/p/7533247.html
+
+```sh
+更新所有的rpm包
+#yum update
+更新指定的rpm包,如更新kernel和kernel source
+#yum update kernel kernel-source
+大规模的版本升级,与yum update不同的是,连旧的淘汰的包也升级
+#yum upgrade
+
+
+# yum install xxx            　　安装xxx软件
+# yum info xxx                　 查看xxx软件的信息
+# yum remove xxx        　　　　　删除软件包
+# yum list                      列出软件包
+# yum clean                     清除缓冲和就的包
+# yum provides xxx              以xxx为关键字搜索包（提供的信息为关键字）
+# yum search xxx           　　 搜索软件包（以名字为关键字）
+
+yum groupinstall "Development Tools"
+# yum groupupdate xxx　　　　   更新xxx软件分组
+# yum grouplist xxx
+# yum groupremove xxx
+# yum groupinfoinfo xxx
+这三个都是一组为单位进行升级 列表和删除的操作。。比如 "Mysql Database"就是一个组会同时操作相关的所有软件包；
+
+# yum update                  系统升级
+# yum list available          列出所有升级源上的包；
+# yum list updates            列出所有升级源上的可以更新包；
+# yum list installed          列出已经安装的包；
+# yun update kernel           升级内核；
+
 
 ```
 

@@ -604,6 +604,8 @@ mvn dependency:purge-local-repository -DmanualInclude="groupId:artifactId, ..."
 
 # 快照版本和发布版本
 
+Snapchat版本作用
+
 为什么需要区分快照版本和发布版本? 
 
 考虑这个场景: 小a在开发模块A(v: 2.1), 同时, 小m在开发模块B, B -> A, 开发中, 小a经常需要将模块最新版构建输出, 交给小m, 怎么方便的做这个工作呢?

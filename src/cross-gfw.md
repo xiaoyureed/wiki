@@ -30,6 +30,7 @@ https://github.com/hoochanlon
   - [其他方法](#其他方法)
   - [移动端](#移动端)
 - [vps](#vps)
+- [内网穿透](#内网穿透)
 
 <!-- /TOC -->
 
@@ -637,6 +638,30 @@ Android:  shadowsocks , Postern,
 百度云加速：CDN/安全加速
 ThemeForest 全球最大网站主题库
 
-FRP  内网穿透
 
 SeaFile、ownCloud、BTSync 云网盘
+
+# 内网穿透
+
+FRP  https://github.com/fatedier/frp
+
+https://github.com/ehang-io/nps nps
+
+https://blog.k8s.li/ffmepg-rtsp.html
+https://www.cnblogs.com/liusingbon/p/12623774.html
+https://www.zhihu.com/question/20671869 摄像头视频流
+
+https://segmentfault.com/a/1190000022390255 常用的内网穿透工具
+
+
+reference: [1](https://zhuanlan.zhihu.com/p/30351943)
+https://www.youtube.com/watch?v=VKSKZ0-3oT8
+https://www.youtube.com/watch?v=LUg8cEBjYYM (web css 设计)
+GitHub: frp
+
+https://imququ.com/post/self-hosted-ngrokd.html
+https://ngrok.com
+https://www.skysilk.com/cloud/pricing/#classId=Basic&section=1
+https://www.vultr.com/
+
+

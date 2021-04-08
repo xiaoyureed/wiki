@@ -48,6 +48,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
 - [介绍](#介绍)
   - [python 特点](#python-特点)
   - [python 安装](#python-安装)
+  - [python升级](#python升级)
   - [vscode 环境配置](#vscode-环境配置)
   - [设置国内pip源](#设置国内pip源)
   - [解释器](#解释器)
@@ -178,6 +179,28 @@ apt-get update
 apt-get install python3
 # 验证
 python3 --version
+
+```
+
+## python升级
+
+https://www.cnblogs.com/dotnetcrazy/p/9360831.html
+
+http://npm.taobao.org/mirrors Python 压缩包镜像下载
+
+```sh
+wget http://npm.taobao.org/mirrors/python/3.9.4/Python-3.9.4.tgz
+tar -xzvf Python-3.9.4.tgz
+# 设置一下配置文件
+cd Pythonxxx
+./configure prefix=/usr/local/python3.7
+# centos
+# （yum安装没有apt安装方便）
+make && make install
+# 设置软链接：
+ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+
+
 
 ```
 
@@ -2793,14 +2816,21 @@ virtualenv -p python3.6 venv
 virtualenv  venv
 # 有了venv这个Python环境，可以用source进入该环境
 source ./venv/bin/activate
+# 退出 venv
+deactivate
+
+#对当前已经创建的虚拟环境更改为可迁移, 生成压缩包解压后直接使用
+virtualenv --relocatable ./
+
 # 安装库依赖 到 venv
 pip install -r requirements.txt
 # 生成依赖文件
 pip freeze > requirements.txt 
 # 当前安装版本
 pip freeze
-# 退出 venv
-deactivate
+
+
+
 
 
 # virtualenvwrapper,是对 virtualenv 的一个封装，目的是使后者更好用。
