@@ -325,10 +325,11 @@ https://github.com/iswbm</p>
 </li>
 <li><a href="#jython">jython</a></li>
 <li><a href="#%E8%B0%83%E7%94%A8-rust">调用 rust</a></li>
-<li><a href="#python-%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2">python 应用部署</a>
+<li><a href="#web%E5%BA%94%E7%94%A8%E9%83%A8%E7%BD%B2">web应用部署</a>
 <ul>
 <li><a href="#%E7%94%9F%E6%88%90%E4%BE%9D%E8%B5%96%E6%B8%85%E5%8D%95">生成依赖清单</a></li>
 <li><a href="#gunicorn">gunicorn</a></li>
+<li><a href="#supervisord-%E7%AE%A1%E7%90%86-daemon">supervisord 管理 daemon</a></li>
 </ul>
 </li>
 <li><a href="#setuppy">setup.py</a></li>
@@ -3527,7 +3528,7 @@ https://medium.com/swlh/parsing-rest-api-payload-and-query-parameters-with-flask
 <p>https://www.v2ex.com/t/757216</p>
 <p>https://blog.csdn.net/m0_37696990/article/details/96876692</p>
 <p>https://blog.csdn.net/muzico425/article/details/103331676</p>
-<h1><a class="header" href="#python-应用部署" id="python-应用部署">python 应用部署</a></h1>
+<h1><a class="header" href="#web应用部署" id="web应用部署">web应用部署</a></h1>
 <p>https://www.zhihu.com/question/21888077</p>
 <h2><a class="header" href="#生成依赖清单" id="生成依赖清单">生成依赖清单</a></h2>
 <pre><code class="language-sh"># 生成依赖文件
@@ -3593,6 +3594,8 @@ kill -9 &lt;父进程pid&gt;
 # 重启
 kill -HUP &lt;parent pid&gt;
 </code></pre>
+<h2><a class="header" href="#supervisord-管理-daemon" id="supervisord-管理-daemon">supervisord 管理 daemon</a></h2>
+<p>supervisord.org</p>
 <h1><a class="header" href="#setuppy" id="setuppy">setup.py</a></h1>
 <h1><a class="header" href="#运维工具" id="运维工具">运维工具</a></h1>
 <pre><code>1. psutil 可以获取系统运行的进程和系统利用率（CPU 内存…）信息
