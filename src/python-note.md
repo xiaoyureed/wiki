@@ -141,9 +141,10 @@ https://www.zhihu.com/question/19827960 指的关注的社区
   - [序列化反序列化](#序列化反序列化)
 - [jython](#jython)
 - [调用 rust](#调用-rust)
-- [python 应用部署](#python-应用部署)
+- [web应用部署](#web应用部署)
   - [生成依赖清单](#生成依赖清单)
   - [gunicorn](#gunicorn)
+  - [supervisord 管理 daemon](#supervisord-管理-daemon)
 - [setup.py](#setuppy)
 - [运维工具](#运维工具)
 
@@ -3756,7 +3757,7 @@ https://blog.csdn.net/m0_37696990/article/details/96876692
 https://blog.csdn.net/muzico425/article/details/103331676
 
 
-# python 应用部署
+# web应用部署
 
 https://www.zhihu.com/question/21888077
 
@@ -3839,6 +3840,10 @@ kill -9 <父进程pid>
 # 重启
 kill -HUP <parent pid>
 ```
+
+## supervisord 管理 daemon
+
+supervisord.org
 
 
 # setup.py
