@@ -17,7 +17,8 @@ TODO
 https://github.com/cloudfavorites/favorites-web 单体应用实例 hibernate jpa
 
 
-jdbc:mysql://122.191.199.51:60000/js_phaseii_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+
+https://github.com/xkcoding/spring-boot-demo springboot demos
 
 
 </div>
@@ -66,6 +67,7 @@ jdbc:mysql://122.191.199.51:60000/js_phaseii_db?useUnicode=true&characterEncodin
 - [日志](#日志)
   - [Log4j2-Marker 写入到指定日志文件](#log4j2-marker-写入到指定日志文件)
 - [数据层](#数据层)
+  - [数据库 url 和驱动](#数据库-url-和驱动)
   - [graphql集成](#graphql集成)
   - [启动执行 SQL](#启动执行-sql)
     - [SQL 分隔符的坑](#sql-分隔符的坑)
@@ -864,6 +866,16 @@ https://www.jianshu.com/p/1ff824bc997a?utm_campaign
 
 
 # 数据层
+
+## 数据库 url 和驱动
+
+```
+MySQL
+jdbc:mysql://122.191.199.51:60000/js_phaseii_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+jdbc:mysql://localhost:3306/ry-cloud?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+com.mysql.cj.jdbc.Driver
+
+```
 
 ## graphql集成
 

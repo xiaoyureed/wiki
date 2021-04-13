@@ -5,6 +5,10 @@ categories: distributed system
 
 https://github.com/leiguorui/programming-video-tutorials 视频教程
 
+https://github.com/We-Hack-Studio/nuts 坚果量化 - 数字货币量化交易系统。
+
+
+
 <!--more-->
 
 负责使用 Rust、Python 对接与数字货币（比特币，以太坊等）交易所（火币，OKEX，币安等）有关的API

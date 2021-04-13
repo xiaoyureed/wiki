@@ -5,6 +5,8 @@ tags: [python]
 categories: computer science
 ---
 
+https://github.com/beancount/beancount 纯文本记账系统
+
 https://github.com/jackzhenguo/python-small-examples 小例子
 
 https://github.com/jackfrued/Python-100-Days 教程

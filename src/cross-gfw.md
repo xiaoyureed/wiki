@@ -27,6 +27,8 @@ https://github.com/hoochanlon
   - [修改本机hosts文件](#修改本机hosts文件)
   - [HTTPS 的加密 web 代理](#https-的加密-web-代理)
   - [vpn 代理软件](#vpn-代理软件)
+    - [通过 代理科学上网 step by step](#通过-代理科学上网-step-by-step)
+    - [代理的客户端下载](#代理的客户端下载)
   - [其他方法](#其他方法)
   - [移动端](#移动端)
 - [vps](#vps)
@@ -607,6 +609,73 @@ install_prepare(){
 
 install_main
 ```
+
+### 通过 代理科学上网 step by step
+
+一键 ss
+
+```sh
+git clone -b master https://github.com/flyzy2005/ss-fly
+ss-fly/ss-fly.sh -i <ss pwd> [port] # pwd 最好只包含字母+数字, port 可选, 默认 1024
+# 如果需要改密码或者改端口，只需要重新再执行一次搭建ss脚本代码
+# 或者修改/etc/shadowsocks.json这个配置文件
+
+# 卸载
+ss-fly/ss-fly.sh -uninstall
+
+
+
+# 常用操作
+启动：/etc/init.d/ss-fly start
+停止：/etc/init.d/ss-fly stop
+重启：/etc/init.d/ss-fly restart
+状态：/etc/init.d/ss-fly status
+查看ss链接：ss-fly/ss-fly.sh -sslink
+修改配置文件：vim /etc/shadowsocks.json
+```
+
+
+一键 ssr
+
+```sh
+git clone -b master https://github.com/flyzy2005/ss-fly
+ss-fly/ss-fly.sh -ssr # 会进入到输入参数的界面，包括服务器端口，密码，加密方式，协议，混淆, 可以直接输入回车选择默认值
+# 卸载 ssr
+./shadowsocksR.sh uninstall
+
+
+# ssr 操作
+启动：/etc/init.d/shadowsocks start
+停止：/etc/init.d/shadowsocks stop
+重启：/etc/init.d/shadowsocks restart
+状态：/etc/init.d/shadowsocks status
+
+配置文件路径：/etc/shadowsocks.json
+日志文件路径：/var/log/shadowsocks.log
+代码安装目录：/usr/local/shadowsocks
+
+
+
+
+```
+
+
+一键开启BBR加速
+
+```sh
+ss-fly/ss-fly.sh -bbr
+reboot # 重启
+
+# 这条返回 net.ipv4.tcp_available_congestion_control = bbr cubic reno 则证明 开启成功
+sysctl net.ipv4.tcp_available_congestion_control
+
+```
+
+### 代理的客户端下载
+
+https://shadowsocks.org/en/download/clients.html 官方下载
+https://github.com/shadowsocks
+
 
 
 ## 其他方法

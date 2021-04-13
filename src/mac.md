@@ -60,6 +60,7 @@ https://github.com/Louiszhai/tool
     - [snippets](#snippets)
   - [修改 hosts 文件](#修改-hosts-文件)
   - [idea](#idea)
+    - [vm 配置文件路径](#vm-配置文件路径)
     - [完全卸载](#完全卸载)
     - [插件无法搜索](#插件无法搜索)
     - [ideavim](#ideavim)
@@ -340,6 +341,8 @@ find . -name '*.DS_Store' -type f -delete
 ## 系统自带小命令
 
 ```sh
+# 剪贴板
+# 
 # 复制
 pbcopy < file.txt
 # 粘贴
@@ -855,9 +858,22 @@ https://github.com/microsoft/vscode/issues/89700 当前文件夹名字
 
 ```sh
 sodu vim /etc/hosts
+
+
+# 推荐使用 switchHosts https://github.com/oldj/SwitchHosts
+# 修改后若无效, 可以尝试手动激活host, 还不行, 尝试重启机器
+Windows：在 CMD 窗口输入：ipconfig /flushdns
+Linux 命令：sudo rcnscd restart
+Mac 命令：sudo killall -HUP mDNSResponder
+
 ```
 
 ## idea 
+
+### vm 配置文件路径
+
+/Users/xiaoyu/Library/Application Support/JetBrains/IntelliJIdea2020.3
+
 
 ### 完全卸载
 
