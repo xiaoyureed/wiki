@@ -223,6 +223,7 @@ https://github.com/Louiszhai/tool</p>
 <li><a href="#%E4%BF%AE%E6%94%B9-hosts-%E6%96%87%E4%BB%B6">修改 hosts 文件</a></li>
 <li><a href="#idea">idea</a>
 <ul>
+<li><a href="#vm-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84">vm 配置文件路径</a></li>
 <li><a href="#%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD">完全卸载</a></li>
 <li><a href="#%E6%8F%92%E4%BB%B6%E6%97%A0%E6%B3%95%E6%90%9C%E7%B4%A2">插件无法搜索</a></li>
 <li><a href="#ideavim">ideavim</a></li>
@@ -438,7 +439,9 @@ defaults delete com.apple.desktopservices DSDontWriteNetworkStores
 find . -name '*.DS_Store' -type f -delete
 </code></pre>
 <h2><a class="header" href="#系统自带小命令" id="系统自带小命令">系统自带小命令</a></h2>
-<pre><code class="language-sh"># 复制
+<pre><code class="language-sh"># 剪贴板
+# 
+# 复制
 pbcopy &lt; file.txt
 # 粘贴
 pbpaste &gt; file.txt
@@ -853,8 +856,18 @@ ${env:PATH}:系统中的环境变量
 </code></pre>
 <h2><a class="header" href="#修改-hosts-文件" id="修改-hosts-文件">修改 hosts 文件</a></h2>
 <pre><code class="language-sh">sodu vim /etc/hosts
+
+
+# 推荐使用 switchHosts https://github.com/oldj/SwitchHosts
+# 修改后若无效, 可以尝试手动激活host, 还不行, 尝试重启机器
+Windows：在 CMD 窗口输入：ipconfig /flushdns
+Linux 命令：sudo rcnscd restart
+Mac 命令：sudo killall -HUP mDNSResponder
+
 </code></pre>
 <h2><a class="header" href="#idea" id="idea">idea</a></h2>
+<h3><a class="header" href="#vm-配置文件路径" id="vm-配置文件路径">vm 配置文件路径</a></h3>
+<p>/Users/xiaoyu/Library/Application Support/JetBrains/IntelliJIdea2020.3</p>
 <h3><a class="header" href="#完全卸载" id="完全卸载">完全卸载</a></h3>
 <pre><code>进入 cd Users/xiaoyu/Library/
 

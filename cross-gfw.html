@@ -178,7 +178,12 @@ https://github.com/hoochanlon
 <li><a href="#%E4%BF%AE%E6%94%B9dns%E6%9C%8D%E5%8A%A1%E5%99%A8">修改DNS服务器</a></li>
 <li><a href="#%E4%BF%AE%E6%94%B9%E6%9C%AC%E6%9C%BAhosts%E6%96%87%E4%BB%B6">修改本机hosts文件</a></li>
 <li><a href="#https-%E7%9A%84%E5%8A%A0%E5%AF%86-web-%E4%BB%A3%E7%90%86">HTTPS 的加密 web 代理</a></li>
-<li><a href="#vpn-%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6">vpn 代理软件</a></li>
+<li><a href="#vpn-%E4%BB%A3%E7%90%86%E8%BD%AF%E4%BB%B6">vpn 代理软件</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87-%E4%BB%A3%E7%90%86%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-step-by-step">通过 代理科学上网 step by step</a></li>
+<li><a href="#%E4%BB%A3%E7%90%86%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8B%E8%BD%BD">代理的客户端下载</a></li>
+</ul>
+</li>
 <li><a href="#%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95">其他方法</a></li>
 <li><a href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF">移动端</a></li>
 </ul>
@@ -709,6 +714,58 @@ install_prepare(){
 
 install_main
 </code></pre>
+<h3><a class="header" href="#通过-代理科学上网-step-by-step" id="通过-代理科学上网-step-by-step">通过 代理科学上网 step by step</a></h3>
+<p>一键 ss</p>
+<pre><code class="language-sh">git clone -b master https://github.com/flyzy2005/ss-fly
+ss-fly/ss-fly.sh -i &lt;ss pwd&gt; [port] # pwd 最好只包含字母+数字, port 可选, 默认 1024
+# 如果需要改密码或者改端口，只需要重新再执行一次搭建ss脚本代码
+# 或者修改/etc/shadowsocks.json这个配置文件
+
+# 卸载
+ss-fly/ss-fly.sh -uninstall
+
+
+
+# 常用操作
+启动：/etc/init.d/ss-fly start
+停止：/etc/init.d/ss-fly stop
+重启：/etc/init.d/ss-fly restart
+状态：/etc/init.d/ss-fly status
+查看ss链接：ss-fly/ss-fly.sh -sslink
+修改配置文件：vim /etc/shadowsocks.json
+</code></pre>
+<p>一键 ssr</p>
+<pre><code class="language-sh">git clone -b master https://github.com/flyzy2005/ss-fly
+ss-fly/ss-fly.sh -ssr # 会进入到输入参数的界面，包括服务器端口，密码，加密方式，协议，混淆, 可以直接输入回车选择默认值
+# 卸载 ssr
+./shadowsocksR.sh uninstall
+
+
+# ssr 操作
+启动：/etc/init.d/shadowsocks start
+停止：/etc/init.d/shadowsocks stop
+重启：/etc/init.d/shadowsocks restart
+状态：/etc/init.d/shadowsocks status
+
+配置文件路径：/etc/shadowsocks.json
+日志文件路径：/var/log/shadowsocks.log
+代码安装目录：/usr/local/shadowsocks
+
+
+
+
+</code></pre>
+<p>一键开启BBR加速</p>
+<pre><code class="language-sh">ss-fly/ss-fly.sh -bbr
+reboot # 重启
+
+# 这条返回 net.ipv4.tcp_available_congestion_control = bbr cubic reno 则证明 开启成功
+sysctl net.ipv4.tcp_available_congestion_control
+
+</code></pre>
+<h3><a class="header" href="#代理的客户端下载" id="代理的客户端下载">代理的客户端下载</a></h3>
+<p>https://shadowsocks.org/en/download/clients.html 官方下载
+https://github.com/shadowsocks</p>
 <h2><a class="header" href="#其他方法" id="其他方法">其他方法</a></h2>
 <p>内网穿透：比较典型的是ZeroTier，</p>
 <p>V2Ray：V2Ray 是 Project V 下的一个工具。Project V 是一个包含一系列构建特定网络环境工具的项目，而 V2Ray 属于最核心的一个</p>
