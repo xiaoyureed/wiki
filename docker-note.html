@@ -2084,6 +2084,10 @@ docker run -p 6379:6379 -v $PWD/data:/data --name redis -d redis redis-server --
 # 自定义配置文件, 先创建 /usr/local/docker/redis.conf
 docker run -p 6379:6379 --name myredis -v /usr/local/docker/redis.conf:/etc/redis/redis.conf -v /usr/local/docker/data:/data -d redis redis-server /etc/redis/redis.conf --appendonly yes
 
+# 带密码启动
+docker run --name redis -p 6379:6379 -d --restart=always redis:latest redis-server --appendonly yes --requirepass &quot;redis123456aB&quot;
+
+
 # redis client
 docker exec -ti d0b86 redis-cli [-h localhost -p 6379]
 # remote client

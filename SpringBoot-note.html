@@ -160,8 +160,6 @@ categories: java web</li>
 记录springboot学习中的问题, 总结;
 https://github.com/h2pl web 项目
 https://github.com/dreamhead/moco mock 框架
-<p>https://github.com/yinjihuan/monkey-api-encrypt api 加解密 
-TODO</p>
 <p>https://github.com/cloudfavorites/favorites-web 单体应用实例 hibernate jpa</p>
 <p>https://github.com/xkcoding/spring-boot-demo springboot demos</p>
 </div>
@@ -414,7 +412,12 @@ TODO</p>
 </li>
 <li><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-and-%E7%8E%AF%E5%A2%83">配置文件 and 环境</a>
 <ul>
-<li><a href="#%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">读取配置文件</a></li>
+<li><a href="#%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">读取配置文件</a>
+<ul>
+<li><a href="#%E5%87%A0%E7%A7%8D%E8%AF%BB%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95">几种读取配置文件的方法</a></li>
+<li><a href="#%E6%B3%A8%E5%85%A5%E5%A4%8D%E6%9D%82%E7%B1%BB%E5%9E%8B">注入复杂类型</a></li>
+</ul>
+</li>
 <li><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BC%98%E5%85%88%E7%BA%A7">配置文件优先级</a></li>
 <li><a href="#%E8%AF%BB%E5%8F%96%E7%8E%AF%E5%A2%83%E4%BF%A1%E6%81%AF">读取环境信息</a></li>
 <li><a href="#%E4%B8%A4%E7%A7%8D%E5%BC%95%E5%85%A5-springboot-%E6%96%B9%E5%BC%8F">两种引入 springboot 方式</a></li>
@@ -1982,6 +1985,7 @@ spring:
 </code></pre>
 <h1><a class="header" href="#web-相关" id="web-相关">web 相关</a></h1>
 <h2><a class="header" href="#加解密" id="加解密">加解密</a></h2>
+<p>https://github.com/yinjihuan/monkey-api-encrypt api 加解密 </p>
 <p>https://www.baeldung.com/java-aes-encryption-decryption 加密科普</p>
 <p>https://www.cnblogs.com/loong-hon/p/11225407.html</p>
 <p>https://www.javatt.com/p/22814
@@ -3441,12 +3445,13 @@ public class SchedulerConfig implements SchedulingConfigurer {
 <h3><a class="header" href="#集成-quartz" id="集成-quartz">集成 Quartz</a></h3>
 <h1><a class="header" href="#配置文件-and-环境" id="配置文件-and-环境">配置文件 and 环境</a></h1>
 <h2><a class="header" href="#读取配置文件" id="读取配置文件">读取配置文件</a></h2>
+<h3><a class="header" href="#几种读取配置文件的方法" id="几种读取配置文件的方法">几种读取配置文件的方法</a></h3>
 <ol>
 <li>
 <p>使用 @Value(&quot;${property}&quot;) 读取比较简单的配置信息</p>
 </li>
 <li>
-<p>通过@ConfigurationProperties(prefix = &quot;library&quot;)读取并与 bean 绑定, 需要 加 @component, 若不用 @component, 则必须 @EnableConfigurationProperties(...)</p>
+<p>通过@ConfigurationProperties(prefix = &quot;library&quot;)读取并与 bean 绑定, 需要 加 @component, 若不用 @component, 则必须 在任意一个配置类上添加 @EnableConfigurationProperties(...)</p>
 </li>
 <li>
 <p>@ConfigurationProperties 配合 @bean 用在方法上, 方法调用空构造函数返回想要构造的对象</p>
@@ -3455,6 +3460,97 @@ public class SchedulerConfig implements SchedulingConfigurer {
 <p>@PropertySource(&quot;classpath:website.properties&quot;) 读取指定 properties 文件</p>
 </li>
 </ol>
+<h3><a class="header" href="#注入复杂类型" id="注入复杂类型">注入复杂类型</a></h3>
+<p>对于 properties 格式的配置文件:</p>
+<pre><code class="language-java"># application.properties
+#
+#单个值
+val=10
+
+# List
+list=1,2,3,4
+
+#Map
+map={'name':'chen', 'age':'12', 'sex':'男'}
+
+
+
+#java
+# 用到了spel表达式
+@PropertySource(&quot;classpath:xxx&quot;)
+public class ConfigProps {
+    //单个数值，可注入为int或String
+    @Value(&quot;${val}&quot;)
+    private int val;
+
+    //array 数组
+    @Value(&quot;#{'${ips}'.split(',')}&quot;)
+    private List&lt;String&gt; iplist;
+
+
+    //map
+    @Value(&quot;#{${map}}&quot;)
+    private Map&lt;String, String&gt; map;
+}
+
+
+</code></pre>
+<p>对于 yml 格式的文件:</p>
+<pre><code class="language-java">custom:
+  ignored-token-path: /base/xx/login, /xx/**/, /xx/hfc/test
+
+然和配置接受类
+
+@Configuration // 也可以用 @component, 若果不想用这类注解, 可以去掉, 取而代之在启动类上标注 @enableConfigProperties(xxx.class), 相当于加了 @Component
+@ConfigurationProperties(&quot;custom&quot;)
+public class Custom {
+
+    private String[] ignoredTokenPath;
+
+}
+
+
+
+
+
+custom:
+  mail[0]:
+    username: xxx@xxx.com
+    password: axxx
+  mail[1]:
+    username: xxx@xxx.com
+    password: axxx
+
+@component
+@ConfigurationProperties(&quot;custom&quot;)
+public class Custom {
+
+    private List&lt;MailInfo&gt; mail;
+
+    static class MailInfo {
+
+        private String username;
+        private String password;
+
+    }
+
+}
+
+
+
+
+
+directory:
+  maps:
+    11: /dciZhongShan/resourceWarn/agricultureLand
+
+@Component
+@Data
+@ConfigurationProperties(prefix = &quot;directory&quot;)
+public class MapConfig {
+    private Map&lt;Integer, String&gt; maps;
+}
+</code></pre>
 <h2><a class="header" href="#配置文件优先级" id="配置文件优先级">配置文件优先级</a></h2>
 <p>配置文件加载优先级: 命令行 &gt; ${user.dir}/config/xxx &gt; ${user.dir}/xxx (usr.dir 即为命令执行的当前目录) &gt; classpath:config/xxx &gt; classpath:xxx</p>
 <p>--spring.profiles.active=prod,,,, --spring.config.location=target/application.properties</p>
