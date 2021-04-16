@@ -23,12 +23,14 @@ https://github.com/Terminus2049/Awesome-Social-Impact 社会议题
 <!-- TOC -->
 
 - [博客](#博客)
+- [检索搜索技巧](#检索搜索技巧)
 - [文档&资源](#文档资源)
   - [语言](#语言)
     - [go](#go)
     - [node](#node)
     - [java](#java)
     - [rust](#rust)
+    - [objectc](#objectc)
   - [分布式](#分布式)
     - [rpc](#rpc)
     - [ELK日志分析](#elk日志分析)
@@ -62,6 +64,24 @@ https://github.com/Terminus2049/Awesome-Social-Impact 社会议题
 
 - https://github.com/esofar/cnblogs-theme-silence 博客主题
 
+
+# 检索搜索技巧
+
+```
+# 项目名称中包含 xxx
+in:name xxx
+
+# start 数必须大于 1500, fork数必须大于 100, 语言必须为 java, 最后更新时间必须大于 九月三号
+in:name xxx starts:>1500 forks:>100 language:java pushed:>2019-09-03
+
+# 在 readme 中搜索
+in:readme xxx
+
+# 在 描述中搜索 (试用于用中文搜索)
+in:description xxx
+
+
+```
 
 # 文档&资源
 

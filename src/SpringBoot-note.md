@@ -11,9 +11,6 @@ categories: java web
 https://github.com/h2pl web 项目
 https://github.com/dreamhead/moco mock 框架
 
-https://github.com/yinjihuan/monkey-api-encrypt api 加解密 
-TODO
-
 https://github.com/cloudfavorites/favorites-web 单体应用实例 hibernate jpa
 
 
@@ -178,6 +175,8 @@ https://github.com/xkcoding/spring-boot-demo springboot demos
     - [集成 Quartz](#集成-quartz)
 - [配置文件 and 环境](#配置文件-and-环境)
   - [读取配置文件](#读取配置文件)
+    - [几种读取配置文件的方法](#几种读取配置文件的方法)
+    - [注入复杂类型](#注入复杂类型)
   - [配置文件优先级](#配置文件优先级)
   - [读取环境信息](#读取环境信息)
   - [两种引入 springboot 方式](#两种引入-springboot-方式)
@@ -2077,6 +2076,9 @@ spring:
 
 ## 加解密
 
+https://github.com/yinjihuan/monkey-api-encrypt api 加解密 
+
+
 https://www.baeldung.com/java-aes-encryption-decryption 加密科普
 
 https://www.cnblogs.com/loong-hon/p/11225407.html
@@ -3789,13 +3791,113 @@ public class SchedulerConfig implements SchedulingConfigurer {
 
 ## 读取配置文件
 
+### 几种读取配置文件的方法
+
 1. 使用 @Value("${property}") 读取比较简单的配置信息
 
-2. 通过@ConfigurationProperties(prefix = "library")读取并与 bean 绑定, 需要 加 @component, 若不用 @component, 则必须 @EnableConfigurationProperties(...)
+2. 通过@ConfigurationProperties(prefix = "library")读取并与 bean 绑定, 需要 加 @component, 若不用 @component, 则必须 在任意一个配置类上添加 @EnableConfigurationProperties(...)
 
 3. @ConfigurationProperties 配合 @bean 用在方法上, 方法调用空构造函数返回想要构造的对象
 
 4. @PropertySource("classpath:website.properties") 读取指定 properties 文件
+
+### 注入复杂类型
+
+对于 properties 格式的配置文件:
+
+```java
+# application.properties
+#
+#单个值
+val=10
+
+# List
+list=1,2,3,4
+
+#Map
+map={'name':'chen', 'age':'12', 'sex':'男'}
+
+
+
+#java
+# 用到了spel表达式
+@PropertySource("classpath:xxx")
+public class ConfigProps {
+    //单个数值，可注入为int或String
+    @Value("${val}")
+    private int val;
+
+    //array 数组
+    @Value("#{'${ips}'.split(',')}")
+    private List<String> iplist;
+
+
+    //map
+    @Value("#{${map}}")
+    private Map<String, String> map;
+}
+
+
+```
+
+对于 yml 格式的文件:
+
+```java
+custom:
+  ignored-token-path: /base/xx/login, /xx/**/, /xx/hfc/test
+
+然和配置接受类
+
+@Configuration // 也可以用 @component, 若果不想用这类注解, 可以去掉, 取而代之在启动类上标注 @enableConfigProperties(xxx.class), 相当于加了 @Component
+@ConfigurationProperties("custom")
+public class Custom {
+
+    private String[] ignoredTokenPath;
+
+}
+
+
+
+
+
+custom:
+  mail[0]:
+    username: xxx@xxx.com
+    password: axxx
+  mail[1]:
+    username: xxx@xxx.com
+    password: axxx
+
+@component
+@ConfigurationProperties("custom")
+public class Custom {
+
+    private List<MailInfo> mail;
+
+    static class MailInfo {
+
+        private String username;
+        private String password;
+
+    }
+
+}
+
+
+
+
+
+directory:
+  maps:
+    11: /dciZhongShan/resourceWarn/agricultureLand
+
+@Component
+@Data
+@ConfigurationProperties(prefix = "directory")
+public class MapConfig {
+    private Map<Integer, String> maps;
+}
+```
 
 ## 配置文件优先级
 

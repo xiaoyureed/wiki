@@ -1091,6 +1091,11 @@ select – 映射查询语句
 
 ```
 
+## mapper 参数传递
+
+https://www.cnblogs.com/canger/p/9931774.html
+TODO
+
 ## 查询select元素
 
 ```xml
