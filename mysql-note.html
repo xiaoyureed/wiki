@@ -1217,6 +1217,8 @@ TODO</p>
 <p>datetime和timestamp: 前者范围更大, 精度为 s, 如 2019-01-22 22:22:00; 后者只能存储1970到2038年的秒数, mysql提供 from_unixtime() 和 unix_timestamp() 函数互相转换; 后者占用空间更小; 可通过bigint 存储更小精度的时间.</p>
 <h3><a class="header" href="#java-jdbc-和-mysql-数据库的字段对应关系" id="java-jdbc-和-mysql-数据库的字段对应关系">java jdbc 和 mysql 数据库的字段对应关系</a></h3>
 <p><a href="http://www.cnblogs.com/waterystone/p/6226356.html">MySQL里的数据类型到底该选择哪种Java类型与之对应</a></p>
+<p>tinyint(1) 会被 mybatis 转为 boolean
+tinyint(4) -&gt; int</p>
 <h3><a class="header" href="#java中几种date相关数据类型的区别" id="java中几种date相关数据类型的区别">Java中几种Date相关数据类型的区别</a></h3>
 <p>有时候两种类型间涉及到互相转换, mybatis中提供许多内置的 TypeHander</p>
 <p><a href="https://langgufu.iteye.com/blog/2202744">java.util.Date、java.sql.Date、java.sql.Time、java.sql.Timestamp区别和总结</a>:  java.util.Date这个类是java.sql.Date,  java.sql.Time,  java.slq.Timestamp这三个类的父类。这三个类对java.util.Date类进行了包装。 java.sql.Date类屏蔽了java.util.Date类的时间有关的方法（形如：hh:mm:ss）,因此，不可以通过这个类访问时间有关的信息; Java.sql.Time类屏蔽了java.util.Date的日期有关的字段;  Java.sql.Timestamp字段则对java.util.Date这个类进行了扩充，它在java.util.Date类的基础上增加了毫秒的时间访问控制，因此，你可以通过getNanos（）方法去获取时间的毫微秒数, 也是为了和数据库中的Timestamp数据类型进行匹配</p>
