@@ -1058,6 +1058,9 @@ datetime和timestamp: 前者范围更大, 精度为 s, 如 2019-01-22 22:22:00; 
 
 [MySQL里的数据类型到底该选择哪种Java类型与之对应](http://www.cnblogs.com/waterystone/p/6226356.html)
 
+tinyint(1) 会被 mybatis 转为 boolean
+tinyint(4) -> int
+
 ### Java中几种Date相关数据类型的区别
 
 有时候两种类型间涉及到互相转换, mybatis中提供许多内置的 TypeHander
