@@ -2052,7 +2052,12 @@ TODO</p>
 <li>ProducesRequestCondition	可生成MIME匹配条件</li>
 </ul>
 <h2><a class="header" href="#接收参数相关的注解" id="接收参数相关的注解">接收参数相关的注解</a></h2>
-<pre><code class="language-java">
+<pre><code class="language-java">@RequestParam 可以用于从query parameters, form data, 和parts in multipart requests中获取参数。
+
+即GET请求和POST（application/x-www-form-urlencoded ，multipart/form-data）请求的参数都可以使用@RequestParam
+
+@RequestPart 用在multipart/form-data表单提交请求的方法上，支持的请求方法的方式MultipartFile，属于Spring的MultipartResolver类。
+
 // 前三种支持 application/x-www-form-urlencoded;charset=UTF-8’ 格式 (表单提交), 是浏览器默认的编码格式。
 // 
 // multipart/form-data 格式 区别: 不会对参数编码，使用的boundary(分割线)，相当于&amp;，boundary的值是----Web**AJv3。 文件上传必须要这种格式, 也可用于键值对参数，最后连接成一串字符传输 (ref: https://www.jianshu.com/p/53b5bd0f1d44)
@@ -3451,7 +3456,7 @@ public class SchedulerConfig implements SchedulingConfigurer {
 <p>使用 @Value(&quot;${property}&quot;) 读取比较简单的配置信息</p>
 </li>
 <li>
-<p>通过@ConfigurationProperties(prefix = &quot;library&quot;)读取并与 bean 绑定, 需要 加 @component, 若不用 @component, 则必须 在任意一个配置类上添加 @EnableConfigurationProperties(...)</p>
+<p>通过@ConfigurationProperties(prefix = &quot;library&quot;)读取并与 bean 绑定, 需要 加 @component(此时无需在配置类上添加 @EnableConfigurationProperties), 若不用 @component, 则必须 在任意一个配置类上添加 @EnableConfigurationProperties(...)</p>
 </li>
 <li>
 <p>@ConfigurationProperties 配合 @bean 用在方法上, 方法调用空构造函数返回想要构造的对象</p>
