@@ -2181,6 +2181,11 @@ AbstractRequestCondition 实现了equals,hashCode和toString 通用方法, 还�
 ## 接收参数相关的注解
 
 ```java
+@RequestParam 可以用于从query parameters, form data, 和parts in multipart requests中获取参数。
+
+即GET请求和POST（application/x-www-form-urlencoded ，multipart/form-data）请求的参数都可以使用@RequestParam
+
+@RequestPart 用在multipart/form-data表单提交请求的方法上，支持的请求方法的方式MultipartFile，属于Spring的MultipartResolver类。
 
 // 前三种支持 application/x-www-form-urlencoded;charset=UTF-8’ 格式 (表单提交), 是浏览器默认的编码格式。
 // 
@@ -3795,7 +3800,7 @@ public class SchedulerConfig implements SchedulingConfigurer {
 
 1. 使用 @Value("${property}") 读取比较简单的配置信息
 
-2. 通过@ConfigurationProperties(prefix = "library")读取并与 bean 绑定, 需要 加 @component, 若不用 @component, 则必须 在任意一个配置类上添加 @EnableConfigurationProperties(...)
+2. 通过@ConfigurationProperties(prefix = "library")读取并与 bean 绑定, 需要 加 @component(此时无需在配置类上添加 @EnableConfigurationProperties), 若不用 @component, 则必须 在任意一个配置类上添加 @EnableConfigurationProperties(...)
 
 3. @ConfigurationProperties 配合 @bean 用在方法上, 方法调用空构造函数返回想要构造的对象
 
