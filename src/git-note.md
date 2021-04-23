@@ -524,7 +524,7 @@ git diff Testfile > patch//将单个文件做成一个单独的补丁 (工作区
 修复 bug 需新建一条分支如 issue-001，修复完后合并  
 `git stash`将当前工作区内容储存，使工作区看起来是干净的，用于当前工作未完成但是接到新任务，如修复 bug  ; 或者 `git stash save "xxx_msg"` 为stash添加备注
 【bug 分支-回复工作区】  
-`git stash list`查看储藏列表&rArr;`git stash apply [stash_id]`回复全部 stash 内容或指定 ID 的内容&rArr;`git stash drop`删除 stash；简化的命令是：`git stash pop`回复同时删除 stash
+`git stash list`查看储藏列表&rArr;`git stash apply [stash_id]`回复全部 stash 内容或指定 ID 的内容&rArr;`git stash drop`删除 stash；简化的命令是：`git stash pop [stash@{0}]`回复同时删除 第一个 stash 或者删除指定 id 的 stash
 
 【feature 分支-开发新功能】  
 添加一个新功能，新建一个 feature 分支，完成后，合并，最后，删除该 feature 分支  

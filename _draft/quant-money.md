@@ -7,6 +7,8 @@ https://github.com/leiguorui/programming-video-tutorials 视频教程
 
 https://github.com/We-Hack-Studio/nuts 坚果量化 - 数字货币量化交易系统。
 
+https://github.com/Rockyzsu/stock 30天量化交易
+
 
 
 <!--more-->
