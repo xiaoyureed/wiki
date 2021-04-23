@@ -595,7 +595,7 @@ git diff Testfile &gt; patch//将单个文件做成一个单独的补丁 (工作
 修复 bug 需新建一条分支如 issue-001，修复完后合并<br />
 <code>git stash</code>将当前工作区内容储存，使工作区看起来是干净的，用于当前工作未完成但是接到新任务，如修复 bug  ; 或者 <code>git stash save &quot;xxx_msg&quot;</code> 为stash添加备注
 【bug 分支-回复工作区】<br />
-<code>git stash list</code>查看储藏列表⇒<code>git stash apply [stash_id]</code>回复全部 stash 内容或指定 ID 的内容⇒<code>git stash drop</code>删除 stash；简化的命令是：<code>git stash pop</code>回复同时删除 stash</p>
+<code>git stash list</code>查看储藏列表⇒<code>git stash apply [stash_id]</code>回复全部 stash 内容或指定 ID 的内容⇒<code>git stash drop</code>删除 stash；简化的命令是：<code>git stash pop [stash@{0}]</code>回复同时删除 第一个 stash 或者删除指定 id 的 stash</p>
 <p>【feature 分支-开发新功能】<br />
 添加一个新功能，新建一个 feature 分支，完成后，合并，最后，删除该 feature 分支<br />
 现在如果新功能作废，删除没有合并的分支需要使用强制删除<code>git branch -D branch_name</code></p>
