@@ -89,6 +89,7 @@ js插件
 - [react-slides](https://github.com/react-component/slider)
 - [markdown-slides](https://github.com/hiroppy/fusuma)
 
+https://github.com/AEPKILL/devtools-detector 前端开发中如何在 JS 文件中检测用户浏览器是否打开了调试面板
 
 
 ## 后端类库
@@ -332,6 +333,9 @@ https://www.typeform.com/ 在线表格
 
 
 # books
+
+https://github.com/0voice/expert_readed_books
+https://github.com/0voice/from_coder_to_expert
 
 ## 技术
 

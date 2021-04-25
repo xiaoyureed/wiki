@@ -36,6 +36,7 @@ https://github.com/521xueweihan/git-tips
 - [LF 和 CRLF](#lf-和-crlf)
 - [git hooks](#git-hooks)
 - [git subtree 子仓库](#git-subtree-子仓库)
+- [git submodule](#git-submodule)
 - [husky](#husky)
 - [svn](#svn)
 
@@ -367,7 +368,7 @@ https://www.jianshu.com/p/5e7ee87241e4
 `git clone -b 分支名称 remote地址`
 
 【只克隆最近一次 commit】
-`git clone --depth=1 git://someserver/somerepo`
+`git clone --depth=1 git://someserver/somerepo` (等效 --squash参数 , 表示不拉取历史信息，而只生成一条commit信息)
 
 克隆到指定目录
 `git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
@@ -647,15 +648,126 @@ TODO
 
 # git subtree 子仓库
 
-https://segmentfault.com/a/1190000012002151
+- 旧版本的git也支持(最老版本可以到 v1.5.2).
+- 不增加任何像.gitmodule这样的新的元数据文件.
+- 对于项目中的其他成员透明，意味着可以不知道git subtree的存在
 
-```
-git subtree add   --prefix=<prefix> <commit>
+```sh
+
+git subtree add   --prefix=<sub module 的相对路径(相对于父模块)> <commit>
 git subtree add   --prefix=<prefix> <repository> <ref>
+
 git subtree pull  --prefix=<prefix> <repository> <ref>
 git subtree push  --prefix=<prefix> <repository> <ref>
 git subtree merge --prefix=<prefix> <commit>
 git subtree split --prefix=<prefix> [OPTIONS] [<commit>]
+
+
+
+# 实例:
+# photoshop 父模块
+# libpng 子模块
+# 目录结构:
+photoshop
+    |
+    |-- sub/
+    |   |
+    |   \--libpng/
+    |       |
+    |       |-- libpng.c
+    |       |-- libpng.h
+    |       \-- README.md
+    |
+    |-- photoshop.c
+    |-- photoshop.h
+    |-- main.c
+    \-- README.md
+
+# 添加子模块 (此时 会 新增两条commit)
+# 这里子模块地址可通过  git remote add -f libpng_repo https://github.com/test/libpng.git 简化, 此后 libpng_repo 可以代替 URL地址
+git subtree add --prefix=sub/libpng https://github.com/test/libpng.git master --squash # (--squash参数表示不拉取历史信息，而只生成一条commit信息)
+# 会将 子模块也作为普通目录/文件推送到 remote repo, 
+# 其他成员 git clone或者git pull时候, 会将子模块视为普通文件, 可修改提交
+git push
+
+
+
+
+# 从子模块源仓库拉取更新
+git subtree pull --prefix=sub/libpng https://github.com/test/libpng.git master --squash
+# 推送子模块修改到源仓库
+git subtree push --prefix=sub/libpng https://github.com/test/libpng.git master
+
+
+```
+
+# git submodule
+
+
+```sh
+git clone <repository> --recursive  # 递归的方式克隆整个仓库，包含父仓库和子仓库的内容
+git submodule add <repository address> [子仓库在父仓库的相对路径] # 添加子仓库
+git submodule init  # 初始化子仓库，向.git/config文件写入子模块的信息
+git submodule update  # 更新子仓库，拉取父仓库中对应子仓库的提交id内容到到父仓库目录
+git submodule foreach git pull  # 拉取所有子仓库
+
+
+# 主库叫 body, 另一个库叫 leg
+git clone https://git.oschina.net/gaofeifps/body.git
+cd body
+# 产生.gitmodules文件，包含子仓库的path和url信息, 并且.gitmodules在父仓库的git版本控制中
+git submodule add https://git.oschina.net/gaofeifps/leg.git
+git status #   此时多出两个文件
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#            new file:   .gitmodules
+#            new file:   leg
+git commit -am "add leg"
+# 此时, 远程库的 leg 目录是空的, 只是子模块实际仓库地址的一个引用
+git push
+
+
+
+
+
+# 其他人拉取父模块 (此时, 并不会clone子仓库的内容)
+git clone https://git.oschina.net/gaofeifps/body.git
+# 此时才会完整克隆子模块到本地仓库 
+# 或者 git submodule update --init --recursive
+git submodule init && git submodule update
+
+# 等价 (推荐)
+#下面这一句的效果和上面三条命令的效果是一样的,多加了个参数  `--recursive`
+# 递归的方式克隆整个仓库，包含父仓库和子仓库的内容
+git clone https://git.oschina.net/gaofeifps/body.git --recursive
+
+
+# 修改子仓库
+# 如果子仓库发生改动，需要先在子仓库提交，然后再到父仓库提交
+
+# 拉取子模块的更新
+git submodule update
+# 或者 先进入子模块，然后切换到需要的分支，然后对子模块pull
+cd <path/to/body/leg>
+git checkout master
+
+
+
+# 删除submodule
+# 方式 1 (推荐)
+git submodule deinit -f <submodule>  # 逆初始化模块，子模块目录将被清空
+git rm --cached <submodule>  # 删除.gitmodules中记录的模块信息（--cached选项 清除.git/modules中的缓存）
+git submodule  # 查看是否还有显示子模块信息
+git commit -m "remove submodule"
+
+# 方式 2 
+git rm -rf <子仓库在父仓库的相对路径>
+rm -rf .git/modules/<子仓库名称>
+vim .git/config  # 删除submodule相关的内容
+git commit -m "remove submodule"
 ```
 
 # husky

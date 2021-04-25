@@ -14,6 +14,7 @@ https://github.com/EasyDarwin/Course
 
 http://www.ruanyifeng.com/blog/2020/01/ffmpeg.html
 
+https://github.com/daniulive/SmarterStreaming 超强全自研跨平台(windows/android/iOS)流媒体内核 , 直播
 
 
 <!--more-->

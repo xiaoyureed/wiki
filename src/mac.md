@@ -1034,6 +1034,9 @@ https://github.com/oracle/visualvm
 # 空格预览插件
 
 https://github.com/sindresorhus/quick-look-plugins
+https://github.com/haokaiyang/Mac-QuickLook
+
+如果升级macos, 需要   brew reinstall qlcolorcode 重装
 
 
 

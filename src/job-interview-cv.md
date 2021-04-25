@@ -22,6 +22,8 @@ https://zhuanlan.zhihu.com/p/23713529 MySQL
 https://www.cnblogs.com/JavaArchitect/p/9741085.html 
 https://crossoverjie.top/2018/08/21/skill/resume/
 TODO
+
+https://github.com/0voice/interview_internal_reference
 <!--more-->
 
 <!-- TOC -->

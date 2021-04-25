@@ -2457,12 +2457,28 @@ Maven使用`maven-surefire-plugin`调用JUnit执行测试, `mvn test`即可, 如
 
 方法1: `mvn package -D skipTests`(有无空格都可), 不执行测试用例，但编译测试类生成相应的class文件至target/test-classes下 (idea 跳过默认是这种)
 
-方法2: `mvn package -D maven.test.skip=true`(有无空格都可) 跳过测试, 测试代码不编译, 但是不推荐这么做
+方法2: `mvn package -D maven.test.skip=true`(有无空格都可) 跳过测试, 测试代码也不编译, 但是不推荐这么做
 
-方法3: 在pom中配置surefire插件, 如
-<img src="Screenshot_50.png">
+方法 3:
 
-但是不推荐这么做
+```xml
+<plugin>  
+    <groupId>org.apache.maven.plugin</groupId>  
+    <artifactId>maven-compiler-plugin</artifactId>  
+    <version>2.1</version>  
+    <configuration>  
+        <skip>true</skip>  
+    </configuration>  
+</plugin>  
+<plugin>  
+    <groupId>org.apache.maven.plugins</groupId>  
+    <artifactId>maven-surefire-plugin</artifactId>  
+    <version>2.5</version>  
+    <configuration>  
+        <skip>true</skip>  
+    </configuration>  
+</plugin>
+```
 
 ## 动态指定运行的测试类
 

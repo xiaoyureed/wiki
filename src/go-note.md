@@ -6,6 +6,7 @@ date: 2017-12-14 17:06:33
 categories: computer science
 ---
 
+https://github.com/hackstoic/golang-open-source-projects  中文版awesome-go
 
 official doc: http://docs.studygolang.com/doc/
 中文 http://docscn.studygolang.com/

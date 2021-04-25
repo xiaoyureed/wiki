@@ -10,6 +10,7 @@ RxJava最早就是Netflix为了后端而开发的, 但是在Android上火起来�
 reference: [1](http://wiki.jikexueyuan.com/project/android-weekly/issue-145/introduction-to-RP.html), [2](https://zhuanlan.zhihu.com/p/27678951), [3](https://zhuanlan.zhihu.com/p/23584382), [4](https://zhuanlan.zhihu.com/p/20380883)
 Project Reactor: http://springcloud.cn/view/366
 
+https://github.com/hs-web/hsweb-framework 基于spring-boot 2.x开发 ,首个使用全响应式编程的企业级后台管理系统基础项目
 <!--more-->
 
 <!-- TOC -->

@@ -125,6 +125,7 @@ https://github.com/docker/kitematic 可视化管理gui
   - [zipkin](#zipkin)
   - [nginx](#nginx)
   - [mongodb](#mongodb)
+  - [gitlab](#gitlab)
 
 <!-- /TOC -->
 
@@ -359,6 +360,8 @@ docker是什么? 轻量化的虚拟机
 
 
 # 安装
+
+https://www.runoob.com/docker/ubuntu-docker-install.html
 
 ailiyun加速https://7lwsinal.mirror.aliyuncs.com
 
@@ -2516,4 +2519,10 @@ docker run -d --name nginx -p 80:80 -v ~/docker_data/nginx/html:/usr/share/nginx
 
 ```sh
 
+```
+
+## gitlab
+
+```sh
+docker run -d --name gitlab -p 8443:443 -p 8090:80 --restart unless-stopped -v /root/gitlab/etc:/etc/gitlab -v /root/gitlab/log:/var/log/gitlab -v /root/gitlab/data:/var/opt/gitlab beginor/gitlab-ce:11.0.1-ce.0
 ```
