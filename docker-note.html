@@ -309,6 +309,7 @@ https://blog.csdn.net/zmx729618/article/details/72930474
 <li><a href="#zipkin">zipkin</a></li>
 <li><a href="#nginx">nginx</a></li>
 <li><a href="#mongodb">mongodb</a></li>
+<li><a href="#gitlab">gitlab</a></li>
 </ul>
 </li>
 </ul>
@@ -533,6 +534,7 @@ docker run -itd --name &lt;test1&gt; --network bridge --ip 172.17.0.10 &lt;cento
 </li>
 </ul>
 <h1><a class="header" href="#安装" id="安装">安装</a></h1>
+<p>https://www.runoob.com/docker/ubuntu-docker-install.html</p>
 <p>ailiyun加速https://7lwsinal.mirror.aliyuncs.com</p>
 <p>安装docker前检查环境是否匹配:</p>
 <ul>
@@ -2164,6 +2166,9 @@ docker run -d --name nginx -p 80:80 -v ~/docker_data/nginx/html:/usr/share/nginx
 </code></pre>
 <h2><a class="header" href="#mongodb" id="mongodb">mongodb</a></h2>
 <pre><code class="language-sh">
+</code></pre>
+<h2><a class="header" href="#gitlab" id="gitlab">gitlab</a></h2>
+<pre><code class="language-sh">docker run -d --name gitlab -p 8443:443 -p 8090:80 --restart unless-stopped -v /root/gitlab/etc:/etc/gitlab -v /root/gitlab/log:/var/log/gitlab -v /root/gitlab/data:/var/opt/gitlab beginor/gitlab-ce:11.0.1-ce.0
 </code></pre>
 
                     </main>
