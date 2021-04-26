@@ -425,6 +425,7 @@ https://github.com/dreamhead/moco mock 框架
 </li>
 <li><a href="#%E5%BA%8F%E5%88%97%E5%8C%96-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">序列化 反序列化</a>
 <ul>
+<li><a href="#%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4-json">日期时间 json</a></li>
 <li><a href="#jackson-%E4%BD%BF%E7%94%A8">jackson 使用</a>
 <ul>
 <li><a href="#jsoncomponent">@JsonComponent</a></li>
@@ -671,7 +672,11 @@ public @interface Configuration {
 <p>在项目中，本工程的bean注册，使用@Component，通过web service取得的bean，通过@Bean标注在获取方法上注册；</p>
 <h2><a class="header" href="#import和importresource和propertysource比较" id="import和importresource和propertysource比较">@Import和@ImportResource和@PropertySource比较</a></h2>
 <ul>
-<li>前两者都需要和@configuration配合使用(Both @Import @ImportResource work with @Configuration), 表示导入额外的配置</li>
+<li>前两者都需要和@configuration配合使用(Both @Import @ImportResource work with @Configuration), 表示导入额外的配置
+<ul>
+<li>@import 导入某个配置类, 这个配置类可以不用标注 @configuration (一般会配合自定义注解使用: 自定义注解上通过 @import 导入多个未标注@configuration 的配置类使得这些配置类生效)</li>
+</ul>
+</li>
 <li>@ImportResource用来引入外置的配置文件, 如@ImportResource({&quot;classpath:datasource.xml&quot;}), 一般用来导入Spring的配置文件，让配置文件里面功能生效</li>
 <li>@Import引入另外的@configuration类</li>
 <li>@PropertySource用于加载另外的属性配置文件, 如@PropertySource(value = {&quot;classpath:person.properties&quot;}), 一般和@ConfigurationProperties(prefix = &quot;person&quot;)一起用
@@ -3770,6 +3775,9 @@ class DemoController {
     &lt;/build&gt;
 </code></pre>
 <h1><a class="header" href="#序列化-反序列化" id="序列化-反序列化">序列化 反序列化</a></h1>
+<h2><a class="header" href="#日期时间-json" id="日期时间-json">日期时间 json</a></h2>
+<p>https://www.cnblogs.com/carrychan/p/9883172.html
+https://blog.csdn.net/z69183787/article/details/109356584</p>
 <h2><a class="header" href="#jackson-使用" id="jackson-使用">jackson 使用</a></h2>
 <p>springboot web starter 中包含了 Jackson-databind 依赖, 可以直接注入 objectmapper, 若自己定制:</p>
 <h3><a class="header" href="#jsoncomponent" id="jsoncomponent">@JsonComponent</a></h3>
