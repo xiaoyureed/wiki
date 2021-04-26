@@ -181,6 +181,7 @@ https://github.com/xkcoding/spring-boot-demo springboot demos
   - [读取环境信息](#读取环境信息)
   - [两种引入 springboot 方式](#两种引入-springboot-方式)
 - [序列化 反序列化](#序列化-反序列化)
+  - [日期时间 json](#日期时间-json)
   - [jackson 使用](#jackson-使用)
     - [@JsonComponent](#jsoncomponent)
     - [Jackson 在 springboot 中的配置](#jackson-在-springboot-中的配置)
@@ -475,6 +476,7 @@ Spring Boot提倡基于Java的配置，通常简易启动类作为主配置类�
 ## @Import和@ImportResource和@PropertySource比较
 
 *   前两者都需要和@configuration配合使用(Both @Import @ImportResource work with @Configuration), 表示导入额外的配置
+    * @import 导入某个配置类, 这个配置类可以不用标注 @configuration (一般会配合自定义注解使用: 自定义注解上通过 @import 导入多个未标注@configuration 的配置类使得这些配置类生效)
 *   @ImportResource用来引入外置的配置文件, 如@ImportResource({"classpath:datasource.xml"}), 一般用来导入Spring的配置文件，让配置文件里面功能生效
 *   @Import引入另外的@configuration类
 *   @PropertySource用于加载另外的属性配置文件, 如@PropertySource(value = {"classpath:person.properties"}), 一般和@ConfigurationProperties(prefix = "person")一起用
@@ -4132,6 +4134,11 @@ class DemoController {
 ```
 
 # 序列化 反序列化
+
+## 日期时间 json
+
+https://www.cnblogs.com/carrychan/p/9883172.html
+https://blog.csdn.net/z69183787/article/details/109356584
 
 ## jackson 使用
 

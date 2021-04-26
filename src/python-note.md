@@ -148,6 +148,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
   - [gunicorn](#gunicorn)
   - [supervisord 管理 daemon](#supervisord-管理-daemon)
 - [setup.py](#setuppy)
+- [wheel](#wheel)
 - [运维工具](#运维工具)
 
 <!-- /TOC -->
@@ -3850,6 +3851,9 @@ supervisord.org
 
 # setup.py
 
+# wheel
+
+python 可以用 wheel 打包成 whl, 然后使用 ssh 执行 pip install package.whl, 然后重启一下 python 就好了
 
 # 运维工具
 

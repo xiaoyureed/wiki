@@ -71,6 +71,7 @@ https://github.com/helm/helm 包管理器
 - [vagrant 搭建 k8s 环境](#vagrant-搭建-k8s-环境)
 - [cka 证书](#cka-证书)
 - [k3s](#k3s)
+- [rancher](#rancher)
 
 <!-- /TOC -->
 
@@ -1487,4 +1488,10 @@ https://rancher.com/docs/k3s/latest/en/ 官网
 
 https://www.rancher.cn/k3s/ 中文官网
 
+
 https://zhuanlan.zhihu.com/p/269556628 简介
+
+
+## rancher
+
+docker + rancher 构建部署流水线

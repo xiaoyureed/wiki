@@ -24,8 +24,8 @@ https://github.com/docker/kitematic 可视化管理gui
 <!-- TOC -->
 
 - [常用指令](#常用指令)
-  - [开启远程连接](#开启远程连接)
-  - [shipyard ui管理界面](#shipyard-ui管理界面)
+- [开启远程连接](#开启远程连接)
+- [shipyard ui管理界面](#shipyard-ui管理界面)
 - [介绍](#介绍)
   - [使用场景-得到什么好处](#使用场景-得到什么好处)
 - [安装](#安装)
@@ -144,11 +144,9 @@ docker stats # 监视容器 CPU 内存使用率
 docker update <container> --restart=always
 
 
-######################### prune 命令 
+######################### prune 命令 (清理)
 
 
-# [-f] 强制
-# [--filter "until=24h"] 删除24h以前的; [--filter "label!=keep"]只删除标签不为keep的
 docker container prune
 docker images prune
 docker volume prune
@@ -189,12 +187,60 @@ docker-machine env [default]          #查看环境变量(机器ip在里面可�
 
 
 
-############################ docker 命令
+############################ docker ps
 
 
 
 docker ps | less -S                 #查看所有运行的container, 每条记录只占用一行显示
+docker ps -q                # 仅仅显示 id 列, 配合 filter 清理容器时非常好用
 docker ps -a                       # 查看所有(包括停止的container)
+docker ps -s            # 显示容器文件大小 (如 211MB (virtual 1.83GB), 一个是容器真实增加的大小，一个是整个容器的虚拟大小, 容器虚拟大小 = 容器真实增加大小 + 容器镜像大小)
+
+
+###################### 过滤 filter
+
+
+# [-f] 过滤, 等同 --filter
+# [--filter "until=24h"] 删除24h以前的; [--filter "label!=keep"]只删除标签不为keep的
+# 
+# - 选项后跟的都是键值对 key=value (可不带引号），如果有多个过滤条件，就多次使用 filter 选项
+# - 相同条件之间的关系是或，不同条件之间的关系是与
+# - id 和 name，支持正则表达式，使用起来非常灵活。
+# 
+docker ps --filter id=a1b2c3 --filter name=bingohuang
+docker ps --filter name=bingo --filter name=huang --filter status=running # 以上过滤条件会找出 name 包含 bingo 或 huang 并且 status 为 running 的容器。
+
+docker ps --filter name=^/bingohuang$ # 精确匹配 name 为 bingohuang 的容器。注意，容器实际名称，开头是有一个正斜线 / ，可用 docker inspect 一看便知
+docker ps --filter name=.*bingohuang.* # 匹配 name 包含 bingohuang 的容器，和 --filter name=bingohuang 一个效果。
+
+# 清理名称包含 bingohuang，且状态为 exited 或 dead 的容器
+docker rm $(docker ps -q --filter name=.*bingohuang.* --filter status=exited --filter status=dead 2>/dev/null)
+
+
+
+
+
+# ########################## Format 格式化显示
+
+# 基于 Go template（https://golang.org/pkg/html/template/）语法
+
+docker ps --format "{{.ID}}: {{.Command}}"
+
+# 如果想带上表格列头，需要再 template 中加上 table 指令：
+docker ps --format "table {{.ID}}\t{{.Command}}"
+
+# 支持的其他占位符 
+# ID, Names, Image, Command, CreatedAt, RuningFor (存活了多久了), Ports, Status, Size, Mounts (volumns 的名字), Networks
+# Labels (所有贴上的标签名字), Label (指定标签名的标签值, 格式: '{{.Label "xxx_label_value"}}'), 
+
+
+
+
+
+
+# ########################## 查看元信息
+
+
 docker system df             #查看镜像、容器、数据卷所占用的空间, 运行状况(通过表格的形式)(常用) 
 docker info        # docker的基本信息(多少container, 多少image, 各个container状况 ,docker root dir)
 docker network ls                   #查看docker网络
@@ -303,7 +349,7 @@ docker run -itd --name <test1> --network bridge --ip 172.17.0.10 <centos:latest>
 
 
 
-## 开启远程连接
+# 开启远程连接
 
 用于开发环境, 不安全
 
@@ -311,7 +357,7 @@ docker run -itd --name <test1> --network bridge --ip 172.17.0.10 <centos:latest>
 
 wsl 下的 docker: https://www.jianshu.com/p/c7bc8fa1ee5f 修改 `/lib/systemd/system/docker.service`
 
-## shipyard ui管理界面
+# shipyard ui管理界面
 
 web 管理控制台, 管理容器, 默认用户名密码 admin/shipyard
 
@@ -2524,5 +2570,32 @@ docker run -d --name nginx -p 80:80 -v ~/docker_data/nginx/html:/usr/share/nginx
 ## gitlab
 
 ```sh
-docker run -d --name gitlab -p 8443:443 -p 8090:80 --restart unless-stopped -v /root/gitlab/etc:/etc/gitlab -v /root/gitlab/log:/var/log/gitlab -v /root/gitlab/data:/var/opt/gitlab beginor/gitlab-ce:11.0.1-ce.0
+# 拉取gitlab镜像
+docker pull beginor/gitlab-ce:11.0.1-ce.0
+
+# 创建 volume 目录
+mkdir -r ./gitlab/etc ./gitlab/log ./gitlab/data
+# 复制配置文件到宿主的 volume 目录里
+# 可以手动复制, 
+# 也可以通过创建一个容器然后关闭来达到复制的效果 (推荐)
+docker run --rm --privileged=true -v /root/gitlab/etc:/etc/gitlab -v /root/gitlab/log:/var/log/gitlab -v /root/gitlab/data:/var/opt/gitlab beginor/gitlab-ce:11.0.1-ce.0
+# Ctrl+c 关闭, 此时配置文件被复制到宿主的 volume 目录了
+
+# 修改 gitlab.rb,
+# 添加 external_url 'http://<宿主机 host>:<宿主机 port>' (意思是告诉容器内的 gitlab, 在容器内部也要使用这个端口, 以和宿主机准备暴露的端口保持相同. 若宿主采用 80 作为 gitlab 对外端口, 则 external_url 的端口可省略, )
+# 
+# attention!!! 这里端口配置为a_port, 那么 docker run 运行容器时 , 需要 -p a_port:a_port
+# 
+cd gitlab
+vim etc/gitlab.rb
+
+# 修改 gitlab.yml
+# 修改 gitlab.host: 宿主机ip地址, gitlab.port: 宿主机暴露的端口, gitlab.https: false
+vim data/gitlab-rails/etc/gitlab.yml
+
+# 若宿主准备使用默认端口 80, 那么可以 -p 80:80 , 此时修改 external_url 时, 可省略端口 
+docker run -d --name gitlab -p 8443:443 -p 80:80 --restart unless-stopped -v /root/gitlab/etc:/etc/gitlab -v /root/gitlab/log:/var/log/gitlab -v /root/gitlab/data:/var/opt/gitlab beginor/gitlab-ce:11.0.1-ce.0
+
+# 自定义暴露端口为 8090, 则需要修改 external_url 时加上端口 8090
+docker run -d --name gitlab -p 8443:443 -p 8090:8090 --privileged=true --restart unless-stopped -v /root/gitlab/etc:/etc/gitlab -v /root/gitlab/log:/var/log/gitlab -v /root/gitlab/data:/var/opt/gitlab beginor/gitlab-ce:11.0.1-ce.0
 ```
