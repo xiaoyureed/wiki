@@ -441,11 +441,15 @@ pstree -ap|grep gunicorn # 查看进程树 ; 安装: apt-get install psmisc
 ifconfig # 查看所有网卡信息
 ip addr show docker0 # 查看网卡 docker0 的信息
 
-# 网络状态, 端口号
+netstat -nap | grep <pid> # 根据进程id查看进程占用端口
+netstat -tunlp | grep 8080 # 根据端口查看对应进程
 
 ps -aux | grep <httpd>          # 查看各个进程的资源占用, 顺便可以看看是否正在运行
+ps -ef | grep <pid>     # 根据进程id查看进程信息
+
+# 网络状态, 端口号
 lsof -i:<port>                  #查看端口占用情况
-netstat -tunlp | grep <xxx>     # 查看端口号
+netstat -tunlp | grep <xxx>     # 查看端口号 安装包为 net-tools:  yum  -y  install  net-tools
 netstat -ano | findstr "8761"   # 查看端口占用 (第二列看端口，最后一列是pid) Windows
     tasklist | findstr 9268    # 查看进程号
     tskill pid # 杀死进程(win8)

@@ -17,10 +17,10 @@ try Windows subsystem on Linux ---- WSL
 
 - [命令](#命令)
 - [记录](#记录)
-    - [安装](#安装)
-    - [MySQL](#mysql)
-    - [vscode配合](#vscode配合)
-    - [docker](#docker)
+  - [安装](#安装)
+  - [MySQL](#mysql)
+  - [vscode配合](#vscode配合)
+  - [docker](#docker)
 - [windows 常用命令](#windows-常用命令)
 
 <!-- /TOC -->
@@ -76,7 +76,12 @@ vscode 在 wsl 中打开后 无法移动文件, 重命名文件 (wsl2 已经没�
 # windows 常用命令
 
 ```sh
-# windows 查看端口占用, 查杀进程
+# windows 查看端口占用, 
 netstat -ano | findstr "8090"
+
+# 查询进程号2448信息
+tasklist|findstr "2448"
+
+# 杀进程
 taskkill -pid xxx -f
 ```

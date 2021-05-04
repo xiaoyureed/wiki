@@ -1369,12 +1369,48 @@ root@2affd44b4667:/# history
 
 这样就可以记录在容器输入过的命令了
 
+
+
+--mount 和 -v 区别:
+
+http://einverne.github.io/post/2018/03/docker-v-and-mount.html
+
+- -v 选项将所有选项集中到一个值, 更精简
+
+  -v 或 --volume: 包含三个 field，使用 : 来分割，所有值需要按照正确的顺序。第一个 field 是 volume 的名字，并且在宿主机上唯一，对于匿名 volume，第一个field通常被省略；第二个field是宿主机上将要被挂载到容器的path或者文件；第三个field可选，比如说 ro
+
+- --mount 选项将可选项分开, 更啰嗦
+
+  --mount: 包含多个 key-value 对，使用逗号分割。--mount 选项更加复杂，但是各个值之间无需考虑顺序。
+
+  type，可以为 bind, volume, tmpfs, 通常为 volume
+  source 也可以写成 src，对于 named volumes，可以设置 volume 的名字，对于匿名 volume，可以省略
+  destination 可以写成 dst或者 target 该值会挂载到容器
+  readonly 可选，如果使用，表示只读
+  volume-opt 可选，可以使用多次
+
+
+如:
+
+```sh
+docker run -d \
+  --name=nginxtest \
+  --mount source=nginx-vol,destination=/usr/share/nginx/html \
+  nginx:latest
+
+docker run -d \
+  --name=nginxtest \
+  -v nginx-vol:/usr/share/nginx/html \
+  nginx:latest
+
+```
+
+
 ## volume 的共享
 
-`--volume-from`
+`--volume-from` 为当创建的容器指定其他容器的 volume
 
 有镜像 imageA, 派生容器 container1, 挂载有匿名卷 /data, `docker run --name container2 --volume-from container1 imageA` 那么 /data 目录会被两个 容器共享
-
 
 # 网络互联
 
@@ -2364,6 +2400,15 @@ docker run -it --network my-net --rm mysql mysql -hmy-mysql -uroot -p
 # or
 docker run -it --rm --link my-mysql:xxxhost mysql mysql -hxxxhost -uroot -p 
 
+
+# 外部存储 volume
+# https://www.cnblogs.com/sablier/p/11605606.html
+# mysql8 (手动敲入, 不要复制粘贴, 容易出非法字符)
+docker run -d --name mysql8 -p 3306:3306 -v /root/mysql/conf:/etc/mysql -v /root/mysql/logs:/var/log/mysql -v /root/mysql/data:/var/lib/mysql -v /root/mysql/mysql-files:/var/lib/mysql-files/　-e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=face mysql:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci # utf8mb4_unicode_ci 可以考虑替换为 更快的 utf8mb4_general_ci
+
+# mysql5.7
+docker run -d --name mysql5_7 -p 3306:3306 -v /root/mysql/conf:/etc/mysql -v /root/mysql/logs:/var/log/mysql -v /root/mysql/data:/var/lib/mysql　-e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=face mysql:5.7.34 --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+
 ```
 
 [mysql容器的数据持久化问题](https://www.jianshu.com/p/530d00f97cbf)
@@ -2574,7 +2619,7 @@ docker run -d --name nginx -p 80:80 -v ~/docker_data/nginx/html:/usr/share/nginx
 docker pull beginor/gitlab-ce:11.0.1-ce.0
 
 # 创建 volume 目录
-mkdir -r ./gitlab/etc ./gitlab/log ./gitlab/data
+mkdir -p ./gitlab/etc ./gitlab/log ./gitlab/data
 # 复制配置文件到宿主的 volume 目录里
 # 可以手动复制, 
 # 也可以通过创建一个容器然后关闭来达到复制的效果 (推荐)

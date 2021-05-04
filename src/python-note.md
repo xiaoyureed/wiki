@@ -20,7 +20,8 @@ references: [1](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f44994
 算法实现: https://github.com/yidao620c/core-algorithm， https://github.com/billryan/algorithm-exercise
 scrapy 爬虫: https://github.com/yidao620c/core-scrapy
 
-"流畅的 Python" 推荐
+"流畅的 Python" fluent python 
+
 
 https://github.com/HT524/500LineorLess_CN 实现简单系统
 
@@ -149,6 +150,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
   - [supervisord 管理 daemon](#supervisord-管理-daemon)
 - [setup.py](#setuppy)
 - [wheel](#wheel)
+- [自动抢购脚本](#自动抢购脚本)
 - [运维工具](#运维工具)
 
 <!-- /TOC -->
@@ -3038,9 +3040,16 @@ https://blog.csdn.net/feit2417/article/details/86592319
 
 ```sh
 # db 是代码中的 migration command name
+
+# 生成 migrations 文件夹
 python3 manage.py db init
+
 python3 manage.py db migrate
 python3 manage.py db upgrade
+# 后续对脚本有任何的修改，只要重复执行后两句就可以了
+
+# 其他指令
+manage.py db: error: invalid choice: 'migration' (choose from 'init', 'revision', 'migrate', 'edit', 'merge', 'upgrade', 'downgrade', 'show', 'history', 'heads', 'branches', 'current', 'stamp')
 
 
 ```
@@ -3854,6 +3863,13 @@ supervisord.org
 # wheel
 
 python 可以用 wheel 打包成 whl, 然后使用 ssh 执行 pip install package.whl, 然后重启一下 python 就好了
+
+
+# 自动抢购脚本
+
+对于自动抢购来说，
+对于网页，selenium 和 puppeteer 比较适合，基本流程就是加载一个 webdriver，访问一个链接，等待 javascript 加载完，选择一个元素，执行操作。
+对于 app 来说，appium 比较适合。
 
 # 运维工具
 

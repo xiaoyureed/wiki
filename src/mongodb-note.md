@@ -37,6 +37,9 @@ https://www.zhihu.com/question/19882468/answer/18329680
   - [使用场景](#使用场景)
 - [how](#how)
   - [安装](#安装)
+    - [docker](#docker)
+    - [docker 安装](#docker-安装)
+    - [压缩包安装](#压缩包安装)
   - [使用](#使用)
     - [和 spring boot 集成](#和-spring-boot-集成)
     - [使用 命令行](#使用-命令行)
@@ -191,7 +194,9 @@ https://www.zhihu.com/question/274485040/answer/1242910052
 
 ## 安装
 
-=================== docker 安装
+### docker
+
+### docker 安装
 
 https://www.jianshu.com/p/576a156f6877
 https://www.cnblogs.com/yunquan/p/11174265.html
@@ -206,7 +211,7 @@ docker run --restart=always --name mongo-express --link mongodb:mongodb -d -p 80
 
 ```
 
-================= 压缩包安装
+### 压缩包安装
 
 下载 zip 包, 新建文件夹 `data` 用来存储数据; 新建 `daemon_start.sh` 作为server启动脚本:
 

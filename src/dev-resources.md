@@ -10,6 +10,8 @@ categories: tool
 https://github.com/jhaddix/pentest-bookmarks 高质量书签集合
 TODO
 
+https://github.com/pengzhile/studyFiles 电子书
+
 f12 浏览器 base64 编码解码
 btoa('Hello World!'); // SGVsbG8gV29ybGQh
 atob('SGVsbG8gV29ybGQh'); // Hello World!

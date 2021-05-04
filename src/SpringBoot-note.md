@@ -64,6 +64,9 @@ https://github.com/xkcoding/spring-boot-demo springboot demos
 - [日志](#日志)
   - [Log4j2-Marker 写入到指定日志文件](#log4j2-marker-写入到指定日志文件)
 - [数据层](#数据层)
+  - [数据库迁移版本控制](#数据库迁移版本控制)
+    - [liquibase](#liquibase)
+    - [Flyway](#flyway)
   - [数据库 url 和驱动](#数据库-url-和驱动)
   - [graphql集成](#graphql集成)
   - [启动执行 SQL](#启动执行-sql)
@@ -867,6 +870,16 @@ https://www.jianshu.com/p/1ff824bc997a?utm_campaign
 
 
 # 数据层
+
+## 数据库迁移版本控制
+
+### liquibase
+
+TODO
+
+### Flyway
+
+
 
 ## 数据库 url 和驱动
 
