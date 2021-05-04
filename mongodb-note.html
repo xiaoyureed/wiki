@@ -187,7 +187,13 @@ https://www.zhihu.com/question/19882468/answer/18329680</p>
 </li>
 <li><a href="#how">how</a>
 <ul>
-<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a>
+<ul>
+<li><a href="#docker">docker</a></li>
+<li><a href="#docker-%E5%AE%89%E8%A3%85">docker 安装</a></li>
+<li><a href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%AE%89%E8%A3%85">压缩包安装</a></li>
+</ul>
+</li>
 <li><a href="#%E4%BD%BF%E7%94%A8">使用</a>
 <ul>
 <li><a href="#%E5%92%8C-spring-boot-%E9%9B%86%E6%88%90">和 spring boot 集成</a></li>
@@ -354,7 +360,8 @@ https://www.zhihu.com/question/19882468/answer/18329680</p>
 </ol>
 <h1><a class="header" href="#how" id="how">how</a></h1>
 <h2><a class="header" href="#安装" id="安装">安装</a></h2>
-<p>=================== docker 安装</p>
+<h3><a class="header" href="#docker" id="docker">docker</a></h3>
+<h3><a class="header" href="#docker-安装" id="docker-安装">docker 安装</a></h3>
 <p>https://www.jianshu.com/p/576a156f6877
 https://www.cnblogs.com/yunquan/p/11174265.html</p>
 <pre><code class="language-sh"># https://hub.docker.com/_/mongo
@@ -365,7 +372,7 @@ docker run -d -p 27017:27017 --name mongodb -e MONGO_INITDB_ROOT_USERNAME=mongoa
 docker run --restart=always --name mongo-express --link mongodb:mongodb -d -p 8081:8081 -e ME_CONFIG_OPTIONS_EDITORTHEME=&quot;3024-night&quot; -e ME_CONFIG_BASICAUTH_USERNAME=&quot;mongoexpress&quot; -e ME_CONFIG_BASICAUTH_PASSWORD=&quot;mongoexpress&quot; -e ME_CONFIG_MONGODB_ADMINUSERNAME=&quot;mongoadmin&quot; -e ME_CONFIG_MONGODB_ADMINPASSWORD=&quot;mongoadmin&quot; -e ME_CONFIG_MONGODB_SERVER=&quot;mongodb&quot; mongo-express
 
 </code></pre>
-<p>================= 压缩包安装</p>
+<h3><a class="header" href="#压缩包安装" id="压缩包安装">压缩包安装</a></h3>
 <p>下载 zip 包, 新建文件夹 <code>data</code> 用来存储数据; 新建 <code>daemon_start.sh</code> 作为server启动脚本:</p>
 <pre><code class="language-sh">cd D:\\program_green\\mongodb\\mongodb-win32-x86_64-2008plus-ssl-4.0.11\\bin
 ./mongod.exe --dbpath D:\\program_green\\mongodb\\data

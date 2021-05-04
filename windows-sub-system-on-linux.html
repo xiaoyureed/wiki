@@ -202,8 +202,13 @@ ubuntu1804.exe config --default-user root # 修改默认用户
 <p><a href="https://www.cnblogs.com/dmego/p/12082013.html">配置 wsl2 一条龙开发环境</a></p>
 <p><a href="https://blog.csdn.net/weixin_44008092/article/details/98254833">Windows 连接 wsl2 中 docker 的 mysql 还有bug</a>, 如使用 navicat 无法连接, 使用 idea 连的时候, 需要查 wsl2 的 ip, 不能使用 localhost 连接</p>
 <h1><a class="header" href="#windows-常用命令" id="windows-常用命令">windows 常用命令</a></h1>
-<pre><code class="language-sh"># windows 查看端口占用, 查杀进程
+<pre><code class="language-sh"># windows 查看端口占用, 
 netstat -ano | findstr &quot;8090&quot;
+
+# 查询进程号2448信息
+tasklist|findstr &quot;2448&quot;
+
+# 杀进程
 taskkill -pid xxx -f
 </code></pre>
 

@@ -161,7 +161,7 @@ categories: computer science</h2>
 references: <a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000">1</a>, <a href="https://github.com/yidao620c/python3-cookbook">2</a>
 算法实现: https://github.com/yidao620c/core-algorithm， https://github.com/billryan/algorithm-exercise
 scrapy 爬虫: https://github.com/yidao620c/core-scrapy</p>
-<p>&quot;流畅的 Python&quot; 推荐</p>
+<p>&quot;流畅的 Python&quot; fluent python </p>
 <p>https://github.com/HT524/500LineorLess_CN 实现简单系统</p>
 <p>https://github.com/iswbm/pycharm-guide
 https://github.com/iswbm</p>
@@ -335,6 +335,7 @@ https://github.com/iswbm</p>
 </li>
 <li><a href="#setuppy">setup.py</a></li>
 <li><a href="#wheel">wheel</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E6%8A%A2%E8%B4%AD%E8%84%9A%E6%9C%AC">自动抢购脚本</a></li>
 <li><a href="#%E8%BF%90%E7%BB%B4%E5%B7%A5%E5%85%B7">运维工具</a></li>
 </ul>
 <!-- /TOC -->
@@ -2934,9 +2935,16 @@ User.query.filter_by(User.username='name').update({'password':'newdata'})
 <p>https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate 数据迁移, 根据 model 创建 table
 https://blog.csdn.net/feit2417/article/details/86592319</p>
 <pre><code class="language-sh"># db 是代码中的 migration command name
+
+# 生成 migrations 文件夹
 python3 manage.py db init
+
 python3 manage.py db migrate
 python3 manage.py db upgrade
+# 后续对脚本有任何的修改，只要重复执行后两句就可以了
+
+# 其他指令
+manage.py db: error: invalid choice: 'migration' (choose from 'init', 'revision', 'migrate', 'edit', 'merge', 'upgrade', 'downgrade', 'show', 'history', 'heads', 'branches', 'current', 'stamp')
 
 
 </code></pre>
@@ -3601,6 +3609,10 @@ kill -HUP &lt;parent pid&gt;
 <h1><a class="header" href="#setuppy" id="setuppy">setup.py</a></h1>
 <h1><a class="header" href="#wheel" id="wheel">wheel</a></h1>
 <p>python 可以用 wheel 打包成 whl, 然后使用 ssh 执行 pip install package.whl, 然后重启一下 python 就好了</p>
+<h1><a class="header" href="#自动抢购脚本" id="自动抢购脚本">自动抢购脚本</a></h1>
+<p>对于自动抢购来说，
+对于网页，selenium 和 puppeteer 比较适合，基本流程就是加载一个 webdriver，访问一个链接，等待 javascript 加载完，选择一个元素，执行操作。
+对于 app 来说，appium 比较适合。</p>
 <h1><a class="header" href="#运维工具" id="运维工具">运维工具</a></h1>
 <pre><code>1. psutil 可以获取系统运行的进程和系统利用率（CPU 内存…）信息
 
