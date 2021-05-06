@@ -34,6 +34,7 @@ categories: java web
   - [Gatling](#gatling)
   - [jmeter](#jmeter)
   - [ab](#ab)
+  - [jmh 方法级别的性能测试](#jmh-方法级别的性能测试)
 - [Junit](#junit)
 - [ab test](#ab-test)
 - [集成测试 Testcontainers](#集成测试-testcontainers)
@@ -307,6 +308,30 @@ TODO
 
 apache benchmark并发测试工具
 
+
+### jmh 方法级别的性能测试
+
+想准确地知道某个方法需要执行多长时间，以及执行时间和输入之间的相关性
+对比接口不同实现在给定条件下的吞吐量
+查看多少百分比的请求在多长时间内完成
+
+https://www.zhihu.com/question/276455629/answer/1259967560
+
+jdk9 之前需要加入依赖
+
+```xml
+<dependency>
+    <groupId>org.openjdk.jmh</groupId>
+    <artifactId>jmh-core</artifactId>
+    <version>1.23</version>
+</dependency>
+<dependency>
+    <groupId>org.openjdk.jmh</groupId>
+    <artifactId>jmh-generator-annprocess</artifactId>
+    <version>1.23</version>
+</dependency>
+
+```
 
 
 ## Junit

@@ -30,6 +30,7 @@ https://github.com/Snailclimb/awesome-java#%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F 
 <!-- TOC -->
 
 - [各个版本](#各个版本)
+- [注释](#注释)
 - [反射(reflect)](#反射reflect)
   - [反射的 api](#反射的-api)
   - [实现事件驱动机制](#实现事件驱动机制)
@@ -202,6 +203,18 @@ https://github.com/Snailclimb/awesome-java#%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F 
 -   jdk7: switch 对 String 支持(枚举也支持), 创建泛型时的类型推断(从定义的变量推断构造函数中的泛型), 捕获多种异常(... catch (IOException | SQLException e) ...), 数值类型支持"\_"(如定义 10s, 但是单位是毫秒: int mills = 10_000), try_auto_close_resource
 
 -   jdk8: lambda express/函数式接口(@FunctionalInterface), 接口默认方法, 接口静态方法, base64 增强, Datetime 增强, Optional(防 null), Stream,
+
+
+# 注释
+
+```java
+main() {
+    // 下面这行会被执行
+    // \u000d sysout("hehe")
+}
+
+
+```
 
 # 反射(reflect)
 

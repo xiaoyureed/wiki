@@ -21,6 +21,8 @@ references: [1](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f44994
 scrapy 爬虫: https://github.com/yidao620c/core-scrapy
 
 "流畅的 Python" fluent python 
+编写高质量代码:改善 Python 程序的 91 个建议
+effective Python: 编写高质量代码的59 个代码
 
 
 https://github.com/HT524/500LineorLess_CN 实现简单系统
@@ -152,6 +154,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
 - [wheel](#wheel)
 - [自动抢购脚本](#自动抢购脚本)
 - [运维工具](#运维工具)
+- [打包可执行文件](#打包可执行文件)
 
 <!-- /TOC -->
 
@@ -3914,3 +3917,7 @@ A记录、MX记录、NS记录、CNAME记录
 
 ```
 
+
+# 打包可执行文件
+
+nuitka , 替换 pyinstall 的神器

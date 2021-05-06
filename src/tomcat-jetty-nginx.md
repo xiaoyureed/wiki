@@ -113,6 +113,9 @@ https://docshome.gitbook.io/nginx-docs/ 中文文档
 
 https://github.com/dunwu/nginx-tutorial 入门
 
+
+https://github.com/caddyserver/caddy 替代 nginx , 自动支持 https
+
 ## 使用场景
 
 - 静态web服务器, 

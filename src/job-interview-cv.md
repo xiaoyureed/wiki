@@ -186,3 +186,12 @@ https://github.com/easychen/howto-make-more-money/ 独立开发者挣钱方式
 https://github.com/greatghoul/remote-working
 https://github.com/bufpay/remote-working
 https://github.com/greatghoul/profile 独立开发者
+
+https://github.com/remoteintech/remote-jobs
+https://github.com/lukasz-madon/awesome-remote-job
+https://github.com/engineerapart/TheRemoteFreelancer
+https://github.com/alinebastos/remote
+https://github.com/kaizensoze/remote-freelance-jobs
+https://github.com/hugo53/awesome-RemoteWork
+
+https://github.com/1c7/chinese-independent-developer 中国独立开发者项目列表 -- 分享大家都在做什么

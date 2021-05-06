@@ -26,9 +26,9 @@ https://knownsec-fed.com/2018-08-31-jian-shu-da-shu-ju-shi-shi-chu-li-kuang-jia/
 
 ## OLTP Vs OLAP
 
-OLTP（On-Line Transaction Processing），可称为在线事务处理，一般应用于在线业务交易系统，比如银行交易、订单交易等。OLTP的主要特点是能够支持频繁的在线操作（增删改），以及快速的访问查询。因为要用于在线交易，所以一般要求支持事务特性。
+OLTP（On-Line Transaction Processing），可称为在线事务处理，一般应用于在线业务交易系统，比如银行交易、订单交易等。OLTP的主要特点是能够支持频繁的在线操作（增删改），以及快速的访问查询。主要用来进行事务处理，满足ACID原则。就是我们经常说的关系数据库，增删查改就是我们经常应用的东西, 典型如关系型数据库 MySQL
 
-OLAP（On-Line Analytical Processing），可称为在线分析处理，较多的应用在数据仓库领域，支持复杂查询的数据分析，侧重于为业务提供决策支持。目前常见是的实时OLAP场景，比如Druid（Apache Druid，不同于阿里Druid）、ClickHouse等存储组件
+OLAP（On-Line Analytical Processing），可称为在线分析处理，较多的应用在数据仓库领域，支持复杂查询的数据分析，侧重于为业务提供决策支持, 读取较多，更新较少. 目前常见是的实时OLAP场景，比如Druid（Apache Druid，不同于阿里Druid）、ClickHouse, doris等存储组件
 
 ## 行式存储 Vs 列式存储
 

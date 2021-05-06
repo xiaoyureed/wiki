@@ -3283,6 +3283,9 @@ class Config {
 https://rovo98.github.io/posts/39885a36/ SpringBoot + Docker + Nginx 负载均衡实现
 TODO
 
+
+https://github.com/GoogleContainerTools/jib 为 java 程序构造 docker 镜像 (https://www.cnblogs.com/felordcn/p/13201163.html)
+
 ## nginx 反向代理
 
 https://cloud.tencent.com/developer/article/1332603

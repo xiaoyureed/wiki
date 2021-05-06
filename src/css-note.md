@@ -22,6 +22,13 @@ hover动画lib: https://github.com/IanLunn/Hover
 demo: [📚 github](https://github.com/xiaoyureed/css-layout)
 
 DSL: 领域特定语言, css就是一种dsl [=>](https://zhuanlan.zhihu.com/p/22824177)
+
+
+https://github.com/necolas/normalize.css
+https://github.com/krishdevdb/reseter.css 重置 css
+
+https://github.com/ChartsCSS/charts.css 纯 css 图表 数据可视化
+
 </div>
 
 <!--more-->
