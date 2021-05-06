@@ -166,6 +166,7 @@ jdk 8u192 是最后的免费版本, 之后的都要收费了</p>
 <!-- TOC -->
 <ul>
 <li><a href="#%E5%90%84%E4%B8%AA%E7%89%88%E6%9C%AC">各个版本</a></li>
+<li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
 <li><a href="#%E5%8F%8D%E5%B0%84reflect">反射(reflect)</a>
 <ul>
 <li><a href="#%E5%8F%8D%E5%B0%84%E7%9A%84-api">反射的 api</a></li>
@@ -442,6 +443,14 @@ jdk 8u192 是最后的免费版本, 之后的都要收费了</p>
 <p>jdk8: lambda express/函数式接口(@FunctionalInterface), 接口默认方法, 接口静态方法, base64 增强, Datetime 增强, Optional(防 null), Stream,</p>
 </li>
 </ul>
+<h1><a class="header" href="#注释" id="注释">注释</a></h1>
+<pre><code class="language-java">main() {
+    // 下面这行会被执行
+    // \u000d sysout(&quot;hehe&quot;)
+}
+
+
+</code></pre>
 <h1><a class="header" href="#反射reflect" id="反射reflect">反射(reflect)</a></h1>
 <h2><a class="header" href="#反射的-api" id="反射的-api">反射的 api</a></h2>
 <pre><code class="language-java">Class clazz1 = Class.forName(&quot;cn.itcast.reflect.Person&quot;);
