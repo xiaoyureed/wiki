@@ -260,13 +260,15 @@ spring boot 配置: ...uri: `mongodb://tiger:tiger@172.24.208.103:27017/demo`
 mongo --username mongoadmin --password
     使用 -u -p 亦可
 
-# 使用/创建数据库, 默认 test
-use DATABASE_NAME
-
 # 当前db
 db
 # 查看所有
 show dbs  
+
+# 使用/创建数据库, 默认是使用 test 数据库
+use DATABASE_NAME
+# 数据库名不存在自动创建新数据库
+
 
 # 添加 user
 db.createUser(
@@ -295,6 +297,9 @@ db.dropUser('username')
 # 登录认证新user
 db.auth("mutianwei", "123568")
 
+# 显示表(集合)
+show collections
+
 # 查询当前 db 的集合
 db.getCollectionNames()
 
@@ -305,17 +310,20 @@ db.createCollection("logs")
 db.logs.insert( { name: "wangwenqiang", age: 3} )
 
 # 查询 所有 document
-db.logs.find()
+db.logs.find([json参数])
 
-# 条件查询
+db.集合名称.find().limit(条数)
+
+# 统计条数
+db.集合名称.count([json 参数])
+
+# 更新 document
 # age > 25 的 user 的 status 设置为 c
 db.users.update(
     { age: { $gt: 25 } },
     { $set: { status: 'C' } },
     { multi: true }
 )
-
-# 更新 document
 db.book.update(
    {"_id" : ObjectId("5c61301c15338f68639e6802")},
    {"$inc": {"viewCount": 3} }
@@ -324,8 +332,12 @@ db.book.update(
 # 删除 document
 db.book.remove({"_id":
      ObjectId("5c612b2f15338f68639e67d5")})
+# 删除集合中全部数据
+db.集合名称.remove({})
 
-# projection 
+
+
+# projection (只查询显示指定字段, 1 表示显示, 0 表示不显示, 默认 0)
 db.book.find({"author": "James"}, 
     {"_id": 1, "title": 1, "author": 1})
 

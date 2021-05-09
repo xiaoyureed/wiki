@@ -2611,6 +2611,22 @@ docker run -d --name nginx -p 80:80 -v ~/docker_data/nginx/html:/usr/share/nginx
 ## mongodb
 
 ```sh
+# --auth：需要密码才能访问容器服务。(默认没有账户密码)
+docker run -d --name mongo -p 27017:27017 -v /Users/xiaoyu/one/docker_data/mongo/data:/data/db -v /Users/xiaoyu/one/docker_data/mongo/backup:/data/backup mongo:latest --auth
+
+
+docker exec -it mongo mongo admin
+# 创建一个名为 admin，密码为 123456 的用户。
+>  db.createUser({ user:'admin',pwd:'123456',roles:[ { role:'userAdminAnyDatabase', db: 'admin'},"readWriteAnyDatabase"]});
+# 尝试使用上面创建的用户信息进行连接。
+> db.auth('admin', '123456')
+
+# 备份
+docker exec mongo sh -c 'exec var=`date +%Y%m%d%H%M` &amp;&amp; mongodump -h localhost --port 27017 -u jsmith -p password -d dbname -o /data/backup/$var_test1.dat'
+
+
+# 远程连接
+docker run -it --rm mongo mongo --host 192.168.10.130 --port 27017
 
 ```
 
