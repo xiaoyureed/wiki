@@ -131,6 +131,7 @@ https://github.com/Snailclimb/awesome-java#%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F 
     - [重复使用 stream](#重复使用-stream)
     - [map 和 flatMap](#map-和-flatmap)
     - [去重](#去重)
+    - [collect方法 如何收集处理后的元素 分组 去重](#collect方法-如何收集处理后的元素-分组-去重)
     - [stream 中异常处理](#stream-中异常处理)
   - [date 时间日期新的 api](#date-时间日期新的-api)
     - [介绍-为什么使用](#介绍-为什么使用)
@@ -3247,6 +3248,7 @@ private static void imperative(int[] arr) {
 }
 
 private static void declaractive(int[] arr) {
+    // jdk1.8
     Arrays.stream(arr).forEach(System.out::println);
 }
 
@@ -3287,26 +3289,26 @@ private static void declaractive(int[] arr) {
     -   终点操作(terminal opts)
         -   forEach - accept a consumer to be executed for each element in the stream
         -   Match - accept a predicate and return a boolean result; 检查这个 stream 中的每个元素是否符合 predicate
-            -   anyMatch 任何一个符合
-            -   allMatch 全都符合
-            -   noneMatch 没有符合的元素
+            -   anyMatch 任何一个符合 return true
+            -   allMatch 全都符合 return true
+            -   noneMatch 没有符合的元素 return true
         -   Count - return the number of element as a long value
         -   Reduce - accept a function and return a optional representing the reducing value;
         -   Collect - accept a collector, transfer a stream to collection
             -   有许多 builtin 的 collector, 如 Collectors.toList()...
     -   sequential stream(串行流)
-        -   实例方法 Collection.stream()
+        -   实例方法 someList.stream()
         -   静态方法 Arrays.stream(arr)
         -   静态方法 Stream.of(...)
     -   Parallel Streams(并行流)
-        -   Collection.parallelStream()
+        -   someList.parallelStream()
         -   Stream.parallel()
 -   maps
     -   `map.keySet().stream()`, `map.values().stream()` and `map.entrySet().stream()`.
-    -   putIfAbsent(key, value) - 如果 key 没有在 map 中, 存入, 如果 key 存在 map 了, 返回 oldValue; 主要是免除了 null check
-    -   merge(key, value, biFunction) - 根据 key 查 value, 如果没查到, 保存, 如果查到了, 根据 biFunction 构造 newValue 保存
+    -   putIfAbsent(key, value) - 若确实, 则存入; --->  如果 key 没有在 map 中, 存入, 如果 key 存在 map 了, 返回 oldValue; 主要是免除了 null check
+    -   merge(key,  newValue, biFunction) - 根据 key 查 value, 如果没查到, 保存, 如果查到了, 根据 biFunction 构造 newValue 保存; biFunction(oldValue, newValue) 返回计算后的值
     -   forEach - accept a consumer
-    -   computeIfPresent(key, biFunction) - 接收一个 key, 一个 biFunction, 检查 key 是否 null, 找到这个 entry, 根据 biFunction 计算出新的 value 重新 put 进 map
+    -   computeIfPresent(key, biFunction) - 接收一个 key, 一个 biFunction, 检查 key 是否 null, 找到这个 entry, 根据 biFunction 计算出新的 value 重新 put 进 map; biFunction(key, value) 返回计算的值
     -   computeIfAbsent - 如果根据 key 获取不到 value, 则计算新的 value 并 put 进去
     -   remove(key, value) - value 符合才移除 key 对应的元素
     -   getOrDefault(key, def_value) - 没有就返回默认值
@@ -3326,6 +3328,7 @@ private static void declaractive(int[] arr) {
     -   CompletableFuture.runAsync(xxx) 构造 future, 无返回值
     -   流式调用
     -   异常处理
+
 
 ### 接口默认方法
 
@@ -3896,7 +3899,11 @@ greeter.accept(new Person("Luke", "Skywalker"));
 Comparators 在旧版本 Java 中是众所周知的。Java8 增加了各种默认方法的接口
 
 ```java
-Comparator<Person> comparator = (p1, p2) -> p1.name.compareTo(p2.name);
+Comparator<Person> comparator = (p1, p2) -> p1.name.compareTo(p2.name); // 升序, 若 p2.name.compareTo(p1.name) 则是降序
+
+// 在 stream 中, stream.max(comparator) 取最大值, 需要 comparator 是升序排序器
+
+// 升序排序 也可以简写 Comparator.comparing(o -> Long.valueOf(o.getVersion()))
 
 Person p1 = new Person("John", "Doe");
 Person p2 = new Person("Alice", "Wonderland");
@@ -3958,6 +3965,13 @@ eturn user.orElseGet(() -> fetchAUserFromDatabase());
 user.ifPresent(System.out::println);
 return user.map(u -> u.getOrders()).orElse(Collections.emptyList())
 
+// 最佳实践
+ private String getName2(User_1 user_1) {
+    return Optional.ofNullable(user_1)
+            .map(user1 -> user1.user_2)
+            .map(user_2 -> user_2.name)
+            .orElseThrow(RuntimeException::new);
+}
 
 ```
 
@@ -4027,6 +4041,76 @@ studentList = studentList.stream().collect(
       collectingAndThen(
         toCollection(() -> new TreeSet<>(Comparator.comparing(Student::getName))), ArrayList::new)
     );
+```
+
+### collect方法 如何收集处理后的元素 分组 去重
+
+```java
+// set , 去重
+System.out.println(Stream.of("a", "b", "c","a").collect(Collectors.toSet()));
+
+// 转换为特定 集合
+TreeSet<String> treeSet = Stream.of("a", "c", "b", "a").collect(Collectors.toCollection(TreeSet::new));
+
+//对于string列表去重
+List stringList；
+stringList = stringList.stream().distinct().collect(Collectors.toList());
+// 对于实体类的去重
+//通过hashcode()和equals()方法来获取不同元素，因此需要去重的类必须实现hashcode()和equals()方法
+List studentList；
+studentList = studentList.stream().distinct().collect(Collectors.toList());
+
+// 根据 List 中 Object 某个属性去重(姓名去重)
+List studentList;
+studentList = studentList.stream()
+.collect(collectingAndThen(toCollection(() -> new TreeSet<>(Comparator.comparing(Student::getName))), ArrayList::new));
+//根据List 中 Object 多个属性去重(姓名，年龄去重)
+ListstudentList；
+studentList=studentList.stream()
+.collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(o -> o.getName() + “;” + o.getAge()))), ArrayList::new));
+
+
+
+//参数:  toMap(
+    //     keyMapper,
+    //     valueMapper,
+    //     mergeFunction // biFunction(oldVal, newVal) 表示 若 构造当前键值对时, key 对应的 value 已经存在, 则使用这个方法生成新的 value
+    //  )
+Map<String, String> collect = Stream.of("a", "b", "c", "a").collect(Collectors.toMap(x -> x, x -> x + x,(oldVal, newVal) -> newVal)));
+
+// Collectors.minBy(Integer::compare)：求最小值，相对应的当然也有maxBy方法。
+
+// Collectors.averagingInt(x->x)：求平均值，同时也有averagingDouble、averagingLong方法。
+
+// Collectors.summingInt(x -> x))：求和
+
+//Collectors.summarizingDouble(x -> x)：可以获取最大值、最小值、平均值、总和值、总数。
+DoubleSummaryStatistics summaryStatistics = Stream.of(1, 3, 4).collect(Collectors.summarizingDouble(x -> x));
+System.out.println(summaryStatistics .getAverage());
+
+//Collectors.groupingBy(x -> x)：有三种方法，查看源码可以知道前两个方法最终调用第三个方法，第二个参数默认HashMap::new  第三个参数默认Collectors.toList()
+Map<Integer, List<Integer>> map = Stream.of(1, 3, 3, 2).collect(Collectors.groupingBy(Function.identity()));//identity()是Function类的静态方法,和 x->x 是一个意思,当仅仅需要自己返回自己时,使用identity()能更清楚的表达作者的意思.写的复杂一点,绕一点,对理解很有好处
+Map<Integer, Integer> map1 = Stream.of(1, 3, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(x -> x)));
+HashMap<Integer, List<Integer>> hashMap = Stream.of(1, 3, 3, 2).collect(Collectors.groupingBy(Function.identity(), HashMap::new, Collectors.mapping(x -> x + 1, Collectors.toList())));
+
+
+
+// Collectors.partitioningBy(x -> x > 2)，把数据分成两部分，key为ture/false。第一个方法也是调用第二个方法，第二个参数默认为Collectors.toList()
+Map<Boolean, List<Integer>> map = Stream.of(1, 3, 3, 2).collect(Collectors.partitioningBy(x -> x > 2));
+Map<Boolean, Long> longMap = Stream.of(1, 3, 3, 2).collect(Collectors.partitioningBy(x -> x > 1, Collectors.counting()));
+
+//Collectors.joining(",")：拼接字符串
+System.out.println(Stream.of("1", "3", "3", "2").collect(Collectors.joining(",")));
+
+
+//Collectors.collectingAndThen(Collectors.toList(), x -> x.size())：先执行collect操作后再执行第二个参数的表达式。这里是先塞到集合，再得出集合长度。
+Integer integer = Stream.of("1", "2", "3").collect(Collectors.collectingAndThen(Collectors.toList(), x -> x.size()));
+
+
+//Collectors.mapping(...)：跟Stream的map操作类似，只是参数有点区别
+System.out.println(Stream.of(1, 3, 5).collect(Collectors.mapping(x -> x + 1, Collectors.toList())));
+
+
 ```
 
 ### stream 中异常处理

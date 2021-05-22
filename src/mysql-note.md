@@ -75,6 +75,7 @@ categories: java web
     - [索引案例demo](#索引案例demo)
   - [binlog](#binlog)
     - [canal 增量日志订阅](#canal-增量日志订阅)
+    - [mysql-binlog-connector-java](#mysql-binlog-connector-java)
   - [MySQL的锁机制](#mysql的锁机制)
     - [表锁](#表锁)
     - [行锁](#行锁)
@@ -1661,9 +1662,17 @@ references: https://www.cnblogs.com/xhyan/p/6530861.html //todo
 
 ### canal 增量日志订阅
 
+https://github.com/alibaba/canal/
+
 https://blog.csdn.net/u013705066/article/details/86470900
 
-https://www.jianshu.com/p/87944efe1005 //todo
+https://www.jianshu.com/p/87944efe1005 
+TODO
+
+
+### mysql-binlog-connector-java 
+
+mysql-binlog-connector-java
 
 ## MySQL的锁机制
 

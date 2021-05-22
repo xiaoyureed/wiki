@@ -542,7 +542,7 @@ https://stackoverflow.com/questions/15358851/how-to-remove-jar-file-from-local-m
 
 ```sh
 # 安装
-mvn install:install-file -Dfile=bpm-interface-1.5.0.jar -DgroupId=com.ctg.qdp -DartifactId=bpm-interface -Dversion=1.5.0 -Dpackaging=jar
+mvn install:install-file -Dfile=bpm-interface-2.0.1.jar -DgroupId=com.ctg.qdp -DartifactId=bpm-interface -Dversion=2.0.1 -Dpackaging=jar
 
 
 # 卸载

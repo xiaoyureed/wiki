@@ -31,6 +31,7 @@ https://github.com/xkcoding/spring-boot-demo springboot demos
   - [字符串](#字符串)
   - [编解码](#编解码)
   - [commons-lang3](#commons-lang3)
+  - [文件操作](#文件操作)
   - [commons-collections4](#commons-collections4)
 - [Spring Boot中的注解](#spring-boot中的注解)
   - [@ConfigurationProperties 和 @Value](#configurationproperties-和-value)
@@ -280,6 +281,60 @@ public static String getMD5(String str) {
 ```
 
 ## commons-lang3
+
+## 文件操作
+
+```java
+// springboot 原生 文件下载
+
+@GetMapping("/download")
+public ResponseEntity<Resource> download(HttpServletResponse httpServletResponse,
+                                            @RequestParam("id") String objId) throws Exception {
+    final MongoSysFileServiceImpl.DownloadFileVo downloadFileVo = sysFileService.downloadFile(objId);
+    if (downloadFileVo == null) {
+        throw new RuntimeException("指定文件不存在, objId = " + objId);
+    }
+
+    return ResponseEntity.ok()
+            .contentType(MediaType.parseMediaType("application/octet-stream"))
+            .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + downloadFileVo.getFilename() + "\"")
+            .body(new InputStreamResource(downloadFileVo.getIs()));
+
+}
+
+//上传
+ @PostMapping(value = "upload")
+public R<SysFile> upload(@RequestPart("file") MultipartFile file)
+{
+    try
+    {
+        // 上传并返回访问地址
+        final MongoSysFileServiceImpl.UploadFileResp uploadFileResp = sysFileService.uploadFile(file);
+        SysFile sysFile = new SysFile();
+        sysFile.setObjId(uploadFileResp.getObjId());
+        sysFile.setName(uploadFileResp.getGeneratedName());
+        return R.ok(sysFile);
+    }
+    catch (Exception e)
+    {
+        log.error("上传文件失败", e);
+        return R.fail(e.getMessage());
+    }
+}
+//feign client 远程调用
+@PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+public R<SysFile> upload(@RequestPart(value = "file") MultipartFile file);
+
+
+
+// 传递 文件 , 同时传递请求参数
+@PostMapping("/add")
+    public AjaxResult add( EstimateFile estimateFile, @RequestPart("files") MultipartFile[] files)
+    { //@RequestPart("estimateFile")
+        return toAjax(estimateFileService.insertEstimateFile(estimateFile, files));
+    }
+
+```
 
 ## commons-collections4
 
