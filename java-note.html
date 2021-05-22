@@ -329,6 +329,7 @@ jdk 8u192 是最后的免费版本, 之后的都要收费了</p>
 <li><a href="#%E9%87%8D%E5%A4%8D%E4%BD%BF%E7%94%A8-stream">重复使用 stream</a></li>
 <li><a href="#map-%E5%92%8C-flatmap">map 和 flatMap</a></li>
 <li><a href="#%E5%8E%BB%E9%87%8D">去重</a></li>
+<li><a href="#collect%E6%96%B9%E6%B3%95-%E5%A6%82%E4%BD%95%E6%94%B6%E9%9B%86%E5%A4%84%E7%90%86%E5%90%8E%E7%9A%84%E5%85%83%E7%B4%A0-%E5%88%86%E7%BB%84-%E5%8E%BB%E9%87%8D">collect方法 如何收集处理后的元素 分组 去重</a></li>
 <li><a href="#stream-%E4%B8%AD%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">stream 中异常处理</a></li>
 </ul>
 </li>
@@ -3341,6 +3342,7 @@ private static void imperative(int[] arr) {
 }
 
 private static void declaractive(int[] arr) {
+    // jdk1.8
     Arrays.stream(arr).forEach(System.out::println);
 }
 
@@ -3407,9 +3409,9 @@ private static void declaractive(int[] arr) {
 <li>forEach - accept a consumer to be executed for each element in the stream</li>
 <li>Match - accept a predicate and return a boolean result; 检查这个 stream 中的每个元素是否符合 predicate
 <ul>
-<li>anyMatch 任何一个符合</li>
-<li>allMatch 全都符合</li>
-<li>noneMatch 没有符合的元素</li>
+<li>anyMatch 任何一个符合 return true</li>
+<li>allMatch 全都符合 return true</li>
+<li>noneMatch 没有符合的元素 return true</li>
 </ul>
 </li>
 <li>Count - return the number of element as a long value</li>
@@ -3423,14 +3425,14 @@ private static void declaractive(int[] arr) {
 </li>
 <li>sequential stream(串行流)
 <ul>
-<li>实例方法 Collection.stream()</li>
+<li>实例方法 someList.stream()</li>
 <li>静态方法 Arrays.stream(arr)</li>
 <li>静态方法 Stream.of(...)</li>
 </ul>
 </li>
 <li>Parallel Streams(并行流)
 <ul>
-<li>Collection.parallelStream()</li>
+<li>someList.parallelStream()</li>
 <li>Stream.parallel()</li>
 </ul>
 </li>
@@ -3439,10 +3441,10 @@ private static void declaractive(int[] arr) {
 <li>maps
 <ul>
 <li><code>map.keySet().stream()</code>, <code>map.values().stream()</code> and <code>map.entrySet().stream()</code>.</li>
-<li>putIfAbsent(key, value) - 如果 key 没有在 map 中, 存入, 如果 key 存在 map 了, 返回 oldValue; 主要是免除了 null check</li>
-<li>merge(key, value, biFunction) - 根据 key 查 value, 如果没查到, 保存, 如果查到了, 根据 biFunction 构造 newValue 保存</li>
+<li>putIfAbsent(key, value) - 若确实, 则存入; ---&gt;  如果 key 没有在 map 中, 存入, 如果 key 存在 map 了, 返回 oldValue; 主要是免除了 null check</li>
+<li>merge(key,  newValue, biFunction) - 根据 key 查 value, 如果没查到, 保存, 如果查到了, 根据 biFunction 构造 newValue 保存; biFunction(oldValue, newValue) 返回计算后的值</li>
 <li>forEach - accept a consumer</li>
-<li>computeIfPresent(key, biFunction) - 接收一个 key, 一个 biFunction, 检查 key 是否 null, 找到这个 entry, 根据 biFunction 计算出新的 value 重新 put 进 map</li>
+<li>computeIfPresent(key, biFunction) - 接收一个 key, 一个 biFunction, 检查 key 是否 null, 找到这个 entry, 根据 biFunction 计算出新的 value 重新 put 进 map; biFunction(key, value) 返回计算的值</li>
 <li>computeIfAbsent - 如果根据 key 获取不到 value, 则计算新的 value 并 put 进去</li>
 <li>remove(key, value) - value 符合才移除 key 对应的元素</li>
 <li>getOrDefault(key, def_value) - 没有就返回默认值</li>
@@ -3940,7 +3942,11 @@ greeter.accept(new Person(&quot;Luke&quot;, &quot;Skywalker&quot;));
 </code></pre>
 <h3><a class="header" href="#comparators比较器" id="comparators比较器">Comparators(比较器)</a></h3>
 <p>Comparators 在旧版本 Java 中是众所周知的。Java8 增加了各种默认方法的接口</p>
-<pre><code class="language-java">Comparator&lt;Person&gt; comparator = (p1, p2) -&gt; p1.name.compareTo(p2.name);
+<pre><code class="language-java">Comparator&lt;Person&gt; comparator = (p1, p2) -&gt; p1.name.compareTo(p2.name); // 升序, 若 p2.name.compareTo(p1.name) 则是降序
+
+// 在 stream 中, stream.max(comparator) 取最大值, 需要 comparator 是升序排序器
+
+// 升序排序 也可以简写 Comparator.comparing(o -&gt; Long.valueOf(o.getVersion()))
 
 Person p1 = new Person(&quot;John&quot;, &quot;Doe&quot;);
 Person p2 = new Person(&quot;Alice&quot;, &quot;Wonderland&quot;);
@@ -3993,6 +3999,13 @@ eturn user.orElseGet(() -&gt; fetchAUserFromDatabase());
 user.ifPresent(System.out::println);
 return user.map(u -&gt; u.getOrders()).orElse(Collections.emptyList())
 
+// 最佳实践
+ private String getName2(User_1 user_1) {
+    return Optional.ofNullable(user_1)
+            .map(user1 -&gt; user1.user_2)
+            .map(user_2 -&gt; user_2.name)
+            .orElseThrow(RuntimeException::new);
+}
 
 </code></pre>
 <p>optional 直接生成 stream</p>
@@ -4050,6 +4063,73 @@ studentList = studentList.stream().collect(
       collectingAndThen(
         toCollection(() -&gt; new TreeSet&lt;&gt;(Comparator.comparing(Student::getName))), ArrayList::new)
     );
+</code></pre>
+<h3><a class="header" href="#collect方法-如何收集处理后的元素-分组-去重" id="collect方法-如何收集处理后的元素-分组-去重">collect方法 如何收集处理后的元素 分组 去重</a></h3>
+<pre><code class="language-java">// set , 去重
+System.out.println(Stream.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;,&quot;a&quot;).collect(Collectors.toSet()));
+
+// 转换为特定 集合
+TreeSet&lt;String&gt; treeSet = Stream.of(&quot;a&quot;, &quot;c&quot;, &quot;b&quot;, &quot;a&quot;).collect(Collectors.toCollection(TreeSet::new));
+
+//对于string列表去重
+List stringList；
+stringList = stringList.stream().distinct().collect(Collectors.toList());
+// 对于实体类的去重
+//通过hashcode()和equals()方法来获取不同元素，因此需要去重的类必须实现hashcode()和equals()方法
+List studentList；
+studentList = studentList.stream().distinct().collect(Collectors.toList());
+
+// 根据 List 中 Object 某个属性去重(姓名去重)
+List studentList;
+studentList = studentList.stream()
+.collect(collectingAndThen(toCollection(() -&gt; new TreeSet&lt;&gt;(Comparator.comparing(Student::getName))), ArrayList::new));
+//根据List 中 Object 多个属性去重(姓名，年龄去重)
+ListstudentList；
+studentList=studentList.stream()
+.collect(Collectors.collectingAndThen(Collectors.toCollection(() -&gt; new TreeSet&lt;&gt;(Comparator.comparing(o -&gt; o.getName() + “;” + o.getAge()))), ArrayList::new));
+
+
+
+//参数:  toMap(
+    //     keyMapper,
+    //     valueMapper,
+    //     mergeFunction // biFunction(oldVal, newVal) 表示 若 构造当前键值对时, key 对应的 value 已经存在, 则使用这个方法生成新的 value
+    //  )
+Map&lt;String, String&gt; collect = Stream.of(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;a&quot;).collect(Collectors.toMap(x -&gt; x, x -&gt; x + x,(oldVal, newVal) -&gt; newVal)));
+
+// Collectors.minBy(Integer::compare)：求最小值，相对应的当然也有maxBy方法。
+
+// Collectors.averagingInt(x-&gt;x)：求平均值，同时也有averagingDouble、averagingLong方法。
+
+// Collectors.summingInt(x -&gt; x))：求和
+
+//Collectors.summarizingDouble(x -&gt; x)：可以获取最大值、最小值、平均值、总和值、总数。
+DoubleSummaryStatistics summaryStatistics = Stream.of(1, 3, 4).collect(Collectors.summarizingDouble(x -&gt; x));
+System.out.println(summaryStatistics .getAverage());
+
+//Collectors.groupingBy(x -&gt; x)：有三种方法，查看源码可以知道前两个方法最终调用第三个方法，第二个参数默认HashMap::new  第三个参数默认Collectors.toList()
+Map&lt;Integer, List&lt;Integer&gt;&gt; map = Stream.of(1, 3, 3, 2).collect(Collectors.groupingBy(Function.identity()));//identity()是Function类的静态方法,和 x-&gt;x 是一个意思,当仅仅需要自己返回自己时,使用identity()能更清楚的表达作者的意思.写的复杂一点,绕一点,对理解很有好处
+Map&lt;Integer, Integer&gt; map1 = Stream.of(1, 3, 3, 2).collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(x -&gt; x)));
+HashMap&lt;Integer, List&lt;Integer&gt;&gt; hashMap = Stream.of(1, 3, 3, 2).collect(Collectors.groupingBy(Function.identity(), HashMap::new, Collectors.mapping(x -&gt; x + 1, Collectors.toList())));
+
+
+
+// Collectors.partitioningBy(x -&gt; x &gt; 2)，把数据分成两部分，key为ture/false。第一个方法也是调用第二个方法，第二个参数默认为Collectors.toList()
+Map&lt;Boolean, List&lt;Integer&gt;&gt; map = Stream.of(1, 3, 3, 2).collect(Collectors.partitioningBy(x -&gt; x &gt; 2));
+Map&lt;Boolean, Long&gt; longMap = Stream.of(1, 3, 3, 2).collect(Collectors.partitioningBy(x -&gt; x &gt; 1, Collectors.counting()));
+
+//Collectors.joining(&quot;,&quot;)：拼接字符串
+System.out.println(Stream.of(&quot;1&quot;, &quot;3&quot;, &quot;3&quot;, &quot;2&quot;).collect(Collectors.joining(&quot;,&quot;)));
+
+
+//Collectors.collectingAndThen(Collectors.toList(), x -&gt; x.size())：先执行collect操作后再执行第二个参数的表达式。这里是先塞到集合，再得出集合长度。
+Integer integer = Stream.of(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;).collect(Collectors.collectingAndThen(Collectors.toList(), x -&gt; x.size()));
+
+
+//Collectors.mapping(...)：跟Stream的map操作类似，只是参数有点区别
+System.out.println(Stream.of(1, 3, 5).collect(Collectors.mapping(x -&gt; x + 1, Collectors.toList())));
+
+
 </code></pre>
 <h3><a class="header" href="#stream-中异常处理" id="stream-中异常处理">stream 中异常处理</a></h3>
 <p>https://cloud.tencent.com/developer/article/1429208</p>

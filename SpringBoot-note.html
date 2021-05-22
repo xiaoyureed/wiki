@@ -173,6 +173,7 @@ https://github.com/dreamhead/moco mock 框架
 <li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2">字符串</a></li>
 <li><a href="#%E7%BC%96%E8%A7%A3%E7%A0%81">编解码</a></li>
 <li><a href="#commons-lang3">commons-lang3</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C">文件操作</a></li>
 <li><a href="#commons-collections4">commons-collections4</a></li>
 </ul>
 </li>
@@ -520,6 +521,57 @@ public static String getMD5(String str) {
 
 </code></pre>
 <h2><a class="header" href="#commons-lang3" id="commons-lang3">commons-lang3</a></h2>
+<h2><a class="header" href="#文件操作" id="文件操作">文件操作</a></h2>
+<pre><code class="language-java">// springboot 原生 文件下载
+
+@GetMapping(&quot;/download&quot;)
+public ResponseEntity&lt;Resource&gt; download(HttpServletResponse httpServletResponse,
+                                            @RequestParam(&quot;id&quot;) String objId) throws Exception {
+    final MongoSysFileServiceImpl.DownloadFileVo downloadFileVo = sysFileService.downloadFile(objId);
+    if (downloadFileVo == null) {
+        throw new RuntimeException(&quot;指定文件不存在, objId = &quot; + objId);
+    }
+
+    return ResponseEntity.ok()
+            .contentType(MediaType.parseMediaType(&quot;application/octet-stream&quot;))
+            .header(HttpHeaders.CONTENT_DISPOSITION, &quot;attachment; filename=\&quot;&quot; + downloadFileVo.getFilename() + &quot;\&quot;&quot;)
+            .body(new InputStreamResource(downloadFileVo.getIs()));
+
+}
+
+//上传
+ @PostMapping(value = &quot;upload&quot;)
+public R&lt;SysFile&gt; upload(@RequestPart(&quot;file&quot;) MultipartFile file)
+{
+    try
+    {
+        // 上传并返回访问地址
+        final MongoSysFileServiceImpl.UploadFileResp uploadFileResp = sysFileService.uploadFile(file);
+        SysFile sysFile = new SysFile();
+        sysFile.setObjId(uploadFileResp.getObjId());
+        sysFile.setName(uploadFileResp.getGeneratedName());
+        return R.ok(sysFile);
+    }
+    catch (Exception e)
+    {
+        log.error(&quot;上传文件失败&quot;, e);
+        return R.fail(e.getMessage());
+    }
+}
+//feign client 远程调用
+@PostMapping(value = &quot;/upload&quot;, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+public R&lt;SysFile&gt; upload(@RequestPart(value = &quot;file&quot;) MultipartFile file);
+
+
+
+// 传递 文件 , 同时传递请求参数
+@PostMapping(&quot;/add&quot;)
+    public AjaxResult add( EstimateFile estimateFile, @RequestPart(&quot;files&quot;) MultipartFile[] files)
+    { //@RequestPart(&quot;estimateFile&quot;)
+        return toAjax(estimateFileService.insertEstimateFile(estimateFile, files));
+    }
+
+</code></pre>
 <h2><a class="header" href="#commons-collections4" id="commons-collections4">commons-collections4</a></h2>
 <pre><code class="language-java">isSubCollection(smallColl, bigColl)
 
