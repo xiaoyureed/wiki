@@ -175,6 +175,7 @@ references: [1](https://www.zhihu.com/question/32212996), [2](https://blog.csdn.
 <ul>
 <li><a href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">使用场景</a></li>
 <li><a href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令</a></li>
+<li><a href="#nginx-%E6%97%A0%E6%B3%95%E5%81%9C%E6%AD%A2-%E6%97%A0%E6%B3%95%E9%87%8D%E5%90%AF">nginx 无法停止 无法重启</a></li>
 <li><a href="#nginxconf-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">nginx.conf 配置文件</a>
 <ul>
 <li><a href="#%E6%9C%80%E7%AE%80%E9%85%8D%E7%BD%AE">最简配置</a></li>
@@ -344,6 +345,11 @@ nginx -t            # 检查配置文件的语法的正确性。
 
 nginx -v            # 显示 nginx 的版本。
 
+</code></pre>
+<h2><a class="header" href="#nginx-无法停止-无法重启" id="nginx-无法停止-无法重启">nginx 无法停止 无法重启</a></h2>
+<pre><code class="language-sh">netstat -tunlp |grep nginx # 找到暴露的端口
+fuser -k 80/tcp # 杀死访问指定文件/网络socket的所有进程
+fuser -k 8088/tcp
 </code></pre>
 <h2><a class="header" href="#nginxconf-配置文件" id="nginxconf-配置文件">nginx.conf 配置文件</a></h2>
 <h3><a class="header" href="#最简配置" id="最简配置">最简配置</a></h3>
