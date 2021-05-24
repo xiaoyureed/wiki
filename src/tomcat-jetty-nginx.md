@@ -25,6 +25,7 @@ references: [1](https://www.zhihu.com/question/32212996), [2](https://blog.csdn.
 - [nginx](#nginx)
   - [使用场景](#使用场景)
   - [常用命令](#常用命令)
+  - [nginx 无法停止 无法重启](#nginx-无法停止-无法重启)
   - [nginx.conf 配置文件](#nginxconf-配置文件)
     - [最简配置](#最简配置)
     - [反向代理配置](#反向代理配置)
@@ -155,6 +156,13 @@ nginx -v            # 显示 nginx 的版本。
 
 ```
 
+## nginx 无法停止 无法重启
+
+```sh
+netstat -tunlp |grep nginx # 找到暴露的端口
+fuser -k 80/tcp # 杀死访问指定文件/网络socket的所有进程
+fuser -k 8088/tcp
+```
 
 ## nginx.conf 配置文件
 
