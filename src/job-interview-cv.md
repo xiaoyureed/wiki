@@ -44,6 +44,7 @@ https://github.com/0voice/interview_internal_reference
 - [职场tips](#职场tips)
 - [整活](#整活)
 - [remote work](#remote-work)
+- [羊毛自动化](#羊毛自动化)
 
 <!-- /TOC -->
 
@@ -195,3 +196,10 @@ https://github.com/kaizensoze/remote-freelance-jobs
 https://github.com/hugo53/awesome-RemoteWork
 
 https://github.com/1c7/chinese-independent-developer 中国独立开发者项目列表 -- 分享大家都在做什么
+
+
+# 羊毛自动化
+
+https://www.huxiu.com/article/319329.html
+
+https://mp.weixin.qq.com/s?__biz=Mzg4MzE5MjEyOQ==&mid=2247483671&idx=1&sn=bfe60fdec5479d8ed8090c5b07e4eba2&chksm=cf4a7939f83df02fd8738a48967df1a655e7b574fcce08e6ded563e012350089ece77b46fa21&scene=21#wechat_redirect

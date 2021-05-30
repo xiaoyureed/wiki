@@ -68,7 +68,7 @@ npm view node versions # node所有版本
 # 升级到最新稳定版
 sudo n stable
 # 最新版
-n latest
+sudo n latest
 # 指定版本
 n 15.0.0
 
@@ -704,9 +704,10 @@ npm install -g yarn
 
 
 npm install === yarn 
+npm uninstall === yarn remove
 npm install taco --save === yarn add taco
 npm uninstall taco --save === yarn remove taco
-npm install taco --save-dev === yarn add taco --dev
+npm install taco --save-dev === yarn add taco --dev === yarn add -D taco
 npm update --save === yarn upgrade
 
 npm run <xxx> === yarn <xxx>

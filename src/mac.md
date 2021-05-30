@@ -149,6 +149,8 @@ ctrl + j 下载管理
 opt + z 切换 word soft wrapped
 opt + 点击    多列光标
 opt + shift + 点击    多列连续选择
+
+自定义代码段 cmd+shift+p,搜索 preferences: user snippets
 ```
 
 ## fcp

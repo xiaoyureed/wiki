@@ -205,7 +205,7 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
 - [和 typescript 一起使用](#和-typescript-一起使用)
   - [集成 ts 环境](#集成-ts-环境)
   - [ts 基本使用](#ts-基本使用)
-    - [枚举](#枚举)
+    - [基本数据类型](#基本数据类型)
     - [interface](#interface)
       - [使用 interface 定义对象类型](#使用-interface-定义对象类型)
       - [interface 定义函数类型](#interface-定义函数类型)
@@ -1232,7 +1232,7 @@ function App() {
     timer = setInterval(() => {
       setCount(prevCount => prevCount + 1);
     }, 1000);
-    // 返回值(如果有)则在组件销毁或者调用函数前调用
+    // 返回值(如果有)则在组件销毁前调用, 若依赖数组中存在依赖, 则返回的回调函数在 上次 useEffect 处理完后 时执行
     return () => {
       document.title = "componentWillUnmount";
       clearInterval(timer);
@@ -4318,9 +4318,15 @@ https://typescript.bootcss.com/
 
 `npm install -g typescript` , https://www.typescriptlang.org/play/
 
-### 枚举
+### 基本数据类型
 
 ```ts
+// any & unknown
+// unknown 是严格版的 any, 尽量用 前者代替后者
+// unknown 类型值无法赋值给任何其他变量
+// unknown 类型值无法读取任何方法
+
+// 枚举
 const enum Color {Red = 1, Green, Blue}
 let colorName: string = Color[2];
 console.log(colorName);  // 显示'Green'因为上面代码里它的值是2

@@ -380,6 +380,7 @@ https://github.com/rajasekarv/vega spark 替代
   - [http 代理](#http-代理)
   - [socket 代理](#socket-代理)
 - [webassembly](#webassembly)
+- [和 Python 交互](#和-python-交互)
 - [和 java 交互](#和-java-交互)
   - [rust 调用 java](#rust-调用-java)
   - [java 调用 rust](#java-调用-rust)
@@ -11135,6 +11136,10 @@ https://github.com/gwuhaolin/blog/issues/12
 https://rustwasm.github.io/
 
 
+# 和 Python 交互
+
+https://github.com/PyO3/pyo3
+https://zhuanlan.zhihu.com/p/148144823
 
 # 和 java 交互
 
