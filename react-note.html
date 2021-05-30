@@ -403,7 +403,7 @@ https://github.com/qiu-deqing/FE-interview , https://github.com/markyun/My-blog/
 <li><a href="#%E9%9B%86%E6%88%90-ts-%E7%8E%AF%E5%A2%83">集成 ts 环境</a></li>
 <li><a href="#ts-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8">ts 基本使用</a>
 <ul>
-<li><a href="#%E6%9E%9A%E4%B8%BE">枚举</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">基本数据类型</a></li>
 <li><a href="#interface">interface</a>
 <ul>
 <li><a href="#%E4%BD%BF%E7%94%A8-interface-%E5%AE%9A%E4%B9%89%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B">使用 interface 定义对象类型</a></li>
@@ -1292,7 +1292,7 @@ function App() {
     timer = setInterval(() =&gt; {
       setCount(prevCount =&gt; prevCount + 1);
     }, 1000);
-    // 返回值(如果有)则在组件销毁或者调用函数前调用
+    // 返回值(如果有)则在组件销毁前调用, 若依赖数组中存在依赖, 则返回的回调函数在 上次 useEffect 处理完后 时执行
     return () =&gt; {
       document.title = &quot;componentWillUnmount&quot;;
       clearInterval(timer);
@@ -4106,8 +4106,14 @@ npx create-react-app my-app --use-npm
 https://rmolinamir.github.io/typescript-cheatsheet/
 https://typescript.bootcss.com/</p>
 <p><code>npm install -g typescript</code> , https://www.typescriptlang.org/play/</p>
-<h3><a class="header" href="#枚举" id="枚举">枚举</a></h3>
-<pre><code class="language-ts">const enum Color {Red = 1, Green, Blue}
+<h3><a class="header" href="#基本数据类型" id="基本数据类型">基本数据类型</a></h3>
+<pre><code class="language-ts">// any &amp; unknown
+// unknown 是严格版的 any, 尽量用 前者代替后者
+// unknown 类型值无法赋值给任何其他变量
+// unknown 类型值无法读取任何方法
+
+// 枚举
+const enum Color {Red = 1, Green, Blue}
 let colorName: string = Color[2];
 console.log(colorName);  // 显示'Green'因为上面代码里它的值是2
 
