@@ -4,6 +4,8 @@ categories: language
 date: 2020-08-31 22:15:27
 ---
 
+https://folyd.com/blog/ Rust的Pin与Unpin
+
 https://github.com/ajmwagar rust 小项目
 https://github.com/kilerd
 https://github.com/ramsayleung
