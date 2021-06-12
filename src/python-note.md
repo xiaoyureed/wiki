@@ -66,6 +66,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
       - [编码 字符处理](#编码-字符处理)
       - [格式化](#格式化)
       - [字符串方法](#字符串方法)
+    - [字节 bytes](#字节-bytes)
     - [数字](#数字)
     - [布尔值 空值](#布尔值-空值)
     - [集合](#集合)
@@ -74,7 +75,9 @@ https://www.zhihu.com/question/19827960 指的关注的社区
       - [有序不可变列表 tuple](#有序不可变列表-tuple)
       - [无序不可重复 set](#无序不可重复-set)
     - [键值存储 字典 dict](#键值存储-字典-dict)
+    - [列表推导式](#列表推导式)
     - [生成器 generator](#生成器-generator)
+    - [迭代器](#迭代器)
   - [条件循环](#条件循环)
   - [比较判断](#比较判断)
   - [函数](#函数)
@@ -92,7 +95,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
     - [继承 鸭子类型](#继承-鸭子类型)
     - [判断类型信息](#判断类型信息)
     - [动态操作](#动态操作)
-    - [特殊方法](#特殊方法)
+    - [魔术方法](#魔术方法)
     - [枚举](#枚举)
     - [实例方法 类方法 静态方法](#实例方法-类方法-静态方法)
   - [错误异常处理](#错误异常处理)
@@ -276,240 +279,6 @@ IronPython, 把 Python 代码编译成.Net 的字节码。
 
 ## kite 插件使用
 
-```py
-# -*- coding: utf-8 -*-
-
-# Welcome to...
-#
-#         `hmy+.               ://:
-#        .mMMMMMNho:`          NMMm
-#       :NMMMMMMMMMMMds/.`     NMMm            :ss:
-#      +NMMMMMMMMMMMMMMMMmy+   NMMm           -MMMM-   ---
-#    `oMMMMMMMMMMMMMMMMMMMMo   NMMm            /ss/   :MMM+
-#   `yMMMMMMMMNshmNMMMMMMMN`   NMMm                   /MMM+
-#  .dMMMMMMMMm/hmhssydmMMM+    NMMm    `/yhhy. shhy ohmMMMmhhhh.  ./ydmmmdho-
-#  omMMMMMMMd/mMMMMMmhsosy`    NMMm  .omMMmo.  mMMN odmMMMmdddd. omMNdsoshNMNy`
-#   .+dMMMMy/mMMMMMMMMMMm-     NMMm-yNMMh/`    mMMN   /MMM+     sMMN:`   `:NMMy
-#     `-ymo/NMMMMMMMMMMMd      NMMMNMMN/       mMMN   :MMM+     MMMNdddddddNMMN
-#        ``hMMMMMMMMMMMM:      NMMm+mMMNs.     mMMN   :MMM+     MMMh//////////:
-#          `:yNMMMMMMMMh       NMMm `/dMMNy-   mMMN   :MMM+  `. sMMNo`    `-:
-#             .+mMMMMMM-       NMMm   `/dMMNy- mMMN   .MMMNddNN/ +NMMNdhydNNMs
-#               `:yMMMy        yhhs     `/hhhh shhs    :ymmmdho:  `/sdmmmmhs/`
-#                  `om.
-
-
-""" Kite is your programming copilot. Kite will try to show you the
-    right information at the right time as you code to prevent you from context
-    switching out of your current line of thought.
-
-    This tutorial will teach you how to use all of Kite's core features. You
-    should be able to learn everything in 5 minutes.
-
-    If you get stuck at any point, please visit https://help.kite.com/ or file
-    an issue at https://github.com/kiteco/issue-tracker.
-"""
-
-
-""" PYTHON TUTORIAL ============================================================
-
-    Not writing Python? Open tutorials for other languages by running the
-    following actions:
-
-    * For Javascript, run   "Kite: Javascript Tutorial"
-    * For Go, run           "Kite: Go Tutorial"
-"""
-
-
-""" PART 0: BEFORE WE START ====================================================
-
-    Kite's PyCharm plugin will by default try to start the Kite backend when
-    the editor first starts. You can change this behavior by opening the Kite
-    plugin's settings, and changing "Start Kite at startup".
-
-    Look for the Kite icon in the bottom right corner of PyCharm's status bar —
-    It will tell you if Kite is ready and working. If the indicator is red,
-    then you'll have to start the Kite Engine manually before proceeding with
-    the rest of this tutorial.
-"""
-
-
-""" PART 1: CODE COMPLETIONS ===================================================
-
-    Kite analyzes your code and uses machine learning to show you completions
-    for what you're going to type next.
-
-    If you have your editor configured to show autocompletions, then Kite will
-    show you completions automatically as you type.
-
-    If you don't have autocompletions on, you can press ctrl+space to request
-    completions at any time.
-
-    You can toggle autocompletions in the editor preferences under "Editor" →
-    "General" → "Code Completion" and changing "Autopopup code completion".
-
-    Look for Kite's icon on the left-hand side to see which completions are
-    coming from Kite.
-"""
-
-
-# 1a. Name completions
-#
-# Kite can suggest names of symbols to use, such as names of packages or names
-# of variables in scope.
-
-# TRY IT
-# ------
-# • Put your cursor at the end of the line marked with "<--".
-# • Type "s" and select the completion for "json". (The rest of this tutorial
-#   depends on you doing so!)
-# • Remember to press ctrl+space if autocompletions aren't on.
-
-import j  # <--
-
-
-# 1b. Attribute completions
-#
-# Type a "." after a name and Kite will show you the attributes available.
-
-# TRY IT
-# ------
-# • Put your cursor at the end line of the line marked with "<--".
-# • Type ".", and select the completion for "dumps".
-# • Remember to press ctrl+space if autocompletions aren't on.
-
-json  # <--
-
-
-# 1c. Code completions on demand
-#
-# Remember that you can use a keyboard shortcut at any time to request code
-# completions.
-
-# TRY IT
-# ------
-# • Put your cursor at the end of the line marked with "<--".
-# • Press ctrl+space to request code completions to see the attributes in the
-#   json module.
-
-json.  # <--
-
-
-""" PART 2: FUNCTION ASSIST ====================================================
-
-    Kite can also show you how to use a function as you're calling it in your
-    code.
-
-    If you have your editor configured to show parameter info automatically,
-    then Kite will show you this information automatically as you're coding
-    when it detects that your cursor is inside a function call.
-
-    You can prevent this UI from being shown automatically in the editor
-    preferences by navigating to "Editor" → "General" → "Code Completion", and
-    then changing "Autopopup" under "Parameter Info".
-
-    You can manually request function assist at any time by pressing
-    command+p. However, your cursor must be inside a function call for the UI
-    to appear.
-
-    You can hide the function assist UI by pressing escape.
-"""
-
-
-# 2a. Function signatures and more
-#
-# When you're calling a function, Kite will show you the function's signature
-# to help you remember what arguments you need to pass in. It may also show you
-# examples of how other developers use the function and the keyword arguments
-# you can use.
-
-# TRY IT
-# ------
-# • Put your cursor at the end of line marked with "<--".
-# • Type "(" to start the function call, and Kite will show you how to call
-#   json.dumps.
-# • Remember to press command+p after typing "(" if you've disabled function
-#   assist from happening automatically.
-#
-# • Within the UI, click on the "Examples" link to see how other developers use
-#   the function.
-# • You can hide this information by clicking on the "Hide" link.
-
-json.dumps()  # <--
-
-
-# 2b. Learning from your own code
-#
-# Kite will also show you signatures, example usages, and keyword arguments for
-# functions that you have defined in your own code.
-
-# TRY IT
-# ------
-# • Put your cursor at the end of the line marked with "<--".
-# • Type "(" to get assistance for your locally defined pretty_print function.
-# • Remember to press command+p after typing "(" if you've disabled function
-#   assist from happening automatically.
-
-def pretty_print(obj, indent=2):
-    print(json.dumps(obj, indent=indent))
-
-pretty_print(obj, indent=4)
-
-pretty_print()  # <--
-
-
-# 2c. Function assist on demand
-#
-# Remember that you can use a keyboard shortcut at any time to view information
-# about a function.
-
-# TRY IT
-# ------
-# • Put your cursor between the "(" and ")" on the line marked with "<--".
-# • Press command+p to access function assist.
-
-pretty_print()  # <--
-
-
-""" PART 3: INSTANT DOCUMENTATION ==============================================
-
-    Kite can also show you documentation for the symbols in your code. You can
-    use the action "Kite: Docs at cursor" to view documentation for the symbol
-    under your cursor.
-"""
-
-
-# TRY IT
-# ------
-# • Move your cursor over "dumps".
-# • Press command+shift+a.
-# • Run the action "Kite: Docs at cursor".
-
-json.dumps
-
-
-""" That's it!
-
-    Now you know how to use Kite's completions to boost your productivity. You
-    can access this tutorial at any time by running the action
-    'Kite: Python Tutorial'.
-
-    Learn more about Kite at our help page:
-
-    https://help.kite.com/
-
-
-    ____________________________________________________________________________
-
-    Kite is under active development. You can expect its features to become
-    smarter and more featured over time.
-
-    We love hearing from you! Vist https://github.com/kiteco/issue-tracker at
-    any time to report issues or submit feature requests.
-"""
-
-
-```
-
 # 语法
 
 ## 输入输出 打印 main魔法变量
@@ -570,7 +339,7 @@ if __name__ == "__main__":
 
 
 # str 是不可变对象
-    # 不可变对象不可修改，返回一个新的对象
+    # 不可变对象不可修改，一旦修改会返回一个新的对象, 也就是 id(a) 的地址不同了
     # >>> a = 'abc'
     # >>> a.replace('a', 'A')
     # 'Abc'
@@ -807,6 +576,11 @@ sdfs
     # string.translate(str, del="")#根据 str 给出的表(包含 256 个字符)转换 string 的字符, 要过滤掉的字符放到 del 参数中
 ```
 
+### 字节 bytes
+
+不可变的
+
+
 ### 数字
 
 ```py
@@ -970,6 +744,88 @@ sdfs
     # >>> t[2][1] = 'Y'
     # >>> t
     # ('a', 'b', ['X', 'Y'])
+
+
+
+
+# 命名的 tuple
+# -*- coding: utf-8 -*-
+# author: xiaoyu 775000738@qq.com 2021/6/11
+
+from collections import namedtuple
+from random import choice
+
+
+def named_tuple_intro():
+    # 比普通 tuple 更好的可读性, 易于维护
+    # 比字典更加轻量高效
+
+    # 构造一个类, 类名 People, 属性 name, age, like
+    People = namedtuple('People', 'name, age, like')
+
+    # 只读, 属性不可修改
+    person_a = People(name='zhang san', age=11, like=['apple', 'banana'])
+
+    print(person_a.name)
+    print(person_a[0])
+
+    # error
+    # person_a.name = 'bb'
+
+
+def french_deck():
+    """
+    扑克游戏
+    """
+    Card = namedtuple('Card', ['rank', 'suit'])
+
+    class FrenchDeck:
+        # 点数
+        ranks = [str(n) for n in range(2, 11) ] + list('JQKA')
+        # 花色
+        suits = '黑桃 方片 梅花 红桃'.split()
+
+        def __init__(self):
+            self._card = [Card(rank, suit) for suit in self.suits
+                          for rank in self.ranks]
+
+        def __len__(self):
+            return len(self._card)
+
+        # after this method defined, FrenchDeck will become a iterable obj
+        def __getitem__(self, item_index):
+            return self._card[item_index]
+
+    deck = FrenchDeck()
+    print(len(deck))
+    # 第一张牌
+    print(deck[0])
+    # 最后一张牌
+    print(deck[-1])
+    cards = []
+    for card in deck:
+        cards.append(card)
+    print(cards)
+    reversed_cards = []
+    for card in reversed(deck):
+        reversed_cards.append(card)
+    print(reversed_cards)
+
+    # 从 iterable obj 中随机选取
+    random_card = choice(deck)
+    print(random_card)
+
+    # 判断是否存在于集合中
+    print(Card('Q', '方片') in deck)
+    print(Card('Q', 'block') in deck)
+
+    suit_values = dict(黑桃=3, 方片=2, 梅花=1, 红桃=0)
+    print(suit_values)
+
+
+if __name__ == '__main__':
+    french_deck()
+
 ```
 
 #### 无序不可重复 set
@@ -1072,6 +928,10 @@ sdfs
     
 ```
 
+### 列表推导式
+
+
+
 ### 生成器 generator
 
 ```py
@@ -1104,6 +964,23 @@ sdfs
         print(n)
 
 ```
+
+### 迭代器
+
+实现了魔术方法 `__iter__, __next__`, 即为 迭代器, 若仅仅实现了 iter (iter 返回一个对象, 该对象实现了 __next), 只能视为 可迭代对象. 若为 iterator, 一定为 iterable, 反之不一定
+
+实现了魔术方法 `__getitem__`, 即为 可迭代对象
+
+```
+在用 for..in.. 迭代对象时，如果对象没有实现 __iter__ __next__ 迭代器协议，Python的解释器就会去寻找__getitem__ 来迭代对象，
+
+如果连__getitem__ 都没有定义，这解释器就会报对象不是迭代器的错误
+```
+
+
+区别:  当为索引行数据类型（如：list, tuple,str)时，可以替换，当字段为hash型类型（如dict,set)时，不能替换
+
+
 
 ## 条件循环
 
@@ -1834,15 +1711,47 @@ def oop():
 
 
 
-### 特殊方法 
-
-魔术方法
+### 魔术方法
 
 ```py
 
+__repr__ 和 __str__: 用于 print(xx) 被调用, 若 __str__存在, 则优先使用 __str__, 一般会令 __repr__ = __str__
+
+
+
+
+    import math
+
+    class Vector:
+
+        def __init__(self, x=0, y=0):
+            self.x = x
+            self.y = y
+
+        # 为了使用 str(xxx)
+        def __repr__(self):
+            return f'Vector({self.x!r}, {self.y!r})'
+
+        # 等效 sqart(a**2 + b**2)
+        def __abs__(self):
+            return math.hypot(self.x, self.y)
+
+        # 为了使用 bool()
+        def __bool__(self):
+            return bool(abs(self))
+        # 为了使用 +
+        def __add__(self, other):
+            x = self.x + other.x
+            y = self.y + other.y
+            return Vector(x, y)
+        # for 乘法
+        def __mul__(self, scalar):
+            return Vector(self.x * scalar, self.y * scalar)
+
+
+
+
 #
-    # 特殊方法
-    #
     #
     # 应用：REST API的链式调用
     class Chain(object):
@@ -3211,6 +3120,8 @@ mac 无法安装 postgres 驱动
 https://www.oschina.net/translate/python-scripts-replacement-bash-utility-scripts
 https://blog.51cto.com/dashui/2334754
 https://www.cnblogs.com/jacktian-it/articles/10222930.html
+
+https://github.com/lalor/python_for_linux_system_administration 书籍
 
 ## 传递参数
 
