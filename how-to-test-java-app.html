@@ -345,7 +345,7 @@ import static org.mockito.Mockito.when;
 <p>scenario1: 需要 mock 的对象成员如 RedisService 使用 @mock, 不需要 mock 的成员使用 @Spy @Autowired;  填充到目标测试对象 使用 @InjectMocks 标注目标对象, 每次测试前需要初始化 <code>@BeforeEach void xxx() {MockitoAnnotations.initMocks(this);}</code></p>
 <p>scenario2: @MockBean 标注需要 mock 的成员, @Autowired 标注目标对象, 无需初始化, 但是这种方式造成 appContext 重启, 性能低</p>
 <h2><a class="header" href="#powermock" id="powermock">powerMock</a></h2>
-<p>用于解决 mockito 无法覆盖的 case, </p>
+<p>用于解决 mockito 无法覆盖的 case, 比如 static method 的 mock</p>
 <h2><a class="header" href="#web层测试" id="web层测试">web层测试</a></h2>
 <ul>
 <li>MockMVC 单元测试</li>

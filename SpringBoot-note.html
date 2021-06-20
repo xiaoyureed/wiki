@@ -2075,6 +2075,33 @@ https://square.github.io/okhttp/https/</p>
 <h3><a class="header" href="#发送-http-client" id="发送-http-client">发送 http client</a></h3>
 <h3><a class="header" href="#发送-https-client" id="发送-https-client">发送 https client</a></h3>
 <p>okhttp</p>
+<pre><code class="language-java">@Configuration
+public class JavaConfig {
+
+    @Bean(name = &quot;myRestTemplate&quot;)
+    public RestTemplate restTemplate() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+        TrustStrategy acceptingTrustStrategy = (X509Certificate[] chain, String authType) -&gt; true;
+        SSLContext sslContext = org.apache.http.ssl.SSLContexts.custom()
+                .loadTrustMaterial(null, acceptingTrustStrategy)
+                .build();
+        SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext);
+        CloseableHttpClient httpClient = HttpClients.custom()
+                .setSSLSocketFactory(csf)
+                .build();
+        HttpComponentsClientHttpRequestFactory requestFactory =
+                new HttpComponentsClientHttpRequestFactory();
+        requestFactory.setHttpClient(httpClient);
+
+        //60s
+        requestFactory.setConnectTimeout(60 * 1000);
+        requestFactory.setReadTimeout(60 * 1000);
+        RestTemplate restTemplate = new RestTemplate(requestFactory);
+        restTemplate.getMessageConverters().set(1, new StringHttpMessageConverter(StandardCharsets.UTF_8));
+        return restTemplate;
+    }
+}
+
+</code></pre>
 <h2><a class="header" href="#requestcontextholder" id="requestcontextholder">RequestContextHolder</a></h2>
 <pre><code class="language-java">ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder
         .getRequestAttributes();
