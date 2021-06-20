@@ -218,7 +218,7 @@ scenario2: @MockBean 标注需要 mock 的成员, @Autowired 标注目标对象,
 
 ## powerMock 
 
-用于解决 mockito 无法覆盖的 case, 
+用于解决 mockito 无法覆盖的 case, 比如 static method 的 mock
 
 ## web层测试
 

@@ -17,13 +17,13 @@ https://www.cnblogs.com/yuze2020/p/13194962.html 激活
 <!-- TOC -->
 
 - [快捷键](#快捷键)
-    - [Windows](#windows)
-    - [mac](#mac)
+  - [Windows](#windows)
+  - [mac](#mac)
 - [snippets](#snippets)
 - [quickstart设置](#quickstart设置)
 - [tips](#tips)
-    - [debug](#debug)
-    - [设置默认java编译版本](#设置默认java编译版本)
+  - [debug](#debug)
+  - [设置默认java编译版本](#设置默认java编译版本)
 
 <!-- /TOC -->
 
@@ -154,6 +154,10 @@ cmd + ,   设置
 macOS:
 
 cmd + shift + u   转大写
+
+f3   打标签/取消标签
+alt + f3  数字标签/取消
+cmd + f3  显示标签浮窗
 ```
 
 # snippets

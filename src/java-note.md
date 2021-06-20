@@ -4264,6 +4264,9 @@ System.out.println("Months left between today and Java 8 release : "
 // Output:
 // Months left between today and Java 8 release : 2
 
+final long duration = Duration.between(LocalDateTime.now(), latestTime.toInstant()).getSeconds();
+
+
 
 
 //////////////////////////////////////////////////////////
@@ -4295,7 +4298,10 @@ Date date = Date.from(Instant.now());
 Instant instant = date.toInstant();
 
 // Date转换为LocalDateTime
-LocalDateTime localDateTime = LocalDateTime.from(new Date());
+Date startDate=new Date();
+LocalDateTime localDateTime = startDate.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDateTime()
 
 // LocalDateTime转Date
 Date date =

@@ -134,6 +134,7 @@ https://www.zhihu.com/question/19827960 指的关注的社区
 - [代替 shell 运维](#代替-shell-运维)
   - [传递参数](#传递参数)
   - [shell 调用 Python](#shell-调用-python)
+    - [shel 读取 Python 函数返回值](#shel-读取-python-函数返回值)
     - [统计出现次数](#统计出现次数)
     - [读取 csv 文件](#读取-csv-文件)
   - [Python 调用 shell](#python-调用-shell)
@@ -3156,6 +3157,17 @@ if __name__ == "__main__":
 
 ## shell 调用 Python 
 
+### shel 读取 Python 函数返回值
+
+```py
+
+
+```
+
+```sh
+
+
+```
 
 ### 统计出现次数
 
