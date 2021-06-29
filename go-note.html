@@ -188,8 +188,13 @@ categories: computer science</li>
 </li>
 <li><a href="#%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86">工程管理</a>
 <ul>
-<li><a href="#go-mod-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85">go mod 自定义包</a></li>
-<li><a href="#go-mod-%E5%91%BD%E4%BB%A4%E6%80%8E%E4%B9%88%E7%94%A8">go mod 命令怎么用</a></li>
+<li><a href="#go-mod-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85">go mod 自定义包</a>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4">使用方法 相关命令</a></li>
+<li><a href="#go111module">GO111MODULE</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85">如何导入自定义包</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#golang-%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8">golang 命令工具使用</a>
@@ -294,7 +299,19 @@ func main() {
 }
 
 </code></pre>
-<p><code>go build xxx.go</code> + <code>./xxx.exe</code>, or 直接 <code>go run xxx.go</code></p>
+<p>运行: 三种方法</p>
+<ul>
+<li>
+<p>通过 IDE 的启动按钮</p>
+</li>
+<li>
+<p><code>go run app.go</code></p>
+</li>
+<li>
+<p>先编译, 再运行  <code>go build xxx.go</code> + <code>./xxx.exe</code> (可执行文件名 为 go 文件名)</p>
+<p>go build 若不加任何参数, 则是编译 main 包, 可执行文件名 为 包名</p>
+</li>
+</ul>
 <h1><a class="header" href="#basic" id="basic">basic</a></h1>
 <pre><code class="language-go">package main //Programs start running in package main.
 // main 包 和 main 函数 告诉 go编译器: 这是一个可执行程序, 需要编译为二进制文件
@@ -1520,9 +1537,13 @@ func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
 <li>所有引入进来的第三方包会准确的指定版本号</li>
 <li>对于已经转移的包，可以用replace 申明替换，不需要改代码</li>
 </ul>
+<h3><a class="header" href="#使用方法-相关命令" id="使用方法-相关命令">使用方法 相关命令</a></h3>
 <ol>
 <li>
-<p>在 gopath 外部新建一个 folder 作为模块目录(名称不限),进入后 <code>go mod init xiaoyureed.github.io/hello</code>, 生成 go.mod 文件, 内容包含: module name (即xiaoyureed.github.io/hello), go version, requires, 类比 package.json</p>
+<p>在 gopath 外部新建一个 folder 作为模块目录(名称不限, 一般指定为 模块名称 如 hello)</p>
+</li>
+<li>
+<p>进入后 <code>go mod init xiaoyureed.github.io/hello</code> (xiaoyureed.github.io 表示模块发布的路径, hello 表示模块名), 生成 go.mod 文件, 内容包含: module name (即xiaoyureed.github.io/hello), go version, requires, 类比 package.json</p>
 </li>
 <li>
 <p>新建 main 文件, 引入 <code>import &quot;github.com/astaxie/beego&quot;</code>, 然后 main 函数中 <code>beego.Run()</code>, 直接运行 <code>go run main.go</code> </p>
@@ -1530,16 +1551,6 @@ func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
 <p>依赖包会下载到 <code>$GOPATH/pkg/mod</code> 下</p>
 </li>
 </ol>
-<p>可以把项目放在$GOPATH/src下吗? 可以, go会根据GO111MODULE的值而采取不同的处理方式</p>
-<ul>
-<li>auto 自动模式下 (默认)，项目在$GOPATH/src里会使用$GOPATH/src的依赖包，在$GOPATH/src外，就使用go.mod 里 require的包</li>
-<li>on 开启模式，1.12后，无论在$GOPATH/src里还是在外面，都会使用go.mod 里 require的包</li>
-<li>off 关闭模式，就是老规矩。</li>
-</ul>
-<p>如何导入自定义包? 这就要说到模块名称的作用: 用来引用当前项目内的其他包, 如: 在项目下新建目录 utils，创建一个tools.go文件, package utils. 那么 在 main.go 中就能使用 <code>import &quot;&lt;mod name&gt;/utils&quot;</code> 来引用 utils 包</p>
-<p>三方库版本号规则?  就是包发布到 github 标记的 tag，格式为 vn.n.n (n代表数字), 在 github 仓库的release 可以看到. 如果包的作者还没有标记版本，默认为 v0.0.0, 在 go.mod 中指定, 若没有指定, 默认 为 latest</p>
-<p>依赖地址失效怎么办: 在 go.mod 中 <code>replace golang.org/x/text =&gt; github.com/golang/text latest</code> (前者表示要替换的地址, 后者表示新的有效地址). 原理就是下载http://github.com/golang/text 的最新版本到 $GOPATH/pkg/mod/golang.org/x/text下</p>
-<h2><a class="header" href="#go-mod-命令怎么用" id="go-mod-命令怎么用">go mod 命令怎么用</a></h2>
 <pre><code class="language-sh"># 生成模块, 就是在当前目录下生成一个 go.mod
 # go.mod 文件的出现定义了它所在的目录为一个模块。一个项目中，不同文件夹都可以有go.mod 
 # 包括 mod name, go version
@@ -1575,6 +1586,17 @@ go clean -modcache
 # 查看可下载版本
 go list -m -versions github.com/gogf/gf
 </code></pre>
+<h3><a class="header" href="#go111module" id="go111module">GO111MODULE</a></h3>
+<p>可以把项目放在$GOPATH/src下吗? 可以, go会根据GO111MODULE的值而采取不同的处理方式</p>
+<ul>
+<li>auto 自动模式下 (默认)，项目在$GOPATH/src里会使用$GOPATH/src的依赖包，在$GOPATH/src外，就使用go.mod 里 require的包</li>
+<li>on 开启模式，1.12后，无论在$GOPATH/src里还是在外面，都会使用go.mod 里 require的包</li>
+<li>off 关闭模式，就是老规矩。</li>
+</ul>
+<h3><a class="header" href="#如何导入自定义包" id="如何导入自定义包">如何导入自定义包</a></h3>
+<p>这就要说到模块名称的作用: 用来引用当前项目内的其他包, 如: 在项目下新建目录 utils，创建一个tools.go文件, package utils. 那么 在 main.go 中就能使用 <code>import &quot;&lt;mod name&gt;/utils&quot;</code> 来引用 utils 包</p>
+<p>三方库版本号规则?  就是包发布到 github 标记的 tag，格式为 vn.n.n (n代表数字), 在 github 仓库的release 可以看到. 如果包的作者还没有标记版本，默认为 v0.0.0, 在 go.mod 中指定, 若没有指定, 默认 为 latest</p>
+<p>依赖地址失效怎么办: 在 go.mod 中 <code>replace golang.org/x/text =&gt; github.com/golang/text latest</code> (前者表示要替换的地址, 后者表示新的有效地址). 原理就是下载http://github.com/golang/text 的最新版本到 $GOPATH/pkg/mod/golang.org/x/text下</p>
 <h1><a class="header" href="#golang-命令工具使用" id="golang-命令工具使用">golang 命令工具使用</a></h1>
 <p>https://hyper0x.github.io/go_command_tutorial/#/0.13</p>
 <h2><a class="header" href="#有哪些命令" id="有哪些命令">有哪些命令</a></h2>

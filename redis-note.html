@@ -1185,6 +1185,15 @@ config set maxmemory-policy allkeys-lru
     &lt;optional&gt;true&lt;/optional&gt;
 &lt;/dependency&gt;   
 </code></pre>
+<p>springboot 中配置</p>
+<pre><code class="language-java">
+    @Bean(destroyMethod = &quot;shutdown&quot;)
+    public RedissonClient redisson(@Value(&quot;classpath:/redisson-config.yml&quot;) Resource configFile) throws IOException {
+        Config config = Config.fromYAML(configFile.getInputStream());
+        return Redisson.create(config);
+    }
+
+</code></pre>
 
                     </main>
 
