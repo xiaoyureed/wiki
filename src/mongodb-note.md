@@ -37,7 +37,6 @@ https://www.zhihu.com/question/19882468/answer/18329680
   - [使用场景](#使用场景)
 - [how](#how)
   - [安装](#安装)
-    - [docker](#docker)
     - [docker 安装](#docker-安装)
     - [压缩包安装](#压缩包安装)
   - [使用](#使用)
@@ -194,8 +193,6 @@ https://www.zhihu.com/question/274485040/answer/1242910052
 
 ## 安装
 
-### docker
-
 ### docker 安装
 
 https://www.jianshu.com/p/576a156f6877
@@ -260,7 +257,7 @@ spring boot 配置: ...uri: `mongodb://tiger:tiger@172.24.208.103:27017/demo`
 mongo --username mongoadmin --password
     使用 -u -p 亦可
 
-# 当前db
+# 显示当前db
 db
 # 查看所有
 show dbs  
@@ -291,6 +288,10 @@ db.createUser(
 )
 # 创建管理员，赋予root权限
 db.createUser({user:"admin",pwd:"xiiasdfiik34",roles:[{role: 'root', db: 'admin'}]})
+
+
+db.updateUser("pmsplatform_file", {roles: [{role: "readWrite", db: "admin"}]})
+
 # 删除 user
 db.dropUser('username')
 

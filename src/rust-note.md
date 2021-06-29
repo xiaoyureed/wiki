@@ -4,6 +4,8 @@ categories: language
 date: 2020-08-31 22:15:27
 ---
 
+https://github.com/wtklbm/crm 简单项目
+
 https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials 嵌入式 os 内核 开发
 
 https://folyd.com/blog/ Rust的Pin与Unpin

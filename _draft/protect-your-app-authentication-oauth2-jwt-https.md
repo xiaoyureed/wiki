@@ -33,7 +33,8 @@ https://www.devglan.com/spring-security/spring-boot-oauth2-jwt-example 和jwt集
   - [refs](#refs)
   - [oauth2介绍](#oauth2介绍)
   - [优缺点](#优缺点)
-  - [集成微信登录](#集成微信登录)
+  - [spring security 入门](#spring-security-入门)
+  - [案例: 集成微信登录](#案例-集成微信登录)
 - [https](#https)
 - [加密](#加密)
   - [rsa 算法](#rsa-算法)
@@ -171,7 +172,11 @@ oauth2中为什么不直接返回token而是传授权码code?
 - 使用OAuth2 认证的好处就是你只需要一个账号密码，就能在各个网站进行访问，而面去了在每个网站都进行注册的繁琐过程
 
 
-## 集成微信登录
+## spring security 入门
+
+同类 https://github.com/dromara/sa-token
+
+## 案例: 集成微信登录
 
 申请微信开发者账号, 注册自己写的app得到appid
 

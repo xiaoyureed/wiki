@@ -544,6 +544,8 @@ https://stackoverflow.com/questions/15358851/how-to-remove-jar-file-from-local-m
 # 安装
 mvn install:install-file -Dfile=bpm-interface-2.0.1.jar -DgroupId=com.ctg.qdp -DartifactId=bpm-interface -Dversion=2.0.1 -Dpackaging=jar
 
+mvn install:install-file -Dfile=ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.4 -Dpackaging=jar
+
 
 # 卸载
 # 最方便的是直接到 $HOME/.m2 手动删除

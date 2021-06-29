@@ -214,6 +214,54 @@ CONNECT ot@orcl
 -- 执行 SQL 文件, 语法 @path_to_file
 SQL> @F:\website\oraok\ot\11g\ot_schema.sql
 
+
+
+
+
+// 实例
+
+-- 切换pdb项目
+alter session set container=orclpdb;
+DROP TABLESPACE HB_TEST_DATA_TEMP INCLUDING CONTENTS AND DATAFILES;
+-- 19c 必须放在orclpdb文件夹下
+CREATE TEMPORARY TABLESPACE HB_TEST_DATA_TEMP
+         TEMPFILE 'D:\oracle\oradata\ORA\orclpdb\HB_TEST_DATA_TEMP.DBF'
+         SIZE 32M
+         AUTOEXTEND ON
+         NEXT 32M MAXSIZE UNLIMITED
+         EXTENT MANAGEMENT LOCAL;
+
+DROP TABLESPACE HB_TEST_DATA INCLUDING CONTENTS AND DATAFILES;
+CREATE TABLESPACE HB_TEST_DATA
+         LOGGING
+         DATAFILE 'D:\oracle\oradata\ORA\orclpdb\HB_TEST_DATA.DBF'
+         SIZE 32M
+         AUTOEXTEND ON
+         NEXT 32M MAXSIZE UNLIMITED
+         EXTENT MANAGEMENT LOCAL;
+
+
+-- Create the user 
+create user HB_TEST identified by "Admin!12_34"
+  default tablespace HB_TEST_DATA
+  temporary tablespace HB_TEST_DATA_TEMP
+  profile DEFAULT;
+-- Grant/Revoke role privileges 
+grant connect to HB_TEST;
+grant dba to HB_TEST;
+grant resource to HB_TEST;
+-- Grant/Revoke system privileges 
+grant create procedure to HB_TEST;
+grant create sequence to HB_TEST;
+grant create table to HB_TEST;
+grant create trigger to HB_TEST;
+grant create view to HB_TEST;
+grant select any table to HB_TEST;
+grant unlimited tablespace to HB_TEST;
+-- Grant/Revoke role privileges 
+grant create session to HB_TEST;
+
+
 ```
 
 

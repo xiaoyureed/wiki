@@ -46,7 +46,9 @@ https://github.com/geektutu/high-performance-go性能分析
   - [http](#http)
 - [工程管理](#工程管理)
   - [go mod 自定义包](#go-mod-自定义包)
-  - [go mod 命令怎么用](#go-mod-命令怎么用)
+    - [使用方法 相关命令](#使用方法-相关命令)
+    - [GO111MODULE](#go111module)
+    - [如何导入自定义包](#如何导入自定义包)
 - [golang 命令工具使用](#golang-命令工具使用)
   - [有哪些命令](#有哪些命令)
   - [交叉编译](#交叉编译)
@@ -164,7 +166,18 @@ func main() {
 
 ```
 
-`go build xxx.go` + `./xxx.exe`, or 直接 `go run xxx.go`
+运行: 三种方法
+
+- 通过 IDE 的启动按钮
+
+- `go run app.go`
+
+- 先编译, 再运行  `go build xxx.go` + `./xxx.exe` (可执行文件名 为 go 文件名)
+
+	go build 若不加任何参数, 则是编译 main 包, 可执行文件名 为 包名
+
+
+
 
 
 
@@ -1407,7 +1420,11 @@ go modules 好处:
 - 对于已经转移的包，可以用replace 申明替换，不需要改代码
 
 
-1. 在 gopath 外部新建一个 folder 作为模块目录(名称不限),进入后 `go mod init xiaoyureed.github.io/hello`, 生成 go.mod 文件, 内容包含: module name (即xiaoyureed.github.io/hello), go version, requires, 类比 package.json
+### 使用方法 相关命令
+
+1. 在 gopath 外部新建一个 folder 作为模块目录(名称不限, 一般指定为 模块名称 如 hello)
+
+1. 进入后 `go mod init xiaoyureed.github.io/hello` (xiaoyureed.github.io 表示模块发布的路径, hello 表示模块名), 生成 go.mod 文件, 内容包含: module name (即xiaoyureed.github.io/hello), go version, requires, 类比 package.json
 
 1. 新建 main 文件, 引入 `import "github.com/astaxie/beego"`, 然后 main 函数中 `beego.Run()`, 直接运行 `go run main.go` 
 
@@ -1415,20 +1432,6 @@ go modules 好处:
 
     依赖包会下载到 `$GOPATH/pkg/mod` 下
 
-
-可以把项目放在$GOPATH/src下吗? 可以, go会根据GO111MODULE的值而采取不同的处理方式
-- auto 自动模式下 (默认)，项目在$GOPATH/src里会使用$GOPATH/src的依赖包，在$GOPATH/src外，就使用go.mod 里 require的包
-- on 开启模式，1.12后，无论在$GOPATH/src里还是在外面，都会使用go.mod 里 require的包
-- off 关闭模式，就是老规矩。
-
-如何导入自定义包? 这就要说到模块名称的作用: 用来引用当前项目内的其他包, 如: 在项目下新建目录 utils，创建一个tools.go文件, package utils. 那么 在 main.go 中就能使用 `import "<mod name>/utils"` 来引用 utils 包
-
-三方库版本号规则?  就是包发布到 github 标记的 tag，格式为 vn.n.n (n代表数字), 在 github 仓库的release 可以看到. 如果包的作者还没有标记版本，默认为 v0.0.0, 在 go.mod 中指定, 若没有指定, 默认 为 latest
-
-依赖地址失效怎么办: 在 go.mod 中 `replace golang.org/x/text => github.com/golang/text latest` (前者表示要替换的地址, 后者表示新的有效地址). 原理就是下载http://github.com/golang/text 的最新版本到 $GOPATH/pkg/mod/golang.org/x/text下
-
-
-## go mod 命令怎么用
 
 ```sh
 # 生成模块, 就是在当前目录下生成一个 go.mod
@@ -1466,6 +1469,24 @@ go clean -modcache
 # 查看可下载版本
 go list -m -versions github.com/gogf/gf
 ```
+
+
+### GO111MODULE
+
+可以把项目放在$GOPATH/src下吗? 可以, go会根据GO111MODULE的值而采取不同的处理方式
+- auto 自动模式下 (默认)，项目在$GOPATH/src里会使用$GOPATH/src的依赖包，在$GOPATH/src外，就使用go.mod 里 require的包
+- on 开启模式，1.12后，无论在$GOPATH/src里还是在外面，都会使用go.mod 里 require的包
+- off 关闭模式，就是老规矩。
+
+### 如何导入自定义包
+
+这就要说到模块名称的作用: 用来引用当前项目内的其他包, 如: 在项目下新建目录 utils，创建一个tools.go文件, package utils. 那么 在 main.go 中就能使用 `import "<mod name>/utils"` 来引用 utils 包
+
+
+三方库版本号规则?  就是包发布到 github 标记的 tag，格式为 vn.n.n (n代表数字), 在 github 仓库的release 可以看到. 如果包的作者还没有标记版本，默认为 v0.0.0, 在 go.mod 中指定, 若没有指定, 默认 为 latest
+
+依赖地址失效怎么办: 在 go.mod 中 `replace golang.org/x/text => github.com/golang/text latest` (前者表示要替换的地址, 后者表示新的有效地址). 原理就是下载http://github.com/golang/text 的最新版本到 $GOPATH/pkg/mod/golang.org/x/text下
+
 
 
 # golang 命令工具使用

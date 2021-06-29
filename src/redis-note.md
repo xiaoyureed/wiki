@@ -1201,3 +1201,15 @@ watch dog (key 自动续期, 防止业务超时锁被删除了)
     <optional>true</optional>
 </dependency>   
 ```
+
+springboot 中配置
+
+```java
+
+    @Bean(destroyMethod = "shutdown")
+    public RedissonClient redisson(@Value("classpath:/redisson-config.yml") Resource configFile) throws IOException {
+        Config config = Config.fromYAML(configFile.getInputStream());
+        return Redisson.create(config);
+    }
+
+```
