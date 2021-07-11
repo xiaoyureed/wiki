@@ -14,6 +14,8 @@ TODO
 
 https://github.com/0voice/interview_internal_reference 大厂面试题库
 
+https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
+
 <!--more-->
 
 <!-- TOC -->

@@ -42,6 +42,7 @@ atob('SGVsbG8gV29ybGQh'); // Hello World!
 - [产品](#产品)
 - [books](#books)
   - [技术](#技术)
+  - [职场](#职场)
   - [创业](#创业)
   - [处世](#处世)
 - [story](#story)
@@ -341,6 +342,12 @@ https://github.com/0voice/from_coder_to_expert
 
 ## 技术
 
+the little schemer
+
+码农翻身 刘欣
+
+系统之美
+
 《计算机网络自顶向下方法与Internet特色》
 《反应式设计模式》
 
@@ -451,9 +458,20 @@ Netty
 《程序员面试金典（第6版）》- 豆瓣评分 10
 《程序员代码面试指南（第2版） : IT名企算法与数据结构题目最优解》- 豆瓣评分 9.2
 
+## 职场
+
+用图表说话
+
+金字塔原理
+
+高效能人士的七种习惯
 
 
 ## 创业
+
+流量池 杨飞
+
+中国崛起的秘密 付海棠
 
 https://www.zhihu.com/question/24989454/answer/41783013
 
@@ -585,6 +603,10 @@ https://www.zhihu.com/question/19707109/answer/27317297
 
 
 ## 处世
+
+中央帝国的财政密码
+
+冬泳 班宇
 
 《煤老板自述三十年》
 《世间的盐》

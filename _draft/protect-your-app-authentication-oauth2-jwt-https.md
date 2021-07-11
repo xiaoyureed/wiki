@@ -29,6 +29,7 @@ https://www.devglan.com/spring-security/spring-boot-oauth2-jwt-example 和jwt集
 - [jwt](#jwt)
   - [jwt 介绍](#jwt-介绍)
   - [怎么使用](#怎么使用)
+- [spring security 使用](#spring-security-使用)
 - [Oauth2.0](#oauth20)
   - [refs](#refs)
   - [oauth2介绍](#oauth2介绍)
@@ -104,6 +105,10 @@ json web token: 是一种认证协议, 服务器认证以后，生成一个 JSON
 客户端收到服务器返回的 JWT，可以储存在 Cookie 里面，也可以储存在 localStorage。但是这样不能跨域，所以更好的做法是`放在 HTTP 请求的头信息Authorization字段里面`。or 放在 request body 亦可
 
 Java 平台的实现推荐 -> [java-jwt](https://github.com/auth0/java-jwt)
+
+# spring security 使用
+
+
 
 # Oauth2.0
 

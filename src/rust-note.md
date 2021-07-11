@@ -4,6 +4,8 @@ categories: language
 date: 2020-08-31 22:15:27
 ---
 
+https://github.com/sassman/t-rec-rs 终端记录工具 录制 gif
+
 https://github.com/wtklbm/crm 简单项目
 
 https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials 嵌入式 os 内核 开发
@@ -392,6 +394,7 @@ https://github.com/rajasekarv/vega spark 替代
   - [java 调用 rust](#java-调用-rust)
 - [开发微信小程序-web 游戏](#开发微信小程序-web-游戏)
 - [第三方 crates](#第三方-crates)
+  - [视频处理](#视频处理)
   - [图片处理](#图片处理)
   - [游戏开发三方库](#游戏开发三方库)
   - [web 开发](#web-开发)
@@ -11184,6 +11187,9 @@ https://s0docs0rs.icopy.site/
 
 https://rust-lang-nursery.github.io/rust-cookbook/
 
+## 视频处理
+
+https://github.com/larksuite/rsmpeg 飞书团队出品 ffmpeg 的 rust binding
 
 ## 图片处理
 

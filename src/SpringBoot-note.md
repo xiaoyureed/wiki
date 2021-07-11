@@ -59,7 +59,9 @@ https://github.com/xkcoding/spring-boot-demo springboot demos
   - [spring boot admin 监控界面](#spring-boot-admin-监控界面)
   - [spring-boot-starter-security](#spring-boot-starter-security)
     - [security组件介绍](#security组件介绍)
-    - [基本使用 security](#基本使用-security)
+    - [基本使用 和 配置用户名密码](#基本使用-和-配置用户名密码)
+    - [禁用基本认证](#禁用基本认证)
+    - [配置中 WebSecurity 和 HttpSecurity 区别](#配置中-websecurity-和-httpsecurity-区别)
     - [配置跨域](#配置跨域)
   - [oauth2](#oauth2)
 - [日志](#日志)
@@ -843,9 +845,37 @@ UserDetailsService - 可以用来获取UserDetails。我们会自定义一个Cus
 AuthenticationManager - 作用就是校验Authentication, 校验失败抛出 `BadCredentialsException`
 
 
-### 基本使用 security
+### 基本使用 和 配置用户名密码
 
-配合 starter , 可以零配置使用. 引入后如下配置即可
+配合 starter  (spring-boot-starter-security), 可以零配置使用. 引入后依赖
+
+```xml
+<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+```
+
+
+如下配置即可
 
 ```yml
 server:
@@ -856,24 +886,108 @@ spring:
 
   security:
     user:
+      # 如果不配置, 默认为 user/控制台日志中看到默认密码
+    #   前端调用, 需要 basic auth 认证
       name: root
       password: root
 ```
 
-再次进入任何page需要输入验证 root/root, 如果不配置, 默认为 user/控制台日志中看到默认密码
-
 支持两种验证方式:
 
-- 可以通过 form 表单来认证
+- 可以通过 form 表单来认证 (默认)
 
     适合页面验证
 
-- 可以通过 HttpBasic 来认证
+- 可以通过 HttpBasic 来认证 (basic auth)
 
     适合 api 接口的验证, 当然也适合页面
 
 
-================================ 实现方法级别的全限控制
+用户名密码也可以在这里:
+
+
+```java
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Bean
+	@Override
+	public UserDetailsService userDetailsService() {
+		UserDetails user =
+			 User.withDefaultPasswordEncoder()
+				.username("user")
+				.password("password")
+				.roles("USER")
+				.build();
+
+		return new InMemoryUserDetailsManager(user);
+	}
+}
+```
+
+### 禁用基本认证
+
+如果既想使用security又不想每次输入用户名密码，可以直接在Application文件中禁用自动配置 (方法 1)
+
+```java
+@EnableAutoConfiguration(exclude = {
+    org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
+})
+
+```
+
+或者 在代码中配置 (方法 2)
+
+```java
+@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    /**
+    是因为覆盖了父类方法, 父类中的方法内容如下:
+        http.authorizeRequests((requests) -> requests.anyRequest().authenticated()); // 所有 请求都需要认证
+		http.formLogin(); // 支持表单认证
+		http.httpBasic(); // 支持 basic auth 认证
+
+    */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // 这里为空, 表示无需 任何认证
+//        super.configure(http);
+    }
+}
+```
+
+### 配置中 WebSecurity 和 HttpSecurity 区别
+
+```java
+
+// 影响全局安全性的配置（忽略资源，设置调试模式，通过实现自定义防火墙定义拒绝请求）
+@Override
+public void configure(WebSecurity web) throws Exception {
+    web
+        .ignoring()
+        .antMatchers("/resources/**") // 忽略
+        .antMatchers("/publics/**"); // 忽略
+}
+
+//资源级别 配置基于Web的安全性, 粒度更细
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http
+        .authorizeRequests()
+        .antMatchers("/", "/home").permitAll()
+        .antMatchers("/admin/**").hasRole("ADMIN")
+        .antMatchers("/publics/**").hasRole("USER") // no effect, 因为  WebSecurity 中配置了 忽略 publics/**
+        .anyRequest().authenticated()
+        .and()
+        .formLogin().loginPage("/login").permitAll()
+        .and()
+        .logout().permitAll();
+}
+
+```
+
+================================ 实现方法级别的权限控制
 
 `@EnableGlobalMethodSecurity(prePostEnabled =true)` 使用表达式实现方法级别的安全性   ,  4个注解可用
 
@@ -886,8 +1000,7 @@ spring:
 - @PreFilter 允许方法调用,但必须在进入方法之前过滤输入值
 
 ```java
-//表示如果用户具有admin角色，就能访问listAllUsers方法，但
-//是如果方法前不加@preAuthorize注解，意味着所有用户都能访问listAllUsers
+//表示如果用户具有admin角色，就能访问listAllUsers方法，如果方法前不加@preAuthorize注解，意味着所有用户都能访问listAllUsers
 @PreAuthorize("hasRole(‘admin‘)")
 @RequestMapping(value = "/user/", method = RequestMethod.GET)
 @ResponseBody
