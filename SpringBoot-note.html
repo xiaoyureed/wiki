@@ -217,7 +217,9 @@ https://github.com/dreamhead/moco mock 框架
 <li><a href="#spring-boot-starter-security">spring-boot-starter-security</a>
 <ul>
 <li><a href="#security%E7%BB%84%E4%BB%B6%E4%BB%8B%E7%BB%8D">security组件介绍</a></li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-security">基本使用 security</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-%E5%92%8C-%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81">基本使用 和 配置用户名密码</a></li>
+<li><a href="#%E7%A6%81%E7%94%A8%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81">禁用基本认证</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E4%B8%AD-websecurity-%E5%92%8C-httpsecurity-%E5%8C%BA%E5%88%AB">配置中 WebSecurity 和 HttpSecurity 区别</a></li>
 <li><a href="#%E9%85%8D%E7%BD%AE%E8%B7%A8%E5%9F%9F">配置跨域</a></li>
 </ul>
 </li>
@@ -957,8 +959,32 @@ https://www.jianshu.com/p/8bfac9289c7e</p>
 <p>UserDetails - 认证用户的详细信息</p>
 <p>UserDetailsService - 可以用来获取UserDetails。我们会自定义一个CustomUserDetailsService来实现UserDetailsService接口, 通过 username 查询到 userDetails, 如果没查到 , <code>UsernameNotFoundException</code></p>
 <p>AuthenticationManager - 作用就是校验Authentication, 校验失败抛出 <code>BadCredentialsException</code></p>
-<h3><a class="header" href="#基本使用-security" id="基本使用-security">基本使用 security</a></h3>
-<p>配合 starter , 可以零配置使用. 引入后如下配置即可</p>
+<h3><a class="header" href="#基本使用-和-配置用户名密码" id="基本使用-和-配置用户名密码">基本使用 和 配置用户名密码</a></h3>
+<p>配合 starter  (spring-boot-starter-security), 可以零配置使用. 引入后依赖</p>
+<pre><code class="language-xml">&lt;dependencies&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+		&lt;/dependency&gt;
+
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+			&lt;scope&gt;test&lt;/scope&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+			&lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;
+			&lt;scope&gt;test&lt;/scope&gt;
+		&lt;/dependency&gt;
+	&lt;/dependencies&gt;
+
+</code></pre>
+<p>如下配置即可</p>
 <pre><code class="language-yml">server:
   port: 8000
 spring:
@@ -967,22 +993,93 @@ spring:
 
   security:
     user:
+      # 如果不配置, 默认为 user/控制台日志中看到默认密码
+    #   前端调用, 需要 basic auth 认证
       name: root
       password: root
 </code></pre>
-<p>再次进入任何page需要输入验证 root/root, 如果不配置, 默认为 user/控制台日志中看到默认密码</p>
 <p>支持两种验证方式:</p>
 <ul>
 <li>
-<p>可以通过 form 表单来认证</p>
+<p>可以通过 form 表单来认证 (默认)</p>
 <p>适合页面验证</p>
 </li>
 <li>
-<p>可以通过 HttpBasic 来认证</p>
+<p>可以通过 HttpBasic 来认证 (basic auth)</p>
 <p>适合 api 接口的验证, 当然也适合页面</p>
 </li>
 </ul>
-<p>================================ 实现方法级别的全限控制</p>
+<p>用户名密码也可以在这里:</p>
+<pre><code class="language-java">@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Bean
+	@Override
+	public UserDetailsService userDetailsService() {
+		UserDetails user =
+			 User.withDefaultPasswordEncoder()
+				.username(&quot;user&quot;)
+				.password(&quot;password&quot;)
+				.roles(&quot;USER&quot;)
+				.build();
+
+		return new InMemoryUserDetailsManager(user);
+	}
+}
+</code></pre>
+<h3><a class="header" href="#禁用基本认证" id="禁用基本认证">禁用基本认证</a></h3>
+<p>如果既想使用security又不想每次输入用户名密码，可以直接在Application文件中禁用自动配置 (方法 1)</p>
+<pre><code class="language-java">@EnableAutoConfiguration(exclude = {
+    org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
+})
+
+</code></pre>
+<p>或者 在代码中配置 (方法 2)</p>
+<pre><code class="language-java">@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    /**
+    是因为覆盖了父类方法, 父类中的方法内容如下:
+        http.authorizeRequests((requests) -&gt; requests.anyRequest().authenticated()); // 所有 请求都需要认证
+		http.formLogin(); // 支持表单认证
+		http.httpBasic(); // 支持 basic auth 认证
+
+    */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // 这里为空, 表示无需 任何认证
+//        super.configure(http);
+    }
+}
+</code></pre>
+<h3><a class="header" href="#配置中-websecurity-和-httpsecurity-区别" id="配置中-websecurity-和-httpsecurity-区别">配置中 WebSecurity 和 HttpSecurity 区别</a></h3>
+<pre><code class="language-java">
+// 影响全局安全性的配置（忽略资源，设置调试模式，通过实现自定义防火墙定义拒绝请求）
+@Override
+public void configure(WebSecurity web) throws Exception {
+    web
+        .ignoring()
+        .antMatchers(&quot;/resources/**&quot;) // 忽略
+        .antMatchers(&quot;/publics/**&quot;); // 忽略
+}
+
+//资源级别 配置基于Web的安全性, 粒度更细
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    http
+        .authorizeRequests()
+        .antMatchers(&quot;/&quot;, &quot;/home&quot;).permitAll()
+        .antMatchers(&quot;/admin/**&quot;).hasRole(&quot;ADMIN&quot;)
+        .antMatchers(&quot;/publics/**&quot;).hasRole(&quot;USER&quot;) // no effect, 因为  WebSecurity 中配置了 忽略 publics/**
+        .anyRequest().authenticated()
+        .and()
+        .formLogin().loginPage(&quot;/login&quot;).permitAll()
+        .and()
+        .logout().permitAll();
+}
+
+</code></pre>
+<p>================================ 实现方法级别的权限控制</p>
 <p><code>@EnableGlobalMethodSecurity(prePostEnabled =true)</code> 使用表达式实现方法级别的安全性   ,  4个注解可用</p>
 <ul>
 <li>
@@ -998,8 +1095,7 @@ spring:
 <p>@PreFilter 允许方法调用,但必须在进入方法之前过滤输入值</p>
 </li>
 </ul>
-<pre><code class="language-java">//表示如果用户具有admin角色，就能访问listAllUsers方法，但
-//是如果方法前不加@preAuthorize注解，意味着所有用户都能访问listAllUsers
+<pre><code class="language-java">//表示如果用户具有admin角色，就能访问listAllUsers方法，如果方法前不加@preAuthorize注解，意味着所有用户都能访问listAllUsers
 @PreAuthorize(&quot;hasRole(‘admin‘)&quot;)
 @RequestMapping(value = &quot;/user/&quot;, method = RequestMethod.GET)
 @ResponseBody
