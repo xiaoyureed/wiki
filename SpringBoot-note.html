@@ -1070,7 +1070,7 @@ protected void configure(HttpSecurity http) throws Exception {
         .authorizeRequests()
         .antMatchers(&quot;/&quot;, &quot;/home&quot;).permitAll()
         .antMatchers(&quot;/admin/**&quot;).hasRole(&quot;ADMIN&quot;)
-        .antMatchers(&quot;/publics/**&quot;).hasRole(&quot;USER&quot;) // no effect, 因为  WebSecurity 中配置了 忽略 publics/**
+        .antMatchers(&quot;/publics/**&quot;).hasRole(&quot;USER&quot;) // no effect, 因为  WebSecurity 中配置了 忽略 publics/** 下的验证
         .anyRequest().authenticated()
         .and()
         .formLogin().loginPage(&quot;/login&quot;).permitAll()
